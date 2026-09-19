@@ -1,0 +1,10 @@
+{
+  "name": "carnival-careers-exact-standalone",
+  "private": true,
+  "scripts": {
+    "build": "node build-standalone.mjs"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  }
+}
