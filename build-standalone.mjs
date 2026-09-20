@@ -276,7 +276,7 @@ const contrastGuard = `
 `;
 
 
-const torontoModelRefinement = \`
+const torontoModelRefinement = String.raw`
 <!-- CARNIVAL CAREERS TORONTO MODEL REFINEMENT: EXISTING SECTIONS ONLY -->
 <style id="cc-toronto-model-style">
   .cc-toronto-model {
@@ -300,7 +300,7 @@ const torontoModelRefinement = \`
 <script id="cc-toronto-model-script">
 (() => {
   const add = (root, key, html) => {
-    if (!root || root.querySelector('[data-cc-model="' + key + '"]')) return;
+    if (!root || root.querySelector(\'[data-cc-model="\' + key + \'"]\')) return;
     const box = document.createElement("div");
     box.className = "cc-toronto-model";
     box.setAttribute("data-cc-model", key);
@@ -309,48 +309,21 @@ const torontoModelRefinement = \`
     inner.appendChild(box);
   };
 
-  const home = document.getElementById("page-home") || document.querySelector('[data-page="home"]');
-  const families = document.getElementById("page-families") || document.getElementById("page-childcare") || document.querySelector('[data-page="families"],[data-page="childcare"]');
-  const project = document.getElementById("page-project") || document.querySelector('[data-page="project"]');
-  const show = document.getElementById("page-show") || document.querySelector('[data-page="show"]');
-  const capital = document.getElementById("page-capital") || document.querySelector('[data-page="capital"]');
+  const home = document.getElementById("page-home") || document.querySelector(\'[data-page="home"]\');
+  const families = document.getElementById("page-families") || document.getElementById("page-childcare") || document.querySelector(\'[data-page="families"],[data-page="childcare"]\');
+  const project = document.getElementById("page-project") || document.querySelector(\'[data-page="project"]\');
+  const show = document.getElementById("page-show") || document.querySelector(\'[data-page="show"]\');
+  const capital = document.getElementById("page-capital") || document.querySelector(\'[data-page="capital"]\');
 
-  add(home, "toronto-home", \`
-    <div class="cc-model-kicker">Toronto working scenario</div>
-    <h3>One family proves the full engine.</h3>
-    <p><strong>Hopeton LaTouche is the featured Toronto family / tenant-owner.</strong> <strong>Michie Mee is the Toronto host.</strong> The episode follows the family through housing, work, groceries, mobility, childcare, community activation and the arena finale.</p>
-  \`);
-
-  add(families, "toronto-families", \`
-    <div class="cc-model-kicker">Families</div>
-    <h3>C$105,000 anchor household + a wider earning community.</h3>
-    <p>The Toronto working model uses a real C$105,000 annual tenant-owner employment position to stabilize the featured household. Household spending then supports housing, groceries through the project grocery lane, SweetEVRides mobility and childcare/family services. Only a small activation slice is intended to help switch on the wider Sideline Sitter network; Sideline Sitters are designed to earn mainly from external sales, referrals, sponsor activations, vendors and project commerce rather than from the tenant-owner salary.</p>
-    <p>Employment, housing, ownership, childcare, transportation and any mortgage underwriting remain separate documented relationships subject to applicable law, payroll deductions, lender criteria and signed agreements.</p>
-  \`);
-
-  add(project, "toronto-project", \`
-    <div class="cc-model-kicker">Toronto proof unit</div>
-    <h3>Family → home → work → commerce → community → show.</h3>
-    <p>Hopeton's household is the first Toronto tenant-owner story. Michie Mee hosts the journey. The property and workforce story is filmed alongside the restaurant/family experience, community participation, City Hall/transit activations and the arena performance. The aim is to leave an operating household and commercial network behind after the cameras move on.</p>
-  \`);
-
-  add(show, "toronto-show", \`
-    <div class="cc-model-kicker">Toronto episode</div>
-    <h3>Michie Mee hosts; Hopeton's family lives the transformation.</h3>
-    <p>The host guides viewers through the family story without replacing it. The episode connects the tenant-owner journey to local businesses, groceries, mobility, childcare, vendors, sponsors, artists and the live arena finale so the business activity is visible on screen.</p>
-  \`);
-
-  add(capital, "toronto-capital", \`
-    <div class="cc-model-kicker">Capital logic</div>
-    <h3>Capital is concentrated in anchor households, then multiplied through outside commerce.</h3>
-    <p>The working 12-month concept is a C$1.2M investment facility that can support up to ten C$105,000 tenant-owner employment positions (C$1.05M) plus a controlled reserve for employer costs, systems, compliance and commercialization. Hopeton is the Toronto proof household. A small activation allocation can connect each anchor household to a broader Sideline Sitter network, while most Sideline Sitter earnings are intended to come from external transactions, sponsor/vendor budgets, referrals and commerce.</p>
-    <p>Any investor return is a target, not a guarantee. Capital recovery, profit participation, collateral, reserves, lender priority and distributions require definitive agreements and actual collected revenue.</p>
-  \`);
+  add(home, "toronto-home", \'<div class="cc-model-kicker">Toronto working scenario</div><h3>One family proves the full engine.</h3><p><strong>Hopeton LaTouche is the featured Toronto family / tenant-owner.</strong> <strong>Michie Mee is the Toronto host.</strong> The episode follows the family through housing, work, groceries, mobility, childcare, community activation and the arena finale.</p>\');
+  add(families, "toronto-families", \'<div class="cc-model-kicker">Families</div><h3>C$105,000 anchor household + a wider earning community.</h3><p>The Toronto working model uses a real C$105,000 annual tenant-owner employment position to stabilize the featured household. Household spending then supports housing, groceries through the project grocery lane, SweetEVRides mobility and childcare/family services. Only a small activation slice is intended to help switch on the wider Sideline Sitter network; Sideline Sitters are designed to earn mainly from external sales, referrals, sponsor activations, vendors and project commerce rather than from the tenant-owner salary.</p><p>Employment, housing, ownership, childcare, transportation and any mortgage underwriting remain separate documented relationships subject to applicable law, payroll deductions, lender criteria and signed agreements.</p>\');
+  add(project, "toronto-project", \'<div class="cc-model-kicker">Toronto proof unit</div><h3>Family → home → work → commerce → community → show.</h3><p>Hopeton\'s household is the first Toronto tenant-owner story. Michie Mee hosts the journey. The property and workforce story is filmed alongside the restaurant/family experience, community participation, City Hall/transit activations and the arena performance. The aim is to leave an operating household and commercial network behind after the cameras move on.</p>\');
+  add(show, "toronto-show", \'<div class="cc-model-kicker">Toronto episode</div><h3>Michie Mee hosts; Hopeton\'s family lives the transformation.</h3><p>The host guides viewers through the family story without replacing it. The episode connects the tenant-owner journey to local businesses, groceries, mobility, childcare, vendors, sponsors, artists and the live arena finale so the business activity is visible on screen.</p>\');
+  add(capital, "toronto-capital", \'<div class="cc-model-kicker">Capital logic</div><h3>Capital is concentrated in anchor households, then multiplied through outside commerce.</h3><p>The working 12-month concept is a C$1.2M investment facility that can support up to ten C$105,000 tenant-owner employment positions (C$1.05M) plus a controlled reserve for employer costs, systems, compliance and commercialization. Hopeton is the Toronto proof household. A small activation allocation can connect each anchor household to a broader Sideline Sitter network, while most Sideline Sitter earnings are intended to come from external transactions, sponsor/vendor budgets, referrals and commerce.</p><p>Any investor return is a target, not a guarantee. Capital recovery, profit participation, collateral, reserves, lender priority and distributions require definitive agreements and actual collected revenue.</p>\');
 })();
 </script>
 <!-- /CARNIVAL CAREERS TORONTO MODEL REFINEMENT -->
-\`;
-
+`;
 let renderedHtml = canonicalHtml;
 if (!renderedHtml.includes('id="cc-shopify-traffic"')) {
   if (!renderedHtml.includes("</body>")) {
