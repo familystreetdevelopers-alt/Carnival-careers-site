@@ -1,4 +1,10 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/assets/:path*",
+      "destination": "https://carnival-careers-live-current-e48jkmizt.vercel.app/assets/:path*"
+    }
+  ]
 }
