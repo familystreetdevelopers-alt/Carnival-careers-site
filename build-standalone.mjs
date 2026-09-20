@@ -84,7 +84,7 @@ const trafficFunnel = `
 
 
 const contrastGuard = `
-<!-- CARNIVAL CAREERS LEGIBILITY GUARD: FIX ONLY LOW-CONTRAST LIGHT TEXT ON LIGHT SURFACES -->
+<!-- CARNIVAL CAREERS CARD LEGIBILITY GUARD: FIX ONLY LOW-CONTRAST LIGHT TEXT INSIDE CARDS -->
 <style id="cc-legibility-guard-style">
   [data-cc-contrast-fixed="1"] {
     color: #161616 !important;
@@ -94,6 +94,14 @@ const contrastGuard = `
 <script id="cc-legibility-guard-script">
 (() => {
   const CANDIDATES = "h1,h2,h3,h4,h5,h6,p,a,span,li,dt,dd,label,strong,em,small,button,summary,figcaption,blockquote,td,th,div";
+
+  const isCardRoot = (el) => {
+    if (!(el instanceof Element)) return false;
+    if (el.matches(".project-pro,.project-lane,.project-step")) return true;
+    return Array.from(el.classList).some(
+      name => name === "card" || /-card$/.test(name)
+    );
+  };
 
   const parseRgb = (value) => {
     const m = String(value || "").match(/rgba?\\(([^)]+)\\)/i);
@@ -200,24 +208,30 @@ const contrastGuard = `
       el.removeAttribute("data-cc-contrast-fixed");
     });
 
-    document.querySelectorAll(CANDIDATES).forEach(el => {
-      if (el.closest("svg,canvas,video,picture")) return;
-      if (el.matches("div") && !hasOwnText(el)) return;
+    const cardRoots = Array.from(document.querySelectorAll("[class]")).filter(isCardRoot);
 
-      const cs = getComputedStyle(el);
-      if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) < 0.2) return;
+    cardRoots.forEach(root => {
+      const targets = [root, ...root.querySelectorAll(CANDIDATES)];
 
-      const fg = parseRgb(cs.color);
-      const bg = effectiveBackground(el);
-      if (!fg || !bg || fg.a < 0.85) return;
+      targets.forEach(el => {
+        if (el.closest("svg,canvas,video,picture")) return;
+        if (el.matches("div") && !hasOwnText(el) && el !== root) return;
 
-      const fgL = relativeLuminance(fg);
-      const bgL = relativeLuminance(bg);
-      const ratio = contrastRatio(fg, bg);
+        const cs = getComputedStyle(el);
+        if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) < 0.2) return;
 
-      if (fgL >= 0.55 && bgL >= 0.72 && ratio < 3.15) {
-        el.setAttribute("data-cc-contrast-fixed", "1");
-      }
+        const fg = parseRgb(cs.color);
+        const bg = effectiveBackground(el);
+        if (!fg || !bg || fg.a < 0.85) return;
+
+        const fgL = relativeLuminance(fg);
+        const bgL = relativeLuminance(bg);
+        const ratio = contrastRatio(fg, bg);
+
+        if (fgL >= 0.55 && bgL >= 0.72 && ratio < 3.15) {
+          el.setAttribute("data-cc-contrast-fixed", "1");
+        }
+      });
     });
   };
 
@@ -291,7 +305,7 @@ fs.writeFileSync(
       shopify_traffic_funnel: true,
       shopify_campaign: "trending_pet_picks",
       pet_picks_press_kit: true,
-      legibility_guard_light_on_light_only: true
+      legibility_guard_card_light_on_light_only: true
     },
     null,
     2
@@ -303,5 +317,5 @@ console.log(
   Buffer.byteLength(renderedHtml),
   "SHOPIFY_TRAFFIC_FUNNEL=ON",
   "PET_PICKS_PRESS_KIT=ON",
-  "LEGIBILITY_GUARD=ON"
+  "LEGIBILITY_GUARD=CARDS_ONLY"
 );
