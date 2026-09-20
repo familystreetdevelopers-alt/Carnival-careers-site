@@ -48,28 +48,18 @@ if (dirs.length === 1 && files.length === 0) sourceRoot = path.join(extract, dir
 fs.cpSync(sourceRoot, dist, { recursive: true });
 if (!fs.existsSync(path.join(dist, "index.html"))) throw new Error("Extracted standalone has no root index.html");
 
-const homeIndexPath = path.join(dist, "index.html");
-let homeHtml = fs.readFileSync(homeIndexPath, "utf8");
-const homeStoryMarker = `</section>
-<section class="section recovery-route-section">
-<div class="wrap">
-<div class="eyebrow darkey">MONEY ROUTES</div>`;
-const homeStoryBlock = `</section>
-<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;">
-<div class="wrap" style="max-width:1180px;">
-<div class="eyebrow darkey">ONE CITY · ONE FULL STORY</div>
-<h2 style="font-size:clamp(35px,4vw,62px);letter-spacing:-.04em;margin-bottom:22px;">What the hosts experience in one episode.</h2>
-<p style="max-width:1080px;font-size:clamp(17px,1.55vw,21px);line-height:1.75;color:#4b5563;margin:0;">In each city, the hosts arrive as the audience’s guides into a complete Carnival Careers story: they meet the selected family and local workers, spend time with them at a major women’s sports game as part of the city experience, move through the arena with the cast while capturing the energy of the fans, merchandise, food, sponsors and game-day economy, then sit down together for the family dinner inside the arena restaurant, where the personal story, ambitions and challenges of the family become the emotional foundation of the episode. From there, the hosts follow the family through the housing journey—property selection, design decisions, construction or renovation, employment and ownership planning—while also participating in the city’s transit activation, City Hall and community moments, Carnival and cultural experiences, rehearsals and behind-the-scenes television production. The episode builds toward the completed home reveal and then the arena concert, where the same hosts who spent the week getting to know the family now bring that story in front of thousands of people, connecting the family, the city, the sports organization, artists, sponsors and audience into one continuous experience. By the time they leave the city, the hosts have not simply presented a concert or interviewed a family; they have lived through the city with them, attended its games, eaten together, watched a home and employment pathway take shape, participated in its culture, and carried the entire story from the first introduction to the final arena stage.</p>
-</div>
-</section>
-<section class="section recovery-route-section">
-<div class="wrap">
-<div class="eyebrow darkey">MONEY ROUTES</div>`;
-
-if (!homeHtml.includes(homeStoryMarker)) throw new Error("Home story insertion point not found");
-homeHtml = homeHtml.replace(homeStoryMarker, homeStoryBlock);
-fs.writeFileSync(homeIndexPath, homeHtml);
-
+const canonicalIndexPath = path.resolve("index.html");
+if (!fs.existsSync(canonicalIndexPath)) throw new Error("Canonical GitHub index.html is missing.");
+const canonicalHtml = fs.readFileSync(canonicalIndexPath, "utf8");
+const requiredCanonicalMarkers = [
+  "The mas brings us together.",
+  "Tell me who you are.",
+  'id="page-music"'
+];
+for (const marker of requiredCanonicalMarkers) {
+  if (!canonicalHtml.includes(marker)) throw new Error(`Canonical HTML marker missing: ${marker}`);
+}
+fs.writeFileSync(path.join(dist, "index.html"), canonicalHtml);
 
 const videoPath = path.join(dist, "assets/video/carnival-careers.mp4");
 const videoBytes = fs.readFileSync(videoPath);
@@ -82,7 +72,7 @@ fs.writeFileSync(path.join(dist, "STANDALONE-BUILD-VERIFIED.json"), JSON.stringi
   zip_bytes: zipBytes.length,
   video_sha256: actualVideoSha,
   video_bytes: videoBytes.length,
-  exact_uploaded_standalone: true
+  exact_uploaded_standalone: true,\n  canonical_html_from_github: true,\n  canonical_html_bytes: Buffer.byteLength(canonicalHtml)
 }, null, 2));
 
 console.log("EXACT_STANDALONE_VERIFIED", actualZipSha, actualVideoSha, videoBytes.length);
