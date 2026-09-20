@@ -2,7 +2,8 @@
   "name": "carnival-careers-exact-standalone",
   "private": true,
   "scripts": {
-    "build": "node build-standalone.mjs && node distribution-pages.mjs"
+    "verify": "node --check build-standalone.mjs && node --check distribution-pages.mjs",
+    "build": "npm run verify && node build-standalone.mjs && node distribution-pages.mjs"
   },
   "dependencies": {
     "adm-zip": "^0.5.16"
