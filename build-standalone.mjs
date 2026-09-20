@@ -58,52 +58,39 @@ const contrastGuard = `
 </script>`;
 
 const projectCopy = `
-<style id="cc-eat-your-keep-style">
+<style id="cc-eat-you-keep-style">
   .cc-plain-core{margin:22px 0 4px;padding:20px;border-radius:18px;border:1px solid rgba(112,72,232,.24);background:linear-gradient(135deg,rgba(112,72,232,.10),rgba(237,56,161,.08));color:inherit}
   .cc-plain-core h3{margin:0 0 8px;font-size:clamp(1.22rem,2vw,1.55rem);line-height:1.12}
-  .cc-plain-core p{margin:7px 0;max-width:74ch}
+  .cc-plain-core p{margin:7px 0;max-width:72ch}
   .cc-plain-core strong{font-weight:850}
   .cc-plain-core .cc-kicker{font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px}
 </style>
-<script id="cc-eat-your-keep-script">
+<script id="cc-eat-you-keep-script">
 (() => {
-  const findPage=(...ids)=>ids.map(id=>document.getElementById(id)).find(Boolean)||null;
-  const place=(root,key,html)=>{
-    if(!root)return;
-    const inner=root.querySelector(".page-inner,.content,.section-inner,.container,.wrap,main")||root;
-    let box=inner.querySelector('[data-cc-core="'+key+'"]');
-    if(!box){box=document.createElement("div");box.className="cc-plain-core";box.setAttribute("data-cc-core",key);inner.appendChild(box);}
-    box.innerHTML=html;
+  const findPage = (...ids) => ids.map(id => document.getElementById(id)).find(Boolean) || null;
+  const place = (root, key, html) => {
+    if(!root) return;
+    const inner = root.querySelector(".page-inner,.content,.section-inner,.container,main") || root;
+    let box = inner.querySelector('[data-cc-core="' + key + '"]');
+    if(!box){ box=document.createElement("div"); box.className="cc-plain-core"; box.setAttribute("data-cc-core", key); inner.appendChild(box); }
+    box.innerHTML = html;
   };
+  const home = findPage("page-home") || document.querySelector('[data-page="home"]');
+  const families = findPage("page-families","page-childcare") || document.querySelector('[data-page="families"],[data-page="childcare"]');
+  const project = findPage("page-project") || document.querySelector('[data-page="project"]');
+  const show = findPage("page-show") || document.querySelector('[data-page="show"]');
+  const capital = findPage("page-capital") || document.querySelector('[data-page="capital"]');
+  const store = findPage("page-store","page-shop","page-commerce") || document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"]');
 
-  const home=findPage("page-home")||document.querySelector('[data-page="home"]');
-  const families=findPage("page-families","page-childcare")||document.querySelector('[data-page="families"],[data-page="childcare"]');
-  const project=findPage("page-project")||document.querySelector('[data-page="project"]');
-  const show=findPage("page-show")||document.querySelector('[data-page="show"]');
-  const capital=findPage("page-capital")||document.querySelector('[data-page="capital"]');
-  const store=findPage("page-store","page-shop","page-commerce")||document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"]');
-
-  const hero=document.querySelector("#page-project .project-hero");
-  if(hero){
-    const h=hero.querySelector("h1");
-    const p=hero.querySelector("p");
-    if(h)h.textContent="One woman. One family. Real change.";
-    if(p)p.textContent="Michie Mee is the highlighted Toronto woman and host. Hopeton LaTouche is the featured family / tenant-owner. Their relationship moves through dinner, work, home, food, mobility, childcare, local commerce and community before the arena becomes the public victory lap.";
-  }
-
-  place(home,"core-home",'<div class="cc-kicker">Toronto proof</div><h3>Contribution becomes stability, ownership and public recognition.</h3><p><strong>Michie Mee is the highlighted Toronto woman and host.</strong> <strong>Hopeton LaTouche is the featured family / tenant-owner.</strong> Michie brings cultural memory, contribution and a public platform. Hopeton\\'s household brings work, caregiving, resilience, culture, local spending and a real ownership journey. Carnival Careers connects those contributions to tangible change.</p>');
-
-  place(families,"core-families",'<div class="cc-kicker">Families</div><h3>Work. Eat. Move. Care. Own.</h3><p>A qualifying tenant-owner role is modeled at <strong>C$105,000 gross a year</strong> for real work. The household uses its income for real life: housing, <strong>Eat Your Keep</strong> groceries, SweetEVRides mobility, childcare and everything else a family needs. Sideline Sitters earn mainly from sales, referrals, vendors, sponsors and paid project work - not by taking the family\\'s salary.</p>');
-
-  place(project,"core-project",'<div class="cc-kicker">The project</div><h3>The business makes the story real.</h3><p>The relationship starts with the highlighted woman and family, then moves through dinner, history, home, work, Eat Your Keep, mobility, childcare, local business and community participation. The arena comes last, after the project has produced real evidence that something changed.</p>');
-
-  place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Recognition → relationship → tangible change → triumph.</h3><p>The episode is not a concert with a family segment attached. The family and the woman carry one story all the way through. The city sees what changed before it celebrates the journey in the arena. Nothing after the arena should be emotionally bigger.</p>');
-
-  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Different money has different jobs.</h3><p>The current working stack is <strong>C$17.553M</strong>. Senior property money handles most property cost; vendors and activation partners handle much of show/media cost; investor capital fills the smallest useful controlled gap; acquisition and working-capital lanes stay separate. The current repayment model is <strong>C$18.712M</strong> of modeled receipts/returns, leaving a <strong>C$1.159M modeled surplus</strong> before financing costs, tax and final adjustments. Targets are not commitments.</p>');
-
-  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Buy groceries. Build ownership.</h3><p>The goal is simple: people already buy food, so eligible shopping should help members build a stake in the grocery store instead of acting like ordinary loyalty points. The final member/share/co-operative structure, tax treatment, redemption rules and receipt wording must be approved before launch.</p>');
+  place(home,"core-home",'<div class="cc-kicker">Toronto story</div><h3>Contribution. Stability. Ownership.</h3><p><strong>Hopeton LaTouche’s household is the featured Toronto family / tenant-owner story.</strong> <strong>Michie Mee is the episode host.</strong> Michie brings cultural memory, contribution and a public platform. Hopeton’s household brings work, caregiving, resilience, culture, local spending and a real ownership journey. Carnival Careers connects those contributions to tangible change before the arena becomes the public victory lap.</p>');
+  place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The family’s contribution comes before the support model.</h3><p>Work, caregiving, culture, neighbourhood relationships, resilience and ownership ambition are already contributions. Carnival Careers can add documented work/income pathways, housing/ownership progress, mobility, childcare/family supports and partner connections. A qualifying tenant-owner role is modeled at C$105,000 gross a year for real documented work when funded and activated. The household uses that income for housing, Eat Your Keep groceries, SweetEVRides mobility, childcare and normal family needs.</p>');
+  place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family makes the city stakes visible.</h3><p>Toronto moves from Michie and the family relationship through dinner, history, work, home/ownership, Eat Your Keep, mobility, childcare, local commerce and community participation. The arena comes last, after the project has produced real evidence that something changed.</p>');
+  place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee carries the relationship and recognition.</h3><p>The episode follows recognition → relationship → tangible change → public triumph. Michie Mee is the highlighted Toronto woman and host; Hopeton LaTouche is the featured family / tenant-owner. Nothing after the arena should be emotionally bigger.</p>');
+  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Capital finances the outcome behind the story.</h3><p>The current working stack is C$17.553M. Senior property money handles most property cost; vendors and activation partners handle much of show/media cost; investor capital fills the smallest useful controlled gap; acquisition and working-capital lanes stay separate. The current repayment model is C$18.712M of modeled receipts/returns, leaving a C$1.159M modeled surplus before financing costs, tax and final adjustments. Targets are not commitments.</p>');
+  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Everyday commerce should leave measurable community value.</h3><p>Buy groceries. Build ownership. Eligible shopping should help members build a stake in the grocery store instead of acting like ordinary loyalty points. The final member/share/co-operative structure, tax treatment, redemption rules and receipt wording must be approved before launch.</p>');
 })();
 </script>`;
+
 
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
@@ -193,9 +180,9 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   toronto_featured_family: "Hopeton LaTouche",
   toronto_host: "Michie Mee",
   grocery_ownership_program: "Eat Your Keep",
+  stacked_story_blocks_removed: true,
   plain_language_refactor: true,
   unified_story_spine: true,
-  stacked_story_blocks_removed: true,
   family_social_contribution: true,
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
@@ -203,4 +190,4 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   trailer_modal_audio: true
 }, null, 2));
 
-console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "PLAIN_LANGUAGE=ON", "STACKED_STORY_BLOCKS=OFF");
+console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOU_KEEP=ON", "PLAIN_LANGUAGE=ON");
