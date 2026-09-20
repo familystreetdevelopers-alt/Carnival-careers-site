@@ -83,7 +83,7 @@ const trafficFunnel = `
 `;
 
 
-const contrastGuard = \`
+const contrastGuard = `
 <!-- CARNIVAL CAREERS LEGIBILITY GUARD: FIX ONLY LOW-CONTRAST LIGHT TEXT ON LIGHT SURFACES -->
 <style id="cc-legibility-guard-style">
   [data-cc-contrast-fixed="1"] {
@@ -259,7 +259,7 @@ const contrastGuard = \`
 })();
 </script>
 <!-- /CARNIVAL CAREERS LEGIBILITY GUARD -->
-\`;
+`;
 
 let renderedHtml = canonicalHtml;
 if (!renderedHtml.includes('id="cc-shopify-traffic"')) {
