@@ -91,8 +91,144 @@ const projectCopy = `
 })();
 </script>`;
 
+
+const storyUnification = \`
+<style id="cc-story-spine-style">
+  .cc-story-spine{margin:22px 0;padding:22px;border-radius:20px;border:1px solid rgba(255,196,77,.28);background:linear-gradient(135deg,rgba(255,196,77,.12),rgba(49,223,204,.07));color:inherit}
+  .cc-story-spine h3{margin:0 0 9px;font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.08}
+  .cc-story-spine p{margin:8px 0;max-width:78ch;line-height:1.62}
+  .cc-story-spine .cc-story-kicker{font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+  .cc-story-spine .cc-story-arc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}
+  .cc-story-spine .cc-story-arc span{display:block;padding:11px;border-radius:12px;background:rgba(255,255,255,.06);font-size:.8rem;font-weight:800}
+  .cc-story-spine .cc-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:15px}
+  .cc-story-spine .cc-timeline div{padding:12px;border-radius:12px;background:rgba(255,255,255,.06)}
+  .cc-story-spine .cc-timeline b{display:block;color:var(--aqua);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+  .light .cc-story-spine{background:linear-gradient(135deg,#fff7df,#fff 55%,#eefcf9);border-color:rgba(179,122,0,.22);color:var(--ink)}
+  .light .cc-story-spine .cc-story-arc span,.light .cc-story-spine .cc-timeline div{background:rgba(15,25,40,.055)}
+  @media(max-width:800px){.cc-story-spine .cc-story-arc,.cc-story-spine .cc-timeline{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.cc-story-spine .cc-story-arc,.cc-story-spine .cc-timeline{grid-template-columns:1fr}}
+</style>
+<script id="cc-story-spine-script">
+(() => {
+  const findPage=(...ids)=>ids.map(id=>document.getElementById(id)).find(Boolean)||null;
+  const put=(root,key,html)=>{
+    if(!root)return;
+    const inner=root.querySelector(".page-inner,.content,.section-inner,.container,.wrap,main")||root;
+    let box=inner.querySelector('[data-cc-story="'+key+'"]');
+    if(!box){box=document.createElement("div");box.className="cc-story-spine";box.setAttribute("data-cc-story",key);inner.appendChild(box);}
+    box.innerHTML=html;
+  };
+  const home=findPage("page-home")||document.querySelector('[data-page="home"]');
+  const families=findPage("page-families","page-childcare")||document.querySelector('[data-page="families"],[data-page="childcare"]');
+  const project=findPage("page-project")||document.querySelector('[data-page="project"]');
+  const show=findPage("page-show")||document.querySelector('[data-page="show"]');
+  const capital=findPage("page-capital")||document.querySelector('[data-page="capital"]');
+  const partners=findPage("page-partners","page-sponsors")||document.querySelector('[data-page="partners"],[data-page="sponsors"]');
+
+  const hero=document.querySelector("#page-project .project-hero");
+  if(hero){
+    const h=hero.querySelector("h1");
+    const p=hero.querySelector("p");
+    if(h)h.textContent="A woman brings her contribution. A family brings theirs. The city helps turn both into something that lasts.";
+    if(p)p.textContent="Every city begins with people whose contribution deserves to be seen more clearly. The episode host brings cultural memory, mentorship, relationships and a public platform. The chosen family brings work, caregiving, resilience, culture, local spending and a real ownership journey. Dinner opens the relationship; the home, work, businesses and community make the stakes visible; the arena concert comes last as the victory lap after something real has been built.";
+  }
+
+  put(home,"home-social",'<div class="cc-story-kicker">Why the people matter</div><h3>The family and the host are contributors — not props.</h3><p><strong>The featured family contributes to society</strong> through work, caregiving, culture, local spending, relationships, resilience and the decision to let a real housing and ownership journey be seen. <strong>The episode host contributes</strong> history, cultural memory, mentorship, credibility, relationships and a public platform that helps the city recognize people and contributions that are often under-told.</p><p>Toronto follows Hopeton LaTouche\\'s household as the featured family / tenant-owner story, with Michie Mee as episode host.</p>');
+
+  put(families,"family-social",'<div class="cc-story-kicker">Family contribution</div><h3>The transformation starts by recognizing what the family already gives.</h3><p>The family is not presented as a passive beneficiary. Their labour, caregiving, neighbourhood relationships, culture, purchases, ambitions and lived experience already help hold a city together. Carnival Careers adds documented work and income pathways, housing/ownership progress, mobility and family supports so that contribution can become more stable, visible and investable.</p>');
+
+  put(project,"project-arc",'<div class="cc-story-kicker">One story across every city</div><h3>Relationship first. Arena finale last.</h3><p>The same narrative spine governs the project, television, partnerships and capital story.</p><div class="cc-story-arc"><span>1 · Host / woman + her contribution</span><span>2 · Chosen family + dinner</span><span>3 · Home, work, ownership + local commerce</span><span>4 · Community, transit + Carnival culture</span><span>5 · Family/home reveal</span><span>6 · Arena finale</span><span>7 · Settlement + partner proof</span><span>8 · Next city only after evidence</span></div>');
+
+  put(show,"show-social",'<div class="cc-story-kicker">What the episode leaves behind</div><h3>The host carries the story. The family proves the stakes.</h3><p>The host does more than present: she uses her own history and public platform to connect the family to the city, surface overlooked contributions, ask the questions the audience needs answered and carry the relationship from dinner to the arena stage. The family does more than receive: they work, choose, participate, spend locally, share their reality and help demonstrate whether the model can produce lasting housing, income, ownership, commerce and community value.</p><p>The concert is the celebration at the end — not the beginning of the story.</p>');
+
+  put(capital,"capital-12m",'<div class="cc-story-kicker">12-month capital execution</div><h3>Capital follows the same story arc.</h3><p>The 12-month investment story is execution, proof and settlement — while genuinely long-term obligations stay outside the artificial one-year box.</p><div class="cc-timeline"><div><b>Months 1–2</b>Legal structure, diligence, family/host story, venue/talent/partner pathways, source-backed data room.</div><div><b>Months 3–4</b>Capital and sponsor conversion, property/family diligence, workforce and production scoping.</div><div><b>Months 5–6</b>Evidence-backed contracting of venue/talent/production/vendors/workforce as gates are cleared.</div><div><b>Months 7–9</b>Property/workforce execution, commerce, community activation, ticketing/marketing and filming preparation.</div><div><b>Months 10–11</b>Family transformation, city/transit/Carnival activation, production advance, episode filming and arena finale.</div><div><b>Month 12</b>Settlement, investor reporting, sponsor proof, episode deliverables and replication decision.</div><div><b>Beyond Month 12</b>Mortgage amortization, refinance, tenant-owner conversion and long-term property holding.</div><div><b>Longer horizon</b>Residual media rights, long-tail cash flow and the wider 65-city rollout continue on their real timelines.</div></div><p><strong>Nothing is forced into Month 12 if its legal or economic life is longer.</strong> Investor recovery and participation depend on definitive agreements and actual collected cash, not projections.</p>');
+
+  put(partners,"partner-social",'<div class="cc-story-kicker">What partners are helping make visible</div><h3>Support the people, not just the logo inventory.</h3><p>Partner value is tied to visible outcomes: recognition of the host\\'s cultural and social contribution, stability and ownership progress for the family, paid work, local businesses, useful services, community participation and measurable proof after the event. The arena provides scale; the social contribution is what gives that scale meaning.</p>');
+
+  const episode=document.getElementById("episode-experience");
+  if(episode){
+    const head=episode.querySelector(".head");
+    if(head && !head.querySelector('[data-cc-story="episode-contribution"]')){
+      const box=document.createElement("div");
+      box.className="cc-story-spine";
+      box.setAttribute("data-cc-story","episode-contribution");
+      box.innerHTML='<div class="cc-story-kicker">Contribution to society</div><h3>Two contributions move the episode.</h3><p><strong>The host brings public service through recognition:</strong> cultural memory, mentorship, context, relationships and a platform that can turn overlooked work into a visible city story. <strong>The family brings lived contribution:</strong> work, caregiving, culture, resilience, spending, relationships and the courage to make a real transition visible. The episode is strongest when viewers see what both already give before they see what the project adds.</p>';
+      head.appendChild(box);
+    }
+  }
+})();
+</script>\`;
+
+const trailerExperience = \`
+<style id="cc-trailer-modal-style">
+  #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
+  #cc-trailer-modal.open{display:flex}
+  #cc-trailer-shell{position:relative;width:min(1100px,96vw);max-height:92vh;border-radius:24px;overflow:hidden;background:#03070d;border:1px solid rgba(255,255,255,.18);box-shadow:0 32px 100px rgba(0,0,0,.65)}
+  #cc-trailer-video{display:block;width:100%;max-height:82vh;background:#000}
+  #cc-trailer-close{position:absolute;right:14px;top:14px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(3,7,13,.82);color:#fff;font-size:24px;cursor:pointer}
+  #cc-trailer-label{padding:12px 18px;color:#dfe7f2;font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+  #homeTrailerOpen{background:var(--pink)!important;color:#fff!important;border-color:var(--pink)!important}
+</style>
+<script id="cc-trailer-modal-script">
+(() => {
+  const init=()=>{
+    const hero=document.getElementById("homeVideo");
+    if(!hero)return;
+    const actions=hero.closest("section")?.querySelector(".actions")||document.querySelector("#page-home .actions");
+    if(!actions)return;
+    let openBtn=document.getElementById("homeTrailerOpen");
+    if(!openBtn){
+      openBtn=document.createElement("button");
+      openBtn.type="button";
+      openBtn.id="homeTrailerOpen";
+      openBtn.className="btn";
+      openBtn.textContent="See trailer";
+      const pauseBtn=document.getElementById("homeVideoToggle");
+      if(pauseBtn)actions.insertBefore(openBtn,pauseBtn); else actions.appendChild(openBtn);
+    }
+    let modal=document.getElementById("cc-trailer-modal");
+    if(!modal){
+      modal=document.createElement("div");
+      modal.id="cc-trailer-modal";
+      modal.setAttribute("role","dialog");
+      modal.setAttribute("aria-modal","true");
+      modal.setAttribute("aria-label","Carnival Careers trailer");
+      modal.innerHTML='<div id="cc-trailer-shell"><button id="cc-trailer-close" type="button" aria-label="Close trailer">×</button><video id="cc-trailer-video" controls playsinline preload="metadata"></video><div id="cc-trailer-label">Carnival Careers · trailer with sound</div></div>';
+      document.body.appendChild(modal);
+    }
+    const player=modal.querySelector("#cc-trailer-video");
+    const closeBtn=modal.querySelector("#cc-trailer-close");
+    const source=hero.querySelector("source")?.getAttribute("src")||hero.getAttribute("src")||hero.currentSrc;
+    let heroWasPlaying=false;
+    const close=()=>{
+      player.pause();
+      try{player.currentTime=0;}catch(e){}
+      modal.classList.remove("open");
+      document.body.style.overflow="";
+      if(heroWasPlaying){hero.muted=true;hero.play().catch(()=>{});}
+      openBtn.focus();
+    };
+    openBtn.addEventListener("click",()=>{
+      heroWasPlaying=!hero.paused;
+      hero.pause();
+      if(source && player.getAttribute("src")!==source){player.setAttribute("src",source);player.load();}
+      player.muted=false;
+      player.volume=1;
+      modal.classList.add("open");
+      document.body.style.overflow="hidden";
+      player.play().catch(()=>{});
+      closeBtn.focus();
+    });
+    closeBtn.addEventListener("click",close);
+    modal.addEventListener("click",e=>{if(e.target===modal)close();});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))close();});
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true}); else init();
+})();
+</script>\`;
+
 let renderedHtml = canonicalHtml;
-for (const block of [trafficFunnel, projectCopy, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, storyUnification, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -111,7 +247,13 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   toronto_featured_family: "Hopeton LaTouche",
   toronto_host: "Michie Mee",
   grocery_ownership_program: "Eat Your Keep",
-  plain_language_refactor: true
+  plain_language_refactor: true,
+  unified_story_spine: true,
+  family_social_contribution: true,
+  host_social_contribution: true,
+  financial_execution_timeline_months: 12,
+  longer_horizon_separated: true,
+  trailer_modal_audio: true
 }, null, 2));
 
 console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOU_KEEP=ON", "PLAIN_LANGUAGE=ON");
