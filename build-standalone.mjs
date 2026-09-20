@@ -86,8 +86,8 @@ const projectCopy = `
   place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The C$105K job supports the whole household.</h3><p>The money is not just a paycheque. It helps cover housing, groceries, SweetEVRides mobility and childcare. A small activation slice connects more people to paid opportunities. The wider community earns mostly from real sales, referrals, vendors, sponsors and project work.</p>');
   place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family proves the model.</h3><p>Toronto follows Hopeton\'s family from work and home into groceries, mobility, childcare, community activation and the arena finale. The point is simple: the show leaves behind an operating household, customers, partners and ownership pathways.</p>');
   place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee hosts the journey.</h3><p>The host guides the audience. Hopeton\'s family lives the story. The episode shows how regular spending - food, transport, childcare and entertainment - can help build owned community businesses.</p>');
-  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Eat You Keep turns grocery spending into member ownership.</h3><p>Customers who join the grocery ownership program do not just buy food. Eligible purchases build member equity in the grocery store, subject to the final co-op or share structure. Investor returns still need signed agreements and real collected revenue.</p>');
-  place(store,"core-store",'<div class="cc-kicker">Eat You Keep</div><h3>Buy groceries. Build ownership.</h3><p>Every eligible grocery run can add to a member-owner account instead of disappearing as ordinary spending. The store earns revenue, the family gets food, and the customer builds a stake in the place feeding the community.</p>');
+  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Eat Your Keep turns grocery spending into member ownership.</h3><p>Customers who join the grocery ownership program do not just buy food. Eligible purchases build member equity in the grocery store, subject to the final co-op or share structure. Investor returns still need signed agreements and real collected revenue.</p>');
+  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Buy groceries. Build ownership.</h3><p>Every eligible grocery run can add to a member-owner account instead of disappearing as ordinary spending. The store earns revenue, the family gets food, and the customer builds a stake in the place feeding the community.</p>');
 })();
 </script>`;
 
@@ -110,7 +110,7 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   legibility_guard_card_light_on_light_only: true,
   toronto_featured_family: "Hopeton LaTouche",
   toronto_host: "Michie Mee",
-  grocery_ownership_program: "Eat You Keep",
+  grocery_ownership_program: "Eat Your Keep",
   plain_language_refactor: true
 }, null, 2));
 
