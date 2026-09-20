@@ -72,7 +72,9 @@ fs.writeFileSync(path.join(dist, "STANDALONE-BUILD-VERIFIED.json"), JSON.stringi
   zip_bytes: zipBytes.length,
   video_sha256: actualVideoSha,
   video_bytes: videoBytes.length,
-  exact_uploaded_standalone: true,\n  canonical_html_from_github: true,\n  canonical_html_bytes: Buffer.byteLength(canonicalHtml)
+  exact_uploaded_standalone: true,
+  canonical_html_from_github: true,
+  canonical_html_bytes: Buffer.byteLength(canonicalHtml)
 }, null, 2));
 
 console.log("EXACT_STANDALONE_VERIFIED", actualZipSha, actualVideoSha, videoBytes.length);
