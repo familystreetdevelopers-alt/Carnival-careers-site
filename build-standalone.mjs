@@ -83,65 +83,183 @@ const trafficFunnel = `
 `;
 
 
-const contrastGuard = `
-<!-- CARNIVAL CAREERS LEGIBILITY GUARD: ONLY LIGHT TEXT ON LIGHT SOLID BACKGROUNDS -->
+const contrastGuard = \`
+<!-- CARNIVAL CAREERS LEGIBILITY GUARD: FIX ONLY LOW-CONTRAST LIGHT TEXT ON LIGHT SURFACES -->
 <style id="cc-legibility-guard-style">
   [data-cc-contrast-fixed="1"] {
-    color: #171717 !important;
+    color: #161616 !important;
     text-shadow: none !important;
   }
 </style>
 <script id="cc-legibility-guard-script">
 (() => {
-  const CANDIDATES = "h1,h2,h3,h4,h5,h6,p,a,span,li,dt,dd,label,strong,em,small,button,summary,figcaption,blockquote";
+  const CANDIDATES = "h1,h2,h3,h4,h5,h6,p,a,span,li,dt,dd,label,strong,em,small,button,summary,figcaption,blockquote,td,th,div";
+
   const parseRgb = (value) => {
     const m = String(value || "").match(/rgba?\\(([^)]+)\\)/i);
     if (!m) return null;
     const parts = m[1].split(",").map(v => Number.parseFloat(v.trim()));
     if (parts.length < 3 || parts.some((v, i) => i < 3 && !Number.isFinite(v))) return null;
-    return { r: parts[0], g: parts[1], b: parts[2], a: Number.isFinite(parts[3]) ? parts[3] : 1 };
+    return {
+      r: Math.max(0, Math.min(255, parts[0])),
+      g: Math.max(0, Math.min(255, parts[1])),
+      b: Math.max(0, Math.min(255, parts[2])),
+      a: Number.isFinite(parts[3]) ? Math.max(0, Math.min(1, parts[3])) : 1
+    };
   };
-  const luminance = ({r,g,b}) => (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
-  const effectiveSolidBackground = (el) => {
+
+  const relativeLuminance = ({ r, g, b }) => {
+    const c = [r, g, b].map(v => {
+      const s = v / 255;
+      return s <= 0.04045 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+    });
+    return (0.2126 * c[0]) + (0.7152 * c[1]) + (0.0722 * c[2]);
+  };
+
+  const contrastRatio = (a, b) => {
+    const l1 = relativeLuminance(a);
+    const l2 = relativeLuminance(b);
+    return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+  };
+
+  const composite = (front, back) => {
+    const a = front.a + back.a * (1 - front.a);
+    if (a <= 0) return { r: 255, g: 255, b: 255, a: 1 };
+    return {
+      r: ((front.r * front.a) + (back.r * back.a * (1 - front.a))) / a,
+      g: ((front.g * front.a) + (back.g * back.a * (1 - front.a))) / a,
+      b: ((front.b * front.a) + (back.b * back.a * (1 - front.a))) / a,
+      a
+    };
+  };
+
+  const lightGradientColor = (backgroundImage) => {
+    const value = String(backgroundImage || "");
+    if (!value || value === "none") return null;
+    if (/url\\(/i.test(value)) return false;
+    if (!/gradient\\(/i.test(value)) return false;
+
+    const colors = [];
+    const re = /rgba?\\(([^)]+)\\)/gi;
+    let m;
+    while ((m = re.exec(value))) {
+      const c = parseRgb("rgb(" + m[1] + ")");
+      if (c) colors.push(c);
+    }
+    if (!colors.length) return false;
+    if (colors.some(c => c.a < 0.82 || relativeLuminance(c) < 0.72)) return false;
+
+    const total = colors.reduce(
+      (acc, c) => ({ r: acc.r + c.r, g: acc.g + c.g, b: acc.b + c.b }),
+      { r: 0, g: 0, b: 0 }
+    );
+    return {
+      r: total.r / colors.length,
+      g: total.g / colors.length,
+      b: total.b / colors.length,
+      a: 1
+    };
+  };
+
+  const effectiveBackground = (el) => {
+    const layers = [];
     let node = el;
+
     while (node && node.nodeType === 1) {
       const cs = getComputedStyle(node);
-      if (cs.backgroundImage && cs.backgroundImage !== "none") return null;
+      const gradient = lightGradientColor(cs.backgroundImage);
+
+      if (gradient === false) return null;
+      if (gradient) {
+        layers.push(gradient);
+        break;
+      }
+
       const bg = parseRgb(cs.backgroundColor);
-      if (bg && bg.a > 0.02 && bg.a < 0.92) return null;
-      if (bg && bg.a >= 0.92) return bg;
+      if (bg && bg.a > 0.01) {
+        layers.push(bg);
+        if (bg.a >= 0.995) break;
+      }
       node = node.parentElement;
     }
-    return { r: 255, g: 255, b: 255, a: 1 };
+
+    let result = { r: 255, g: 255, b: 255, a: 1 };
+    for (let i = layers.length - 1; i >= 0; i -= 1) {
+      result = composite(layers[i], result);
+    }
+    return result;
   };
+
+  const hasOwnText = (el) =>
+    Array.from(el.childNodes).some(
+      n => n.nodeType === Node.TEXT_NODE && String(n.textContent || "").trim().length > 0
+    );
+
   const refreshContrast = () => {
     document.querySelectorAll('[data-cc-contrast-fixed="1"]').forEach(el => {
       el.removeAttribute("data-cc-contrast-fixed");
     });
+
     document.querySelectorAll(CANDIDATES).forEach(el => {
       if (el.closest("svg,canvas,video,picture")) return;
+      if (el.matches("div") && !hasOwnText(el)) return;
+
       const cs = getComputedStyle(el);
-      if (cs.display === "none" || cs.visibility === "hidden") return;
+      if (cs.display === "none" || cs.visibility === "hidden" || Number(cs.opacity) < 0.2) return;
+
       const fg = parseRgb(cs.color);
-      const bg = effectiveSolidBackground(el);
-      if (!fg || !bg) return;
-      if (fg.a >= 0.85 && luminance(fg) >= 232 && luminance(bg) >= 238) {
+      const bg = effectiveBackground(el);
+      if (!fg || !bg || fg.a < 0.85) return;
+
+      const fgL = relativeLuminance(fg);
+      const bgL = relativeLuminance(bg);
+      const ratio = contrastRatio(fg, bg);
+
+      if (fgL >= 0.55 && bgL >= 0.72 && ratio < 3.15) {
         el.setAttribute("data-cc-contrast-fixed", "1");
       }
     });
   };
-  const run = () => requestAnimationFrame(refreshContrast);
+
+  let scheduled = false;
+  const run = () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      refreshContrast();
+    });
+  };
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", run, { once: true });
   } else {
     run();
   }
+
+  window.addEventListener("load", run, { once: true });
+  window.addEventListener("pageshow", run);
   window.addEventListener("hashchange", run);
+  window.addEventListener("popstate", run);
   window.addEventListener("resize", run, { passive: true });
+
+  if ("MutationObserver" in window) {
+    const observer = new MutationObserver(run);
+    observer.observe(document.documentElement, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "hidden", "aria-hidden"]
+    });
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run).catch(() => {});
+  }
 })();
 </script>
 <!-- /CARNIVAL CAREERS LEGIBILITY GUARD -->
-`;
+\`;
 
 let renderedHtml = canonicalHtml;
 if (!renderedHtml.includes('id="cc-shopify-traffic"')) {
