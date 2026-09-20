@@ -57,7 +57,7 @@ const contrastGuard = `
 })();
 </script>`;
 
-const projectCopy = \`
+const projectCopy = `
 <style id="cc-eat-your-keep-style">
   .cc-plain-core{margin:22px 0 4px;padding:20px;border-radius:18px;border:1px solid rgba(112,72,232,.24);background:linear-gradient(135deg,rgba(112,72,232,.10),rgba(237,56,161,.08));color:inherit}
   .cc-plain-core h3{margin:0 0 8px;font-size:clamp(1.22rem,2vw,1.55rem);line-height:1.12}
@@ -103,7 +103,7 @@ const projectCopy = \`
 
   place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Buy groceries. Build ownership.</h3><p>The goal is simple: people already buy food, so eligible shopping should help members build a stake in the grocery store instead of acting like ordinary loyalty points. The final member/share/co-operative structure, tax treatment, redemption rules and receipt wording must be approved before launch.</p>');
 })();
-</script>\`;
+</script>`;
 
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
