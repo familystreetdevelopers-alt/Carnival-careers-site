@@ -4,12 +4,16 @@ import crypto from "node:crypto";
 
 const dist = path.resolve("dist");
 const canonicalIndexPath = path.resolve("index.html");
+const pressKitPath = path.resolve("pet-picks-press.html");
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 
 if (!fs.existsSync(canonicalIndexPath)) {
   throw new Error("Canonical GitHub index.html is missing.");
+}
+if (!fs.existsSync(pressKitPath)) {
+  throw new Error("Pet Picks press kit is missing.");
 }
 
 const canonicalHtml = fs.readFileSync(canonicalIndexPath, "utf8");
@@ -87,6 +91,7 @@ if (!renderedHtml.includes('id="cc-shopify-traffic"')) {
 }
 
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
+fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.writeFileSync(
   path.join(dist, "CANONICAL-BUILD-VERIFIED.json"),
   JSON.stringify(
@@ -98,7 +103,8 @@ fs.writeFileSync(
       rendered_html_sha256: crypto.createHash("sha256").update(renderedHtml).digest("hex"),
       external_asset_rewrite: true,
       shopify_traffic_funnel: true,
-      shopify_campaign: "trending_pet_picks"
+      shopify_campaign: "trending_pet_picks",
+      pet_picks_press_kit: true
     },
     null,
     2
@@ -108,5 +114,6 @@ fs.writeFileSync(
 console.log(
   "CANONICAL_STATIC_BUILD_VERIFIED",
   Buffer.byteLength(renderedHtml),
-  "SHOPIFY_TRAFFIC_FUNNEL=ON"
+  "SHOPIFY_TRAFFIC_FUNNEL=ON",
+  "PET_PICKS_PRESS_KIT=ON"
 );
