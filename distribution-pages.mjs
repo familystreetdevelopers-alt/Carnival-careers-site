@@ -71,23 +71,23 @@ const channels = [
 
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function shell(title,description,body,robots="index,follow"){
-return \`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>\${esc(title)} | Carnival Careers Commerce</title><meta name="description" content="\${esc(description)}"><meta name="robots" content="\${robots}"><style>body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial,Helvetica,sans-serif}.w{max-width:820px;margin:auto;padding:48px 20px 80px}.e{color:#ff4b54;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900}h1{font-size:42px;line-height:1.05;margin:10px 0 16px}p,li{font-size:18px;line-height:1.6;color:#d1d1d1}.c{display:inline-block;background:#e30613;color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:999px;margin:12px 0 22px}.box{background:#151515;border:1px solid #2b2b2b;border-radius:14px;padding:20px;margin:24px 0}a{color:#fff}</style></head><body><main class="w">\${body}</main></body></html>\`;
+return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | Carnival Careers Commerce</title><meta name="description" content="${esc(description)}"><meta name="robots" content="${robots}"><style>body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial,Helvetica,sans-serif}.w{max-width:820px;margin:auto;padding:48px 20px 80px}.e{color:#ff4b54;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900}h1{font-size:42px;line-height:1.05;margin:10px 0 16px}p,li{font-size:18px;line-height:1.6;color:#d1d1d1}.c{display:inline-block;background:#e30613;color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:999px;margin:12px 0 22px}.box{background:#151515;border:1px solid #2b2b2b;border-radius:14px;padding:20px;margin:24px 0}a{color:#fff}</style></head><body><main class="w">${body}</main></body></html>`;
 }
 
 for(const [slug,title,description,product,body,tips] of seo){
  const target=product?product.url:collection;
- const link=\`\${target}?utm_source=organic&utm_medium=seo&utm_campaign=\${slug}\`;
- const productBox=product?\`<div class="box"><strong>Featured option:</strong> \${esc(product.name)} — \${product.price}<br><a href="\${link}">View product</a></div>\`:\`<div class="box"><a href="\${collection}?utm_source=organic&utm_medium=seo&utm_campaign=\${slug}">View all five Trending Pet Picks</a></div>\`;
- const html=shell(title,description,\`<div class="e">Carnival Careers Commerce Guide</div><h1>\${esc(title)}</h1><p>\${esc(description)}</p><p>\${esc(body)}</p>\${productBox}<h2>Keep it practical</h2><p>\${esc(tips)}</p><p><a href="/pet-picks-press.html">Press and creator kit</a></p>\`);
- fs.writeFileSync(path.join(dist,\`\${slug}.html\`),html);
+ const link=`${target}?utm_source=organic&utm_medium=seo&utm_campaign=${slug}`;
+ const productBox=product?`<div class="box"><strong>Featured option:</strong> ${esc(product.name)} — ${product.price}<br><a href="${link}">View product</a></div>`:`<div class="box"><a href="${collection}?utm_source=organic&utm_medium=seo&utm_campaign=${slug}">View all five Trending Pet Picks</a></div>`;
+ const html=shell(title,description,`<div class="e">Carnival Careers Commerce Guide</div><h1>${esc(title)}</h1><p>${esc(description)}</p><p>${esc(body)}</p>${productBox}<h2>Keep it practical</h2><p>${esc(tips)}</p><p><a href="/pet-picks-press.html">Press and creator kit</a></p>`);
+ fs.writeFileSync(path.join(dist,`${slug}.html`),html);
 }
 
 for(const [slug,label,copy] of channels){
- const tracked=\`\${collection}?utm_source=\${slug}&utm_medium=organic_share&utm_campaign=free100\`;
- const html=shell(\`\${label} Share Kit\`,\`Ready-to-use organic share copy and tracked link for \${label}.\`,\`<div class="e">Free Distribution Asset</div><h1>\${esc(label)} Share Kit</h1><div class="box"><strong>Ready-to-use copy</strong><p>\${esc(copy)}</p><strong>Tracked link</strong><p><a href="\${tracked}">\${tracked}</a></p></div><a class="c" href="\${tracked}">Open Trending Pet Picks</a><p><a href="/pet-picks-press.html">Open press kit</a></p>\`,"noindex,follow");
- fs.writeFileSync(path.join(dist,\`share-\${slug}.html\`),html);
+ const tracked=`${collection}?utm_source=${slug}&utm_medium=organic_share&utm_campaign=free100`;
+ const html=shell(`${label} Share Kit`,`Ready-to-use organic share copy and tracked link for ${label}.`,`<div class="e">Free Distribution Asset</div><h1>${esc(label)} Share Kit</h1><div class="box"><strong>Ready-to-use copy</strong><p>${esc(copy)}</p><strong>Tracked link</strong><p><a href="${tracked}">${tracked}</a></p></div><a class="c" href="${tracked}">Open Trending Pet Picks</a><p><a href="/pet-picks-press.html">Open press kit</a></p>`,"noindex,follow");
+ fs.writeFileSync(path.join(dist,`share-${slug}.html`),html);
 }
 
-const sitemap = seo.map(([slug])=>\`  <url><loc>https://carnival-careers-live-current.vercel.app/\${slug}.html</loc></url>\`).join("\\n");
-fs.writeFileSync(path.join(dist,"sitemap-pet-commerce.xml"),\`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n\${sitemap}\\n</urlset>\`);
+const sitemap = seo.map(([slug])=>`  <url><loc>https://carnival-careers-live-current.vercel.app/${slug}.html</loc></url>`).join("\\n");
+fs.writeFileSync(path.join(dist,"sitemap-pet-commerce.xml"),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n${sitemap}\\n</urlset>`);
 console.log("FREE_DISTRIBUTION_ASSETS_GENERATED", seo.length + channels.length);
