@@ -82,17 +82,17 @@ const projectCopy = `
   const capital = findPage("page-capital") || document.querySelector('[data-page="capital"]');
   const store = findPage("page-store","page-shop","page-commerce") || document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"]');
 
-  place(home,"core-home",'<div class="cc-kicker">Toronto story</div><h3>Work. Eat. Own.</h3><p><strong>Hopeton LaTouche is the featured Toronto family / tenant-owner.</strong> <strong>Michie Mee is the host.</strong> The family earns real project income, buys groceries from our store, uses project mobility and childcare, and the spending builds the Carnival Careers ecosystem.</p>');
-  place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The C$105K job supports the whole household.</h3><p>The money is not just a paycheque. It helps cover housing, groceries, SweetEVRides mobility and childcare. A small activation slice connects more people to paid opportunities. The wider community earns mostly from real sales, referrals, vendors, sponsors and project work.</p>');
-  place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family proves the model.</h3><p>Toronto follows Hopeton\'s family from work and home into groceries, mobility, childcare, community activation and the arena finale. The point is simple: the show leaves behind an operating household, customers, partners and ownership pathways.</p>');
-  place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee hosts the journey.</h3><p>The host guides the audience. Hopeton\'s family lives the story. The episode shows how regular spending - food, transport, childcare and entertainment - can help build owned community businesses.</p>');
-  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Eat Your Keep turns grocery spending into member ownership.</h3><p>Customers who join the grocery ownership program do not just buy food. Eligible purchases build member equity in the grocery store, subject to the final co-op or share structure. Investor returns still need signed agreements and real collected revenue.</p>');
-  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Buy groceries. Build ownership.</h3><p>Every eligible grocery run can add to a member-owner account instead of disappearing as ordinary spending. The store earns revenue, the family gets food, and the customer builds a stake in the place feeding the community.</p>');
+  place(home,"core-home",'<div class="cc-kicker">Toronto story</div><h3>Contribution. Stability. Ownership.</h3><p><strong>Hopeton LaTouche’s household is the featured Toronto family / tenant-owner story.</strong> <strong>Michie Mee is the episode host.</strong> The episode starts by showing what both already contribute to society, then follows the work, housing/ownership, useful services, local commerce, culture and city relationships that can make those contributions more stable and visible.</p>');
+  place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The family’s contribution comes before the support model.</h3><p>Work, caregiving, culture, neighbourhood relationships, resilience and ownership ambition are already contributions. Carnival Careers can add documented work/income pathways, housing/ownership progress, mobility, childcare/family supports and partner connections. The C$105K annual qualifying-income figure is a workforce/underwriting target where applicable — not a guaranteed salary.</p>');
+  place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family makes the city stakes visible.</h3><p>Toronto follows Hopeton’s household from relationship and dinner into work, home/ownership, local commerce and services, community/Carnival participation, the family reveal and finally the arena. The arena is the victory lap after the project has produced real evidence.</p>');
+  place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee carries the relationship and recognition.</h3><p>The host brings cultural memory, mentorship, credibility, relationships and a public platform. Hopeton’s household brings work, caregiving, resilience, culture, local spending and a real ownership journey. The episode shows what both contribute before showing what the project adds.</p>');
+  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Capital finances the outcome behind the story.</h3><p>Capital, lender, vendor and sponsor lanes each have a defined job. The first 12 months cover execution, proof, settlement and reporting; mortgages, refinance, tenant-owner conversion, retained assets and residual rights stay on their real longer timelines. Returns depend on definitive agreements and actual collected cash.</p>');
+  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Everyday commerce should leave measurable community value.</h3><p>Food and other recurring household spending can support local commerce and, where a final lawful ownership structure is adopted, an ownership pathway. Current copy must distinguish a working concept from an executed co-op/share/member structure.</p>');
 })();
 </script>`;
 
 
-const storyUnification = \`
+const storyUnification = `
 <style id="cc-story-spine-style">
   .cc-story-spine{margin:22px 0;padding:22px;border-radius:20px;border:1px solid rgba(255,196,77,.28);background:linear-gradient(135deg,rgba(255,196,77,.12),rgba(49,223,204,.07));color:inherit}
   .cc-story-spine h3{margin:0 0 9px;font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.08}
@@ -157,9 +157,9 @@ const storyUnification = \`
     }
   }
 })();
-</script>\`;
+</script>`;
 
-const trailerExperience = \`
+const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
   #cc-trailer-modal.open{display:flex}
@@ -225,7 +225,7 @@ const trailerExperience = \`
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true}); else init();
 })();
-</script>\`;
+</script>`;
 
 let renderedHtml = canonicalHtml;
 for (const block of [trafficFunnel, projectCopy, storyUnification, trailerExperience, contrastGuard]) {
