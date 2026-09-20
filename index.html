@@ -421,6 +421,141 @@
 @media(max-width:900px){#page-home .recovery-route-section:not(.alt) .money-route-cards article{min-height:210px}}
 @media(max-width:640px){#page-home .recovery-route-section:not(.alt) .money-route-cards article{min-height:196px}}
 </style>
+
+<style id="cc-card-contrast-fix-2026-09-20">
+/* Targeted contrast fix: only the named capital sections, Shopify product cards, and Project-page cards. */
+#capital-working-base,
+#capital-exit,
+#capital-order{
+  background:#07121f!important;
+  color:#f8fbff!important;
+}
+#capital-working-base h2,
+#capital-exit h2,
+#capital-order h2{color:#f8fbff!important}
+#capital-working-base .partner-kicker,
+#capital-exit .partner-kicker,
+#capital-order .partner-kicker{color:#ffc44d!important}
+#capital-working-base p,
+#capital-exit p,
+#capital-order p{color:#c5cedb!important}
+#capital-working-base .plain-note{color:#93a3b7!important}
+
+#capital-working-base .numbers-line{
+  background:transparent!important;
+  border:0!important;
+  gap:12px;
+}
+#capital-working-base .numbers-line>div{
+  background:#111f33!important;
+  color:#f8fbff!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  border-radius:18px;
+}
+#capital-working-base .numbers-line small{color:#31dfcc!important}
+#capital-working-base .numbers-line strong{color:#ffc44d!important}
+
+#capital-exit .simple-points{gap:14px}
+#capital-exit .simple-point{
+  background:#111f33!important;
+  color:#f8fbff!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  border-top:4px solid #31dfcc!important;
+  border-radius:18px;
+  padding:22px;
+}
+#capital-exit .simple-point h3{color:#f8fbff!important}
+#capital-exit .simple-point p{color:#c5cedb!important}
+#capital-exit .simple-point strong{color:#ffc44d!important}
+
+#capital-order .flow-step{
+  background:#111f33!important;
+  color:#f8fbff!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.16);
+}
+#capital-order .flow-step b{color:#ffc44d!important}
+#capital-order .flow-step span{color:#f8fbff!important}
+
+#page-store .product-card{
+  background:#0b1728!important;
+  color:#f8fbff!important;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  box-shadow:0 18px 48px rgba(7,14,25,.16);
+}
+#page-store .product-card img{
+  width:100%;
+  height:260px;
+  object-fit:contain;
+  padding:14px;
+  background:#fff8ed!important;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+#page-store .product-card h3{color:#f8fbff!important}
+#page-store .product-card .price{color:#31dfcc!important}
+#page-store .product-card .tag.green{
+  background:rgba(88,224,139,.12)!important;
+  color:#8ef0ae!important;
+  border-color:rgba(88,224,139,.32)!important;
+}
+#page-store .product-card .btn.dark{
+  background:#ffc44d!important;
+  color:#0d1018!important;
+  border-color:#ffc44d!important;
+}
+
+.project-page .project-drop{
+  background:#0b1728!important;
+  color:#f8fbff!important;
+  border-color:rgba(255,255,255,.14)!important;
+  box-shadow:0 16px 44px rgba(7,14,25,.14)!important;
+}
+.project-page .project-drop>summary{color:#f8fbff!important}
+.project-page .project-n{
+  color:#ffc44d!important;
+  border-color:rgba(255,196,77,.5)!important;
+}
+.project-page .project-plus{color:#31dfcc!important}
+.project-page .project-inside{border-top-color:rgba(255,255,255,.14)!important}
+.project-page .project-lead{color:#f8fbff!important}
+.project-page .project-sub,
+.project-page .project-note{color:#c5cedb!important}
+
+.project-page .project-step,
+.project-page .project-lane,
+.project-page .project-pro,
+.project-page .project-metric,
+.project-page .project-form{
+  background:#111f33!important;
+  color:#f8fbff!important;
+  border:1px solid rgba(255,255,255,.14)!important;
+}
+.project-page .project-step b{color:#31dfcc!important}
+.project-page .project-step h3,
+.project-page .project-lane h3,
+.project-page .project-pro h3,
+.project-page .project-form h3{color:#f8fbff!important}
+.project-page .project-step p,
+.project-page .project-lane p,
+.project-page .project-pro p,
+.project-page .project-form p{color:#c5cedb!important}
+.project-page .project-lane a{color:#ffc44d!important;border-bottom-color:#ffc44d!important}
+.project-page .project-metric span{color:#31dfcc!important}
+.project-page .project-metric strong{color:#f8fbff!important}
+.project-page .project-metric small{color:#c5cedb!important}
+.project-page .project-fields input,
+.project-page .project-fields select,
+.project-page .project-fields textarea{
+  background:#07121f!important;
+  color:#f8fbff!important;
+  border-color:rgba(255,255,255,.18)!important;
+}
+.project-page .project-btn{
+  background:#ffc44d!important;
+  color:#0d1018!important;
+}
+</style>
 </head>
 <body>
 <div class="grain"></div>
@@ -828,12 +963,12 @@
 </section>
 </section>
 <section class="page" data-page="store" id="page-store"><div class="page-hero bg-commerce"><div class="wrap"><span class="eyebrow">COMMERCE / SHOPIFY STORE</span><h1>The Shopify store is live in the site.</h1><p>Connected store: My Store, CAD, Canada. Product buttons go to the active Shopify product pages.</p></div></div><section class="section light"><div class="wrap"><div class="head"><h2>Storefront product lane.</h2><p>These are active connected Shopify products pulled from the current store context. Beat licenses live beside them as music commerce.</p></div><div class="grid cols-3">
-<article class="product-card"><img alt="Warm Gold Dog Coat" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/4494820567389.jpg?v=1788644403" src="assets/images/shopify/4494820567389.svg"/><div><span class="tag green">Shopify Active</span><h3>Warm Gold Dog Coat</h3><p class="price">C$29.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/warm-gold-dog-coat" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
-<article class="product-card"><img alt="Reflective Dog Strap Harness" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1352264286316.png?v=1788644318" src="assets/images/shopify/1352264286316.svg"/><div><span class="tag green">Shopify Active</span><h3>Reflective Dog Strap Harness</h3><p class="price">C$29.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/reflective-dog-strap-harness" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
-<article class="product-card"><img alt="Plush Cat Clothing" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/423863810473.png?v=1788644398" src="assets/images/shopify/423863810473.svg"/><div><span class="tag green">Shopify Active</span><h3>Plush Cat Clothing</h3><p class="price">C$19.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/plush-cat-clothing" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
-<article class="product-card"><img alt="Square Pet Nest Mat" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/18196916321204.jpg?v=1788644143" src="assets/images/shopify/18196916321204.svg"/><div><span class="tag green">Shopify Active</span><h3>Square Pet Nest Mat</h3><p class="price">C$24.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/square-pet-nest-mat" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
-<article class="product-card"><img alt="Pet Silicone Folding Bowl" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1591091000456.png?v=1788644495" src="assets/images/shopify/1591091000456.svg"/><div><span class="tag green">Shopify Active</span><h3>Pet Silicone Folding Bowl</h3><p class="price">C$24.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/pet-silicone-folding-bowl" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
-<article class="product-card"><img alt="Large-Capacity Smart Pet Feeder" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1533524306106-20180806105624.png?v=1788644579" src="assets/images/shopify/1533524306106-20180806105624.svg"/><div><span class="tag green">Shopify Active</span><h3>Large-Capacity Smart Pet Feeder</h3><p class="price">C$59.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/large-capacity-smart-pet-feeder" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Warm Gold Dog Coat" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/4494820567389.jpg?v=1788644403" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/4494820567389.jpg?v=1788644403"/><div><span class="tag green">Shopify Active</span><h3>Warm Gold Dog Coat</h3><p class="price">C$29.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/warm-gold-dog-coat" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Reflective Dog Strap Harness" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1352264286316.png?v=1788644318" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1352264286316.png?v=1788644318"/><div><span class="tag green">Shopify Active</span><h3>Reflective Dog Strap Harness</h3><p class="price">C$29.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/reflective-dog-strap-harness" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Plush Cat Clothing" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/423863810473.png?v=1788644398" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/423863810473.png?v=1788644398"/><div><span class="tag green">Shopify Active</span><h3>Plush Cat Clothing</h3><p class="price">C$19.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/plush-cat-clothing" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Square Pet Nest Mat" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/18196916321204.jpg?v=1788644143" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/18196916321204.jpg?v=1788644143"/><div><span class="tag green">Shopify Active</span><h3>Square Pet Nest Mat</h3><p class="price">C$24.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/square-pet-nest-mat" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Pet Silicone Folding Bowl" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1591091000456.png?v=1788644495" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1591091000456.png?v=1788644495"/><div><span class="tag green">Shopify Active</span><h3>Pet Silicone Folding Bowl</h3><p class="price">C$24.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/pet-silicone-folding-bowl" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
+<article class="product-card"><img alt="Large-Capacity Smart Pet Feeder" data-live-image="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1533524306106-20180806105624.png?v=1788644579" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/1533524306106-20180806105624.png?v=1788644579"/><div><span class="tag green">Shopify Active</span><h3>Large-Capacity Smart Pet Feeder</h3><p class="price">C$59.99</p><a class="btn dark outbound" data-lane="shopify-product" href="https://wase0y-fi.myshopify.com/products/large-capacity-smart-pet-feeder" rel="noopener sponsored" target="_blank">Open Shopify ↗</a></div></article>
 </div><div class="actions"><a class="btn primary outbound" data-lane="shopify-store" href="https://wase0y-fi.myshopify.com" rel="noopener sponsored" target="_blank">Open full Shopify store ↗</a><a class="btn dark" href="#music?panel=beats">Open beat store</a></div></div></section></section>
 <section class="page" data-page="automatch" id="page-automatch"><div class="page-hero bg-commerce"><div class="wrap"><span class="eyebrow">COMMERCE / AUTOMATCH</span><h1>Business tools matched to the problem.</h1><p>AutoMatch, GrowthMatch and CommerceMatch are merged into the site with provider links and click tracking.</p></div></div><section class="section light"><div class="wrap split"><div><div class="tabs"><button class="tab active" data-tab="auto">AutoMatch</button><button class="tab" data-tab="growth">GrowthMatch</button><button class="tab" data-tab="commerce">CommerceMatch</button></div><div class="panel active" data-panel="auto"><h2>General business tools.</h2><p class="lead">Website, CRM, scheduling, email and funnels for businesses trying to get operational fast.</p></div><div class="panel" data-panel="growth"><h2>Growth stack.</h2><p class="lead">SEO, lead capture, email follow-up, automation and CRM for traffic-to-sale movement.</p></div><div class="panel" data-panel="commerce"><h2>Commerce stack.</h2><p class="lead">Storefront, checkout, proposals, demand, email and product page routing.</p></div><div class="grid cols-2" id="providerGrid"></div></div><form class="form" data-kind="automatch"><h3>Get matched</h3><div class="form-grid"><label>Business type<select name="business"><option>Service business</option><option>Store / e-commerce</option><option>Creator / media</option><option>Events / hospitality</option><option>Real estate / construction</option></select></label><label>Need<select name="need"><option>Website / hosting</option><option>CRM / sales</option><option>Email / funnels</option><option>Store / checkout</option><option>Advertising / growth</option><option>Scheduling / bookings</option></select></label><label class="wide">Notes<textarea name="message"></textarea></label></div><button class="btn primary">Send AutoMatch request</button><p class="result"></p></form></div></section></section>
 <section class="page" data-page="money-machine" id="page-money-machine"><div class="page-hero bg-commerce"><div class="wrap"><span class="eyebrow">AUTO MONEY GEN</span><h1>Every click has a lane.</h1><p>Shopify, beat licensing, Gumroad digital products, private aviation referral, Eventbrite boat parties, affiliate tools, seller intake, land prospecting and child-care lead capture are tied into one admin console.</p></div></div><section class="section"><div class="wrap"><div class="grid cols-4"><div class="card"><span class="tag gold">Payment</span><h3>Shopify beat licenses</h3><p>Direct cart links for Island Vybz, Street Anthem and Carnival Riddim.</p><a class="btn primary" href="#music?panel=beats">Open beats</a></div><div class="card"><span class="tag gold">Store</span><h3>Shopify product traffic</h3><p>Active product pages from the connected store.</p><a class="btn primary" href="#store">Open store</a></div><div class="card"><span class="tag gold">Digital</span><h3>Gumroad products</h3><p>Existing digital-product lanes stay linked.</p><a class="btn primary outbound" data-lane="gumroad" href="https://familystreetdevs.gumroad.com/l/agent-boundary-benchmark" rel="noopener sponsored" target="_blank">Gumroad 1 ↗</a></div><div class="card"><span class="tag gold">Affiliate</span><h3>Plane charter</h3><p>Villiers quote button carries the referral ID.</p><a class="btn primary outbound" data-lane="villiers" href="https://villiers.ai/?id=4XEAEP" rel="noopener sponsored" target="_blank">Villiers ↗</a></div><div class="card"><span class="tag">Lead</span><h3>Business acquisition</h3><p>Owners and brokers submit P&amp;L, terms and seller financing.</p><a class="btn dark" href="#sell-business">Sell business</a></div><div class="card"><span class="tag">Lead</span><h3>Land prospector</h3><p>Land sellers, agents and scouts submit parcels.</p><a class="btn dark" href="#land">Land</a></div><div class="card"><span class="tag">Ticket</span><h3>Boat parties</h3><p>Tracked Eventbrite ticket links use the Famstreet affiliate code.</p><a class="btn dark" href="#boat">Boat</a></div><div class="card"><span class="tag">Support</span><h3>Sideline Sitters</h3><p>Child-care requests and caregiver partner leads flow to admin.</p><a class="btn dark" href="#childcare">Child Care</a></div></div></div></section></section>
@@ -1453,7 +1588,7 @@
 <p>One clean page: what the current integrated stack needs, who has a specific capital job, what each source is meant to cover, how the money comes back, and how the same operating architecture can travel city by city. Working targets stay labelled as targets until documents and funds make them real.</p>
 <div class="actions"><a class="btn primary" href="#capital-stack">See the stack</a><a class="btn dark" href="#capital-exit">See the repayment path</a></div>
 </div></div>
-<section class="partner-section"><div class="wrap">
+<section class="partner-section" id="capital-working-base"><div class="wrap">
 <div class="partner-kicker">CURRENT WORKING BASE</div><h2>Start with the money in, money back and modeled remainder.</h2>
 <p>Candidate B's simple capital-page structure is retained here, but the later funding-stack facts supersede conflicting older Toronto-only figures.</p>
 <div class="numbers-line"><div><small>Modeled money in</small><strong>C$17.553M</strong></div><div><small>Modeled money made / returned</small><strong>C$18.712M</strong></div><div><small>Modeled cash surplus</small><strong>C$1.159M</strong></div><div><small>Rollout architecture</small><strong>65 cities</strong></div></div>
