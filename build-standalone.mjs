@@ -481,6 +481,35 @@ const wholeReconciliationPatch = `
 </script>`;
 
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
+const professionalCopyReplacements = [
+  ["03</span> Professional forms", "03</span> Get each city done"],
+  ["Firm up the people who make each city executable.", "These are the professionals who turn a city from plan into reality."],
+  ["The goal is not a directory of names. It is a delivery bench: who owns the deliverable, what it costs, how fast it can close, and what dependency it clears.", "Each person or firm takes responsibility for a specific job, gives us a price and timeline, and tells us what they need from Carnival Careers to finish it."],
+  ["SPVs, transactions, contracts, securities, rights and closing.", "Set up city companies, contracts, rights, deals and closings."],
+  ["Entity setup, tax structure, controls, reporting and city-level economics.", "Set up the books, taxes, reporting and controls so each city can operate cleanly."],
+  ["Property, event, production, liability, workers and travel coverage.", "Cover the property, events, workers, production and travel."],
+  ["Appraisal + diligence", "Property checks"],
+  ["Appraisal, environmental, market, title and underwriting support.", "Confirm value, title, environmental issues, market facts and lender requirements."],
+  ["Planning + build", "Design + build"],
+  ["Permits, design, renovations, construction and development execution.", "Handle permits, design, renovations, construction and development."],
+  ["Capital execution", "Funding"],
+  ["Debt, equity, grants, sponsorship and transaction coordination.", "Help close debt, equity, grants and sponsorship."],
+  ["Production + media", "TV + live production"],
+  ["Television, live show, music, crews, post-production and distribution.", "Deliver the episode, concert, music, crews, editing and distribution."],
+  ["CRM, payments, forms, automation, analytics and operational infrastructure.", "Run CRM, forms, payments, automation and reporting."],
+  ["Join the execution bench", "Can you own one of these jobs?"],
+  ["Tell us exactly what you can own, your fee basis and what you need from Carnival Careers to get it closed.", "Tell us what you can take responsibility for, what you charge, how quickly you can do it, and what you need from Carnival Careers."],
+  [">Discipline</option>", ">Area of work</option>"],
+  [">Appraisal + diligence</option>", ">Property checks</option>"],
+  [">Planning + build</option>", ">Design + build</option>"],
+  [">Capital execution</option>", ">Funding</option>"],
+  [">Production + media</option>", ">TV + live production</option>"],
+  ["placeholder=\"Fee basis\"", "placeholder=\"Your price / fee structure\""],
+  ["placeholder=\"Typical turnaround\"", "placeholder=\"How fast can you deliver?\""],
+  ["placeholder=\"Deliverable you can own, dependencies, credentials and next step\"", "placeholder=\"What can you own from start to finish? What do you need from Carnival Careers?\""],
+  [">Firm up your lane</button>", ">Join the city team</button>"]
+];
+for (const [from,to] of professionalCopyReplacements) renderedHtml = renderedHtml.replaceAll(from,to);
 renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
