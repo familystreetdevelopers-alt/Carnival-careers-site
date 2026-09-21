@@ -185,6 +185,7 @@ const projectCopy = `
   const show = findPage("page-show") || document.querySelector('[data-page="show"]');
   const capital = findPage("page-capital") || document.querySelector('[data-page="capital"]');
   const store = findPage("page-store","page-shop","page-commerce") || document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"]');
+  const sellBusiness = findPage("page-sell-business") || document.querySelector('[data-page="sell-business"]');
 
   place(home,"core-home",'<div class="cc-kicker">Toronto story</div><h3>Contribution. Stability. Ownership.</h3><p><strong>Hopeton LaTouche’s household is the featured Toronto family / tenant-owner story.</strong> <strong>Michie Mee is the episode host.</strong> Michie brings cultural memory, contribution and a public platform. Hopeton’s household brings work, caregiving, resilience, culture, local spending and a real ownership journey. Carnival Careers connects those contributions to tangible change, visible Carnival and mas parade attendance, and then the arena as the public victory lap.</p>');
   place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The family’s contribution comes before the support model.</h3><p>Work, caregiving, culture, neighbourhood relationships, resilience and ownership ambition are already contributions. Carnival Careers can add documented work/income pathways, housing/ownership progress, mobility, childcare/family supports and partner connections. A qualifying tenant-owner role is modeled at C$105,000 gross a year for real documented work when funded and activated. The household uses that income for housing, Eat Your Keep groceries, SweetEVRides mobility, childcare and normal family needs, while the family remains visibly part of Carnival culture and mas parade attendance.</p>');
@@ -222,8 +223,18 @@ const projectCopy = `
     '</div>',
     '</section>'
   ].join("");
-  place(store,"core-store",eatYourKeepHtml);
-  initEatYourKeep(store);
+  if (store) {
+    const oldEatYourKeep = store.querySelector('[data-cc-core="core-store"], .cc-eyk-shell');
+    if (oldEatYourKeep) oldEatYourKeep.remove();
+  }
+  if (sellBusiness) {
+    sellBusiness.innerHTML = '<section class="section"><div class="wrap">'+eatYourKeepHtml+'</div></section>';
+    initEatYourKeep(sellBusiness);
+  }
+  document.querySelectorAll('a[href="#sell-business"],a[href="#sell-a-business"]').forEach(a => {
+    a.textContent = "Eat Your Keep";
+    a.setAttribute("aria-label","Eat Your Keep");
+  });
 })();
 </script>`;
 
