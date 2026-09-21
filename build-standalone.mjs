@@ -1711,6 +1711,18 @@ renderedHtml = renderedHtml.replace(/(<h3>I know the neighbourhood\.<\/h3>)<p>[^
 renderedHtml = renderedHtml.replace(/<a href="#partners"><span>⌘<\/span><div><h3>I represent a city\.<\/h3><p>City, venues \+ partners\.<\/p><\/div><b>↗<\/b><\/a>/g, "");
 renderedHtml = renderedHtml.replace(/<section class="section light" id="childcare-funders">[\s\S]*?<\/section>\s*(?=<section class="section" id="childcare-status">)/, "");
 
+{
+  const carLeadHeading = "Do not sell a car lead. Move the vehicle all the way to usable.";
+  const headingPos = renderedHtml.indexOf(carLeadHeading);
+  if (headingPos >= 0) {
+    const sectionStart = renderedHtml.lastIndexOf("<section", headingPos);
+    const sectionEnd = renderedHtml.indexOf("</section>", headingPos);
+    if (sectionStart >= 0 && sectionEnd >= 0) {
+      renderedHtml = renderedHtml.slice(0, sectionStart) + renderedHtml.slice(sectionEnd + "</section>".length);
+    }
+  }
+}
+
 renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
@@ -1804,24 +1816,9 @@ const requestedAccentCleanupPatch = `
 })();
 </script>`;
 
-const removeCarLeadSequencePatch = `
-<script id="cc-remove-car-lead-sequence">
-(() => {
-  const run = () => {
-    const page = document.getElementById("page-car") || document.querySelector('[data-page="car"]');
-    if (!page) return;
-    const heading = [...page.querySelectorAll("h1,h2,h3")].find(el =>
-      (el.textContent || "").trim() === "Do not sell a car lead. Move the vehicle all the way to usable."
-    );
-    const section = heading?.closest("section");
-    if (section) section.remove();
-  };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true});
-  else run();
-})();
-</script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, removeCarLeadSequencePatch]) {
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
