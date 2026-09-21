@@ -269,6 +269,41 @@ const familiesWorkMergePatch = `
 })();
 </script>`;
 
+
+const episodeLibraryTypographyPatch = `
+<style id="cc-episode-library-large-type">
+  #page-show .show-library-strip{font-size:1.18rem}
+  #page-show .show-library-head{gap:28px}
+  #page-show .show-library-head .eyebrow{font-size:1rem!important;line-height:1.35!important;letter-spacing:.08em!important}
+  #page-show #episode-library-title{font-size:clamp(2.8rem,5.5vw,5rem)!important;line-height:.95!important;letter-spacing:-.045em!important;margin:.18em 0 .28em!important}
+  #page-show .show-library-head p{font-size:1.28rem!important;line-height:1.6!important;max-width:62ch!important}
+  #page-show .show-library-controls{gap:16px!important}
+  #page-show .show-library-controls label{font-size:1.08rem!important;font-weight:850!important;gap:8px!important}
+  #page-show .show-library-controls input,
+  #page-show .show-library-controls select{font-size:1.12rem!important;padding:14px 15px!important;min-height:52px!important}
+  #page-show .show-episode-grid{gap:20px!important}
+  #page-show .show-episode-grid article,
+  #page-show .show-episode-grid .show-episode-card{padding:24px!important;border-radius:22px!important}
+  #page-show .show-episode-grid small{font-size:1rem!important;line-height:1.4!important}
+  #page-show .show-episode-grid h3{font-size:clamp(1.8rem,3vw,2.5rem)!important;line-height:1.05!important;margin:.35em 0!important}
+  #page-show .show-episode-grid p{font-size:1.16rem!important;line-height:1.6!important}
+  #page-show .show-episode-grid .status-pill,
+  #page-show .show-episode-grid .tag{font-size:1rem!important;padding:8px 11px!important}
+  #page-show .show-episode-grid .btn{font-size:1.08rem!important;padding:13px 17px!important}
+  #page-show .show-library-foot{gap:28px!important;padding-top:28px!important}
+  #page-show .show-library-foot b{font-size:1.45rem!important;line-height:1.2!important}
+  #page-show .show-library-foot p{font-size:1.16rem!important;line-height:1.6!important}
+  #page-show .show-library-foot .btn{font-size:1.08rem!important;padding:13px 17px!important}
+  @media(max-width:700px){
+    #page-show .show-library-strip{font-size:1.1rem}
+    #page-show .show-library-head p,
+    #page-show .show-episode-grid p,
+    #page-show .show-library-foot p{font-size:1.08rem!important}
+    #page-show .show-library-controls input,
+    #page-show .show-library-controls select{font-size:1rem!important}
+  }
+</style>`;
+
 const showPageButtonPatch = `
 <script id="cc-show-button-patch">
 (() => {
@@ -1671,7 +1706,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
