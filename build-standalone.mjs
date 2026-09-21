@@ -450,17 +450,15 @@ const wholeReconciliationPatch = `
   const travel=document.getElementById("page-plane")||document.querySelector('[data-page="plane"],[data-page="travel"]');
 
   const projectHtml =
-    '<h2>Toronto property plan: buy 19 Vic Towns and keep the other three assets.</h2>'+
-    '<p>The plan is simple: the 19 Vic Towns are the properties we expect to resell. PATH, East Bayfront and Istanbul Fine Foods stay in the Carnival Careers portfolio.</p>'+
+    '<h2>Toronto property plan</h2>'+
+    '<p>Buy 19 Vic Towns for resale. Keep PATH, East Bayfront and Istanbul Fine Foods.</p>'+
     '<div class="cc-whole-grid">'+
-      '<div class="cc-whole-card"><b>19 Vic Towns</b>Modeled purchase: C$14.110M · these are the resale properties</div>'+
-      '<div class="cc-whole-card"><b>PATH</b>5101 - 12 York Street · C$560K · keep</div>'+
-      '<div class="cc-whole-card"><b>East Bayfront</b>3215 - 138 Downes Street · C$548K · keep</div>'+
+      '<div class="cc-whole-card"><b>19 Vic Towns</b>C$14.110M modeled purchase · resell</div>'+
+      '<div class="cc-whole-card"><b>PATH</b>C$560K · keep</div>'+
+      '<div class="cc-whole-card"><b>East Bayfront</b>C$548K · keep</div>'+
       '<div class="cc-whole-card"><b>Istanbul Fine Foods</b>C$1.5M · keep and operate</div>'+
     '</div>'+
-    '<h3>Why 19 Vic Towns?</h3>'+
-    '<p>In the current model, selling those 19 homes is enough to repay the modeled property financing and investor capital, include the C$1.2M investor target profit, and cover the major Toronto project costs and reserves. We do not need to assume that ticket sales, sponsors, media, cruise, grocery or SweetEV revenue will arrive in order for this backup plan to work.</p>'+
-    '<p class="cc-whole-note"><strong>What still has to be confirmed:</strong> the model currently assumes the full 13% HST on the Vic Towns as a worst-case tax cost. The final numbers can change after the purchase agreements, tax review, appraisals, actual resale values and lender/investor terms are confirmed.</p>';
+    '<p class="cc-whole-note">The 19 Vic Towns are modeled to cover financing, investor capital and profit, and major Toronto costs. Final figures depend on tax, appraisal, resale and financing terms.</p>';
 
   if(project){
     const old=project.querySelector('[data-cc-whole]');
