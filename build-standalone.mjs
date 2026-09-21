@@ -1715,7 +1715,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-const homeMasMatterAccentPatch = \`
+const homeMasMatterAccentPatch = `
 <style id="cc-home-mas-matter-accent-style">
   #page-home h1 .cc-hero-accent,
   [data-page="home"] h1 .cc-hero-accent{
@@ -1737,7 +1737,7 @@ const homeMasMatterAccentPatch = \`
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
 })();
-</script>\`;
+</script>`;
 
 for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
