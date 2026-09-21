@@ -590,9 +590,19 @@ const wholeReconciliationPatch = `
         '<tr><td>12-month 9% senior-interest stress</td><td>C$1.016M</td></tr>'+
         '<tr><td>Investor capital returned</td><td>C$2.822M</td></tr>'+
         '<tr><td>Investor target profit</td><td>C$1.200M</td></tr>'+
-        '<tr><td>PATH + East Bayfront + Istanbul</td><td>C$2.608M</td></tr>'+
-        '<tr><td>Arena + TV</td><td>C$1.761M</td></tr>'+
-        '<tr><td>Six salaries + minimum employer burden</td><td>C$693K</td></tr>'+
+        '<tr><td>PATH acquisition</td><td>C$560K</td></tr>'+
+        '<tr><td>East Bayfront acquisition</td><td>C$548K</td></tr>'+
+        '<tr><td>Istanbul Fine Foods acquisition</td><td>C$1.500M</td></tr>'+
+        '<tr><td>Arena venue</td><td>C$250K</td></tr>'+
+        '<tr><td>Stage / sound / lighting</td><td>C$200K</td></tr>'+
+        '<tr><td>Primary talent</td><td>C$250K</td></tr>'+
+        '<tr><td>Other artists / hosts / DJs</td><td>C$100K</td></tr>'+
+        '<tr><td>Event marketing</td><td>C$150K</td></tr>'+
+        '<tr><td>Staffing + security</td><td>C$200K</td></tr>'+
+        '<tr><td>Event / production logistics</td><td>C$500K</td></tr>'+
+        '<tr><td>TV / media production</td><td>C$111.056K</td></tr>'+
+        '<tr><td>Six gross salaries</td><td>C$630K</td></tr>'+
+        '<tr><td>Minimum employer burden</td><td>C$63K</td></tr>'+
         '<tr><td>May 2027 cruise</td><td>C$2.331M</td></tr>'+
         '<tr><td>SweetEV upfront cash</td><td>C$48.9K</td></tr>'+
         '<tr><td>50% ticket refund / restricted reserve</td><td>C$1.564M</td></tr>'+
@@ -600,10 +610,17 @@ const wholeReconciliationPatch = `
         '<tr><td>Transit + City Hall</td><td>C$45K</td></tr>'+
         '<tr><td>Enterprise legal / admin</td><td>C$150K</td></tr>'+
         '<tr><td>Project travel / logistics</td><td>C$200K</td></tr>'+
-        '<tr><td>PATH + East carry + LTT</td><td>C$48.5K</td></tr>'+
-        '<tr><td>Vic LTT + tax proxy + common carry + closing allowance</td><td>C$744.8K</td></tr>'+
+        '<tr><td>PATH + East carry + land transfer tax</td><td>C$48.5K</td></tr>'+
+        '<tr><td>Vic land transfer tax + tax proxy + common carry + closing allowance</td><td>C$744.8K</td></tr>'+
         '<tr><td>13% Vic HST stress while treatment is unresolved</td><td>C$1.834M</td></tr>'+
-        '<tr><td>Known-but-unpriced whole-company reserve</td><td>C$500K</td></tr>'+
+        '<tr><td><strong>Known-but-unpriced whole-company reserve</strong></td><td><strong>C$500K</strong></td></tr>'+
+        '<tr><td>Insurance + risk coverage still awaiting final quotes</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Appraisal + environmental + title / diligence</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Lender / broker / legal closing fees not yet final</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Permits + municipal / operating approvals still to price</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Artist travel / hospitality / rights not yet contracted</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Sponsor / vendor activation fulfillment still to quote</td><td>Inside C$500K reserve</td></tr>'+
+        '<tr><td>Payments / CRM / forms / automation / operating systems</td><td>Inside C$500K reserve</td></tr>'+
       '</tbody></table>'+
       '<p class="cc-whole-note">These are working underwriting/control figures, not commitments or guaranteed returns. The 19-unit block is the first selected block that stays positive under the current full-HST stress. Uncommitted operating revenue is upside and does not reduce the protected unit count.</p>'
     );
