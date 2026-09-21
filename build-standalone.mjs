@@ -1009,6 +1009,11 @@ const professionalCopyReplacements = [
 for (const [from,to] of professionalCopyReplacements) renderedHtml = renderedHtml.replaceAll(from,to);
 renderedHtml = renderedHtml.replace(/<section class="page" data-page="careers" id="page-careers">[\s\S]*?(?=<section class="page[^"]*" data-page="childcare")/, "");
 renderedHtml = renderedHtml.replace(/<a\b[^>]*href="#careers"[^>]*>[\s\S]*?<\/a>/g, "");
+// STATIC TELL-ME ROUTES V2
+renderedHtml = renderedHtml.replace(/<a href="#show"><span>▶<\/span><div><h3>The Show\.<\/h3>[\s\S]*?<\/a>/, "");
+renderedHtml = renderedHtml.replace(/<a href="#music"><span>♫<\/span><div><h3>I make the room move\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#arena-artist-intake"><span>♫</span><div><h3>I make the room move.</h3><p>Artists + creative leaders: submit for the arena, episode and tour.</p></div><b>↗</b></a>');
+renderedHtml = renderedHtml.replace(/<a href="#music"><span>◒<\/span><div><h3>I make culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>◒</span><div><h3>I create culture.</h3><p>Share Carnival, festival, parade + arena-show video.</p></div><b>↗</b></a>');
+renderedHtml = renderedHtml.replace(/<a href="#show"><span>✦<\/span><div><h3>I carry the culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>✦</span><div><h3>I carry the culture.</h3><p>Carnival, festival, parade + city culture.</p></div><b>↗</b></a>');
 renderedHtml = renderedHtml.replace(/<a href="#project-professional">Professional forms<\/a>/g, "");
 
 renderedHtml = renderedHtml.replace(
