@@ -104,7 +104,7 @@ const projectCopy = `
   place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The family’s contribution comes before the support model.</h3><p>Work, caregiving, culture, neighbourhood relationships, resilience and ownership ambition are already contributions. Carnival Careers can add documented work/income pathways, housing/ownership progress, mobility, childcare/family supports and partner connections. A qualifying tenant-owner role is modeled at C$105,000 gross a year for real documented work when funded and activated. The household uses that income for housing, Eat Your Keep groceries, SweetEVRides mobility, childcare and normal family needs, while the family remains visibly part of Carnival culture and mas parade attendance.</p>');
   place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family makes the city stakes visible.</h3><p>Toronto moves from Michie and the family relationship through dinner, history, work, home/ownership, Eat Your Keep, mobility, childcare, local commerce, Carnival culture and mas parade attendance. The arena comes last, after the project has produced real evidence that something changed. Toronto is the proof for a 65-city format: each city needs its own highlighted woman, featured family, real change, Carnival/public-culture beat and earned arena payoff.</p>');
   place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee carries the relationship and recognition.</h3><p>The episode follows recognition → relationship → tangible change → Carnival/mas parade visibility → public triumph. Michie Mee is the highlighted Toronto woman and host; Hopeton LaTouche is the featured family / tenant-owner. The parade shows the family and city inside the culture before the arena delivers the final emotional release.</p>');
-  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>Capital finances the outcome behind the story.</h3><p>There are two useful money views and they should not be mixed. The currentized whole-enterprise use view is <strong>C$30.340M</strong>, including the later C$1.2M ten-anchor workforce facility; C$23.141M of that view is the current Toronto real-estate basis, still subject to diligence and lender sizing. A separate public funding/repayment scenario shows <strong>C$17.553M modeled money in</strong>, <strong>C$18.712M modeled money made / returned</strong> and a <strong>C$1.159M modeled remainder</strong> before financing costs, taxes and final adjustments. Toronto arena + TV production is C$1.761M. The C$114.469M 65-city figure is only a mechanical arena + TV production scale, not the whole rollout budget. Carnival and mas parade attendance remain part of the operating city platform. Targets and models are not commitments.</p>');
+  place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>16 Vic Towns are the current downside sale engine.</h3><p>PATH #5101/12 York and East Bayfront #3215/138 Downes are retained alongside Istanbul Fine Foods. The unit-sizing case does not count uncommitted operating revenue and covers the senior/investor exit, C$1.2M investor target profit, audience reserves and whole-company operating obligations.</p>');
   place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Everyday commerce should leave measurable community value.</h3><p>Buy groceries. Build ownership. Eligible shopping should help members build a stake in the grocery store instead of acting like ordinary loyalty points. The store sits inside the same Carnival-rooted family and parade-attendance ecosystem. The final member/share/co-operative structure, tax treatment, redemption rules and receipt wording must be approved before launch.</p>');
 })();
 </script>`;
@@ -178,8 +178,84 @@ const trailerExperience = `
 })();
 </script>`;
 
+
+const wholeReconciliationPatch = \`
+<style id="cc-whole-reconcile-style">
+  .cc-whole-reconcile{margin:22px 0;padding:22px;border-radius:20px;border:1px solid rgba(112,72,232,.28);background:linear-gradient(135deg,rgba(112,72,232,.10),rgba(255,190,32,.08));color:inherit}
+  .cc-whole-reconcile h2,.cc-whole-reconcile h3{margin:.2em 0 .5em}
+  .cc-whole-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+  .cc-whole-card{padding:14px;border-radius:14px;background:rgba(255,255,255,.74);color:#171717;border:1px solid rgba(0,0,0,.08)}
+  .cc-whole-card b{display:block;font-size:1.22rem;margin-bottom:4px}
+  .cc-whole-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+  .cc-whole-table td,.cc-whole-table th{padding:9px 8px;border-bottom:1px solid rgba(127,127,127,.22);text-align:left;vertical-align:top}
+  .cc-whole-note{font-size:.86rem;opacity:.82;max-width:85ch}
+</style>
+<script id="cc-whole-reconcile-script">
+(() => {
+  const box=(html)=>'<section class="cc-whole-reconcile" data-cc-whole="2026-09-20">'+html+'</section>';
+  const project=document.getElementById("page-project")||document.querySelector('[data-page="project"]');
+  const capital=document.getElementById("page-capital")||document.querySelector('[data-page="capital"]');
+  const travel=document.getElementById("page-plane")||document.querySelector('[data-page="plane"]');
+  if(project && !project.querySelector('[data-cc-whole="2026-09-20"]')){
+    const host=project.querySelector(".project-wrap,.page-inner,.content,.container,.wrap")||project;
+    host.insertAdjacentHTML("afterbegin",box(
+      '<div class="cc-kicker">Current Toronto execution stack</div>'+
+      '<h2>16 Vic Towns fund the downside case. PATH, East Bayfront and Istanbul stay.</h2>'+
+      '<div class="cc-whole-grid">'+
+      '<div class="cc-whole-card"><b>16 Vic Towns</b>22,868 sq. ft. / C$12.006M modeled purchase at C$525/sf</div>'+
+      '<div class="cc-whole-card"><b>C$560K PATH</b>5101 - 12 York Street · retain</div>'+
+      '<div class="cc-whole-card"><b>C$548K East Bayfront</b>3215 - 138 Downes Street · retain</div>'+
+      '<div class="cc-whole-card"><b>C$1.5M Istanbul</b>Fine Foods operating-business acquisition</div>'+
+      '</div>'+
+      '<p>The sale engine is sized without counting uncommitted sponsor, vendor, ticket, media, cruise, grocery or SweetEV revenue. It covers the modeled senior/investor exit, the investor C$1.2M target profit, arena + TV, six salaries plus minimum employer burden, cruise, SweetEV upfront cash, ticket-refund reserve, grocery-benefit reserve, civic activations, enterprise legal/admin, property carry/closing costs and a C$500K reserve for real but still unquoted Carnival Careers obligations.</p>'+
+      '<p class="cc-whole-note">The 16-unit price, 80/20 financing mix, 9% senior-interest stress and C$1,180/sf resale case are underwriting assumptions, not commitments. Seller, lender, appraisal and definitive legal documents control.</p>'
+    ));
+  }
+  if(capital){
+    const inner=capital.querySelector(".page-inner,.content,.section-inner,.container,.wrap")||capital;
+    inner.innerHTML=box(
+      '<div class="cc-kicker">Capital · whole-company downside coverage</div>'+
+      '<h1>One clean capital story.</h1>'+
+      '<p>The current Toronto model buys only the Vic Towns units needed to cover the full downside case, while keeping the PATH condo, East Bayfront condo and Istanbul Fine Foods.</p>'+
+      '<div class="cc-whole-grid">'+
+      '<div class="cc-whole-card"><b>C$12.006M</b>16-unit Vic Towns purchase basis</div>'+
+      '<div class="cc-whole-card"><b>C$25.635M</b>Modeled net Vic resale proceeds</div>'+
+      '<div class="cc-whole-card"><b>C$25.521M</b>Modeled covered obligations</div>'+
+      '<div class="cc-whole-card"><b>C$114K</b>Modeled residual cushion — not promised profit</div>'+
+      '</div>'+
+      '<h3>What the 16-unit sale engine covers</h3>'+
+      '<table class="cc-whole-table"><tbody>'+
+      '<tr><td>Modeled senior principal</td><td>C$9.605M</td></tr>'+
+      '<tr><td>12-month 9% senior-interest stress</td><td>C$864K</td></tr>'+
+      '<tr><td>Investor capital returned</td><td>C$2.401M</td></tr>'+
+      '<tr><td>Investor target profit</td><td>C$1.200M</td></tr>'+
+      '<tr><td>PATH + East Bayfront + Istanbul</td><td>C$2.608M</td></tr>'+
+      '<tr><td>Arena + TV</td><td>C$1.761M</td></tr>'+
+      '<tr><td>Six salaries + minimum employer burden</td><td>C$693K</td></tr>'+
+      '<tr><td>May 2027 cruise</td><td>C$2.331M</td></tr>'+
+      '<tr><td>SweetEV upfront cash</td><td>C$48.9K</td></tr>'+
+      '<tr><td>50% ticket refund/reserve</td><td>C$1.564M</td></tr>'+
+      '<tr><td>Grocery-benefit maximum reserve</td><td>C$990K</td></tr>'+
+      '<tr><td>Civic activation + enterprise admin + retained carry + property closing allowance</td><td>C$313K</td></tr>'+
+      '<tr><td>Known-but-unpriced whole-company reserve</td><td>C$500K</td></tr>'+
+      '</tbody></table>'+
+      '<p class="cc-whole-note">No uncommitted revenue is used to make the minimum unit count work. The C$500K reserve is controlled for quote-dependent SweetEV operations, Mas participation, childcare support, technology/CRM, sponsor/vendor fulfillment, HST/closing adjustments and other confirmed-but-unpriced obligations. Any signed outside funding reduces the burden; it is not counted before execution.</p>'
+    );
+  }
+  if(travel && !travel.querySelector('[data-cc-whole="2026-09-20"]')){
+    const host=travel.querySelector(".page-inner,.content,.section-inner,.container,.wrap")||travel;
+    host.insertAdjacentHTML("afterbegin",box(
+      '<div class="cc-kicker">Travel numbers · current control</div>'+
+      '<h2>May 2027 first-sailing model: C$2.331M cost / C$2.625M modeled revenue.</h2>'+
+      '<div class="cc-whole-grid"><div class="cc-whole-card"><b>C$1.725M</b>Vessel / operator / ports / taxes / core inventory</div><div class="cc-whole-card"><b>C$235K</b>Artists / cultural / onboard production</div><div class="cc-whole-card"><b>C$371K</b>Shore, sales, compliance, filming + C$81,141 contingency</div></div>'+
+      '<p>Modeled revenue and the C$293,859 modeled EBITDA are not used to reduce the 16-unit Vic Towns downside requirement. Operator, route, compliant travel seller, supplier quotes and paid bookings remain evidence gates.</p>'
+    ));
+  }
+})();
+</script>\`;
+
 let renderedHtml = canonicalHtml;
-for (const block of [trafficFunnel, projectCopy, trailerExperience, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -204,13 +280,13 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   carnival_main_theme_non_music_pages: true,
   mas_parade_attendance_visible: true,
   carnival_visual_theme_minimal: true,
-  canonical_document_system: "21-file-v10",
+  canonical_document_system: "WHOLE-21-2026-09-20",
   source_recovery_instances: 1400,
   source_unique_objects: 1273,
-  currentized_enterprise_uses_cad: 30339885,
-  public_funding_scenario_in_cad: 17553000,
-  public_funding_scenario_back_cad: 18712000,
-  public_funding_scenario_remainder_cad: 1159000,
+  currentized_enterprise_uses_cad: 25521275.39,
+  vic_towns_units_current: 16,
+  vic_towns_net_resale_cad: 25635028,
+  downside_residual_cushion_cad: 113752.61,
   family_social_contribution: true,
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
