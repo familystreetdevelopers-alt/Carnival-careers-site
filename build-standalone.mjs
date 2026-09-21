@@ -1804,7 +1804,24 @@ const requestedAccentCleanupPatch = `
 })();
 </script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch]) {
+const removeCarLeadSequencePatch = `
+<script id="cc-remove-car-lead-sequence">
+(() => {
+  const run = () => {
+    const page = document.getElementById("page-car") || document.querySelector('[data-page="car"]');
+    if (!page) return;
+    const heading = [...page.querySelectorAll("h1,h2,h3")].find(el =>
+      (el.textContent || "").trim() === "Do not sell a car lead. Move the vehicle all the way to usable."
+    );
+    const section = heading?.closest("section");
+    if (section) section.remove();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true});
+  else run();
+})();
+</script>`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, removeCarLeadSequencePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
