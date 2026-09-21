@@ -440,6 +440,12 @@ const wholeReconciliationPatch = `
   .cc-whole-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
   .cc-whole-table td,.cc-whole-table th{padding:9px 8px;border-bottom:1px solid rgba(127,127,127,.22);text-align:left;vertical-align:top}
   .cc-whole-note{font-size:.86rem;opacity:.84;max-width:88ch}
+  #page-project .cc-whole-reconcile{font-size:1.12rem;padding:30px}
+  #page-project .cc-whole-reconcile h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.02}
+  #page-project .cc-whole-reconcile>p{font-size:1.14rem;line-height:1.6}
+  #page-project .cc-whole-card{font-size:1.08rem;line-height:1.5;padding:20px}
+  #page-project .cc-whole-card b{font-size:1.5rem;margin-bottom:8px}
+  #page-project .cc-whole-note{font-size:1.04rem;line-height:1.6;opacity:.92}
 </style>
 <script id="cc-whole-reconcile-script">
 (() => {
