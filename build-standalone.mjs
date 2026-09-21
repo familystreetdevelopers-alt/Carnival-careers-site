@@ -538,7 +538,7 @@ const wholeReconciliationPatch = `
 
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 renderedHtml = renderedHtml.replaceAll(" — never the beginning — because by the time the city gathers, the story has already created something real.", ".");
-renderedHtml = renderedHtml.replace(/<div class="project-chips">[\\s\\S]*?<\\/div>/, "");
+renderedHtml = renderedHtml.replace(/<div class="project-chips">[\s\S]*?<\/div>/, "");
 const professionalCopyReplacements = [
   ["03</span> Professional forms", "03</span> Get each city done"],
   ["Firm up the people who make each city executable.", "These are the professionals who turn a city from plan into reality."],
