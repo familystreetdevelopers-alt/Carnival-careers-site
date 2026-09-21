@@ -1818,7 +1818,7 @@ const requestedAccentCleanupPatch = `
 
 
 
-const editorialCardSystemPatch = \`
+const editorialCardSystemPatch = `
 <style id="cc-editorial-card-system-style">
   .cc-editorial-flat{
     min-height:0!important;
@@ -1938,7 +1938,7 @@ const editorialCardSystemPatch = \`
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
 })();
-</script>\`;
+</script>`;
 
 for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
