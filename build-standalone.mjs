@@ -353,7 +353,6 @@ const projectStorySimplifyPatch = `
           '<article class="cc-story-moment"><div class="cc-story-num">03</div><div><h3>Make something real happen</h3><p>Housing, work, food, mobility, childcare, local business and other practical needs move from conversation into visible action.</p></div></article>',
           '<article class="cc-story-moment"><div class="cc-story-num">04</div><div><h3>Let the city celebrate it</h3><p>Partners, culture, media and public activations carry the story outward. The arena concert comes last—after people understand what changed.</p></div></article>',
         '</div>',
-        '<div class="cc-story-result"><strong>One family story. A whole city moving around it.</strong><span>Property, employment, food, mobility, media, music, sponsors, vendors, travel and commerce enter only where they help move the story or the household forward.</span></div>',
       '</div>'
     ].join("");
   };
