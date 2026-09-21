@@ -964,6 +964,9 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
   longer_horizon_separated: true,
-  trailer_modal_audio: true,\n  vendor_end_to_end_journey: true,\n  sponsor_end_to_end_journey: true\n}, null, 2));
+  trailer_modal_audio: true,
+  vendor_end_to_end_journey: true,
+  sponsor_end_to_end_journey: true
+}, null, 2));
 
 console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_BADGE=REMOVED", "PLAIN_LANGUAGE=ON");
