@@ -374,7 +374,7 @@ const wholeReconciliationPatch = `
 })();
 </script>`;
 
-let renderedHtml = canonicalHtml;
+let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
