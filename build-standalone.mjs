@@ -230,6 +230,37 @@ const projectCopy = `
 </script>`;
 
 
+const showPageButtonPatch = \`
+<script id="cc-show-button-patch">
+(() => {
+  const run = () => {
+    const start = "In each city, the hosts arrive as the audience’s guides into a complete Carnival Careers story:";
+    const nodes = [...document.querySelectorAll("p,div")];
+    const target = nodes.find(el => (el.textContent || "").trim().startsWith(start));
+    if (!target) return;
+
+    const wrap = document.createElement("div");
+    wrap.className = "actions";
+    wrap.setAttribute("data-cc-show-link", "1");
+    wrap.innerHTML = '<a class="btn" href="#show">See the Show</a>';
+
+    const parent = target.parentElement;
+    const prior = target.previousElementSibling;
+    if (prior && /^H[1-6]$/.test(prior.tagName) && (prior.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE") {
+      prior.remove();
+    }
+    target.replaceWith(wrap);
+
+    if (parent) {
+      const heading = [...parent.querySelectorAll("h1,h2,h3,h4,h5,h6")].find(h => (h.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE");
+      if (heading) heading.remove();
+    }
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once:true });
+  else run();
+})();
+</script>\`;
+
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
@@ -426,7 +457,7 @@ const wholeReconciliationPatch = \`
 </script>\`;
 
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, trailerExperience, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
