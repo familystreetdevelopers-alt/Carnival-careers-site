@@ -258,13 +258,21 @@ const showPageButtonPatch = `
 
     const home = document.getElementById("page-home") || document.querySelector('[data-page="home"]');
     if (home && heroSection) {
-      const tellHeading = [...home.querySelectorAll("h1,h2,h3,h4,h5,h6")].find(h => {
+      const headings = [...home.querySelectorAll("h1,h2,h3,h4,h5,h6")];
+      const tellHeading = headings.find(h => {
         const t = (h.textContent || "").trim().toLowerCase();
         return t === "tell me who you are." || t === "tell us who you are." || t === "tell me who you are" || t === "tell us who you are";
       });
+      const nextStepHeading = headings.find(h => (h.textContent || "").trim().toLowerCase() === "choose your next step.");
       const tellSection = tellHeading?.closest("section");
-      if (tellSection && tellSection !== heroSection && heroSection.nextElementSibling !== tellSection) {
-        heroSection.insertAdjacentElement("afterend", tellSection);
+      const nextStepSection = nextStepHeading?.closest("section");
+
+      let anchor = heroSection;
+      for (const section of [tellSection, nextStepSection]) {
+        if (section && section !== heroSection) {
+          anchor.insertAdjacentElement("afterend", section);
+          anchor = section;
+        }
       }
     }
 
