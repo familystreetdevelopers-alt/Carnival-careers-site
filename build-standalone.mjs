@@ -478,6 +478,90 @@ const lenderReadabilityPatch = `
   }
 </style>`;
 
+const projectCapitalMergePatch = `
+<style id="cc-project-capital-merge-style">
+  #project-capital-merged{margin:34px 0 10px}
+  #project-capital-merged .cc-whole-reconcile{font-size:1.14rem;padding:32px}
+  #project-capital-merged .cc-whole-reconcile>h2{font-size:clamp(2.2rem,4.5vw,3.7rem);line-height:1.02;margin:0 0 20px}
+  #project-capital-merged .cc-whole-card{font-size:1.12rem;line-height:1.5;padding:20px}
+  #project-capital-merged .cc-whole-card b{font-size:1.55rem;line-height:1.12;margin-bottom:8px}
+  #project-capital-merged .cc-whole-table{font-size:1.08rem;line-height:1.5}
+  #project-capital-merged .cc-whole-table td,#project-capital-merged .cc-whole-table th{padding:13px 10px}
+  #project-capital-merged .cc-whole-note{font-size:1.05rem;line-height:1.65;opacity:.94}
+  @media(max-width:640px){
+    #project-capital-merged .cc-whole-reconcile{padding:22px 18px}
+    #project-capital-merged .cc-whole-table{font-size:1rem}
+  }
+</style>
+<script id="cc-project-capital-merge-script">
+(() => {
+  const run = () => {
+    const project = document.getElementById("page-project") || document.querySelector('[data-page="project"]');
+    const capital = document.getElementById("page-capital") || document.querySelector('[data-page="capital"]');
+    if (!project) return;
+
+    if (capital) {
+      const capitalBox = capital.querySelector(".cc-whole-reconcile");
+      if (capitalBox && !document.getElementById("project-capital-merged")) {
+        const merged = document.createElement("section");
+        merged.id = "project-capital-merged";
+        merged.className = "section";
+
+        const wrap = document.createElement("div");
+        wrap.className = "wrap";
+        merged.appendChild(wrap);
+
+        const kicker = capitalBox.querySelector(".cc-kicker");
+        if (kicker) kicker.remove();
+
+        const title = capitalBox.querySelector("h1");
+        if (title) {
+          const h2 = document.createElement("h2");
+          h2.textContent = "Project funding";
+          title.replaceWith(h2);
+        }
+
+        const firstP = capitalBox.querySelector(":scope > p");
+        if (firstP) firstP.remove();
+
+        wrap.appendChild(capitalBox);
+        project.appendChild(merged);
+      }
+
+      capital.remove();
+    }
+
+    const isCapitalHref = a => {
+      const href = String(a.getAttribute("href") || "").trim();
+      return href === "#capital" || /#capital$/i.test(href);
+    };
+
+    document.querySelectorAll("nav a,header a").forEach(a => {
+      if (!isCapitalHref(a)) return;
+      if ((a.textContent || "").trim().toLowerCase() === "capital") {
+        const li = a.closest("li");
+        if (li && li.querySelectorAll("a").length === 1) li.remove();
+        else a.remove();
+      }
+    });
+
+    document.querySelectorAll("a").forEach(a => {
+      if (isCapitalHref(a)) a.setAttribute("href","#project");
+    });
+
+    const rerouteOldCapitalHash = () => {
+      if (String(location.hash || "").toLowerCase() !== "#capital") return;
+      location.hash = "project";
+    };
+    window.addEventListener("hashchange", rerouteOldCapitalHash);
+    rerouteOldCapitalHash();
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+</script>`;
+
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
@@ -923,7 +1007,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
