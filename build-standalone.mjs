@@ -1052,7 +1052,7 @@ const sidelineSittersUnifiedPatch = \`
     const read = key => { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch(e) { return []; } };
     const write = (key,val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
     const ref = prefix => prefix + "-" + Math.random().toString(36).slice(2,8).toUpperCase();
-    const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#039;"}[m]));
+    const esc = s => String(s == null ? "" : s).replace(/[&<>"\']/g, m => m==="&" ? "&amp;" : m==="<" ? "&lt;" : m===">" ? "&gt;" : m===String.fromCharCode(34) ? "&quot;" : "&#039;");
 
     const familyForm = document.getElementById("ccSidelineFamilyForm");
     familyForm.addEventListener("submit", e => {
