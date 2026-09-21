@@ -1245,17 +1245,19 @@ const cityPartnerInvitePatch = "\n<style id=\"cc-city-partner-invite-style\">\n 
 
 const sidelineSittersUnifiedPatch = `
 <style id="cc-sideline-unified-style">
-  #page-childcare .cc-fw-top{padding:clamp(48px,7vw,84px) 0;background:linear-gradient(135deg,#fff7df 0%,#f5eeff 48%,#e9f7ff 100%);color:#16131d;border-bottom:1px solid rgba(20,20,20,.08)}
-  #page-childcare .cc-fw-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-  #page-childcare .cc-fw-kicker{font-size:.8rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase;color:#6f48e8;margin-bottom:10px}
-  #page-childcare .cc-fw-top h1{max-width:12ch;margin:0 0 14px;font-size:clamp(2.7rem,6vw,5.2rem);line-height:.92;letter-spacing:-.055em}
-  #page-childcare .cc-fw-lede{max-width:780px;margin:0;color:#5c5566;font-size:clamp(1.03rem,1.8vw,1.2rem);line-height:1.65}
-  #page-childcare .cc-fw-sub{margin:32px 0 14px;font-size:1rem;font-weight:950;letter-spacing:.04em;text-transform:uppercase;color:#27212e}
-  #page-childcare .cc-fw-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-  #page-childcare .cc-fw-card{padding:20px;border-radius:20px;background:#fff;border:1px solid rgba(111,72,232,.16);box-shadow:0 12px 30px rgba(48,28,81,.07)}
-  #page-childcare .cc-fw-num{display:block;font-size:.78rem;font-weight:950;letter-spacing:.12em;color:#6f48e8;margin-bottom:16px}
-  #page-childcare .cc-fw-card h3{margin:0 0 8px;font-size:1.18rem;color:#18131f}
-  #page-childcare .cc-fw-card p{margin:0;color:#665f70;line-height:1.55;font-size:.94rem}
+  #page-childcare .cc-fw-top{min-height:440px;display:flex;align-items:flex-end;padding:95px 0 55px;background:url('assets/images/families-contact.jpg') center/cover no-repeat;color:#fff;position:relative;overflow:hidden}
+  #page-childcare .cc-fw-top:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,14,25,.94),rgba(7,14,25,.58),rgba(7,14,25,.82)),linear-gradient(0deg,#070e19,transparent 70%)}
+  #page-childcare .cc-fw-wrap{width:min(1220px,calc(100% - 40px));margin:auto;position:relative;z-index:1}
+  #page-childcare .cc-fw-top h1{max-width:980px;margin:0 0 18px;font-size:clamp(48px,6vw,88px);line-height:.95;letter-spacing:-.055em}
+  #page-childcare .cc-fw-lede{max-width:790px;margin:0;color:#c6d0dd;font-size:18px;line-height:1.65}
+  #page-childcare .cc-fw-body{padding:86px 0;background:#f6f2e8;color:#142032}
+  #page-childcare .cc-fw-body .cc-fw-wrap{position:relative}
+  #page-childcare .cc-fw-sub{margin:0 0 30px;font-size:clamp(38px,5vw,72px);font-weight:950;line-height:.98;letter-spacing:-.05em;color:#142032}
+  #page-childcare .cc-fw-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  #page-childcare .cc-fw-card{padding:24px;border-radius:22px;background:#fff;border:1px solid rgba(10,25,45,.12);box-shadow:0 18px 50px rgba(12,24,38,.08)}
+  #page-childcare .cc-fw-num{display:block;font:700 34px Georgia,serif;color:#d6a326;margin-bottom:18px}
+  #page-childcare .cc-fw-card h3{margin:0 0 9px;font-size:25px;color:#142032;letter-spacing:-.03em}
+  #page-childcare .cc-fw-card p{margin:0;color:#5f6875;line-height:1.6;font-size:1rem}
   #page-childcare .cc-ss-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
   #page-childcare .cc-ss-hero{padding:64px 0 34px;background:linear-gradient(135deg,#1f1647,#6f48e8 62%,#ffbd20);color:#fff}
   #page-childcare .cc-ss-kicker{font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;opacity:.84}
@@ -1297,6 +1299,10 @@ const sidelineSittersUnifiedPatch = `
     #page-childcare .cc-fw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media(max-width:560px){
+    #page-childcare .cc-fw-top{min-height:390px;padding:72px 0 44px}
+    #page-childcare .cc-fw-wrap{width:min(100% - 28px,1220px)}
+    #page-childcare .cc-fw-top h1{font-size:44px}
+    #page-childcare .cc-fw-body{padding:62px 0}
     #page-childcare .cc-fw-grid,#page-childcare .cc-ss-process,#page-childcare .cc-ss-three,#page-childcare .cc-ss-form{grid-template-columns:1fr}
     #page-childcare .cc-ss-field.cc-full,#page-childcare .cc-ss-submit{grid-column:auto}
   }
@@ -1312,9 +1318,12 @@ const sidelineSittersUnifiedPatch = `
     page.innerHTML =
       '<section class="cc-fw-top" data-cc-family-work-restored>'+
         '<div class="cc-fw-wrap">'+
-
           '<h1>The family pathway is work-first.</h1>'+
           '<p class="cc-fw-lede">Families, tenant-workers and owner-operators enter through documented work, training and income-building, not vague promises.</p>'+
+        '</div>'+
+      '</section>'+
+      '<section class="cc-fw-body">'+
+        '<div class="cc-fw-wrap">'+
           '<div class="cc-fw-sub">What moves the household forward.</div>'+
           '<div class="cc-fw-grid">'+
             '<article class="cc-fw-card"><span class="cc-fw-num">01</span><h3>Paid role path</h3><p>Real roles across production, events, property ops, construction, marketing, administration, food and community delivery.</p></article>'+
