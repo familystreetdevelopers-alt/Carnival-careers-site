@@ -237,24 +237,30 @@ const showPageButtonPatch = `
     const start = "In each city, the hosts arrive as the audience’s guides into a complete Carnival Careers story:";
     const nodes = [...document.querySelectorAll("p,div")];
     const target = nodes.find(el => (el.textContent || "").trim().startsWith(start));
-    if (!target) return;
-
-    const wrap = document.createElement("div");
-    wrap.className = "actions";
-    wrap.setAttribute("data-cc-show-link", "1");
-    wrap.innerHTML = '<a class="btn" href="#show">See the Show</a>';
-
-    const parent = target.parentElement;
-    const prior = target.previousElementSibling;
-    if (prior && /^H[1-6]$/.test(prior.tagName) && (prior.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE") {
-      prior.remove();
+    if (target) {
+      const parent = target.parentElement;
+      const prior = target.previousElementSibling;
+      if (prior && /^H[1-6]$/.test(prior.tagName) && (prior.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE") prior.remove();
+      target.remove();
+      if (parent) {
+        const heading = [...parent.querySelectorAll("h1,h2,h3,h4,h5,h6")].find(h => (h.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE");
+        if (heading) heading.remove();
+      }
     }
-    target.replaceWith(wrap);
 
-    if (parent) {
-      const heading = [...parent.querySelectorAll("h1,h2,h3,h4,h5,h6")].find(h => (h.textContent || "").trim().toUpperCase() === "THE SERVICE PROMISE");
-      if (heading) heading.remove();
+    const hero = document.getElementById("homeVideo");
+    const actions = hero?.closest("section")?.querySelector(".actions") || document.querySelector("#page-home .actions");
+    if (!actions) return;
+
+    let btn = document.getElementById("homeShowOpen");
+    if (!btn) {
+      btn = document.createElement("a");
+      btn.id = "homeShowOpen";
+      btn.className = "btn";
+      btn.href = "#show";
+      btn.textContent = "See the Show";
     }
+    if (actions.firstElementChild !== btn) actions.insertBefore(btn, actions.firstElementChild);
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once:true });
   else run();
