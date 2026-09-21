@@ -450,16 +450,17 @@ const wholeReconciliationPatch = `
   const travel=document.getElementById("page-plane")||document.querySelector('[data-page="plane"],[data-page="travel"]');
 
   const projectHtml =
-    '<div class="cc-kicker">Current Toronto execution stack</div>'+
-    '<h2>19 Vic Towns fund the protected downside case. PATH, East Bayfront and Istanbul stay.</h2>'+
+    '<h2>Toronto property plan: buy 19 Vic Towns and keep the other three assets.</h2>'+
+    '<p>The plan is simple: the 19 Vic Towns are the properties we expect to resell. PATH, East Bayfront and Istanbul Fine Foods stay in the Carnival Careers portfolio.</p>'+
     '<div class="cc-whole-grid">'+
-      '<div class="cc-whole-card"><b>19 Vic Towns</b>26,876 sq. ft. / C$14.110M modeled purchase at C$525/sf</div>'+
-      '<div class="cc-whole-card"><b>C$560K PATH</b>5101 - 12 York Street · retain</div>'+
-      '<div class="cc-whole-card"><b>C$548K East Bayfront</b>3215 - 138 Downes Street · retain</div>'+
-      '<div class="cc-whole-card"><b>C$1.5M Istanbul</b>Fine Foods · retain / operate</div>'+
+      '<div class="cc-whole-card"><b>19 Vic Towns</b>Modeled purchase: C$14.110M · these are the resale properties</div>'+
+      '<div class="cc-whole-card"><b>PATH</b>5101 - 12 York Street · C$560K · keep</div>'+
+      '<div class="cc-whole-card"><b>East Bayfront</b>3215 - 138 Downes Street · C$548K · keep</div>'+
+      '<div class="cc-whole-card"><b>Istanbul Fine Foods</b>C$1.5M · keep and operate</div>'+
     '</div>'+
-    '<p>The 19-unit sale engine is sized without counting uncommitted sponsor, vendor, ticket, media, cruise, grocery, Istanbul or SweetEV revenue. It covers the modeled senior/investor exit, C$1.2M investor target profit, audience reserves, project operating costs and a controlled reserve for real costs still waiting on quotes.</p>'+
-    '<p class="cc-whole-note"><strong>Protected tax rule:</strong> the model carries a full 13% Vic Towns HST stress until the definitive APS/tax review confirms whether HST is included, recoverable or otherwise lower. Seller acceptance of the reduced 19-unit block, appraisal/actual resale values and lender/investor terms remain evidence gates.</p>';
+    '<h3>Why 19 Vic Towns?</h3>'+
+    '<p>In the current model, selling those 19 homes is enough to repay the modeled property financing and investor capital, include the C$1.2M investor target profit, and cover the major Toronto project costs and reserves. We do not need to assume that ticket sales, sponsors, media, cruise, grocery or SweetEV revenue will arrive in order for this backup plan to work.</p>'+
+    '<p class="cc-whole-note"><strong>What still has to be confirmed:</strong> the model currently assumes the full 13% HST on the Vic Towns as a worst-case tax cost. The final numbers can change after the purchase agreements, tax review, appraisals, actual resale values and lender/investor terms are confirmed.</p>';
 
   if(project){
     const old=project.querySelector('[data-cc-whole]');
