@@ -1715,7 +1715,31 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch]) {
+const homeMasMatterAccentPatch = \`
+<style id="cc-home-mas-matter-accent-style">
+  #page-home h1 .cc-hero-accent,
+  [data-page="home"] h1 .cc-hero-accent{
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-style:normal!important;
+    font-weight:500!important;
+    color:#ffc44d!important;
+    letter-spacing:-.045em!important;
+  }
+</style>
+<script id="cc-home-mas-matter-accent-script">
+(() => {
+  const run=()=>{
+    const home=document.getElementById("page-home")||document.querySelector('[data-page="home"]');
+    if(!home)return;
+    const h1=[...home.querySelectorAll("h1")].find(el=>(el.textContent||"").trim()==="The mas brings us together. The next move makes it matter.");
+    if(!h1)return;
+    h1.innerHTML='The <em class="cc-hero-accent">mas</em> brings us together. The next move makes it <em class="cc-hero-accent">matter</em>.';
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
+})();
+</script>\`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
