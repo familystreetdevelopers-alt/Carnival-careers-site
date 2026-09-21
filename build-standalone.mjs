@@ -1717,10 +1717,14 @@ renderedHtml = renderedHtml.replace(
 );
 const homeMasMatterAccentPatch = `
 <style id="cc-home-mas-matter-accent-style">
+  #page-home h1,
+  [data-page="home"] h1{
+    font-style:italic!important;
+  }
   #page-home h1 .cc-hero-accent,
   [data-page="home"] h1 .cc-hero-accent{
     font-family:Georgia,"Times New Roman",serif!important;
-    font-style:normal!important;
+    font-style:italic!important;
     font-weight:500!important;
     color:#ffc44d!important;
     letter-spacing:-.045em!important;
