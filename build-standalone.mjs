@@ -238,6 +238,39 @@ const projectCopy = `
 </script>`;
 
 
+const familiesWorkMergePatch = `
+<script id="cc-families-work-merge">
+(() => {
+  const run = () => {
+    const workPage = document.getElementById("page-families");
+    const familiesPage = document.getElementById("page-childcare");
+
+    if (workPage && familiesPage && !familiesPage.querySelector('[data-cc-family-work-top]')) {
+      const wrapper = document.createElement("div");
+      wrapper.setAttribute("data-cc-family-work-top","");
+      wrapper.id = "family-work-pathway";
+
+      while (workPage.firstChild) wrapper.appendChild(workPage.firstChild);
+      familiesPage.insertAdjacentElement("afterbegin",wrapper);
+
+      workPage.innerHTML = '<div class="wrap" style="padding:40px 20px"><a class="btn primary" href="#childcare">Open Families</a></div>';
+    }
+
+    const homeItem = document.querySelector('nav[aria-label="Primary"] .nav-item > a[href="#home"]')?.closest(".nav-item");
+    homeItem?.querySelectorAll('.drop a[href="#families"]').forEach(a => {
+      if ((a.textContent || "").trim().toLowerCase() === "families + work") a.remove();
+    });
+
+    document.querySelectorAll('a[href="#families"]').forEach(a => {
+      if (!a.closest('nav[aria-label="Primary"] .nav-item > .drop')) a.setAttribute("href","#childcare");
+    });
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+</script>`;
+
 const showPageButtonPatch = `
 <script id="cc-show-button-patch">
 (() => {
@@ -1021,7 +1054,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, cityPartnerInvitePatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, cityPartnerInvitePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
