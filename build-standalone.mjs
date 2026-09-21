@@ -383,6 +383,32 @@ const lenderReadabilityPatch = `
   #page-lenders input,
   #page-lenders select{min-height:50px!important}
   #page-lenders textarea{min-height:150px!important;line-height:1.5!important}
+  #page-lenders .partner-intro,
+  #page-lenders .partner-section:not(.dark),
+  #page-lenders .partner-cta,
+  #page-lenders .world-band{color:#171717!important}
+  #page-lenders .partner-intro p,
+  #page-lenders .partner-section:not(.dark) p,
+  #page-lenders .partner-cta p,
+  #page-lenders .world-band p,
+  #page-lenders .lane-fit,
+  #page-lenders .plain-note{color:#38323f!important;opacity:1!important}
+  #page-lenders .page-hero,
+  #page-lenders .partner-section.dark{color:#fff!important}
+  #page-lenders .page-hero p,
+  #page-lenders .partner-section.dark p,
+  #page-lenders .partner-section.dark span{color:rgba(255,255,255,.88)!important;opacity:1!important}
+  #page-lenders .partner-section.dark strong,
+  #page-lenders .partner-section.dark h2,
+  #page-lenders .partner-section.dark h3{color:#fff!important}
+  #page-lenders form,
+  #page-lenders form h3,
+  #page-lenders form label{color:#171717!important}
+  #page-lenders input,
+  #page-lenders select,
+  #page-lenders textarea{color:#171717!important;background:#fff!important}
+  #page-lenders input::placeholder,
+  #page-lenders textarea::placeholder{color:#6a6370!important;opacity:1!important}
   #page-lenders .lane-row,
   #page-lenders .simple-point,
   #page-lenders .current-line{padding-top:20px!important;padding-bottom:20px!important}
