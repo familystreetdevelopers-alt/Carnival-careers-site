@@ -64,9 +64,6 @@ const projectCopy = `
   .cc-plain-core p{margin:7px 0;max-width:72ch}
   .cc-plain-core strong{font-weight:850}
   .cc-plain-core .cc-kicker{font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px}
-  .cc-carnival-page{box-shadow:inset 0 4px 0 rgba(237,56,161,.72),inset 0 7px 0 rgba(255,190,32,.46)}
-  .cc-carnival-signal{display:inline-flex;align-items:center;gap:7px;margin:10px 0 12px;padding:7px 11px;border-radius:999px;border:1px solid rgba(237,56,161,.30);background:linear-gradient(90deg,rgba(237,56,161,.12),rgba(255,190,32,.14),rgba(112,72,232,.12));font-size:.74rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-  .cc-carnival-signal::before{content:"✦";font-size:.9rem}
 </style>
 <script id="cc-eat-you-keep-script">
 (() => {
@@ -84,21 +81,6 @@ const projectCopy = `
   const show = findPage("page-show") || document.querySelector('[data-page="show"]');
   const capital = findPage("page-capital") || document.querySelector('[data-page="capital"]');
   const store = findPage("page-store","page-shop","page-commerce") || document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"]');
-
-  const pages = Array.from(document.querySelectorAll('.page,[data-page]')).filter(el => {
-    const key = String(el.getAttribute('data-page') || el.id || '').toLowerCase();
-    return key && !key.includes('music');
-  });
-  pages.forEach(page => {
-    page.classList.add('cc-carnival-page');
-    const host = page.querySelector('.page-hero .wrap,.hero .wrap,.page-inner,.section-inner,.content,.container,.wrap') || page;
-    if(!host.querySelector(':scope > .cc-carnival-signal')){
-      const signal=document.createElement('div');
-      signal.className='cc-carnival-signal';
-      signal.textContent='Carnival roots • Mas parade attendance • City celebration';
-      host.insertBefore(signal, host.firstChild);
-    }
-  });
 
   place(home,"core-home",'<div class="cc-kicker">Toronto story</div><h3>Contribution. Stability. Ownership.</h3><p><strong>Hopeton LaTouche’s household is the featured Toronto family / tenant-owner story.</strong> <strong>Michie Mee is the episode host.</strong> Michie brings cultural memory, contribution and a public platform. Hopeton’s household brings work, caregiving, resilience, culture, local spending and a real ownership journey. Carnival Careers connects those contributions to tangible change, visible Carnival and mas parade attendance, and then the arena as the public victory lap.</p>');
   place(families,"core-families",'<div class="cc-kicker">Families</div><h3>The family’s contribution comes before the support model.</h3><p>Work, caregiving, culture, neighbourhood relationships, resilience and ownership ambition are already contributions. Carnival Careers can add documented work/income pathways, housing/ownership progress, mobility, childcare/family supports and partner connections. A qualifying tenant-owner role is modeled at C$105,000 gross a year for real documented work when funded and activated. The household uses that income for housing, Eat Your Keep groceries, SweetEVRides mobility, childcare and normal family needs, while the family remains visibly part of Carnival culture and mas parade attendance.</p>');
@@ -279,7 +261,7 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   unified_story_spine: true,
   carnival_main_theme_non_music_pages: true,
   mas_parade_attendance_visible: true,
-  carnival_visual_theme_minimal: true,
+  carnival_visual_badge_removed: true,
   canonical_document_system: "WHOLE-21-2026-09-20",
   source_recovery_instances: 1400,
   source_unique_objects: 1273,
@@ -294,4 +276,4 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   trailer_modal_audio: true
 }, null, 2));
 
-console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_MAS_PARADE=ON", "PLAIN_LANGUAGE=ON");
+console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_BADGE=REMOVED", "PLAIN_LANGUAGE=ON");
