@@ -248,9 +248,25 @@ const showPageButtonPatch = `
       }
     }
 
+    const oldShowSection = document.getElementById("home-host-experience");
+    if (oldShowSection) oldShowSection.remove();
+
     const hero = document.getElementById("homeVideo");
-    const actions = hero?.closest("section")?.querySelector(".actions") || document.querySelector("#page-home .actions");
+    const heroSection = hero?.closest("section");
+    const actions = heroSection?.querySelector(".actions") || document.querySelector("#page-home .actions");
     if (!actions) return;
+
+    const home = document.getElementById("page-home") || document.querySelector('[data-page="home"]');
+    if (home && heroSection) {
+      const tellHeading = [...home.querySelectorAll("h1,h2,h3,h4,h5,h6")].find(h => {
+        const t = (h.textContent || "").trim().toLowerCase();
+        return t === "tell me who you are." || t === "tell us who you are." || t === "tell me who you are" || t === "tell us who you are";
+      });
+      const tellSection = tellHeading?.closest("section");
+      if (tellSection && tellSection !== heroSection && heroSection.nextElementSibling !== tellSection) {
+        heroSection.insertAdjacentElement("afterend", tellSection);
+      }
+    }
 
     let btn = document.getElementById("homeShowOpen");
     if (!btn) {
