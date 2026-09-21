@@ -360,6 +360,52 @@ const projectStorySimplifyPatch = `
   else run();
 })();
 </script>`;
+const siteDedupePatch = `
+<script id="cc-site-dedupe-script">
+(() => {
+  const norm = s => String(s || "").replace(/\\s+/g," ").trim();
+
+  const findHeading = (pageId, text) => {
+    const page = document.getElementById(pageId);
+    if (!page) return null;
+    return Array.from(page.querySelectorAll("h1,h2,h3,h4")).find(el => norm(el.textContent) === text) || null;
+  };
+
+  const removeClosest = (pageId, text, selector) => {
+    const h = findHeading(pageId, text);
+    const block = h?.closest(selector);
+    if (block) block.remove();
+  };
+
+  // Project owns the overall city story. Investors should focus on investment choices.
+  removeClosest("page-investors", "One repeatable city engine.", "section.partner-intro");
+  removeClosest("page-investors", "There is real math behind the story.", "section.partner-section");
+
+  // The hero and CTA already explain the city-to-city relationship.
+  document.querySelector("#page-investors .world-band")?.remove();
+  document.querySelector("#page-lenders .world-band")?.remove();
+  document.querySelector("#page-professional-services .world-band")?.remove();
+
+  // Professional Services should go straight from the promise to the actual service lanes.
+  removeClosest("page-professional-services", "Recurring deal work, not a one-time favor.", "section.partner-intro");
+
+  // Remove small explanatory labels when the large heading already says the same thing.
+  document.querySelectorAll("#page-investors .partner-kicker,#page-lenders .partner-kicker,#page-professional-services .partner-kicker").forEach(el => el.remove());
+
+  // Show owns viewing; Project owns the long explanation of how an episode works.
+  const watchTitle = document.getElementById("show-watch-title");
+  const watchHead = watchTitle?.parentElement;
+  const watchIntro = watchHead ? Array.from(watchHead.children).find(el => el.tagName === "P") : null;
+  if (watchIntro) watchIntro.remove();
+
+  // Arena owns the finale details, not another recap of the full episode sequence.
+  const arenaTitle = findHeading("page-arena", "The arena is the victory lap.");
+  const arenaHead = arenaTitle?.closest(".head");
+  const arenaIntro = arenaHead ? Array.from(arenaHead.children).find(el => el.tagName === "P") : null;
+  if (arenaIntro) arenaIntro.remove();
+})();
+</script>`;
+
 const lenderReadabilityPatch = `
 <style id="cc-lender-readability-style">
   #page-lenders{font-size:18px}
@@ -527,13 +573,6 @@ const wholeReconciliationPatch = `
     '</div>'+
     '<p class="cc-whole-note">The 19 Vic Towns are modeled to cover financing, investor capital and profit, and major Toronto costs. Final figures depend on tax, appraisal, resale and financing terms.</p>';
 
-  if(project){
-    const old=project.querySelector('[data-cc-whole]');
-    if(old) old.remove();
-    const host=project.querySelector(".project-wrap,.page-inner,.content,.container,.wrap")||project;
-    host.insertAdjacentHTML("afterbegin",box(projectHtml));
-  }
-
   if(capital){
     const inner=capital.querySelector(".page-inner,.content,.section-inner,.container,.wrap")||capital;
     inner.innerHTML=box(
@@ -638,7 +677,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
