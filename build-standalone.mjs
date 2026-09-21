@@ -1180,7 +1180,7 @@ const sidelineSittersUnifiedPatch = `
     page.innerHTML =
       '<section class="cc-fw-top" data-cc-family-work-restored>'+
         '<div class="cc-fw-wrap">'+
-          '<div class="cc-fw-kicker">Work / Families</div>'+
+
           '<h1>The family pathway is work-first.</h1>'+
           '<p class="cc-fw-lede">Families, tenant-workers and owner-operators enter through documented work, training and income-building, not vague promises.</p>'+
           '<div class="cc-fw-sub">What moves the household forward.</div>'+
