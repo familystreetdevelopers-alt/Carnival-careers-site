@@ -1049,6 +1049,7 @@ renderedHtml = renderedHtml.replace(/<a href="#music"><span>♫<\/span><div><h3>
 renderedHtml = renderedHtml.replace(/<a href="#music"><span>◒<\/span><div><h3>I make culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>◒</span><div><h3>I create culture.</h3><p>Share Carnival, festival, parade + arena-show video.</p></div><b>↗</b></a>');
 renderedHtml = renderedHtml.replace(/<a href="#show"><span>✦<\/span><div><h3>I carry the culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>✦</span><div><h3>I carry the culture.</h3><p>Carnival, festival, parade + city culture.</p></div><b>↗</b></a>');
 renderedHtml = renderedHtml.replace(/<a href="#project-professional">Professional forms<\/a>/g, "");
+renderedHtml = renderedHtml.replace(/<section class="section light" id="childcare-funders">[\\s\\S]*?<\\/section>\\s*(?=<section class="section" id="childcare-status">)/, "");
 
 renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
