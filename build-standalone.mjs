@@ -230,7 +230,7 @@ const projectCopy = `
 </script>`;
 
 
-const showPageButtonPatch = \`
+const showPageButtonPatch = `
 <script id="cc-show-button-patch">
 (() => {
   const run = () => {
@@ -259,7 +259,7 @@ const showPageButtonPatch = \`
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, { once:true });
   else run();
 })();
-</script>\`;
+</script>`;
 
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
