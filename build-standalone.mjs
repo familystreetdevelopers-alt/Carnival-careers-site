@@ -305,6 +305,72 @@ const removeSmallClutterLabels = `
 })();
 </script>`;
 
+const projectStorySimplifyPatch = `
+<style id="cc-project-story-simple-style">
+  #project-story .cc-story-simple{display:grid;gap:24px}
+  #project-story .cc-story-intro{max-width:820px}
+  #project-story .cc-story-intro h2{margin:0 0 10px;font-size:clamp(2rem,4vw,3.4rem);line-height:1}
+  #project-story .cc-story-intro p{margin:0;font-size:1.05rem;line-height:1.65;opacity:.82}
+  #project-story .cc-story-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  #project-story .cc-story-step{padding:20px;border-radius:18px;border:1px solid rgba(127,127,127,.22);background:rgba(255,255,255,.72);color:#171717}
+  #project-story .cc-story-step b{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:#171717;color:#fff;margin-bottom:12px}
+  #project-story .cc-story-step h3{margin:0 0 7px;font-size:1.05rem}
+  #project-story .cc-story-step p{margin:0;font-size:.92rem;line-height:1.5;color:#514b58}
+  #project-story .cc-activate{margin-top:8px;padding-top:22px;border-top:1px solid rgba(127,127,127,.22)}
+  #project-story .cc-activate h3{margin:0 0 6px;font-size:1.4rem}
+  #project-story .cc-activate>p{margin:0 0 16px;max-width:760px;line-height:1.55;opacity:.8}
+  #project-story .cc-activate-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+  #project-story .cc-activate-card{padding:15px 16px;border-radius:14px;background:rgba(112,72,232,.08);border:1px solid rgba(112,72,232,.15)}
+  #project-story .cc-activate-card strong{display:block;margin-bottom:4px}
+  #project-story .cc-activate-card span{font-size:.84rem;line-height:1.4;opacity:.76}
+  @media(max-width:850px){#project-story .cc-story-steps{grid-template-columns:1fr 1fr}#project-story .cc-activate-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){#project-story .cc-story-steps,#project-story .cc-activate-grid{grid-template-columns:1fr}}
+</style>
+<script id="cc-project-story-simple-script">
+(() => {
+  const run = () => {
+    const section = document.getElementById("project-story");
+    if (!section) return;
+    const summary = section.querySelector("summary");
+    if (summary) summary.innerHTML = '<span class="project-n">01</span> How one city works <span class="project-plus">+</span>';
+    const inside = section.querySelector(".project-inside");
+    if (!inside) return;
+    inside.innerHTML = [
+      '<div class="cc-story-simple">',
+        '<div class="cc-story-intro">',
+          '<h2>One woman. One family. One city. One real change.</h2>',
+          '<p>The episode follows a simple path: meet the people, understand what matters, help move something real forward, bring the city into it, then celebrate the result at the arena.</p>',
+        '</div>',
+        '<div class="cc-story-steps">',
+          '<div class="cc-story-step"><b>1</b><h3>Meet the woman</h3><p>A woman with a meaningful connection to the city opens the story.</p></div>',
+          '<div class="cc-story-step"><b>2</b><h3>Meet the family</h3><p>She connects Carnival Careers with a family whose story becomes the heart of the episode.</p></div>',
+          '<div class="cc-story-step"><b>3</b><h3>Share a meal</h3><p>Dinner gives everyone time to understand the family, the city and what would make a real difference.</p></div>',
+          '<div class="cc-story-step"><b>4</b><h3>Do the work</h3><p>Housing, employment, mobility, food, childcare and other practical needs move from conversation into action.</p></div>',
+          '<div class="cc-story-step"><b>5</b><h3>Bring in the city</h3><p>Local businesses, partners, culture, transit, restaurants, vendors and public activations become part of the same story.</p></div>',
+          '<div class="cc-story-step"><b>6</b><h3>Celebrate at the arena</h3><p>The concert comes last. By then, the audience has seen what changed and why the celebration matters.</p></div>',
+        '</div>',
+        '<div class="cc-activate">',
+          '<h3>What one episode can activate</h3>',
+          '<p>The family story naturally creates real work across the businesses Carnival Careers is already building.</p>',
+          '<div class="cc-activate-grid">',
+            '<div class="cc-activate-card"><strong>Homes + ownership</strong><span>Property, renovation, housing and ownership pathways.</span></div>',
+            '<div class="cc-activate-card"><strong>Work + training</strong><span>Paid roles, skills, credentials and documented income.</span></div>',
+            '<div class="cc-activate-card"><strong>Food + everyday spending</strong><span>Dinner, groceries, restaurants and Eat Your Keep.</span></div>',
+            '<div class="cc-activate-card"><strong>Mobility</strong><span>Vehicles, rideshare and household transportation.</span></div>',
+            '<div class="cc-activate-card"><strong>Media + music</strong><span>Television, digital content, soundtrack and live performance.</span></div>',
+            '<div class="cc-activate-card"><strong>Sponsors + vendors</strong><span>Brands and local merchants participate in useful, visible ways.</span></div>',
+            '<div class="cc-activate-card"><strong>Travel + movement</strong><span>Cruise, destination travel and movement between cities.</span></div>',
+            '<div class="cc-activate-card"><strong>Capital</strong><span>Debt, equity and other financing support assets and expansion.</span></div>',
+          '</div>',
+        '</div>',
+      '</div>'
+    ].join("");
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true});
+  else run();
+})();
+</script>`;
+
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
@@ -514,7 +580,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, trailerExperience, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
