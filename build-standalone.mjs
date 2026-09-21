@@ -547,6 +547,203 @@ const trailerExperience = `
 </script>`;
 
 
+const vendorSponsorJourneyPatch = `
+<style id="cc-vendor-sponsor-journey-style">
+  .cc-partner-journey{margin:28px auto 44px;max-width:1180px;padding:clamp(22px,4vw,46px);border-radius:30px;color:#fff;position:relative;overflow:hidden;box-shadow:0 24px 70px rgba(19,10,44,.22)}
+  .cc-partner-journey.vendor{background:radial-gradient(circle at 12% 10%,rgba(255,190,32,.30),transparent 30%),radial-gradient(circle at 90% 15%,rgba(68,210,164,.22),transparent 28%),linear-gradient(135deg,#1d1231 0%,#352063 52%,#10253b 100%)}
+  .cc-partner-journey.sponsor{background:radial-gradient(circle at 8% 8%,rgba(237,56,161,.30),transparent 28%),radial-gradient(circle at 92% 12%,rgba(255,190,32,.24),transparent 30%),linear-gradient(135deg,#171026 0%,#3e195f 48%,#101f38 100%)}
+  .cc-partner-journey:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(rgba(255,255,255,.75) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
+  .cc-partner-journey>*{position:relative;z-index:1}
+  .cc-pj-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);font-size:.76rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+  .cc-pj-kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:#ffbe20}
+  .cc-pj-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:28px;align-items:end}
+  .cc-pj-head h2{margin:14px 0 10px;font-size:clamp(2.4rem,5.5vw,5rem);line-height:.95;letter-spacing:-.05em;max-width:11ch}
+  .cc-pj-head p{margin:0;max-width:720px;font-size:clamp(1rem,1.6vw,1.18rem);line-height:1.62;color:rgba(255,255,255,.80)}
+  .cc-pj-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .cc-pj-summary div{padding:15px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16)}
+  .cc-pj-summary strong{display:block;font-size:1.02rem;margin-bottom:4px}
+  .cc-pj-summary span{font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.7)}
+  .cc-pj-paths{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0 16px}
+  .cc-pj-path{appearance:none;text-align:left;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:#fff;cursor:pointer;transition:.2s ease}
+  .cc-pj-path:hover,.cc-pj-path[aria-selected="true"]{transform:translateY(-2px);background:#fff;color:#1b1425;border-color:#fff}
+  .cc-pj-path b{display:block;font-size:1rem;margin-bottom:5px}
+  .cc-pj-path span{display:block;font-size:.8rem;line-height:1.35;opacity:.72}
+  .cc-pj-path-detail{padding:17px 19px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);margin-bottom:28px}
+  .cc-pj-path-detail strong{display:block;margin-bottom:5px}
+  .cc-pj-path-detail p{margin:0;color:rgba(255,255,255,.76);line-height:1.55}
+  .cc-pj-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .cc-pj-step{position:relative;min-height:230px;padding:20px;border-radius:21px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;justify-content:space-between}
+  .cc-pj-step .num{font-size:2.4rem;font-weight:950;line-height:1;opacity:.22}
+  .cc-pj-step h3{margin:0 0 8px;font-size:1.13rem;line-height:1.12}
+  .cc-pj-step p{margin:0;font-size:.89rem;line-height:1.55;color:rgba(255,255,255,.74)}
+  .cc-pj-step em{display:inline-block;margin-top:10px;font-size:.76rem;line-height:1.35;color:#ffdf7a;font-style:normal;font-weight:850}
+  .cc-pj-tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.72fr);gap:16px;margin-top:24px}
+  .cc-pj-checklist,.cc-pj-cta{padding:21px;border-radius:21px;background:rgba(5,10,20,.32);border:1px solid rgba(255,255,255,.14)}
+  .cc-pj-check-head{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}
+  .cc-pj-check-head h3,.cc-pj-cta h3{margin:0;font-size:1.22rem}
+  .cc-pj-progress{font-size:.82rem;font-weight:900;padding:7px 10px;border-radius:999px;background:#fff;color:#21172c;white-space:nowrap}
+  .cc-pj-checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .cc-pj-checks label{display:flex;gap:9px;align-items:flex-start;padding:10px 11px;border-radius:13px;background:rgba(255,255,255,.06);font-size:.84rem;line-height:1.35;cursor:pointer}
+  .cc-pj-checks input{margin-top:2px;accent-color:#ffbe20}
+  .cc-pj-note{margin:12px 0 0;font-size:.76rem;line-height:1.45;color:rgba(255,255,255,.61)}
+  .cc-pj-cta p{margin:8px 0 16px;color:rgba(255,255,255,.74);line-height:1.5;font-size:.9rem}
+  .cc-pj-actions{display:flex;flex-wrap:wrap;gap:9px}
+  .cc-pj-action{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:0 15px;border-radius:999px;text-decoration:none!important;font-size:.82rem;font-weight:900;border:1px solid rgba(255,255,255,.26)}
+  .cc-pj-action.primary{background:#fff;color:#21172c!important}
+  .cc-pj-action.secondary{background:transparent;color:#fff!important}
+  .cc-pj-after{margin-top:14px;padding:15px;border-radius:16px;background:rgba(255,255,255,.07);font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72)}
+  @media(max-width:940px){.cc-pj-head,.cc-pj-tool{grid-template-columns:1fr}.cc-pj-steps{grid-template-columns:1fr 1fr}.cc-pj-step{min-height:200px}}
+  @media(max-width:620px){.cc-partner-journey{border-radius:22px;padding:20px}.cc-pj-paths,.cc-pj-steps,.cc-pj-checks,.cc-pj-summary{grid-template-columns:1fr}.cc-pj-step{min-height:0}.cc-pj-head h2{font-size:2.5rem}.cc-pj-check-head{align-items:flex-start;flex-direction:column}}
+</style>
+<script id="cc-vendor-sponsor-journey-script">
+(() => {
+  const byAny = (ids, pages) => {
+    for (const id of ids) { const el=document.getElementById(id); if(el) return el; }
+    for (const p of pages) { const el=document.querySelector('[data-page="'+p+'"]'); if(el) return el; }
+    for (const id of ids) {
+      const bare=id.replace(/^page-/,"");
+      const link=document.querySelector('a[href="#'+bare+'"]');
+      const target=link ? document.getElementById(bare) || document.getElementById("page-"+bare) : null;
+      if(target) return target;
+    }
+    return null;
+  };
+  const pageHost = page => page && (page.querySelector(".page-inner,.content,.section-inner,.container,.wrap") || page);
+  const findForm = page => page && page.querySelector("form");
+  const ensureAnchor = (el,id) => { if(el && !el.id) el.id=id; return el ? "#"+el.id : null; };
+  const addJourney = (page, kind) => {
+    if(!page || page.querySelector('[data-cc-partner-journey="'+kind+'"]')) return;
+    const host=pageHost(page);
+    if(!host) return;
+    const existingForm=findForm(page);
+    const formHash=ensureAnchor(existingForm,"cc-"+kind+"-form");
+    const existingSections=[...page.querySelectorAll("section,article,div")].filter(el => {
+      const t=(el.textContent||"").trim().toLowerCase();
+      return kind==="vendor" ? /vendor (tier|package|space)|marketplace|booth/.test(t) : /sponsor (tier|package)|rights fee|lounge|anchor/.test(t);
+    });
+    const packageHash=ensureAnchor(existingSections[0],"cc-"+kind+"-packages");
+
+    const vendor = kind==="vendor";
+    const data = vendor ? {
+      title:"From first click to load-out — here is the whole vendor experience.",
+      intro:"A vendor should never have to guess what happens next. You tell us what you want to sell, serve, demonstrate or supply; we confirm the fit; the agreement locks the details; then you get a clear plan for setup, event day and follow-up.",
+      summaries:[
+        ["One clear contact","Know who is handling your file and event-day questions."],
+        ["One written scope","Space, services, fees, requirements and timing are confirmed before activation."],
+        ["Event-day plan","Load-in, passes, power, placement, hours and breakdown are organized in advance."],
+        ["Future-city path","Strong vendors can be considered again as Carnival Careers moves city to city."]
+      ],
+      paths:[
+        ["Sell to guests","Food, products, retail or paid experiences for event attendees.","You are selling directly to guests. We focus on your category, footprint, power/water needs, permits, inventory, POS, signage and event-day sales setup."],
+        ["Activate a brand/service","Sampling, demos, recruiting, community services or interactive booths.","You are creating an experience rather than simply selling inventory. We map the activity, staffing, guest flow, data capture, signage and any approval or safety requirements."],
+        ["Supply Carnival Careers","Production, equipment, staffing, transport, food, services or other contracted supply.","Carnival Careers is the customer. Your quote, deliverables, timeline, insurance, invoicing and payment terms belong in the supplier agreement before work starts."]
+      ],
+      steps:[
+        ["01","Tell us what you do","Choose the city and explain what you want to sell, activate or supply. Include your footprint, basic needs and any licences or permits you already have.","Outcome: we know whether there is a fit."],
+        ["02","Fit + selection","We review category fit, space, conflicts, operational needs and the current city plan. If selected, we confirm the offer and next step in writing.","Outcome: no guessing about your lane."],
+        ["03","Agreement + paperwork","The written agreement sets the space or deliverable, fee/payment terms, dates, insurance, permits, cancellation rules and responsibilities.","Outcome: both sides know the deal."],
+        ["04","Build the activation plan","We lock load-in, placement, footprint, power, water, Wi-Fi, passes, staffing, signage, inventory, POS, parking and key contacts.","Outcome: a usable event-day plan."],
+        ["05","Final readiness check","Before the event, required documents and creative are approved, the team receives arrival instructions, and open operational issues are closed.","Outcome: ready to arrive and work."],
+        ["06","Event day","Check in, load in, operate during your assigned hours, follow safety/site rules, get support through the event contact, then break down on schedule.","Outcome: clean delivery on site."],
+        ["07","Close-out","Any final invoices, settlement items, incident notes, lost-property issues or promised follow-up are completed after the event.","Outcome: the file is actually closed."],
+        ["08","Next city","We record what worked. Vendors that fit the model can be invited or considered for another city instead of starting from zero each time.","Outcome: one event can become a relationship."]
+      ],
+      checks:["Business/contact information","City + event requested","What you sell or supply","Footprint / table / booth size","Power / water / Wi-Fi needs","Staff count + names","Insurance / COI if required","Permits / health documents if required","Pricing / menu / product list","Logo + signage files","Load-in vehicle details","Invoice / payment information"],
+      ctaTitle:"Ready to move your vendor file forward?",
+      ctaText:"Use the existing application on this page. The more complete the first submission is, the faster we can tell you what is missing and whether the current city has a place for you.",
+      after:"Important: being considered is not the same as being confirmed. Space, category rights, sales expectations, audience size and revenue are not guaranteed unless they are specifically written into the final agreement.",
+      primary:"Start / finish vendor application",
+      secondary:"See vendor options"
+    } : {
+      title:"From first conversation to proof of delivery — here is the whole sponsor experience.",
+      intro:"A sponsor should be able to see exactly how money turns into an activation. We start with the business goal, match it to the right part of Carnival Careers, lock the rights and deliverables in writing, build the activation, document what was delivered, and then decide what should continue.",
+      summaries:[
+        ["Business goal first","Awareness, customer access, hospitality, community impact, content or another measurable objective."],
+        ["Rights in writing","Fee, category rights, placements, dates, approvals and deliverables are locked before launch."],
+        ["One activation calendar","Creative, production, media, event and on-site deadlines live in one plan."],
+        ["Proof after delivery","Sponsors receive a fulfillment record instead of relying on memory or promises."]
+      ],
+      paths:[
+        ["Brand + visibility","Naming, signage, digital visibility, content integration or broad brand presence.","We map where the brand appears, which assets are included, approval deadlines, category rights and the exact period covered by the agreement."],
+        ["Guest + VIP experience","Hospitality, lounges, sampling, on-site experiences, customer hosting or premium access.","We design the guest journey, capacities, credentials, staffing, signage, service requirements and who owns each operating detail."],
+        ["Community + project activation","Support tied to family progress, local commerce, mobility, food, work, city activity or another real project component.","We connect the sponsorship to a defined program or activation with a clear use, deliverables and evidence of what was actually completed. Sponsorship does not buy editorial control."]
+      ],
+      steps:[
+        ["01","Tell us the business goal","Start with who you need to reach, what you want people to do or feel, the city or cities you care about, timing and budget range.","Outcome: we solve for the objective, not just logo placement."],
+        ["02","Match the package","We connect the goal to the sponsor opportunities already listed on this page and identify the rights and activation pieces that make sense.","Outcome: a package with a reason behind it."],
+        ["03","Scope + agreement","The agreement locks the rights fee, payment schedule, category terms, deliverables, dates, approvals, cancellation terms and responsibilities.","Outcome: the commercial promise becomes specific."],
+        ["04","Collect assets","We gather logos, brand rules, legal lines, product information, URLs, creative files, guest lists and named approvers.","Outcome: production can move without chasing basics."],
+        ["05","Build the activation","Carnival Careers and the sponsor map signage, content, hospitality, on-site footprint, staffing, product, tech, guest flow and production deadlines.","Outcome: every deliverable has an owner and due date."],
+        ["06","Pre-event launch","Approved assets go live on the agreed schedule. Open issues are tracked before the city activation and arena event begin.","Outcome: no last-minute mystery about what is running."],
+        ["07","Live delivery","The sponsor receives its contracted on-site presence, hospitality and activation support. Event contacts manage issues against the signed scope.","Outcome: the plan becomes visible in the real event."],
+        ["08","Proof + renewal","After delivery, we organize fulfillment evidence such as asset screenshots, photos, links, attendance/engagement data that is actually available, and a recap of contracted items delivered.","Outcome: decide what to repeat, improve or expand."]
+      ],
+      checks:["Company + main contact","City / cities of interest","Business objective","Budget / package interest","Category + competitor conflicts","Logo + brand guidelines","Required legal wording","Activation concept","Hospitality / guest needs","Named creative approver","Billing / PO information","Measurement priorities"],
+      ctaTitle:"Ready to build the sponsor activation?",
+      ctaText:"Use the sponsor form already on this page and tell us the business goal first. We can then line it up with the existing packages, rights and city plan.",
+      after:"Important: sponsorship deliverables, audience numbers, media results, category exclusivity and measurement methods are only what the final signed agreement states. Sponsorship supports the project but does not purchase editorial control of the television story.",
+      primary:"Start / finish sponsor inquiry",
+      secondary:"See sponsor packages"
+    };
+
+    const root=document.createElement("section");
+    root.className="cc-partner-journey "+kind;
+    root.setAttribute("data-cc-partner-journey",kind);
+    const summaryHtml=data.summaries.map(x=>'<div><strong>'+x[0]+'</strong><span>'+x[1]+'</span></div>').join("");
+    const pathsHtml=data.paths.map((x,i)=>'<button type="button" class="cc-pj-path" data-pj-path="'+i+'" aria-selected="'+(i===0?'true':'false')+'"><b>'+x[0]+'</b><span>'+x[1]+'</span></button>').join("");
+    const stepsHtml=data.steps.map(x=>'<article class="cc-pj-step"><div class="num">'+x[0]+'</div><div><h3>'+x[1]+'</h3><p>'+x[2]+'</p><em>'+x[3]+'</em></div></article>').join("");
+    const checksHtml=data.checks.map((x,i)=>'<label><input type="checkbox" data-pj-check="'+i+'"><span>'+x+'</span></label>').join("");
+    root.innerHTML=[
+      '<div class="cc-pj-head"><div><div class="cc-pj-kicker">'+(vendor?'Vendor journey':'Sponsor journey')+'</div><h2>'+data.title+'</h2><p>'+data.intro+'</p></div><div class="cc-pj-summary">'+summaryHtml+'</div></div>',
+      '<div class="cc-pj-paths" role="tablist" aria-label="'+(vendor?'Vendor types':'Sponsor activation types')+'">'+pathsHtml+'</div>',
+      '<div class="cc-pj-path-detail" aria-live="polite"><strong>'+data.paths[0][0]+'</strong><p>'+data.paths[0][2]+'</p></div>',
+      '<div class="cc-pj-steps">'+stepsHtml+'</div>',
+      '<div class="cc-pj-tool">',
+        '<div class="cc-pj-checklist"><div class="cc-pj-check-head"><h3>Your readiness checklist</h3><span class="cc-pj-progress">0 / '+data.checks.length+' ready</span></div><div class="cc-pj-checks">'+checksHtml+'</div><p class="cc-pj-note">Your checklist saves only in this browser. It does not submit information to Carnival Careers.</p></div>',
+        '<div class="cc-pj-cta"><h3>'+data.ctaTitle+'</h3><p>'+data.ctaText+'</p><div class="cc-pj-actions">'+
+          (formHash?'<a class="cc-pj-action primary" href="'+formHash+'">'+data.primary+'</a>':'')+
+          (packageHash?'<a class="cc-pj-action secondary" href="'+packageHash+'">'+data.secondary+'</a>':'')+
+          '</div><div class="cc-pj-after">'+data.after+'</div></div>',
+      '</div>'
+    ].join("");
+
+    const hero=page.querySelector(".page-hero,.partner-hero,.hero");
+    if(hero && hero.parentElement) hero.insertAdjacentElement("afterend",root);
+    else host.insertAdjacentElement("afterbegin",root);
+
+    const detail=root.querySelector(".cc-pj-path-detail");
+    root.querySelectorAll(".cc-pj-path").forEach(btn=>btn.addEventListener("click",()=>{
+      const i=Number(btn.getAttribute("data-pj-path"))||0;
+      root.querySelectorAll(".cc-pj-path").forEach(x=>x.setAttribute("aria-selected",String(x===btn)));
+      detail.innerHTML='<strong>'+data.paths[i][0]+'</strong><p>'+data.paths[i][2]+'</p>';
+    }));
+
+    const key="cc-"+kind+"-readiness";
+    const boxes=[...root.querySelectorAll("[data-pj-check]")];
+    const progress=root.querySelector(".cc-pj-progress");
+    const update=()=>{
+      const done=boxes.filter(x=>x.checked).length;
+      progress.textContent=done+" / "+boxes.length+" ready";
+      try{localStorage.setItem(key,JSON.stringify(boxes.map(x=>x.checked)));}catch(e){}
+    };
+    try{
+      const saved=JSON.parse(localStorage.getItem(key)||"[]");
+      boxes.forEach((x,i)=>{if(saved[i])x.checked=true;});
+    }catch(e){}
+    boxes.forEach(x=>x.addEventListener("change",update));
+    update();
+  };
+
+  const run=()=>{
+    const vendors=byAny(["page-vendors","page-vendor"],["vendors","vendor"]);
+    const sponsors=byAny(["page-sponsors","page-sponsor"],["sponsors","sponsor"]);
+    addJourney(vendors,"vendor");
+    addJourney(sponsors,"sponsor");
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+</script>`;
+
 const wholeReconciliationPatch = `
 <style id="cc-whole-reconcile-style">
   .cc-whole-reconcile{margin:22px 0;padding:22px;border-radius:20px;border:1px solid rgba(112,72,232,.28);background:linear-gradient(135deg,rgba(112,72,232,.10),rgba(255,190,32,.08));color:inherit}
@@ -726,7 +923,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -767,7 +964,6 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
   longer_horizon_separated: true,
-  trailer_modal_audio: true
-}, null, 2));
+  trailer_modal_audio: true,\n  vendor_end_to_end_journey: true,\n  sponsor_end_to_end_journey: true\n}, null, 2));
 
 console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_BADGE=REMOVED", "PLAIN_LANGUAGE=ON");
