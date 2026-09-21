@@ -466,27 +466,7 @@ const wholeReconciliationPatch = `
     ));
   }
 
-  const replacements = [
-    [/\b16\s+Vic\s+Towns\b/g,"19 Vic Towns"],
-    [/\b16-unit\s+Vic\s+Towns\b/g,"19-unit Vic Towns"],
-    [/22,868\s+sq\.\s*ft\./g,"26,876 sq. ft."],
-    [/C\$12\.006M/g,"C$14.110M"],
-    [/C\$25\.635M/g,"C$30.128M"],
-    [/C\$25\.521M/g,"C$29.844M"],
-    [/C\$114K/g,"C$284K"],
-    [/C\$9\.605M/g,"C$11.288M"],
-    [/C\$864K/g,"C$1.016M"],
-    [/C\$2\.401M/g,"C$2.822M"],
-    [/C\$17\.553M/g,"superseded"],
-    [/C\$18\.712M/g,"superseded"],
-    [/C\$1\.159M/g,"superseded"],
-    [/C\$23\.140888M/g,"superseded"],
-    [/C\$29\.769885M/g,"superseded"],
-    [/C\$11\.908M/g,"superseded"],
-    [/C\$11\.550M/g,"superseded"],
-    [/C\$592,888/g,"C$560,000"]
-  ];
-  const scrub=()=>{
+  const replacements = [];\n  const scrub=()=>{
     const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
     let n;
     while((n=walker.nextNode())){
