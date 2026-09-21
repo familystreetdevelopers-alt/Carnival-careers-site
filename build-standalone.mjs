@@ -552,6 +552,28 @@ const wholeReconciliationPatch = `
   #page-project .cc-whole-card{font-size:1.08rem;line-height:1.5;padding:20px}
   #page-project .cc-whole-card b{font-size:1.5rem;margin-bottom:8px}
   #page-project .cc-whole-note{font-size:1.04rem;line-height:1.6;opacity:.92}
+
+  #page-capital{font-size:1.15rem;line-height:1.62}
+  #page-capital h1{font-size:clamp(2.8rem,6vw,5.2rem);line-height:.98}
+  #page-capital h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.04}
+  #page-capital h3{font-size:clamp(1.45rem,2.5vw,2.15rem);line-height:1.12}
+  #page-capital p,#page-capital li,#page-capital dd,#page-capital dt{font-size:1.12rem;line-height:1.65}
+  #page-capital .cc-kicker{font-size:1rem;line-height:1.4;font-weight:850;letter-spacing:.06em}
+  #page-capital .cc-whole-reconcile{padding:32px}
+  #page-capital .cc-whole-card{font-size:1.12rem;line-height:1.5;padding:20px}
+  #page-capital .cc-whole-card b{font-size:1.55rem;line-height:1.15;margin-bottom:8px}
+  #page-capital .cc-whole-table{font-size:1.08rem;line-height:1.5}
+  #page-capital .cc-whole-table td,#page-capital .cc-whole-table th{padding:13px 10px}
+  #page-capital .cc-whole-note{font-size:1.05rem;line-height:1.65;opacity:.94}
+  #page-capital table:not(.cc-whole-table){font-size:1.06rem;line-height:1.5}
+  #page-capital table:not(.cc-whole-table) td,#page-capital table:not(.cc-whole-table) th{padding:12px 10px}
+  #page-capital label,#page-capital input,#page-capital select,#page-capital textarea,#page-capital button{font-size:1.05rem}
+  @media(max-width:640px){
+    #page-capital{font-size:1.08rem}
+    #page-capital p,#page-capital li,#page-capital dd,#page-capital dt{font-size:1.06rem}
+    #page-capital .cc-whole-reconcile{padding:22px 18px}
+    #page-capital .cc-whole-table{font-size:1rem}
+  }
 </style>
 <script id="cc-whole-reconcile-script">
 (() => {
