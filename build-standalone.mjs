@@ -865,6 +865,238 @@ const audienceRoutingPatch = "\n<style id=\"cc-audience-routing-v2-style\">\n  #
 
 const cityPartnerInvitePatch = "\n<style id=\"cc-city-partner-invite-style\">\n  #page-partners{background:#f7f4ff;color:#16131d}\n  #page-partners .cc-city-hero{padding:clamp(58px,9vw,112px) 0 48px;background:\n    radial-gradient(circle at 12% 16%,rgba(255,196,45,.34),transparent 30%),\n    radial-gradient(circle at 86% 14%,rgba(231,63,166,.34),transparent 32%),\n    linear-gradient(135deg,#130b29 0%,#34125a 52%,#071a28 100%);color:#fff;overflow:hidden}\n  #page-partners .cc-city-hero h1{max-width:11ch;margin:.18em 0 .25em;font-size:clamp(3.1rem,7.5vw,7rem);line-height:.87;letter-spacing:-.06em}\n  #page-partners .cc-city-hero p{max-width:70ch;font-size:clamp(1.05rem,1.8vw,1.24rem);line-height:1.65;color:rgba(255,255,255,.82)}\n  #page-partners .cc-city-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}\n  #page-partners .cc-city-pills span{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.19);font-size:.82rem;font-weight:900}\n  #page-partners .cc-city-main{padding:48px 0 76px}\n  #page-partners .cc-city-section{margin:0 0 42px}\n  #page-partners .cc-city-section>h2{max-width:15ch;margin:.15em 0 .35em;font-size:clamp(2rem,4.2vw,4rem);line-height:.98;letter-spacing:-.035em}\n  #page-partners .cc-city-section>p{max-width:78ch;color:#635b70;font-size:1.05rem;line-height:1.65}\n  #page-partners .cc-city-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}\n  #page-partners .cc-city-card{padding:20px;border-radius:20px;background:#fff;border:1px solid #e4daef;box-shadow:0 12px 34px rgba(54,27,88,.07)}\n  #page-partners .cc-city-card small{display:block;margin-bottom:8px;color:#7b6596;font-weight:950;letter-spacing:.09em;text-transform:uppercase}\n  #page-partners .cc-city-card h3{margin:0 0 8px;font-size:1.22rem}\n  #page-partners .cc-city-card p{margin:0;color:#655e70;line-height:1.55}\n  #page-partners .cc-city-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}\n  #page-partners .cc-city-step{position:relative;padding:20px;border-radius:20px;background:#171027;color:#fff;min-height:190px}\n  #page-partners .cc-city-step b{display:block;font-size:2rem;color:#ffc947;margin-bottom:16px}\n  #page-partners .cc-city-step h3{margin:0 0 8px;font-size:1.1rem}\n  #page-partners .cc-city-step p{margin:0;color:#c9c1d6;line-height:1.5;font-size:.92rem}\n  #page-partners .cc-city-readiness{display:grid;grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);gap:22px;align-items:start;padding:26px;border-radius:26px;background:linear-gradient(135deg,#fff,#f0e9fb);border:1px solid #dfd1ef}\n  #page-partners .cc-city-meter{height:13px;border-radius:999px;background:#ddd5e8;overflow:hidden;margin:15px 0 7px}\n  #page-partners .cc-city-meter>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#6f48e8,#ec48a7,#ffbe20);transition:width .25s ease}\n  #page-partners .cc-city-score{font-weight:950;font-size:1.1rem}\n  #page-partners .cc-city-checks{display:grid;grid-template-columns:1fr 1fr;gap:9px}\n  #page-partners .cc-city-check{display:flex;gap:9px;align-items:flex-start;padding:12px;border-radius:13px;background:#fff;border:1px solid #ded5e8;font-weight:750;font-size:.9rem}\n  #page-partners .cc-city-check input{margin-top:2px}\n  #page-partners .cc-city-form-wrap{display:grid;grid-template-columns:minmax(0,.76fr) minmax(380px,1.24fr);gap:24px;align-items:start;margin-top:26px}\n  #page-partners .cc-city-form{padding:24px;border-radius:24px;background:#fff;border:1px solid #dfd4ea;box-shadow:0 18px 55px rgba(49,24,82,.10)}\n  #page-partners .cc-city-form h3{margin:0 0 5px;font-size:1.55rem}\n  #page-partners .cc-city-form>p{margin-top:0;color:#6c6477;line-height:1.55}\n  #page-partners .cc-city-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}\n  #page-partners .cc-city-form label{display:grid;gap:6px;font-size:.86rem;font-weight:850}\n  #page-partners .cc-city-form label.wide{grid-column:1/-1}\n  #page-partners .cc-city-form input,#page-partners .cc-city-form select,#page-partners .cc-city-form textarea{width:100%;padding:12px;border-radius:11px;border:1px solid #cfd4dc;background:#fff;color:#111827;font:inherit}\n  #page-partners .cc-city-form textarea{min-height:104px;resize:vertical}\n  #page-partners .cc-city-consent{display:flex!important;grid-template-columns:none!important;gap:9px!important;align-items:flex-start}\n  #page-partners .cc-city-consent input{width:auto!important;margin-top:3px}\n  #page-partners .cc-city-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}\n  #page-partners .cc-city-result{margin-top:12px;padding:13px 15px;border-radius:13px;background:#eef7ff;color:#17324d;line-height:1.55}\n  #page-partners .cc-city-result:empty{display:none}\n  #page-partners .cc-city-boundary{padding:20px;border-radius:20px;background:#110b1f;color:#fff}\n  #page-partners .cc-city-boundary h3{margin-top:0}\n  #page-partners .cc-city-boundary ul{margin:12px 0 0;padding-left:20px;color:#d4cce1;line-height:1.65}\n  @media(max-width:920px){\n    #page-partners .cc-city-grid{grid-template-columns:1fr 1fr}\n    #page-partners .cc-city-flow{grid-template-columns:1fr 1fr}\n    #page-partners .cc-city-readiness,#page-partners .cc-city-form-wrap{grid-template-columns:1fr}\n  }\n  @media(max-width:600px){\n    #page-partners .cc-city-grid,#page-partners .cc-city-flow,#page-partners .cc-city-checks,#page-partners .cc-city-form-grid{grid-template-columns:1fr}\n    #page-partners .cc-city-form label.wide{grid-column:auto}\n  }\n</style>\n<script id=\"cc-city-partner-invite-script\">\n(() => {\n  const EMAIL=\"familystreetdevelopers@gmail.com\";\n  const norm=v=>String(v||\"\").trim().replace(/\\s+/g,\" \").toLowerCase();\n  const esc=v=>String(v==null?\"\":v).replace(/[&<>\"']/g,m=>({\"&\":\"&amp;\",\"<\":\"&lt;\",\">\":\"&gt;\",\"\\\"\":\"&quot;\",\"'\":\"&#39;\"}[m]));\n  const read=key=>{try{return JSON.parse(localStorage.getItem(key)||\"[]\")}catch(e){return []}};\n  const write=(key,val)=>{try{localStorage.setItem(key,JSON.stringify(val))}catch(e){}};\n  const ref=()=> \"CITY-\"+Date.now().toString(36).toUpperCase()+\"-\"+Math.random().toString(36).slice(2,6).toUpperCase();\n\n  const resolvePage=()=>{\n    let page=document.getElementById(\"page-partners\") || document.querySelector('[data-page=\"partners\"]') || document.getElementById(\"page-partner\") || document.querySelector('[data-page=\"partner\"]');\n    const nav=[...document.querySelectorAll(\"a\")].find(a=>norm(a.textContent)===\"partners\");\n    if(!page && nav){\n      const hash=(nav.getAttribute(\"href\")||\"\").replace(/^#/,\"\");\n      page=document.getElementById(\"page-\"+hash) || document.getElementById(hash) || document.querySelector('[data-page=\"'+hash+'\"]');\n    }\n    if(!page){\n      page=document.createElement(\"section\");\n      page.className=\"page\";\n      const main=document.querySelector(\"main\") || document.body;\n      main.appendChild(page);\n    }\n    page.id=\"page-partners\";\n    page.dataset.page=\"partners\";\n    document.querySelectorAll(\"a\").forEach(a=>{if(norm(a.textContent)===\"partners\")a.setAttribute(\"href\",\"#partners\")});\n    return page;\n  };\n\n  const markup=()=> [\n    '<section class=\"cc-city-hero\"><div class=\"wrap\">',\n      '<span class=\"eyebrow\">CITY PARTNERS / INVITE CARNIVAL CAREERS</span>',\n      '<h1>Bring the wave to your city.</h1>',\n      '<p>When a city sees what Carnival Careers is doing and wants the full engine locally, this is the front door. Invite the episode, the family story, the jobs and ownership work, the local business activity, the Carnival connection, the media production and the arena finale as one coordinated city project.</p>',\n      '<div class=\"cc-city-pills\"><span>City Hall</span><span>Tourism</span><span>Carnival + festival organizations</span><span>Arenas + venues</span><span>Economic development</span><span>Transit</span><span>Business associations</span><span>Community partners</span></div>',\n    '</div></section>',\n\n    '<section class=\"cc-city-main\"><div class=\"wrap\">',\n      '<div class=\"cc-city-section\">',\n        '<span class=\"eyebrow darkey\">WHAT A CITY IS INVITING</span>',\n        '<h2>Not just a concert. A complete city episode.</h2>',\n        '<p>The public finale only works after the city has helped create something worth celebrating. Each city invitation starts with local people and moves outward into practical change, culture, commerce and media.</p>',\n        '<div class=\"cc-city-grid\">',\n          '<article class=\"cc-city-card\"><small>01 · People</small><h3>One locally rooted family story</h3><p>A family becomes the human centre of the episode. The city helps connect the right community relationships without turning people into props.</p></article>',\n          '<article class=\"cc-city-card\"><small>02 · Practical change</small><h3>Housing, work and mobility</h3><p>Local partners help turn the story into tangible progress: housing or ownership pathways, paid work, mobility, food access, childcare and business connections where applicable.</p></article>',\n          '<article class=\"cc-city-card\"><small>03 · Local table</small><h3>Dinner + community discovery</h3><p>The episode uses a local restaurant and conversation to reveal the city, the family and what needs to happen next.</p></article>',\n          '<article class=\"cc-city-card\"><small>04 · Culture</small><h3>Carnival, mas, festival and city life</h3><p>The project connects with the city’s real cultural calendar and existing organizers instead of inventing a fake festival layer.</p></article>',\n          '<article class=\"cc-city-card\"><small>05 · Commerce</small><h3>Local vendors, sponsors and businesses</h3><p>Businesses get clear lanes to sell, activate, supply, sponsor, hire and participate in the episode and public events.</p></article>',\n          '<article class=\"cc-city-card\"><small>06 · Finale</small><h3>Arena + filmed public triumph</h3><p>The arena comes last. It is the public victory lap after the audience understands the people, the city and what changed.</p></article>',\n        '</div>',\n      '</div>',\n\n      '<div class=\"cc-city-section\">',\n        '<span class=\"eyebrow darkey\">WHO SHOULD INVITE US</span>',\n        '<h2>Build one local table instead of twenty disconnected introductions.</h2>',\n        '<div class=\"cc-city-grid\">',\n          '<article class=\"cc-city-card\"><h3>Municipal / regional government</h3><p>Mayor’s office, culture, economic development, tourism, permits, public realm, workforce and community-development teams.</p></article>',\n          '<article class=\"cc-city-card\"><h3>Carnival + cultural leadership</h3><p>Festival organizers, mas bands, cultural institutions, local promoters, artists and community organizations that know the city from the inside.</p></article>',\n          '<article class=\"cc-city-card\"><h3>Venue + destination partners</h3><p>Arena operators, hotels, restaurants, transit, sports organizations, attractions and destination-marketing organizations that can make the episode move.</p></article>',\n        '</div>',\n      '</div>',\n\n      '<div class=\"cc-city-section\">',\n        '<span class=\"eyebrow darkey\">END-TO-END CITY PATH</span>',\n        '<h2>From “come here” to cameras rolling.</h2>',\n        '<div class=\"cc-city-flow\">',\n          '<article class=\"cc-city-step\"><b>01</b><h3>City invitation</h3><p>Submit the city, dates, local Carnival/festival context, lead contact and why the project fits now.</p></article>',\n          '<article class=\"cc-city-step\"><b>02</b><h3>Fit screen</h3><p>We review timing, local relationships, venue path, family/community fit, operating partners and obvious blockers.</p></article>',\n          '<article class=\"cc-city-step\"><b>03</b><h3>Local table</h3><p>The city brings the right municipal, cultural, venue, business and community people into one working conversation.</p></article>',\n          '<article class=\"cc-city-step\"><b>04</b><h3>City brief</h3><p>We turn the opportunity into one written city brief: episode arc, roles, dates, venues, permits, partner lanes, funding needs and decisions.</p></article>',\n          '<article class=\"cc-city-step\"><b>05</b><h3>Diligence + agreements</h3><p>Nothing is treated as committed until the required venue, property, production, insurance, talent, sponsor, travel and legal terms are real.</p></article>',\n          '<article class=\"cc-city-step\"><b>06</b><h3>Build the episode</h3><p>Family, work, housing, dinner, culture, vendors, sponsors, City Hall/transit moments and production move on one integrated schedule.</p></article>',\n          '<article class=\"cc-city-step\"><b>07</b><h3>City week</h3><p>Film the real progress, activate the city, capture Carnival/festival culture and complete the public-facing moments.</p></article>',\n          '<article class=\"cc-city-step\"><b>08</b><h3>Arena finale + close-out</h3><p>The arena closes the episode. Then settlements, reporting, media delivery, partner proof and next-city decisions are reconciled.</p></article>',\n        '</div>',\n      '</div>',\n\n      '<div class=\"cc-city-section cc-city-readiness\">',\n        '<div>',\n          '<span class=\"eyebrow darkey\">CITY READINESS BUILDER</span>',\n          '<h2>How ready is your city?</h2>',\n          '<p>These are not automatic requirements. They tell us how much of the local execution path already exists and where the first diligence work belongs.</p>',\n          '<div class=\"cc-city-meter\"><span id=\"ccCityMeterBar\"></span></div>',\n          '<div class=\"cc-city-score\" id=\"ccCityMeterText\">0 / 8 connected</div>',\n        '</div>',\n        '<div class=\"cc-city-checks\" id=\"ccCityReadiness\">',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"government\"> City / regional government contact</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"culture\"> Carnival / festival / cultural lead</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"venue\"> Arena or major venue pathway</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"tourism\"> Tourism / destination partner</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"community\"> Family / community referral pathway</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"business\"> Sponsor / vendor / business network</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"housing\"> Housing / property / ownership pathway</label>',\n          '<label class=\"cc-city-check\"><input type=\"checkbox\" value=\"permits\"> Permits / transit / public-space contact</label>',\n        '</div>',\n      '</div>',\n\n      '<div class=\"cc-city-section cc-city-form-wrap\">',\n        '<div>',\n          '<span class=\"eyebrow darkey\">OFFICIAL CITY INVITATION</span>',\n          '<h2>Put your city on the route.</h2>',\n          '<p>Give us enough information to understand the opportunity without creating a 40-email scavenger hunt. The strongest submissions identify a real local lead, real dates and the people who can help remove execution friction.</p>',\n          '<div class=\"cc-city-boundary\">',\n            '<h3>What this submission does — and does not do</h3>',\n            '<ul>',\n              '<li>It creates a structured city-invitation record for Carnival Careers review.</li>',\n              '<li>It does not guarantee that the city is selected, filmed or placed on the tour.</li>',\n              '<li>It is not a venue booking, sponsorship commitment, artist booking or municipal approval.</li>',\n              '<li>Any money, rights, public claims, dates and obligations move only through written agreements.</li>',\n            '</ul>',\n          '</div>',\n        '</div>',\n\n        '<form class=\"cc-city-form\" id=\"ccCityInviteForm\">',\n          '<h3>Invite Carnival Careers</h3>',\n          '<p>City, region, tourism body, festival, venue or authorized local partner.</p>',\n          '<div class=\"cc-city-form-grid\">',\n            '<label>City / region<input name=\"city\" required></label>',\n            '<label>Country<input name=\"country\" required></label>',\n            '<label>Inviting organization<input name=\"organization\" required></label>',\n            '<label>Your role / title<input name=\"title\" required></label>',\n            '<label>Contact name<input name=\"contactName\" required></label>',\n            '<label>Email<input name=\"email\" type=\"email\" required></label>',\n            '<label>Phone / WhatsApp<input name=\"phone\"></label>',\n            '<label>Organization type<select name=\"organizationType\"><option>City / regional government</option><option>Tourism / destination organization</option><option>Carnival / festival organization</option><option>Arena / venue</option><option>Economic development / business group</option><option>Transit / public agency</option><option>Community / cultural organization</option><option>Sports organization</option><option>Other local partner</option></select></label>',\n            '<label class=\"wide\">Target Carnival / festival / city dates<input name=\"dates\" placeholder=\"Festival window, preferred episode week, major city dates\"></label>',\n            '<label class=\"wide\">What is the cultural wave in your city right now?<textarea name=\"wave\" required placeholder=\"Carnival, festival, community, music, diaspora, tourism momentum, major anniversary, city priority...\"></textarea></label>',\n            '<label class=\"wide\">Local arena / venue pathway<textarea name=\"venue\" placeholder=\"Venue name, capacity, contact or introduction path if known\"></textarea></label>',\n            '<label class=\"wide\">Family + community pathway<textarea name=\"family\" placeholder=\"How would the city help us find a locally rooted family and community relationships without staging the story?\"></textarea></label>',\n            '<label class=\"wide\">Housing / jobs / ownership / mobility opportunities<textarea name=\"impact\" placeholder=\"Local employers, housing partners, development partners, mobility, childcare, grocery/food, ownership programs...\"></textarea></label>',\n            '<label class=\"wide\">Local sponsor / vendor / business ecosystem<textarea name=\"commerce\" placeholder=\"Brands, BIAs/chambers, restaurants, local businesses, tourism partners, suppliers...\"></textarea></label>',\n            '<label class=\"wide\">Municipal / permits / transit contacts<textarea name=\"citySupport\" placeholder=\"City Hall, public realm, permits, transit, police/fire/medical, tourism, economic development...\"></textarea></label>',\n            '<label class=\"wide\">Links / supporting materials<textarea name=\"links\" placeholder=\"City deck, festival site, arena, tourism page, news, videos, partner letters, Drive links...\"></textarea></label>',\n            '<label class=\"wide\">What are you asking Carnival Careers to bring?<textarea name=\"ask\" required placeholder=\"Full episode, arena finale, family transformation, Carnival integration, vendor marketplace, media production, travel/culture route...\"></textarea></label>',\n            '<label class=\"wide cc-city-consent\"><input type=\"checkbox\" name=\"authority\" value=\"yes\" required> I am authorized to make this introduction / invitation for the organization named above, or I am clearly identifying this as an exploratory referral rather than an official commitment.</label>',\n          '</div>',\n          '<div class=\"cc-city-actions\"><button class=\"btn primary\" type=\"submit\">Create city invitation</button><button class=\"btn\" type=\"button\" id=\"ccCityCopyBtn\">Copy current form summary</button></div>',\n          '<div class=\"cc-city-result\" id=\"ccCityInviteResult\" aria-live=\"polite\"></div>',\n        '</form>',\n      '</div>',\n    '</div></section>'\n  ].join(\"\");\n\n  const run=()=>{\n    const page=resolvePage();\n    page.innerHTML=markup();\n    page.dataset.ccCityPartnerInvite=\"1\";\n\n    const checks=[...page.querySelectorAll(\"#ccCityReadiness input[type=checkbox]\")];\n    const bar=page.querySelector(\"#ccCityMeterBar\");\n    const label=page.querySelector(\"#ccCityMeterText\");\n    const meterKey=\"cc_city_readiness_v1\";\n    const updateMeter=()=>{\n      const selected=checks.filter(x=>x.checked).map(x=>x.value);\n      bar.style.width=(selected.length/checks.length*100)+\"%\";\n      label.textContent=selected.length+\" / \"+checks.length+\" connected\";\n      write(meterKey,selected);\n    };\n    const saved=read(meterKey);\n    checks.forEach(x=>x.checked=saved.includes(x.value));\n    checks.forEach(x=>x.addEventListener(\"change\",updateMeter));\n    updateMeter();\n\n    const form=page.querySelector(\"#ccCityInviteForm\");\n    const summary=()=>{\n      const data=Object.fromEntries(new FormData(form).entries());\n      return [\n        \"Carnival Careers City Invitation\",\n        \"City: \"+(data.city||\"\"),\n        \"Country: \"+(data.country||\"\"),\n        \"Organization: \"+(data.organization||\"\"),\n        \"Contact: \"+(data.contactName||\"\")+\" — \"+(data.title||\"\"),\n        \"Email: \"+(data.email||\"\"),\n        \"Target dates: \"+(data.dates||\"\"),\n        \"Cultural wave: \"+(data.wave||\"\"),\n        \"Arena / venue: \"+(data.venue||\"\"),\n        \"Family / community: \"+(data.family||\"\"),\n        \"Impact opportunities: \"+(data.impact||\"\"),\n        \"Commerce: \"+(data.commerce||\"\"),\n        \"City support: \"+(data.citySupport||\"\"),\n        \"Links: \"+(data.links||\"\"),\n        \"Invitation ask: \"+(data.ask||\"\")\n      ].join(\"\\n\");\n    };\n    page.querySelector(\"#ccCityCopyBtn\").addEventListener(\"click\",async()=>{\n      try{\n        await navigator.clipboard.writeText(summary());\n        page.querySelector(\"#ccCityInviteResult\").textContent=\"Current city summary copied.\";\n      }catch(e){\n        page.querySelector(\"#ccCityInviteResult\").textContent=\"Copy was blocked by the browser. Select the form text manually.\";\n      }\n    });\n\n    form.addEventListener(\"submit\",e=>{\n      e.preventDefault();\n      if(!form.reportValidity()) return;\n      const data=Object.fromEntries(new FormData(form).entries());\n      const id=ref();\n      const readiness=checks.filter(x=>x.checked).map(x=>x.value);\n      const record={id:id,kind:\"city-partner-invite\",status:\"submitted-for-review\",createdAt:new Date().toISOString(),readiness:readiness,...data};\n      const rows=read(\"cc_submissions_v3\"); rows.unshift(record); write(\"cc_submissions_v3\",rows);\n      const cityRows=read(\"cc_city_invites_v1\"); cityRows.unshift(record); write(\"cc_city_invites_v1\",cityRows);\n      const subject=\"Carnival Careers city invitation — \"+(data.city||\"City\")+\" — \"+id;\n      const mail=\"mailto:\"+EMAIL+\"?subject=\"+encodeURIComponent(subject)+\"&body=\"+encodeURIComponent(summary()+\"\\n\\nReference: \"+id);\n      page.querySelector(\"#ccCityInviteResult\").innerHTML='<strong>City invitation prepared: '+esc(id)+'</strong><br>Saved to this browser’s Carnival Careers intake. <a href=\"'+mail+'\">Email the invitation packet to Carnival Careers →</a>';\n    });\n  };\n  if(document.readyState===\"loading\") document.addEventListener(\"DOMContentLoaded\",run,{once:true}); else run();\n})();\n</script>";
 
+const sidelineSittersUnifiedPatch = \`
+<style id="cc-sideline-unified-style">
+  #page-childcare .cc-ss-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  #page-childcare .cc-ss-hero{padding:64px 0 34px;background:linear-gradient(135deg,#1f1647,#6f48e8 62%,#ffbd20);color:#fff}
+  #page-childcare .cc-ss-kicker{font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;opacity:.84}
+  #page-childcare .cc-ss-hero h1{font-size:clamp(2.8rem,7vw,5.6rem);line-height:.92;margin:.18em 0 .22em;max-width:10ch}
+  #page-childcare .cc-ss-hero p{font-size:clamp(1.05rem,2vw,1.32rem);line-height:1.58;max-width:780px;margin:0}
+  #page-childcare .cc-ss-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  #page-childcare .cc-ss-actions a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;background:#fff;color:#24154d;font-weight:850;text-decoration:none;border:1px solid rgba(255,255,255,.7)}
+  #page-childcare .cc-ss-section{padding:54px 0;border-bottom:1px solid rgba(20,20,20,.08)}
+  #page-childcare .cc-ss-section h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.02;margin:0 0 12px;color:inherit}
+  #page-childcare .cc-ss-lead{font-size:1.12rem;line-height:1.65;max-width:850px;margin:0 0 24px}
+  #page-childcare .cc-ss-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:26px 0}
+  #page-childcare .cc-ss-step{border-radius:18px;padding:18px;background:rgba(112,72,232,.08);border:1px solid rgba(112,72,232,.16)}
+  #page-childcare .cc-ss-step b{display:block;font-size:1.05rem;margin-bottom:6px}
+  #page-childcare .cc-ss-step span{font-size:.94rem;line-height:1.45;opacity:.83}
+  #page-childcare .cc-ss-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);gap:24px;align-items:start}
+  #page-childcare .cc-ss-card{border-radius:22px;padding:22px;background:#fff;color:#171717;border:1px solid rgba(0,0,0,.10);box-shadow:0 10px 28px rgba(0,0,0,.06)}
+  #page-childcare .cc-ss-card h3{font-size:1.45rem;margin:0 0 8px}
+  #page-childcare .cc-ss-card p{line-height:1.55}
+  #page-childcare .cc-ss-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+  #page-childcare .cc-ss-field{display:flex;flex-direction:column;gap:6px}
+  #page-childcare .cc-ss-field.cc-full{grid-column:1/-1}
+  #page-childcare .cc-ss-field label{font-weight:780;font-size:.92rem}
+  #page-childcare .cc-ss-field input,#page-childcare .cc-ss-field select,#page-childcare .cc-ss-field textarea{width:100%;padding:12px 13px;border-radius:12px;border:1px solid #cfd3dc;background:#fff;color:#171717;font:inherit}
+  #page-childcare .cc-ss-field textarea{min-height:105px;resize:vertical}
+  #page-childcare .cc-ss-submit{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  #page-childcare .cc-ss-btn{border:0;border-radius:999px;padding:13px 18px;font:inherit;font-weight:850;cursor:pointer;background:#6f48e8;color:#fff}
+  #page-childcare .cc-ss-btn.cc-secondary{background:#f2effc;color:#2d205c}
+  #page-childcare .cc-ss-note{font-size:.9rem;line-height:1.5;opacity:.76}
+  #page-childcare .cc-ss-status{background:#f7f5fd}
+  #page-childcare .cc-ss-result{margin-top:12px;padding:12px 14px;border-radius:12px;background:#fff;border:1px solid rgba(0,0,0,.08);min-height:48px}
+  #page-childcare .cc-ss-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+  #page-childcare .cc-ss-mini{padding:18px;border-radius:18px;background:rgba(255,190,32,.10);border:1px solid rgba(255,190,32,.24)}
+  #page-childcare .cc-ss-mini b{display:block;margin-bottom:6px}
+  @media(max-width:800px){
+    #page-childcare .cc-ss-process,#page-childcare .cc-ss-three{grid-template-columns:1fr 1fr}
+    #page-childcare .cc-ss-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){
+    #page-childcare .cc-ss-process,#page-childcare .cc-ss-three,#page-childcare .cc-ss-form{grid-template-columns:1fr}
+    #page-childcare .cc-ss-field.cc-full,#page-childcare .cc-ss-submit{grid-column:auto}
+  }
+</style>
+<script id="cc-sideline-unified-script">
+(() => {
+  const run = () => {
+    document.querySelectorAll('a[href="#childcare-status"]').forEach(a => a.remove());
+    const page = document.getElementById("page-childcare") || document.querySelector('[data-page="childcare"]');
+    if(!page || page.dataset.ccSidelineUnified === "1") return;
+    page.dataset.ccSidelineUnified = "1";
+
+    page.innerHTML =
+      '<section class="cc-ss-hero">'+
+        '<div class="cc-ss-wrap">'+
+          '<div class="cc-ss-kicker">Sideline Sitters</div>'+
+          '<h1>Childcare that moves with the work.</h1>'+
+          '<p>Tell us where the parent needs to be and when. We turn the schedule into a provider-ready request, route it to the right kind of childcare partner, keep the family updated and keep looking when the first option cannot take it. The childcare provider makes the final booking.</p>'+
+          '<div class="cc-ss-actions">'+
+            '<a href="#childcare-request">Request care</a>'+
+            '<a href="#childcare-partners">Become a provider partner</a>'+
+            '<a href="#childcare-funders">Fund care for your people</a>'+
+          '</div>'+
+        '</div>'+
+      '</section>'+
+
+      '<section class="cc-ss-section">'+
+        '<div class="cc-ss-wrap">'+
+          '<h2>Care should not be the reason a parent misses the opportunity.</h2>'+
+          '<p class="cc-ss-lead">Sideline Sitters is the coordination layer between the schedule and the childcare provider. We collect the information a provider actually needs, route by fit and capacity, follow the request and re-route when another suitable option is available. We do not call a request booked until the provider accepts it.</p>'+
+          '<div class="cc-ss-process">'+
+            '<div class="cc-ss-step"><b>1 · Tell us the schedule</b><span>Shift, call time, rehearsal, event day, hotel stay, interview, training or recurring care.</span></div>'+
+            '<div class="cc-ss-step"><b>2 · We make it provider-ready</b><span>Location, ages, hours, care setting, timing and payment path are organized once.</span></div>'+
+            '<div class="cc-ss-step"><b>3 · We route and follow up</b><span>Providers decide fit and capacity. A decline can be re-routed instead of becoming a dead end.</span></div>'+
+            '<div class="cc-ss-step"><b>4 · Provider confirms</b><span>The accepting provider handles enrolment, protected care information, payment and the actual booking.</span></div>'+
+          '</div>'+
+        '</div>'+
+      '</section>'+
+
+      '<section class="cc-ss-section" id="childcare-request">'+
+        '<div class="cc-ss-wrap">'+
+          '<h2>Request care — and keep the status in the same place.</h2>'+
+          '<p class="cc-ss-lead">One family form starts the request. Your reference number stays with it, so you can come back here to check the latest status from the same browser instead of hunting for a separate status page.</p>'+
+          '<div class="cc-ss-grid">'+
+            '<div class="cc-ss-card">'+
+              '<h3>Start a childcare request</h3>'+
+              '<form id="ccSidelineFamilyForm" class="cc-ss-form">'+
+                '<div class="cc-ss-field"><label>Parent / guardian</label><input name="guardian" required></div>'+
+                '<div class="cc-ss-field"><label>Email</label><input type="email" name="email" required></div>'+
+                '<div class="cc-ss-field"><label>Phone</label><input name="phone" required></div>'+
+                '<div class="cc-ss-field"><label>City / area</label><input name="city" required></div>'+
+                '<div class="cc-ss-field cc-full"><label>Care location / neighbourhood</label><input name="location" required></div>'+
+                '<div class="cc-ss-field"><label>Children / ages</label><input name="children" placeholder="Example: 2 children — ages 4 and 8" required></div>'+
+                '<div class="cc-ss-field"><label>Schedule type</label><select name="scheduleType" required><option value="">Choose</option><option>One-time</option><option>Recurring</option><option>Emergency / backup</option><option>Not sure yet</option></select></div>'+
+                '<div class="cc-ss-field"><label>Date needed</label><input type="date" name="date"></div>'+
+                '<div class="cc-ss-field"><label>Timing</label><select name="timing"><option>Planned</option><option>Short notice</option><option>Same day / emergency backup</option></select></div>'+
+                '<div class="cc-ss-field"><label>Start time</label><input type="time" name="startTime"></div>'+
+                '<div class="cc-ss-field"><label>End time</label><input type="time" name="endTime"></div>'+
+                '<div class="cc-ss-field"><label>Preferred care setting</label><select name="careSetting"><option>Best available fit</option><option>Licensed centre / backup care</option><option>Licensed home childcare</option><option>In-home care</option><option>In-hotel care</option><option>Sitter / agency</option></select></div>'+
+                '<div class="cc-ss-field"><label>Work / event context</label><select name="context"><option>Carnival Careers work shift</option><option>Production / call time</option><option>Rehearsal / performance</option><option>Vendor / event day</option><option>Training / interview / meeting</option><option>Travel / hotel</option><option>Recurring family schedule</option><option>Other</option></select></div>'+
+                '<div class="cc-ss-field cc-full"><label>Payment path</label><select name="payment"><option>Family pays provider</option><option>Employer / sponsor may fund</option><option>Existing corporate membership</option><option>Need help identifying funding path</option></select></div>'+
+                '<div class="cc-ss-field cc-full"><label>Anything a provider needs to know to decide fit?</label><textarea name="notes" placeholder="Schedule or care-fit information only. Do not put medical records, banking information or other sensitive personal data here."></textarea></div>'+
+                '<div class="cc-ss-submit"><button class="cc-ss-btn" type="submit">Start my childcare request</button><span class="cc-ss-note">This starts coordination, not a confirmed booking.</span></div>'+
+              '</form>'+
+              '<div id="ccSidelineFamilyResult" class="cc-ss-result" aria-live="polite">Submit the request to receive your Sideline Sitters reference number.</div>'+
+            '</div>'+
+            '<aside class="cc-ss-card cc-ss-status">'+
+              '<h3>Already requested care?</h3>'+
+              '<p>Check the request from the same place you submitted it.</p>'+
+              '<div class="cc-ss-field"><label>Sideline Sitters reference</label><input id="ccSidelineStatusRef" placeholder="Example: SS-ABC123"></div>'+
+              '<button id="ccSidelineStatusBtn" class="cc-ss-btn cc-secondary" type="button" style="margin-top:10px">Check my request</button>'+
+              '<div id="ccSidelineStatusResult" class="cc-ss-result" aria-live="polite">Status will appear here.</div>'+
+              '<p class="cc-ss-note">Current web build stores the request/status record in the browser used to submit it. Provider confirmation is still what makes care booked.</p>'+
+            '</aside>'+
+          '</div>'+
+        '</div>'+
+      '</section>'+
+
+      '<section class="cc-ss-section" id="childcare-partners">'+
+        '<div class="cc-ss-wrap">'+
+          '<h2>Provider partners: tell us what you can actually accept.</h2>'+
+          '<p class="cc-ss-lead">This form is separate because it does a different job. It turns your service area, age bands, hours, care settings, rates and live capacity into a routing profile so families arrive with usable information instead of vague referrals.</p>'+
+          '<div class="cc-ss-three">'+
+            '<div class="cc-ss-mini"><b>Your rules stay yours</b>Licensing, screening, enrolment, caregiver assignment, rates, minimums, cancellation and payment remain with you.</div>'+
+            '<div class="cc-ss-mini"><b>Track the referral</b>Use a referral link, code, source field, portal, API or email handoff to identify Sideline Sitters demand.</div>'+
+            '<div class="cc-ss-mini"><b>Overflow can come back</b>If you cannot place a family, send the request back and we can look for another suitable provider.</div>'+
+          '</div>'+
+          '<div class="cc-ss-card">'+
+            '<form id="ccSidelineProviderForm" class="cc-ss-form">'+
+              '<div class="cc-ss-field"><label>Provider / agency name</label><input name="provider" required></div>'+
+              '<div class="cc-ss-field"><label>Primary contact</label><input name="contact" required></div>'+
+              '<div class="cc-ss-field"><label>Email</label><input type="email" name="email" required></div>'+
+              '<div class="cc-ss-field"><label>Phone</label><input name="phone"></div>'+
+              '<div class="cc-ss-field"><label>Provider type</label><select name="providerType"><option>Licensed childcare centre / agency</option><option>Licensed home-childcare agency</option><option>In-home / in-hotel childcare agency</option><option>Babysitting / sitter agency</option><option>Independent qualified caregiver</option><option>Corporate backup-care provider</option><option>Other</option></select></div>'+
+              '<div class="cc-ss-field"><label>Service area</label><input name="serviceArea" required></div>'+
+              '<div class="cc-ss-field"><label>Ages served</label><input name="ages"></div>'+
+              '<div class="cc-ss-field"><label>Hours / days</label><input name="hours"></div>'+
+              '<div class="cc-ss-field"><label>Care settings</label><input name="settings" placeholder="Centre, home, hotel, in-home..."></div>'+
+              '<div class="cc-ss-field"><label>Short-notice capacity</label><select name="shortNotice"><option>Yes — subject to availability</option><option>Sometimes</option><option>No</option></select></div>'+
+              '<div class="cc-ss-field cc-full"><label>Current capacity / openings</label><textarea name="capacity"></textarea></div>'+
+              '<div class="cc-ss-field"><label>Rates / pricing model</label><input name="rates"></div>'+
+              '<div class="cc-ss-field"><label>Minimum booking / cancellation rule</label><input name="minimums"></div>'+
+              '<div class="cc-ss-field"><label>Billing supported</label><select name="billing"><option>Family pays provider directly</option><option>Employer / sponsor billing supported</option><option>Both</option><option>Other</option></select></div>'+
+              '<div class="cc-ss-field"><label>Tracked intake option</label><select name="tracking"><option>Dedicated referral link</option><option>Referral code</option><option>Partner form / source field</option><option>Portal</option><option>API / data handoff</option><option>Email handoff</option><option>Other</option></select></div>'+
+              '<div class="cc-ss-field cc-full"><label>Licensing / screening / insurance / compliance</label><textarea name="compliance"></textarea></div>'+
+              '<div class="cc-ss-field"><label>Accept overflow referrals?</label><select name="acceptOverflow"><option>Yes</option><option>Capacity-dependent</option><option>No</option></select></div>'+
+              '<div class="cc-ss-field"><label>Send overflow back to Sideline Sitters?</label><select name="sendOverflow"><option>Yes</option><option>Maybe</option><option>No</option></select></div>'+
+              '<div class="cc-ss-field cc-full"><label>Agreement / onboarding / next step</label><textarea name="nextStep"></textarea></div>'+
+              '<div class="cc-ss-submit"><button class="cc-ss-btn" type="submit">Submit provider capacity</button></div>'+
+            '</form>'+
+            '<div id="ccSidelineProviderResult" class="cc-ss-result" aria-live="polite">Your provider profile will be saved with a reference number.</div>'+
+          '</div>'+
+        '</div>'+
+      '</section>'+
+
+      '<section class="cc-ss-section" id="childcare-funders">'+
+        '<div class="cc-ss-wrap">'+
+          '<h2>Employers and sponsors: fund the care around the schedule.</h2>'+
+          '<p class="cc-ss-lead">This stays separate because the payer is solving a different problem. Tell us who needs access, where, when and what you want to fund. We can then match the benefit design to real provider terms instead of advertising a subsidy or membership that does not exist yet.</p>'+
+          '<div class="cc-ss-three">'+
+            '<div class="cc-ss-mini"><b>Demand-led</b>Pay for accepted use where the provider supports it.</div>'+
+            '<div class="cc-ss-mini"><b>Funded block</b>Create a defined pool of approved childcare for a production, workforce or event.</div>'+
+            '<div class="cc-ss-mini"><b>Membership / access</b>Package the population and service area when a provider requires corporate access.</div>'+
+          '</div>'+
+          '<div class="cc-ss-card">'+
+            '<form id="ccSidelineFunderForm" class="cc-ss-form">'+
+              '<div class="cc-ss-field"><label>Organization</label><input name="organization" required></div>'+
+              '<div class="cc-ss-field"><label>Contact name</label><input name="contact" required></div>'+
+              '<div class="cc-ss-field"><label>Email</label><input type="email" name="email" required></div>'+
+              '<div class="cc-ss-field"><label>Phone</label><input name="phone"></div>'+
+              '<div class="cc-ss-field"><label>City / coverage area</label><input name="area"></div>'+
+              '<div class="cc-ss-field"><label>Estimated family count</label><input name="familyCount"></div>'+
+              '<div class="cc-ss-field cc-full"><label>Who needs access?</label><textarea name="population"></textarea></div>'+
+              '<div class="cc-ss-field"><label>Coverage model</label><select name="coverageModel"><option>Demand-led / per accepted booking</option><option>Funded childcare block</option><option>Corporate membership / access</option><option>Discount / priority access</option><option>Event-specific coverage</option><option>Need options</option></select></div>'+
+              '<div class="cc-ss-field"><label>Dates / schedule</label><input name="schedule"></div>'+
+              '<div class="cc-ss-field cc-full"><label>Budget / billing preference</label><textarea name="budget"></textarea></div>'+
+              '<div class="cc-ss-field cc-full"><label>What should the childcare benefit accomplish?</label><textarea name="goal"></textarea></div>'+
+              '<div class="cc-ss-submit"><button class="cc-ss-btn" type="submit">Build a funded-care option</button><span class="cc-ss-note">Nothing is promoted as funded until provider terms, payer, eligibility and booking rules are documented.</span></div>'+
+            '</form>'+
+            '<div id="ccSidelineFunderResult" class="cc-ss-result" aria-live="polite">Submit the coverage brief to receive a reference number.</div>'+
+          '</div>'+
+        '</div>'+
+      '</section>';
+
+    const read = key => { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch(e) { return []; } };
+    const write = (key,val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
+    const ref = prefix => prefix + "-" + Math.random().toString(36).slice(2,8).toUpperCase();
+    const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#039;"}[m]));
+
+    const familyForm = document.getElementById("ccSidelineFamilyForm");
+    familyForm.addEventListener("submit", e => {
+      e.preventDefault();
+      if(!familyForm.reportValidity()) return;
+      const data = Object.fromEntries(new FormData(familyForm).entries());
+      const id = ref("SS");
+      const record = {id, kind:"childcare-request", status:"Received — preparing provider routing", createdAt:new Date().toISOString(), ...data};
+      const rows = read("cc_submissions_v3"); rows.unshift(record); write("cc_submissions_v3", rows);
+      const ss = read("cc_sideline_requests_v2"); ss.unshift(record); write("cc_sideline_requests_v2", ss);
+      document.getElementById("ccSidelineFamilyResult").innerHTML = "<strong>Request received: "+esc(id)+"</strong><br>Keep this reference. Use the status box beside the form to check this request from this browser.";
+      document.getElementById("ccSidelineStatusRef").value = id;
+    });
+
+    document.getElementById("ccSidelineStatusBtn").addEventListener("click", () => {
+      const id = document.getElementById("ccSidelineStatusRef").value.trim().toUpperCase();
+      const rows = read("cc_sideline_requests_v2").concat(read("cc_submissions_v3"));
+      const hit = rows.find(x => String(x.id || "").toUpperCase() === id);
+      const out = document.getElementById("ccSidelineStatusResult");
+      if(!id) { out.textContent = "Enter your Sideline Sitters reference."; return; }
+      if(!hit) { out.textContent = "No matching request is stored in this browser. If you submitted from another device, use the confirmation email or contact Carnival Careers with your reference."; return; }
+      out.innerHTML = "<strong>"+esc(hit.id)+"</strong><br>"+esc(hit.status || "Received")+"<br><span class=\\"cc-ss-note\\">Submitted "+esc(hit.createdAt ? new Date(hit.createdAt).toLocaleString() : "")+"</span>";
+    });
+
+    const savePartner = (formId, resultId, kind, prefix, storageKey) => {
+      const form = document.getElementById(formId);
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        if(!form.reportValidity()) return;
+        const data = Object.fromEntries(new FormData(form).entries());
+        const id = ref(prefix);
+        const record = {id, kind, status:"Submitted for review", createdAt:new Date().toISOString(), ...data};
+        const rows = read("cc_submissions_v3"); rows.unshift(record); write("cc_submissions_v3", rows);
+        const lane = read(storageKey); lane.unshift(record); write(storageKey, lane);
+        document.getElementById(resultId).innerHTML = "<strong>Submitted: "+esc(id)+"</strong><br>Saved to the Carnival Careers intake in this browser.";
+      });
+    };
+    savePartner("ccSidelineProviderForm","ccSidelineProviderResult","childcare-provider-capacity","SSP","cc_sideline_providers_v2");
+    savePartner("ccSidelineFunderForm","ccSidelineFunderResult","childcare-funding","SSF","cc_sideline_funders_v2");
+  };
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true}); else run();
+})();
+</script>\`;
+
 const removeSidelineKpiPatch = `
 <script id="cc-remove-sideline-kpi">
 (() => {
@@ -1059,13 +1291,14 @@ renderedHtml = renderedHtml.replace(/<a href="#music"><span>♫<\/span><div><h3>
 renderedHtml = renderedHtml.replace(/<a href="#music"><span>◒<\/span><div><h3>I make culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>◒</span><div><h3>I create culture.</h3><p>Share Carnival, festival, parade + arena-show video.</p></div><b>↗</b></a>');
 renderedHtml = renderedHtml.replace(/<a href="#show"><span>✦<\/span><div><h3>I carry the culture\.<\/h3><p>[^<]*<\/p><\/div><b>↗<\/b><\/a>/, '<a href="#experiences"><span>✦</span><div><h3>I carry the culture.</h3><p>Carnival, festival, parade + city culture.</p></div><b>↗</b></a>');
 renderedHtml = renderedHtml.replace(/<a href="#project-professional">Professional forms<\/a>/g, "");
+renderedHtml = renderedHtml.replace(/<a\\b[^>]*href="#childcare-status"[^>]*>[\\s\\S]*?<\\/a>/g, "");
 renderedHtml = renderedHtml.replace(/<section class="section light" id="childcare-funders">[\s\S]*?<\/section>\s*(?=<section class="section" id="childcare-status">)/, "");
 
 renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, cityPartnerInvitePatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, cityPartnerInvitePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -1114,7 +1347,9 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   arena_artist_intake_abc_list: true,
   culture_media_wall: true,
   weekly_affiliate_events_carousel: true,
-  city_partner_invite_end_to_end: true
+  city_partner_invite_end_to_end: true,
+  sideline_sitters_unified: true,
+  sideline_status_merged_into_family_request: true
 }, null, 2));
 
 console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_BADGE=REMOVED", "PLAIN_LANGUAGE=ON");
