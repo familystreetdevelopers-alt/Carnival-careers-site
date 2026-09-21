@@ -1743,7 +1743,68 @@ const homeMasMatterAccentPatch = `
 })();
 </script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch]) {
+const requestedAccentCleanupPatch = `
+<style id="cc-requested-accent-cleanup-style">
+  .cc-accent-word{
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-style:italic!important;
+    font-weight:500!important;
+    color:#ffc44d!important;
+    letter-spacing:-.035em!important;
+  }
+  #page-home .recovery-route-section .cc-accent-word,
+  #page-childcare .cc-fw-body .cc-accent-word,
+  #page-store .cc-accent-word,
+  #project-capital-merged .cc-accent-word,
+  #page-plane .section.light .cc-accent-word{
+    color:#b87900!important;
+  }
+</style>
+<script id="cc-requested-accent-cleanup-script">
+(() => {
+  const norm=v=>String(v||"").replace(/\\s+/g," ").trim();
+  const setExact=(text,html,root=document)=>{
+    const el=[...root.querySelectorAll("h1,h2,h3,h4,.cc-fw-sub")].find(x=>norm(x.textContent)===text);
+    if(el) el.innerHTML=html;
+    return el;
+  };
+  const run=()=>{
+    const home=document.getElementById("page-home")||document;
+    setExact("Tell me who you are.",'Tell me who <em class="cc-accent-word">you</em> are.',home);
+    setExact("Choose your next step.",'<em class="cc-accent-word">Choose</em> your next step.',home);
+
+    const family=document.getElementById("page-childcare")||document;
+    setExact("The family pathway is work-first.",'The family pathway is <em class="cc-accent-word">work-first</em>.',family);
+    setExact("What moves the household forward.",'What <em class="cc-accent-word">moves</em> the household <em class="cc-accent-word">forward</em>.',family);
+    setExact("Paid role path",'<em class="cc-accent-word">Paid</em> role path',family);
+    setExact("Income visibility",'<em class="cc-accent-word">Income</em> visibility',family);
+    setExact("Housing separate",'<em class="cc-accent-word">Housing separate</em>',family);
+    setExact("Family support",'<em class="cc-accent-word">Family support</em>',family);
+    setExact("Childcare that moves with the work.",'<em class="cc-accent-word">Childcare</em> that <em class="cc-accent-word">moves</em> with the <em class="cc-accent-word">work</em>.',family);
+
+    const project=document.getElementById("page-project")||document;
+    setExact("The Featured Woman",'The <em class="cc-accent-word">Featured</em> Woman',project);
+    setExact("A city story people can actually feel.",'A <em class="cc-accent-word">city</em> <em class="cc-accent-word">story</em> people can actually <em class="cc-accent-word">feel</em>.',project);
+    setExact("Project funding",'Project <em class="cc-accent-word">funding</em>',project);
+
+    const store=document.getElementById("page-store")||document;
+    setExact("The Shopify store is live in the site.",'The Shopify store is <em class="cc-accent-word">live</em>.',store);
+
+    const plane=document.getElementById("page-plane")||document;
+    setExact("Fly private without pretending we operate the aircraft.",'<em class="cc-accent-word">Fly</em> <em class="cc-accent-word">private</em> without pretending we <em class="cc-accent-word">operate</em> the aircraft.',plane);
+    setExact("Quote first. Fill the aircraft. Confirm only when the trip is fully funded.",'<em class="cc-accent-word">Quote</em> first. <em class="cc-accent-word">Fill</em> the aircraft. <em class="cc-accent-word">Confirm</em> only when the trip is <em class="cc-accent-word">fully funded</em>.',plane);
+
+    const car=document.getElementById("page-car")||document;
+    setExact("Get the right vehicle, the right approval and the right driver into one working lane.",'Get the right <em class="cc-accent-word">vehicle</em>, the right <em class="cc-accent-word">approval</em> and the right <em class="cc-accent-word">driver</em> into one working lane.',car);
+
+    ["car-live-gates","car-prescreen","car-owner","car-ride","car-partners","car-economics"].forEach(id=>document.getElementById(id)?.remove());
+    car.querySelectorAll('a[href="#car-owner"],a[href="#car-prescreen"],a[href="#car-ride"],a[href="#car-partners"],a[href="#car-economics"]').forEach(a=>a.remove());
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+</script>`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
