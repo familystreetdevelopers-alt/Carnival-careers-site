@@ -294,7 +294,7 @@ const showPageButtonPatch = `
 const removeSmallClutterLabels = `
 <script id="cc-remove-small-clutter-labels">
 (() => {
-  const unwanted = new Set(["MONEY ROUTES","FIND YOUR WAY IN"]);
+  const unwanted = new Set(["MONEY ROUTES","FIND YOUR WAY IN","THE SERVICE PROMISE","HOW A REQUEST MOVES","FAMILY / PARENT / WORKER","CHILDCARE PROVIDER / AGENCY","EMPLOYER / SPONSOR / PRODUCTION"]);
   const run = () => {
     document.querySelectorAll("h1,h2,h3,h4,h5,h6,p,span,div,strong,small,label").forEach(el => {
       const t = (el.textContent || "").trim().replace(/\\s+/g," ").toUpperCase();
