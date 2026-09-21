@@ -360,6 +360,42 @@ const projectStorySimplifyPatch = `
   else run();
 })();
 </script>`;
+const lenderReadabilityPatch = `
+<style id="cc-lender-readability-style">
+  #page-lenders{font-size:18px}
+  #page-lenders .page-hero h1{font-size:clamp(2.5rem,5vw,4.8rem)!important;line-height:1!important}
+  #page-lenders h2{font-size:clamp(2rem,3.5vw,3rem)!important;line-height:1.08!important}
+  #page-lenders h3{font-size:1.35rem!important;line-height:1.2!important}
+  #page-lenders p,
+  #page-lenders .partner-one-line,
+  #page-lenders .lane-fit,
+  #page-lenders .current-line span,
+  #page-lenders .plain-note{font-size:1.08rem!important;line-height:1.65!important}
+  #page-lenders .partner-kicker,
+  #page-lenders .eyebrow,
+  #page-lenders .lane-num{font-size:1rem!important;letter-spacing:.08em!important}
+  #page-lenders .current-line strong{font-size:1.22rem!important}
+  #page-lenders label{font-size:1.02rem!important;line-height:1.4!important}
+  #page-lenders input,
+  #page-lenders select,
+  #page-lenders textarea,
+  #page-lenders button{font-size:1rem!important}
+  #page-lenders input,
+  #page-lenders select{min-height:50px!important}
+  #page-lenders textarea{min-height:150px!important;line-height:1.5!important}
+  #page-lenders .lane-row,
+  #page-lenders .simple-point,
+  #page-lenders .current-line{padding-top:20px!important;padding-bottom:20px!important}
+  @media(max-width:640px){
+    #page-lenders{font-size:17px}
+    #page-lenders p,
+    #page-lenders .partner-one-line,
+    #page-lenders .lane-fit,
+    #page-lenders .current-line span,
+    #page-lenders .plain-note{font-size:1rem!important}
+  }
+</style>`;
+
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
@@ -576,7 +612,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, trailerExperience, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
