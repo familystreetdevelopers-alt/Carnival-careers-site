@@ -291,6 +291,21 @@ const showPageButtonPatch = `
 })();
 </script>`;
 
+const removeSmallClutterLabels = `
+<script id="cc-remove-small-clutter-labels">
+(() => {
+  const unwanted = new Set(["MONEY ROUTES","FIND YOUR WAY IN"]);
+  const run = () => {
+    document.querySelectorAll("h1,h2,h3,h4,h5,h6,p,span,div,strong,small,label").forEach(el => {
+      const t = (el.textContent || "").trim().replace(/\\s+/g," ").toUpperCase();
+      if (unwanted.has(t)) el.remove();
+    });
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+</script>`;
+
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
@@ -491,7 +506,7 @@ renderedHtml = renderedHtml.replace(
   /<section class="section" id="home-host-experience"[\s\S]*?<\/section>/,
   '<section class="section" id="home-host-experience" style="background:#ffffff;color:#111827;"><div class="wrap" style="max-width:1180px;"><div class="actions"><a class="btn" href="#show">See the Show</a></div></div></section>'
 );
-for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, trailerExperience, contrastGuard]) {
+for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, showPageButtonPatch, removeSmallClutterLabels, trailerExperience, contrastGuard]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
