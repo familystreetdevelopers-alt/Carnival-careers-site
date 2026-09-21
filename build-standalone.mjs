@@ -307,24 +307,30 @@ const removeSmallClutterLabels = `
 
 const projectStorySimplifyPatch = `
 <style id="cc-project-story-simple-style">
-  #project-story .cc-story-simple{display:grid;gap:24px}
-  #project-story .cc-story-intro{max-width:820px}
-  #project-story .cc-story-intro h2{margin:0 0 10px;font-size:clamp(2rem,4vw,3.4rem);line-height:1}
-  #project-story .cc-story-intro p{margin:0;font-size:1.05rem;line-height:1.65;opacity:.82}
-  #project-story .cc-story-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-  #project-story .cc-story-step{padding:20px;border-radius:18px;border:1px solid rgba(127,127,127,.22);background:rgba(255,255,255,.72);color:#171717}
-  #project-story .cc-story-step b{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:#171717;color:#fff;margin-bottom:12px}
-  #project-story .cc-story-step h3{margin:0 0 7px;font-size:1.05rem}
-  #project-story .cc-story-step p{margin:0;font-size:.92rem;line-height:1.5;color:#514b58}
-  #project-story .cc-activate{margin-top:8px;padding-top:22px;border-top:1px solid rgba(127,127,127,.22)}
-  #project-story .cc-activate h3{margin:0 0 6px;font-size:1.4rem}
-  #project-story .cc-activate>p{margin:0 0 16px;max-width:760px;line-height:1.55;opacity:.8}
-  #project-story .cc-activate-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
-  #project-story .cc-activate-card{padding:15px 16px;border-radius:14px;background:rgba(112,72,232,.08);border:1px solid rgba(112,72,232,.15)}
-  #project-story .cc-activate-card strong{display:block;margin-bottom:4px}
-  #project-story .cc-activate-card span{font-size:.84rem;line-height:1.4;opacity:.76}
-  @media(max-width:850px){#project-story .cc-story-steps{grid-template-columns:1fr 1fr}#project-story .cc-activate-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:540px){#project-story .cc-story-steps,#project-story .cc-activate-grid{grid-template-columns:1fr}}
+  #project-story .project-inside{padding-top:10px}
+  #project-story .cc-story-stage{position:relative;overflow:hidden;border-radius:30px;padding:clamp(26px,5vw,58px);background:
+    radial-gradient(circle at 10% 8%,rgba(255,190,32,.30),transparent 28%),
+    radial-gradient(circle at 92% 18%,rgba(237,56,161,.28),transparent 30%),
+    linear-gradient(135deg,#21103c 0%,#35176a 48%,#101e33 100%);color:#fff;box-shadow:0 24px 70px rgba(17,8,40,.28)}
+  #project-story .cc-story-stage:after{content:"";position:absolute;inset:auto -8% -36% 28%;height:62%;background:radial-gradient(circle,rgba(68,210,164,.20),transparent 62%);pointer-events:none}
+  #project-story .cc-story-stage>*{position:relative;z-index:1}
+  #project-story .cc-story-head{max-width:860px;margin-bottom:32px}
+  #project-story .cc-story-head h2{margin:0 0 14px;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.94;letter-spacing:-.055em;max-width:11ch}
+  #project-story .cc-story-head p{margin:0;max-width:690px;font-size:clamp(1.02rem,1.7vw,1.24rem);line-height:1.62;color:rgba(255,255,255,.80)}
+  #project-story .cc-story-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  #project-story .cc-story-moment{min-height:250px;padding:22px;border-radius:22px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);display:flex;flex-direction:column;justify-content:space-between}
+  #project-story .cc-story-moment:nth-child(2){background:rgba(255,190,32,.16)}
+  #project-story .cc-story-moment:nth-child(3){background:rgba(68,210,164,.14)}
+  #project-story .cc-story-moment:nth-child(4){background:rgba(237,56,161,.16)}
+  #project-story .cc-story-num{font-size:clamp(2rem,3vw,3.1rem);font-weight:950;line-height:1;opacity:.24}
+  #project-story .cc-story-moment h3{margin:0 0 9px;font-size:clamp(1.18rem,1.8vw,1.5rem);line-height:1.08}
+  #project-story .cc-story-moment p{margin:0;font-size:.96rem;line-height:1.55;color:rgba(255,255,255,.78)}
+  #project-story .cc-story-result{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:18px;padding:19px 22px;border-radius:18px;background:#fff;color:#17131f}
+  #project-story .cc-story-result strong{font-size:clamp(1.05rem,1.8vw,1.28rem)}
+  #project-story .cc-story-result span{max-width:690px;font-size:.92rem;line-height:1.5;color:#5c5566}
+  #project-story summary{font-size:clamp(1.3rem,2.4vw,2rem)!important;font-weight:900!important;line-height:1.1!important}
+  @media(max-width:900px){#project-story .cc-story-flow{grid-template-columns:1fr 1fr}#project-story .cc-story-moment{min-height:220px}}
+  @media(max-width:560px){#project-story .cc-story-flow{grid-template-columns:1fr}#project-story .cc-story-moment{min-height:0}#project-story .cc-story-result{align-items:flex-start;flex-direction:column}}
 </style>
 <script id="cc-project-story-simple-script">
 (() => {
@@ -332,37 +338,22 @@ const projectStorySimplifyPatch = `
     const section = document.getElementById("project-story");
     if (!section) return;
     const summary = section.querySelector("summary");
-    if (summary) summary.innerHTML = '<span class="project-n">01</span> How one city works <span class="project-plus">+</span>';
+    if (summary) summary.innerHTML = 'How one city works <span class="project-plus">+</span>';
     const inside = section.querySelector(".project-inside");
     if (!inside) return;
     inside.innerHTML = [
-      '<div class="cc-story-simple">',
-        '<div class="cc-story-intro">',
-          '<h2>One woman. One family. One city. One real change.</h2>',
-          '<p>The episode follows a simple path: meet the people, understand what matters, help move something real forward, bring the city into it, then celebrate the result at the arena.</p>',
+      '<div class="cc-story-stage">',
+        '<div class="cc-story-head">',
+          '<h2>A city story people can actually feel.</h2>',
+          '<p>Carnival Careers starts with people, moves something real forward in their lives, brings the city into the journey, and saves the arena for the celebration.</p>',
         '</div>',
-        '<div class="cc-story-steps">',
-          '<div class="cc-story-step"><b>1</b><h3>Meet the woman</h3><p>A woman with a meaningful connection to the city opens the story.</p></div>',
-          '<div class="cc-story-step"><b>2</b><h3>Meet the family</h3><p>She connects Carnival Careers with a family whose story becomes the heart of the episode.</p></div>',
-          '<div class="cc-story-step"><b>3</b><h3>Share a meal</h3><p>Dinner gives everyone time to understand the family, the city and what would make a real difference.</p></div>',
-          '<div class="cc-story-step"><b>4</b><h3>Do the work</h3><p>Housing, employment, mobility, food, childcare and other practical needs move from conversation into action.</p></div>',
-          '<div class="cc-story-step"><b>5</b><h3>Bring in the city</h3><p>Local businesses, partners, culture, transit, restaurants, vendors and public activations become part of the same story.</p></div>',
-          '<div class="cc-story-step"><b>6</b><h3>Celebrate at the arena</h3><p>The concert comes last. By then, the audience has seen what changed and why the celebration matters.</p></div>',
+        '<div class="cc-story-flow">',
+          '<article class="cc-story-moment"><div class="cc-story-num">01</div><div><h3>Meet the people</h3><p>A woman with a meaningful connection to the city introduces the family at the centre of the episode.</p></div></article>',
+          '<article class="cc-story-moment"><div class="cc-story-num">02</div><div><h3>Understand what matters</h3><p>Dinner, conversation and time together reveal the family’s goals, pressures, history and what meaningful progress would look like.</p></div></article>',
+          '<article class="cc-story-moment"><div class="cc-story-num">03</div><div><h3>Make something real happen</h3><p>Housing, work, food, mobility, childcare, local business and other practical needs move from conversation into visible action.</p></div></article>',
+          '<article class="cc-story-moment"><div class="cc-story-num">04</div><div><h3>Let the city celebrate it</h3><p>Partners, culture, media and public activations carry the story outward. The arena concert comes last—after people understand what changed.</p></div></article>',
         '</div>',
-        '<div class="cc-activate">',
-          '<h3>What one episode can activate</h3>',
-          '<p>The family story naturally creates real work across the businesses Carnival Careers is already building.</p>',
-          '<div class="cc-activate-grid">',
-            '<div class="cc-activate-card"><strong>Homes + ownership</strong><span>Property, renovation, housing and ownership pathways.</span></div>',
-            '<div class="cc-activate-card"><strong>Work + training</strong><span>Paid roles, skills, credentials and documented income.</span></div>',
-            '<div class="cc-activate-card"><strong>Food + everyday spending</strong><span>Dinner, groceries, restaurants and Eat Your Keep.</span></div>',
-            '<div class="cc-activate-card"><strong>Mobility</strong><span>Vehicles, rideshare and household transportation.</span></div>',
-            '<div class="cc-activate-card"><strong>Media + music</strong><span>Television, digital content, soundtrack and live performance.</span></div>',
-            '<div class="cc-activate-card"><strong>Sponsors + vendors</strong><span>Brands and local merchants participate in useful, visible ways.</span></div>',
-            '<div class="cc-activate-card"><strong>Travel + movement</strong><span>Cruise, destination travel and movement between cities.</span></div>',
-            '<div class="cc-activate-card"><strong>Capital</strong><span>Debt, equity and other financing support assets and expansion.</span></div>',
-          '</div>',
-        '</div>',
+        '<div class="cc-story-result"><strong>One family story. A whole city moving around it.</strong><span>Property, employment, food, mobility, media, music, sponsors, vendors, travel and commerce enter only where they help move the story or the household forward.</span></div>',
       '</div>'
     ].join("");
   };
@@ -370,7 +361,6 @@ const projectStorySimplifyPatch = `
   else run();
 })();
 </script>`;
-
 const trailerExperience = `
 <style id="cc-trailer-modal-style">
   #cc-trailer-modal{position:fixed;inset:0;z-index:2147483500;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,6,12,.86);backdrop-filter:blur(10px)}
