@@ -1818,7 +1818,129 @@ const requestedAccentCleanupPatch = `
 
 
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch]) {
+const editorialCardSystemPatch = \`
+<style id="cc-editorial-card-system-style">
+  .cc-editorial-flat{
+    min-height:0!important;
+    padding:clamp(18px,2.8vw,30px) 0!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    background-image:none!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    transform:none!important;
+  }
+  .cc-editorial-flat:before{
+    content:"";
+    display:block;
+    width:clamp(42px,5vw,72px);
+    height:2px;
+    margin:0 0 18px;
+    background:currentColor;
+    opacity:.2;
+  }
+  .cc-editorial-flat h2,
+  .cc-editorial-flat h3,
+  .cc-editorial-flat h4{
+    margin-top:0!important;
+    margin-bottom:9px!important;
+    font-size:clamp(1.35rem,2.35vw,2.05rem)!important;
+    line-height:1.05!important;
+    letter-spacing:-.035em!important;
+  }
+  .cc-editorial-flat p{
+    max-width:62ch;
+    margin:0!important;
+    line-height:1.62!important;
+  }
+  .cc-editorial-flat .tag,
+  .cc-editorial-flat [class*="tag"],
+  .cc-editorial-flat [class*="chip"]{
+    border-radius:999px!important;
+    box-shadow:none!important;
+  }
+  .cc-editorial-flow{
+    gap:clamp(22px,3.5vw,54px)!important;
+    align-items:start!important;
+  }
+  #page-childcare .cc-fw-card,
+  #page-childcare .cc-ss-step,
+  #page-childcare .cc-ss-card,
+  #project-story .cc-story-moment{
+    color:inherit!important;
+  }
+  #page-childcare .cc-fw-card:before,
+  #project-story .cc-story-moment:before{
+    background:#d6a326!important;
+    opacity:.7!important;
+  }
+  #project-story .cc-story-moment:nth-child(2),
+  #project-story .cc-story-moment:nth-child(3),
+  #project-story .cc-story-moment:nth-child(4){
+    background:transparent!important;
+  }
+  #project-story .cc-story-num{
+    opacity:.42!important;
+  }
+  @media(max-width:700px){
+    .cc-editorial-flat{padding:19px 0!important}
+    .cc-editorial-flow{gap:18px!important}
+  }
+</style>
+<script id="cc-editorial-card-system-script">
+(() => {
+  const run=()=>{
+    const selectors=[
+      ".card",
+      ".project-step",
+      ".project-lane",
+      ".project-pro",
+      ".cc-fw-card",
+      ".cc-story-moment",
+      ".cc-ss-step",
+      ".cc-ss-card",
+      ".cc-ss-mini",
+      ".cc-whole-card",
+      ".cc-pj-step",
+      ".cc-city-card",
+      ".cc-city-step",
+      ".flow-step",
+      ".lane-fit",
+      ".lane-row",
+      ".cruise-role-card",
+      ".eventmatch-control-card",
+      ".car-model-box",
+      ".cc-toronto-step"
+    ];
+    const preserve=[
+      ".product-card",
+      ".media-card",
+      ".cc-media-card",
+      ".show-episode-card",
+      ".cc-event-card",
+      ".cruise-result-card",
+      ".music-overlay-panel",
+      ".cc-ev-card",
+      ".cc-ev-panel",
+      ".cc-eyk-panel",
+      ".cc-eyk-step",
+      ".cc-toronto-panel"
+    ].join(",");
+    document.querySelectorAll(selectors.join(",")).forEach(el=>{
+      if(el.matches(preserve)||el.closest(".product-card,.media-card,.cc-media-card,.show-episode-card,.cc-event-card,.cruise-result-card,.music-overlay-panel,.cc-ev-card,.cc-ev-panel,.cc-eyk-panel,.cc-eyk-step,.cc-toronto-panel")) return;
+      el.classList.add("cc-editorial-flat");
+      const parent=el.parentElement;
+      if(parent) parent.classList.add("cc-editorial-flow");
+    });
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
+})();
+</script>\`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
