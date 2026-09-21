@@ -64,6 +64,58 @@ const projectCopy = `
   .cc-plain-core p{margin:7px 0;max-width:72ch}
   .cc-plain-core strong{font-weight:850}
   .cc-plain-core .cc-kicker{font-size:.78rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px}
+
+  [data-cc-core="core-store"]{padding:0!important;border:0!important;background:transparent!important}
+  .cc-eyk-shell{position:relative;overflow:hidden;border-radius:30px;padding:clamp(22px,4vw,48px);background:
+    radial-gradient(circle at 8% 10%,rgba(255,190,32,.24),transparent 34%),
+    radial-gradient(circle at 90% 12%,rgba(237,56,161,.30),transparent 31%),
+    linear-gradient(135deg,#160d2b 0%,#25134b 46%,#0d1b28 100%);color:#fff;box-shadow:0 24px 70px rgba(19,10,44,.34);isolation:isolate}
+  .cc-eyk-shell:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.24;background-image:radial-gradient(rgba(255,255,255,.7) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(to bottom,black,transparent 78%)}
+  .cc-eyk-shell>*{position:relative;z-index:1}
+  .cc-eyk-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:clamp(20px,4vw,44px);align-items:start}
+  .cc-eyk-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.09);backdrop-filter:blur(8px);font-size:.76rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+  .cc-eyk-kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:#ffbe20;box-shadow:0 0 0 5px rgba(255,190,32,.14)}
+  .cc-eyk-title{margin:16px 0 12px!important;max-width:13ch;font-size:clamp(2.35rem,6vw,5.6rem)!important;line-height:.93!important;letter-spacing:-.055em}
+  .cc-eyk-lede{max-width:62ch;font-size:clamp(1rem,1.8vw,1.22rem);line-height:1.65;color:rgba(255,255,255,.82)}
+  .cc-eyk-punch{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+  .cc-eyk-punch span{padding:9px 12px;border-radius:999px;background:#fff;color:#1a1228;font-size:.86rem;font-weight:900}
+  .cc-eyk-punch span:nth-child(2){background:#ffbe20}
+  .cc-eyk-punch span:nth-child(3){background:#ef49a6;color:#fff}
+  .cc-eyk-tracker{padding:20px;border-radius:22px;background:rgba(255,255,255,.96);color:#17131f;box-shadow:0 18px 50px rgba(0,0,0,.24)}
+  .cc-eyk-tracker h4{margin:0 0 6px;font-size:1.2rem}
+  .cc-eyk-subtle{margin:0 0 18px;font-size:.86rem;line-height:1.45;color:#655f6b}
+  .cc-eyk-field{margin:18px 0}
+  .cc-eyk-field-head{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:8px}
+  .cc-eyk-field-head label{font-weight:850}
+  .cc-eyk-field-head output{font-weight:950;font-size:1.05rem}
+  .cc-eyk-range{width:100%;accent-color:#6f48e8;cursor:pointer}
+  .cc-eyk-results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .cc-eyk-stat{padding:14px;border-radius:16px;background:#f4f0fb}
+  .cc-eyk-stat small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#746c7e;font-weight:850}
+  .cc-eyk-stat strong{display:block;margin-top:5px;font-size:1.35rem;line-height:1}
+  .cc-eyk-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+  .cc-eyk-btn{appearance:none;border:0;border-radius:999px;padding:11px 15px;font:850 .82rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+  .cc-eyk-btn.primary{background:#1a1228;color:#fff}
+  .cc-eyk-btn.ghost{background:#ece7f4;color:#251b32}
+  .cc-eyk-saved{min-height:1.2em;margin:9px 0 0;font-size:.76rem;color:#5d5367}
+  .cc-eyk-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:28px 0 12px}
+  .cc-eyk-step{appearance:none;text-align:left;border:1px solid rgba(255,255,255,.17);border-radius:18px;padding:16px;background:rgba(255,255,255,.07);color:#fff;cursor:pointer;transition:.2s ease}
+  .cc-eyk-step:hover,.cc-eyk-step[aria-selected="true"]{transform:translateY(-2px);background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4)}
+  .cc-eyk-step b{display:block;margin-bottom:4px;font-size:1rem}
+  .cc-eyk-step span{font-size:.82rem;opacity:.7}
+  .cc-eyk-panel{display:none;padding:18px 19px;border-radius:18px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14)}
+  .cc-eyk-panel.active{display:block}
+  .cc-eyk-panel h4{margin:0 0 7px;font-size:1.12rem}
+  .cc-eyk-panel p{margin:0;color:rgba(255,255,255,.78);line-height:1.55}
+  .cc-eyk-bottom{display:grid;grid-template-columns:1fr minmax(280px,.7fr);gap:18px;margin-top:18px}
+  .cc-eyk-value{padding:20px;border-radius:20px;background:linear-gradient(135deg,rgba(255,190,32,.14),rgba(237,56,161,.11));border:1px solid rgba(255,255,255,.16)}
+  .cc-eyk-value h4{margin:0 0 8px;font-size:1.2rem}
+  .cc-eyk-value p{margin:0;color:rgba(255,255,255,.78);line-height:1.55}
+  .cc-eyk-guardrails{padding:20px;border-radius:20px;background:rgba(5,10,20,.34);border:1px solid rgba(255,255,255,.13)}
+  .cc-eyk-guardrails strong{display:block;margin-bottom:7px}
+  .cc-eyk-guardrails p{margin:0;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.7)}
+  @media(max-width:820px){.cc-eyk-top,.cc-eyk-bottom{grid-template-columns:1fr}.cc-eyk-flow{grid-template-columns:1fr}.cc-eyk-step{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center}.cc-eyk-title{max-width:10ch}.cc-eyk-results{grid-template-columns:1fr 1fr}}
+  @media(max-width:480px){.cc-eyk-shell{border-radius:22px;padding:20px}.cc-eyk-results{grid-template-columns:1fr}.cc-eyk-title{font-size:2.45rem!important}}
 </style>
 <script id="cc-eat-you-keep-script">
 (() => {
@@ -75,6 +127,58 @@ const projectCopy = `
     if(!box){ box=document.createElement("div"); box.className="cc-plain-core"; box.setAttribute("data-cc-core", key); inner.appendChild(box); }
     box.innerHTML = html;
   };
+
+  const initEatYourKeep = root => {
+    if(!root) return;
+    const box = root.querySelector('[data-cc-core="core-store"]');
+    if(!box) return;
+    const spend = box.querySelector('[data-eyk-spend]');
+    const eligible = box.querySelector('[data-eyk-eligible]');
+    const spendOut = box.querySelector('[data-eyk-spend-out]');
+    const eligibleOut = box.querySelector('[data-eyk-eligible-out]');
+    const monthOut = box.querySelector('[data-eyk-month]');
+    const yearOut = box.querySelector('[data-eyk-year]');
+    const savedMsg = box.querySelector('[data-eyk-saved]');
+    const saveBtn = box.querySelector('[data-eyk-save]');
+    const resetBtn = box.querySelector('[data-eyk-reset]');
+    const money = n => new Intl.NumberFormat("en-CA",{style:"currency",currency:"CAD",maximumFractionDigits:0}).format(n);
+    const update = () => {
+      const monthly = Math.max(0,Number(spend.value)||0);
+      const pct = Math.min(100,Math.max(0,Number(eligible.value)||0));
+      const eligibleMonthly = monthly * pct / 100;
+      spendOut.textContent = money(monthly);
+      eligibleOut.textContent = pct + "%";
+      monthOut.textContent = money(eligibleMonthly);
+      yearOut.textContent = money(eligibleMonthly * 12);
+      savedMsg.textContent = "Preview only — this estimates eligible purchase volume, not shares, cash value or investment return.";
+    };
+    box.querySelectorAll('[data-eyk-tab]').forEach(btn => {
+      btn.addEventListener("click",() => {
+        const key = btn.getAttribute("data-eyk-tab");
+        box.querySelectorAll('[data-eyk-tab]').forEach(x => x.setAttribute("aria-selected",String(x===btn)));
+        box.querySelectorAll('[data-eyk-panel]').forEach(panel => panel.classList.toggle("active",panel.getAttribute("data-eyk-panel")===key));
+      });
+    });
+    [spend,eligible].forEach(input => input && input.addEventListener("input",update));
+    if(saveBtn) saveBtn.addEventListener("click",() => {
+      try{
+        localStorage.setItem("cc-eat-your-keep-preview",JSON.stringify({spend:spend.value,eligible:eligible.value}));
+        savedMsg.textContent = "Saved on this device. No personal information was sent anywhere.";
+      }catch(e){ savedMsg.textContent = "Your browser blocked local saving, but the preview still works."; }
+    });
+    if(resetBtn) resetBtn.addEventListener("click",() => {
+      spend.value = "500";
+      eligible.value = "80";
+      try{ localStorage.removeItem("cc-eat-your-keep-preview"); }catch(e){}
+      update();
+    });
+    try{
+      const saved = JSON.parse(localStorage.getItem("cc-eat-your-keep-preview")||"null");
+      if(saved){ if(saved.spend!=null) spend.value=saved.spend; if(saved.eligible!=null) eligible.value=saved.eligible; }
+    }catch(e){}
+    update();
+  };
+
   const home = findPage("page-home") || document.querySelector('[data-page="home"]');
   const families = findPage("page-families","page-childcare") || document.querySelector('[data-page="families"],[data-page="childcare"]');
   const project = findPage("page-project") || document.querySelector('[data-page="project"]');
@@ -87,7 +191,41 @@ const projectCopy = `
   place(project,"core-project",'<div class="cc-kicker">Project</div><h3>One family makes the city stakes visible.</h3><p>Toronto moves from Michie and the family relationship through dinner, history, work, home/ownership, Eat Your Keep, mobility, childcare, local commerce, Carnival culture and mas parade attendance. The arena comes last, after the project has produced real evidence that something changed. Toronto is the proof for a 65-city format: each city needs its own highlighted woman, featured family, real change, Carnival/public-culture beat and earned arena payoff.</p>');
   place(show,"core-show",'<div class="cc-kicker">The show</div><h3>Michie Mee carries the relationship and recognition.</h3><p>The episode follows recognition → relationship → tangible change → Carnival/mas parade visibility → public triumph. Michie Mee is the highlighted Toronto woman and host; Hopeton LaTouche is the featured family / tenant-owner. The parade shows the family and city inside the culture before the arena delivers the final emotional release.</p>');
   place(capital,"core-capital",'<div class="cc-kicker">Capital</div><h3>16 Vic Towns are the current downside sale engine.</h3><p>PATH #5101/12 York and East Bayfront #3215/138 Downes are retained alongside Istanbul Fine Foods. The unit-sizing case does not count uncommitted operating revenue and covers the senior/investor exit, C$1.2M investor target profit, audience reserves and whole-company operating obligations.</p>');
-  place(store,"core-store",'<div class="cc-kicker">Eat Your Keep</div><h3>Everyday commerce should leave measurable community value.</h3><p>Buy groceries. Build ownership. Eligible shopping should help members build a stake in the grocery store instead of acting like ordinary loyalty points. The store sits inside the same Carnival-rooted family and parade-attendance ecosystem. The final member/share/co-operative structure, tax treatment, redemption rules and receipt wording must be approved before launch.</p>');
+  const eatYourKeepHtml = [
+    '<section class="cc-eyk-shell" aria-labelledby="cc-eyk-title">',
+    '<div class="cc-eyk-top">',
+      '<div>',
+        '<div class="cc-eyk-kicker">Eat Your Keep</div>',
+        '<h3 class="cc-eyk-title" id="cc-eyk-title">Turn the grocery run into something you can build on.</h3>',
+        '<p class="cc-eyk-lede">Buy groceries. Track the eligible part of the basket. Let the approved program rules turn ordinary household spending into measurable member value instead of another disposable points balance.</p>',
+        '<div class="cc-eyk-punch"><span>Shop normally</span><span>Track eligible spend</span><span>Build community value</span></div>',
+      '</div>',
+      '<aside class="cc-eyk-tracker" aria-label="Eat Your Keep preview calculator">',
+        '<h4>Try the ownership-path tracker</h4>',
+        '<p class="cc-eyk-subtle">Move the sliders to preview how much of a household grocery budget could become eligible program activity once the final rules are approved.</p>',
+        '<div class="cc-eyk-field"><div class="cc-eyk-field-head"><label for="eyk-spend">Monthly grocery spend</label><output data-eyk-spend-out>C$500</output></div><input class="cc-eyk-range" id="eyk-spend" data-eyk-spend type="range" min="50" max="1500" step="25" value="500"></div>',
+        '<div class="cc-eyk-field"><div class="cc-eyk-field-head"><label for="eyk-eligible">Eligible share of basket</label><output data-eyk-eligible-out>80%</output></div><input class="cc-eyk-range" id="eyk-eligible" data-eyk-eligible type="range" min="0" max="100" step="5" value="80"></div>',
+        '<div class="cc-eyk-results"><div class="cc-eyk-stat"><small>Eligible monthly activity</small><strong data-eyk-month>C$400</strong></div><div class="cc-eyk-stat"><small>Eligible annual activity</small><strong data-eyk-year>C$4,800</strong></div></div>',
+        '<div class="cc-eyk-actions"><button class="cc-eyk-btn primary" type="button" data-eyk-save>Save this preview</button><button class="cc-eyk-btn ghost" type="button" data-eyk-reset>Reset</button></div>',
+        '<p class="cc-eyk-saved" data-eyk-saved aria-live="polite"></p>',
+      '</aside>',
+    '</div>',
+    '<div class="cc-eyk-flow" role="tablist" aria-label="How Eat Your Keep works">',
+      '<button class="cc-eyk-step" type="button" role="tab" data-eyk-tab="shop" aria-selected="true"><b>01 · Shop</b><span>Groceries first, program second.</span></button>',
+      '<button class="cc-eyk-step" type="button" role="tab" data-eyk-tab="track" aria-selected="false"><b>02 · Track</b><span>See eligible activity clearly.</span></button>',
+      '<button class="cc-eyk-step" type="button" role="tab" data-eyk-tab="own" aria-selected="false"><b>03 · Build</b><span>Approved rules connect activity to member value.</span></button>',
+    '</div>',
+    '<div class="cc-eyk-panel active" data-eyk-panel="shop"><h4>Your normal grocery run stays normal.</h4><p>The point is not to invent another behaviour. Households buy the food they already need, while the system identifies which purchases qualify under the final approved structure.</p></div>',
+    '<div class="cc-eyk-panel" data-eyk-panel="track"><h4>Make the value visible.</h4><p>A member-facing account can show eligible purchases, cumulative activity and the exact rule being applied, so people can see where the value came from instead of guessing what their points are worth.</p></div>',
+    '<div class="cc-eyk-panel" data-eyk-panel="own"><h4>Move beyond ordinary loyalty points.</h4><p>The intended model is for eligible shopping to support a real member, share or co-operative stake in the grocery business once the legal, tax, accounting and redemption structure is approved.</p></div>',
+    '<div class="cc-eyk-bottom">',
+      '<div class="cc-eyk-value"><h4>Why this belongs inside Carnival Careers</h4><p>Food, family spending, local ownership and the public Carnival experience are not separate stories here. Eat Your Keep turns one of the most ordinary household expenses into a visible community-value lane inside the same family, commerce and city-activation ecosystem.</p></div>',
+      '<div class="cc-eyk-guardrails"><strong>Launch guardrails</strong><p>The calculator is a design preview only. The final member/share/co-operative structure, eligibility rules, tax treatment, accounting, redemption mechanics and receipt wording must be approved before launch. No displayed amount is a promise of shares, cash value or investment return.</p></div>',
+    '</div>',
+    '</section>'
+  ].join("");
+  place(store,"core-store",eatYourKeepHtml);
+  initEatYourKeep(store);
 })();
 </script>`;
 
