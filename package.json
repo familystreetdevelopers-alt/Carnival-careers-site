@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "verify": "node --check build-standalone.mjs && node --check distribution-pages.mjs",
-    "build": "npm run verify && node build-standalone.mjs && node distribution-pages.mjs"
+    "build": "npm run verify && node build-standalone.mjs && node distribution-pages.mjs && mkdir -p dist/GITHUB_SOURCE_3AM/.github/workflows && cp .github/workflows/build-verify.yml dist/GITHUB_SOURCE_3AM/.github/workflows/ && cp build-standalone.mjs distribution-pages.mjs index.html package.json pet-picks-press.html vercel.json dist/GITHUB_SOURCE_3AM/"
   },
   "dependencies": {
     "adm-zip": "^0.5.16"
