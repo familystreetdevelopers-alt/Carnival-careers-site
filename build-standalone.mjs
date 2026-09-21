@@ -179,7 +179,7 @@ const trailerExperience = `
 </script>`;
 
 
-const wholeReconciliationPatch = \`
+const wholeReconciliationPatch = `
 <style id="cc-whole-reconcile-style">
   .cc-whole-reconcile{margin:22px 0;padding:22px;border-radius:20px;border:1px solid rgba(112,72,232,.28);background:linear-gradient(135deg,rgba(112,72,232,.10),rgba(255,190,32,.08));color:inherit}
   .cc-whole-reconcile h2,.cc-whole-reconcile h3{margin:.2em 0 .5em}
@@ -252,7 +252,7 @@ const wholeReconciliationPatch = \`
     ));
   }
 })();
-</script>\`;
+</script>`;
 
 let renderedHtml = canonicalHtml;
 for (const block of [trafficFunnel, projectCopy, wholeReconciliationPatch, trailerExperience, contrastGuard]) {
