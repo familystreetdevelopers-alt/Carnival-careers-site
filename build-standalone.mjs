@@ -1843,7 +1843,7 @@ const assetRentRollResetPatch = `
   const stale = /Vic Towns|128 Sheridan|Sheridan Avenue|WHOLE-21|19[- ]unit|21 Vic|C\\$14\\.1099M|C\\$30\\.127|C\\$29\\.844|C\\$23\\.140|70 units/i;
   const stripStale = root => {
     if(!root) return;
-    root.querySelectorAll(".lane-row,.current-line,.cc-whole-card,tr").forEach(el=>{
+    root.querySelectorAll(".lane-row,.current-line,.cc-whole-card,tr,.card,.metric-card,.number-card,.project-lane,h2,h3,h4").forEach(el=>{
       if(stale.test(String(el.textContent||""))) el.remove();
     });
     root.querySelectorAll("p,li").forEach(el=>{
@@ -1886,7 +1886,7 @@ const assetRentRollResetPatch = `
     const lenders = document.getElementById("page-lenders") || document.querySelector('[data-page="lenders"]');
     const investors = document.getElementById("page-investors") || document.querySelector('[data-page="investors"]');
 
-    [project,lenders,investors].forEach(stripStale);
+    stripStale(document.querySelector("main") || document.body);
 
     if(project){
       project.querySelector("#project-capital-merged")?.remove();
