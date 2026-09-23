@@ -1818,6 +1818,97 @@ const requestedAccentCleanupPatch = `
 
 
 
+
+const assetRentRollResetPatch = `
+<style id="cc-asset-rent-roll-reset-style">
+  #cc-asset-rent-roll-reset{padding:54px 0 26px}
+  #cc-asset-rent-roll-reset .cc-arr-shell{max-width:1120px;margin:auto;padding:clamp(24px,4vw,44px);border:1px solid rgba(209,27,27,.45);border-radius:28px;background:linear-gradient(145deg,#171717,#090909);color:#fff}
+  #cc-asset-rent-roll-reset .cc-arr-kicker{font-size:.78rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:#ff6363}
+  #cc-asset-rent-roll-reset h2{font-size:clamp(2.6rem,6vw,5.6rem)!important;line-height:.92!important;letter-spacing:-.055em!important;margin:10px 0 18px!important}
+  #cc-asset-rent-roll-reset .cc-arr-lede{font-size:clamp(1.12rem,2vw,1.42rem);line-height:1.6;max-width:820px;color:#efefef!important}
+  #cc-asset-rent-roll-reset .cc-arr-rule{margin:26px 0;padding:20px 22px;border-left:5px solid #ff3434;background:#111;font-size:clamp(1.25rem,2.2vw,1.7rem);font-weight:900;line-height:1.35}
+  #cc-asset-rent-roll-reset .cc-arr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  #cc-asset-rent-roll-reset .cc-arr-box{padding:20px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:#0d0d0d}
+  #cc-asset-rent-roll-reset .cc-arr-box strong{display:block;font-size:1.65rem;line-height:1.05;margin-bottom:7px;color:#fff!important}
+  #cc-asset-rent-roll-reset .cc-arr-box p{margin:0;color:#cfcfcf!important;line-height:1.55}
+  #cc-asset-rent-roll-reset .cc-arr-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+  #cc-asset-rent-roll-reset .cc-arr-step{padding:16px;border-radius:16px;background:#161616;border:1px solid rgba(209,27,27,.34)}
+  #cc-asset-rent-roll-reset .cc-arr-step b{display:block;color:#ff6a6a!important;margin-bottom:6px}
+  #cc-asset-rent-roll-reset .cc-arr-fine{font-size:.9rem;line-height:1.55;color:#aaa!important;margin:24px 0 0}
+  #cc-asset-rent-roll-reset .cc-arr-small{font-size:.86rem;color:#aaa!important}
+  @media(max-width:820px){#cc-asset-rent-roll-reset .cc-arr-grid,#cc-asset-rent-roll-reset .cc-arr-steps{grid-template-columns:1fr}}
+</style>
+<script id="cc-asset-rent-roll-reset-script">
+(() => {
+  const stale = /Vic Towns|128 Sheridan|Sheridan Avenue|WHOLE-21|19[- ]unit|21 Vic|C\\$14\\.1099M|C\\$30\\.127|C\\$29\\.844|C\\$23\\.140|70 units/i;
+  const stripStale = root => {
+    if(!root) return;
+    root.querySelectorAll(".lane-row,.current-line,.cc-whole-card,tr").forEach(el=>{
+      if(stale.test(String(el.textContent||""))) el.remove();
+    });
+    root.querySelectorAll("p,li").forEach(el=>{
+      if(stale.test(String(el.textContent||""))) el.remove();
+    });
+  };
+  const sectionHtml = \`
+  <section id="cc-asset-rent-roll-reset" class="section">
+    <div class="wrap">
+      <div class="cc-arr-shell">
+        <div class="cc-arr-kicker">How the property side works</div>
+        <h2>One building. One rent roll. One loan.</h2>
+        <p class="cc-arr-lede"><strong>2422 Queen Street East</strong> is the Toronto housing and collateral anchor. The lender looks at the building, its value, its rent roll and its net operating income. The property is expected to carry its own property debt.</p>
+        <div class="cc-arr-rule">Our target is simple: no sponsor cash out of pocket. We maximize lawful asset-based financing first. If the senior mortgage leaves a gap, that gap must be filled by seller financing or another approved capital source — not by pretending a first mortgage is 100% financing.</div>
+        <div class="cc-arr-grid">
+          <div class="cc-arr-box"><strong>24 apartments</strong><p>2 bachelor, 6 junior one-bedroom and 16 one-bedroom suites at 2422 Queen Street East.</p></div>
+          <div class="cc-arr-box"><strong>C$5.76M</strong><p>Current public asking price. Final seller guidance, appraisal and lender value still control the closing.</p></div>
+          <div class="cc-arr-box"><strong>C$251,557</strong><p>Published projected Year-1 NOI. The lender still verifies the rent roll, expenses and actual underwriting NOI.</p></div>
+          <div class="cc-arr-box"><strong>Two condos stay</strong><p>12 York #5101 and 138 Downes #3215 remain separate platform assets.</p></div>
+          <div class="cc-arr-box"><strong>Six-family ownership path</strong><p>Six families can receive defined co-ownership interests, subject to counsel, lender consent and any required City approvals.</p></div>
+          <div class="cc-arr-box"><strong>Everything else stays separate</strong><p>Arena, media, grocery, cruise, payroll and vehicles use their own approved operating capital and revenue. Property mortgage proceeds are not mixed into unapproved uses.</p></div>
+        </div>
+        <div class="cc-arr-steps">
+          <div class="cc-arr-step"><b>1. Verify</b><span>Rent roll, T12/T24, leases, expenses, title and building condition.</span></div>
+          <div class="cc-arr-step"><b>2. Size</b><span>Lender sizes proceeds from value, NOI, DCR/LTV and its credit rules.</span></div>
+          <div class="cc-arr-step"><b>3. Fill any gap</b><span>Seller VTB or other lender-approved third-party capital if required.</span></div>
+          <div class="cc-arr-step"><b>4. Close and operate</b><span>Rents service property debt; the wider Carnival Careers businesses operate separately.</span></div>
+        </div>
+        <p class="cc-arr-fine"><strong>Illustration only:</strong> at C$5.76M, 85% LTV is C$4.896M of senior debt with a C$864K gap. A qualifying 95% MLI Select case would be C$5.472M with a C$288K gap. These are not approvals. Actual proceeds depend on appraisal, verified NOI/rent roll, DCR, MLI Select eligibility, borrower strength and lender terms.</p>
+      </div>
+    </div>
+  </section>\`;
+
+  const run = () => {
+    document.title = "Carnival Careers — Asset + Rent Roll First";
+    const meta = document.querySelector('meta[name="description"]');
+    if(meta) meta.setAttribute("content","Carnival Careers: Toronto starts with 2422 Queen Street East. The asset, rent roll and NOI support the property financing; operating businesses remain separately funded.");
+
+    const project = document.getElementById("page-project") || document.querySelector('[data-page="project"]');
+    const lenders = document.getElementById("page-lenders") || document.querySelector('[data-page="lenders"]');
+    const investors = document.getElementById("page-investors") || document.querySelector('[data-page="investors"]');
+
+    [project,lenders,investors].forEach(stripStale);
+
+    if(project){
+      project.querySelector("#project-capital-merged")?.remove();
+      project.querySelector("#cc-asset-rent-roll-reset")?.remove();
+      const hero = project.querySelector(".page-hero");
+      if(hero) hero.insertAdjacentHTML("afterend",sectionHtml);
+      else project.insertAdjacentHTML("afterbegin",sectionHtml);
+    }
+
+    if(lenders && !lenders.querySelector("#cc-lender-eureka")){
+      const box=document.createElement("section");
+      box.id="cc-lender-eureka";
+      box.className="partner-section dark";
+      box.innerHTML=\`<div class="wrap"><div class="partner-kicker">The simple lender file</div><h2>Underwrite 2422 Queen from the asset and rent roll.</h2><p class="partner-one-line">We are asking the property lender to size the maximum supportable mortgage from the property value, verified rent roll, expenses and NOI. The sponsor-cash target is C$0; any required gap must come from seller financing or another lender-approved capital source.</p><div class="simple-points"><div class="simple-point"><h3>Property</h3><p>2422 Queen Street East · 24 suites · public ask C$5.76M · published Year-1 NOI C$251,557.</p></div><div class="simple-point"><h3>What we send</h3><p>Rent roll, leases, T12/T24, appraisal, environmental/building reports, title, insurance and borrower/entity documents.</p></div><div class="simple-point"><h3>What we need back</h3><p>Maximum proceeds, rate, amortization, DCR/LTV, reserves, recourse/guarantee requirements, closing costs and exact cash-to-close.</p></div></div></div>\`;
+      const hero=lenders.querySelector(".page-hero");
+      if(hero) hero.insertAdjacentElement("afterend",box); else lenders.prepend(box);
+    }
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+</script>`;
+
 const editorialCardSystemPatch = `
 <style id="cc-editorial-card-system-style">
   .cc-editorial-flat{
@@ -1940,7 +2031,7 @@ const editorialCardSystemPatch = `
 })();
 </script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch, assetRentRollResetPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -1965,18 +2056,19 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   carnival_main_theme_non_music_pages: true,
   mas_parade_attendance_visible: true,
   carnival_visual_badge_removed: true,
-  canonical_document_system: "WHOLE-21-PROTECTED-19UNIT-2026-09-20",
+  canonical_document_system: "ASSET-RENT-ROLL-2422-QUEEN-2026-09-22",
   source_recovery_instances: 1400,
   source_unique_objects: 1273,
-  currentized_enterprise_uses_cad: 29844171.944789,
-  protected_enterprise_obligations_cad: 29844171.944789,
-  vic_towns_units_current: 19,
-  vic_towns_selected_sqft: 26876,
-  vic_towns_purchase_cad: 14109900,
-  vic_towns_hst_stress_cad: 1834287,
-  vic_hst_treatment_resolved: false,
-  vic_towns_net_resale_cad: 30127996,
-  downside_residual_cushion_cad: 283824.055211,
+  currentized_enterprise_uses_cad: 13529885,
+  protected_enterprise_obligations_cad: 13529885,
+  property_anchor: "2422 Queen Street East",
+  property_anchor_units: 24,
+  property_anchor_public_ask_cad: 5760000,
+  property_anchor_projected_year1_noi_cad: 251557,
+  retained_platform_condos: 2,
+  total_current_property_basis_cad: 6900888,
+  sponsor_cash_target_cad: 0,
+  financing_control: "asset + rent roll + NOI first; any gap requires approved third-party capital",
   family_social_contribution: true,
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
