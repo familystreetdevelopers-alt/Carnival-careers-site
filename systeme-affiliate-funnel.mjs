@@ -165,4 +165,25 @@ if(fs.existsSync(verifyPath)){
   fs.writeFileSync(verifyPath,JSON.stringify(data,null,2));
 }
 
+
+const sitemapIndex = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  '  <sitemap><loc>'+site+'/sitemap-systeme-affiliate.xml</loc></sitemap>',
+  '  <sitemap><loc>'+site+'/sitemap-pet-commerce.xml</loc></sitemap>',
+  '</sitemapindex>'
+].join("\n");
+fs.writeFileSync(path.join(dist,"sitemap.xml"),sitemapIndex);
+
+let robots = [
+  "User-agent: *",
+  "Allow: /",
+  "",
+  "Sitemap: "+site+"/sitemap.xml",
+  "Sitemap: "+site+"/sitemap-systeme-affiliate.xml",
+  "Sitemap: "+site+"/sitemap-pet-commerce.xml",
+  ""
+].join("\n");
+fs.writeFileSync(path.join(dist,"robots.txt"),robots);
+
 console.log("SYSTEME_AFFILIATE_FUNNEL_GENERATED", seo.length+1, "SEO_PAGES", shareChannels.length, "TRACKED_SHARE_LINKS");
