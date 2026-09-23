@@ -2031,7 +2031,47 @@ const editorialCardSystemPatch = `
 })();
 </script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch, assetRentRollResetPatch]) {
+
+const master21CurrentFactsPatch = `
+<style id="cc-master21-current-facts-style">
+  #cc-master21-current-facts{background:#fff;color:#101827;border-top:1px solid rgba(16,24,39,.12);border-bottom:1px solid rgba(16,24,39,.12)}
+  #cc-master21-current-facts .cc-m21-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+  #cc-master21-current-facts .cc-m21-card{padding:18px 0;border-top:2px solid rgba(16,36,58,.18)}
+  #cc-master21-current-facts .cc-m21-card strong{display:block;font-size:1.35rem;line-height:1.1;margin-bottom:7px;color:#10243a}
+  #cc-master21-current-facts .cc-m21-card p{margin:0;color:#4f5d6f;line-height:1.55}
+  #cc-master21-current-facts .cc-m21-note{margin-top:22px;padding:16px 18px;background:#fff8e6;border-left:4px solid #d49a17;line-height:1.6}
+  #cc-master21-current-facts .cc-m21-rule{margin-top:14px;font-weight:800;color:#10243a}
+  @media(max-width:800px){#cc-master21-current-facts .cc-m21-grid{grid-template-columns:1fr}}
+</style>
+<script id="cc-master21-current-facts-script">
+(() => {
+  const factsHtml = "<section id=\"cc-master21-current-facts\" class=\"section\"><div class=\"wrap\"><div class=\"eyebrow\">CURRENT MASTER FILE · 21-FILE OPERATING SYSTEM</div><h2>The lender file is now the centre of the current Toronto proof.</h2><p class=\"lead\">The current operating package starts with the asset, rent roll and six-family ownership structure. File 02 is the controlling financial + asset-based-lending workbook; File 21 preserves the 1,400-file source ledger and the history it supersedes.</p><div class=\"cc-m21-grid\"><div class=\"cc-m21-card\"><strong>C$6,900,888</strong><p>Current property basis: 2422 Queen Street East plus retained 12 York #5101 and 138 Downes #3215.</p></div><div class=\"cc-m21-card\"><strong>Six families</strong><p>Defined lawful ownership/co-ownership interests. Exact title, security and mortgage mechanics require lender and counsel approval.</p></div><div class=\"cc-m21-card\"><strong>Asset + rent roll first</strong><p>Property financing is sized from appraisal, verified rent roll, expenses, NOI, DSCR/debt yield and borrower strength — not sponsor targets.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert financing request</strong><p>The current property-financing package treats the Toronto concert as already paid/outside the mortgage request.</p></div><div class=\"cc-m21-card\"><strong>C$15,000 set contribution</strong><p>Hopeton self-funds the working incremental cost of his set; C$25,000 is the ceiling absent documented extra rider/production costs.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert profit to Hopeton</strong><p>This rule applies to the concert only. Every other Carnival Careers project economic rule remains unchanged.</p></div></div><div class=\"cc-m21-note\"><b>Truth rule:</b> 2422 Queen is one apartment asset today. The site does not represent four internal suites as four separately mortgageable titles. Family ownership happens only through a lawful lender- and counsel-approved structure.</div><div class=\"cc-m21-rule\">Historical Sheridan, Vic Towns and other superseded property stacks remain source evidence, not current Toronto financing facts.</div></div></section>";
+  const run=()=>{
+    const project=document.getElementById("page-project")||document.querySelector("[data-page=\"project\"]");
+    if(project){
+      project.querySelector("#cc-master21-current-facts")?.remove();
+      const anchor=project.querySelector("#cc-asset-rent-roll-reset");
+      if(anchor) anchor.insertAdjacentHTML("afterend",factsHtml);
+      else project.insertAdjacentHTML("afterbegin",factsHtml);
+    }
+    const lenders=document.getElementById("page-lenders")||document.querySelector("[data-page=\"lenders\"]");
+    if(lenders && !lenders.querySelector("#cc-m21-lender-note")){
+      const n=document.createElement("div"); n.id="cc-m21-lender-note"; n.className="plain-note";
+      n.textContent="Current lender package: C$6.900888M property basis; six-family ownership objective; C$0 concert financing request. Hopeton self-funds a C$15K set contribution (C$25K ceiling absent documented extras).";
+      const hero=lenders.querySelector(".page-hero"); if(hero) hero.insertAdjacentElement("afterend",n); else lenders.prepend(n);
+    }
+    const arena=document.getElementById("page-arena")||document.querySelector("[data-page=\"arena\"]");
+    if(arena && !arena.querySelector("#cc-m21-arena-note")){
+      const n=document.createElement("section"); n.id="cc-m21-arena-note"; n.className="section";
+      n.innerHTML="<div class=\"wrap\"><div class=\"eyebrow\">CURRENT TORONTO FINANCING STATUS</div><h2>The property loan is not paying for the concert.</h2><p>The current financing version treats the concert as already paid outside the property facility. Hopeton self-funds only his working C$15K set contribution and receives C$0 profit from the concert. That concert-only profit rule does not change his economics anywhere else in Carnival Careers.</p></div>";
+      const hero=arena.querySelector(".page-hero"); if(hero) hero.insertAdjacentElement("afterend",n); else arena.prepend(n);
+    }
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+<\/script>`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -2056,11 +2096,12 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   carnival_main_theme_non_music_pages: true,
   mas_parade_attendance_visible: true,
   carnival_visual_badge_removed: true,
-  canonical_document_system: "ASSET-RENT-ROLL-2422-QUEEN-2026-09-22",
+  canonical_document_system: "MASTER-21-ABL-SIX-FAMILY-POST-CONCERT-2026-09-22",
   source_recovery_instances: 1400,
   source_unique_objects: 1273,
-  currentized_enterprise_uses_cad: 13529885,
-  protected_enterprise_obligations_cad: 13529885,
+  currentized_enterprise_uses_cad: 11879885,
+  known_modeled_current_uses_excluding_paid_concert_cad: 11879885,
+  protected_enterprise_obligations_cad: 11879885,
   property_anchor: "2422 Queen Street East",
   property_anchor_units: 24,
   property_anchor_public_ask_cad: 5760000,
@@ -2084,7 +2125,15 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   city_partner_invite_end_to_end: true,
   sideline_sitters_unified: true,
   sideline_status_merged_into_family_request: true,
-  family_work_top_restored: true
+  family_work_top_restored: true,
+  master_package_files: 21,
+  financial_master_core_file: "02_Carnival_Careers_FINANCIAL_ABL_MASTER_2026-09-22.xlsx",
+  concert_financing_request_cad: 0,
+  hopeton_set_self_funded_cad: 15000,
+  hopeton_set_hard_ceiling_cad: 25000,
+  hopeton_concert_profit_cad: 0,
+  concert_profit_rule_scope: "concert only",
+  all_other_project_economics_unchanged: true
 }, null, 2));
 
 console.log("CANONICAL_STATIC_BUILD_VERIFIED", Buffer.byteLength(renderedHtml), "EAT_YOUR_KEEP=ON", "CARNIVAL_BADGE=REMOVED", "PLAIN_LANGUAGE=ON");
