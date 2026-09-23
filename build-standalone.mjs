@@ -1819,7 +1819,7 @@ const requestedAccentCleanupPatch = `
 
 
 
-const assetRentRollResetPatch = \`
+const assetRentRollResetPatch = `
 <style id="cc-asset-rent-roll-reset-style">
   #cc-asset-rent-roll-reset{padding:54px 0 26px}
   #cc-asset-rent-roll-reset .cc-arr-shell{max-width:1120px;margin:auto;padding:clamp(24px,4vw,44px);border:1px solid rgba(209,27,27,.45);border-radius:28px;background:linear-gradient(145deg,#171717,#090909);color:#fff}
@@ -1907,7 +1907,7 @@ const assetRentRollResetPatch = \`
   };
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
 })();
-</script>\`;
+</script>`;
 
 const editorialCardSystemPatch = `
 <style id="cc-editorial-card-system-style">
