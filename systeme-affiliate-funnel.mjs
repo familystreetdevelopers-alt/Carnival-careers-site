@@ -94,6 +94,70 @@ for(const [slug,title,description,body,linkFn] of seo){
   fs.writeFileSync(path.join(dist,slug+".html"),shell(title,description,bodyHtml,site+"/"+slug+".html"));
 }
 
+
+const buyerIntentPages = [
+  {
+    slug:"systeme-io-free-plan",
+    title:"Systeme.io Free Plan: What You Can Build Before Paying",
+    description:"A practical 2026 overview of Systeme.io's free plan for funnels, email, websites, courses, automations and affiliate management.",
+    tag:"seo_systeme_free_plan",
+    html:
+      '<section class="hero"><div class="ey">BUYER GUIDE / VERIFIED SEPTEMBER 2026</div><h1>What can you actually do on Systeme.io for free?</h1>'+
+      '<p>The useful question is not whether there is a free plan. It is whether the free plan is large enough to launch a real first workflow before you pay.</p>'+
+      '<a class="cta" href="'+homepage("seo_systeme_free_plan")+'" rel="sponsored nofollow">Open a free account</a>'+
+      '<div class="disclosure">'+esc(disclosure)+'</div></section>'+
+      '<section class="section"><h2>The current free-plan baseline</h2>'+
+      '<div class="grid"><article class="card"><h3>Up to 2,000 contacts</h3><p>Enough room to validate an email list, lead magnet or early customer base before a paid contact tier becomes necessary.</p></article>'+
+      '<article class="card"><h3>3 sales funnels</h3><p>Enough for a lead funnel, a sales funnel and one additional test without committing to a paid funnel builder.</p></article>'+
+      '<article class="card"><h3>Unlimited email sending</h3><p>The current official pricing page lists unlimited email sends on every plan, including Free.</p></article></div>'+
+      '<p>Systeme.io also currently lists one custom domain, a course, a blog, automation capability and its affiliate-management tools on the free tier. Limits and plan packaging can change, so check the live pricing page before making a long-term software decision.</p>'+
+      '<h2>Who the free plan makes sense for</h2><p>It is strongest when you need one simple operating system: capture a lead, tag the lead, send follow-up email, host a page or course, and connect the pieces without buying a separate tool for each step.</p>'+
+      '<h2>Where the free plan stops being enough</h2><p>The practical upgrade triggers are usually contact volume, the number of funnels, the number of automation rules/workflows, or advanced features such as evergreen webinars. Do not upgrade simply because a paid tier exists; upgrade when a real operating limit is blocking the next step.</p>'+
+      '<div class="note"><strong>Bottom line:</strong> if you are under the free limits, build the workflow first and let usage—not software anxiety—decide when to pay.</div>'+
+      '<p><a class="cta" href="'+homepage("seo_systeme_free_plan_bottom")+'" rel="sponsored nofollow">Start free</a></p></section>'
+  },
+  {
+    slug:"systeme-io-affiliate-program-guide",
+    title:"Systeme.io Affiliate Program: How the 60% Lifetime Commission Works",
+    description:"A plain-language guide to Systeme.io's current affiliate attribution and lifetime recurring commission structure.",
+    tag:"seo_systeme_affiliate_program",
+    html:
+      '<section class="hero"><div class="ey">AFFILIATE GUIDE / VERIFIED SEPTEMBER 2026</div><h1>Why the Systeme.io affiliate model is different.</h1>'+
+      '<p>Systeme.io currently advertises a 60% lifetime recurring commission. The most important detail is when attribution becomes locked to an affiliate.</p>'+
+      '<a class="cta" href="'+affiliateProgram("seo_systeme_affiliate_program")+'" rel="sponsored nofollow">See the official affiliate program</a><div class="disclosure">'+esc(disclosure)+'</div></section>'+
+      '<section class="section"><h2>The referral event that matters</h2><p>Under the current affiliate agreement, a new lead needs to register for a free Systeme.io account through the affiliate link. Once that happens, Systeme.io says that affiliate relationship is retained for later dashboard upgrades, subject to the program terms.</p>'+
+      '<div class="grid"><article class="card"><h3>Free signup first</h3><p>A click by itself is not enough. The referred person must actually register through the tracked link.</p></article>'+
+      '<article class="card"><h3>Lifetime relationship</h3><p>Systeme.io says the referral remains associated with the affiliate for later eligible upgrades.</p></article>'+
+      '<article class="card"><h3>60% recurring</h3><p>The current program advertises 60% of eligible subscription sales for the lifetime of the referred customer.</p></article></div>'+
+      '<h2>What this does not mean</h2><p>It does not guarantee affiliate income. Invalid leads, refunds, chargebacks, term changes and other eligibility rules can affect commissions. And the best traffic is still useful, permission-based traffic—not unsolicited messages.</p>'+
+      '<div class="note"><strong>The conversion goal:</strong> send a genuinely interested person through the tracked link and get the free registration completed. That is more valuable than chasing raw clicks.</div>'+
+      '<p><a class="cta" href="'+homepage("seo_systeme_affiliate_program_bottom")+'" rel="sponsored nofollow">Create a free Systeme.io account</a></p></section>'
+  },
+  {
+    slug:"systeme-io-small-business-automation",
+    title:"Systeme.io for Small Business Automation",
+    description:"A practical small-business workflow using Systeme.io for lead capture, email, funnels, automation and digital delivery.",
+    tag:"seo_small_business_automation",
+    html:
+      '<section class="hero"><div class="ey">SMALL BUSINESS WORKFLOW</div><h1>Automate the boring handoffs first.</h1>'+
+      '<p>A small business does not need fifty automations. It needs the repetitive handoffs—lead capture, welcome, follow-up and delivery—to stop consuming attention.</p>'+
+      '<a class="cta" href="'+homepage("seo_small_business_automation")+'" rel="sponsored nofollow">Build it free</a><div class="disclosure">'+esc(disclosure)+'</div></section>'+
+      '<section class="section"><h2>A four-step first automation</h2>'+
+      '<div class="grid"><article class="card"><h3>1 · Capture</h3><p>Use one focused page and form for a specific offer or lead magnet.</p></article>'+
+      '<article class="card"><h3>2 · Tag</h3><p>Apply an interest tag so later messages are based on what the person actually asked for.</p></article>'+
+      '<article class="card"><h3>3 · Follow up</h3><p>Send a useful welcome sequence automatically instead of manually replying to every signup.</p></article></div>'+
+      '<div class="grid"><article class="card"><h3>4 · Deliver</h3><p>Route the person to the next relevant page, course, booking or checkout step.</p></article>'+
+      '<article class="card"><h3>Measure one thing</h3><p>Track which source produces registrations, not just clicks. A smaller stream of qualified signups beats empty traffic.</p></article>'+
+      '<article class="card"><h3>Expand only after proof</h3><p>Once one workflow works, clone the logic for the next offer instead of building a giant automation map on day one.</p></article></div>'+
+      '<p>The current free plan is large enough to test this basic workflow without a credit card. That makes it useful for validating the process before deciding whether a paid tier is justified.</p>'+
+      '<p><a class="cta" href="'+homepage("seo_small_business_automation_bottom")+'" rel="sponsored nofollow">Start the free workflow</a></p></section>'
+  }
+];
+
+for (const p of buyerIntentPages){
+  fs.writeFileSync(path.join(dist,p.slug+".html"),shell(p.title,p.description,p.html,site+"/"+p.slug+".html"));
+}
+
 const shareChannels = [
   ["website","Website"],["email","Email"],["linkedin","LinkedIn"],["facebook","Facebook"],["instagram","Instagram"],["threads","Threads"],["x","X"],["youtube","YouTube"],["pinterest","Pinterest"],["reddit","Reddit"],["quora","Quora"],["medium","Medium"],["substack","Substack"]
 ];
@@ -146,7 +210,8 @@ if(!html.includes('id="cc-systeme-affiliate-script"')){
 
 const sitemap = [
   "free-business-tools",
-  ...seo.map(x=>x[0])
+  ...seo.map(x=>x[0]),
+  ...buyerIntentPages.map(x=>x.slug)
 ].map(slug=>'  <url><loc>'+site+'/'+slug+'.html</loc></url>').join("\n");
 
 fs.writeFileSync(path.join(dist,"sitemap-systeme-affiliate.xml"),
@@ -160,7 +225,7 @@ if(fs.existsSync(verifyPath)){
   data.systeme_affiliate_id=affiliateId;
   data.systeme_source_tag_tracking=true;
   data.systeme_affiliate_disclosure=true;
-  data.systeme_seo_pages=seo.length+1;
+  data.systeme_seo_pages=seo.length+1+buyerIntentPages.length;
   data.systeme_share_channels=shareChannels.length;
   fs.writeFileSync(verifyPath,JSON.stringify(data,null,2));
 }
@@ -186,4 +251,4 @@ let robots = [
 ].join("\n");
 fs.writeFileSync(path.join(dist,"robots.txt"),robots);
 
-console.log("SYSTEME_AFFILIATE_FUNNEL_GENERATED", seo.length+1, "SEO_PAGES", shareChannels.length, "TRACKED_SHARE_LINKS");
+console.log("SYSTEME_AFFILIATE_FUNNEL_GENERATED", seo.length+1+buyerIntentPages.length, "SEO_PAGES", shareChannels.length, "TRACKED_SHARE_LINKS");
