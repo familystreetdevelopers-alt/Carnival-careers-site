@@ -5,12 +5,14 @@ import crypto from "node:crypto";
 const dist = path.resolve("dist");
 const canonicalIndexPath = path.resolve("index.html");
 const pressKitPath = path.resolve("pet-picks-press.html");
+const housesPath = path.resolve("houses.html");
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 
 if (!fs.existsSync(canonicalIndexPath)) throw new Error("Canonical GitHub index.html is missing.");
 if (!fs.existsSync(pressKitPath)) throw new Error("Pet Picks press kit is missing.");
+if (!fs.existsSync(housesPath)) throw new Error("The Houses page is missing.");
 
 const canonicalHtml = fs.readFileSync(canonicalIndexPath, "utf8");
 const requiredCanonicalMarkers = ["The mas brings us together.", "Tell me who you are.", 'id="page-music"'];
@@ -1665,6 +1667,36 @@ const wholeReconciliationPatch = `
 })();
 </script>`;
 
+const housesNavPatch = \`
+<script id="cc-houses-nav-patch">
+(() => {
+  const add = () => {
+    const primary = document.querySelector('nav[aria-label="Primary"]');
+    if (primary && !primary.querySelector('[data-cc-houses-nav]')) {
+      const project = primary.querySelector('a[href="#project"]')?.closest(".nav-item");
+      const item = document.createElement("div");
+      item.className = "nav-item";
+      item.setAttribute("data-cc-houses-nav","");
+      item.innerHTML = '<a href="/houses.html">The Houses</a>';
+      if (project) project.insertAdjacentElement("afterend",item);
+      else primary.appendChild(item);
+    }
+    document.querySelectorAll("nav").forEach(nav => {
+      if (nav === primary || nav.querySelector('[data-cc-houses-mobile]')) return;
+      const p = nav.querySelector('a[href="#project"]');
+      if (!p) return;
+      const a = p.cloneNode(false);
+      a.href = "/houses.html";
+      a.textContent = "The Houses";
+      a.setAttribute("data-cc-houses-mobile","");
+      p.insertAdjacentElement("afterend",a);
+    });
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",add,{once:true});
+  else add();
+})();
+</script>\`;
+
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 renderedHtml = renderedHtml.replaceAll(" — never the beginning — because by the time the city gathers, the story has already created something real.", ".");
 renderedHtml = renderedHtml.replace(/<div class="project-chips">[\s\S]*?<\/div>/, "");
@@ -2378,13 +2410,14 @@ const master21CurrentFactsPatch = `
 })();
 <\/script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
 
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
+fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
 fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringify({
   canonical_html_from_github: true,
   canonical_html_bytes: Buffer.byteLength(canonicalHtml),
@@ -2393,6 +2426,9 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   rendered_html_sha256: crypto.createHash("sha256").update(renderedHtml).digest("hex"),
   shopify_traffic_funnel: true,
   pet_picks_press_kit: true,
+  houses_page: true,
+  cavemansion_interactive_tour: true,
+  non_toronto_house_or_property_stack_rule: true,
   legibility_guard_card_light_on_light_only: true,
   toronto_featured_family: "Hopeton LaTouche",
   toronto_host: "Michie Mee",
