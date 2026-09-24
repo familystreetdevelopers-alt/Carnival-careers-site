@@ -1667,7 +1667,7 @@ const wholeReconciliationPatch = `
 })();
 </script>`;
 
-const housesNavPatch = \`
+const housesNavPatch = `
 <script id="cc-houses-nav-patch">
 (() => {
   const add = () => {
@@ -1695,7 +1695,7 @@ const housesNavPatch = \`
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",add,{once:true});
   else add();
 })();
-</script>\`;
+</script>`;
 
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 renderedHtml = renderedHtml.replaceAll(" — never the beginning — because by the time the city gathers, the story has already created something real.", ".");
