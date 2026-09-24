@@ -2033,7 +2033,7 @@ const editorialCardSystemPatch = `
 
 
 
-const seeYourselfShowPatch = \`
+const seeYourselfShowPatch = `
 <style id="cc-see-yourself-show-style">
   #see-yourself-show{position:relative;overflow:hidden;padding:clamp(58px,8vw,96px) 0;background:
     radial-gradient(circle at 8% 12%,rgba(255,194,67,.28),transparent 31%),
@@ -2337,7 +2337,7 @@ const seeYourselfShowPatch = \`
 
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
 })();
-</script>\`;
+</script>`;
 
 const master21CurrentFactsPatch = `
 <style id="cc-master21-current-facts-style">
