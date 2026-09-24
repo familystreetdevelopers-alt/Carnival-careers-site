@@ -2032,6 +2032,313 @@ const editorialCardSystemPatch = `
 </script>`;
 
 
+
+const seeYourselfShowPatch = \`
+<style id="cc-see-yourself-show-style">
+  #see-yourself-show{position:relative;overflow:hidden;padding:clamp(58px,8vw,96px) 0;background:
+    radial-gradient(circle at 8% 12%,rgba(255,194,67,.28),transparent 31%),
+    radial-gradient(circle at 91% 8%,rgba(239,73,166,.26),transparent 29%),
+    linear-gradient(135deg,#160d2b 0%,#2b1450 46%,#092334 100%);color:#fff}
+  #see-yourself-show:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:
+    radial-gradient(circle at 16px 16px,rgba(255,255,255,.72) 1.25px,transparent 1.5px);
+    background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+  #see-yourself-show>*{position:relative;z-index:1}
+  #see-yourself-show .cc-sys-wrap{width:min(1220px,calc(100% - 40px));margin:auto}
+  #see-yourself-show .cc-sys-top{display:grid;grid-template-columns:minmax(0,.9fr) minmax(330px,1.1fr);gap:clamp(26px,5vw,62px);align-items:start}
+  #see-yourself-show .cc-sys-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.08);font-size:.77rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
+  #see-yourself-show .cc-sys-kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:#ffc44d;box-shadow:0 0 0 5px rgba(255,196,77,.15)}
+  #see-yourself-show h2{margin:18px 0 14px;max-width:10ch;font-size:clamp(3rem,7vw,6.6rem);line-height:.88;letter-spacing:-.06em;color:#fff}
+  #see-yourself-show .cc-sys-lede{max-width:680px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.62}
+  #see-yourself-show .cc-sys-pills{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}
+  #see-yourself-show .cc-sys-pills span{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:.84rem;font-weight:850}
+  #see-yourself-show .cc-sys-form{padding:clamp(20px,3vw,30px);border-radius:26px;background:rgba(255,255,255,.97);color:#17131f;box-shadow:0 28px 70px rgba(0,0,0,.28)}
+  #see-yourself-show .cc-sys-form h3{margin:0 0 7px;font-size:1.55rem;letter-spacing:-.03em}
+  #see-yourself-show .cc-sys-form>p{margin:0 0 18px;color:#67606d;line-height:1.5}
+  #see-yourself-show .cc-sys-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  #see-yourself-show .cc-sys-fields label{display:grid;gap:6px;font-size:.88rem;font-weight:850}
+  #see-yourself-show .cc-sys-fields label.wide{grid-column:1/-1}
+  #see-yourself-show .cc-sys-fields input,#see-yourself-show .cc-sys-fields textarea{width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d6cfdb;border-radius:13px;background:#fff;color:#17131f;font:inherit}
+  #see-yourself-show .cc-sys-fields textarea{min-height:94px;resize:vertical}
+  #see-yourself-show .cc-sys-check{display:flex!important;grid-column:1/-1!important;grid-template-columns:auto 1fr!important;gap:9px!important;align-items:flex-start}
+  #see-yourself-show .cc-sys-check input{width:auto!important;margin-top:3px}
+  #see-yourself-show .cc-sys-submit{display:flex;align-items:center;justify-content:center;min-height:49px;margin-top:15px;padding:0 18px;border:0;border-radius:999px;background:#211331;color:#fff;font-weight:950;cursor:pointer}
+  #see-yourself-show .cc-sys-result{display:none;margin-top:13px;padding:13px 14px;border-radius:13px;background:#f2edf8;color:#42384a;line-height:1.5}
+  #see-yourself-show .cc-sys-result.show{display:block}
+  #see-yourself-show .cc-sys-note{margin:13px 0 0;color:#746c7a;font-size:.8rem;line-height:1.45}
+  #see-yourself-show .cc-sys-gallery-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-top:clamp(48px,7vw,82px)}
+  #see-yourself-show .cc-sys-gallery-head h3{margin:6px 0 0;font-size:clamp(2.1rem,4.5vw,4.2rem);line-height:.95;letter-spacing:-.045em}
+  #see-yourself-show .cc-sys-gallery-head p{max-width:620px;margin:8px 0 0;color:rgba(255,255,255,.72);line-height:1.55}
+  #see-yourself-show .cc-sys-controls{display:flex;gap:8px}
+  #see-yourself-show .cc-sys-controls button{width:46px;height:46px;border:1px solid rgba(255,255,255,.23);border-radius:50%;background:rgba(255,255,255,.09);color:#fff;font-size:1.5rem;cursor:pointer}
+  #see-yourself-show .cc-sys-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(290px,34%);gap:14px;overflow-x:auto;padding:22px 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+  #see-yourself-show .cc-sys-card{scroll-snap-align:start;overflow:hidden;border-radius:24px;background:#fff;color:#17131f;box-shadow:0 20px 50px rgba(0,0,0,.22)}
+  #see-yourself-show .cc-sys-video{position:relative;aspect-ratio:9/14;background:
+    radial-gradient(circle at 76% 16%,rgba(255,196,77,.38),transparent 28%),
+    radial-gradient(circle at 15% 88%,rgba(239,73,166,.35),transparent 32%),
+    linear-gradient(155deg,#24123e,#0b3141);display:grid;place-items:center;overflow:hidden}
+  #see-yourself-show .cc-sys-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+  #see-yourself-show .cc-sys-play{display:grid;place-items:center;width:78px;height:78px;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:2rem;backdrop-filter:blur(8px);cursor:pointer}
+  #see-yourself-show .cc-sys-platform{position:absolute;left:14px;top:14px;padding:7px 9px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;font-size:.72rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
+  #see-yourself-show .cc-sys-card-body{padding:18px}
+  #see-yourself-show .cc-sys-card-body small{display:block;color:#7a7081;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
+  #see-yourself-show .cc-sys-card-body h4{margin:7px 0 7px;font-size:1.28rem;line-height:1.12}
+  #see-yourself-show .cc-sys-card-body p{margin:0 0 14px;color:#625b68;line-height:1.5}
+  #see-yourself-show .cc-sys-original{font-weight:950;color:#4b2a91;text-decoration:none}
+  #see-yourself-show .cc-sys-empty{grid-column:1/-1;padding:26px;border:1px dashed rgba(255,255,255,.3);border-radius:22px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);line-height:1.6}
+  #see-yourself-show .cc-sys-foot{margin:15px 0 0;color:rgba(255,255,255,.62);font-size:.86rem;line-height:1.55}
+  nav[aria-label="Primary"] [data-see-yourself-nav] > a{white-space:nowrap}
+  @media(max-width:900px){
+    #see-yourself-show .cc-sys-top{grid-template-columns:1fr}
+    #see-yourself-show .cc-sys-carousel{grid-auto-columns:minmax(280px,72%)}
+  }
+  @media(max-width:600px){
+    #see-yourself-show .cc-sys-wrap{width:min(100% - 28px,1220px)}
+    #see-yourself-show .cc-sys-fields{grid-template-columns:1fr}
+    #see-yourself-show .cc-sys-fields label.wide{grid-column:auto}
+    #see-yourself-show .cc-sys-carousel{grid-auto-columns:88%}
+    #see-yourself-show .cc-sys-gallery-head{align-items:flex-start;flex-direction:column}
+    #see-yourself-show h2{font-size:clamp(2.9rem,15vw,4.5rem)}
+  }
+</style>
+<script id="cc-see-yourself-show-script">
+(() => {
+  const EMAIL="ourcarnivalcareers@gmail.com";
+  const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}[m]));
+  const read=k=>{try{const x=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(x)?x:[]}catch(e){return[]}};
+  const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+  const ref=()=> "SHOW-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+
+  const mediaMeta=raw=>{
+    try{
+      const u=new URL(raw);
+      if(u.protocol!=="https:" && u.protocol!=="http:") return null;
+      const host=u.hostname.replace(/^www\\./,"").toLowerCase();
+      let id="",embed="",platform="Public video";
+      if(host==="youtu.be"){
+        id=u.pathname.split("/").filter(Boolean)[0]||"";
+        if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}
+      } else if(host.endsWith("youtube.com")){
+        const seg=u.pathname.split("/").filter(Boolean);
+        id=u.searchParams.get("v") || ((seg[0]==="shorts"||seg[0]==="embed")?seg[1]:"") || "";
+        if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}
+      } else if(host.endsWith("vimeo.com")){
+        id=(u.pathname.match(/\\/(\\d{5,})/)||[])[1]||"";
+        if(id){platform="Vimeo";embed="https://player.vimeo.com/video/"+encodeURIComponent(id);}
+      } else if(host.endsWith("tiktok.com")){
+        id=(u.pathname.match(/\\/video\\/(\\d+)/)||[])[1]||"";
+        platform="TikTok";
+        if(id) embed="https://www.tiktok.com/player/v1/"+encodeURIComponent(id);
+      } else if(host.endsWith("instagram.com")){
+        const m=u.pathname.match(/\\/(p|reel|tv)\\/([^/?#]+)/);
+        platform="Instagram";
+        if(m) embed="https://www.instagram.com/"+m[1]+"/"+encodeURIComponent(m[2])+"/embed/";
+      } else if(host.endsWith("facebook.com") || host==="fb.watch" || host.endsWith("fb.watch")){
+        platform="Facebook";
+        embed="https://www.facebook.com/plugins/video.php?show_text=false&href="+encodeURIComponent(u.href);
+      } else if(host.endsWith("threads.net")){
+        platform="Threads";
+      }
+      return {original:u.href,platform,embed};
+    }catch(e){return null}
+  };
+
+  const getPublished=()=>{
+    let rows=[];
+    try{if(Array.isArray(window.CC_SEE_YOURSELF_VIDEOS)) rows=window.CC_SEE_YOURSELF_VIDEOS.slice()}catch(e){}
+    rows=rows.concat(read("cc_see_yourself_links_v1"),read("cc_culture_media_v1"));
+    const seen=new Set();
+    return rows.filter(r=>{
+      const url=String(r.url||r.link||"").trim();
+      if(!url || seen.has(url)) return false;
+      seen.add(url); return true;
+    }).slice(0,24);
+  };
+
+  const markup=[
+    '<section id="see-yourself-show" aria-labelledby="see-yourself-title">',
+      '<div class="cc-sys-wrap">',
+        '<div class="cc-sys-top">',
+          '<div>',
+            '<div class="cc-sys-kicker">Families · Carnival · The Show</div>',
+            '<h2 id="see-yourself-title">See Yourself in the Show.</h2>',
+            '<p class="cc-sys-lede">Your Carnival experience can become part of the living visual story around Carnival Careers. Paste the public social-media post — not the video file. We relay the original platform so the video can be watched here while the creator keeps the original post, views and source link.</p>',
+            '<div class="cc-sys-pills"><span>No video-file upload</span><span>Original platform stays the host</span><span>Play here · visit the original underneath</span></div>',
+          '</div>',
+          '<form class="cc-sys-form" id="ccSeeYourselfForm">',
+            '<h3>Share your Carnival experience</h3>',
+            '<p>Public YouTube, Instagram, TikTok, Vimeo and Facebook video links work best. Other public links can still be submitted for review.</p>',
+            '<div class="cc-sys-fields">',
+              '<label class="wide">Social-media video link<input name="url" type="url" required placeholder="https://..."></label>',
+              '<label>Your name / creator credit<input name="name" required placeholder="@handle or name"></label>',
+              '<label>Email for follow-up <span style="font-weight:500">(not displayed)</span><input name="email" type="email" placeholder="you@example.com"></label>',
+              '<label>City / Carnival<input name="city" placeholder="Toronto · Miami · Trinidad · Notting Hill..."></label>',
+              '<label>Clip title<input name="title" placeholder="Mas morning, parade day, family moment..."></label>',
+              '<label class="wide">What is happening in the clip?<textarea name="comment" placeholder="Give viewers the context in one or two lines."></textarea></label>',
+              '<label class="cc-sys-check"><input name="permission" type="checkbox" required value="yes"><span>I am sharing a public social-media link and give Carnival Careers permission to review and feature the link, creator credit, title and caption. The original platform remains the media host.</span></label>',
+            '</div>',
+            '<button class="cc-sys-submit" type="submit">Submit my Carnival link</button>',
+            '<div class="cc-sys-result" id="ccSeeYourselfResult" aria-live="polite"></div>',
+            '<p class="cc-sys-note">Carnival Careers does not copy or store the submitted video file. Site-wide publishing happens after review. Public-platform embed availability still depends on the original post’s privacy and embedding settings.</p>',
+          '</form>',
+        '</div>',
+        '<div class="cc-sys-gallery-head">',
+          '<div><div class="cc-sys-kicker">Community relay</div><h3>Watch the Carnival through each other’s eyes.</h3><p>Press Play to load the original platform only when you want to watch it. That keeps the page fast instead of loading a wall of social videos all at once.</p></div>',
+          '<div class="cc-sys-controls"><button type="button" data-sys-prev aria-label="Previous videos">‹</button><button type="button" data-sys-next aria-label="Next videos">›</button></div>',
+        '</div>',
+        '<div class="cc-sys-carousel" id="ccSeeYourselfCarousel" aria-live="polite"></div>',
+        '<p class="cc-sys-foot">The carousel is a relay, not a media warehouse. The original creator/platform remains the source of the video, and every published item keeps an outbound path back to that post.</p>',
+      '</div>',
+    '</section>'
+  ].join("");
+
+  const makeNav=()=>{
+    const primary=document.querySelector('nav[aria-label="Primary"]');
+    if(primary && !primary.querySelector("[data-see-yourself-nav]")){
+      const project=primary.querySelector('a[href="#project"]')?.closest(".nav-item");
+      const item=document.createElement("div");
+      item.className="nav-item";
+      item.setAttribute("data-see-yourself-nav","");
+      const a=document.createElement("a");
+      a.href="#childcare";
+      a.textContent="See Yourself in the Show";
+      a.setAttribute("data-see-yourself-link","");
+      item.appendChild(a);
+      if(project) project.insertAdjacentElement("afterend",item); else primary.appendChild(item);
+    }
+    document.querySelectorAll("nav").forEach(nav=>{
+      if(nav===primary || nav.querySelector("[data-see-yourself-mobile]")) return;
+      const p=nav.querySelector('a[href="#project"]');
+      if(!p) return;
+      const a=p.cloneNode(false);
+      a.href="#childcare";
+      a.textContent="See Yourself in the Show";
+      a.setAttribute("data-see-yourself-link","");
+      a.setAttribute("data-see-yourself-mobile","");
+      p.insertAdjacentElement("afterend",a);
+    });
+  };
+
+  const makeHomeButton=()=>{
+    const home=document.getElementById("page-home")||document.querySelector('[data-page="home"]');
+    if(!home || home.querySelector("#homeSeeYourself")) return;
+    const groups=[...home.querySelectorAll(".actions")];
+    const actions=groups.find(g=>g.querySelector('a[href="#show"]')&&g.querySelector('a[href="#project"]')&&g.querySelector('a[href="#music"]')) || groups.find(g=>g.querySelector('a[href="#show"]')) || groups[0];
+    if(!actions) return;
+    const a=document.createElement("a");
+    a.id="homeSeeYourself";
+    a.className="btn";
+    a.href="#childcare";
+    a.textContent="See Yourself In The Show";
+    a.setAttribute("data-see-yourself-link","");
+    const music=actions.querySelector('a[href="#music"]');
+    if(music) music.insertAdjacentElement("afterend",a); else actions.appendChild(a);
+  };
+
+  const render=()=>{
+    const carousel=document.getElementById("ccSeeYourselfCarousel");
+    if(!carousel) return;
+    const rows=getPublished();
+    if(!rows.length){
+      carousel.innerHTML='<div class="cc-sys-empty"><strong>Your Carnival can be the first one here.</strong><br>Submit a public social-media video link above. It will preview in this browser immediately and can be reviewed for the public carousel without Carnival Careers hosting the media file.</div>';
+      return;
+    }
+    carousel.innerHTML=rows.map((r,i)=>{
+      const meta=mediaMeta(r.url||r.link||"");
+      const platform=meta?.platform||r.platform||"Public video";
+      const title=r.title||r.city||"Carnival experience";
+      const comment=r.comment||r.caption||"Shared with Carnival Careers.";
+      const credit=r.name||r.credit||r.creator||"Community";
+      const original=meta?.original||String(r.url||r.link||"");
+      return '<article class="cc-sys-card" data-sys-card="'+i+'">'+
+        '<div class="cc-sys-video"><span class="cc-sys-platform">'+esc(platform)+'</span><button class="cc-sys-play" type="button" data-sys-play="'+i+'" aria-label="Play '+esc(title)+'">▶</button></div>'+
+        '<div class="cc-sys-card-body"><small>'+esc(credit)+(r.city?' · '+esc(r.city):'')+'</small><h4>'+esc(title)+'</h4><p>'+esc(comment)+'</p><a class="cc-sys-original" href="'+esc(original)+'" target="_blank" rel="noopener noreferrer">Open original post ↗</a></div>'+
+      '</article>';
+    }).join("");
+    carousel.querySelectorAll("[data-sys-play]").forEach(btn=>btn.addEventListener("click",()=>{
+      const i=Number(btn.getAttribute("data-sys-play"));
+      const r=rows[i]; if(!r) return;
+      const meta=mediaMeta(r.url||r.link||"");
+      if(!meta?.embed){window.open(meta?.original||String(r.url||r.link||""),"_blank","noopener");return;}
+      const host=btn.closest(".cc-sys-video");
+      if(!host) return;
+      host.innerHTML='<span class="cc-sys-platform">'+esc(meta.platform)+'</span><iframe loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" src="'+esc(meta.embed)+'" title="'+esc(r.title||"Carnival social video")+'"></iframe>';
+    }));
+  };
+
+  const goToSection=e=>{
+    if(e) e.preventDefault();
+    if(location.hash!=="#childcare") location.hash="#childcare";
+    setTimeout(()=>document.getElementById("see-yourself-show")?.scrollIntoView({behavior:"smooth",block:"start"}),90);
+  };
+
+  const wire=()=>{
+    document.querySelectorAll("[data-see-yourself-link]").forEach(a=>{
+      if(a.dataset.ccSeeWired==="1") return;
+      a.dataset.ccSeeWired="1";
+      a.addEventListener("click",goToSection);
+    });
+    const prev=document.querySelector("[data-sys-prev]"), next=document.querySelector("[data-sys-next]"), carousel=document.getElementById("ccSeeYourselfCarousel");
+    if(prev&&carousel) prev.onclick=()=>carousel.scrollBy({left:-Math.max(290,carousel.clientWidth*.82),behavior:"smooth"});
+    if(next&&carousel) next.onclick=()=>carousel.scrollBy({left:Math.max(290,carousel.clientWidth*.82),behavior:"smooth"});
+
+    const form=document.getElementById("ccSeeYourselfForm");
+    if(form && form.dataset.ccSeeWired!=="1"){
+      form.dataset.ccSeeWired="1";
+      form.addEventListener("submit",e=>{
+        e.preventDefault();
+        if(!form.reportValidity()) return;
+        const d=Object.fromEntries(new FormData(form).entries());
+        const meta=mediaMeta(d.url);
+        const out=document.getElementById("ccSeeYourselfResult");
+        if(!meta){
+          out.className="cc-sys-result show";
+          out.textContent="Please use a public http or https social-media link.";
+          return;
+        }
+        const id=ref();
+        const record={id,kind:"see-yourself-in-the-show",status:"submitted-for-review",createdAt:new Date().toISOString(),platform:meta.platform,...d};
+        const rows=read("cc_see_yourself_links_v1"); rows.unshift(record); write("cc_see_yourself_links_v1",rows);
+        render();
+        out.className="cc-sys-result show";
+        out.innerHTML='<strong>Link prepared: '+esc(id)+'</strong><br>Your clip is now in the on-site preview on this device. Your email app will open so the link can be relayed to Carnival Careers for site-wide review.';
+        const body=[
+          "SEE YOURSELF IN THE SHOW",
+          "Reference: "+id,
+          "Creator: "+(d.name||""),
+          "Email: "+(d.email||""),
+          "City / Carnival: "+(d.city||""),
+          "Title: "+(d.title||""),
+          "Platform: "+meta.platform,
+          "Link: "+meta.original,
+          "Caption: "+(d.comment||""),
+          "Permission to review/feature public link: yes"
+        ].join("\\n");
+        const mail="mailto:"+EMAIL+"?subject="+encodeURIComponent("See Yourself in the Show — "+id)+"&body="+encodeURIComponent(body);
+        form.reset();
+        setTimeout(()=>{window.location.href=mail},40);
+        setTimeout(()=>document.getElementById("ccSeeYourselfCarousel")?.scrollIntoView({behavior:"smooth",block:"nearest"}),120);
+      });
+    }
+  };
+
+  const run=()=>{
+    const page=document.getElementById("page-childcare")||document.querySelector('[data-page="childcare"]');
+    if(!page) return;
+    if(!document.getElementById("see-yourself-show")){
+      const pathway=page.querySelector(".cc-fw-body");
+      if(pathway) pathway.insertAdjacentHTML("afterend",markup);
+      else page.insertAdjacentHTML("afterbegin",markup);
+    }
+    makeNav();
+    makeHomeButton();
+    render();
+    wire();
+  };
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+</script>\`;
+
 const master21CurrentFactsPatch = `
 <style id="cc-master21-current-facts-style">
   #cc-master21-current-facts{background:#fff;color:#101827;border-top:1px solid rgba(16,24,39,.12);border-bottom:1px solid rgba(16,24,39,.12)}
@@ -2071,7 +2378,7 @@ const master21CurrentFactsPatch = `
 })();
 <\/script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch]) {
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
@@ -2111,6 +2418,10 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   sponsor_cash_target_cad: 0,
   financing_control: "asset + rent roll + NOI first; any gap requires approved third-party capital",
   family_social_contribution: true,
+  see_yourself_in_show_link_relay: true,
+  social_media_files_hosted: false,
+  embedded_social_video_carousel: true,
+  social_original_post_link_preserved: true,
   host_social_contribution: true,
   financial_execution_timeline_months: 12,
   longer_horizon_separated: true,
