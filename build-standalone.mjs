@@ -1677,7 +1677,7 @@ const housesNavPatch = `
       const item = document.createElement("div");
       item.className = "nav-item";
       item.setAttribute("data-cc-houses-nav","");
-      item.innerHTML = '<a href="/houses.html">The Houses</a>';
+      item.innerHTML = '<a class="nav-link" href="/houses.html">The Houses</a>';
       if (project) project.insertAdjacentElement("afterend",item);
       else primary.appendChild(item);
     }
@@ -2225,29 +2225,30 @@ const seeYourselfShowPatch = `
 
   const makeNav=()=>{
     const primary=document.querySelector('nav[aria-label="Primary"]');
-    if(primary && !primary.querySelector("[data-see-yourself-nav]")){
-      const project=primary.querySelector('a[href="#project"]')?.closest(".nav-item");
-      const item=document.createElement("div");
-      item.className="nav-item";
-      item.setAttribute("data-see-yourself-nav","");
-      const a=document.createElement("a");
-      a.href="#childcare";
-      a.textContent="See Yourself in the Show";
-      a.setAttribute("data-see-yourself-link","");
-      item.appendChild(a);
-      if(project) project.insertAdjacentElement("afterend",item); else primary.appendChild(item);
+    if(primary){
+      primary.querySelectorAll("[data-see-yourself-nav]").forEach(el=>el.remove());
+      const familyItem=primary.querySelector('a.nav-link[href="#childcare"]')?.closest(".nav-item");
+      const drop=familyItem?.querySelector(".drop");
+      if(drop && !drop.querySelector("[data-see-yourself-link]")){
+        const a=document.createElement("a");
+        a.href="#childcare";
+        a.textContent="See Yourself in the Show";
+        a.setAttribute("data-see-yourself-link","");
+        drop.appendChild(a);
+      }
     }
-    document.querySelectorAll("nav").forEach(nav=>{
-      if(nav===primary || nav.querySelector("[data-see-yourself-mobile]")) return;
-      const p=nav.querySelector('a[href="#project"]');
-      if(!p) return;
-      const a=p.cloneNode(false);
-      a.href="#childcare";
-      a.textContent="See Yourself in the Show";
-      a.setAttribute("data-see-yourself-link","");
-      a.setAttribute("data-see-yourself-mobile","");
-      p.insertAdjacentElement("afterend",a);
-    });
+    const mobile=document.getElementById("mobilePanel");
+    if(mobile && !mobile.querySelector("[data-see-yourself-mobile]")){
+      const family=mobile.querySelector('a[href="#childcare"]');
+      if(family){
+        const a=family.cloneNode(false);
+        a.href="#childcare";
+        a.textContent="See Yourself in the Show";
+        a.setAttribute("data-see-yourself-link","");
+        a.setAttribute("data-see-yourself-mobile","");
+        family.insertAdjacentElement("afterend",a);
+      }
+    }
   };
 
   const makeHomeButton=()=>{
