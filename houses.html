@@ -16,12 +16,50 @@ section{padding:76px 0;border-top:1px solid var(--line)}h2{font-size:clamp(2.5re
 .floors{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.floor{border:1px solid var(--line);border-radius:22px;padding:22px;background:var(--panel)}.floor b{display:block;font-size:1.48rem;margin-bottom:8px}.floor p{margin:0;color:#b0b0b8;line-height:1.55}.floor button{margin-top:16px;border:0;background:#fff;color:#111;border-radius:999px;padding:9px 12px;font-weight:900;cursor:pointer}.logic{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:12px;align-items:stretch;margin-top:32px}.box{background:#fff;color:#111;border-radius:22px;padding:24px}.box b{font-size:1.33rem;display:block;margin-bottom:8px}.box p{margin:0;line-height:1.52;color:#444}.arrow{display:grid;place-items:center;color:var(--red);font-size:2rem;font-weight:1000}.note{margin-top:28px;border-left:4px solid var(--gold);padding:17px 20px;background:#16161a;color:#d3d3da;line-height:1.62}.banner{padding:22px;border-radius:24px;margin-top:24px;background:linear-gradient(100deg,rgba(227,28,53,.18),rgba(255,189,72,.09));border:1px solid rgba(255,255,255,.12)}footer{padding:42px 0 82px;border-top:1px solid var(--line);color:#9b9ba4}
 @media(max-width:920px){.hero-grid,.paths,.tour-grid{grid-template-columns:1fr}.floors{grid-template-columns:1fr 1fr}.logic{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.stage{min-height:560px}.house{transform:scale(.78) rotateX(var(--pitch)) rotateZ(var(--yaw))}}
 @media(max-width:620px){.navlinks a:not(.active){display:none}.hero{min-height:auto;padding-top:54px}.floors{grid-template-columns:1fr}.stage{min-height:510px}.scene{inset:40px 0 92px}.house{transform:scale(.58) rotateX(var(--pitch)) rotateZ(var(--yaw))}.tour-info{align-items:start;flex-direction:column}.quick{grid-template-columns:1fr}.mode{font-size:.8rem}}
+
+/* CaveMansion real design imagery */
+.cc-house-visual-hero{position:relative;isolation:isolate;overflow:hidden;background:#09090b}
+.cc-house-visual-hero .cc-house-hero-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 48%;z-index:-3;filter:saturate(.88) contrast(1.06) brightness(.82);transform:scale(1.015)}
+.cc-house-visual-hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(4,4,6,.96) 0%,rgba(4,4,6,.78) 42%,rgba(4,4,6,.28) 72%,rgba(4,4,6,.42) 100%),linear-gradient(0deg,rgba(4,4,6,.94) 0%,transparent 55%,rgba(4,4,6,.2) 100%)}
+.cc-house-visual-hero .rule{background:rgba(255,255,255,.94);backdrop-filter:blur(14px)}
+.cc-visuals{overflow:hidden;background:linear-gradient(180deg,#09090b,#101015 54%,#09090b)}
+.cc-editorial-grid{display:grid;grid-template-columns:1.35fr .65fr;grid-template-rows:1fr 1fr;gap:14px;margin-top:34px}
+.cc-figure{position:relative;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.12);margin:0;background:#15151a;min-height:250px}
+.cc-figure-main{grid-row:span 2;min-height:590px}
+.cc-figure img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease}
+.cc-figure:hover img{transform:scale(1.025);filter:brightness(1.05)}
+.cc-figure figcaption{position:absolute;left:16px;bottom:16px;padding:9px 12px;border-radius:999px;background:rgba(7,7,10,.78);backdrop-filter:blur(12px);font-size:.78rem;font-weight:1000;letter-spacing:.09em;text-transform:uppercase}
+.cc-night-feature{position:relative;margin:16px 0 0;border-radius:30px;overflow:hidden;min-height:480px;border:1px solid rgba(255,255,255,.12);background:#0d0d11}
+.cc-night-feature img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cc-night-feature:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,8,.82),transparent 65%)}
+.cc-night-copy{position:absolute;z-index:2;left:clamp(20px,4vw,48px);bottom:clamp(20px,4vw,42px);max-width:620px}
+.cc-night-copy .kicker{color:#fff}
+.cc-night-copy h3{font-size:clamp(2rem,5vw,4.6rem);line-height:.92;letter-spacing:-.05em;margin:.15em 0 0}
+.cc-plan-strip{margin-top:16px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:#f4f1eb;padding:clamp(12px,2vw,20px);overflow:hidden}
+.cc-plan-strip img{display:block;width:100%;height:auto;border-radius:16px}
+.cc-plan-label{display:flex;justify-content:space-between;gap:12px;color:#111;padding:14px 6px 2px;font-weight:950;letter-spacing:.02em}
+@media(max-width:800px){.cc-editorial-grid{grid-template-columns:1fr;grid-template-rows:auto}.cc-figure-main{grid-row:auto;min-height:430px}.cc-figure{min-height:320px}.cc-night-feature{min-height:420px}.cc-plan-label{font-size:.78rem}}
+
 </style></head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="/">CARNIVAL <i>CAREERS</i></a><nav class="navlinks"><a href="/#home">Home</a><a href="/#project">Project</a><a class="active" href="/houses.html">The Houses</a><a href="/#childcare">Families</a><a href="/#music">Music</a><a href="/#capital">Capital</a></nav></div></header>
 <main>
-<section class="hero"><div class="wrap hero-grid"><div><div class="kicker">CaveMansion · city property engine</div><h1>The Houses.</h1><p class="lede">Outside Toronto, each Carnival city does one of two things: build CaveMansion, or buy a profitable property stack near the parade route that helps pay for the episode.</p></div><aside class="rule"><b>Toronto is the exception.</b><p>Toronto uses its own property plan. Every other Carnival city follows the build-or-buy rule.</p></aside></div></section>
+<section class="hero cc-house-visual-hero"><img class="cc-house-hero-media" src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-exterior-front.webp?v=1790266723" alt="CaveMansion exterior concept"><div class="wrap hero-grid"><div><div class="kicker">CaveMansion · city property engine</div><h1>The Houses.</h1><p class="lede">Outside Toronto, each Carnival city does one of two things: build CaveMansion, or buy a profitable property stack near the parade route that helps pay for the episode.</p></div><aside class="rule"><b>Toronto is the exception.</b><p>Toronto uses its own property plan. Every other Carnival city follows the build-or-buy rule.</p></aside></div></section>
 <section><div class="wrap"><div class="kicker">Two ways the city gets its house</div><h2>Build it. Or buy the stack that pays for the story.</h2><p class="sub">Every city leaves behind a real asset.</p><div class="paths"><article class="path"><div class="n">Path 01 · CaveMansion</div><h3>Build the house.</h3><p>Build the CaveMansion prototype when the land, approvals and numbers work.</p><p><strong>Episode role:</strong> home + family + build story in one.</p></article><article class="path"><div class="n">Path 02 · Profitable property stack</div><h3>Buy close to the parade.</h3><p>Otherwise, buy a cash-flowing property stack near the parade route.</p><p><strong>Episode role:</strong> use the income to cover episode costs.</p></article></div></div></section>
+
+<section id="cc-cavemansion-real-visuals" class="cc-visuals"><div class="wrap">
+  <div class="kicker">CaveMansion · design views</div>
+  <h2>See the house.</h2>
+  <p class="sub">The archived CaveMansion model, cutaways and plans are now part of the page itself.</p>
+  <div class="cc-editorial-grid">
+    <figure class="cc-figure cc-figure-main"><img src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-mixed-use-section.webp?v=1790266728" alt="CaveMansion mixed-use section" loading="lazy"><figcaption>Mixed-use section</figcaption></figure>
+    <figure class="cc-figure"><img src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-residential-cutaway.webp?v=1790266734" alt="CaveMansion residential cutaway" loading="lazy"><figcaption>Residential cutaway</figcaption></figure>
+    <figure class="cc-figure"><img src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-roof-amenity.webp?v=1790266739" alt="CaveMansion roof amenity model" loading="lazy"><figcaption>Roof amenity</figcaption></figure>
+  </div>
+  <figure class="cc-night-feature"><img src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-night-exterior.webp?v=1790266745" alt="CaveMansion exterior night rendering" loading="lazy"><div class="cc-night-copy"><div class="kicker">Exterior concept</div><h3>Built to feel like a destination.</h3></div></figure>
+  <div class="cc-plan-strip"><img src="https://cdn.shopify.com/s/files/1/1009/8452/0986/files/cavemansion-level-plans.webp?v=1790266749" alt="CaveMansion lower ground and upper level plans" loading="lazy"><div class="cc-plan-label"><span>Lower level</span><span>Ground level</span><span>Upper level</span></div></div>
+</div></section>
+
 <section id="tour"><div class="wrap"><div class="kicker">Interactive 3D tour · reconstructed from the archived plans</div><h2>Walk around it. Walk through it.</h2><p class="sub">Drag to rotate. Explode the floors or jump to a level.</p><div class="tour-grid"><div class="stage"><div class="scene" id="scene"><div class="house" id="house">
 <div class="deck lower" data-level="Lower level"><div class="room big">Living / flex</div><div class="room">Bath</div><div class="room">Support</div><div class="room">Studio / office</div><div class="room">Mechanical / storage</div></div>
 <div class="deck ground" data-level="Ground level"><div class="room big">Living</div><div class="room wide">Kitchen + dining</div><div class="room">Bath</div><div class="room">Arrival / circulation</div></div>
