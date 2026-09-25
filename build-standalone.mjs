@@ -2501,7 +2501,70 @@ const master21CurrentFactsPatch = `
 })();
 <\/script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch]) {
+const cruiseMoneyEnginePatch = `
+<style id="cc-cruise-money-engine-style">
+  #page-boat .cc-cruise-simple-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:24px}
+  #page-boat .cc-cruise-simple-strip>div{padding:18px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16)}
+  #page-boat .cc-cruise-simple-strip small{display:block;font-weight:950;letter-spacing:.1em;text-transform:uppercase;opacity:.7;margin-bottom:7px}
+  #page-boat .cc-cruise-simple-strip strong{display:block;font-size:1.35rem;line-height:1.05;margin-bottom:7px}
+  #page-boat .cc-cruise-simple-strip span{display:block;line-height:1.45}
+  @media(max-width:820px){#page-boat .cc-cruise-simple-strip{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){#page-boat .cc-cruise-simple-strip{grid-template-columns:1fr}}
+</style>
+<script id="cc-cruise-money-engine-script">
+(() => {
+  const run=()=>{
+    const page=document.getElementById("page-boat")||document.querySelector('[data-page="boat"]');
+    if(!page)return;
+
+    const hero=page.querySelector(".page-hero");
+    if(hero){
+      const eyebrow=hero.querySelector(".eyebrow");
+      const h1=hero.querySelector("h1");
+      const p=hero.querySelector("p");
+      const status=hero.querySelector(".status-line");
+      if(eyebrow) eyebrow.textContent="TRAVEL / THE MOVING VENUE";
+      if(h1) h1.textContent="Make money on the way to the next city.";
+      if(p) p.textContent="Most tours spend money just to move. Carnival Careers is building the opposite: use the cruise as transportation, hotel, venue, content set and marketplace while we travel toward the next Carnival destination.";
+      if(status) status.innerHTML='<span class="status-pill">May 2027 target</span><span class="status-pill">Route in development</span><span class="status-pill">Cruise tickets not yet on sale</span>';
+    }
+
+    page.querySelector(".cruise-live-now")?.remove();
+
+    const build=page.querySelector(".cruise-build-hero");
+    if(build){
+      build.innerHTML=
+        '<div><span class="eyebrow">THE SIMPLE MODEL</span><h2>Travel day becomes a business day.</h2>'+
+        '<p class="lead">Instead of sitting on planes between markets, the project can keep operating while it moves. Cabins, sponsors, food, entertainment, vendors, media and partner experiences can earn onboard. Then we arrive in the next Carnival city and the city businesses earn again.</p></div>'+
+        '<div class="cc-cruise-simple-strip" aria-label="Cruise operating model">'+
+          '<div><small>1</small><strong>Move</strong><span>Use the ship to reach as many tour destinations as routing allows.</span></div>'+
+          '<div><small>2</small><strong>Earn onboard</strong><span>Sell the journey instead of treating travel time as dead cost.</span></div>'+
+          '<div><small>3</small><strong>Arrive</strong><span>Step into the next city, episode and local business engine.</span></div>'+
+          '<div><small>4</small><strong>Repeat</strong><span>Move, earn, arrive, earn again.</span></div>'+
+        '</div>'+
+        '<p class="fineprint">The ship, ports, itinerary, capacity, pricing and commercial terms are still being developed. No cruise tickets are on sale yet.</p>';
+    }
+
+    const attend=page.querySelector('[data-cruise-role="attend"]');
+    const produce=page.querySelector('[data-cruise-role="produce"]');
+    const fund=page.querySelector('[data-cruise-role="fund"]');
+    if(attend) attend.innerHTML='<span class="cruise-role-num">01</span><b>Ride it</b><small>Cabin / group interest</small><em>Join the route →</em>';
+    if(produce) produce.innerHTML='<span class="cruise-role-num">02</span><b>Earn on it</b><small>Ship, sponsor, food, vendor, media, production</small><em>Bring a business →</em>';
+    if(fund) fund.innerHTML='<span class="cruise-role-num">03</span><b>Back it</b><small>Capital / structured finance</small><em>Open the capital lane →</em>';
+
+    const money=page.querySelector(".cruise-money-path");
+    if(money){
+      money.innerHTML=
+        '<div><span>PASSENGERS</span><b>Fill the ship</b><p>Cabins and groups turn movement into demand instead of pure travel expense.</p></div>'+
+        '<div><span>PARTNERS</span><b>Earn while moving</b><p>Sponsors, vendors, food, entertainment, media and production can operate onboard.</p></div>'+
+        '<div><span>NEXT CITY</span><b>Earn again</b><p>Arrive at the next Carnival market and activate the local episode, property, event and commerce lanes.</p></div>';
+    }
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+})();
+<\/script>`;
+
+for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
