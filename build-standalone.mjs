@@ -2371,7 +2371,7 @@ const seeYourselfShowPatch = `
 </script>`;
 
 
-const printfulApparelFirstPatch = \`
+const printfulApparelFirstPatch = `
 <style id="cc-printful-apparel-first-style">
   .cc-printful-first{padding:clamp(30px,5vw,64px) 0;background:linear-gradient(180deg,#fff 0%,#fbf7ff 100%);color:#17131f;border-bottom:1px solid rgba(34,22,48,.1)}
   .cc-printful-first .wrap{max-width:1180px}
@@ -2460,7 +2460,7 @@ const printfulApparelFirstPatch = \`
   };
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
 })();
-<\/script>\`;
+<\/script>`;
 
 const master21CurrentFactsPatch = `
 <style id="cc-master21-current-facts-style">
