@@ -1541,6 +1541,7 @@ const wholeReconciliationPatch = `
   const project=document.getElementById("page-project")||document.querySelector('[data-page="project"]');
   const capital=document.getElementById("page-capital")||document.querySelector('[data-page="capital"]');
   const travel=document.getElementById("page-plane")||document.querySelector('[data-page="plane"],[data-page="travel"]');
+  const boat=document.getElementById("page-boat")||document.querySelector('[data-page="boat"]');
 
   const projectHtml =
     '<h2>Toronto property plan</h2>'+
@@ -1608,11 +1609,12 @@ const wholeReconciliationPatch = `
   }
 
   if(travel){
-    const old=travel.querySelector('[data-cc-whole]');
-    if(old) old.remove();
-    const host=travel.querySelector(".page-inner,.content,.section-inner,.container,.wrap")||travel;
-    host.insertAdjacentHTML("afterbegin",box(
-      '<div class="cc-kicker">Travel · current financial control</div>'+
+    travel.querySelectorAll('[data-cc-whole]').forEach(el=>el.remove());
+  }
+
+  if(boat){
+    boat.querySelectorAll('[data-cc-whole]').forEach(el=>el.remove());
+    const cruiseBlock=box(
       '<h2>The first-sailing model stays 170 paying guests.</h2>'+
       '<div class="cc-whole-grid">'+
         '<div class="cc-whole-card"><b>C$2.331141M</b>Modeled first-sailing cost</div>'+
@@ -1620,7 +1622,13 @@ const wholeReconciliationPatch = `
         '<div class="cc-whole-card"><b>C$293,859</b>Modeled EBITDA before final reconciliation</div>'+
       '</div>'+
       '<p>The protected Toronto model carries the full C$2.331141M cruise cost without depending on cruise revenue. The C$2.625M revenue and C$293,859 EBITDA remain modeled and uncommitted until operator, compliant travel seller, supplier, sponsor and paid-booking evidence exists.</p>'
-    ));
+    );
+    const hero=boat.querySelector(".page-hero");
+    if(hero) hero.insertAdjacentHTML("afterend",cruiseBlock);
+    else {
+      const host=boat.querySelector(".page-inner,.content,.section-inner,.container,.wrap")||boat;
+      host.insertAdjacentHTML("afterbegin",cruiseBlock);
+    }
   }
 
   const replacements = [];\n  const scrub=()=>{
