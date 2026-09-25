@@ -2033,71 +2033,93 @@ const editorialCardSystemPatch = `
 
 
 
-const seeYourselfShowPatch = `
+const seeYourselfShowPatch = \`
 <style id="cc-see-yourself-show-style">
-  #see-yourself-show{position:relative;overflow:hidden;padding:clamp(58px,8vw,96px) 0;background:
-    radial-gradient(circle at 8% 12%,rgba(255,194,67,.28),transparent 31%),
-    radial-gradient(circle at 91% 8%,rgba(239,73,166,.26),transparent 29%),
+  #see-yourself-show{position:relative;overflow:hidden;padding:clamp(42px,6vw,76px) 0;background:
+    radial-gradient(circle at 9% 10%,rgba(255,194,67,.28),transparent 30%),
+    radial-gradient(circle at 90% 8%,rgba(239,73,166,.24),transparent 28%),
     linear-gradient(135deg,#160d2b 0%,#2b1450 46%,#092334 100%);color:#fff}
-  #see-yourself-show:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:
-    radial-gradient(circle at 16px 16px,rgba(255,255,255,.72) 1.25px,transparent 1.5px);
-    background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+  #see-yourself-show:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(circle at 16px 16px,rgba(255,255,255,.72) 1.2px,transparent 1.45px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 92%)}
   #see-yourself-show>*{position:relative;z-index:1}
-  #see-yourself-show .cc-sys-wrap{width:min(1220px,calc(100% - 40px));margin:auto}
-  #see-yourself-show .cc-sys-top{display:grid;grid-template-columns:minmax(0,.9fr) minmax(330px,1.1fr);gap:clamp(26px,5vw,62px);align-items:start}
-  #see-yourself-show .cc-sys-kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.08);font-size:.77rem;font-weight:950;letter-spacing:.12em;text-transform:uppercase}
-  #see-yourself-show .cc-sys-kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:#ffc44d;box-shadow:0 0 0 5px rgba(255,196,77,.15)}
-  #see-yourself-show h2{margin:18px 0 14px;max-width:10ch;font-size:clamp(3rem,7vw,6.6rem);line-height:.88;letter-spacing:-.06em;color:#fff}
-  #see-yourself-show .cc-sys-lede{max-width:680px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.62}
-  #see-yourself-show .cc-sys-pills{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}
-  #see-yourself-show .cc-sys-pills span{padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);font-size:.84rem;font-weight:850}
-  #see-yourself-show .cc-sys-form{padding:clamp(20px,3vw,30px);border-radius:26px;background:rgba(255,255,255,.97);color:#17131f;box-shadow:0 28px 70px rgba(0,0,0,.28)}
-  #see-yourself-show .cc-sys-form h3{margin:0 0 7px;font-size:1.55rem;letter-spacing:-.03em}
-  #see-yourself-show .cc-sys-form>p{margin:0 0 18px;color:#67606d;line-height:1.5}
-  #see-yourself-show .cc-sys-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  #see-yourself-show .cc-sys-fields label{display:grid;gap:6px;font-size:.88rem;font-weight:850}
-  #see-yourself-show .cc-sys-fields label.wide{grid-column:1/-1}
-  #see-yourself-show .cc-sys-fields input,#see-yourself-show .cc-sys-fields textarea{width:100%;box-sizing:border-box;padding:13px 14px;border:1px solid #d6cfdb;border-radius:13px;background:#fff;color:#17131f;font:inherit}
-  #see-yourself-show .cc-sys-fields textarea{min-height:94px;resize:vertical}
-  #see-yourself-show .cc-sys-check{display:flex!important;grid-column:1/-1!important;grid-template-columns:auto 1fr!important;gap:9px!important;align-items:flex-start}
-  #see-yourself-show .cc-sys-check input{width:auto!important;margin-top:3px}
-  #see-yourself-show .cc-sys-submit{display:flex;align-items:center;justify-content:center;min-height:49px;margin-top:15px;padding:0 18px;border:0;border-radius:999px;background:#211331;color:#fff;font-weight:950;cursor:pointer}
-  #see-yourself-show .cc-sys-result{display:none;margin-top:13px;padding:13px 14px;border-radius:13px;background:#f2edf8;color:#42384a;line-height:1.5}
-  #see-yourself-show .cc-sys-result.show{display:block}
-  #see-yourself-show .cc-sys-note{margin:13px 0 0;color:#746c7a;font-size:.8rem;line-height:1.45}
-  #see-yourself-show .cc-sys-gallery-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-top:clamp(48px,7vw,82px)}
-  #see-yourself-show .cc-sys-gallery-head h3{margin:6px 0 0;font-size:clamp(2.1rem,4.5vw,4.2rem);line-height:.95;letter-spacing:-.045em}
-  #see-yourself-show .cc-sys-gallery-head p{max-width:620px;margin:8px 0 0;color:rgba(255,255,255,.72);line-height:1.55}
+  #see-yourself-show .cc-live-wrap{width:min(1220px,calc(100% - 40px));margin:auto}
+  #see-yourself-show .cc-live-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:26px;align-items:end}
+  #see-yourself-show .cc-live-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;background:rgba(255,255,255,.08);font-size:.74rem;font-weight:950;letter-spacing:.11em;text-transform:uppercase}
+  #see-yourself-show .cc-live-dot{width:9px;height:9px;border-radius:50%;background:#ff4f8b;box-shadow:0 0 0 5px rgba(255,79,139,.13)}
+  #see-yourself-show h2{margin:16px 0 12px;max-width:12ch;font-size:clamp(2.8rem,6.8vw,6rem);line-height:.9;letter-spacing:-.058em;color:#fff}
+  #see-yourself-show .cc-live-lede{max-width:760px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(1rem,1.8vw,1.2rem);line-height:1.58}
+  #see-yourself-show .cc-live-state{display:grid;gap:8px;min-width:210px;padding:14px 16px;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:rgba(255,255,255,.075);backdrop-filter:blur(12px)}
+  #see-yourself-show .cc-live-state strong{font-size:.94rem}
+  #see-yourself-show .cc-live-state span{color:rgba(255,255,255,.7);font-size:.8rem;line-height:1.35}
+  #see-yourself-show .cc-live-shell{margin-top:26px;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(7,5,18,.35);box-shadow:0 28px 70px rgba(0,0,0,.26);overflow:hidden;backdrop-filter:blur(14px)}
+  #see-yourself-show .cc-live-tabs{display:flex;gap:4px;overflow-x:auto;padding:8px;background:rgba(255,255,255,.06);scrollbar-width:none}
+  #see-yourself-show .cc-live-tabs::-webkit-scrollbar{display:none}
+  #see-yourself-show .cc-live-tab{flex:0 0 auto;min-height:42px;padding:0 15px;border:0;border-radius:999px;background:transparent;color:rgba(255,255,255,.72);font:inherit;font-size:.84rem;font-weight:950;cursor:pointer;white-space:nowrap}
+  #see-yourself-show .cc-live-tab.active{background:#fff;color:#23162e}
+  #see-yourself-show .cc-live-panel{display:none;padding:clamp(18px,3vw,30px)}
+  #see-yourself-show .cc-live-panel.active{display:block}
+  #see-yourself-show .cc-live-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(340px,1.18fr);gap:22px;align-items:start}
+  #see-yourself-show .cc-live-copy h3{margin:0 0 9px;font-size:clamp(1.65rem,3.4vw,3rem);line-height:1;letter-spacing:-.04em}
+  #see-yourself-show .cc-live-copy p{margin:0;color:rgba(255,255,255,.73);line-height:1.55}
+  #see-yourself-show .cc-live-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  #see-yourself-show .cc-live-btn,#see-yourself-show .cc-live-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border:0;border-radius:999px;background:#fff;color:#211331;text-decoration:none;font-weight:950;cursor:pointer}
+  #see-yourself-show .cc-live-btn.alt,#see-yourself-show .cc-live-link.alt{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.18)}
+  #see-yourself-show .cc-live-card{padding:18px;border-radius:22px;background:rgba(255,255,255,.96);color:#17131f}
+  #see-yourself-show .cc-live-card h4{margin:0 0 6px;font-size:1.18rem}
+  #see-yourself-show .cc-live-card>p{margin:0 0 14px;color:#6c6472;line-height:1.45}
+  #see-yourself-show .cc-live-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  #see-yourself-show .cc-live-fields label{display:grid;gap:5px;font-size:.8rem;font-weight:900;color:#3f3744}
+  #see-yourself-show .cc-live-fields label.wide{grid-column:1/-1}
+  #see-yourself-show .cc-live-fields input,#see-yourself-show .cc-live-fields select,#see-yourself-show .cc-live-fields textarea{width:100%;box-sizing:border-box;padding:11px 12px;border:1px solid #d8d1dd;border-radius:12px;background:#fff;color:#17131f;font:inherit}
+  #see-yourself-show .cc-live-fields textarea{min-height:76px;resize:vertical}
+  #see-yourself-show .cc-live-submit{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:11px;padding:0 15px;border:0;border-radius:999px;background:#241433;color:#fff;font-weight:950;cursor:pointer}
+  #see-yourself-show .cc-live-result{display:none;margin-top:10px;padding:11px 12px;border-radius:12px;background:#f0ebf6;color:#463b4d;font-size:.86rem;line-height:1.45}
+  #see-yourself-show .cc-live-result.show{display:block}
+  #see-yourself-show .cc-chat-feed{display:grid;gap:9px;max-height:420px;overflow:auto;padding-right:3px}
+  #see-yourself-show .cc-chat-item{padding:13px 14px;border-radius:16px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12)}
+  #see-yourself-show .cc-chat-item-head{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:5px}
+  #see-yourself-show .cc-chat-item strong{font-size:.88rem}
+  #see-yourself-show .cc-chat-item small{color:rgba(255,255,255,.55);font-size:.7rem}
+  #see-yourself-show .cc-chat-item p{margin:0;color:rgba(255,255,255,.82);line-height:1.45}
+  #see-yourself-show .cc-chat-media{display:block;margin-top:8px;color:#ffd46a;font-weight:900;text-decoration:none;font-size:.82rem}
+  #see-yourself-show .cc-handle-rail,#see-yourself-show .cc-party-rail{display:grid;gap:9px;margin-top:14px}
+  #see-yourself-show .cc-mini-row{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:11px 12px;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(255,255,255,.07)}
+  #see-yourself-show .cc-mini-row strong{font-size:.86rem}
+  #see-yourself-show .cc-mini-row span{font-size:.76rem;color:rgba(255,255,255,.64)}
+  #see-yourself-show .cc-mini-copy{display:grid;gap:2px;min-width:0}
+  #see-yourself-show .cc-mini-action{flex:0 0 auto;border:0;border-radius:999px;padding:7px 10px;background:#fff;color:#281938;font-weight:950;font-size:.72rem;cursor:pointer}
+  #see-yourself-show .cc-culture-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  #see-yourself-show .cc-culture-tools a,#see-yourself-show .cc-culture-tools button{display:inline-flex;align-items:center;min-height:38px;padding:0 11px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:900;font-size:.76rem;cursor:pointer}
+  #see-yourself-show .cc-social-gallery{margin-top:28px}
+  #see-yourself-show .cc-social-gallery-head{display:flex;justify-content:space-between;gap:16px;align-items:end}
+  #see-yourself-show .cc-social-gallery-head h3{margin:6px 0 0;font-size:clamp(1.9rem,4vw,3.7rem);line-height:.96;letter-spacing:-.045em}
+  #see-yourself-show .cc-social-gallery-head p{max-width:600px;margin:7px 0 0;color:rgba(255,255,255,.68);line-height:1.5}
   #see-yourself-show .cc-sys-controls{display:flex;gap:8px}
-  #see-yourself-show .cc-sys-controls button{width:46px;height:46px;border:1px solid rgba(255,255,255,.23);border-radius:50%;background:rgba(255,255,255,.09);color:#fff;font-size:1.5rem;cursor:pointer}
-  #see-yourself-show .cc-sys-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(290px,34%);gap:14px;overflow-x:auto;padding:22px 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:thin}
-  #see-yourself-show .cc-sys-card{scroll-snap-align:start;overflow:hidden;border-radius:24px;background:#fff;color:#17131f;box-shadow:0 20px 50px rgba(0,0,0,.22)}
-  #see-yourself-show .cc-sys-video{position:relative;aspect-ratio:9/14;background:
-    radial-gradient(circle at 76% 16%,rgba(255,196,77,.38),transparent 28%),
-    radial-gradient(circle at 15% 88%,rgba(239,73,166,.35),transparent 32%),
-    linear-gradient(155deg,#24123e,#0b3141);display:grid;place-items:center;overflow:hidden}
+  #see-yourself-show .cc-sys-controls button{width:43px;height:43px;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(255,255,255,.08);color:#fff;font-size:1.4rem;cursor:pointer}
+  #see-yourself-show .cc-sys-carousel{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,32%);gap:13px;overflow-x:auto;padding:18px 1px 12px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+  #see-yourself-show .cc-sys-card{scroll-snap-align:start;overflow:hidden;border-radius:21px;background:#fff;color:#17131f;box-shadow:0 18px 46px rgba(0,0,0,.2)}
+  #see-yourself-show .cc-sys-video{position:relative;aspect-ratio:9/12;background:radial-gradient(circle at 76% 16%,rgba(255,196,77,.38),transparent 28%),radial-gradient(circle at 15% 88%,rgba(239,73,166,.35),transparent 32%),linear-gradient(155deg,#24123e,#0b3141);display:grid;place-items:center;overflow:hidden}
   #see-yourself-show .cc-sys-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
-  #see-yourself-show .cc-sys-play{display:grid;place-items:center;width:78px;height:78px;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:2rem;backdrop-filter:blur(8px);cursor:pointer}
-  #see-yourself-show .cc-sys-platform{position:absolute;left:14px;top:14px;padding:7px 9px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;font-size:.72rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}
-  #see-yourself-show .cc-sys-card-body{padding:18px}
-  #see-yourself-show .cc-sys-card-body small{display:block;color:#7a7081;font-weight:850;text-transform:uppercase;letter-spacing:.06em}
-  #see-yourself-show .cc-sys-card-body h4{margin:7px 0 7px;font-size:1.28rem;line-height:1.12}
-  #see-yourself-show .cc-sys-card-body p{margin:0 0 14px;color:#625b68;line-height:1.5}
-  #see-yourself-show .cc-sys-original{font-weight:950;color:#4b2a91;text-decoration:none}
-  #see-yourself-show .cc-sys-empty{grid-column:1/-1;padding:26px;border:1px dashed rgba(255,255,255,.3);border-radius:22px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);line-height:1.6}
-  #see-yourself-show .cc-sys-foot{margin:15px 0 0;color:rgba(255,255,255,.62);font-size:.86rem;line-height:1.55}
-  nav[aria-label="Primary"] [data-see-yourself-nav] > a{white-space:nowrap}
-  @media(max-width:900px){
-    #see-yourself-show .cc-sys-top{grid-template-columns:1fr}
-    #see-yourself-show .cc-sys-carousel{grid-auto-columns:minmax(280px,72%)}
+  #see-yourself-show .cc-sys-play{display:grid;place-items:center;width:68px;height:68px;border:1px solid rgba(255,255,255,.6);border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.7rem;backdrop-filter:blur(8px);cursor:pointer}
+  #see-yourself-show .cc-sys-platform{position:absolute;left:12px;top:12px;padding:6px 8px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;font-size:.68rem;font-weight:950;letter-spacing:.07em;text-transform:uppercase}
+  #see-yourself-show .cc-sys-card-body{padding:15px}
+  #see-yourself-show .cc-sys-card-body small{display:block;color:#7a7081;font-weight:850;text-transform:uppercase;letter-spacing:.05em;font-size:.68rem}
+  #see-yourself-show .cc-sys-card-body h4{margin:6px 0;font-size:1.12rem;line-height:1.15}
+  #see-yourself-show .cc-sys-card-body p{margin:0 0 11px;color:#625b68;line-height:1.45;font-size:.88rem}
+  #see-yourself-show .cc-sys-original{font-weight:950;color:#4b2a91;text-decoration:none;font-size:.82rem}
+  #see-yourself-show .cc-sys-empty{grid-column:1/-1;padding:23px;border:1px dashed rgba(255,255,255,.3);border-radius:19px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.76);line-height:1.55}
+  #see-yourself-show .cc-live-fine{margin:12px 0 0;color:rgba(255,255,255,.54);font-size:.76rem;line-height:1.45}
+  @media(max-width:920px){
+    #see-yourself-show .cc-live-head,#see-yourself-show .cc-live-grid{grid-template-columns:1fr}
+    #see-yourself-show .cc-live-state{min-width:0}
+    #see-yourself-show .cc-sys-carousel{grid-auto-columns:minmax(275px,70%)}
   }
-  @media(max-width:600px){
-    #see-yourself-show .cc-sys-wrap{width:min(100% - 28px,1220px)}
-    #see-yourself-show .cc-sys-fields{grid-template-columns:1fr}
-    #see-yourself-show .cc-sys-fields label.wide{grid-column:auto}
+  @media(max-width:620px){
+    #see-yourself-show .cc-live-wrap{width:min(100% - 24px,1220px)}
+    #see-yourself-show .cc-live-fields{grid-template-columns:1fr}
+    #see-yourself-show .cc-live-fields label.wide{grid-column:auto}
     #see-yourself-show .cc-sys-carousel{grid-auto-columns:88%}
-    #see-yourself-show .cc-sys-gallery-head{align-items:flex-start;flex-direction:column}
-    #see-yourself-show h2{font-size:clamp(2.9rem,15vw,4.5rem)}
+    #see-yourself-show .cc-social-gallery-head{align-items:flex-start;flex-direction:column}
+    #see-yourself-show h2{font-size:clamp(2.7rem,14vw,4.4rem)}
   }
 </style>
 <script id="cc-see-yourself-show-script">
@@ -2106,239 +2128,301 @@ const seeYourselfShowPatch = `
   const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;","'":"&#39;"}[m]));
   const read=k=>{try{const x=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(x)?x:[]}catch(e){return[]}};
   const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
-  const ref=()=> "SHOW-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
-
+  const ref=p=> (p||"LIVE")+"-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+  const when=v=>{try{return new Date(v).toLocaleString([], {dateStyle:"medium",timeStyle:"short"})}catch(e){return v||""}};
+  const openMail=(subject,lines)=>{
+    const href="mailto:"+EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(lines.join("\\n"));
+    window.location.href=href;
+  };
+  const socialUrl=(platform,handle)=>{
+    handle=String(handle||"").trim().replace(/^@/,"");
+    if(!handle) return "";
+    const p=String(platform||"").toLowerCase();
+    if(p==="instagram") return "https://instagram.com/"+encodeURIComponent(handle);
+    if(p==="tiktok") return "https://tiktok.com/@"+encodeURIComponent(handle);
+    if(p==="x") return "https://x.com/"+encodeURIComponent(handle);
+    if(p==="threads") return "https://threads.net/@"+encodeURIComponent(handle);
+    if(p==="youtube") return "https://youtube.com/@"+encodeURIComponent(handle);
+    if(p==="bluesky") return "https://bsky.app/profile/"+encodeURIComponent(handle);
+    return "";
+  };
   const mediaMeta=raw=>{
     try{
       const u=new URL(raw);
       if(u.protocol!=="https:" && u.protocol!=="http:") return null;
       const host=u.hostname.replace(/^www\\./,"").toLowerCase();
-      let id="",embed="",platform="Public video";
-      if(host==="youtu.be"){
-        id=u.pathname.split("/").filter(Boolean)[0]||"";
-        if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}
-      } else if(host.endsWith("youtube.com")){
-        const seg=u.pathname.split("/").filter(Boolean);
-        id=u.searchParams.get("v") || ((seg[0]==="shorts"||seg[0]==="embed")?seg[1]:"") || "";
-        if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}
-      } else if(host.endsWith("vimeo.com")){
-        id=(u.pathname.match(/\\/(\\d{5,})/)||[])[1]||"";
-        if(id){platform="Vimeo";embed="https://player.vimeo.com/video/"+encodeURIComponent(id);}
-      } else if(host.endsWith("tiktok.com")){
-        id=(u.pathname.match(/\\/video\\/(\\d+)/)||[])[1]||"";
-        platform="TikTok";
-        if(id) embed="https://www.tiktok.com/player/v1/"+encodeURIComponent(id);
-      } else if(host.endsWith("instagram.com")){
-        const m=u.pathname.match(/\\/(p|reel|tv)\\/([^/?#]+)/);
-        platform="Instagram";
-        if(m) embed="https://www.instagram.com/"+m[1]+"/"+encodeURIComponent(m[2])+"/embed/";
-      } else if(host.endsWith("facebook.com") || host==="fb.watch" || host.endsWith("fb.watch")){
-        platform="Facebook";
-        embed="https://www.facebook.com/plugins/video.php?show_text=false&href="+encodeURIComponent(u.href);
-      } else if(host.endsWith("threads.net")){
-        platform="Threads";
-      }
+      let id="",embed="",platform="Public media";
+      if(host==="youtu.be"){id=u.pathname.split("/").filter(Boolean)[0]||"";if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}}
+      else if(host.endsWith("youtube.com")){const seg=u.pathname.split("/").filter(Boolean);id=u.searchParams.get("v")||((seg[0]==="shorts"||seg[0]==="embed")?seg[1]:"")||"";if(id){platform="YouTube";embed="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id);}}
+      else if(host.endsWith("vimeo.com")){id=(u.pathname.match(/\\/(\\d{5,})/)||[])[1]||"";if(id){platform="Vimeo";embed="https://player.vimeo.com/video/"+encodeURIComponent(id);}}
+      else if(host.endsWith("tiktok.com")){id=(u.pathname.match(/\\/video\\/(\\d+)/)||[])[1]||"";platform="TikTok";if(id)embed="https://www.tiktok.com/player/v1/"+encodeURIComponent(id);}
+      else if(host.endsWith("instagram.com")){const m=u.pathname.match(/\\/(p|reel|tv)\\/([^/?#]+)/);platform="Instagram";if(m)embed="https://www.instagram.com/"+m[1]+"/"+encodeURIComponent(m[2])+"/embed/";}
+      else if(host.endsWith("facebook.com")||host==="fb.watch"||host.endsWith("fb.watch")){platform="Facebook";embed="https://www.facebook.com/plugins/video.php?show_text=false&href="+encodeURIComponent(u.href);}
+      else if(host.endsWith("threads.net")) platform="Threads";
+      else if(host.endsWith("x.com")||host.endsWith("twitter.com")) platform="X";
+      else if(host.endsWith("bsky.app")) platform="Bluesky";
       return {original:u.href,platform,embed};
     }catch(e){return null}
   };
-
   const getPublished=()=>{
     let rows=[];
     try{if(Array.isArray(window.CC_SEE_YOURSELF_VIDEOS)) rows=window.CC_SEE_YOURSELF_VIDEOS.slice()}catch(e){}
     rows=rows.concat(read("cc_see_yourself_links_v1"),read("cc_culture_media_v1"));
     const seen=new Set();
-    return rows.filter(r=>{
-      const url=String(r.url||r.link||"").trim();
-      if(!url || seen.has(url)) return false;
-      seen.add(url); return true;
-    }).slice(0,24);
+    return rows.filter(r=>{const url=String(r.url||r.link||"").trim();if(!url||seen.has(url))return false;seen.add(url);return true;}).slice(0,24);
   };
 
   const markup=[
     '<section id="see-yourself-show" aria-labelledby="see-yourself-title">',
-      '<div class="cc-sys-wrap">',
-        '<div class="cc-sys-top">',
+      '<div class="cc-live-wrap">',
+        '<div class="cc-live-head">',
           '<div>',
-            '<div class="cc-sys-kicker">Families · Carnival · The Show</div>',
-            '<h2 id="see-yourself-title">See Yourself in the Show.</h2>',
-            '<p class="cc-sys-lede">Paste your public Carnival video link. It can play here while the original post stays on its platform.</p>',
-            '<div class="cc-sys-pills"><span>No video-file upload</span><span>Original platform stays the host</span><span>Play here · visit the original underneath</span></div>',
+            '<div class="cc-live-kicker"><span class="cc-live-dot"></span>See Yourself in the Show · Live with Hopeton</div>',
+            '<h2 id="see-yourself-title">The audience is part of the episode.</h2>',
+            '<p class="cc-live-lede">Watch together. React together. Trade social handles. Drop a meme. Ask Hopeton something. Schedule a watch party. Share your Carnival clip. One lightweight interface keeps the culture moving while the show is happening.</p>',
           '</div>',
-          '<form class="cc-sys-form" id="ccSeeYourselfForm">',
-            '<h3>Share your Carnival experience</h3>',
-            '<p>Paste a public social-video link.</p>',
-            '<div class="cc-sys-fields">',
-              '<label class="wide">Social-media video link<input name="url" type="url" required placeholder="https://..."></label>',
-              '<label>Your name / creator credit<input name="name" required placeholder="@handle or name"></label>',
-              '<label>Email for follow-up <span style="font-weight:500">(not displayed)</span><input name="email" type="email" placeholder="you@example.com"></label>',
-              '<label>City / Carnival<input name="city" placeholder="Toronto · Miami · Trinidad · Notting Hill..."></label>',
-              '<label>Clip title<input name="title" placeholder="Mas morning, parade day, family moment..."></label>',
-              '<label class="wide">What is happening in the clip?<textarea name="comment" placeholder="Give viewers the context in one or two lines."></textarea></label>',
-              '<label class="cc-sys-check"><input name="permission" type="checkbox" required value="yes"><span>I am sharing a public social-media link and give Carnival Careers permission to review and feature the link, creator credit, title and caption. The original platform remains the media host.</span></label>',
+          '<div class="cc-live-state"><strong>One community interface</strong><span>Live reactions · social exchange · watch parties · memes · public clips</span></div>',
+        '</div>',
+
+        '<div class="cc-live-shell">',
+          '<div class="cc-live-tabs" role="tablist" aria-label="See Yourself live tools">',
+            '<button class="cc-live-tab active" type="button" data-live-tab="live">Live with Hopeton</button>',
+            '<button class="cc-live-tab" type="button" data-live-tab="chat">Chat + memes</button>',
+            '<button class="cc-live-tab" type="button" data-live-tab="handles">Swap handles</button>',
+            '<button class="cc-live-tab" type="button" data-live-tab="party">Watch together</button>',
+            '<button class="cc-live-tab" type="button" data-live-tab="share">Share your Carnival</button>',
+          '</div>',
+
+          '<div class="cc-live-panel active" data-live-panel="live">',
+            '<div class="cc-live-grid">',
+              '<div class="cc-live-copy">',
+                '<h3>Live with Hopeton.</h3>',
+                '<p>This is the show’s social room: questions, reactions, culture, jokes, memes and the people watching from everywhere. During a live program, this is the page the audience keeps open beside the show.</p>',
+                '<div class="cc-live-actions">',
+                  '<button class="cc-live-btn" type="button" data-open-tab="chat">Say something</button>',
+                  '<button class="cc-live-btn alt" type="button" data-open-tab="party">Plan a watch party</button>',
+                  '<button class="cc-live-btn alt" type="button" data-share-page>Share this room</button>',
+                '</div>',
+                '<div class="cc-culture-tools">',
+                  '<a href="https://x.com/intent/post?text='+encodeURIComponent("I’m in the Carnival Careers live room — come watch with us.")+'" target="_blank" rel="noopener noreferrer">Post to X</a>',
+                  '<a href="https://bsky.app/intent/compose?text='+encodeURIComponent("I’m in the Carnival Careers live room — come watch with us.")+'" target="_blank" rel="noopener noreferrer">Post to Bluesky</a>',
+                  '<a href="https://wa.me/?text='+encodeURIComponent("Carnival Careers live room: "+location.href)+'" target="_blank" rel="noopener noreferrer">Send on WhatsApp</a>',
+                '</div>',
+              '</div>',
+              '<div>',
+                '<div class="cc-chat-feed" id="ccLiveFeed" aria-live="polite"></div>',
+              '</div>',
             '</div>',
-            '<button class="cc-sys-submit" type="submit">Submit my Carnival link</button>',
-            '<div class="cc-sys-result" id="ccSeeYourselfResult" aria-live="polite"></div>',
-            '<p class="cc-sys-note">We link to the original post; publishing still requires review.</p>',
-          '</form>',
+            '<p class="cc-live-fine">This static site previews community activity in the current browser and relays submissions to Carnival Careers for review. A shared public feed can plug into the same interface when the site has a community backend.</p>',
+          '</div>',
+
+          '<div class="cc-live-panel" data-live-panel="chat">',
+            '<div class="cc-live-grid">',
+              '<div class="cc-live-copy"><h3>React in culture, not in silence.</h3><p>Leave a comment, question, joke, meme link or reaction. Your browser shows it immediately; the same submission can be relayed to Carnival Careers for the public/live feed.</p></div>',
+              '<form class="cc-live-card" id="ccLiveChatForm">',
+                '<h4>Drop into the conversation</h4><p>Keep it short enough to feel live.</p>',
+                '<div class="cc-live-fields">',
+                  '<label>Name / handle<input name="name" required placeholder="@you"></label>',
+                  '<label>Type<select name="kind"><option>Reaction</option><option>Question for Hopeton</option><option>Meme</option><option>Culture note</option><option>Shout-out</option></select></label>',
+                  '<label class="wide">Comment<textarea name="comment" required placeholder="What are you seeing, feeling, laughing at or asking?"></textarea></label>',
+                  '<label class="wide">Optional public meme / post link<input name="media" type="url" placeholder="https://..."></label>',
+                '</div>',
+                '<button class="cc-live-submit" type="submit">Post + relay</button>',
+                '<div class="cc-live-result" id="ccLiveChatResult" aria-live="polite"></div>',
+              '</form>',
+            '</div>',
+          '</div>',
+
+          '<div class="cc-live-panel" data-live-panel="handles">',
+            '<div class="cc-live-grid">',
+              '<div class="cc-live-copy"><h3>Meet people while you watch.</h3><p>Exchange the social handle you actually want people to use. It can be an artist page, business page, family account or your personal social profile.</p><div class="cc-handle-rail" id="ccHandleRail"></div></div>',
+              '<form class="cc-live-card" id="ccHandleForm">',
+                '<h4>Put your handle in the room</h4><p>One handle, one reason to connect.</p>',
+                '<div class="cc-live-fields">',
+                  '<label>Name<input name="name" required placeholder="Your name"></label>',
+                  '<label>Platform<select name="platform"><option>Instagram</option><option>TikTok</option><option>X</option><option>Threads</option><option>YouTube</option><option>Bluesky</option></select></label>',
+                  '<label>Handle<input name="handle" required placeholder="@handle"></label>',
+                  '<label>City<input name="city" placeholder="Toronto"></label>',
+                  '<label class="wide">Why should people connect?<input name="reason" placeholder="Artist · vendor · family · filmmaker · culture"></label>',
+                '</div>',
+                '<button class="cc-live-submit" type="submit">Exchange handle</button>',
+                '<div class="cc-live-result" id="ccHandleResult" aria-live="polite"></div>',
+              '</form>',
+            '</div>',
+          '</div>',
+
+          '<div class="cc-live-panel" data-live-panel="party">',
+            '<div class="cc-live-grid">',
+              '<div class="cc-live-copy"><h3>Turn watching into an appointment.</h3><p>Program a living-room watch party, restaurant screening, community watch, balcony hangout or online room. Add it to a calendar and send the proposed gathering to Carnival Careers for the public program.</p><div class="cc-party-rail" id="ccPartyRail"></div></div>',
+              '<form class="cc-live-card" id="ccPartyForm">',
+                '<h4>Create a watch appointment</h4><p>No separate event app needed.</p>',
+                '<div class="cc-live-fields">',
+                  '<label>Host / handle<input name="host" required placeholder="@host"></label>',
+                  '<label>City<input name="city" required placeholder="Toronto"></label>',
+                  '<label class="wide">Watch-party name<input name="title" required placeholder="Carnival Careers watch night"></label>',
+                  '<label>Date + time<input name="start" type="datetime-local" required></label>',
+                  '<label>Length<select name="length"><option value="60">1 hour</option><option value="90">90 minutes</option><option value="120">2 hours</option><option value="180">3 hours</option></select></label>',
+                  '<label class="wide">Place or meeting link<input name="place" required placeholder="Living room, restaurant, community space or https://..."></label>',
+                  '<label class="wide">Note<input name="note" placeholder="Theme, dress, snacks, episode, culture..."></label>',
+                '</div>',
+                '<button class="cc-live-submit" type="submit">Schedule + add to calendar</button>',
+                '<div class="cc-live-result" id="ccPartyResult" aria-live="polite"></div>',
+              '</form>',
+            '</div>',
+          '</div>',
+
+          '<div class="cc-live-panel" data-live-panel="share">',
+            '<div class="cc-live-grid">',
+              '<div class="cc-live-copy"><h3>See yourself in the show.</h3><p>Paste a public Carnival video link. The original platform keeps hosting it; this page becomes the relay where viewers can watch and then jump back to the creator.</p></div>',
+              '<form class="cc-live-card" id="ccSeeYourselfForm">',
+                '<h4>Share your Carnival experience</h4><p>No giant media uploads.</p>',
+                '<div class="cc-live-fields">',
+                  '<label class="wide">Public social-video link<input name="url" type="url" required placeholder="https://..."></label>',
+                  '<label>Name / creator credit<input name="name" required placeholder="@handle or name"></label>',
+                  '<label>Email for follow-up<input name="email" type="email" placeholder="you@example.com"></label>',
+                  '<label>City / Carnival<input name="city" placeholder="Toronto · Miami · Trinidad..."></label>',
+                  '<label>Clip title<input name="title" placeholder="Mas morning, parade day..."></label>',
+                  '<label class="wide">Context<textarea name="comment" placeholder="What is happening here?"></textarea></label>',
+                '</div>',
+                '<button class="cc-live-submit" type="submit">Share link + relay</button>',
+                '<div class="cc-live-result" id="ccSeeYourselfResult" aria-live="polite"></div>',
+              '</form>',
+            '</div>',
+          '</div>',
         '</div>',
-        '<div class="cc-sys-gallery-head">',
-          '<div><div class="cc-sys-kicker">Community relay</div><h3>Watch the Carnival through each other’s eyes.</h3><p>Press Play to watch from the original platform.</p></div>',
-          '<div class="cc-sys-controls"><button type="button" data-sys-prev aria-label="Previous videos">‹</button><button type="button" data-sys-next aria-label="Next videos">›</button></div>',
+
+        '<div class="cc-social-gallery">',
+          '<div class="cc-social-gallery-head">',
+            '<div><div class="cc-live-kicker"><span class="cc-live-dot"></span>Culture relay</div><h3>Watch the Carnival through each other’s eyes.</h3><p>Public social posts stay on the original platform; the carousel makes them part of the shared show experience.</p></div>',
+            '<div class="cc-sys-controls"><button type="button" data-sys-prev aria-label="Previous videos">‹</button><button type="button" data-sys-next aria-label="Next videos">›</button></div>',
+          '</div>',
+          '<div class="cc-sys-carousel" id="ccSeeYourselfCarousel" aria-live="polite"></div>',
         '</div>',
-        '<div class="cc-sys-carousel" id="ccSeeYourselfCarousel" aria-live="polite"></div>',
-        '<p class="cc-sys-foot">The original creator and platform remain the source.</p>',
       '</div>',
     '</section>'
   ].join("");
 
-  const makeNav=()=>{
-    const primary=document.querySelector('nav[aria-label="Primary"]');
-    if(primary){
-      primary.querySelectorAll("[data-see-yourself-nav]").forEach(el=>el.remove());
-      const familyItem=primary.querySelector('a.nav-link[href="#childcare"]')?.closest(".nav-item");
-      const drop=familyItem?.querySelector(".drop");
-      if(drop && !drop.querySelector("[data-see-yourself-link]")){
-        const a=document.createElement("a");
-        a.href="#childcare";
-        a.textContent="See Yourself in the Show";
-        a.setAttribute("data-see-yourself-link","");
-        drop.appendChild(a);
-      }
-    }
-    const mobile=document.getElementById("mobilePanel");
-    if(mobile && !mobile.querySelector("[data-see-yourself-mobile]")){
-      const family=mobile.querySelector('a[href="#childcare"]');
-      if(family){
-        const a=family.cloneNode(false);
-        a.href="#childcare";
-        a.textContent="See Yourself in the Show";
-        a.setAttribute("data-see-yourself-link","");
-        a.setAttribute("data-see-yourself-mobile","");
-        family.insertAdjacentElement("afterend",a);
-      }
-    }
+  const activate=key=>{
+    document.querySelectorAll("[data-live-tab]").forEach(b=>b.classList.toggle("active",b.getAttribute("data-live-tab")===key));
+    document.querySelectorAll("[data-live-panel]").forEach(p=>p.classList.toggle("active",p.getAttribute("data-live-panel")===key));
   };
 
-  const makeHomeButton=()=>{
-    const home=document.getElementById("page-home")||document.querySelector('[data-page="home"]');
-    if(!home || home.querySelector("#homeSeeYourself")) return;
-    const groups=[...home.querySelectorAll(".actions")];
-    const actions=groups.find(g=>g.querySelector('a[href="#show"]')&&g.querySelector('a[href="#project"]')&&g.querySelector('a[href="#music"]')) || groups.find(g=>g.querySelector('a[href="#show"]')) || groups[0];
-    if(!actions) return;
-    const a=document.createElement("a");
-    a.id="homeSeeYourself";
-    a.className="btn";
-    a.href="#childcare";
-    a.textContent="See Yourself In The Show";
-    a.setAttribute("data-see-yourself-link","");
-    const music=actions.querySelector('a[href="#music"]');
-    if(music) music.insertAdjacentElement("afterend",a); else actions.appendChild(a);
+  const renderFeed=()=>{
+    const host=document.getElementById("ccLiveFeed"); if(!host)return;
+    const rows=read("cc_live_chat_v1").slice(0,24);
+    if(!rows.length){host.innerHTML='<div class="cc-chat-item"><div class="cc-chat-item-head"><strong>The room is open.</strong><small>LIVE SOCIAL</small></div><p>Be the first person to leave a reaction, question, meme or culture note.</p></div>';return;}
+    host.innerHTML=rows.map(r=>'<article class="cc-chat-item"><div class="cc-chat-item-head"><strong>'+esc(r.name||"Community")+' · '+esc(r.kind||"Reaction")+'</strong><small>'+esc(when(r.createdAt))+'</small></div><p>'+esc(r.comment||"")+'</p>'+(r.media?'<a class="cc-chat-media" href="'+esc(r.media)+'" target="_blank" rel="noopener noreferrer">Open meme / post ↗</a>':'')+'</article>').join("");
   };
 
-  const render=()=>{
-    const carousel=document.getElementById("ccSeeYourselfCarousel");
-    if(!carousel) return;
+  const renderHandles=()=>{
+    const host=document.getElementById("ccHandleRail"); if(!host)return;
+    const rows=read("cc_handle_exchange_v1").slice(0,8);
+    if(!rows.length){host.innerHTML='<div class="cc-mini-row"><div class="cc-mini-copy"><strong>No handles exchanged yet.</strong><span>Start the room.</span></div></div>';return;}
+    host.innerHTML=rows.map((r,i)=>'<div class="cc-mini-row"><div class="cc-mini-copy"><strong>'+esc(r.name)+' · '+esc(r.handle)+'</strong><span>'+esc(r.platform)+(r.city?' · '+esc(r.city):'')+(r.reason?' · '+esc(r.reason):'')+'</span></div><button class="cc-mini-action" type="button" data-copy-handle="'+i+'">Copy</button></div>').join("");
+    host.querySelectorAll("[data-copy-handle]").forEach(btn=>btn.onclick=async()=>{const r=rows[Number(btn.getAttribute("data-copy-handle"))];if(!r)return;try{await navigator.clipboard.writeText(r.handle);btn.textContent="Copied";setTimeout(()=>btn.textContent="Copy",1100)}catch(e){}});
+  };
+
+  const renderParties=()=>{
+    const host=document.getElementById("ccPartyRail"); if(!host)return;
+    const rows=read("cc_watch_parties_v1").slice(0,8);
+    if(!rows.length){host.innerHTML='<div class="cc-mini-row"><div class="cc-mini-copy"><strong>No watch appointment on this browser yet.</strong><span>Create one in under a minute.</span></div></div>';return;}
+    host.innerHTML=rows.map((r,i)=>'<div class="cc-mini-row"><div class="cc-mini-copy"><strong>'+esc(r.title)+'</strong><span>'+esc(when(r.start))+' · '+esc(r.city)+' · '+esc(r.host)+'</span></div><button class="cc-mini-action" type="button" data-calendar-party="'+i+'">Calendar</button></div>').join("");
+    host.querySelectorAll("[data-calendar-party]").forEach(btn=>btn.onclick=()=>downloadIcs(rows[Number(btn.getAttribute("data-calendar-party"))]));
+  };
+
+  const downloadIcs=r=>{
+    if(!r)return;
+    const start=new Date(r.start); if(isNaN(start))return;
+    const end=new Date(start.getTime()+(Number(r.length)||90)*60000);
+    const fmt=d=>d.toISOString().replace(/[-:]/g,"").replace(/\\.\\d{3}Z$/,"Z");
+    const clean=v=>String(v||"").replace(/[\\n\\r]+/g," ").replace(/,/g,"\\\\,");
+    const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Carnival Careers//Watch Party//EN","BEGIN:VEVENT","UID:"+ref("PARTY")+"@carnivalcareers","DTSTAMP:"+fmt(new Date()),"DTSTART:"+fmt(start),"DTEND:"+fmt(end),"SUMMARY:"+clean(r.title),"LOCATION:"+clean(r.place),"DESCRIPTION:"+clean((r.note||"")+" Host: "+(r.host||"")),"END:VEVENT","END:VCALENDAR"];
+    const blob=new Blob([lines.join("\\r\\n")],{type:"text/calendar;charset=utf-8"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=(r.title||"carnival-careers-watch-party").replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".ics";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},300);
+  };
+
+  const renderVideos=()=>{
+    const carousel=document.getElementById("ccSeeYourselfCarousel"); if(!carousel)return;
     const rows=getPublished();
-    if(!rows.length){
-      carousel.innerHTML='<div class="cc-sys-empty"><strong>Your Carnival can be the first one here.</strong><br>Submit a public social-media video link above. It will preview in this browser immediately and can be reviewed for the public carousel without Carnival Careers hosting the media file.</div>';
-      return;
-    }
+    if(!rows.length){carousel.innerHTML='<div class="cc-sys-empty"><strong>Your Carnival can be the first one here.</strong><br>Share a public social-media video link. This site can relay the post without hosting the media file.</div>';return;}
     carousel.innerHTML=rows.map((r,i)=>{
       const meta=mediaMeta(r.url||r.link||"");
-      const platform=meta?.platform||r.platform||"Public video";
+      const platform=meta?.platform||r.platform||"Public media";
       const title=r.title||r.city||"Carnival experience";
       const comment=r.comment||r.caption||"Shared with Carnival Careers.";
       const credit=r.name||r.credit||r.creator||"Community";
       const original=meta?.original||String(r.url||r.link||"");
-      return '<article class="cc-sys-card" data-sys-card="'+i+'">'+
-        '<div class="cc-sys-video"><span class="cc-sys-platform">'+esc(platform)+'</span><button class="cc-sys-play" type="button" data-sys-play="'+i+'" aria-label="Play '+esc(title)+'">▶</button></div>'+
-        '<div class="cc-sys-card-body"><small>'+esc(credit)+(r.city?' · '+esc(r.city):'')+'</small><h4>'+esc(title)+'</h4><p>'+esc(comment)+'</p><a class="cc-sys-original" href="'+esc(original)+'" target="_blank" rel="noopener noreferrer">Open original post ↗</a></div>'+
-      '</article>';
+      return '<article class="cc-sys-card" data-sys-card="'+i+'"><div class="cc-sys-video"><span class="cc-sys-platform">'+esc(platform)+'</span><button class="cc-sys-play" type="button" data-sys-play="'+i+'" aria-label="Play '+esc(title)+'">▶</button></div><div class="cc-sys-card-body"><small>'+esc(credit)+(r.city?' · '+esc(r.city):'')+'</small><h4>'+esc(title)+'</h4><p>'+esc(comment)+'</p><a class="cc-sys-original" href="'+esc(original)+'" target="_blank" rel="noopener noreferrer">Open original post ↗</a></div></article>';
     }).join("");
-    carousel.querySelectorAll("[data-sys-play]").forEach(btn=>btn.addEventListener("click",()=>{
-      const i=Number(btn.getAttribute("data-sys-play"));
-      const r=rows[i]; if(!r) return;
-      const meta=mediaMeta(r.url||r.link||"");
-      if(!meta?.embed){window.open(meta?.original||String(r.url||r.link||""),"_blank","noopener");return;}
-      const host=btn.closest(".cc-sys-video");
-      if(!host) return;
-      host.innerHTML='<span class="cc-sys-platform">'+esc(meta.platform)+'</span><iframe loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" src="'+esc(meta.embed)+'" title="'+esc(r.title||"Carnival social video")+'"></iframe>';
-    }));
+    carousel.querySelectorAll("[data-sys-play]").forEach(btn=>btn.onclick=()=>{
+      const i=Number(btn.getAttribute("data-sys-play"));const r=rows[i];if(!r)return;const meta=mediaMeta(r.url||r.link||"");if(!meta?.embed){window.open(meta?.original||String(r.url||r.link||""),"_blank","noopener");return;}const box=btn.closest(".cc-sys-video");if(!box)return;box.innerHTML='<span class="cc-sys-platform">'+esc(meta.platform)+'</span><iframe loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" src="'+esc(meta.embed)+'" title="'+esc(r.title||"Carnival social video")+'"></iframe>';
+    });
   };
 
-  const goToSection=e=>{
-    if(e) e.preventDefault();
-    if(location.hash!=="#childcare") location.hash="#childcare";
-    setTimeout(()=>document.getElementById("see-yourself-show")?.scrollIntoView({behavior:"smooth",block:"start"}),90);
+  const makeNav=()=>{
+    const primary=document.querySelector('nav[aria-label="Primary"]');
+    if(primary){
+      const familyItem=primary.querySelector('a.nav-link[href="#childcare"]')?.closest(".nav-item");
+      const drop=familyItem?.querySelector(".drop");
+      if(drop){
+        let a=drop.querySelector("[data-see-yourself-link]");
+        if(!a){a=document.createElement("a");a.href="#childcare";a.setAttribute("data-see-yourself-link","");drop.appendChild(a);}
+        a.textContent="See Yourself + Live";
+      }
+    }
+    const mobile=document.getElementById("mobilePanel");
+    if(mobile){
+      let a=mobile.querySelector("[data-see-yourself-mobile]");
+      if(!a){
+        const family=mobile.querySelector('a[href="#childcare"]');
+        if(family){a=family.cloneNode(false);a.href="#childcare";a.setAttribute("data-see-yourself-link","");a.setAttribute("data-see-yourself-mobile","");family.insertAdjacentElement("afterend",a);}
+      }
+      if(a)a.textContent="See Yourself + Live";
+    }
+  };
+
+  const makeHomeButton=()=>{
+    const home=document.getElementById("page-home")||document.querySelector('[data-page="home"]');if(!home)return;
+    let a=home.querySelector("#homeSeeYourself");
+    if(!a){
+      const groups=[...home.querySelectorAll(".actions")];
+      const actions=groups.find(g=>g.querySelector('a[href="#show"]'))||groups[0];if(!actions)return;
+      a=document.createElement("a");a.id="homeSeeYourself";a.className="btn";a.href="#childcare";a.setAttribute("data-see-yourself-link","");actions.appendChild(a);
+    }
+    a.textContent="See Yourself + Live";
   };
 
   const wire=()=>{
-    document.querySelectorAll("[data-see-yourself-link]").forEach(a=>{
-      if(a.dataset.ccSeeWired==="1") return;
-      a.dataset.ccSeeWired="1";
-      a.addEventListener("click",goToSection);
-    });
-    const prev=document.querySelector("[data-sys-prev]"), next=document.querySelector("[data-sys-next]"), carousel=document.getElementById("ccSeeYourselfCarousel");
-    if(prev&&carousel) prev.onclick=()=>carousel.scrollBy({left:-Math.max(290,carousel.clientWidth*.82),behavior:"smooth"});
-    if(next&&carousel) next.onclick=()=>carousel.scrollBy({left:Math.max(290,carousel.clientWidth*.82),behavior:"smooth"});
+    document.querySelectorAll("[data-live-tab],[data-open-tab]").forEach(btn=>btn.onclick=()=>activate(btn.getAttribute("data-live-tab")||btn.getAttribute("data-open-tab")));
+    document.querySelectorAll("[data-see-yourself-link]").forEach(a=>{a.onclick=e=>{e.preventDefault();if(location.hash!=="#childcare")location.hash="#childcare";setTimeout(()=>document.getElementById("see-yourself-show")?.scrollIntoView({behavior:"smooth",block:"start"}),90)}});
+    const prev=document.querySelector("[data-sys-prev]"),next=document.querySelector("[data-sys-next]"),carousel=document.getElementById("ccSeeYourselfCarousel");
+    if(prev&&carousel)prev.onclick=()=>carousel.scrollBy({left:-Math.max(280,carousel.clientWidth*.82),behavior:"smooth"});
+    if(next&&carousel)next.onclick=()=>carousel.scrollBy({left:Math.max(280,carousel.clientWidth*.82),behavior:"smooth"});
+    document.querySelectorAll("[data-share-page]").forEach(btn=>btn.onclick=async()=>{const data={title:"Carnival Careers — See Yourself + Live",text:"Watch, react, share culture and plan a Carnival Careers watch party.",url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);btn.textContent="Link copied";setTimeout(()=>btn.textContent="Share this room",1200)}}catch(e){}});
 
-    const form=document.getElementById("ccSeeYourselfForm");
-    if(form && form.dataset.ccSeeWired!=="1"){
-      form.dataset.ccSeeWired="1";
-      form.addEventListener("submit",e=>{
-        e.preventDefault();
-        if(!form.reportValidity()) return;
-        const d=Object.fromEntries(new FormData(form).entries());
-        const meta=mediaMeta(d.url);
-        const out=document.getElementById("ccSeeYourselfResult");
-        if(!meta){
-          out.className="cc-sys-result show";
-          out.textContent="Please use a public http or https social-media link.";
-          return;
-        }
-        const id=ref();
-        const record={id,kind:"see-yourself-in-the-show",status:"submitted-for-review",createdAt:new Date().toISOString(),platform:meta.platform,...d};
-        const rows=read("cc_see_yourself_links_v1"); rows.unshift(record); write("cc_see_yourself_links_v1",rows);
-        render();
-        out.className="cc-sys-result show";
-        out.innerHTML='<strong>Link prepared: '+esc(id)+'</strong><br>Your clip is now in the on-site preview on this device. Your email app will open so the link can be relayed to Carnival Careers for site-wide review.';
-        const body=[
-          "SEE YOURSELF IN THE SHOW",
-          "Reference: "+id,
-          "Creator: "+(d.name||""),
-          "Email: "+(d.email||""),
-          "City / Carnival: "+(d.city||""),
-          "Title: "+(d.title||""),
-          "Platform: "+meta.platform,
-          "Link: "+meta.original,
-          "Caption: "+(d.comment||""),
-          "Permission to review/feature public link: yes"
-        ].join("\\n");
-        const mail="mailto:"+EMAIL+"?subject="+encodeURIComponent("See Yourself in the Show — "+id)+"&body="+encodeURIComponent(body);
-        form.reset();
-        setTimeout(()=>{window.location.href=mail},40);
-        setTimeout(()=>document.getElementById("ccSeeYourselfCarousel")?.scrollIntoView({behavior:"smooth",block:"nearest"}),120);
-      });
-    }
+    const chat=document.getElementById("ccLiveChatForm");
+    if(chat)chat.onsubmit=e=>{e.preventDefault();if(!chat.reportValidity())return;const d=Object.fromEntries(new FormData(chat).entries());const rec={id:ref("CHAT"),createdAt:new Date().toISOString(),...d};const rows=read("cc_live_chat_v1");rows.unshift(rec);write("cc_live_chat_v1",rows.slice(0,50));renderFeed();const out=document.getElementById("ccLiveChatResult");out.className="cc-live-result show";out.textContent="Posted in this live-room preview. Opening the relay so Carnival Careers can review it for the public feed.";chat.reset();setTimeout(()=>openMail("Live with Hopeton — "+rec.id,["LIVE WITH HOPETON","Reference: "+rec.id,"Name: "+d.name,"Type: "+d.kind,"Comment: "+d.comment,"Media: "+(d.media||"")]),80)};
+
+    const handles=document.getElementById("ccHandleForm");
+    if(handles)handles.onsubmit=e=>{e.preventDefault();if(!handles.reportValidity())return;const d=Object.fromEntries(new FormData(handles).entries());const rec={id:ref("HANDLE"),createdAt:new Date().toISOString(),...d,url:socialUrl(d.platform,d.handle)};const rows=read("cc_handle_exchange_v1");rows.unshift(rec);write("cc_handle_exchange_v1",rows.slice(0,40));renderHandles();const out=document.getElementById("ccHandleResult");out.className="cc-live-result show";out.innerHTML='Handle added to this room preview.'+(rec.url?' <a href="'+esc(rec.url)+'" target="_blank" rel="noopener noreferrer">Open profile ↗</a>':'');handles.reset();setTimeout(()=>openMail("See Yourself handle exchange — "+rec.id,["HANDLE EXCHANGE","Reference: "+rec.id,"Name: "+d.name,"Platform: "+d.platform,"Handle: "+d.handle,"City: "+(d.city||""),"Reason: "+(d.reason||"")]),80)};
+
+    const party=document.getElementById("ccPartyForm");
+    if(party)party.onsubmit=e=>{e.preventDefault();if(!party.reportValidity())return;const d=Object.fromEntries(new FormData(party).entries());const rec={id:ref("PARTY"),createdAt:new Date().toISOString(),...d};const rows=read("cc_watch_parties_v1");rows.unshift(rec);write("cc_watch_parties_v1",rows.slice(0,30));renderParties();downloadIcs(rec);const out=document.getElementById("ccPartyResult");out.className="cc-live-result show";out.textContent="Watch appointment saved in this browser and a calendar file was created. Opening the relay for public-program review.";party.reset();setTimeout(()=>openMail("Carnival Careers watch party — "+rec.id,["WATCH PARTY","Reference: "+rec.id,"Host: "+d.host,"City: "+d.city,"Title: "+d.title,"Start: "+d.start,"Length: "+d.length+" minutes","Place/link: "+d.place,"Note: "+(d.note||"")]),80)};
+
+    const share=document.getElementById("ccSeeYourselfForm");
+    if(share)share.onsubmit=e=>{e.preventDefault();if(!share.reportValidity())return;const d=Object.fromEntries(new FormData(share).entries());const meta=mediaMeta(d.url);const out=document.getElementById("ccSeeYourselfResult");if(!meta){out.className="cc-live-result show";out.textContent="Please use a public http or https social-media link.";return;}const rec={id:ref("SHOW"),kind:"see-yourself-in-the-show",status:"submitted-for-review",createdAt:new Date().toISOString(),platform:meta.platform,...d};const rows=read("cc_see_yourself_links_v1");rows.unshift(rec);write("cc_see_yourself_links_v1",rows.slice(0,40));renderVideos();out.className="cc-live-result show";out.textContent="Your public link is now in this browser’s culture relay preview. Opening the relay for site-wide review.";share.reset();setTimeout(()=>openMail("See Yourself in the Show — "+rec.id,["SEE YOURSELF IN THE SHOW","Reference: "+rec.id,"Creator: "+d.name,"Email: "+(d.email||""),"City / Carnival: "+(d.city||""),"Title: "+(d.title||""),"Platform: "+meta.platform,"Link: "+meta.original,"Context: "+(d.comment||"")]),80)};
   };
 
   const run=()=>{
-    const page=document.getElementById("page-childcare")||document.querySelector('[data-page="childcare"]');
-    if(!page) return;
-    if(!document.getElementById("see-yourself-show")){
-      const pathway=page.querySelector(".cc-fw-body");
-      if(pathway) pathway.insertAdjacentHTML("afterend",markup);
-      else page.insertAdjacentHTML("afterbegin",markup);
-    }
-    makeNav();
-    makeHomeButton();
-    render();
-    wire();
+    const page=document.getElementById("page-childcare")||document.querySelector('[data-page="childcare"]');if(!page)return;
+    page.querySelector("#see-yourself-show")?.remove();
+    const pathway=page.querySelector(".cc-fw-body");
+    if(pathway)pathway.insertAdjacentHTML("afterend",markup);else page.insertAdjacentHTML("afterbegin",markup);
+    makeNav();makeHomeButton();renderFeed();renderHandles();renderParties();renderVideos();wire();
   };
-
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
 })();
-</script>`;
+<\/script>\`;
 
 
 const printfulApparelFirstPatch = `
