@@ -2445,20 +2445,20 @@ const seeYourselfShowPatch = `
 
 const printfulApparelFirstPatch = `
 <style id="cc-printful-apparel-first-style">
-  .cc-printful-first{padding:clamp(30px,5vw,64px) 0;background:linear-gradient(180deg,#fff 0%,#fbf7ff 100%);color:#17131f;border-bottom:1px solid rgba(34,22,48,.1)}
-  .cc-printful-first .wrap{max-width:1180px}
+  .cc-printful-first{padding:clamp(30px,5vw,64px) 0;background:linear-gradient(180deg,#fff 0%,#fbf7ff 100%);color:#17131f!important;border-bottom:1px solid rgba(34,22,48,.1)}
+  .cc-printful-first .wrap{max-width:1180px}\n  .cc-printful-first p,.cc-printful-first div{color:inherit}
   .cc-printful-first-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
-  .cc-printful-first .eyebrow{display:inline-block;font-size:.76rem;font-weight:950;letter-spacing:.13em;text-transform:uppercase;color:#6a37b7}
-  .cc-printful-first h2{margin:.18em 0 .12em;font-size:clamp(2.2rem,5vw,4.9rem);line-height:.93;letter-spacing:-.055em;max-width:11ch}
-  .cc-printful-first-lede{max-width:64ch;margin:0;color:#5f5868;line-height:1.58}
+  .cc-printful-first .eyebrow{display:inline-block;font-size:.76rem;font-weight:950;letter-spacing:.13em;text-transform:uppercase;color:#55229f!important}
+  .cc-printful-first h2{margin:.18em 0 .12em;font-size:clamp(2.2rem,5vw,4.9rem);line-height:.93;letter-spacing:-.055em;max-width:11ch;color:#17131f!important;text-shadow:none!important}
+  .cc-printful-first-lede{max-width:64ch;margin:0;color:#3f3748!important;line-height:1.58}
   .cc-printful-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .cc-printful-card{overflow:hidden;border-radius:22px;background:#fff;border:1px solid #e4dced;box-shadow:0 14px 36px rgba(50,25,80,.08);text-decoration:none!important;color:#17131f!important;transition:transform .18s ease,box-shadow .18s ease}
   .cc-printful-card:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(50,25,80,.13)}
   .cc-printful-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f1edf4}
   .cc-printful-card-copy{padding:16px 16px 18px}
-  .cc-printful-card small{display:block;color:#766c7e;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
-  .cc-printful-card h3{margin:7px 0 7px;font-size:1.08rem;line-height:1.15}
-  .cc-printful-price{font-size:1rem;font-weight:950;color:#4b258d}
+  .cc-printful-card small{display:block;color:#5c5266!important;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+  .cc-printful-card h3{margin:7px 0 7px;font-size:1.08rem;line-height:1.15;color:#17131f!important;text-shadow:none!important}
+  .cc-printful-price{font-size:1rem;font-weight:950;color:#35146f!important}
   .cc-printful-shop{display:inline-flex;margin-top:11px;padding:9px 12px;border-radius:999px;background:#17131f;color:#fff!important;font-size:.78rem;font-weight:900}
   .cc-printful-first-all{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 16px;border-radius:999px;background:#6f48e8;color:#fff!important;text-decoration:none!important;font-weight:900;white-space:nowrap}
   @media(max-width:860px){.cc-printful-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cc-printful-first-head{align-items:flex-start;flex-direction:column}}
