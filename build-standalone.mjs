@@ -1343,7 +1343,6 @@ const sidelineSittersUnifiedPatch = `
           '<div class="cc-ss-actions">'+
             '<a href="#childcare-request">Request care</a>'+
             '<a href="#childcare-partners">Become a provider partner</a>'+
-            '<a href="#childcare-funders">Fund care for your people</a>'+
           '</div>'+
         '</div>'+
       '</section>'+
@@ -1437,34 +1436,7 @@ const sidelineSittersUnifiedPatch = `
         '</div>'+
       '</section>'+
 
-      '<section class="cc-ss-section" id="childcare-funders">'+
-        '<div class="cc-ss-wrap">'+
-          '<h2>Employers and sponsors: fund the care around the schedule.</h2>'+
-          '<p class="cc-ss-lead">This stays separate because the payer is solving a different problem. Tell us who needs access, where, when and what you want to fund. We can then match the benefit design to real provider terms instead of advertising a subsidy or membership that does not exist yet.</p>'+
-          '<div class="cc-ss-three">'+
-            '<div class="cc-ss-mini"><b>Demand-led</b>Pay for accepted use where the provider supports it.</div>'+
-            '<div class="cc-ss-mini"><b>Funded block</b>Create a defined pool of approved childcare for a production, workforce or event.</div>'+
-            '<div class="cc-ss-mini"><b>Membership / access</b>Package the population and service area when a provider requires corporate access.</div>'+
-          '</div>'+
-          '<div class="cc-ss-card">'+
-            '<form id="ccSidelineFunderForm" class="cc-ss-form">'+
-              '<div class="cc-ss-field"><label>Organization</label><input name="organization" required></div>'+
-              '<div class="cc-ss-field"><label>Contact name</label><input name="contact" required></div>'+
-              '<div class="cc-ss-field"><label>Email</label><input type="email" name="email" required></div>'+
-              '<div class="cc-ss-field"><label>Phone</label><input name="phone"></div>'+
-              '<div class="cc-ss-field"><label>City / coverage area</label><input name="area"></div>'+
-              '<div class="cc-ss-field"><label>Estimated family count</label><input name="familyCount"></div>'+
-              '<div class="cc-ss-field cc-full"><label>Who needs access?</label><textarea name="population"></textarea></div>'+
-              '<div class="cc-ss-field"><label>Coverage model</label><select name="coverageModel"><option>Demand-led / per accepted booking</option><option>Funded childcare block</option><option>Corporate membership / access</option><option>Discount / priority access</option><option>Event-specific coverage</option><option>Need options</option></select></div>'+
-              '<div class="cc-ss-field"><label>Dates / schedule</label><input name="schedule"></div>'+
-              '<div class="cc-ss-field cc-full"><label>Budget / billing preference</label><textarea name="budget"></textarea></div>'+
-              '<div class="cc-ss-field cc-full"><label>What should the childcare benefit accomplish?</label><textarea name="goal"></textarea></div>'+
-              '<div class="cc-ss-submit"><button class="cc-ss-btn" type="submit">Build a funded-care option</button><span class="cc-ss-note">Nothing is promoted as funded until provider terms, payer, eligibility and booking rules are documented.</span></div>'+
-            '</form>'+
-            '<div id="ccSidelineFunderResult" class="cc-ss-result" aria-live="polite">Submit the coverage brief to receive a reference number.</div>'+
-          '</div>'+
-        '</div>'+
-      '</section>';
+
 
     const read = key => { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch(e) { return []; } };
     const write = (key,val) => { try { localStorage.setItem(key, JSON.stringify(val)); } catch(e) {} };
@@ -1508,7 +1480,6 @@ const sidelineSittersUnifiedPatch = `
       });
     };
     savePartner("ccSidelineProviderForm","ccSidelineProviderResult","childcare-provider-capacity","SSP","cc_sideline_providers_v2");
-    savePartner("ccSidelineFunderForm","ccSidelineFunderResult","childcare-funding","SSF","cc_sideline_funders_v2");
   };
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true}); else run();
 })();
@@ -1741,7 +1712,6 @@ renderedHtml = renderedHtml.replace(/<a href="#project-professional">Professiona
 renderedHtml = renderedHtml.replace(/<a\b[^>]*href="#childcare-status"[^>]*>[\s\S]*?<\/a>/g, "");
 renderedHtml = renderedHtml.replace(/(<h3>I know the neighbourhood\.<\/h3>)<p>[^<]*<\/p>/g, '$1<p>I represent a city + local knowledge</p>');
 renderedHtml = renderedHtml.replace(/<a href="#partners"><span>⌘<\/span><div><h3>I represent a city\.<\/h3><p>City, venues \+ partners\.<\/p><\/div><b>↗<\/b><\/a>/g, "");
-renderedHtml = renderedHtml.replace(/<section class="section light" id="childcare-funders">[\s\S]*?<\/section>\s*(?=<section class="section" id="childcare-status">)/, "");
 
 {
   const carLeadHeading = "Do not sell a car lead. Move the vehicle all the way to usable.";
