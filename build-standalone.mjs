@@ -2363,8 +2363,10 @@ const seeYourselfShowPatch = `
     const primary=document.querySelector('nav[aria-label="Primary"]');
     if(primary){
       primary.querySelectorAll("[data-see-yourself-nav-link]").forEach(x=>x.remove());
-      const showLink=primary.querySelector('a[href="#show"]');
-      if(showLink){
+      const homeItem=primary.querySelector('.nav-item > a[href="#home"]')?.closest(".nav-item");
+      const drop=homeItem?.querySelector(".drop");
+      const showLink=drop?.querySelector('a[href="#show"]');
+      if(drop&&showLink){
         const a=showLink.cloneNode(false);
         a.href="#show";
         a.textContent="See Yourself + Live";
