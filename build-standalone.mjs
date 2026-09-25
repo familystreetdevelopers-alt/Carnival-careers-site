@@ -2580,12 +2580,7 @@ const cruiseMoneyEnginePatch = `
     if(fund) fund.innerHTML='<span class="cruise-role-num">03</span><b>Back it</b><small>Capital / structured finance</small><em>Open the capital lane →</em>';
 
     const money=page.querySelector(".cruise-money-path");
-    if(money){
-      money.innerHTML=
-        '<div><span>PASSENGERS</span><b>Fill the ship</b><p>Cabins and groups turn movement into demand instead of pure travel expense.</p></div>'+
-        '<div><span>PARTNERS</span><b>Earn while moving</b><p>Sponsors, vendors, food, entertainment, media and production can operate onboard.</p></div>'+
-        '<div><span>NEXT CITY</span><b>Earn again</b><p>Arrive at the next Carnival market and activate the local episode, property, event and commerce lanes.</p></div>';
-    }
+    if(money) money.remove();
   };
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
 })();
