@@ -1863,7 +1863,7 @@ const assetRentRollResetPatch = `
   #cc-asset-rent-roll-reset .cc-arr-box{padding:20px;border:1px solid rgba(255,255,255,.14);border-radius:18px;background:#0d0d0d}
   #cc-asset-rent-roll-reset .cc-arr-box strong{display:block;font-size:1.65rem;line-height:1.05;margin-bottom:7px;color:#fff!important}
   #cc-asset-rent-roll-reset .cc-arr-box p{margin:0;color:#cfcfcf!important;line-height:1.55}
-  #cc-asset-rent-roll-reset .cc-arr-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+  #cc-asset-rent-roll-reset .cc-arr-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:28px}
   #cc-asset-rent-roll-reset .cc-arr-step{padding:16px;border-radius:16px;background:#161616;border:1px solid rgba(209,27,27,.34)}
   #cc-asset-rent-roll-reset .cc-arr-step b{display:block;color:#ff6a6a!important;margin-bottom:6px}
   #cc-asset-rent-roll-reset .cc-arr-fine{font-size:.9rem;line-height:1.55;color:#aaa!important;margin:24px 0 0}
