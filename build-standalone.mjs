@@ -2362,22 +2362,29 @@ const seeYourselfShowPatch = `
   const makeNav=()=>{
     const primary=document.querySelector('nav[aria-label="Primary"]');
     if(primary){
-      const familyItem=primary.querySelector('a.nav-link[href="#childcare"]')?.closest(".nav-item");
-      const drop=familyItem?.querySelector(".drop");
-      if(drop){
-        let a=drop.querySelector("[data-see-yourself-link]");
-        if(!a){a=document.createElement("a");a.href="#childcare";a.setAttribute("data-see-yourself-link","");drop.appendChild(a);}
+      primary.querySelectorAll("[data-see-yourself-nav-link]").forEach(x=>x.remove());
+      const showLink=primary.querySelector('a[href="#show"]');
+      if(showLink){
+        const a=showLink.cloneNode(false);
+        a.href="#show";
         a.textContent="See Yourself + Live";
+        a.setAttribute("data-see-yourself-link","");
+        a.setAttribute("data-see-yourself-nav-link","");
+        showLink.insertAdjacentElement("afterend",a);
       }
     }
     const mobile=document.getElementById("mobilePanel");
     if(mobile){
-      let a=mobile.querySelector("[data-see-yourself-mobile]");
-      if(!a){
-        const family=mobile.querySelector('a[href="#childcare"]');
-        if(family){a=family.cloneNode(false);a.href="#childcare";a.setAttribute("data-see-yourself-link","");a.setAttribute("data-see-yourself-mobile","");family.insertAdjacentElement("afterend",a);}
+      mobile.querySelectorAll("[data-see-yourself-mobile]").forEach(x=>x.remove());
+      const showLink=mobile.querySelector('a[href="#show"]');
+      if(showLink){
+        const a=showLink.cloneNode(false);
+        a.href="#show";
+        a.textContent="See Yourself + Live";
+        a.setAttribute("data-see-yourself-link","");
+        a.setAttribute("data-see-yourself-mobile","");
+        showLink.insertAdjacentElement("afterend",a);
       }
-      if(a)a.textContent="See Yourself + Live";
     }
   };
 
@@ -2387,14 +2394,14 @@ const seeYourselfShowPatch = `
     if(!a){
       const groups=[...home.querySelectorAll(".actions")];
       const actions=groups.find(g=>g.querySelector('a[href="#show"]'))||groups[0];if(!actions)return;
-      a=document.createElement("a");a.id="homeSeeYourself";a.className="btn";a.href="#childcare";a.setAttribute("data-see-yourself-link","");actions.appendChild(a);
+      a=document.createElement("a");a.id="homeSeeYourself";a.className="btn";a.href="#show";a.setAttribute("data-see-yourself-link","");actions.appendChild(a);
     }
     a.textContent="See Yourself + Live";
   };
 
   const wire=()=>{
     document.querySelectorAll("[data-live-tab],[data-open-tab]").forEach(btn=>btn.onclick=()=>activate(btn.getAttribute("data-live-tab")||btn.getAttribute("data-open-tab")));
-    document.querySelectorAll("[data-see-yourself-link]").forEach(a=>{a.onclick=e=>{e.preventDefault();if(location.hash!=="#childcare")location.hash="#childcare";setTimeout(()=>document.getElementById("see-yourself-show")?.scrollIntoView({behavior:"smooth",block:"start"}),90)}});
+    document.querySelectorAll("[data-see-yourself-link]").forEach(a=>{a.onclick=e=>{e.preventDefault();if(location.hash!=="#show")location.hash="#show";setTimeout(()=>document.getElementById("see-yourself-show")?.scrollIntoView({behavior:"smooth",block:"start"}),90)}});
     const prev=document.querySelector("[data-sys-prev]"),next=document.querySelector("[data-sys-next]"),carousel=document.getElementById("ccSeeYourselfCarousel");
     if(prev&&carousel)prev.onclick=()=>carousel.scrollBy({left:-Math.max(280,carousel.clientWidth*.82),behavior:"smooth"});
     if(next&&carousel)next.onclick=()=>carousel.scrollBy({left:Math.max(280,carousel.clientWidth*.82),behavior:"smooth"});
@@ -2414,10 +2421,11 @@ const seeYourselfShowPatch = `
   };
 
   const run=()=>{
-    const page=document.getElementById("page-childcare")||document.querySelector('[data-page="childcare"]');if(!page)return;
+    document.querySelector("#page-childcare #see-yourself-show,[data-page='childcare'] #see-yourself-show")?.remove();
+    const page=document.getElementById("page-show")||document.querySelector('[data-page="show"]');if(!page)return;
     page.querySelector("#see-yourself-show")?.remove();
-    const pathway=page.querySelector(".cc-fw-body");
-    if(pathway)pathway.insertAdjacentHTML("afterend",markup);else page.insertAdjacentHTML("afterbegin",markup);
+    const hero=page.querySelector(".page-hero,.hero");
+    if(hero)hero.insertAdjacentHTML("afterend",markup);else page.insertAdjacentHTML("afterbegin",markup);
     makeNav();makeHomeButton();renderFeed();renderHandles();renderParties();renderVideos();wire();
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
