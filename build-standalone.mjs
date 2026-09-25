@@ -2448,7 +2448,6 @@ const printfulApparelFirstPatch = `
   };
 
   const run=()=>{
-    place(document.getElementById("page-home")||document.querySelector('[data-page="home"]'),"home");
     place(document.getElementById("page-store")||document.getElementById("page-commerce")||document.querySelector('[data-page="store"],[data-page="commerce"]'),"store");
     document.querySelectorAll('a[href*="trending-pet-picks"]').forEach(a=>{
       if(a.id==="cc-shopify-traffic" || /shop|pet/i.test(a.textContent||"")){
@@ -2586,7 +2585,7 @@ const cruiseMoneyEnginePatch = `
 })();
 <\/script>`;
 
-for (const block of [trafficFunnel, projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch]) {
+for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
