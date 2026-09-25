@@ -2033,7 +2033,7 @@ const editorialCardSystemPatch = `
 
 
 
-const seeYourselfShowPatch = \`
+const seeYourselfShowPatch = `
 <style id="cc-see-yourself-show-style">
   #see-yourself-show{position:relative;overflow:hidden;padding:clamp(42px,6vw,76px) 0;background:
     radial-gradient(circle at 9% 10%,rgba(255,194,67,.28),transparent 30%),
@@ -2422,7 +2422,7 @@ const seeYourselfShowPatch = \`
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
 })();
-<\/script>\`;
+<\/script>`;
 
 
 const printfulApparelFirstPatch = `
