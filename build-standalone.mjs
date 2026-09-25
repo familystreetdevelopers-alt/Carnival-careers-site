@@ -1886,26 +1886,23 @@ const assetRentRollResetPatch = `
   <section id="cc-asset-rent-roll-reset" class="section">
     <div class="wrap">
       <div class="cc-arr-shell">
-        <div class="cc-arr-kicker">The Carnival Careers money engine</div>
-        <h2>Buy an asset that already earns. Let it carry its debt. Build the show and businesses around it.</h2>
-        <p class="cc-arr-lede"><strong>Carnival Careers is not a concert looking for somebody to pay the bill.</strong> It is an asset-backed media, work, ownership and commerce platform. We start with real property that has value and income, finance it from the asset and rent roll, put families and work inside the story, then let the event, media, travel, commerce and music businesses earn on their own.</p>
-        <div class="cc-arr-rule"><strong>The no-brainer version:</strong> the property pays for the property. The businesses pay for the businesses. The episode connects everything, creates audience and documents the transformation. When the episode is over, we still own or control real assets, operating relationships, content and customers. Then we repeat the same architecture in the next Carnival city.</div>
+        <div class="cc-arr-kicker">How Carnival Careers works</div>
+        <h2>Buy the asset. Let the rent carry it. Build the businesses around it.</h2>
+        <p class="cc-arr-lede">Toronto starts with <strong>2422 Queen Street East</strong>: a real building with a real rent roll. The property is financed from its own value and income.</p>
+        <div class="cc-arr-rule"><strong>Simple:</strong> the property pays for the property. The show builds the audience. The businesses make money from that audience. We keep the asset and repeat the model in the next city.</div>
         <div class="cc-arr-grid">
-          <div class="cc-arr-box"><strong>2422 Queen is the Toronto anchor</strong><p>24 apartments. Current public ask C$5.76M. Published projected Year-1 NOI C$251,557. The rent roll is in hand; lender underwriting still controls the actual debt amount.</p></div>
-          <div class="cc-arr-box"><strong>Finance the asset from the asset</strong><p>The lender looks at value, rent roll, expenses, NOI and coverage. We ask for the maximum lawful supportable mortgage. If a real cash gap remains, seller VTB or another approved capital source fills it.</p></div>
-          <div class="cc-arr-box"><strong>Keep the assets</strong><p>2422 Queen becomes the housing/collateral anchor. 12 York #5101 and 138 Downes #3215 remain separate platform assets. We are building a balance sheet, not spending everything on one episode.</p></div>
-          <div class="cc-arr-box"><strong>Families move through work into ownership</strong><p>The housing story is tied to real work, documented income and a lawful ownership path. Six-family co-ownership can be structured where counsel, the lender and any required approvals permit it.</p></div>
-          <div class="cc-arr-box"><strong>The audience creates more businesses</strong><p>The arena, TV/media, Shopify commerce, travel/Plane Pool, music, vehicles and partner activations each have their own revenue and cost structure. They are separate earning engines connected by one audience.</p></div>
-          <div class="cc-arr-box"><strong>Then do it again in 65 cities</strong><p>Toronto uses its own stack. Outside Toronto, the city either builds CaveMansion or buys a profitable property stack near the Carnival route. Each city is meant to leave behind an asset, not just an event expense.</p></div>
+          <div class="cc-arr-box"><strong>Asset</strong><p>2422 Queen is the housing and collateral anchor. 12 York #5101 and 138 Downes #3215 stay as separate platform assets.</p></div>
+          <div class="cc-arr-box"><strong>Audience</strong><p>Families, work, ownership and Carnival become the episode and grow attention around the project.</p></div>
+          <div class="cc-arr-box"><strong>Businesses</strong><p>Events, media, Shopify, travel, music, vehicles and partners each earn separately.</p></div>
         </div>
         <div class="cc-arr-steps">
-          <div class="cc-arr-step"><b>1. Control the asset</b><span>Buy or build property with real value, real income or a clear income plan.</span></div>
-          <div class="cc-arr-step"><b>2. Let it carry itself</b><span>Size property debt from verified value, rent roll, NOI and lender rules.</span></div>
-          <div class="cc-arr-step"><b>3. Turn the story into audience</b><span>Families, work, ownership, Carnival culture and the transformation become the episode.</span></div>
-          <div class="cc-arr-step"><b>4. Monetize each lane</b><span>Event, media, commerce, travel, music and partners earn separately and pay their own costs.</span></div>
-          <div class="cc-arr-step"><b>5. Keep it and repeat</b><span>The city finishes with an asset, an audience, operating relationships and reusable media — then the model moves to the next city.</span></div>
+          <div class="cc-arr-step"><b>1. Buy</b><span>Control an income-producing asset.</span></div>
+          <div class="cc-arr-step"><b>2. Finance</b><span>Use value, rent roll and NOI.</span></div>
+          <div class="cc-arr-step"><b>3. Film</b><span>Turn the real transformation into the show.</span></div>
+          <div class="cc-arr-step"><b>4. Earn</b><span>Let each business make its own money.</span></div>
+          <div class="cc-arr-step"><b>5. Repeat</b><span>Keep the asset and move to the next city.</span></div>
         </div>
-        <p class="cc-arr-fine"><strong>What this does not mean:</strong> financing is never automatic and there is no guaranteed profit. 2422 Queen's closing still depends on verified rent roll/expenses, appraisal, lender DCR/LTV rules, borrower strength, due diligence, seller terms and any VTB or other gap capital. The model works by matching each asset or business to the financing and revenue that legitimately belongs to it — not by treating one mortgage as free money.</p>
+        <p class="cc-arr-fine">Actual financing still depends on lender underwriting, appraisal, verified income and final deal terms.</p>
       </div>
     </div>
   </section>\`;
