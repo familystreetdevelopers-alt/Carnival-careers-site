@@ -1886,25 +1886,26 @@ const assetRentRollResetPatch = `
   <section id="cc-asset-rent-roll-reset" class="section">
     <div class="wrap">
       <div class="cc-arr-shell">
-        <div class="cc-arr-kicker">How the property side works</div>
-        <h2>One building. One rent roll. One loan.</h2>
-        <p class="cc-arr-lede"><strong>2422 Queen Street East</strong> is the Toronto housing and collateral anchor. The lender looks at the building, its value, its rent roll and its net operating income. The property is expected to carry its own property debt.</p>
-        <div class="cc-arr-rule">Our target is simple: no sponsor cash out of pocket. We maximize lawful asset-based financing first. If the senior mortgage leaves a gap, that gap must be filled by seller financing or another approved capital source — not by pretending a first mortgage is 100% financing.</div>
+        <div class="cc-arr-kicker">The Carnival Careers money engine</div>
+        <h2>Buy an asset that already earns. Let it carry its debt. Build the show and businesses around it.</h2>
+        <p class="cc-arr-lede"><strong>Carnival Careers is not a concert looking for somebody to pay the bill.</strong> It is an asset-backed media, work, ownership and commerce platform. We start with real property that has value and income, finance it from the asset and rent roll, put families and work inside the story, then let the event, media, travel, commerce and music businesses earn on their own.</p>
+        <div class="cc-arr-rule"><strong>The no-brainer version:</strong> the property pays for the property. The businesses pay for the businesses. The episode connects everything, creates audience and documents the transformation. When the episode is over, we still own or control real assets, operating relationships, content and customers. Then we repeat the same architecture in the next Carnival city.</div>
         <div class="cc-arr-grid">
-          <div class="cc-arr-box"><strong>24 apartments</strong><p>2 bachelor, 6 junior one-bedroom and 16 one-bedroom suites at 2422 Queen Street East.</p></div>
-          <div class="cc-arr-box"><strong>C$5.76M</strong><p>Current public asking price. Final seller guidance, appraisal and lender value still control the closing.</p></div>
-          <div class="cc-arr-box"><strong>C$251,557</strong><p>Published projected Year-1 NOI. The lender still verifies the rent roll, expenses and actual underwriting NOI.</p></div>
-          <div class="cc-arr-box"><strong>Two condos stay</strong><p>12 York #5101 and 138 Downes #3215 remain separate platform assets.</p></div>
-          <div class="cc-arr-box"><strong>Six-family ownership path</strong><p>Six families can receive defined co-ownership interests, subject to counsel, lender consent and any required City approvals.</p></div>
-          <div class="cc-arr-box"><strong>Everything else stays separate</strong><p>Arena, media, grocery, cruise, payroll and vehicles use their own approved operating capital and revenue. Property mortgage proceeds are not mixed into unapproved uses.</p></div>
+          <div class="cc-arr-box"><strong>2422 Queen is the Toronto anchor</strong><p>24 apartments. Current public ask C$5.76M. Published projected Year-1 NOI C$251,557. The rent roll is in hand; lender underwriting still controls the actual debt amount.</p></div>
+          <div class="cc-arr-box"><strong>Finance the asset from the asset</strong><p>The lender looks at value, rent roll, expenses, NOI and coverage. We ask for the maximum lawful supportable mortgage. If a real cash gap remains, seller VTB or another approved capital source fills it.</p></div>
+          <div class="cc-arr-box"><strong>Keep the assets</strong><p>2422 Queen becomes the housing/collateral anchor. 12 York #5101 and 138 Downes #3215 remain separate platform assets. We are building a balance sheet, not spending everything on one episode.</p></div>
+          <div class="cc-arr-box"><strong>Families move through work into ownership</strong><p>The housing story is tied to real work, documented income and a lawful ownership path. Six-family co-ownership can be structured where counsel, the lender and any required approvals permit it.</p></div>
+          <div class="cc-arr-box"><strong>The audience creates more businesses</strong><p>The arena, TV/media, Shopify commerce, travel/Plane Pool, music, vehicles and partner activations each have their own revenue and cost structure. They are separate earning engines connected by one audience.</p></div>
+          <div class="cc-arr-box"><strong>Then do it again in 65 cities</strong><p>Toronto uses its own stack. Outside Toronto, the city either builds CaveMansion or buys a profitable property stack near the Carnival route. Each city is meant to leave behind an asset, not just an event expense.</p></div>
         </div>
         <div class="cc-arr-steps">
-          <div class="cc-arr-step"><b>1. Verify</b><span>Rent roll, T12/T24, leases, expenses, title and building condition.</span></div>
-          <div class="cc-arr-step"><b>2. Size</b><span>Lender sizes proceeds from value, NOI, DCR/LTV and its credit rules.</span></div>
-          <div class="cc-arr-step"><b>3. Fill any gap</b><span>Seller VTB or other lender-approved third-party capital if required.</span></div>
-          <div class="cc-arr-step"><b>4. Close and operate</b><span>Rents service property debt; the wider Carnival Careers businesses operate separately.</span></div>
+          <div class="cc-arr-step"><b>1. Control the asset</b><span>Buy or build property with real value, real income or a clear income plan.</span></div>
+          <div class="cc-arr-step"><b>2. Let it carry itself</b><span>Size property debt from verified value, rent roll, NOI and lender rules.</span></div>
+          <div class="cc-arr-step"><b>3. Turn the story into audience</b><span>Families, work, ownership, Carnival culture and the transformation become the episode.</span></div>
+          <div class="cc-arr-step"><b>4. Monetize each lane</b><span>Event, media, commerce, travel, music and partners earn separately and pay their own costs.</span></div>
+          <div class="cc-arr-step"><b>5. Keep it and repeat</b><span>The city finishes with an asset, an audience, operating relationships and reusable media — then the model moves to the next city.</span></div>
         </div>
-        <p class="cc-arr-fine"><strong>Illustration only:</strong> at C$5.76M, 85% LTV is C$4.896M of senior debt with a C$864K gap. A qualifying 95% MLI Select case would be C$5.472M with a C$288K gap. These are not approvals. Actual proceeds depend on appraisal, verified NOI/rent roll, DCR, MLI Select eligibility, borrower strength and lender terms.</p>
+        <p class="cc-arr-fine"><strong>What this does not mean:</strong> financing is never automatic and there is no guaranteed profit. 2422 Queen's closing still depends on verified rent roll/expenses, appraisal, lender DCR/LTV rules, borrower strength, due diligence, seller terms and any VTB or other gap capital. The model works by matching each asset or business to the financing and revenue that legitimately belongs to it — not by treating one mortgage as free money.</p>
       </div>
     </div>
   </section>\`;
