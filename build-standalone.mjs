@@ -1363,7 +1363,7 @@ const sidelineSittersUnifiedPatch = `
       '<section class="cc-ss-section" id="childcare-request">'+
         '<div class="cc-ss-wrap">'+
           '<h2>Request care — and keep the status in the same place.</h2>'+
-          '<p class="cc-ss-lead">One family form starts the request. Your reference number stays with it, so you can come back here to check the latest status from the same browser instead of hunting for a separate status page.</p>'+
+          '<p class="cc-ss-lead">One family form starts the request. Your shared reference stays with it, so you can check the latest status here from any connected device.</p>'+
           '<div class="cc-ss-grid">'+
             '<div class="cc-ss-card">'+
               '<h3>Start a childcare request</h3>'+
