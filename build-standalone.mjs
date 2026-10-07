@@ -2832,6 +2832,48 @@ for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliation
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
 
+
+// Static truth-control scrub: remove retired public numbers/names from the built HTML itself.
+// This runs after all legacy patches have been inserted so crawlers, previews and no-JS readers
+// receive the same evidence-controlled story as the interactive site.
+const greenStaticTruthReplacements = [
+  ["MONEY ROUTES","BUSINESS SOLUTION"],
+  ["THE SERVICE PROMISE","SERVICE CONTROL"],
+  ["FIND YOUR WAY IN",""],
+  ["C$5.509M","EVIDENCE-GATED"],
+  ["Property is not asked to fund the concert.","Every capital lane is evidence-controlled."],
+  ["Vic Towns","current Toronto property stack"],
+  ["C$14.110M","TBD / CURRENT EVIDENCE"],
+  ["C$14,109,900","TBD / CURRENT EVIDENCE"],
+  ["C$29.844M","TBD / CURRENT EVIDENCE"],
+  ["C$29,844,171.94","TBD / CURRENT EVIDENCE"],
+  ["C$30.128M","TBD / CURRENT EVIDENCE"],
+  ["C$30,127,996","TBD / CURRENT EVIDENCE"],
+  ["C$284K","TBD / CURRENT EVIDENCE"],
+  ["C$283,824.06","TBD / CURRENT EVIDENCE"],
+  ["C$1.650M","TBD / CURRENT QUOTE"],
+  ["C$111,056","TBD / CURRENT QUOTE"],
+  ["C$111.056K","TBD / CURRENT QUOTE"],
+  ["C$692,512.50","TBD / CURRENT EVIDENCE"],
+  ["C$2.331141M","TBD / CURRENT PROVIDER QUOTE"],
+  ["C$2.331M","TBD / CURRENT PROVIDER QUOTE"],
+  ["C$2.625M","TBD / CURRENT EVIDENCE"],
+  ["C$293,859","TBD / CURRENT EVIDENCE"]
+];
+for (const [from,to] of greenStaticTruthReplacements) renderedHtml = renderedHtml.replaceAll(from,to);
+
+renderedHtml = renderedHtml
+  .replaceAll("19 current Toronto property stack","current Toronto property stack")
+  .replaceAll("19 selected current Toronto property stack","current Toronto property stack")
+  .replaceAll("19-unit current Toronto property stack","current Toronto property stack")
+  .replaceAll("The current current Toronto property stack conversation","The current Toronto property conversation")
+  .replaceAll("current current Toronto property stack","current Toronto property stack")
+  .replace(
+    "Operating-company seed being assessed</small><strong>C$3M</strong>",
+    "Operating-company capital stage</small><strong>EVIDENCE-GATED</strong>"
+  )
+  .replaceAll("<strong>C$3M seed structure</strong>","<strong>Operating-company capital structure</strong>");
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
