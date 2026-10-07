@@ -2009,4 +2009,77 @@ function render(){const season=Number(seasonFilter.value||1),q=(search&&search.v
 seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addEventListener('change',render);if(search)search.addEventListener('input',render);render();
 })();
 </script>
-</body></html>
+
+<script id="cc-durable-intake-v1">
+(()=>{
+  const API="https://carnival-careers-os.floot.app/_api/public";
+  const excluded=new Set(["sidelineStatusForm","carStatusForm","eventStatusForm","carPrescreenForm"]);
+  const kindFor=form=>{
+    if(form.dataset.kind)return form.dataset.kind;
+    if(form.dataset.carForm)return "car-"+form.dataset.carForm;
+    if(form.dataset.eventForm)return "event-"+form.dataset.eventForm;
+    if(form.id==="musicBookingOperational")return "music-booking";
+    if(form.id==="cruise-smart-form"){
+      const role=String(new FormData(form).get("role")||"attend").toLowerCase();
+      return "cruise-"+(["attend","produce","fund"].includes(role)?role:"attend");
+    }
+    return "";
+  };
+  const payloadFor=form=>{
+    const out={};
+    for(const [key,value] of new FormData(form).entries()){
+      const next=value instanceof File?value.name:String(value);
+      out[key]=key in out?[].concat(out[key],next).join(" | "):next;
+    }
+    return out;
+  };
+  const resultBox=form=>form.querySelector(".result")||
+    (form.id==="musicBookingOperational"?document.getElementById("musicBookingResult"):null)||
+    document.getElementById("statusBar");
+  const saveCredential=row=>{
+    try{
+      const key="cc_intake_credentials_v1",rows=JSON.parse(localStorage.getItem(key)||"[]");
+      const filtered=rows.filter(x=>x.reference!==row.reference);
+      filtered.unshift({reference:row.reference,lookupToken:row.lookupToken,kind:row.kind,status:row.status,createdAt:row.createdAt});
+      localStorage.setItem(key,JSON.stringify(filtered.slice(0,100)));
+    }catch(_){}
+  };
+  document.addEventListener("submit",event=>{
+    const form=event.target;
+    if(!(form instanceof HTMLFormElement)||excluded.has(form.id))return;
+    const kind=kindFor(form);if(!kind)return;
+    const payload=payloadFor(form);
+    setTimeout(async()=>{
+      const out=resultBox(form);
+      try{
+        const res=await fetch(API+"/intake",{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({kind,payload,sourceUrl:location.href})});
+        const row=await res.json();
+        if(!res.ok)throw new Error(row.error||"Save failed");
+        row.kind=kind;saveCredential(row);
+        if(out)out.innerHTML='<strong>'+row.reference+'</strong> Saved to the shared Carnival Careers operating system. Status: '+row.status+'.';
+      }catch(error){
+        if(out)out.innerHTML='<strong>Not saved.</strong> The shared intake service is unavailable. Please keep your details and try again.';
+      }
+    },0);
+  },true);
+  for(const [formId,inputId,resultId] of [
+    ["sidelineStatusForm","sidelineStatusId","sidelineStatusResult"],
+    ["carStatusForm","carStatusId","carStatusResult"],
+    ["eventStatusForm","eventStatusId","eventStatusResult"]
+  ]){
+    document.getElementById(formId)?.addEventListener("submit",event=>{
+      event.preventDefault();
+      const reference=String(document.getElementById(inputId)?.value||"").trim().toUpperCase();
+      const out=document.getElementById(resultId);if(!reference||!out)return;
+      setTimeout(async()=>{
+        try{
+          const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
+          const row=await res.json();
+          if(!res.ok)throw new Error(row.error||"Lookup failed");
+          out.innerHTML='<strong>'+row.reference+'</strong>'+row.status+'<br><span style="color:#66758a">'+row.kind+' · submitted '+new Date(row.createdAt).toLocaleString()+'</span>';
+        }catch(_){out.innerHTML='<strong>Reference not found.</strong> Check the reference and try again.'}
+      },0);
+    },true);
+  }
+})();
+</script></body></html>
