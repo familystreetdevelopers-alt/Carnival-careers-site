@@ -2693,17 +2693,17 @@ const planePoolMainSitePatch = `
         '<div class="cc-plane-pool-intro">'+
           '<div class="cc-plane-pool-kicker">TRAVEL / PLANE POOL</div>'+
           '<h1 id="cc-plane-pool-title">Turn scattered travel demand into a <em>usable route.</em></h1>'+
-          '<p>Plane Pool is not a request form that sends people in circles. It stores one travel brief, matches consented travellers on compatible routes and date windows, shows the request state, and hands a qualified group to a charter provider only when there is something useful to act on.</p>'+
+          '<p>Build the trip once. Then either search regular flights now or place the route into Plane Pool so compatible demand can be matched and tracked.</p>'+
           '<div class="cc-plane-pool-what">'+
             '<div><b>Enter once</b><span>Route, date window, flexibility, party size and contact context.</span></div>'+
             '<div><b>Choose the job</b><span>Search commercial flights now or make the route matchable in Plane Pool.</span></div>'+
             '<div><b>See real status</b><span>Joined → potential match → qualified pool → provider referral → quote → booking.</span></div>'+
             '<div><b>Share the route</b><span>Send a route/date link to compatible travellers without exposing your private contact details.</span></div>'+
           '</div>'+
-          '<div class="cc-plane-pool-livebar"><div><strong>The full Plane Pool workspace is live directly below.</strong><br><span>Matching, reference lookup and provider handoff are functional—not mockups.</span></div><a class="cc-plane-pool-open" href="'+APP+'" target="_blank" rel="noopener noreferrer">Open Plane Pool full-screen ↗</a></div>'+
+          '<div class="cc-plane-pool-livebar"><div><strong>The full Plane Pool workspace is live directly below.</strong><br><span>Use it here without leaving the Carnival Careers site.</span></div><a class="cc-plane-pool-open" href="'+APP+'" target="_blank" rel="noopener noreferrer">Open Plane Pool full-screen ↗</a></div>'+
         '</div>'+
         '<div class="cc-plane-pool-frame-shell"><iframe class="cc-plane-pool-frame" src="'+APP+'" title="Carnival Careers Plane Pool live workspace" loading="eager" allow="clipboard-write"></iframe></div>'+
-        '<p class="cc-plane-pool-disclosure"><strong>Operating line:</strong> Plane Pool organizes and matches consented travel demand. Family Street does not operate aircraft, sell charter seats, issue tickets, quote aircraft, collect charter payment or guarantee a flight. Villiers or another qualified provider handles aircraft sourcing, quote, contract, payment, carriage and confirmation.</p>'+
+        '<p class="cc-plane-pool-disclosure"><strong>Who does what:</strong> Plane Pool organizes the travellers and trip demand. If a charter becomes viable, the charter provider handles the aircraft, quote, contract, payment and flight.</p>'+
       '</section>';
   };
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
