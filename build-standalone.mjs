@@ -2657,7 +2657,61 @@ const cruiseMoneyEnginePatch = `
 })();
 <\/script>`;
 
-for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch]) {
+
+
+const planePoolMainSitePatch = \`
+<style id="cc-plane-pool-main-site-style">
+  #page-plane .cc-plane-pool-live{background:#07111f;color:#fff;padding:0 0 54px}
+  #page-plane .cc-plane-pool-intro{width:min(1180px,calc(100% - 32px));margin:auto;padding:58px 0 28px}
+  #page-plane .cc-plane-pool-kicker{display:inline-flex;align-items:center;gap:8px;color:#35dec9;font-size:.72rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+  #page-plane .cc-plane-pool-kicker:before{content:"";width:22px;height:1px;background:#35dec9}
+  #page-plane .cc-plane-pool-intro h1{max-width:920px;margin:12px 0 14px;font-size:clamp(2.7rem,6vw,5.8rem);line-height:.92;letter-spacing:-.055em;color:#fff}
+  #page-plane .cc-plane-pool-intro h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:500;color:#ffc547}
+  #page-plane .cc-plane-pool-intro>p{max-width:820px;margin:0;color:#c0ccda;font-size:clamp(1rem,1.7vw,1.22rem);line-height:1.62}
+  #page-plane .cc-plane-pool-what{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:26px 0}
+  #page-plane .cc-plane-pool-what div{padding:16px;border:1px solid rgba(255,255,255,.13);border-radius:16px;background:rgba(255,255,255,.055)}
+  #page-plane .cc-plane-pool-what b{display:block;margin-bottom:5px;color:#ffc547}
+  #page-plane .cc-plane-pool-what span{display:block;color:#aebccd;font-size:.8rem;line-height:1.45}
+  #page-plane .cc-plane-pool-livebar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 15px;border-radius:15px;background:#fff;color:#101827}
+  #page-plane .cc-plane-pool-livebar strong{font-size:.92rem}
+  #page-plane .cc-plane-pool-livebar span{font-size:.8rem;color:#5c6775}
+  #page-plane .cc-plane-pool-open{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:999px;background:#111d2f;color:#fff!important;text-decoration:none;font-weight:900;font-size:.78rem;white-space:nowrap}
+  #page-plane .cc-plane-pool-frame-shell{width:min(1240px,calc(100% - 20px));margin:auto;border:1px solid rgba(255,255,255,.14);border-radius:26px;overflow:hidden;background:#081220;box-shadow:0 28px 80px rgba(0,0,0,.36)}
+  #page-plane .cc-plane-pool-frame{display:block;width:100%;height:2100px;border:0;background:#081220}
+  #page-plane .cc-plane-pool-disclosure{width:min(1180px,calc(100% - 32px));margin:18px auto 0;padding:15px 17px;border-left:3px solid #35dec9;background:rgba(255,255,255,.055);color:#aebccd;font-size:.82rem;line-height:1.55}
+  @media(max-width:900px){#page-plane .cc-plane-pool-what{grid-template-columns:1fr 1fr}.cc-plane-pool-livebar{align-items:flex-start!important;flex-direction:column}.cc-plane-pool-open{width:100%}}
+  @media(max-width:580px){#page-plane .cc-plane-pool-intro{padding-top:38px}.cc-plane-pool-what{grid-template-columns:1fr!important}#page-plane .cc-plane-pool-frame{height:2450px}}
+</style>
+<script id="cc-plane-pool-main-site-script">
+(() => {
+  const APP="https://carnival-careers-plane-pool.floot.app/";
+  const run=()=>{
+    const page=document.getElementById("page-plane")||document.querySelector('[data-page="plane"],[data-page="travel-plane"]');
+    if(!page)return;
+    page.innerHTML=
+      '<section class="cc-plane-pool-live" aria-labelledby="cc-plane-pool-title">'+
+        '<div class="cc-plane-pool-intro">'+
+          '<div class="cc-plane-pool-kicker">TRAVEL / PLANE POOL</div>'+
+          '<h1 id="cc-plane-pool-title">Turn scattered travel demand into a <em>usable route.</em></h1>'+
+          '<p>Plane Pool is not a request form that sends people in circles. It stores one travel brief, matches consented travellers on compatible routes and date windows, shows the request state, and hands a qualified group to a charter provider only when there is something useful to act on.</p>'+
+          '<div class="cc-plane-pool-what">'+
+            '<div><b>Enter once</b><span>Route, date window, flexibility, party size and contact context.</span></div>'+
+            '<div><b>Choose the job</b><span>Search commercial flights now or make the route matchable in Plane Pool.</span></div>'+
+            '<div><b>See real status</b><span>Joined → potential match → qualified pool → provider referral → quote → booking.</span></div>'+
+            '<div><b>Share the route</b><span>Send a route/date link to compatible travellers without exposing your private contact details.</span></div>'+
+          '</div>'+
+          '<div class="cc-plane-pool-livebar"><div><strong>The full Plane Pool workspace is live directly below.</strong><br><span>Matching, reference lookup and provider handoff are functional—not mockups.</span></div><a class="cc-plane-pool-open" href="'+APP+'" target="_blank" rel="noopener noreferrer">Open Plane Pool full-screen ↗</a></div>'+
+        '</div>'+
+        '<div class="cc-plane-pool-frame-shell"><iframe class="cc-plane-pool-frame" src="'+APP+'" title="Carnival Careers Plane Pool live workspace" loading="eager" allow="clipboard-write"></iframe></div>'+
+        '<p class="cc-plane-pool-disclosure"><strong>Operating line:</strong> Plane Pool organizes and matches consented travel demand. Family Street does not operate aircraft, sell charter seats, issue tickets, quote aircraft, collect charter payment or guarantee a flight. Villiers or another qualified provider handles aircraft sourcing, quote, contract, payment, carriage and confirmation.</p>'+
+      '</section>';
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
+  window.addEventListener("hashchange",()=>setTimeout(run,0));
+})();
+<\/script>\`;
+
+for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
