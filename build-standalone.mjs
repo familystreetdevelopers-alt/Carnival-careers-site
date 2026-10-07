@@ -2659,7 +2659,7 @@ const cruiseMoneyEnginePatch = `
 
 
 
-const planePoolMainSitePatch = \`
+const planePoolMainSitePatch = `
 <style id="cc-plane-pool-main-site-style">
   #page-plane .cc-plane-pool-live{background:#07111f;color:#fff;padding:0 0 54px}
   #page-plane .cc-plane-pool-intro{width:min(1180px,calc(100% - 32px));margin:auto;padding:58px 0 28px}
@@ -2709,7 +2709,7 @@ const planePoolMainSitePatch = \`
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
   window.addEventListener("hashchange",()=>setTimeout(run,0));
 })();
-<\/script>\`;
+<\/script>`;
 
 for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
