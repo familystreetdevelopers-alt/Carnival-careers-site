@@ -2827,7 +2827,103 @@ const planePoolMainSitePatch = `
 })();
 <\/script>`;
 
-for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch]) {
+
+const truthfulIntakePatch = `
+<script id="cc-truthful-intake-completion">
+(() => {
+  const EMAIL = "ourcarnivalcareers@gmail.com";
+  const formIds = new Set([
+    "arenaArtistForm","cultureMediaForm","ccEventMatch","ccPromoterForm","ccCultureForm",
+    "ccCityInviteForm","ccSidelineFamilyForm","ccSidelineProviderForm",
+    "ccLiveChatForm","ccHandleForm","ccPartyForm","ccSeeYourselfForm"
+  ]);
+  const prefixes = {
+    arenaArtistForm:"ARENA",cultureMediaForm:"MEDIA",ccEventMatch:"EVENT",
+    ccPromoterForm:"PROMOTER",ccCultureForm:"CULTURE",ccCityInviteForm:"CITY",
+    ccSidelineFamilyForm:"SS",ccSidelineProviderForm:"SSP",
+    ccLiveChatForm:"LIVE",ccHandleForm:"HANDLE",ccPartyForm:"PARTY",ccSeeYourselfForm:"SHOW"
+  };
+  const esc = v => String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\":"&quot;","'":"&#39;"}[m]));
+  const ref = p => (p||"CC")+"-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
+  const resultBox = form => {
+    let out = form.querySelector(".cc-intake-result,[aria-live='polite']");
+    if(!out){
+      out=document.createElement("div");
+      out.className="cc-intake-result";
+      out.setAttribute("aria-live","polite");
+      form.appendChild(out);
+    }
+    return out;
+  };
+  const setButtons = () => {
+    formIds.forEach(id=>{
+      const form=document.getElementById(id);
+      if(!form) return;
+      const btn=form.querySelector('button[type="submit"],input[type="submit"]');
+      if(!btn) return;
+      if(btn.tagName==="INPUT") btn.value="Prepare & send";
+      else btn.textContent="Prepare & send";
+      btn.setAttribute("data-cc-durable-intake","email");
+    });
+  };
+
+  document.addEventListener("submit", e => {
+    const form=e.target;
+    if(!(form instanceof HTMLFormElement) || !formIds.has(form.id)) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if(!form.reportValidity()) return;
+
+    const data=Object.fromEntries(new FormData(form).entries());
+    const id=ref(prefixes[form.id]);
+    const packet={
+      id,
+      sourceForm:form.id,
+      createdAt:new Date().toISOString(),
+      ...data
+    };
+    try{
+      const key="cc_pending_intake_v1";
+      const rows=JSON.parse(localStorage.getItem(key)||"[]");
+      rows.unshift(packet);
+      localStorage.setItem(key,JSON.stringify(rows.slice(0,100)));
+    }catch(_){}
+
+    const subject="Carnival Careers intake — "+id;
+    const body=[
+      "Carnival Careers intake reference: "+id,
+      "",
+      JSON.stringify(packet,null,2),
+      "",
+      "This email completes the intake. The browser copy is only a local backup."
+    ].join("\n");
+    const mailto="mailto:"+EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+    const out=resultBox(form);
+    out.innerHTML="<strong>Prepared: "+esc(id)+"</strong><br>Send the email that opens to complete the intake. Until that email is sent, Carnival Careers has not received this form.";
+    window.location.href=mailto;
+  }, true);
+
+  const run=()=>{
+    setButtons();
+    const falseClaims=[
+      ["#ccSidelineFamilyResult","Request received:"],
+      ["#ccSidelineProviderResult","Submitted:"],
+      ["#arenaArtistResult","Artist file prepared:"],
+      ["#cultureMediaResult","Media link prepared:"]
+    ];
+    falseClaims.forEach(([selector])=>{
+      const el=document.querySelector(selector);
+      if(el && /received|submitted|saved to this browser|saved to the carnival careers intake/i.test(el.textContent||"")){
+        el.textContent="";
+      }
+    });
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+<\/script>`;
+
+for (const block of [projectCopy, vendorSponsorJourneyPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch, truthfulIntakePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
