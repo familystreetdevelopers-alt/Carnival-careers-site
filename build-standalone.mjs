@@ -1677,7 +1677,7 @@ const housesNavPatch = `
 </script>`;
 
 
-const greenTruthControlPatch = \`
+const greenTruthControlPatch = `
 <style id="cc-green-truth-control-style">
   .cc-green-control{margin:22px 0;padding:clamp(22px,4vw,42px);border-radius:24px;background:linear-gradient(135deg,#151019,#23142d);color:#fff}
   .cc-green-control h1,.cc-green-control h2,.cc-green-control h3{color:#fff}
@@ -1790,7 +1790,7 @@ const greenTruthControlPatch = \`
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true});
   else run();
 })();
-</script>\`;
+</script>`;
 
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 renderedHtml = renderedHtml.replaceAll(" — never the beginning — because by the time the city gathers, the story has already created something real.", ".");
