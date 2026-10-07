@@ -2045,7 +2045,8 @@ seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addE
       localStorage.setItem(key,JSON.stringify(filtered.slice(0,100)));
     }catch(_){}
   };
-  const handleIntake=event=>{\n    const form=event.target;
+  const handleIntake=event=>{
+    const form=event.target;
     if(!(form instanceof HTMLFormElement)||excluded.has(form.id))return;
     const kind=kindFor(form);if(!kind)return;
     const payload=payloadFor(form);
@@ -2061,7 +2062,11 @@ seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addE
         if(out)out.innerHTML='<strong>Not saved.</strong> The shared intake service is unavailable. Please keep your details and try again.';
       }
     },0);
-  };\n  document.querySelectorAll("form").forEach(form=>{\n    if(kindFor(form)&&!excluded.has(form.id))form.addEventListener("submit",handleIntake,true);\n  });\n  const statusForms={
+  };
+  document.querySelectorAll("form").forEach(form=>{
+    if(kindFor(form)&&!excluded.has(form.id))form.addEventListener("submit",handleIntake,true);
+  });
+  const statusForms={
     sidelineStatusForm:["sidelineStatusId","sidelineStatusResult"],
     carStatusForm:["carStatusId","carStatusResult"],
     eventStatusForm:["eventStatusId","eventStatusResult"]
