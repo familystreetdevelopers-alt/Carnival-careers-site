@@ -1772,7 +1772,7 @@ function renderAdmin(){const subs=get(storage.subs), clicks=get(storage.clicks);
 function sidelineStatusLabel(status){return ({'received':'Received — request saved and ready for routing','routing':'Routing — looking for a provider fit','provider-review':'Provider review — a provider is checking fit/capacity','accepted-pending-enrolment':'Accepted / enrolment — complete the provider handoff','confirmed':'Confirmed — provider has confirmed the booking','completed':'Completed','no-capacity':'No capacity found — no verified option is currently available','cancelled':'Cancelled'})[status]||status||'Unknown'}
 function wireSidelineAdminStatuses(){document.querySelectorAll('.sideline-admin-status').forEach(sel=>sel.onchange=()=>{const rows=get(storage.subs);const row=rows.find(r=>r.id===sel.dataset.id);if(row){row.status=sel.value;row.statusUpdatedAt=new Date().toISOString();set(storage.subs,rows);document.getElementById('statusBar').textContent='Updated '+row.id+' to '+sidelineStatusLabel(row.status)}})}
 const _renderAdmin=renderAdmin;renderAdmin=function(){_renderAdmin();wireSidelineAdminStatuses()};
-document.getElementById('sidelineStatusForm')?.addEventListener('submit',e=>{e.preventDefault();const id=(document.getElementById('sidelineStatusId')?.value||'').trim().toUpperCase();const row=get(storage.subs).find(r=>String(r.id||'').toUpperCase()===id&&r.kind==='sideline-family');const box=document.getElementById('sidelineStatusResult');if(!box)return;if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>This local build only sees requests saved in the same browser. Keep the reference and use the email packet for shared follow-up.';return}box.innerHTML=`<strong>${esc(row.id)}</strong>${esc(sidelineStatusLabel(row.status))}<br><span style="color:#66758a">Submitted ${new Date(row.createdAt).toLocaleString()}${row.statusUpdatedAt?' · updated '+new Date(row.statusUpdatedAt).toLocaleString():''}</span>`});
+document.getElementById('sidelineStatusForm')?.addEventListener('submit',e=>{e.preventDefault();const id=(document.getElementById('sidelineStatusId')?.value||'').trim().toUpperCase();const row=get(storage.subs).find(r=>String(r.id||'').toUpperCase()===id&&r.kind==='sideline-family');const box=document.getElementById('sidelineStatusResult');if(!box)return;if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>The shared status service will check the canonical record while online.';return}box.innerHTML=`<strong>${esc(row.id)}</strong>${esc(sidelineStatusLabel(row.status))}<br><span style="color:#66758a">Submitted ${new Date(row.createdAt).toLocaleString()}${row.statusUpdatedAt?' · updated '+new Date(row.statusUpdatedAt).toLocaleString():''}</span>`});
 
 $('#exportSubmissions')?.addEventListener('click',()=>download('carnival-careers-submissions.csv',csv(get(storage.subs))));$('#exportClicks')?.addEventListener('click',()=>download('carnival-careers-clicks.csv',csv(get(storage.clicks))));$('#clearLocal')?.addEventListener('click',()=>{if(confirm('Clear local submissions and clicks?')){set(storage.subs,[]);set(storage.clicks,[]);renderAdmin()}});
 const video=$('#homeVideo');if(video){
@@ -1927,7 +1927,7 @@ const video=$('#homeVideo');if(video){
 
   $q('#carStatusForm')?.addEventListener('submit',e=>{
     e.preventDefault();const id=($q('#carStatusId')?.value||'').trim().toUpperCase();const row=get(storage.subs).find(r=>String(r.id||'').toUpperCase()===id&&String(r.kind||'').startsWith('car-'));const box=$q('#carStatusResult');if(!box)return;
-    if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>This downloadable build only sees car requests saved in the same browser. Keep the reference and use the email packet for shared follow-up.';return}
+    if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>The shared status service will check the canonical record while online.';return}
     box.innerHTML=`<strong>${esc(row.id)}</strong>${esc(statusLabel(row.kind,row.status))}<br><span style="color:#66758a">${esc(row.kind.replace('car-',''))} · submitted ${new Date(row.createdAt).toLocaleString()}${row.statusUpdatedAt?' · updated '+new Date(row.statusUpdatedAt).toLocaleString():''}</span>`;
   });
 })();
@@ -1968,7 +1968,7 @@ const video=$('#homeVideo');if(video){
   }));
   function decorateEventAdmin(){const rows=get(storage.subs);qa('#subsTable tbody tr').forEach(tr=>{const id=tr.children[0]?.textContent?.trim(),rec=rows.find(r=>r.id===id);if(!rec||!eventStatuses[rec.kind])return;const cell=tr.children[5];if(!cell)return;cell.innerHTML=`<select class="event-admin-status" data-id="${esc(rec.id)}">${eventStatuses[rec.kind].map(([v,l])=>`<option value="${esc(v)}" ${rec.status===v?'selected':''}>${esc(l)}</option>`).join('')}</select>`});qa('.event-admin-status').forEach(sel=>sel.onchange=()=>{const rows=get(storage.subs),row=rows.find(r=>r.id===sel.dataset.id);if(row){row.status=sel.value;row.statusUpdatedAt=new Date().toISOString();set(storage.subs,rows);q('#statusBar').textContent='Updated '+row.id+' to '+eventStatusLabel(row.kind,row.status)}})}
   const eventPriorRender=renderAdmin;renderAdmin=function(){eventPriorRender();decorateEventAdmin()};
-  q('#eventStatusForm')?.addEventListener('submit',e=>{e.preventDefault();const id=(q('#eventStatusId')?.value||'').trim().toUpperCase(),row=get(storage.subs).find(r=>String(r.id||'').toUpperCase()===id&&String(r.kind||'').startsWith('event-')),box=q('#eventStatusResult');if(!box)return;if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>This downloadable build only sees EventMatch records created in the same browser. Keep the email packet/reference for shared follow-up.';return}box.innerHTML=`<strong>${esc(row.id)}</strong>${esc(eventStatusLabel(row.kind,row.status))}<br><span style="color:#66758a">${esc(row.kind.replace('event-',''))} · submitted ${new Date(row.createdAt).toLocaleString()}${row.statusUpdatedAt?' · updated '+new Date(row.statusUpdatedAt).toLocaleString():''}</span>`});
+  q('#eventStatusForm')?.addEventListener('submit',e=>{e.preventDefault();const id=(q('#eventStatusId')?.value||'').trim().toUpperCase(),row=get(storage.subs).find(r=>String(r.id||'').toUpperCase()===id&&String(r.kind||'').startsWith('event-')),box=q('#eventStatusResult');if(!box)return;if(!row){box.innerHTML='<strong>Reference not found in this browser.</strong>The shared status service will check the canonical record while online.';return}box.innerHTML=`<strong>${esc(row.id)}</strong>${esc(eventStatusLabel(row.kind,row.status))}<br><span style="color:#66758a">${esc(row.kind.replace('event-',''))} · submitted ${new Date(row.createdAt).toLocaleString()}${row.statusUpdatedAt?' · updated '+new Date(row.statusUpdatedAt).toLocaleString():''}</span>`});
 
   // Music operation uses the DOM audio elements themselves, so it works in packaged and self-contained builds.
   const musicPage=q('#page-music'),overlay=q('#musicActionOverlay');
@@ -2063,24 +2063,26 @@ seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addE
       }
     },0);
   },true);
-  for(const [formId,inputId,resultId] of [
-    ["sidelineStatusForm","sidelineStatusId","sidelineStatusResult"],
-    ["carStatusForm","carStatusId","carStatusResult"],
-    ["eventStatusForm","eventStatusId","eventStatusResult"]
-  ]){
-    document.getElementById(formId)?.addEventListener("submit",event=>{
-      event.preventDefault();
-      const reference=String(document.getElementById(inputId)?.value||"").trim().toUpperCase();
-      const out=document.getElementById(resultId);if(!reference||!out)return;
-      setTimeout(async()=>{
-        try{
-          const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
-          const row=await res.json();
-          if(!res.ok)throw new Error(row.error||"Lookup failed");
-          out.innerHTML='<strong>'+row.reference+'</strong>'+row.status+'<br><span style="color:#66758a">'+row.kind+' · submitted '+new Date(row.createdAt).toLocaleString()+'</span>';
-        }catch(_){out.innerHTML='<strong>Reference not found.</strong> Check the reference and try again.'}
-      },0);
-    },true);
-  }
+  const statusForms={
+    sidelineStatusForm:["sidelineStatusId","sidelineStatusResult"],
+    carStatusForm:["carStatusId","carStatusResult"],
+    eventStatusForm:["eventStatusId","eventStatusResult"]
+  };
+  document.addEventListener("submit",event=>{
+    const form=event.target;
+    if(!(form instanceof HTMLFormElement)||!statusForms[form.id])return;
+    event.preventDefault();
+    const [inputId,resultId]=statusForms[form.id];
+    const reference=String(document.getElementById(inputId)?.value||"").trim().toUpperCase();
+    const out=document.getElementById(resultId);if(!reference||!out)return;
+    setTimeout(async()=>{
+      try{
+        const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
+        const row=await res.json();
+        if(!res.ok)throw new Error(row.error||"Lookup failed");
+        out.innerHTML='<strong>'+row.reference+'</strong> · '+row.status+'<br><span style="color:#66758a">'+row.kind+' · submitted '+new Date(row.createdAt).toLocaleString()+'</span>';
+      }catch(_){out.innerHTML='<strong>Reference not found.</strong> Check the reference and try again while online.'}
+    },0);
+  },true);
 })();
 </script></body></html>
