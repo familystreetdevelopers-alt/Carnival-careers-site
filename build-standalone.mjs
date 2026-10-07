@@ -961,7 +961,7 @@ const eventsOperationsPatch = `
   const EMAIL="familystreetdevelopers@gmail.com";
   const page=document.getElementById("page-experiences");
   if(!page) return;
-  const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+  const esc=v=>String(v==null?"":v).replace(/[&<>"\']/g,m=>m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m===String.fromCharCode(34)?"&quot;":"&#39;");
   const read=k=>{try{return JSON.parse(localStorage.getItem(k)||"[]")}catch(e){return[]}};
   const write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
   const ref=p=>p+"-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
@@ -2849,7 +2849,7 @@ const truthfulIntakePatch = `
     ccPartyForm:"party-interest",
     ccSeeYourselfForm:"see-yourself-show"
   };
-  const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\":"&quot;","'":"&#39;"}[m]));
+  const esc=v=>String(v==null?"":v).replace(/[&<>"\']/g,m=>m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m===String.fromCharCode(34)?"&quot;":"&#39;");
   const payloadFor=form=>{
     const out={};
     for(const [key,value] of new FormData(form).entries()){
