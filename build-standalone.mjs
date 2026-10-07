@@ -1676,6 +1676,122 @@ const housesNavPatch = `
 })();
 </script>`;
 
+
+const greenTruthControlPatch = \`
+<style id="cc-green-truth-control-style">
+  .cc-green-control{margin:22px 0;padding:clamp(22px,4vw,42px);border-radius:24px;background:linear-gradient(135deg,#151019,#23142d);color:#fff}
+  .cc-green-control h1,.cc-green-control h2,.cc-green-control h3{color:#fff}
+  .cc-green-control p{color:rgba(255,255,255,.82);line-height:1.62}
+  .cc-green-control-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0}
+  .cc-green-control-card{padding:18px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+  .cc-green-control-card b{display:block;margin-bottom:7px;color:#ffd166}
+</style>
+<script id="cc-green-truth-control-script">
+(() => {
+  const run = () => {
+    const safe = fn => { try { fn(); } catch (e) { console.warn("CC_GREEN_CONTROL", e); } };
+    const inner = page => page?.querySelector(".page-inner,.content,.section-inner,.container,.wrap") || page;
+    const whole = href => document.querySelector(href);
+
+    safe(() => {
+      const project = document.getElementById("page-project") || document.querySelector('[data-page="project"]');
+      if (project) project.querySelectorAll("[data-cc-whole]").forEach(el => el.remove());
+    });
+
+    safe(() => {
+      const capital = document.getElementById("page-capital") || document.querySelector('[data-page="capital"]');
+      if (!capital) return;
+      inner(capital).innerHTML =
+        '<section class="cc-green-control">'+
+          '<div class="eyebrow">CAPITAL / EVIDENCE CONTROL</div>'+
+          '<h1>Finance what can be evidenced.</h1>'+
+          '<p>Carnival Careers separates executed facts, counterparty quotes, official or statutory amounts, published market benchmarks and modeled assumptions. Pipeline, inventory and forecasts are never presented as committed cash, revenue or profit.</p>'+
+          '<div class="cc-green-control-grid">'+
+            '<div class="cc-green-control-card"><b>PROPERTY</b>Asset-specific purchase, debt, seller-finance, closing, construction, income and exit evidence.</div>'+
+            '<div class="cc-green-control-card"><b>EVENT + MARKETPLACE</b>Venue, technical production, talent, staffing, insurance, vendor, sponsor and ticket economics advance only with current evidence.</div>'+
+            '<div class="cc-green-control-card"><b>SCREEN + CONTENT</b>Rights, production, delivery and distribution economics stay separate from unsupported negotiating anchors.</div>'+
+            '<div class="cc-green-control-card"><b>TRAVEL + MOBILITY</b>Provider quote, seller-of-record, inventory, booking and settlement evidence control what can be called real.</div>'+
+          '</div>'+
+          '<p><strong>Evidence ladder:</strong> MODELED → QUOTED → CONTRACTED → INVOICED / BOOKED → COLLECTED.</p>'+
+          '<div class="actions"><a class="btn primary" href="/profit-control.html">Open Profit + Control</a><a class="btn" href="/business-solution.html">Open Full Business Solution</a></div>'+
+        '</section>';
+    });
+
+    safe(() => {
+      const boat = document.getElementById("page-boat") || document.querySelector('[data-page="boat"]');
+      if (!boat) return;
+      boat.querySelectorAll("[data-cc-whole]").forEach(el => el.remove());
+    });
+
+    safe(() => {
+      const sections = [...document.querySelectorAll("section")];
+      const replaceSmallest = (needle, html) => {
+        const matches = sections.filter(s => (s.textContent || "").includes(needle));
+        matches.sort((a,b) => (a.textContent || "").length - (b.textContent || "").length);
+        if (matches[0]) matches[0].innerHTML = html;
+      };
+      replaceSmallest(
+        "Working commercial model",
+        '<div class="cc-green-control"><div class="eyebrow">FINANCIAL CONTROL</div><h2>Current economics are evidence-gated.</h2><p>Every material number carries its evidence class and date. Modeled values remain models; only signed obligations and collected cash advance to those states.</p><div class="actions"><a class="btn primary" href="/profit-control.html">See the control model</a></div></div>'
+      );
+    });
+
+    safe(() => {
+      const heroActions = whole("#page-home .actions") || whole('[data-page="home"] .actions');
+      if (heroActions && !document.getElementById("ccBusinessSolutionLink")) {
+        const a = document.createElement("a");
+        a.id = "ccBusinessSolutionLink";
+        a.className = "btn";
+        a.href = "/business-solution.html";
+        a.textContent = "Full Business Solution";
+        heroActions.prepend(a);
+      }
+    });
+
+    safe(() => {
+      const labels = new Map([
+        ["MONEY ROUTES","BUSINESS SOLUTION"],
+        ["THE SERVICE PROMISE","SERVICE CONTROL"],
+        ["FIND YOUR WAY IN",""]
+      ]);
+      document.querySelectorAll("h1,h2,h3,h4,h5,h6,p,span,div,strong,small,label").forEach(el => {
+        if (el.children.length) return;
+        const raw=(el.textContent||"").trim();
+        const key=raw.toUpperCase();
+        if (!labels.has(key)) return;
+        const next=labels.get(key);
+        if(next) el.textContent=next; else el.remove();
+      });
+    });
+
+    safe(() => {
+      const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+      const nodes=[]; let n;
+      while((n=walker.nextNode())) nodes.push(n);
+      for(const node of nodes){
+        if(node.parentElement && node.parentElement.closest("script,style")) continue;
+        let t=node.nodeValue||"";
+        t=t.replace(/Vic Towns/gi,"current Toronto property stack");
+        t=t.replace(/Property is not asked to fund the concert\./gi,"Every capital lane is evidence-controlled.");
+        t=t.replace(/C\\$5\\.509M/g,"evidence-gated");
+        t=t.replace(/C\\$1\\.650M/g,"current quote required");
+        t=t.replace(/C\\$111,056/g,"current quote required");
+        t=t.replace(/C\\$2\\.331141M/g,"current provider quote required");
+        if(t!==node.nodeValue) node.nodeValue=t;
+      }
+    });
+
+    safe(() => {
+      document.querySelectorAll('a[href="#capital"],a[href="/#capital"]').forEach(a => {
+        if ((a.textContent||"").trim().toLowerCase()==="capital") a.remove();
+      });
+    });
+  };
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+</script>\`;
+
 let renderedHtml = canonicalHtml.replaceAll("What the hosts experience in one episode.", "A Carnival Careers episode, in short...");
 renderedHtml = renderedHtml.replaceAll(" — never the beginning — because by the time the city gathers, the story has already created something real.", ".");
 renderedHtml = renderedHtml.replace(/<div class="project-chips">[\s\S]*?<\/div>/, "");
@@ -2711,7 +2827,7 @@ const planePoolMainSitePatch = `
 })();
 <\/script>`;
 
-for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch]) {
+for (const block of [projectCopy, vendorSponsorJourneyPatch, wholeReconciliationPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, master21CurrentFactsPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
