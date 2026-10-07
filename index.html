@@ -2064,7 +2064,10 @@ seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addE
     },0);
   };
   document.querySelectorAll("form").forEach(form=>{
-    if(kindFor(form)&&!excluded.has(form.id))form.addEventListener("submit",handleIntake,true);
+    if(kindFor(form)&&!excluded.has(form.id)){
+      form.addEventListener("submit",handleIntake,true);
+      form.querySelector('button[type="submit"],button')?.addEventListener("click",()=>handleIntake({target:form}),true);
+    }
   });
   const statusForms={
     sidelineStatusForm:["sidelineStatusId","sidelineStatusResult"],
