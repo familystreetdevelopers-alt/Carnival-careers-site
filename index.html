@@ -2074,7 +2074,7 @@ seasonFilter.addEventListener('change',render);if(statusFilter)statusFilter.addE
     event.preventDefault();
     const [inputId,resultId]=statusForms[form.id];
     const reference=String(document.getElementById(inputId)?.value||"").trim().toUpperCase();
-    const out=document.getElementById(resultId);if(!reference||!out)return;
+    let out=document.getElementById(resultId);\n    if(!out){out=document.createElement("div");out.id=resultId;out.className="status-result";form.appendChild(out)}\n    if(!reference)return;
     setTimeout(async()=>{
       try{
         const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
