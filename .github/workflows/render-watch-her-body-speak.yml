@@ -13,7 +13,7 @@ permissions:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     env:
       H1_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/fe7415b5-d8e4-437a-8b35-e06c3d55f36e.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYmI1YWYyM2MxMjZhZGMyNyIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTU3MTY0NH0.oCRs0xWSRLnPfHSJ0IonGBYZr7pi44TfCznqfjMPMWU"
       H2_URL: "https://d2jqrm6oza8nb6.cloudfront.net/datasets/232050e1-c516-40ab-9982-6605d2e2db7c.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMzdmNGM1ZDBkNjA5MzQ3ZSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc5MTU1NjMwNH0.FrDGIXxPeAo7BT5tBLbFXm34xKTWt7Lq58mY-ikDKfs"
@@ -33,52 +33,30 @@ jobs:
       - name: Download source media
         run: |
           set -euo pipefail
+          curl -fL --retry 5 --retry-delay 2 "$WOMEN_URL" -o women.mp4
           curl -fL --retry 5 --retry-delay 2 "$H1_URL" -o h1.mp4
           curl -fL --retry 5 --retry-delay 2 "$H2_URL" -o h2.mp4
           curl -fL --retry 5 --retry-delay 2 "$H3_URL" -o h3.mp4
           curl -fL --retry 5 --retry-delay 2 "$H4_URL" -o h4.mp4
           curl -fL --retry 5 --retry-delay 2 "$H5_URL" -o h5.mp4
           curl -fL --retry 5 --retry-delay 2 "$H6_URL" -o h6.mp4
-          curl -fL --retry 5 --retry-delay 2 "$WOMEN_URL" -o women.mp4
           curl -fL --retry 5 --retry-delay 2 "$AUDIO_URL" -o master.mp3
+          echo "Women duration:"
           ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 women.mp4
+          echo "Master duration:"
           ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 master.mp3
 
-      - name: Normalize Hopeton motion clips
+      - name: Single-pass intercut and mastered render
         run: |
           set -euo pipefail
-          for i in 1 2 3 4 5 6; do
-            ffmpeg -hide_banner -loglevel error -y -i "h$i.mp4" -an               -filter_complex "[0:v]split=2[bg][fg];[bg]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,boxblur=20:1[bg2];[fg]scale=-2:1080[fg2];[bg2][fg2]overlay=(W-w)/2:(H-h)/2,fps=30,setsar=1,format=yuv420p[v]"               -map "[v]" -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p "hn$i.mp4"
-          done
-
-      - name: Normalize and segment women footage
-        run: |
-          set -euo pipefail
-          ffmpeg -hide_banner -loglevel error -y -i women.mp4 -an             -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30,setsar=1,format=yuv420p"             -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p women_norm.mp4
-
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 0 -t 59.370000 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w1.mp4
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 59.370000 -t 44.221667 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w2.mp4
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 103.591667 -t 49.040000 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w3.mp4
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 152.631667 -t 45.013333 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w4.mp4
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 197.645000 -t 37.837800 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w5.mp4
-          ffmpeg -hide_banner -loglevel error -y -i women_norm.mp4 -ss 235.482800 -t 10.960000 -an -c:v libx264 -preset veryfast -crf 21 -pix_fmt yuv420p w6.mp4
-
-      - name: Intercut Hopeton and women
-        run: |
-          set -euo pipefail
-          ffmpeg -hide_banner -loglevel error -y             -i hn1.mp4 -i w1.mp4 -i hn2.mp4 -i w2.mp4 -i hn3.mp4 -i w3.mp4             -i hn4.mp4 -i w4.mp4 -i hn5.mp4 -i w5.mp4 -i hn6.mp4 -i w6.mp4             -filter_complex "[0:v][1:v][2:v][3:v][4:v][5:v][6:v][7:v][8:v][9:v][10:v][11:v]concat=n=12:v=1:a=0[v]"             -map "[v]" -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p -movflags +faststart visuals.mp4
-
-      - name: Add mastered song audio
-        run: |
-          set -euo pipefail
-          ffmpeg -hide_banner -loglevel error -y -i visuals.mp4 -i master.mp3             -map 0:v:0 -map 1:a:0 -c:v copy -c:a aac -b:a 320k             -t 306.442449 -movflags +faststart             -metadata title="Watch Her Body Speak"             WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO.mp4
+          ffmpeg -hide_banner -loglevel error -y             -i women.mp4             -i h1.mp4 -i h2.mp4 -i h3.mp4 -i h4.mp4 -i h5.mp4 -i h6.mp4             -i master.mp3             -filter_complex "[0:v]scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,fps=30,setsar=1,split=6[wa][wb][wc][wd][we][wf];[wa]trim=start=0:end=59.370000,setpts=PTS-STARTPTS[w1];[wb]trim=start=59.370000:end=103.591667,setpts=PTS-STARTPTS[w2];[wc]trim=start=103.591667:end=152.631667,setpts=PTS-STARTPTS[w3];[wd]trim=start=152.631667:end=197.645000,setpts=PTS-STARTPTS[w4];[we]trim=start=197.645000:end=235.482800,setpts=PTS-STARTPTS[w5];[wf]trim=start=235.482800:end=246.442800,setpts=PTS-STARTPTS[w6];[1:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h1v];[2:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h2v];[3:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h3v];[4:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h4v];[5:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h5v];[6:v]scale=-2:1080:flags=lanczos,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:black,fps=30,setsar=1,setpts=PTS-STARTPTS[h6v];[h1v][w1][h2v][w2][h3v][w3][h4v][w4][h5v][w5][h6v][w6]concat=n=12:v=1:a=0[v]"             -map "[v]" -map 7:a:0             -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p             -c:a aac -b:a 320k -t 306.442449 -movflags +faststart             -metadata title="Watch Her Body Speak"             WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO.mp4
 
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height -of json WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO.mp4
 
       - name: Upload finished MP4
         uses: actions/upload-artifact@v4
         with:
-          name: watch-her-body-speak-full-music-video
+          name: watch-her-body-speak-full-music-video-singlepass
           path: WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO.mp4
           retention-days: 1
           compression-level: 0
