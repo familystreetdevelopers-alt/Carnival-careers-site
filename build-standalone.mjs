@@ -1389,11 +1389,11 @@ const sidelineSittersUnifiedPatch = `
             '</div>'+
             '<aside class="cc-ss-card cc-ss-status">'+
               '<h3>Already requested care?</h3>'+
-              '<p>Check the request from the same place you submitted it.</p>'+
-              '<div class="cc-ss-field"><label>Sideline Sitters reference</label><input id="ccSidelineStatusRef" placeholder="Example: SS-ABC123"></div>'+
+              '<p>Check the request here from any connected device using the shared reference.</p>'+
+              '<div class="cc-ss-field"><label>Sideline Sitters reference</label><input id="ccSidelineStatusRef" placeholder="Example: CC-FAMILY-…"></div>'+
               '<button id="ccSidelineStatusBtn" class="cc-ss-btn cc-secondary" type="button" style="margin-top:10px">Check my request</button>'+
               '<div id="ccSidelineStatusResult" class="cc-ss-result" aria-live="polite">Status will appear here.</div>'+
-              '<p class="cc-ss-note">Current web build stores the request/status record in the browser used to submit it. Provider confirmation is still what makes care booked.</p>'+
+              '<p class="cc-ss-note">Requests and status are stored in the shared Carnival Careers operating system. Provider confirmation is still what makes care booked.</p>'+
             '</aside>'+
           '</div>'+
         '</div>'+
