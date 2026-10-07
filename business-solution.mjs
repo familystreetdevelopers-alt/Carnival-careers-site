@@ -251,4 +251,97 @@ const economicsSchema = {
 };
 fs.writeFileSync(path.join(dist,"unit-economics-schema.json"),JSON.stringify(economicsSchema,null,2));
 
+
+// Final public-site truth-control pass. This runs after the legacy standalone builder so
+// future counterparties cannot be routed into retired finance/property language.
+const rootPath = path.join(dist,"index.html");
+if (fs.existsSync(rootPath)) {
+  let rootHtml = fs.readFileSync(rootPath,"utf8");
+
+  const greenRootPatch = `
+<script id="cc-green-root-truth-control">
+(() => {
+  const run = () => {
+    const q = s => (document.querySelector(s));
+    const pageInner = page => page?.querySelector(".page-inner,.content,.section-inner,.container,.wrap") || page;
+
+    // Canonical future-contact destination.
+    const heroActions = q("#page-home .actions") || q('[data-page="home"] .actions');
+    if (heroActions && !document.getElementById("ccBusinessSolutionLink")) {
+      const a = document.createElement("a");
+      a.id = "ccBusinessSolutionLink";
+      a.className = "btn";
+      a.href = "/business-solution.html";
+      a.textContent = "Full Business Solution";
+      heroActions.prepend(a);
+    }
+
+    // Retired labels requested off the public experience.
+    const labelMap = new Map([
+      ["MONEY ROUTES","BUSINESS SOLUTION"],
+      ["THE SERVICE PROMISE","SERVICE CONTROL"],
+      ["FIND YOUR WAY IN",""]
+    ]);
+    document.querySelectorAll("h1,h2,h3,h4,h5,h6,p,span,div,strong,small,label").forEach(el => {
+      if (el.children.length) return;
+      const raw = (el.textContent || "").trim();
+      const key = raw.toUpperCase();
+      if (labelMap.has(key)) {
+        const next = labelMap.get(key);
+        if (next) el.textContent = next;
+        else el.remove();
+      }
+    });
+
+    // Replace the entire legacy capital page rather than trying to preserve
+    // superseded Vic Towns / C$5.509M / old event-TV-cruise waterfall figures.
+    const capital = q("#page-capital") || q('[data-page="capital"]');
+    if (capital) {
+      const inner = pageInner(capital);
+      inner.innerHTML = [
+        '<section style="padding:48px 0">',
+          '<div class="eyebrow">CAPITAL / EVIDENCE CONTROL</div>',
+          '<h1>Finance what can be evidenced.</h1>',
+          '<p>Carnival Careers separates current facts, counterparty quotes, official or statutory amounts, market benchmarks and modeled assumptions. No pipeline number is represented as committed cash, revenue or profit.</p>',
+          '<div class="grid cols-3" style="margin-top:22px">',
+            '<article class="card"><small>PROPERTY</small><h3>Asset-specific underwriting</h3><p>Purchase price, debt, seller financing, closing costs, construction, income and exit stay tied to the exact property and current evidence.</p></article>',
+            '<article class="card"><small>OPERATIONS</small><h3>Event + production economics</h3><p>Venue, technical production, talent, staffing, insurance, media and operating costs advance only from current quotes, contracts or clearly labelled models.</p></article>',
+            '<article class="card"><small>REVENUE</small><h3>Evidence ladder</h3><p>MODELED → QUOTED → CONTRACTED → INVOICED / BOOKED → COLLECTED. The public story never skips a state.</p></article>',
+          '</div>',
+          '<div class="actions" style="margin-top:24px"><a class="btn primary" href="/profit-control.html">Open Profit + Control</a><a class="btn" href="/business-solution.html">Open Full Business Solution</a></div>',
+        '</section>'
+      ].join("");
+    }
+
+    // A lender may still see a historical property name in a separate legacy block.
+    // Genericize it so only the current, transaction-specific package carries asset names.
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) {
+      let t = node.nodeValue || "";
+      if (!t.trim()) continue;
+      t = t.replace(/Vic Towns/gi,"current Toronto property stack");
+      t = t.replace(/Property is not asked to fund the concert\./gi,"Every capital lane is evidence-controlled.");
+      node.nodeValue = t;
+    }
+
+    // Remove a standalone capital nav destination when present; Project + the
+    // canonical business-solution/profit-control routes now carry the finance story.
+    document.querySelectorAll('a[href="#capital"],a[href="/#capital"]').forEach(a => {
+      const txt = (a.textContent || "").trim().toLowerCase();
+      if (txt === "capital") a.remove();
+    });
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded",run,{once:true});
+  else run();
+})();
+</script>
+`;
+
+  rootHtml = rootHtml.replace("</body>", greenRootPatch + "\n</body>");
+  fs.writeFileSync(rootPath, rootHtml);
+}
+
 console.log("CARNIVAL_CAREERS_GREEN_BUSINESS_SOLUTION_GENERATED", Object.keys(detailPages).length + 1);
