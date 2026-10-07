@@ -2829,101 +2829,139 @@ const planePoolMainSitePatch = `
 
 
 const truthfulIntakePatch = `
-<script id="cc-truthful-intake-completion">
+<style id="cc-durable-intake-a11y-style">
+  [data-cc-intake-state="saving"]{opacity:.68;pointer-events:none}
+</style>
+<script id="cc-durable-dynamic-intake-v2">
 (() => {
-  const EMAIL = "ourcarnivalcareers@gmail.com";
-  const formIds = new Set([
-    "arenaArtistForm","cultureMediaForm","ccEventMatch","ccPromoterForm","ccCultureForm",
-    "ccCityInviteForm","ccSidelineFamilyForm","ccSidelineProviderForm",
-    "ccLiveChatForm","ccHandleForm","ccPartyForm","ccSeeYourselfForm"
-  ]);
-  const prefixes = {
-    arenaArtistForm:"ARENA",cultureMediaForm:"MEDIA",ccEventMatch:"EVENT",
-    ccPromoterForm:"PROMOTER",ccCultureForm:"CULTURE",ccCityInviteForm:"CITY",
-    ccSidelineFamilyForm:"SS",ccSidelineProviderForm:"SSP",
-    ccLiveChatForm:"LIVE",ccHandleForm:"HANDLE",ccPartyForm:"PARTY",ccSeeYourselfForm:"SHOW"
+  const API="https://carnival-careers-os.floot.app/_api/public";
+  const kinds={
+    arenaArtistForm:"arena-artist",
+    cultureMediaForm:"culture-media",
+    ccEventMatch:"event-match",
+    ccPromoterForm:"event-promoter",
+    ccCultureForm:"event-culture",
+    ccCityInviteForm:"city-partner-invite",
+    ccSidelineFamilyForm:"sideline-family",
+    ccSidelineProviderForm:"sideline-provider",
+    ccLiveChatForm:"live-chat",
+    ccHandleForm:"social-handle",
+    ccPartyForm:"party-interest",
+    ccSeeYourselfForm:"see-yourself-show"
   };
-  const esc = v => String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\":"&quot;","'":"&#39;"}[m]));
-  const ref = p => (p||"CC")+"-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,6).toUpperCase();
-  const resultBox = form => {
-    let out = form.querySelector(".cc-intake-result,[aria-live='polite']");
-    if(!out){
-      out=document.createElement("div");
-      out.className="cc-intake-result";
-      out.setAttribute("aria-live","polite");
-      form.appendChild(out);
+  const esc=v=>String(v==null?"":v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\\":"&quot;","'":"&#39;"}[m]));
+  const payloadFor=form=>{
+    const out={};
+    for(const [key,value] of new FormData(form).entries()){
+      const next=value instanceof File?value.name:String(value);
+      out[key]=key in out?[].concat(out[key],next).join(" | "):next;
     }
     return out;
   };
-  const setButtons = () => {
-    formIds.forEach(id=>{
-      const form=document.getElementById(id);
-      if(!form) return;
-      const btn=form.querySelector('button[type="submit"],input[type="submit"]');
-      if(!btn) return;
-      if(btn.tagName==="INPUT") btn.value="Prepare & send";
-      else btn.textContent="Prepare & send";
-      btn.setAttribute("data-cc-durable-intake","email");
-    });
+  const resultBox=form=>{
+    const known={
+      arenaArtistForm:"arenaArtistResult",
+      cultureMediaForm:"cultureMediaResult",
+      ccSidelineFamilyForm:"ccSidelineFamilyResult",
+      ccSidelineProviderForm:"ccSidelineProviderResult"
+    }[form.id];
+    return (known&&document.getElementById(known)) ||
+      form.querySelector(".cc-intake-result,.result,[aria-live='polite']") ||
+      (()=>{const el=document.createElement("div");el.className="cc-intake-result";el.setAttribute("aria-live","polite");form.appendChild(el);return el;})();
   };
-
-  document.addEventListener("submit", e => {
-    const form=e.target;
-    if(!(form instanceof HTMLFormElement) || !formIds.has(form.id)) return;
-    e.preventDefault();
-    e.stopImmediatePropagation();
-    if(!form.reportValidity()) return;
-
-    const data=Object.fromEntries(new FormData(form).entries());
-    const id=ref(prefixes[form.id]);
-    const packet={
-      id,
-      sourceForm:form.id,
-      createdAt:new Date().toISOString(),
-      ...data
-    };
+  const saveCredential=row=>{
     try{
-      const key="cc_pending_intake_v1";
+      const key="cc_intake_credentials_v1";
       const rows=JSON.parse(localStorage.getItem(key)||"[]");
-      rows.unshift(packet);
-      localStorage.setItem(key,JSON.stringify(rows.slice(0,100)));
+      const filtered=rows.filter(x=>x.reference!==row.reference);
+      filtered.unshift({reference:row.reference,lookupToken:row.lookupToken||"",kind:row.kind||"",status:row.status||"",createdAt:row.createdAt||new Date().toISOString()});
+      localStorage.setItem(key,JSON.stringify(filtered.slice(0,100)));
     }catch(_){}
-
-    const subject="Carnival Careers intake — "+id;
-    const body=[
-      "Carnival Careers intake reference: "+id,
-      "",
-      JSON.stringify(packet,null,2),
-      "",
-      "This email completes the intake. The browser copy is only a local backup."
-    ].join("\n");
-    const mailto="mailto:"+EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-    const out=resultBox(form);
-    out.innerHTML="<strong>Prepared: "+esc(id)+"</strong><br>Send the email that opens to complete the intake. Until that email is sent, Carnival Careers has not received this form.";
-    window.location.href=mailto;
-  }, true);
-
-  const run=()=>{
-    setButtons();
-    const falseClaims=[
-      ["#ccSidelineFamilyResult","Request received:"],
-      ["#ccSidelineProviderResult","Submitted:"],
-      ["#arenaArtistResult","Artist file prepared:"],
-      ["#cultureMediaResult","Media link prepared:"]
-    ];
-    falseClaims.forEach(([selector])=>{
-      const el=document.querySelector(selector);
-      if(el && /received|submitted|saved to this browser|saved to the carnival careers intake/i.test(el.textContent||"")){
-        el.textContent="";
-      }
-    });
   };
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run,{once:true});
-  else run();
+  const assignIds=root=>{
+    const forms=root instanceof HTMLFormElement?[root]:[...(root.querySelectorAll?.("form")||[])];
+    for(const form of forms){
+      if(!kinds[form.id])continue;
+      form.querySelectorAll("input[name],select[name],textarea[name],button").forEach((el,i)=>{
+        if(!el.id){
+          const base=el.getAttribute("name")||el.getAttribute("type")||("control-"+i);
+          el.id=form.id+"-"+String(base).replace(/[^a-z0-9_-]+/gi,"-");
+        }
+        const label=el.closest("label");
+        if(label&&!label.getAttribute("for"))label.setAttribute("for",el.id);
+      });
+      form.setAttribute("data-cc-durable-intake","company-os");
+    }
+  };
+  const checkStatus=async(reference,out)=>{
+    try{
+      const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
+      const row=await res.json();
+      if(!res.ok)throw new Error(row.error||"Lookup failed");
+      out.innerHTML="<strong>"+esc(row.reference)+"</strong> · "+esc(row.status||"received")+"<br><span>Saved in the Carnival Careers operating system"+(row.kind?" · "+esc(row.kind):"")+".</span>";
+      return row;
+    }catch(_){
+      out.innerHTML="<strong>"+esc(reference)+"</strong><br>Saved, but status readback is temporarily unavailable. Keep this reference.";
+      return null;
+    }
+  };
+
+  document.addEventListener("submit",event=>{
+    const form=event.target;
+    if(!(form instanceof HTMLFormElement)||!kinds[form.id])return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    if(!form.reportValidity())return;
+    const out=resultBox(form);
+    form.setAttribute("data-cc-intake-state","saving");
+    out.innerHTML="<strong>Saving…</strong>";
+    const kind=kinds[form.id];
+    const payload=payloadFor(form);
+    setTimeout(async()=>{
+      try{
+        const res=await fetch(API+"/intake",{
+          method:"POST",
+          headers:{"Content-Type":"text/plain;charset=UTF-8"},
+          body:JSON.stringify({kind,payload,sourceUrl:location.href})
+        });
+        const row=await res.json();
+        if(!res.ok)throw new Error(row.error||"Save failed");
+        row.kind=kind;
+        saveCredential(row);
+        await checkStatus(row.reference,out);
+        form.reset();
+      }catch(_){
+        out.innerHTML="<strong>Not saved.</strong> The shared Carnival Careers intake is unavailable right now. Your information was not represented as received.";
+      }finally{
+        form.removeAttribute("data-cc-intake-state");
+      }
+    },0);
+  },true);
+
+  document.addEventListener("click",event=>{
+    const target=event.target instanceof Element?event.target.closest("#ccSidelineStatusBtn"):null;
+    if(!target)return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const reference=String(document.getElementById("ccSidelineStatusRef")?.value||"").trim().toUpperCase();
+    const out=document.getElementById("ccSidelineStatusResult");
+    if(!out)return;
+    if(!reference){out.textContent="Enter your Sideline Sitters reference.";return;}
+    checkStatus(reference,out);
+  },true);
+
+  const boot=()=>{
+    assignIds(document);
+    const observer=new MutationObserver(mutations=>{
+      for(const mutation of mutations)for(const node of mutation.addedNodes)if(node instanceof Element)assignIds(node);
+    });
+    observer.observe(document.documentElement,{subtree:true,childList:true});
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot,{once:true});else boot();
 })();
 <\/script>`;
 
-for (const block of [projectCopy, vendorSponsorJourneyPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch]) {
+for (const block of [projectCopy, vendorSponsorJourneyPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch, truthfulIntakePatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
