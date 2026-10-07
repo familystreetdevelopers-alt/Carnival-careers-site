@@ -3008,6 +3008,24 @@ renderedHtml = renderedHtml
   )
   .replaceAll("<strong>C$3M seed structure</strong>","<strong>Operating-company capital structure</strong>");
 
+// Truth-control for beat commerce: these Shopify variants are drafts and have no
+// verified Shopify Digital Products delivery attachment. Do not expose dead cart links.
+const blockedBeatVariantIds = [
+  "52833812611354", // Island Vybz
+  "52833812676890", // Street Anthem
+  "52833815986458"  // Carnival Riddim
+];
+for (const variantId of blockedBeatVariantIds) {
+  const deadCartUrl = new RegExp(`https://wase0y-fi\\.myshopify\\.com/cart/${variantId}:1[^"'\\s<]*`, "g");
+  renderedHtml = renderedHtml.replace(deadCartUrl, "#music");
+}
+for (const [from,to] of [
+  ["Buy Island Vybz","Preview only — Island Vybz"],
+  ["Buy Street Anthem","Preview only — Street Anthem"],
+  ["Buy Carnival Riddim","Preview only — Carnival Riddim"],
+  ["BEATS / BUY","BEATS / PREVIEW"]
+]) renderedHtml = renderedHtml.replaceAll(from,to);
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
