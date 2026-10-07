@@ -60,32 +60,31 @@ jobs:
       - name: Build full moving sequence
         run: |
           set -euo pipefail
-          cat > concat.txt <<'EOF'
-file 'norm/h1.mp4'
-file 'norm/p1.mp4'
-file 'norm/p2.mp4'
-file 'norm/p3.mp4'
-file 'norm/h2.mp4'
-file 'norm/p4.mp4'
-file 'norm/p5.mp4'
-file 'norm/p6.mp4'
-file 'norm/h3.mp4'
-file 'norm/p7.mp4'
-file 'norm/p8.mp4'
-file 'norm/p9.mp4'
-file 'norm/h4.mp4'
-file 'norm/p10.mp4'
-file 'norm/p11.mp4'
-file 'norm/p12.mp4'
-file 'norm/h5.mp4'
-file 'norm/p13.mp4'
-file 'norm/p14.mp4'
-file 'norm/p15.mp4'
-file 'norm/h6.mp4'
-file 'norm/p16.mp4'
-file 'norm/p17.mp4'
-file 'norm/p18.mp4'
-EOF
+          printf "%s\n" \
+            "file 'norm/h1.mp4'" \
+            "file 'norm/p1.mp4'" \
+            "file 'norm/p2.mp4'" \
+            "file 'norm/p3.mp4'" \
+            "file 'norm/h2.mp4'" \
+            "file 'norm/p4.mp4'" \
+            "file 'norm/p5.mp4'" \
+            "file 'norm/p6.mp4'" \
+            "file 'norm/h3.mp4'" \
+            "file 'norm/p7.mp4'" \
+            "file 'norm/p8.mp4'" \
+            "file 'norm/p9.mp4'" \
+            "file 'norm/h4.mp4'" \
+            "file 'norm/p10.mp4'" \
+            "file 'norm/p11.mp4'" \
+            "file 'norm/p12.mp4'" \
+            "file 'norm/h5.mp4'" \
+            "file 'norm/p13.mp4'" \
+            "file 'norm/p14.mp4'" \
+            "file 'norm/p15.mp4'" \
+            "file 'norm/h6.mp4'" \
+            "file 'norm/p16.mp4'" \
+            "file 'norm/p17.mp4'" \
+            "file 'norm/p18.mp4'" > concat.txt
           ffmpeg -hide_banner -loglevel error -y -f concat -safe 0 -i concat.txt             -i master.mp3 -map 0:v:0 -map 1:a:0             -c:v libx264 -preset veryfast -crf 20 -pix_fmt yuv420p             -c:a aac -b:a 320k -t 306.442449 -movflags +faststart             -metadata title="Watch Her Body Speak"             WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO_CLEAN.mp4
           ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height -of json WATCH_HER_BODY_SPEAK_FULL_MUSIC_VIDEO_CLEAN.mp4
 
