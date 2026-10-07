@@ -1434,7 +1434,7 @@ const sidelineSittersUnifiedPatch = `
             '<div id="ccSidelineProviderResult" class="cc-ss-result" aria-live="polite">Your provider profile will be saved with a reference number.</div>'+
           '</div>'+
         '</div>'+
-      '</section>'+
+      '</section>';
 
 
 
