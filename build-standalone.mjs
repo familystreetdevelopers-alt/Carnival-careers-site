@@ -1061,7 +1061,7 @@ const eventsOperationsPatch = `
           '<label>Platform<select name="platform"><option>YouTube</option><option>Instagram</option><option>TikTok</option><option>Facebook</option><option>Vimeo</option><option>Other public link</option></select></label>',
           '<label class="wide">Public video link<input name="url" type="url" required placeholder="https://"></label>',
           '<label class="wide">Your comment<textarea name="comment" required placeholder="Why should people see this?"></textarea></label>',
-        '</div><button class="cc-ev-button" type="submit">Add to community wall</button></form><div class="cc-ev-result" id="ccCultureResult"></div></div>',
+        '</div><button class="cc-ev-button" type="submit">Submit for wall review</button></form><div class="cc-ev-result" id="ccCultureResult"></div></div>',
         '<div><div class="cc-ev-wall" id="ccCultureWall"></div></div>',
       '</div>',
     '</div></section>',
@@ -1112,31 +1112,6 @@ const eventsOperationsPatch = `
     page.querySelector("#ccEventMatchStatus").innerHTML=matched.length
       ? '<strong>'+matched.length+' matching route'+(matched.length===1?'':'s')+'.</strong> Open the provider to check live inventory.'
       : '<strong>No exact match in the current promoted feed.</strong> <a href="'+mail("Carnival Careers EventMatch request — "+id,record)+'">Send this request to Carnival Careers →</a>';
-  });
-
-  page.querySelector("#ccPromoterForm").addEventListener("submit",e=>{
-    e.preventDefault();
-    if(!e.currentTarget.reportValidity()) return;
-    const d=Object.fromEntries(new FormData(e.currentTarget).entries());
-    const id=ref("EVENT");
-    const record={id,kind:"event-promotion",status:"submitted-for-review",createdAt:new Date().toISOString(),...d};
-    const submissions=read("cc_event_promoter_v2");submissions.unshift(record);write("cc_event_promoter_v2",submissions);addSubmission(record);
-    const feed=read("cc_weekly_affiliate_events_v1");feed.unshift(record);write("cc_weekly_affiliate_events_v1",feed);
-    renderWeekly();
-    page.querySelector("#ccPromoterResult").innerHTML='<strong>Event file prepared: '+esc(id)+'</strong><br>It is now in this browser’s promoted-event feed for review. <a href="'+mail("Carnival Careers event promotion submission — "+id,record)+'">Email the commercial terms to Carnival Careers →</a>';
-    e.currentTarget.reset();
-  });
-
-  page.querySelector("#ccCultureForm").addEventListener("submit",e=>{
-    e.preventDefault();
-    if(!e.currentTarget.reportValidity()) return;
-    const d=Object.fromEntries(new FormData(e.currentTarget).entries());
-    const id=ref("MEDIA");
-    const record={id,kind:"culture-media",status:"submitted-for-review",createdAt:new Date().toISOString(),...d};
-    const rows=read("cc_culture_media_v1");rows.unshift(record);write("cc_culture_media_v1",rows);addSubmission(record);
-    renderWall();
-    page.querySelector("#ccCultureResult").innerHTML='<strong>Media link added: '+esc(id)+'</strong><br>It is visible in this browser preview. <a href="'+mail("Carnival Careers community media submission — "+id,record)+'">Email it for public review →</a>';
-    e.currentTarget.reset();
   });
 
   renderWeekly();
