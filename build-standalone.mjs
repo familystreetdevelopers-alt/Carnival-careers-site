@@ -2822,7 +2822,19 @@ const truthfulIntakePatch = `
     ccLiveChatForm:"live-chat",
     ccHandleForm:"social-handle",
     ccPartyForm:"party-interest",
-    ccSeeYourselfForm:"see-yourself-show"
+    ccSeeYourselfForm:"see-yourself-show",
+    musicBookingOperational:"music-booking",
+    carDriverForm:"car-driver",
+    "cruise-smart-form":"cruise-attend",
+    "cc-vendor-form":"vendor",
+    "cc-sponsor-form":"sponsor"
+  };
+  const kindFor=(form,payload)=>{
+    if(form.id!=="cruise-smart-form")return kinds[form.id]||"";
+    const role=String(payload.role||"").trim().toLowerCase();
+    if(role==="produce")return "cruise-produce";
+    if(role==="fund")return "cruise-fund";
+    return "cruise-attend";
   };
   const esc=v=>String(v==null?"":v).replace(/[&<>"\']/g,m=>m==="&"?"&amp;":m==="<"?"&lt;":m===">"?"&gt;":m===String.fromCharCode(34)?"&quot;":"&#39;");
   const payloadFor=form=>{
@@ -2894,8 +2906,8 @@ const truthfulIntakePatch = `
     const out=resultBox(form);
     form.setAttribute("data-cc-intake-state","saving");
     out.innerHTML="<strong>Saving…</strong>";
-    const kind=kinds[form.id];
     const payload=payloadFor(form);
+    const kind=kindFor(form,payload);
     setTimeout(async()=>{
       try{
         const res=await fetch(API+"/intake",{
