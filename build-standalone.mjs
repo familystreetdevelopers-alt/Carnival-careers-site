@@ -2786,10 +2786,10 @@ const planePoolMainSitePatch = `
           '<h1 id="cc-plane-pool-title">Turn scattered travel demand into a <em>usable route.</em></h1>'+
           '<p>Build the trip once. Then either search regular flights now or place the route into Plane Pool so compatible demand can be matched and tracked.</p>'+
           '<div class="cc-plane-pool-what">'+
-            '<div><b>Enter once</b><span>Route, date window, flexibility, party size and contact context.</span></div>'+
-            '<div><b>Choose the job</b><span>Search commercial flights now or make the route matchable in Plane Pool.</span></div>'+
-            '<div><b>See real status</b><span>Joined → potential match → qualified pool → provider referral → quote → booking.</span></div>'+
-            '<div><b>Share the route</b><span>Send a route/date link to compatible travellers without exposing your private contact details.</span></div>'+
+            '<div><b>1 · Build the trip</b><span>Route, timing, flexibility and party size become one reusable travel brief.</span></div>'+
+            '<div><b>2 · Pick a path</b><span>Search a normal flight now, or join Plane Pool when shared demand could help.</span></div>'+
+            '<div><b>3 · Follow progress</b><span>Your reference shows whether the request is joined, matched, referred, quoted or booked.</span></div>'+
+            '<div><b>4 · Bring people in</b><span>Share the route context so compatible travellers can enter the same trip lane.</span></div>'+
           '</div>'+
           '<div class="cc-plane-pool-livebar"><div><strong>The full Plane Pool workspace is live directly below.</strong><br><span>Use it here without leaving the Carnival Careers site.</span></div><a class="cc-plane-pool-open" href="'+APP+'" target="_blank" rel="noopener noreferrer">Open Plane Pool full-screen ↗</a></div>'+
         '</div>'+
