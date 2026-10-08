@@ -2922,6 +2922,17 @@ const truthfulIntakePatch = `
     }
   };
 
+  document.addEventListener("click",event=>{
+    const button=event.target instanceof Element?event.target.closest("button"):null;
+    const form=button instanceof HTMLButtonElement?button.form:null;
+    if(!(form instanceof HTMLFormElement)||!kinds[form.id])return;
+    const type=String(button.getAttribute("type")||"submit").toLowerCase();
+    if(type!=="submit")return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    form.requestSubmit();
+  },true);
+
   document.addEventListener("submit",event=>{
     const form=event.target;
     if(!(form instanceof HTMLFormElement)||!kinds[form.id])return;
