@@ -2827,7 +2827,27 @@ const truthfulIntakePatch = `
     carDriverForm:"car-driver",
     "cruise-smart-form":"cruise-attend",
     "cc-vendor-form":"vendor",
-    "cc-sponsor-form":"sponsor"
+    "cc-sponsor-form":"sponsor",
+    ccProfessionalCityForm:"professional-service",
+    ccAutoMatchForm:"automatch",
+    ccLandProspectorForm:"land-prospector",
+    ccInvestorForm:"investor",
+    ccLenderForm:"lender",
+    ccProfessionalServiceForm:"professional-service",
+    ccDataRoomForm:"data-room",
+    ccArenaWishlistForm:"arena-wishlist",
+    ccClaimForm:"claim"
+  };
+  const inferredFormIds={
+    "join the city team":"ccProfessionalCityForm",
+    "send automatch request":"ccAutoMatchForm",
+    "submit parcel":"ccLandProspectorForm",
+    "save investor inquiry":"ccInvestorForm",
+    "save lender inquiry":"ccLenderForm",
+    "save service proposal":"ccProfessionalServiceForm",
+    "request access":"ccDataRoomForm",
+    "submit vote":"ccArenaWishlistForm",
+    "create reference":"ccClaimForm"
   };
   const kindFor=(form,payload)=>{
     if(form.id!=="cruise-smart-form")return kinds[form.id]||"";
@@ -2868,6 +2888,11 @@ const truthfulIntakePatch = `
   const assignIds=root=>{
     const forms=root instanceof HTMLFormElement?[root]:[...(root.querySelectorAll?.("form")||[])];
     for(const form of forms){
+      if(!form.id){
+        const button=form.querySelector("button[type='submit'],button");
+        const inferred=inferredFormIds[String(button?.textContent||"").trim().toLowerCase()];
+        if(inferred)form.id=inferred;
+      }
       if(!kinds[form.id])continue;
       form.querySelectorAll("input[name],select[name],textarea[name],button").forEach((el,i)=>{
         if(!el.id){
