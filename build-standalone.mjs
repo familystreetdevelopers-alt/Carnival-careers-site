@@ -2977,7 +2977,10 @@ const truthfulIntakePatch = `
 })();
 <\/script>`;
 
-for (const block of [projectCopy, vendorSponsorJourneyPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch, truthfulIntakePatch]) {
+if (!renderedHtml.includes("</head>")) throw new Error("Canonical HTML is missing </head>.");
+renderedHtml = renderedHtml.replace("</head>", `${truthfulIntakePatch}\n</head>`);
+
+for (const block of [projectCopy, vendorSponsorJourneyPatch, familiesWorkMergePatch, housesNavPatch, sidelineSittersUnifiedPatch, removeSidelineKpiPatch, showPageButtonPatch, removeSmallClutterLabels, projectStorySimplifyPatch, siteDedupePatch, projectCapitalMergePatch, episodeLibraryTypographyPatch, trailerExperience, contrastGuard, lenderReadabilityPatch, audienceRoutingPatch, eventsOperationsPatch, torontoEpisodeMergePatch, cityPartnerInvitePatch, homeMasMatterAccentPatch, requestedAccentCleanupPatch, seeYourselfShowPatch, editorialCardSystemPatch, assetRentRollResetPatch, printfulApparelFirstPatch, cruiseMoneyEnginePatch, planePoolMainSitePatch, greenTruthControlPatch]) {
   if (!renderedHtml.includes("</body>")) throw new Error("Canonical HTML is missing </body>.");
   renderedHtml = renderedHtml.replace("</body>", `${block}\n</body>`);
 }
