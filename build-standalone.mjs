@@ -2896,12 +2896,16 @@ const truthfulIntakePatch = `
   const checkStatus=async(reference,out)=>{
     try{
       const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
-      const row=await res.json();
+      const row=await res.json().catch(()=>({}));
+      if(res.status===404){
+        out.innerHTML="<strong>"+esc(reference)+"</strong><br>Reference not found. Check the number or start a new request.";
+        return null;
+      }
       if(!res.ok)throw new Error(row.error||"Lookup failed");
       out.innerHTML="<strong>"+esc(row.reference)+"</strong> · "+esc(row.status||"received")+"<br><span>Saved in the Carnival Careers operating system"+(row.kind?" · "+esc(row.kind):"")+".</span>";
       return row;
     }catch(_){
-      out.innerHTML="<strong>"+esc(reference)+"</strong><br>Saved, but status readback is temporarily unavailable. Keep this reference.";
+      out.innerHTML="<strong>"+esc(reference)+"</strong><br>Status lookup is temporarily unavailable. Try again later.";
       return null;
     }
   };
