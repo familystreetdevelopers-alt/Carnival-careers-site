@@ -141,12 +141,12 @@ jobs:
               for x in order:
                   print("file '" + str(x.resolve()) + "'", file=f)
           with open("build/ASSET_MANIFEST.txt","w") as f:
-              f.write("WATCH HER BODY SPEAK — ORIGINAL-ONLY ASSET MANIFEST\\n")
-              f.write("No prior Carnival Careers music-video footage used.\\n\\n")
-              f.write("Generated Hopeton clips:\\n")
-              for x in hop: f.write(x.name+"\\n")
-              f.write("\\nFresh Pexels clips assigned only to this song:\\n")
-              for x in stock: f.write(x.name+"\\n")
+              f.write("WATCH HER BODY SPEAK — ORIGINAL-ONLY ASSET MANIFEST\n")
+              f.write("No prior Carnival Careers music-video footage used.\n\n")
+              f.write("Generated Hopeton clips:\n")
+              for x in hop: f.write(x.name+"\n")
+              f.write("\nFresh Pexels clips assigned only to this song:\n")
+              for x in stock: f.write(x.name+"\n")
           print("hopeton clips", len(hop), "fresh stock", len(stock), "timeline clips", len(order))
           PY
 
