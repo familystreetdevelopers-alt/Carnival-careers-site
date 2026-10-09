@@ -1,0 +1,172 @@
+name: Render Watch Her Body Speak Original
+
+on:
+  push:
+    branches:
+      - video-watch-her-body-speak-original
+    paths:
+      - .github/workflows/render-watch-her-body-speak-original.yml
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install gradio_client
+
+      - name: Download master audio and Hopeton reference
+        env:
+          AUDIO_URL: "https://production-273614-media-export.storage.googleapis.com/ea0b7b43-73db-4b2a-bcc1-b6a123ebd32f/original.m4a?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=descript-api%40production-273614.iam.gserviceaccount.com%2F20261009%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20261009T004326Z&X-Goog-Expires=86400&X-Goog-SignedHeaders=host&X-Goog-Signature=3b3e131bd1602005385b0e7250f57d53222ba696fe080a423b6e531f52a86b25c9f1c8faa039d88059e7a16c80d066c3b98eb15d5efb57c527f57617a8258473659d1f401d075c0e5a2ff6044e61714ccd504ba78857140d836288761da34c116d3a58b732b22cd44baf58550213b263f0da1ec448aff411fcf2147909969e2b75387dc6034be9461955dfde390c7521c15423f5f3e6bb4a57c835ac3742f64be61104e724f9aae25fd14f89108beff7fb94a4a961352f7c875e1d56eb095a115b54c4d431bfa0270ded8e4fbf7331c813acbdf9d4c4edde55fc9576773b19778760562b03c632680a5a4f7566189164440280cb755a4894586316621035ed27"
+          HOPETON_URL: "https://cdn.openart.ai/openart-uploads/production/attachment-transfers/c09a3b71673e69c3839c88aefe90c8cafefc6249aef20d7096ec51e314645abf.jpg"
+        run: |
+          mkdir -p build/raw build/norm build/gen
+          curl -L --fail --retry 3 "$AUDIO_URL" -o build/master.m4a
+          curl -L --fail --retry 3 "$HOPETON_URL" -o build/hopeton.jpg
+          ffprobe -v error build/master.m4a
+          file build/hopeton.jpg
+
+      - name: Generate brand-new Hopeton motion clips on free ZeroGPU
+        continue-on-error: true
+        run: |
+          cat > build/generate_hopeton.py <<'PY'
+          from gradio_client import Client, handle_file
+          import shutil, os, json
+
+          prompts = [
+              "Cinematic Jamaican dancehall music video. Preserve the man from the reference image as the same person. He rises, walks confidently through an upscale Caribbean nightclub packed with stylish adult Black and Caribbean women, turns to the rhythm, gestures with both hands, dreadlocks moving naturally, women dance and laugh around him, bartenders pour drinks, haze and lights move, real human motion, sensual but non-explicit, no text, no logos.",
+              "Cinematic VIP lounge in a Caribbean nightclub. Preserve the same man from the reference image. He stands and dances naturally while several stylish adult women move around him, smile, gesture, cross frame, flip hair and raise drinks. He responds to their body language, turns, steps, points and smiles. Real body motion, moving crowd, sweeping lights, smoke haze, premium music-video look, no text, no logos.",
+              "Nightclub bar sequence for a Jamaican R&B dancehall video. Preserve the same man from the reference image. He walks up to the bar, leans, gestures, then steps back dancing while adult women dance nearby and a bartender pours drinks. Dreadlocks and clothing move naturally. Dynamic camera, realistic human movement, neon lights and crowd motion, non-explicit, no text.",
+              "Neon city-night club entrance. Preserve the same man from the reference image. He exits a black vehicle, straightens his shirt, walks toward a lively venue while groups of stylish adult women arrive, laugh, walk and dance around him. Real walking and interaction, traffic and signage reflections moving, cinematic Jamaican nightlife mood, no text, no logos."
+          ]
+
+          client = Client("Lightricks/ltx-video-distilled", verbose=False)
+          results = []
+          for i, prompt in enumerate(prompts):
+              try:
+                  res = client.predict(
+                      prompt=prompt,
+                      negative_prompt="worst quality, inconsistent motion, blurry, jittery, distorted, static pose, still image, watermark, text",
+                      input_image_filepath=handle_file("build/hopeton.jpg"),
+                      input_video_filepath=None,
+                      height_ui=512,
+                      width_ui=768,
+                      mode="image-to-video",
+                      duration_ui=4.0,
+                      ui_frames_to_use=9,
+                      seed_ui=101+i,
+                      randomize_seed=False,
+                      ui_guidance_scale=3.0,
+                      improve_texture_flag=False,
+                      api_name="/image_to_video"
+                  )
+                  first = res[0] if isinstance(res, (list, tuple)) else res
+                  if isinstance(first, dict):
+                      src = first.get("video") or first.get("path") or first.get("url")
+                  else:
+                      src = first
+                  if src and os.path.exists(str(src)):
+                      out = f"build/gen/hopeton_{i+1:02d}.mp4"
+                      shutil.copy(str(src), out)
+                      results.append(out)
+                      print("saved", out)
+                  else:
+                      print("No local video path in result:", res)
+              except Exception as e:
+                  print("generation failed", i, repr(e))
+          print(json.dumps({"generated":results}))
+          PY
+          python build/generate_hopeton.py
+
+      - name: Add previously generated fresh Hopeton clip as fallback
+        run: |
+          curl -L --fail --retry 2 "https://lightricks-ltx-video-distilled.hf.space/gradio_api/file=/tmp/gradio/0f419b6a1684ce9cbb4b0985fe0135274b7c06b643c454fcfdd40834900e3a45/output_30066.mp4" -o build/gen/hopeton_fallback.mp4 || true
+          if [ -f build/gen/hopeton_fallback.mp4 ]; then ffprobe -v error build/gen/hopeton_fallback.mp4 || rm -f build/gen/hopeton_fallback.mp4; fi
+
+      - name: Download entirely fresh footage for this song
+        run: |
+          ids="16696561 8039276 4043982 9003383 9003396 37301839 9003400 7569779 6174620 32054975 6174435 6835455 5020950 6835782 5935464 6174521 7405373 7271834 7269763 16696554 7270087 6174444 5935458 8273569 8688893 8039293 13519928 12322744 7062427 6548165"
+          n=0
+          for id in $ids; do
+            n=$((n+1))
+            out=$(printf "build/raw/pexels_%02d_%s.mp4" "$n" "$id")
+            curl -L --fail --retry 3 -A "Mozilla/5.0" "https://www.pexels.com/download/video/$id/" -o "$out" || true
+            if [ -f "$out" ]; then
+              ffprobe -v error "$out" >/dev/null 2>&1 || rm -f "$out"
+            fi
+          done
+          echo "Downloaded valid clips:"
+          ls -lh build/raw || true
+
+      - name: Normalize all motion footage
+        run: |
+          shopt -s nullglob
+          for f in build/raw/*.mp4 build/gen/*.mp4; do
+            b=$(basename "$f" .mp4)
+            ffmpeg -y -loglevel error -i "$f" -t 10 \
+              -vf "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,format=yuv420p" \
+              -an -c:v libx264 -preset veryfast -crf 22 "build/norm/\${b}.mp4" || true
+          done
+          ls -lh build/norm
+
+      - name: Assemble full original music video
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("build/norm")
+          hop = sorted(p.glob("hopeton_*.mp4"))
+          stock = sorted(p.glob("pexels_*.mp4"))
+          if not stock:
+              raise SystemExit("No fresh motion clips downloaded.")
+          order=[]
+          h=0
+          for i,s in enumerate(stock):
+              if hop and i % 4 == 0:
+                  order.append(hop[h % len(hop)])
+                  h += 1
+              order.append(s)
+          if hop:
+              order.extend(hop[:min(2,len(hop))])
+          with open("build/concat.txt","w") as f:
+              for x in order:
+                  f.write("file '" + str(x.resolve()).replace("'","'\\\\''") + "'\\n")
+          with open("build/ASSET_MANIFEST.txt","w") as f:
+              f.write("WATCH HER BODY SPEAK — ORIGINAL-ONLY ASSET MANIFEST\\n")
+              f.write("No prior Carnival Careers music-video footage used.\\n\\n")
+              f.write("Generated Hopeton clips:\\n")
+              for x in hop: f.write(x.name+"\\n")
+              f.write("\\nFresh Pexels clips assigned only to this song:\\n")
+              for x in stock: f.write(x.name+"\\n")
+          print("hopeton clips", len(hop), "fresh stock", len(stock), "timeline clips", len(order))
+          PY
+
+          ffmpeg -y -loglevel error -f concat -safe 0 -i build/concat.txt -c copy build/visuals.mp4
+          DUR=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 build/master.m4a)
+          ffmpeg -y -loglevel error -stream_loop -1 -i build/visuals.mp4 -i build/master.m4a \
+            -map 0:v:0 -map 1:a:0 -t "$DUR" \
+            -c:v libx264 -preset medium -crf 20 -pix_fmt yuv420p \
+            -c:a aac -b:a 256k -movflags +faststart \
+            "build/WATCH_HER_BODY_SPEAK_ORIGINAL_ONLY.mp4"
+
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=codec_name,width,height,r_frame_rate \
+            -of json "build/WATCH_HER_BODY_SPEAK_ORIGINAL_ONLY.mp4" > build/VERIFY.json
+
+      - name: Upload finished video
+        uses: actions/upload-artifact@v4
+        with:
+          name: WATCH_HER_BODY_SPEAK_ORIGINAL_ONLY
+          path: |
+            build/WATCH_HER_BODY_SPEAK_ORIGINAL_ONLY.mp4
+            build/ASSET_MANIFEST.txt
+            build/VERIFY.json
+          retention-days: 7
