@@ -115,7 +115,7 @@ jobs:
             b=$(basename "$f" .mp4)
             ffmpeg -y -loglevel error -i "$f" -t 10 \
               -vf "scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,fps=24,format=yuv420p" \
-              -an -c:v libx264 -preset veryfast -crf 22 "build/norm/\${b}.mp4" || true
+              -an -c:v libx264 -preset veryfast -crf 22 "build/norm/$b.mp4" || true
           done
           ls -lh build/norm
 
