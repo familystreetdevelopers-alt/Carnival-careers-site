@@ -139,7 +139,7 @@ jobs:
               order.extend(hop[:min(2,len(hop))])
           with open("build/concat.txt","w") as f:
               for x in order:
-                  f.write("file '" + str(x.resolve()).replace("'","'\\\\''") + "'\\n")
+                  print("file '" + str(x.resolve()) + "'", file=f)
           with open("build/ASSET_MANIFEST.txt","w") as f:
               f.write("WATCH HER BODY SPEAK — ORIGINAL-ONLY ASSET MANIFEST\\n")
               f.write("No prior Carnival Careers music-video footage used.\\n\\n")
