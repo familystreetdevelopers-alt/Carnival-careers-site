@@ -1,0 +1,33 @@
+<style id="cc-resident-access-style">
+.cc-resident-access{max-width:1140px;margin:24px auto;padding:22px;border-radius:17px;border:1px solid rgba(239,191,117,.4);background:linear-gradient(120deg,#17121c,#412027);color:#fff}
+.cc-resident-access h3{margin:5px 0 7px;color:white;font-size:clamp(1.45rem,3vw,2.2rem)}
+.cc-resident-access p{margin:7px 0 17px;color:#dfd5db;line-height:1.5}
+.cc-resident-access a{display:inline-flex;border-radius:999px;padding:12px 19px;background:#e4ba78;color:#191019!important;text-decoration:none!important;font-weight:900}
+.cc-resident-access small{font-size:.72rem;letter-spacing:.11em;font-weight:900;color:#e4ba78}
+</style>
+<script id="cc-resident-gateway-script">
+(()=>{
+const activate=()=>{
+  const families=document.getElementById("page-childcare")||document.getElementById("page-families");
+  if(families&&!document.getElementById("cc-resident-access")){
+    const box=document.createElement("section");
+    box.id="cc-resident-access";box.className="cc-resident-access";
+    box.innerHTML='<small>FOR CARNIVAL CAREERS FAMILIES</small><h3>My CC Life</h3><p>Your home, your work, your family benefits and CC support in one secure household account.</p><a href="/my-cc-life.html">Open resident access →</a>';
+    const inner=families.querySelector(".wrap,.container,.page-inner,.section-inner")||families;
+    inner.insertAdjacentElement("afterbegin",box);
+  }
+  const primary=document.querySelector('nav[aria-label="Primary"]');
+  if(primary&&!primary.querySelector('[data-cc-resident-nav]')){
+    const position=primary.querySelector('a[href="#childcare"],a[href="#families"]')?.closest(".nav-item");
+    const node=document.createElement("div");
+    node.className="nav-item";node.setAttribute("data-cc-resident-nav","");
+    node.innerHTML='<a class="nav-link" href="/my-cc-life.html">My CC Life</a>';
+    if(position)position.insertAdjacentElement("afterend",node);
+    else primary.appendChild(node);
+  }
+};
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",activate,{once:true});
+else activate();
+window.addEventListener("load",activate,{once:true});
+})();
+</script>
