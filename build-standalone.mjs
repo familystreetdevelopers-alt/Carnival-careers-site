@@ -2905,9 +2905,12 @@ const truthfulIntakePatch = `
       form.setAttribute("data-cc-durable-intake","company-os");
     }
   };
-  const checkStatus=async(reference,out)=>{
+  const checkStatus=async(reference,out,explicitToken)=>{
     try{
-      const res=await fetch(API+"/status?reference="+encodeURIComponent(reference));
+      const saved=JSON.parse(localStorage.getItem("cc_intake_credentials_v1")||"[]");
+      const token=String(explicitToken||saved.find(x=>x.reference===reference)?.lookupToken||"").trim();
+      if(!token){out.textContent="Use the same browser that submitted this request or contact CC with your reference. A reference alone cannot expose private status.";return null;}
+      const res=await fetch(API+"/status?reference="+encodeURIComponent(reference)+"&lookupToken="+encodeURIComponent(token)+"&token="+encodeURIComponent(token));
       const row=await res.json().catch(()=>({}));
       if(res.status===404){
         out.innerHTML="<strong>"+esc(reference)+"</strong><br>Reference not found. Check the number or start a new request.";
@@ -2955,7 +2958,7 @@ const truthfulIntakePatch = `
         if(!res.ok)throw new Error(row.error||"Save failed");
         row.kind=kind;
         saveCredential(row);
-        await checkStatus(row.reference,out);
+        await checkStatus(row.reference,out,row.lookupToken);
         form.reset();
       }catch(_){
         out.innerHTML="<strong>Not saved.</strong> The shared Carnival Careers intake is unavailable right now. Your information was not represented as received.";
