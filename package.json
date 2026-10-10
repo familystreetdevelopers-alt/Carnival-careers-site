@@ -2,8 +2,8 @@
   "name": "carnival-careers-exact-standalone",
   "private": true,
   "scripts": {
-    "verify": "node --check build-standalone.mjs && node --check distribution-pages.mjs && node --check systeme-affiliate-funnel.mjs && node --check business-solution.mjs",
-    "build": "npm run verify && node build-standalone.mjs && node distribution-pages.mjs && node systeme-affiliate-funnel.mjs && node business-solution.mjs"
+    "verify": "node --check build-standalone.mjs && node --check distribution-pages.mjs && node --check systeme-affiliate-funnel.mjs && node --check business-solution.mjs && node --check cc-resident-access.mjs",
+    "build": "npm run verify && node build-standalone.mjs && node distribution-pages.mjs && node systeme-affiliate-funnel.mjs && node business-solution.mjs && node cc-resident-access.mjs"
   },
   "dependencies": {
     "adm-zip": "^0.5.16"
