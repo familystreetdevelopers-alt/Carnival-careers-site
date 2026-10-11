@@ -116,7 +116,7 @@ const detailPages = {
       ["05","Permit + build","Close permit gaps, issue controlled construction documents, contract scopes, track schedule/cost/RFIs/submittals/changes and verify work."],
       ["06","Occupy + own","Inspection, commissioning, occupancy, insurance, property management, buyer/tenant-owner structure and recurring operating records."]
     ],
-    links:'<a class="btn" href="/houses.html">Open The Houses</a><a class="btn alt" href="/#project">Project</a>'
+    links:'<a class="btn" href="/houses.html">Open The Houses</a><a class="btn alt" href="/finance-instruments.html">VTB / Notes / Security Controls</a><a class="btn alt" href="/#project">Project</a>'
   },
   "arena-marketplace-executor.html": {
     title:"Arena + Vendor Marketplace Executor",
@@ -170,9 +170,10 @@ const detailPages = {
       ["03","Revenue mechanism","Who pays, for what deliverable, at what unit/price, under what contract/platform, and when recognition/collection can occur."],
       ["04","Contribution","Revenue less direct cost, then explicit overhead allocation — never a hidden gross-profit shortcut."],
       ["05","Cash timing + risk","Deposit/prepayment/receivable/refund/chargeback/closing timing, who carries working-capital risk and what can fail before cash clears."],
-      ["06","Evidence ladder","MODELED → QUOTED → CONTRACTED → INVOICED/BOOKED → COLLECTED. No lane skips the ladder."]
+      ["06","Evidence ladder","MODELED → QUOTED → CONTRACTED → INVOICED/BOOKED → COLLECTED. No lane skips the ladder."],
+      ["07","Debt & payment instruments","Promissory notes, VTB debt, genuine acquired mortgage notes, receivable assignments or drafts require identifiable underlying value, enforceability, approvals and actual settlement. A dishonour is not funding."]
     ],
-    links:'<a class="btn" href="/#project">Project + funding</a>'
+    links:'<a class="btn" href="/finance-instruments.html">Notes · Bills · Treasury Controls</a><a class="btn alt" href="/#project">Project + funding</a>'
   },
   "contact-os.html": {
     title:"Contact Operating System",
