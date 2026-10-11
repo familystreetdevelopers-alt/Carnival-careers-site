@@ -12,7 +12,7 @@ const activate=()=>{
   if(families&&!document.getElementById("cc-resident-access")){
     const box=document.createElement("section");
     box.id="cc-resident-access";box.className="cc-resident-access";
-    box.innerHTML='<small>FOR CARNIVAL CAREERS FAMILIES</small><h3>My CC Life</h3><p>Your home, your work, your family benefits and CC support in one secure household account.</p><a href="/my-cc-life.html">Open resident access →</a>';
+    box.innerHTML='<small>FOR CARNIVAL CAREERS FAMILIES</small><h3>My CC Life</h3><p>Your home, your work, your family benefits and CC support in one secure household account. Consumer rights guidance is included.</p><a href="/my-cc-life.html">Open resident access →</a>';
     const inner=families.querySelector(".wrap,.container,.page-inner,.section-inner")||families;
     inner.insertAdjacentElement("afterbegin",box);
   }
