@@ -37,11 +37,12 @@ const productLabHook = `
    const commerce=items.find(el => /commerce|shop|store|marketplace/i.test(el.textContent||""));
    if(commerce)commerce.insertAdjacentElement("afterend",node); else primary.appendChild(node);
   }
-  const potential=["page-commerce","page-store","page-merch","page-marketplace","page-project"];
-  const host=potential.map(id=>document.getElementById(id)).find(Boolean);
+  const potential=["page-store","page-shop","page-commerce","page-merch","page-marketplace","page-project"];
+  const host=potential.map(id=>document.getElementById(id)).find(Boolean)
+   ||document.querySelector('[data-page="store"],[data-page="shop"],[data-page="commerce"],[data-page="project"]');
   if(host && !document.getElementById("cc-product-lab-entry")){
    const node=document.createElement("section");node.id="cc-product-lab-entry";node.setAttribute("data-cc-lab-entry","");
-   node.innerHTML='<small>COMMERCE + FAMILY WEALTH</small><h3>CC Product Lab</h3><p>Paid product testing, original brand video and photography, and an opt-in creator path. No compensated Amazon reviews.</p><a href="/product-testing.html">Explore Product Lab →</a>';
+   node.innerHTML='<small>COMMERCE + FAMILY WEALTH</small><h3>CC Product Lab</h3><p>Commerce handles paid product research, original brand video and photography, optional adult creator work, and lawful inventory resale. No incentivized Amazon reviews or resale of restricted samples.</p><a href="/product-testing.html">Explore Product Lab →</a>';
    (host.querySelector(".wrap,.container,.page-inner,.section-inner")||host).insertAdjacentElement("afterbegin",node);
   }
  };
