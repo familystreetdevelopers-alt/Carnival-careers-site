@@ -10,6 +10,7 @@ fs.copyFileSync(path.resolve("my-cc-life.html"),path.join(dist,"my-cc-life.html"
 fs.copyFileSync(path.resolve("rights-recovery.html"),path.join(dist,"rights-recovery.html"));
 fs.copyFileSync(path.resolve("driver-data-income.html"),path.join(dist,"driver-data-income.html"));
 fs.copyFileSync(path.resolve("product-testing.html"),path.join(dist,"product-testing.html"));
+fs.copyFileSync(path.resolve("finance-instruments.html"),path.join(dist,"finance-instruments.html"));
 const injection=fs.readFileSync(path.resolve("cc-resident-access-hook.html"),"utf8");
 let html=fs.readFileSync(index,"utf8");
 if(!html.includes('id="cc-resident-gateway-script"')){
