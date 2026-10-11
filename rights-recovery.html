@@ -59,7 +59,127 @@ button.down{cursor:pointer;background:var(--red);border:0;border-radius:8px;colo
 <p><button class="down" type="button" id="template">Download blank evidence log (CSV)</button></p><p class="small">The template downloads from this page. It does not send your information to Carnival Careers. Fill it privately and store it securely.</p>
 </section>
 <section class="section"><h2>How this fits the CC universe</h2><p><strong>Families:</strong> rights education, registration links and access to a private case workflow when that feature is commissioned. <strong>Operations:</strong> secure complaint intake, deduplication, calendar deadlines, document trails and licensed-counsel referrals. <strong>Capital:</strong> C$0 speculative litigation revenue in the base case; only realized, properly allocated recoveries are entered into the books.</p>
-<p class="small">This public page is a guidance gateway, not a live private case-management service or an offer of legal representation. You can return to <a href="/my-cc-life.html">My CC Life</a> for the existing resident sign-in route.</p></section></main>
+<p class="small">This public page is a guidance gateway, not a live private case-management service or an offer of legal representation. You can return to <a href="/my-cc-life.html">My CC Life</a> for the existing resident sign-in route.</p></section>
+<section class="section" id="claim-workbench"><h2>Turn your real calls into an actionable case</h2>
+<p>This private-in-your-browser workbench applies the video’s sequence: check Do Not Call registration, identify the company, organize call evidence, find its registered agent and prepare a demand for review. Your inputs do not leave this page.</p>
+<div class="panel">
+<h3>Claim workbench</h3>
+<p class="small" style="color:#4b444a">For U.S. personal numbers and documented calls only. Completing a form cannot establish a TCPA violation, who actually placed a call, or the right to collect money.</p>
+<div class="cc-case-grid">
+<label>Country of the called number
+<select id="cw-country"><option value="US">United States</option><option value="CA">Canada</option></select></label>
+<label>Full name of the person receiving calls <input id="cw-name" autocomplete="name" placeholder="Rights-holder name"></label>
+<label>Phone number that received calls <input id="cw-phone" autocomplete="off" placeholder="Number used for evidence only"></label>
+<label>Date number joined Do Not Call registry <input type="date" id="cw-reg"></label>
+<label>Company legal name (verified, not just caller ID) <input id="cw-company" placeholder="Registered corporation / LLC"></label>
+<label>Registered agent / official mailing address <textarea id="cw-agent" rows="2" placeholder="Use the state registration database"></textarea></label>
+<label>Consent or qualifying relationship <select id="cw-consent"><option value="unknown">Not yet verified</option><option value="none">To my knowledge, no consent or applicable exemption</option><option value="yes">Consent or qualifying relationship may exist</option></select></label>
+<label>Evidence of knowing/willful conduct <select id="cw-willful"><option value="no">Not established</option><option value="yes">Documented opt-out or other evidence for legal review</option></select></label>
+</div>
+<label class="cc-case-label">Document each call on a new line (begin YYYY-MM-DD; include local time, time zone, displayed number, and what was said)
+<textarea id="cw-calls" rows="5" placeholder="2026-09-10 14:06 EDT — +1... — sales call about warranty&#10;2026-09-25 11:30 EDT — +1... — repeat sales call"></textarea></label>
+<label class="cc-case-attest"><input id="cw-authentic" type="checkbox"> I am the affected subscriber or authorized representative, and these are genuine records of calls received. I understand identity and legal liability require independent verification.</label>
+<p class="cc-case-links"><a href="https://www.donotcall.gov/" target="_blank" rel="noopener">U.S. register/check number</a> · <a href="https://www.lnnte-dncl.gc.ca/en" target="_blank" rel="noopener">Canada register/check number</a> · <a href="https://www.nass.org/business-services/corporate-registration" target="_blank" rel="noopener">Find U.S. registered agent</a></p>
+<button type="button" class="down" id="cw-screen">Screen calls + prepare document</button>
+<div id="cw-result" role="status" aria-live="polite" class="cc-case-result">No case screened yet. Registration and actual call evidence are required.</div>
+<button type="button" class="down" id="cw-download" hidden>Download document for review</button>
+<p class="cc-case-fine">U.S. TCPA Do Not Call private claims usually require more than one unlawful call by/on behalf of the same entity within 12 months. Up to US$1,500 per qualifying violation is a possible court award for knowing or willful violations, not an automatic rate. The draft may propose that amount only when facts support it; it must be reviewed before being mailed. In Canada, complaints do not produce an automatic personal payment.</p>
+</div>
+</section>
+<style id="cc-claim-workbench-style">
+.cc-case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:16px}
+.cc-case-grid label,.cc-case-label{display:flex;flex-direction:column;gap:6px;font-weight:780;font-size:.88rem}
+.cc-case-grid input,.cc-case-grid select,.cc-case-grid textarea,.cc-case-label textarea{display:block;width:100%;background:#fff;color:#1b1720;border:1px solid #bfb2b8;border-radius:7px;padding:11px;font:400 .96rem/1.45 system-ui,sans-serif}
+.cc-case-label{margin-top:16px}.cc-case-attest{display:flex;align-items:flex-start;gap:9px;margin:16px 0;font-size:.88rem}.cc-case-attest input{margin-top:5px}
+.cc-case-links{font-size:.85rem;line-height:1.8}.cc-case-result{white-space:pre-wrap;background:#f0e8e1;border:1px solid #d2c5c5;border-radius:7px;padding:13px;margin:16px 0;color:#251b23;min-height:47px}.cc-case-fine{font-size:.79rem;color:#51474d;line-height:1.6}
+@media(max-width:700px){.cc-case-grid{grid-template-columns:1fr}}
+</style>
+<script id="cc-case-workbench-script">
+(function(){
+const get=id=>document.getElementById(id);
+let documentText='';
+function parseDate(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return null;const t=new Date(s+'T12:00:00Z');return Number.isNaN(t.getTime())?null:t;}
+function dayDiff(a,b){return Math.floor((a.getTime()-b.getTime())/86400000);}
+function clean(v){return String(v||'').trim();}
+function download(txt,name){const blob=new Blob([txt],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+get('cw-screen').addEventListener('click',()=>{
+ documentText='';get('cw-download').hidden=true;
+ const country=get('cw-country').value,name=clean(get('cw-name').value),phone=clean(get('cw-phone').value),regText=clean(get('cw-reg').value),reg=parseDate(regText),company=clean(get('cw-company').value),agent=clean(get('cw-agent').value),consent=get('cw-consent').value,willful=get('cw-willful').value==='yes';
+ const callLines=get('cw-calls').value.split(/\r?\n/).map(clean).filter(Boolean);
+ const parsed=callLines.map(line=>({line,date:parseDate(line.slice(0,10))})),valid=parsed.filter(x=>x.date),after=reg?valid.filter(x=>dayDiff(x.date,reg)>31):[],now=new Date();
+ const close=after.some(a=>after.some(b=>a!==b&&Math.abs(dayDiff(a.date,b.date))<=365));
+ const errs=[];
+ if(!name||!phone)errs.push('Rights holder and called phone number are missing.');
+ if(!reg)errs.push('Registration date and proof are needed.');
+ if(!get('cw-authentic').checked)errs.push('Confirm the authenticity and ownership of the evidence.');
+ if(!valid.length)errs.push('Enter at least one call date beginning YYYY-MM-DD.');
+ if(parsed.length!==valid.length)errs.push('Some call rows do not start with a valid YYYY-MM-DD date.');
+ if(valid.some(x=>x.date>now))errs.push('One or more call dates are in the future.');
+ if(country==='US'){
+  if(!company||!agent)errs.push('Confirm the actual responsible company and registered-agent address before a legal demand.');
+  if(consent!=='none')errs.push('Consent and exemptions need investigation; do not allege a violation yet.');
+  if(!close)errs.push('For the DNC private-claim path, you need 2 or more qualifying calls from the same company within 12 months and after the registry grace period.');
+ }else if(!company)errs.push('The company identity still needs verification before submission.');
+ const status=get('cw-result');
+ if(errs.length){status.textContent='NOT READY TO SEND\n'+errs.map((s,i)=>(i+1)+'. '+s).join('\n')+'\nKeep the original call log and registry confirmation. This is not evidence of established liability.';return;}
+ if(country==='CA'){
+  documentText=['CANADIAN NATIONAL DNCL — FACTUAL COMPLAINT PREPARATION','Date prepared: '+new Date().toISOString().slice(0,10),'Complainant: '+name,'Called number: '+phone,'DNCL registration date: '+regText,'Company alleged: '+company,'','Call observations:',...callLines.map((c,i)=>(i+1)+'. '+c),'','I request assessment of these calls under the National DNCL and applicable telemarketing rules. I understand that the regulator, not the consumer, decides enforcement and that an administrative fine is not my payment.','', 'Official complaint portal: https://www.lnnte-dncl.gc.ca/en','Keep screenshots and original recordings private; provide only what the official process requests.'].join('\n');
+  status.textContent='CANADIAN COMPLAINT PACKET PREPARED\n'+after.length+' call(s) dated more than 31 days after registration. This is a regulator complaint, not a personal monetary demand. Submit through the official DNCL process.';
+ }else{
+  const n=after.length,requested=willful?1500:500,total=n*requested;
+  const reasoning=willful?'You report evidence potentially supporting a knowing/willful violation. The high-end amount remains discretionary and must be supported.':'Willfulness is not established. No treble-damages assertion is made.';
+  documentText=['DRAFT — NOT SENT — FACTUAL PRE-LITIGATION RESOLUTION REQUEST','SUBJECT TO INDEPENDENT LEGAL REVIEW','',new Date().toISOString().slice(0,10),'VIA CERTIFIED MAIL — AFTER REVIEW',agent,'','Re: Telephone solicitation calls to '+phone,'','To '+company+':','', 'I am '+name+', the subscriber or authorized representative for the number above. To the best of my knowledge, the number was registered on the U.S. National Do Not Call Registry on '+regText+'. I have identified the following calls which I believe were made by or on behalf of your company. Please verify your involvement and any applicable consent or exemption.','','Call log:',...callLines.map((c,i)=>(i+1)+'. '+c),'','I have not identified consent or a qualifying exemption for the calls described above. I request that you investigate these facts and preserve the calling records, originating numbers, dialer logs, call recordings, lead sources, vendor agreements, consent and opt-out records, and applicable compliance materials for the dates listed.','', '47 U.S.C. § 227(c)(5) provides a private remedy for qualifying repeated calls within a 12-month period, including up to $500 per violation and a discretionary increase to no more than three times that amount for knowing or willful conduct. Liability, eligible call count and defenses require legal analysis. '+reasoning,'','For purposes of discussion only, and without representing that damages have been adjudicated, I propose resolving the '+n+' potentially qualifying call(s) for US
+<footer class="footer"><div class="wrap">Carnival Careers · Toronto first · Community rights, supported by evidence. General information, not legal advice. <a href="/">Home</a></div></footer>
+<script>
+(function(){
+ const ca=document.getElementById('canada'),us=document.getElementById('united-states');
+ const cb=document.getElementById('canada-button'),ub=document.getElementById('us-button');
+ function show(w){const usa=w==='us';ca.hidden=usa;us.hidden=!usa;cb.setAttribute('aria-pressed',String(!usa));ub.setAttribute('aria-pressed',String(usa));}
+ cb.addEventListener('click',()=>show('ca'));ub.addEventListener('click',()=>show('us'));
+ document.getElementById('template').addEventListener('click',()=>{
+  const headings='case_id,jurisdiction,registration_date,call_date,call_time,timezone,called_number,displayed_caller_id,claimed_company,sales_purpose,robocall_or_live,consent_status,prior_opt_out,source_evidence,complaint_reference,counsel_review,status,actual_recovery_amount';
+  const blob=new Blob([headings+'\r\n'],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='cc-blank-call-evidence-log.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+})();
+</script></body></html>+total.toLocaleString('en-US')+' (a proposed US
+<footer class="footer"><div class="wrap">Carnival Careers · Toronto first · Community rights, supported by evidence. General information, not legal advice. <a href="/">Home</a></div></footer>
+<script>
+(function(){
+ const ca=document.getElementById('canada'),us=document.getElementById('united-states');
+ const cb=document.getElementById('canada-button'),ub=document.getElementById('us-button');
+ function show(w){const usa=w==='us';ca.hidden=usa;us.hidden=!usa;cb.setAttribute('aria-pressed',String(!usa));ub.setAttribute('aria-pressed',String(usa));}
+ cb.addEventListener('click',()=>show('ca'));ub.addEventListener('click',()=>show('us'));
+ document.getElementById('template').addEventListener('click',()=>{
+  const headings='case_id,jurisdiction,registration_date,call_date,call_time,timezone,called_number,displayed_caller_id,claimed_company,sales_purpose,robocall_or_live,consent_status,prior_opt_out,source_evidence,complaint_reference,counsel_review,status,actual_recovery_amount';
+  const blob=new Blob([headings+'\r\n'],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='cc-blank-call-evidence-log.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+})();
+</script></body></html>+requested.toLocaleString('en-US')+' per call). Please respond in writing within 21 days. If you contest the facts, please provide your position and any evidence of consent, exemption, wrong-party identification, or compliant practices.','', 'No legal action has been filed by this letter. No payment is due absent mutual agreement or a valid judgment. All rights are reserved.','', 'Sincerely,',name,'','ATTACH BEFORE MAILING: registry confirmation; redacted call-log screenshots; original evidence index; proof of responsible legal entity; documented basis of any willfulness; legal review.','','NOT LEGAL ADVICE. DO NOT SEND UNREVIEWED OR UNSUBSTANTIATED ALLEGATIONS.'].join('\n');
+  status.textContent='DRAFT CREATED — NOT SENT\n'+n+' recorded call(s) appear dated beyond 31 days after registry registration; at least two are within 12 months. Proposed discussion amount: US
+<footer class="footer"><div class="wrap">Carnival Careers · Toronto first · Community rights, supported by evidence. General information, not legal advice. <a href="/">Home</a></div></footer>
+<script>
+(function(){
+ const ca=document.getElementById('canada'),us=document.getElementById('united-states');
+ const cb=document.getElementById('canada-button'),ub=document.getElementById('us-button');
+ function show(w){const usa=w==='us';ca.hidden=usa;us.hidden=!usa;cb.setAttribute('aria-pressed',String(!usa));ub.setAttribute('aria-pressed',String(usa));}
+ cb.addEventListener('click',()=>show('ca'));ub.addEventListener('click',()=>show('us'));
+ document.getElementById('template').addEventListener('click',()=>{
+  const headings='case_id,jurisdiction,registration_date,call_date,call_time,timezone,called_number,displayed_caller_id,claimed_company,sales_purpose,robocall_or_live,consent_status,prior_opt_out,source_evidence,complaint_reference,counsel_review,status,actual_recovery_amount';
+  const blob=new Blob([headings+'\r\n'],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='cc-blank-call-evidence-log.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ });
+})();
+</script></body></html>+total.toLocaleString('en-US')+'.\n'+reasoning+'\nThis is a factual self-check, not legal verification. The company attribution and claim must be checked before certified mailing.';
+ }
+ get('cw-download').hidden=false;
+});
+get('cw-download').addEventListener('click',()=>{if(documentText)download(documentText,get('cw-country').value==='US'?'cc-us-tcpa-demand-DRAFT.txt':'cc-canada-dncl-complaint-DRAFT.txt')});
+})();
+</script>
+
+</main>
 <footer class="footer"><div class="wrap">Carnival Careers · Toronto first · Community rights, supported by evidence. General information, not legal advice. <a href="/">Home</a></div></footer>
 <script>
 (function(){
