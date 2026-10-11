@@ -32,3 +32,6 @@ Cash = contract fee + separately authorized lawful resale proceeds - landed test
 
 ## Original Ethos
 One company, one thread. Public business routes only. No repeated mail to stalled counterparties. Prioritize confirmed briefs and terms, not application counts. Never assume participant selection, earnings, shipment or completed work before evidence. Alert only for real paid job offer, acceptance, contract/user gate, shipped sample with active assignment, accepted deliverable, invoice or settled funds.
+
+## Canonical ledger
+Maintain the **Product Lab Pipeline** and **Product Lab Rules** tabs in the existing multi-department operational workbook at https://docs.google.com/spreadsheets/d/1ASomIXnrBGCBBWZVJjhVKFMbWseUT2E-QMB7--M0xsM/edit . Do not make another copy. Link each verified prospect, source date, exact campaign/job, brand contact, actual fee, restrictions, owner gates, thread ID, progress and settled cash. Product Lab Rules contains verified current official program sources. Update the same rows as facts progress; dedupe by brand+campaign/product. The website's mailto brand intake is an email handoff, NOT an API-connected CRM or automated payment processor.
