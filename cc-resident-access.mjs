@@ -7,6 +7,7 @@ const dist=path.resolve("dist");
 const index=path.join(dist,"index.html");
 if(!fs.existsSync(index))throw new Error("Canonical site must be built first");
 fs.copyFileSync(path.resolve("my-cc-life.html"),path.join(dist,"my-cc-life.html"));
+fs.copyFileSync(path.resolve("rights-recovery.html"),path.join(dist,"rights-recovery.html"));
 const injection=fs.readFileSync(path.resolve("cc-resident-access-hook.html"),"utf8");
 let html=fs.readFileSync(index,"utf8");
 if(!html.includes('id="cc-resident-gateway-script"')){
