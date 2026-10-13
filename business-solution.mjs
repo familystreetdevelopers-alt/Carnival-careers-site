@@ -141,10 +141,11 @@ const detailPages = {
       ["02","Pool + qualify","Match compatible demand conservatively. A potential match is a demand signal, not a confirmed trip."],
       ["03","Provider handoff","Send qualified demand only to an appropriate licensed/operator/provider route when the user authorizes outreach."],
       ["04","Quote + booking evidence","Provider owns live inventory, quote, contract, payment, ticket/cabin/charter confirmation, refunds and carriage."],
+      ["04B","Fare savings + traveler review","Before booking compare flight dates, nearby airports, all-in fares and actual price alerts. For opted-in booked passengers, screen only identical itinerary/fare-class price drops against verified carrier rules; no guaranteed credits or automated reticketing. CC collects only separately contracted service fees."],
       ["05","Moving venue","Where commercially valid, use travel time for sponsor, vendor, hospitality and content activity under the provider agreement."],
       ["06","Arrive + repeat","The destination becomes the next city activation; travel evidence and audience data feed the next route."]
     ],
-    links:'<a class="btn" href="/#boat">Moving Venue</a><a class="btn alt" href="/#plane">Plane Pool</a><a class="btn alt" href="/#experiences">Events</a>'
+    links:'<a class="btn" href="/fare-savings.html">Flight Savings + Fare Credits</a><a class="btn alt" href="/#boat">Moving Venue</a><a class="btn alt" href="/#plane">Plane Pool</a><a class="btn alt" href="/#experiences">Events</a>'
   },
   "reality-content-engine.html": {
     title:"Reality + Content Engine",
