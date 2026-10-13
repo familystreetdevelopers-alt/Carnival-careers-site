@@ -3059,6 +3059,19 @@ for (const [from,to] of [
   ["BEATS / BUY","BEATS / PREVIEW"]
 ]) renderedHtml = renderedHtml.replaceAll(from,to);
 
+// The user-supplied October 2026 SiriusXM deck is transcribed verbatim into
+// this consolidated, single Project section. Inject only after all legacy
+// finance copy replacements so source words and numbers are never rewritten.
+const siriusxmMergePath = path.resolve("cc-siriusxm-merge-fragment.html");
+if (!fs.existsSync(siriusxmMergePath)) throw new Error("Missing merged SiriusXM Project source");
+const siriusxmMergeFragment = fs.readFileSync(siriusxmMergePath, "utf8");
+if (!siriusxmMergeFragment.includes('id="cc-siriusxm-merged"') ||
+    !siriusxmMergeFragment.includes('data-verbatim-page="23"')) {
+  throw new Error("SiriusXM Project source is missing its 23-page verbatim deck");
+}
+if (!renderedHtml.includes("</body>")) throw new Error("Missing closing body for SiriusXM Project merge");
+renderedHtml = renderedHtml.replace("</body>", siriusxmMergeFragment + "\n</body>");
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
