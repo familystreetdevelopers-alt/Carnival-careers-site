@@ -677,8 +677,8 @@ Original artwork is illustrative, not photography of the actual property or even
     if(hero)hero.insertAdjacentElement("afterend",merged);else project.insertAdjacentElement("afterbegin",merged);
     merged.hidden=false;
     // Keep deep links anchored to the now unified section.
-    for(const hash of ["project-professional","project-partners","project-execution"]){
-      if(!document.getElementById(hash)){const a=document.createElement("span");a.id=hash;merged.querySelector("#cc-merged-professionals")?.prepend(a);}
+    for(const [hash,target] of [["project-professional","cc-merged-professionals"],["project-partners","cc-merged-partners"],["project-execution","cc-merged-professionals"]]){
+      if(!document.getElementById(hash)){const a=document.createElement("span");a.id=hash;merged.querySelector("#"+target)?.prepend(a);}
     }
   };
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
