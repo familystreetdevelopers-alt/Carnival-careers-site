@@ -1,0 +1,686 @@
+<style id="cc-siriusxm-merged-style">
+#cc-siriusxm-merged{padding:clamp(26px,3.8vw,62px) 0;color:#f6f0ed;background:radial-gradient(ellipse at 84% -10%,rgba(185,29,40,.30),transparent 56%),#100f10}
+#cc-siriusxm-merged[hidden]{display:none!important}
+#cc-siriusxm-merged *{box-sizing:border-box}
+#cc-siriusxm-merged .cc-sm-wrap{max-width:1200px;margin:auto;padding:0 20px}
+#cc-siriusxm-merged .cc-sm-topline{letter-spacing:.15em;font-size:.74rem;color:#f0b98e;font-weight:850;text-transform:uppercase}
+#cc-siriusxm-merged .cc-sm-main{margin:12px 0 16px;font-size:clamp(2.15rem,5vw,4.5rem);line-height:1.04;letter-spacing:-.055em;max-width:940px;color:#fff}
+#cc-siriusxm-merged .cc-sm-main em{color:#ff6468;font-style:normal}
+#cc-siriusxm-merged .cc-sm-lead{max-width:850px;color:#d5c2be;font-size:1.08rem;line-height:1.6}
+#cc-siriusxm-merged .cc-main-details{border:1px solid rgba(230,65,71,.45);border-radius:18px;background:#191516;overflow:hidden;margin-top:24px}
+#cc-siriusxm-merged .cc-main-details>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:22px 26px;color:#fff;font-weight:900;font-size:1.15rem;background:#2b191b}
+#cc-siriusxm-merged .cc-main-details>summary::-webkit-details-marker{display:none}
+#cc-siriusxm-merged .cc-main-details>summary::after{content:'+';color:#ff7e80;font-size:1.5rem}
+#cc-siriusxm-merged .cc-main-details[open]>summary::after{content:'−'}
+#cc-siriusxm-merged .cc-sm-inside{padding:clamp(17px,3.1vw,33px)}
+#cc-siriusxm-merged h3{color:#fff;font-size:clamp(1.45rem,2.8vw,2rem);line-height:1.1;margin:15px 0}
+#cc-siriusxm-merged .cc-sm-group{border-bottom:1px solid #4a3134;margin-bottom:33px;padding-bottom:30px}
+#cc-siriusxm-merged .cc-sm-label{color:#ff777c;text-transform:uppercase;font-weight:850;font-size:.79rem;letter-spacing:.12em}
+#cc-siriusxm-merged .cc-sm-note{border-left:3px solid #f0b98e;padding:12px 16px;background:#2d2322;color:#e2d4cc;margin:20px 0;line-height:1.55}
+#cc-siriusxm-merged .cc-deck-pages{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:17px}
+#cc-siriusxm-merged .cc-deck-page{border:1px solid #483539;border-radius:9px;background:#121112;overflow:hidden}
+#cc-siriusxm-merged .cc-deck-page>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:18px;padding:16px 19px;color:#f4eae4}
+#cc-siriusxm-merged .cc-deck-page>summary::-webkit-details-marker{display:none}
+#cc-siriusxm-merged .cc-deck-page>summary>span{flex:none;color:#ff9394;font-size:.72rem;letter-spacing:.10em;font-weight:900}
+#cc-siriusxm-merged .cc-deck-page>summary>strong{font-size:.97rem;line-height:1.3;color:#f7ecea}
+#cc-siriusxm-merged .cc-deck-page>summary:after{content:'+';margin-left:auto;color:#f7b27f;font-size:1.3rem}
+#cc-siriusxm-merged .cc-deck-page[open]>summary:after{content:'−'}
+#cc-siriusxm-merged .cc-deck-page pre{font:500 .83rem/1.6 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-width:100%;color:#f3e4dd;background:#080808;padding:22px;margin:0;border-top:1px solid #4e353a;tab-size:2}
+#cc-siriusxm-merged .cc-merge-chapter{margin:31px 0;padding-bottom:20px}
+#cc-siriusxm-merged .cc-merge-chapter>h3{padding-top:8px;border-top:2px solid #923e43}
+#cc-siriusxm-merged a{color:#fac58e}
+#cc-siriusxm-merged #cc-merged-asset #cc-asset-rent-roll-reset{margin:0;padding:0;background:transparent}
+#cc-siriusxm-merged #cc-merged-asset #cc-asset-rent-roll-reset .wrap{padding:0;width:auto;max-width:none}
+#cc-siriusxm-merged #cc-merged-asset #cc-asset-rent-roll-reset .cc-arr-shell{border-color:#63373b}
+#cc-siriusxm-merged #cc-merged-partners .project-inside,#cc-siriusxm-merged #cc-merged-professionals .project-inside{display:block!important;padding:0!important;height:auto!important;max-height:none!important;overflow:visible!important}
+#cc-siriusxm-merged #cc-merged-partners .project-lane,#cc-siriusxm-merged #cc-merged-professionals .project-pro{border:1px solid #57343a;background:#241c1e;color:#fff;border-radius:12px}
+#cc-siriusxm-merged #cc-merged-partners .project-lane p,#cc-siriusxm-merged #cc-merged-professionals .project-pro p{color:#e3d8d4!important}
+#cc-siriusxm-merged #cc-merged-professionals label{color:inherit}
+#cc-siriusxm-merged #cc-merged-professionals input,#cc-siriusxm-merged #cc-merged-professionals select,#cc-siriusxm-merged #cc-merged-professionals textarea{background:#fff;color:#1b1718;border:1px solid #8e7e7e}
+#cc-siriusxm-merged .cc-sm-cta{margin:24px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+#cc-siriusxm-merged .cc-sm-cta a{display:inline-block;border:1px solid #e4404b;border-radius:9px;padding:11px 15px;text-decoration:none;font-weight:800}
+@media(max-width:700px){#cc-siriusxm-merged .cc-main-details>summary{padding:16px}#cc-siriusxm-merged .cc-sm-inside{padding:15px}#cc-siriusxm-merged .cc-deck-page pre{font-size:.74rem;padding:14px}#cc-siriusxm-merged .cc-deck-page>summary{align-items:start;gap:7px;flex-direction:column}}
+</style>
+<section id="cc-siriusxm-merged" class="section" hidden aria-label="Carnival Careers unified Toronto economic engine and verbatim SiriusXM deck">
+<div class="cc-sm-wrap">
+<div class="cc-sm-topline">CARNIVAL CAREERS · TORONTO · NOVEMBER 05 · SIRIUSXM CANADA</div>
+<h2 class="cc-sm-main">ONE PERFORMANCE. <em>A COMPOUNDING PROPERTY STACK.</em></h2>
+<p class="cc-sm-lead">The existing asset, partner and professional lanes now live together with the October 2026 sponsor/investor deck. Source figures and disclosures are reproduced verbatim below.</p>
+<details class="cc-main-details" open><summary>01–03 / The complete Toronto operating and capital model</summary>
+<div class="cc-sm-inside">
+<div class="cc-sm-group" id="cc-merged-asset"><div class="cc-sm-label">01 · Asset · audience · operating businesses</div><span id="project-story"></span><div id="cc-merged-asset-slot"></div></div>
+<div class="cc-sm-group" id="cc-merged-partners"><div class="cc-sm-label">02 · Partner lanes</div><div id="cc-merged-partner-slot"></div></div>
+<div class="cc-sm-group" id="cc-merged-professionals"><div class="cc-sm-label">03 · Get each city done</div><div id="cc-merged-professional-slot"></div></div>
+<div class="cc-sm-note">The source deck labels unsigned sponsorship packages as proposed, performance economics as modeled, and refinance and investor exits as requiring underwriting or executed paper. Its original first-money ledger includes historical allocations that do not add again to the November 5 stage-access budget.</div>
+<div id="cc-merged-full-deck"><div class="cc-sm-label">Source / 23 pages / text verbatim</div><section class="cc-merge-chapter" aria-labelledby="cc-merge-chapter-0"><h3 id="cc-merge-chapter-0">Performance and first-money economics</h3><div class="cc-deck-pages"><details class="cc-deck-page" ><summary><span>PAGE 01 / 23</span><strong>ONE PERFORMANCE. A COMPOUNDING PROPERTY STACK.</strong></summary><pre data-verbatim-page="1">CARNIVAL
+CAREERS
+NOVEMBER 05 / TORONTO
+
+
+ONE PERFORMANCE. A COMPOUNDING PROPERTY STACK.
+
+
+
+
+  C$45,000                SPONSOR PACKAGE
+
+
+
+
+PREPARED FOR SIRIUSXM CANADA
+
+                                                 CONFIDENTIAL PROPOSAL / OCT 2026</pre></details>
+<details class="cc-deck-page" open><summary><span>PAGE 02 / 23</span><strong>The first capital event.</strong></summary><pre data-verbatim-page="2">CARNIVAL CAREERS
+
+
+
+The first capital event.
+A single November 5 appearance begins the proposed capital cycle.
+
+
+
+
+  NOV 05                                     C$90K                        C$50K
+  One performance                            Sponsorship target           Projected profit before tax
+
+
+
+  Hopeton LaTouche · Scotiabank Arena        Two C$45,000 packages        Conditional on signed sponsorships
+
+
+
+
+Followed by 35 Tournament Drive and the income-producing Toronto property stack.
+
+
+
+
+01 / THE OPPORTUNITY                                                                                           02 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 03 / 23</span><strong>C$45,000 sponsor package</strong></summary><pre data-verbatim-page="3">CARNIVAL CAREERS
+
+
+
+C$45,000 sponsor package
+Two packages proposed. Distinct branded content. One November 5 performance.
+
+
+
+
+   C$22,500                                                               C$22,500
+   At signing                                                             By December 31
+
+
+
+
+   Per sponsorship contract                                               Remaining contractual balance
+
+
+
+We propose selling two sponsor packages at C$45,000 each. Each buyer receives distinct branded content and promotion around Hopeton’s
+appearance, subject to the performance rights we secure.
+
+
+
+
+02 / THE SPONSORSHIP                                                                                                                    03 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 04 / 23</span><strong>From signed contracts to collected cash.</strong></summary><pre data-verbatim-page="4">CARNIVAL CAREERS
+
+
+
+From signed contracts to collected cash.
+Proposed sponsor collection timetable · C$90,000 total
+
+
+
+
+  1                                   2                                    3                                    4
+C$45,000 combined sponsor deposits   November 5 performance              C$45,000 remaining by December 31    Investor settlement by January 15,
+                                                                                                              2027
+
+
+
+
+   Two sponsorships are a sales target, not signed commitments. Funding release depends on signed sales, agreed rights and a delivery
+   budget that supports the margin.
+
+
+
+
+03 / REVENUE TIMING                                                                                                                         04 / 23</pre></details>
+<details class="cc-deck-page" open><summary><span>PAGE 05 / 23</span><strong>One show. Clear economics.</strong></summary><pre data-verbatim-page="5">CARNIVAL CAREERS
+
+
+
+One show. Clear economics.
+November 5 model · before tax · conditional
+
+
+   Two sponsors × C$45,000                                                       C$90,000
+
+   Stage access                                                                 −C$30,000   C$50,000
+                                                                                            Projected show profit
+   Working budget to deliver both packages                                      −C$10,000
+
+   Projected profit before tax                                                   C$50,000
+
+   Investor’s proposed profit share                                                         C$30K investor / C$20K CC
+                                                                                 C$30,000
+
+   CC’s proposed profit share                                                    C$20,000
+
+   Investor receives principal plus profit                                       C$60,000
+
+Principal repayment is from project receipts, not additional project expense.
+
+
+04 / PERFORMANCE ECONOMICS                                                                                              05 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 06 / 23</span><strong>The full original first-money ledger.</strong></summary><pre data-verbatim-page="6">CARNIVAL CAREERS
+
+
+
+The full original first-money ledger.
+C$1,354,802 · original departmental allocations
+Property — including C$500,000 down payment             C$775,950
+
+Festival + TV                                           C$275,000
+
+Cruise / Travel                                         C$105,000
+
+Workforce + Training                                     C$60,000
+
+Families + Childcare                                     C$10,000
+
+Food / Hospitality                                       C$55,000
+
+Transportation                                           C$58,852
+
+Community + City Activations                             C$15,000
+
+
+   TOTAL FIRST MONEY                              C$1,354,802
+05 / ORIGINAL FIRST MONEY                                   06 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 07 / 23</span><strong>Reconcile. Do not double-count.</strong></summary><pre data-verbatim-page="7">CARNIVAL CAREERS
+
+
+
+Reconcile. Do not double-count.
+Historical festival allocation versus the single November 5 agreement.
+
+
+
+
+   C$275,000                                                                C$30,000
+   Festival + TV                                                            Stage-access investment
+
+
+
+
+   Original full-festival allocation                                        Single November 5 performance
+
+
+
+
+This is the original first-money schedule. Its full-festival costs are historical allocations, not additional costs of the single November 5
+performance. The updated performance arrangement replaces the independent arena-show allocation; other departmental expenses
+remain subject to their own current agreements and budgets.
+
+
+
+
+06 / RECONCILIATION                                                                                                                            07 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 08 / 23</span><strong>First C$5,000. Then C$25,000.</strong></summary><pre data-verbatim-page="8">CARNIVAL CAREERS
+
+
+
+First C$5,000. Then C$25,000.
+A staged agreement, not a C$2.6 million day-one draw.
+
+
+
+
+   1                                      2                                      3                                 4
+ C$5,000 first deposit                  C$25,000 second payment                C$30,000 total stage investment   Signed sponsors generate the target
+                                                                                                                 return
+
+
+
+
+       The C$5,000 is included in the C$30,000. It is not an additional expense.
+
+
+Stage payments are released only against documented rights, payment terms and required signed commitments.
+
+
+07 / CAPITAL ORDER                                                                                                                               08 / 23</pre></details></div></section>
+<section class="cc-merge-chapter" aria-labelledby="cc-merge-chapter-1"><h3 id="cc-merge-chapter-1">The asset, rent roll and property stack</h3><div class="cc-deck-pages"><details class="cc-deck-page" ><summary><span>PAGE 09 / 23</span><strong>35 TOURNAMENT</strong></summary><pre data-verbatim-page="9">THE ASSET
+
+
+
+35 TOURNAMENT
+DRIVE
+Four apartments + a backyard home
+
+
+
+PROPERTY ACQUISITION · REDEVELOPMENT · TENANT-OWNER HOUSING
+
+
+
+
+ILLUSTRATIVE ARTWORK · NOT THE ACTUAL PROPERTY</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 10 / 23</span><strong>35 Tournament: capital stack.</strong></summary><pre data-verbatim-page="10">CARNIVAL CAREERS
+
+
+
+35 Tournament: capital stack.
+Seller financing is already deducted from the modeled outside ask.
+
+   Purchase price offered by Paul                                                C$2,500,000
+
+   Seller mortgage offered                                                     −C$1,000,000             C$500K
+                                                                                                        Original down payment
+   Purchase balance                                                              C$1,500,000
+
+   Earlier construction allowance                                                C$1,000,000
+                                                                                                        Part of the C$1.5M purchase balance
+   Modeled transfer taxes                                                           C$97,950
+
+   Funding to arrange beyond the seller mortgage                                 C$2,597,950
+
+
+Combined outside capital requirement: C$2,627,950, plus transaction and carrying costs still being priced.
+
+
+08 / PROPERTY FUNDING                                                                                                                         10 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 11 / 23</span><strong>Modeled exit. Retain the building.</strong></summary><pre data-verbatim-page="11">CARNIVAL CAREERS
+
+
+
+Modeled exit. Retain the building.
+Targeted for year four after acquisition · subject to refinance and equity participation.
+
+
+   Three operating years of rental surplus                                             C$210,000
+
+
+   Refinance proceeds after clearing seller mortgage                                 C$2,187,500
+                                                                                                      C$175K
+                                                                                                      Modeled investor profit
+   Required purchase of investor equity                                                C$375,450
+                                                                                                      Before remaining costs
+
+   Total investor receipts                                                           C$2,772,950
+                                                                                                   Assumes a lender advances 75% of a
+   Less original property investment                                                               C$4.25 million valuation. The equity
+                                                                                    −C$2,597,950   purchase is a required transaction, not an
+                                                                                                   existing commitment.
+   Investor profit                                                                     C$175,000
+
+
+
+
+09 / PROPERTY INVESTOR RETURN                                                                                                          11 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 12 / 23</span><strong>Keep five homes at C$665.</strong></summary><pre data-verbatim-page="12">CARNIVAL CAREERS
+
+
+
+Keep five homes at C$665.
+Before the seller mortgage expires, the supporting portfolio must cover the refinance gap.
+
+
+
+
+   C$3,325                                              C$18,634                                                C$15,309
+   Five households / month                              Illustrative refinance / month                          Required monthly subsidy
+
+
+
+   5 × C$665                                            Requires verified loan terms                            C$183,708 annually
+
+
+
+
+The C$665 allocation represents interest on the proposed seller mortgage, not all of the property&#39;s expenses.
+
+
+
+
+10 / HOUSEHOLD PROTECTION                                                                                                                  12 / 23</pre></details>
+<details class="cc-deck-page" open><summary><span>PAGE 13 / 23</span><strong>The Toronto property stack.</strong></summary><pre data-verbatim-page="13">CARNIVAL CAREERS
+
+
+
+The Toronto property stack.
+Working master portfolio budget · separate property financings.
+
+
+   35 Tournament Drive                                                 4 apartments + backyard home              C$2,500,000
+
+   2422 Queen Street East                                              24 rental apartments                      C$5,760,000
+
+   12 York Street #5101                                                PATH tenant-owner condo                    C$592,888
+
+   138 Downes Street #3215                                             East Bayfront tenant-owner condo           C$548,000
+
+   98 Euclid Avenue                                                    CaveMansion candidate site                 C$749,900
+
+   CaveMansion                                                         Construction/development allowance        C$6,950,000
+
+   Subtotal                                                            Identified properties and construction   C$17,100,788
+
+   Unreconciled development allocation                                 Requires a detailed breakdown             C$5,366,262
+
+   Master property/development budget                                                                           C$22,467,050
+
+
+This is the working portfolio budget, not the cash required upfront.
+
+
+11 / PROPERTY PORTFOLIO                                                                                                  13 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 14 / 23</span><strong>The recurring income anchor.</strong></summary><pre data-verbatim-page="14">CARNIVAL CAREERS
+
+
+
+The recurring income anchor.
+Queen Street starts the underwriting; net cash after its own debt is what matters.
+
+
+
+
+   C$251,557                                                            C$183,708
+   Published annual NOI                                                 Annual Tournament subsidy
+
+
+
+
+   2422 Queen Street East · 24 suites                                   Portfolio net income requirement
+
+
+
+
+For Queen to cover the entire Tournament subsidy independently, its annual debt payments and additional reserves would need to fit within
+the remaining C$67,849. Otherwise the PATH, East Bayfront or other verified portfolio income must supply the difference.
+
+
+
+
+12 / SUBSIDY MECHANICS                                                                                                                14 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 15 / 23</span><strong>Cash flow → subsidy → reinvestment.</strong></summary><pre data-verbatim-page="15">CARNIVAL CAREERS
+
+
+
+Cash flow → subsidy → reinvestment.
+Working target, not income already established.
+
+
+   Cash flow after each property’s own financing
+                                                                                                                 C$275,000
+
+   Tournament subsidy
+                                                                                                               −C$183,708
+
+   Remaining cash to retain and reinvest
+                                                                                                                   C$91,292
+
+The C$210,000 of Tournament rental surplus already allocated to investor repayment cannot also be counted toward this subsidy.
+
+
+
+
+13 / TARGET SURPLUS                                                                                                              15 / 23</pre></details></div></section>
+<section class="cc-merge-chapter" aria-labelledby="cc-merge-chapter-2"><h3 id="cc-merge-chapter-2">Compounding, delivery and the sponsor ask</h3><div class="cc-deck-pages"><details class="cc-deck-page" ><summary><span>PAGE 16 / 23</span><strong>Three growth engines.</strong></summary><pre data-verbatim-page="16">CARNIVAL CAREERS
+
+
+
+Three growth engines.
+Performance capital · property equity · recurring portfolio income
+
+
+
+               PERFORMANCE CAPITAL
+    01         C$30,000 investor capital → C$60,000 targeted investor receipts.
+
+
+
+
+               PROPERTY EQUITY
+    02         C$4.25M completed-value target; C$652,050 modeled spread before remaining expenses.
+
+
+
+
+               RECURRING INCOME
+    03         C$275,000 annual net income target → C$91,292 after Tournament subsidy.
+
+
+
+14 / COMPOUNDING                                                                                     16 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 17 / 23</span><strong>Sponsor signing is the first greenlight.</strong></summary><pre data-verbatim-page="17">CARNIVAL CAREERS
+
+
+
+Sponsor signing is the first greenlight.
+Proposed performance and property sequence · not a claim of secured funding.
+
+
+
+
+   1                                         2                                      3                                 4
+ Execute stage-access rights               Sign two C$45K sponsor packages        Collect C$45K sponsor deposits     Perform November 5
+
+
+
+
+       Paul APS → Green Lending financing commitment → property closing documents.
+       Before the last day of the seller-financing period, acquire and operate the income-producing support stack.
+
+
+
+
+15 / DELIVERY ORDER                                                                                                                       17 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 18 / 23</span><strong>Confirmed vs. proposed.</strong></summary><pre data-verbatim-page="18">CARNIVAL CAREERS
+
+
+
+Confirmed vs. proposed.
+Keep the sales case commercially accurate.
+
+
+  PROPOSED
+                             Two sponsor packages at C$45,000 each.
+
+
+
+  PROPOSED
+                             C$30,000 stage-access agreement and performance rights.
+
+
+
+  MODELED
+                             C$50,000 performance profit before tax.
+
+
+
+  MODELED
+                             C$4.25M post-construction property valuation.
+
+
+
+  REQUIRES UNDERWRITING
+                             Refinance, rental cash flow, and equity-buyout exit.
+
+
+
+  REQUIRES PAPER
+                             Seller mortgage term, rights, approvals and financing.
+
+
+
+
+16 / INVESTMENT DISCLOSURE                                                             18 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 19 / 23</span><strong>C$45,000</strong></summary><pre data-verbatim-page="19">THE SPONSORSHIP ASK
+
+
+
+
+C$45,000
+C$22,500 AT SIGNING
+C$22,500 BY DECEMBER 31
+
+
+PREPARED FOR SIRIUSXM CANADA
+
+ourcarnivalcareers@gmail.com
+
+Subject to signed rights, scope and payment terms; sponsorship is not an equity investment.</pre></details></div></section>
+<section class="cc-merge-chapter" aria-labelledby="cc-merge-chapter-3"><h3 id="cc-merge-chapter-3">Original first-money allocations, verbatim</h3><div class="cc-deck-pages"><details class="cc-deck-page" ><summary><span>PAGE 20 / 23</span><strong>FIRST MONEY — REVISED</strong></summary><pre data-verbatim-page="20">CARNIVAL CAREERS
+
+
+
+FIRST MONEY — REVISED
+Original itemized property allocations · exact codes and amounts.
+   P0      35 Tournament down payment                                  C$500,000
+   P2      Legal + VTB/mortgage closing                                 C$15,000
+   P3      Appraisal                                                     C$4,500
+   P4      Inspection / zoning / survey / environmental                 C$12,000
+   P6      Architect                                                    C$20,000
+   P7      Engineering                                                  C$15,000
+   P8      Permit/application fees                                      C$15,000
+   P9      Construction mobilization                                    C$50,000
+   P10     Property/build insurance                                     C$10,000
+   P12     Ontario + Toronto land-transfer tax                          C$97,950
+   P13     Lender / broker / lender-legal fees                          C$30,000
+   P14     Title / registration / disbursements                          C$1,500
+   P15     Tax / utility closing adjustments                             C$5,000
+
+
+
+   Property subtotal                                                C$775,950
+APPENDIX A / ITEMIZED ORIGINAL ALLOCATIONS                                    20 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 21 / 23</span><strong>Festival + TV · original ledger</strong></summary><pre data-verbatim-page="21">CARNIVAL CAREERS
+
+
+
+Festival + TV · original ledger
+Historical full-festival allocation—not additive to the single November 5 cost.
+
+   F1      Festival producer / production manager                                     C$15,000
+
+   F2      Venue hold                                                                 C$50,000
+
+   F3      Stage / sound / lighting deposit                                           C$50,000
+
+   F4      Artist deposit                                                             C$75,000
+
+   F5      Hosts / DJs deposits                                                       C$10,000
+
+   F6      Staffing / security deposit                                                C$10,000
+
+   F7      Event insurance / permits                                                  C$15,000
+
+   F8      Marketing launch                                                           C$25,000
+
+   F9      TV / episode production deposit                                            C$15,000
+
+   F10     Event accounting / contracting                                             C$10,000
+
+
+   Festival + TV subtotal                                                         C$275,000
+
+APPENDIX B / HISTORICAL FESTIVAL                                                           21 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 22 / 23</span><strong>Cruise / Travel · original ledger</strong></summary><pre data-verbatim-page="22">CARNIVAL CAREERS
+
+
+
+Cruise / Travel · original ledger
+Original first-money use lines.
+
+   C1      Cruise artist deposit                    C$25,000
+
+   C2      Cruise producer / program manager        C$10,000
+
+   C3      Onboard AV / production deposit          C$20,000
+
+   C4      Caribbean local operator deposit         C$10,000
+
+   C5      Cruise insurance / legal                 C$15,000
+
+   C6      Cruise marketing / sales launch          C$15,000
+
+   C7      Cruise filming / production deposit      C$10,000
+
+
+
+   Cruise / Travel subtotal                      C$105,000
+
+APPENDIX C / CRUISE &amp; TRAVEL                              22 / 23</pre></details>
+<details class="cc-deck-page" ><summary><span>PAGE 23 / 23</span><strong>Families, jobs, food &amp; mobility.</strong></summary><pre data-verbatim-page="23">CARNIVAL CAREERS
+
+
+
+Families, jobs, food &amp; mobility.
+All other original first-money lines; codes and amounts preserved.
+
+   W1              First month payroll                                                            C$52,500
+
+   W2              Worker onboarding / training / certifications                                   C$7,500
+
+   FC1             Initial childcare / family-support pool                                        C$10,000
+
+   H1              Istanbul Fine Foods acquisition deposit                                        C$25,000
+
+   H2              Legal / financial / acquisition diligence                                      C$20,000
+
+   H3              Opening inventory / operating float                                            C$10,000
+
+   T1              SweetEV cash/equity portion                                                    C$48,852
+
+   T2              Initial insurance / plates / registration                                      C$10,000
+
+   G1              Transit / City Hall / women&#39;s-sports / community activation first money        C$15,000
+
+
+
+
+    TOTAL FIRST MONEY                                                                        C$1,354,802
+APPENDIX D / OTHER DEPARTMENTS                                                                          23 / 23
+Original artwork is illustrative, not photography of the actual property or event.</pre></details></div></section></div>
+<div class="cc-sm-cta"><a href="#sponsors">Sponsor lane →</a><a href="#lenders">Lender lane →</a><a href="#professional-services">Professional services →</a></div>
+</div>
+</details></div></section>
+<script id="cc-siriusxm-consolidate-script">
+(()=>{
+  const run=()=>{
+    const project=document.getElementById("page-project")||document.querySelector('[data-page="project"]');
+    const merged=document.getElementById("cc-siriusxm-merged");
+    if(!project||!merged)return;
+    const asset=project.querySelector("#cc-asset-rent-roll-reset");
+    const list=[...project.querySelectorAll("details")].filter(d=>!d.closest("#cc-siriusxm-merged"));
+    const norm=s=>String(s||"").replace(/\s+/g," ").trim().toLowerCase();
+    const find=pattern=>list.find(d=>pattern.test(norm(d.querySelector("summary")?.textContent)))||null;
+    const partner=find(/partner lanes/);
+    const professional=find(/get each city done|professional forms|professional services/);
+    const story=find(/story \+ economic engine|how one city works/);
+    const moveContent=(source,slotId)=>{
+      if(!source)return;
+      const slot=merged.querySelector("#"+slotId);
+      if(!slot)return;
+      const inside=source.querySelector(".project-inside")||source.querySelector(".accordion-content")||source.querySelector(".content");
+      if(inside){slot.appendChild(inside);source.remove();}
+      else {source.open=true;slot.appendChild(source);}
+    };
+    if(partner)moveContent(partner,"cc-merged-partner-slot");
+    if(professional)moveContent(professional,"cc-merged-professional-slot");
+    if(story&&story!==partner&&story!==professional)story.remove();
+    if(asset)merged.querySelector("#cc-merged-asset-slot")?.appendChild(asset);
+    const hero=project.querySelector(".page-hero");
+    if(hero)hero.insertAdjacentElement("afterend",merged);else project.insertAdjacentElement("afterbegin",merged);
+    merged.hidden=false;
+    // Keep deep links anchored to the now unified section.
+    for(const hash of ["project-professional","project-partners","project-execution"]){
+      if(!document.getElementById(hash)){const a=document.createElement("span");a.id=hash;merged.querySelector("#cc-merged-professionals")?.prepend(a);}
+    }
+  };
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();
+})();
+</script>
