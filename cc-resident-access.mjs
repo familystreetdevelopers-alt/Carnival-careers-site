@@ -12,6 +12,7 @@ fs.copyFileSync(path.resolve("driver-data-income.html"),path.join(dist,"driver-d
 fs.copyFileSync(path.resolve("product-testing.html"),path.join(dist,"product-testing.html"));
 fs.copyFileSync(path.resolve("finance-instruments.html"),path.join(dist,"finance-instruments.html"));
 fs.copyFileSync(path.resolve("fare-savings.html"),path.join(dist,"fare-savings.html"));
+fs.copyFileSync(path.resolve("capital-execution.html"),path.join(dist,"capital-execution.html"));
 const injection=fs.readFileSync(path.resolve("cc-resident-access-hook.html"),"utf8");
 let html=fs.readFileSync(index,"utf8");
 if(!html.includes('id="cc-resident-gateway-script"')){
@@ -73,3 +74,10 @@ if(!fareSavingsIndex.includes('id="cc-fare-savings-link-script"')){
 }
 if(!fareSavingsIndex.includes("The mas brings us together."))throw new Error("Home copy changed during fare savings integration");
 console.log("CC_FARE_SAVINGS_READY");
+
+// CC Capital execution: inject into generated build only; do not replace canonical Home copy.
+const ccCapitalHook="<style id=\"cc-capital-execution-style\">#cc-capital-execution-cta{padding:17px 21px;margin:15px 0;border:1px solid rgba(240,187,107,.5);background:linear-gradient(120deg,#28131b,#532030);border-radius:17px;color:#fff}#cc-capital-execution-cta a{display:inline-flex;border-radius:25px;padding:9px 15px;background:#efbb6b;color:#170e16!important;text-decoration:none!important;font-weight:900}#cc-capital-execution-cta h3{color:#fff;margin:5px 0;font-size:1.4rem}</style>\n<script id=\"cc-capital-execution-script\">(()=>{const run=()=>{const parent=document.getElementById('page-project')||document.querySelector('[data-page=\"project\"]');if(parent&&!document.querySelector('#cc-capital-execution-cta')){const n=document.createElement('section');n.id='cc-capital-execution-cta';n.innerHTML='<small>CAPITAL · DEBT · DELIVERY</small><h3>CC Capital Execution</h3><p>Real property mortgages, seller take-back notes, contracted receivables, film finance and completion controls. No investment securities offered.</p><a href=\"/capital-execution.html\">Review funding routes →</a>';(parent.querySelector('.wrap,.container,.page-inner')||parent).insertAdjacentElement('afterbegin',n)}const nav=document.querySelector('nav[aria-label=\"Primary\"]');if(nav&&!nav.querySelector('[data-cc-capital-execution]')){const e=document.createElement('div');e.className='nav-item';e.setAttribute('data-cc-capital-execution','');e.innerHTML='<a class=\"nav-link\" href=\"/capital-execution.html\">Funding Routes</a>';const pr=[...nav.querySelectorAll('.nav-item')].find(v=>/project|capital|houses/i.test(v.textContent||''));if(pr)pr.insertAdjacentElement('afterend',e);else nav.appendChild(e)}};if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();window.addEventListener('load',run,{once:true})})();</script>";
+let ccCapitalIndex=fs.readFileSync(index,"utf8");
+if(!ccCapitalIndex.includes('id="cc-capital-execution-script"')){ccCapitalIndex=ccCapitalIndex.replace("</body>",ccCapitalHook+"\n</body>");fs.writeFileSync(index,ccCapitalIndex);}
+if(!ccCapitalIndex.includes("The mas brings us together."))throw new Error("Home copy marker changed during capital integration");
+console.log("CC_CAPITAL_EXECUTION_READY");
