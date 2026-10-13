@@ -81,3 +81,90 @@ let ccCapitalIndex=fs.readFileSync(index,"utf8");
 if(!ccCapitalIndex.includes('id="cc-capital-execution-script"')){ccCapitalIndex=ccCapitalIndex.replace("</body>",ccCapitalHook+"\n</body>");fs.writeFileSync(index,ccCapitalIndex);}
 if(!ccCapitalIndex.includes("The mas brings us together."))throw new Error("Home copy marker changed during capital integration");
 console.log("CC_CAPITAL_EXECUTION_READY");
+
+
+// Organize existing standalone links under their parent navbar sections.
+// This runs AFTER the individual feature integrations above, affecting only
+// the generated navigation and not the canonical homepage content.
+const groupedNavigationHook = \`
+<style id="cc-navigation-grouping-style">
+nav[aria-label="Primary"] .drop a.cc-nested-feature{border-left:2px solid rgba(231,191,126,.65);padding-left:14px}
+#mobilePanel a.cc-mobile-sub-link{border-left:3px solid #e7bf7e;padding-left:17px;background:rgba(231,191,126,.12);font-size:12px}
+#mobilePanel a.cc-mobile-sub-link:focus-visible{outline:2px solid #e7bf7e;outline-offset:2px}
+</style>
+<script id="cc-navigation-grouping-script">
+(() => {
+ const links = [
+  {section:"families",label:"My CC Life",href:"/my-cc-life.html"},
+  {section:"commerce",label:"Funding Routes",href:"/capital-execution.html"},
+  {section:"commerce",label:"Product Lab",href:"/product-testing.html"},
+  {section:"travel",label:"Flight Savings",href:"/fare-savings.html"}
+ ];
+ const run=()=>{
+  const nav=document.querySelector('nav[aria-label="Primary"]');
+  if(nav){
+   const navItems=[...nav.querySelectorAll(":scope > .nav-item")];
+   const parent={
+    families:navItems.find(item=>item.querySelector(':scope > a[href="#childcare"],:scope > a[href="#families"]')),
+    commerce:navItems.find(item=>/commerce/i.test(item.querySelector(":scope > .nav-link")?.textContent||"")),
+    travel:navItems.find(item=>item.querySelector(':scope > a[href="#plane"]'))
+   };
+   for(const link of links){
+    const item=parent[link.section];
+    const dropdown=item?.querySelector(":scope > .drop");
+    if(!dropdown)continue;
+    // Older integrations created standalone desktop nav buttons. Fold them in.
+    nav.querySelectorAll('.nav-item > a.nav-link[href="'+link.href+'"]').forEach(a=>{
+     if(a.parentElement?.classList.contains("nav-item"))a.parentElement.remove();
+    });
+    nav.querySelectorAll('.drop a[href="'+link.href+'"]').forEach(a=>{
+     if(a.parentElement!==dropdown)a.remove();
+    });
+    let a=dropdown.querySelector('a[href="'+link.href+'"]');
+    if(!a){
+     a=document.createElement("a");
+     a.href=link.href;
+     dropdown.appendChild(a);
+    }
+    a.classList.add("cc-nested-feature");
+    a.textContent=link.label;
+   }
+  }
+  const mobile=document.getElementById("mobilePanel");
+  if(mobile){
+   // Retain the existing mobile navigation; add each child immediately after
+   // the matching parent instead of putting it among unrelated top-level pages.
+   links.forEach(link=>mobile.querySelectorAll('a[href="'+link.href+'"]').forEach(a=>a.remove()));
+   const selectors={
+    families:'a[href="#childcare"],a[href="#families"]',
+    commerce:'a[href="#store"]',
+    travel:'a[href="#plane"]'
+   };
+   for(const section of ["families","commerce","travel"]){
+    let previous=mobile.querySelector(selectors[section]);
+    if(!previous)continue;
+    for(const link of links.filter(x=>x.section===section)){
+     const child=document.createElement("a");
+     child.href=link.href;
+     child.className="cc-mobile-sub-link";
+     child.textContent=link.label;
+     child.setAttribute("aria-label",section.charAt(0).toUpperCase()+section.slice(1)+": "+link.label);
+     previous.insertAdjacentElement("afterend",child);
+     previous=child;
+    }
+   }
+  }
+ };
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});
+ else run();
+ window.addEventListener("load",run,{once:true});
+})();
+</script>\`;
+let groupedNavigationHtml=fs.readFileSync(index,"utf8");
+if(!groupedNavigationHtml.includes('id="cc-navigation-grouping-script"')){
+ if(!groupedNavigationHtml.includes("</body>"))throw new Error("Missing closing body for navigation grouping");
+ groupedNavigationHtml=groupedNavigationHtml.replace("</body>",groupedNavigationHook+"\n</body>");
+ fs.writeFileSync(index,groupedNavigationHtml);
+}
+if(!groupedNavigationHtml.includes("The mas brings us together."))throw new Error("Canonical Home copy marker missing after navigation grouping");
+console.log("CC_NAVIGATION_GROUPING_READY");
