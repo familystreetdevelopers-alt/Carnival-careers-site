@@ -17,9 +17,12 @@ Project: proposed opening performance / promotion rights at November 5, 2026 Tor
 - C$25,000 stage-access balance.
 - Up to C$5,000 event delivery scope **ceiling**, still needs real written quote including insurance, stage technical approvals and production responsibility.
 Total cost C$35,000, subject to tax/fees/legal costs not presently sourced.
-**HYPOTHETICAL SPONSOR RECEIPT WATERFALL**
-C$45,000 sponsor cash receipt → C$5,000 delivery expense → C$30,000 lender principal repayment → C$6,000 illustrative lender return **only if negotiated and legally permissible** → C$4,000 money remaining after payments (before taxes, extra costs and other distributions).
-Project gross margin before financing C$10,000 (C$45,000 − C$30,000 stage allocation − C$5,000 delivery). After illustrative lender return C$6,000, cash residual C$4,000. Do not label expected 20% lender return as an offer or promised yield. Liquidity timing must be checked: the stage deposit may be due before sponsor signing; financing cannot depend on an imaginary receivable.
+**HYPOTHETICAL SPONSOR RECEIPT WATERFALL — LEGAL-RATE CORRECTION (OCT 12)**
+C$45,000 sponsor receipt (NOT contracted) − C$30,000 stage access − C$5,000 event delivery ceiling = C$10,000 modeled **gross margin before financing**, tax, legal and other costs. The amount remaining after real financing payments is **UNDETERMINED** until a lender gives lawful written terms and all APR-included fees, conditions and exact funding/repayment dates are vetted.
+
+**REJECTED EARLIER DEBT SCENARIO — DO NOT OFFER, SEND OR BOOK:** An earlier investor example showed C$30,000 repaid as C$36,000 by November 5, including C$6,000 (20%) financing premium over approximately 24 days. This would be roughly 304% on a simple annualized basis, before fees, and raises a serious risk under Canada's Criminal Code s.347. For a corporate commercial loan larger than C$10,000 and not above C$500,000, the federal Criminal Interest Rate Regulations permit the subsection 347.01(1) exemption only if annual percentage interest **calculated actuarially does not exceed 48%**. Other loans may be subject to the 35% criminal-rate definition or other rules; actual terms/case facts and included charges require qualified lawyer review. Neither the old C$6,000 coupon nor the C$4,000 residual is a financeable offer or forecast. **Do not disguise high-interest compensation as sponsorship, fees, profit-sharing or a second agreement to avoid APR tests.** Official sources: https://laws-lois.justice.gc.ca/eng/regulations/SOR-2024-114/section-1.html ; https://laws-lois.justice.gc.ca/eng/acts/C-46/section-347.html
+
+Liquidity timing must be checked: stage deposit may be due before sponsor signing; financing cannot rely solely on an imaginary receivable.
 **CONDITIONS PRIOR TO ANY CAPITAL ASK / BINDING OFFER**
 1. Signed authorized performance/promoter stage-access agreement with exact promoter legal party, role/rights, time slot, recording rights, date, location and cancellation/refund/exclusion conditions.
 2. Independent source/quote for venue/production insurance, costs, approvals and deliverer; total cost cap verified.
