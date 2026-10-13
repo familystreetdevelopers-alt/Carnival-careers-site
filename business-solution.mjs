@@ -174,7 +174,7 @@ const detailPages = {
       ["06","Evidence ladder","MODELED → QUOTED → CONTRACTED → INVOICED/BOOKED → COLLECTED. No lane skips the ladder."],
       ["07","Debt & payment instruments","Promissory notes, VTB debt, genuine acquired mortgage notes, receivable assignments or drafts require identifiable underlying value, enforceability, approvals and actual settlement. A dishonour is not funding."]
     ],
-    links:'<a class="btn" href="/finance-instruments.html">Notes · Bills · Treasury Controls</a><a class="btn alt" href="/#project">Project + funding</a>'
+    links:'<a class="btn" href="/capital-execution.html">Capital Execution · Lender Routes</a><a class="btn alt" href="/finance-instruments.html">Notes · Bills · Treasury Controls</a><a class="btn alt" href="/#project">Project + funding</a>'
   },
   "contact-os.html": {
     title:"Contact Operating System",
