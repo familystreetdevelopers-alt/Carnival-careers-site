@@ -9,6 +9,8 @@ The quickest credible capital is underwritten against **owned/controlled collate
 ## PROPOSED NOVEMBER 5 PERFORMANCE: SMALLEST FINANCE CLOSING
 Project: proposed opening performance / promotion rights at November 5, 2026 Toronto show; no executed stage-rights/promoter instrument or sponsor paper independently confirmed as of source review. Not a claimed venue booking.
 
+**EXTERNALLY CONFIRMED EVENT**: Scotiabank Arena officially lists **MAVADO & Friends Live on Thursday, November 5, 2026 at 7:00 PM ET**: https://www.scotiabankarena.com/events/category/concerts ; https://www.ticketmaster.ca/mavado-tickets/artist/1206368 . This verifies that the concert is scheduled, **NOT** that Carnival Careers holds stage access, performance rights, backstage credentials, promoter designation or any sponsorship inventory. Only the actual organizer/promoter's written rights and payment agreement can grant such access. Do not contact previously held MLSE/arena/talent counterparties or work around user holds.
+
 **PROPOSED SOURCES**
 - C$30,000 capital under a negotiated institutional/eligible lender bridge facility, potentially documented by a lender note *after underwriter and lawyer approval*.
 - C$45,000 one sponsor sale; not currently executed or cash committed. Sponsor is unnamed as instructed.
