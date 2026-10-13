@@ -11,6 +11,7 @@ fs.copyFileSync(path.resolve("rights-recovery.html"),path.join(dist,"rights-reco
 fs.copyFileSync(path.resolve("driver-data-income.html"),path.join(dist,"driver-data-income.html"));
 fs.copyFileSync(path.resolve("product-testing.html"),path.join(dist,"product-testing.html"));
 fs.copyFileSync(path.resolve("finance-instruments.html"),path.join(dist,"finance-instruments.html"));
+fs.copyFileSync(path.resolve("fare-savings.html"),path.join(dist,"fare-savings.html"));
 const injection=fs.readFileSync(path.resolve("cc-resident-access-hook.html"),"utf8");
 let html=fs.readFileSync(index,"utf8");
 if(!html.includes('id="cc-resident-gateway-script"')){
@@ -61,3 +62,14 @@ if(!productLabHtml.includes('id="cc-product-lab-link-script"')){
 if(!productLabHtml.includes("The mas brings us together."))throw new Error("Canonical Home copy marker missing after Product Lab integration");
 console.log("CC_PRODUCT_LAB_ENTRY_READY");
 
+
+// CC Travel fare-savings integration: preserve canonical Home copy, add on generated site only.
+const fareSavingsHook = "\n<style id=\"cc-fare-savings-style\">\n#cc-fare-savings-entry{border:1px solid rgba(240,195,124,.4);background:linear-gradient(125deg,#24151a,#591c36);border-radius:17px;padding:18px 21px;margin:18px 0 22px;color:#fff;max-width:1100px}\n#cc-fare-savings-entry h3{color:#fff;font-size:1.5rem;margin:4px 0 8px}#cc-fare-savings-entry p{color:#e7d6df;line-height:1.5;margin:0 0 13px}\n#cc-fare-savings-entry a{display:inline-block;background:#f0c37c;padding:10px 16px;border-radius:30px;color:#1d141b!important;text-decoration:none!important;font-weight:900}\n</style>\n<script id=\"cc-fare-savings-link-script\">\n(() => {\n const activate=() => {\n  const primary=document.querySelector('nav[aria-label=\"Primary\"]');\n  if(primary && !primary.querySelector('[data-cc-fare-savings-nav]')){\n   const box=document.createElement('div');box.className='nav-item';box.setAttribute('data-cc-fare-savings-nav','');\n   box.innerHTML='<a class=\"nav-link\" href=\"/fare-savings.html\">Flight Savings</a>';\n   const candidates=[...primary.querySelectorAll('.nav-item')];\n   const travel=candidates.find(node=>/plane|travel|flight|boat|cruise/i.test(node.textContent||''));\n   if(travel)travel.insertAdjacentElement('afterend',box); else primary.appendChild(box);\n  }\n  const parent=document.getElementById('page-plane')||document.getElementById('page-travel')||document.querySelector('[data-page=\"plane\"],[data-page=\"travel\"]');\n  if(parent && !document.getElementById('cc-fare-savings-entry')){\n   const entry=document.createElement('section');entry.id='cc-fare-savings-entry';\n   entry.innerHTML='<small>CC TRAVEL · FAMILY SAVINGS</small><h3>Flight Savings &amp; Fare Recovery</h3><p>Track prices, compare all-in fares and check actual airline credit eligibility after booking. No magic booking hour and no guaranteed refund.</p><a href=\"/fare-savings.html\">Check a fare →</a>';\n   (parent.querySelector('.wrap,.container,.page-inner,.section-inner')||parent).insertAdjacentElement('afterbegin',entry);\n  }\n };\n if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',activate,{once:true});else activate();\n window.addEventListener('load',activate,{once:true});\n})();\n</script>";
+let fareSavingsIndex=fs.readFileSync(index,"utf8");
+if(!fareSavingsIndex.includes('id="cc-fare-savings-link-script"')){
+ if(!fareSavingsIndex.includes("</body>"))throw new Error("No </body> for Fare Savings link");
+ fareSavingsIndex=fareSavingsIndex.replace("</body>",fareSavingsHook+"\n</body>");
+ fs.writeFileSync(index,fareSavingsIndex);
+}
+if(!fareSavingsIndex.includes("The mas brings us together."))throw new Error("Home copy changed during fare savings integration");
+console.log("CC_FARE_SAVINGS_READY");
