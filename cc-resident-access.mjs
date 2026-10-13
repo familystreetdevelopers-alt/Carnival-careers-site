@@ -86,7 +86,7 @@ console.log("CC_CAPITAL_EXECUTION_READY");
 // Organize existing standalone links under their parent navbar sections.
 // This runs AFTER the individual feature integrations above, affecting only
 // the generated navigation and not the canonical homepage content.
-const groupedNavigationHook = \`
+const groupedNavigationHook = `
 <style id="cc-navigation-grouping-style">
 nav[aria-label="Primary"] .drop a.cc-nested-feature{border-left:2px solid rgba(231,191,126,.65);padding-left:14px}
 #mobilePanel a.cc-mobile-sub-link{border-left:3px solid #e7bf7e;padding-left:17px;background:rgba(231,191,126,.12);font-size:12px}
@@ -159,7 +159,7 @@ nav[aria-label="Primary"] .drop a.cc-nested-feature{border-left:2px solid rgba(2
  else run();
  window.addEventListener("load",run,{once:true});
 })();
-</script>\`;
+</script>`;
 let groupedNavigationHtml=fs.readFileSync(index,"utf8");
 if(!groupedNavigationHtml.includes('id="cc-navigation-grouping-script"')){
  if(!groupedNavigationHtml.includes("</body>"))throw new Error("Missing closing body for navigation grouping");
