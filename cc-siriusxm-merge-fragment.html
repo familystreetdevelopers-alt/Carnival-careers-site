@@ -45,7 +45,7 @@
 <div class="cc-sm-wrap">
 <div class="cc-sm-topline">CARNIVAL CAREERS · TORONTO · NOVEMBER 05 · SIRIUSXM CANADA</div>
 <h2 class="cc-sm-main">ONE PERFORMANCE. <em>A COMPOUNDING PROPERTY STACK.</em></h2>
-<p class="cc-sm-lead">The existing asset, partner and professional lanes now live together with the October 2026 sponsor/investor deck. Source figures and disclosures are reproduced verbatim below.</p>
+<p class="cc-sm-lead">One unified Project section replaces the three separate stories, partners and professional accordions. The 23-page SiriusXM sponsor/investor deck appears below with its source text reproduced verbatim; financial scenarios remain identified as proposed, modeled or subject to underwriting.</p>
 <details class="cc-main-details" open><summary>01–03 / The complete Toronto operating and capital model</summary>
 <div class="cc-sm-inside">
 <div class="cc-sm-group" id="cc-merged-asset"><div class="cc-sm-label">01 · Asset · audience · operating businesses</div><span id="project-story"></span><div id="cc-merged-asset-slot"></div></div>
@@ -660,7 +660,7 @@ Original artwork is illustrative, not photography of the actual property or even
     const find=pattern=>list.find(d=>pattern.test(norm(d.querySelector("summary")?.textContent)))||null;
     const partner=find(/partner lanes/);
     const professional=find(/get each city done|professional forms|professional services/);
-    const story=find(/story \+ economic engine|how one city works/);
+    const story=find(/story \+ economic engine|story \+ numbers|how one city works|story and numbers/);
     const moveContent=(source,slotId)=>{
       if(!source)return;
       const slot=merged.querySelector("#"+slotId);
@@ -672,6 +672,12 @@ Original artwork is illustrative, not photography of the actual property or even
     if(partner)moveContent(partner,"cc-merged-partner-slot");
     if(professional)moveContent(professional,"cc-merged-professional-slot");
     if(story&&story!==partner&&story!==professional)story.remove();
+    // Remove residual original Project accordions instead of leaving three copies below this merge.
+    for(const details of [...project.querySelectorAll("details")]){
+      if(details.closest("#cc-siriusxm-merged"))continue;
+      const heading=norm(details.querySelector("summary")?.textContent);
+      if(/story \\+ economic engine|story \\+ numbers|how one city works|partner lanes|get each city done|professional forms|professional services/.test(heading))details.remove();
+    }
     if(asset)merged.querySelector("#cc-merged-asset-slot")?.appendChild(asset);
     const hero=project.querySelector(".page-hero");
     if(hero)hero.insertAdjacentElement("afterend",merged);else project.insertAdjacentElement("afterbegin",merged);
