@@ -1,49 +1,49 @@
 import fs from "node:fs";
 import path from "node:path";
-
 const dist = path.resolve("dist");
-const index = path.join(dist, "index.html");
-const unifiedStorySource = path.resolve("the-story.html");
-const teamDeskSource = path.resolve("team-desk.html");
-
-for (const file of [index, unifiedStorySource, teamDeskSource]) {
-  if (!fs.existsSync(file)) throw new Error("Missing required page for Story consolidation: " + file);
+const index = path.join(dist,"index.html");
+for (const p of ["the-story.html","team-desk.html"]) {
+ const from=path.resolve(p);
+ if(!fs.existsSync(from))throw new Error("Required unified Story source missing: "+p);
+ fs.copyFileSync(from,path.join(dist,p));
 }
-fs.copyFileSync(unifiedStorySource, path.join(dist, "the-story.html"));
-fs.copyFileSync(teamDeskSource, path.join(dist, "team-desk.html"));
-
-let html = fs.readFileSync(index, "utf8");
-const oldProjectNavigation = '<div class="nav-item"><a class="nav-link" href="#project">Project</a><div class="drop"><a href="#project">Project overview</a><a href="#project-story">Story + economic engine</a><a href="#project-partners">Partner lanes</a><a href="#project-professional">Professional forms</a></div></div>';
-const newProjectNavigation = '<div class="nav-item"><a class="nav-link" href="/the-story.html" data-cc-single-story-nav>Story</a></div><div class="nav-item"><a class="nav-link" href="#project">Project</a><div class="drop"><a href="#project">Project overview</a><a href="#project-professional">Professional forms</a><a href="https://carnival-careers-os.floot.app/coordination">Development Calendar</a><a href="/team-desk.html">Private Team Desk</a></div></div>';
-if (!html.includes(oldProjectNavigation)) throw new Error("Cannot locate original Project dropdown; do not silently ship duplicate Story links");
-html = html.replace(oldProjectNavigation, newProjectNavigation);
-
-const mobileNeedle = '<a href="#home">Home</a><a href="#project">Project</a>';
-if (!html.includes(mobileNeedle)) throw new Error("Cannot locate original mobile nav");
-html = html.replace(mobileNeedle, '<a href="#home">Home</a><a href="/the-story.html" data-cc-single-story-mobile>Story</a><a href="#project">Project</a>');
-
-html = html.replace(/href="#project-story"/g, 'href="/the-story.html"')
-  .replace(/href="#project-partners"/g, 'href="/the-story.html"');
-const style = '<style id="cc-single-story-experience">'+
+if(!fs.existsSync(index))throw new Error("Canonical site missing");
+let html=fs.readFileSync(index,"utf8");
+const css='<style id="cc-one-story-style">'+
 '#page-project #project-story,#page-project #project-partners{display:none!important}'+
 '#page-project .cc-one-story-in-project{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding:25px 28px;margin:24px 0;border:1px solid rgba(255,196,77,.45);border-left:4px solid #ffc44d;border-radius:16px;background:linear-gradient(115deg,rgba(108,26,45,.62),rgba(12,17,31,.94));color:#fff}'+
 '#page-project .cc-one-story-in-project h2{font-size:clamp(22px,3vw,36px);line-height:1.1;margin:0 0 9px;font-weight:900;color:#ffc44d}'+
 '#page-project .cc-one-story-in-project p{font-size:14px;max-width:660px;line-height:1.5;margin:0;color:#f0dfe3}'+
 '#page-project .cc-one-story-in-project a{background:#e54153;color:#fff;font-size:13px;font-weight:900;text-decoration:none;padding:13px 17px;border-radius:8px;white-space:nowrap}'+
 '</style>';
-if (!html.includes("</head>")) throw new Error("Missing </head> for Story styling");
-html = html.replace("</head>", style + "\n</head>");
-const projectMain = '<main class="project-wrap">';
-if (!html.includes(projectMain)) throw new Error("Missing Project section");
-html = html.replace(projectMain, projectMain + '\n<section class="cc-one-story-in-project"><div><h2>One story. Every industry.</h2><p>Follow the featured woman, family, development, commerce, production, music, travel and real economics in one continuous journey.</p></div><a href="/the-story.html">Read the full story ↗</a></section>');
-
-fs.writeFileSync(index, html);
-
-const redirect = '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Story | Carnival Careers</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://carnival-careers-live-current.vercel.app/the-story.html"><meta http-equiv="refresh" content="0;url=/the-story.html"></head><body><p>The Production Universe has moved into <a href="/the-story.html">the unified Story</a>.</p></body></html>';
-fs.writeFileSync(path.join(dist, "production-universe.html"), redirect);
-console.log("CC_STORY_MERGED", {
-  story: fs.statSync(path.join(dist, "the-story.html")).size,
-  storyNavButtons: (html.match(/data-cc-single-story-nav/g) || []).length,
-  storyMobileButtons: (html.match(/data-cc-single-story-mobile/g) || []).length,
-  duplicateStoryNavLinks: (html.match(/href="#project-story"|href="#project-partners"/g) || []).length
-});
+if(!html.includes("</head>")||!html.includes("</body>"))throw new Error("Cannot attach unified Story navigation");
+html=html.replace("</head>",css+"\n</head>");
+const hook=[
+'<script id="cc-one-story-nav">',
+'(()=>{',
+' const run=()=>{',
+'  const primary=document.querySelector("nav[aria-label=Primary]");',
+'  const p=primary?.querySelector("a.nav-link[href=\'#project\']")?.closest(".nav-item");',
+'  if(p){',
+'   const old=p.querySelector(".drop");',
+'   old?.querySelectorAll("a").forEach(a=>{const href=a.getAttribute("href");const label=(a.textContent||"").toLowerCase();if(href==="#project-story"||href==="#project-partners"||href==="/production-universe.html"||label.includes("production universe")||label.includes("story + economic engine")||label.includes("partner lanes"))a.remove()});',
+'   for(const info of [{url:"https://carnival-careers-os.floot.app/coordination",label:"Development Calendar"},{url:"/team-desk.html",label:"Private Team Desk"}]){if(old&&!old.querySelector("a[href=\'"+info.url+"\']")){const x=document.createElement("a");x.href=info.url;x.textContent=info.label;old.appendChild(x)}}',
+'   if(!primary.querySelector("[data-cc-one-story]")){const div=document.createElement("div");div.className="nav-item";div.setAttribute("data-cc-one-story","");const a=document.createElement("a");a.className="nav-link";a.href="/the-story.html";a.textContent="Story";div.appendChild(a);p.insertAdjacentElement("beforebegin",div)}',
+'  }',
+'  const mobile=document.getElementById("mobilePanel");',
+'  if(mobile){',
+'   [...mobile.querySelectorAll("a")].filter(a=>{const h=a.getAttribute("href");const t=(a.textContent||"").toLowerCase();return h==="/production-universe.html"||h==="#project-story"||h==="#project-partners"||t==="the production universe"||t==="story + economic engine"||t==="partner lanes"}).forEach(a=>a.remove());',
+'   if(!mobile.querySelector("[data-cc-one-story-mobile]")){const p=mobile.querySelector("a[href=\'#project\']");if(p){const a=document.createElement("a");a.href="/the-story.html";a.textContent="Story";a.setAttribute("data-cc-one-story-mobile","");p.insertAdjacentElement("beforebegin",a)}}',
+'  }',
+'  const project=document.querySelector("#page-project main.project-wrap");',
+'  if(project&&!project.querySelector(".cc-one-story-in-project")){project.insertAdjacentHTML("afterbegin",\'<section class="cc-one-story-in-project"><div><h2>One story. Every industry.</h2><p>Follow the featured woman, family, development, commerce, filming, music, travel and economics in one smooth journey.</p></div><a href="/the-story.html">Read the full story ↗</a></section>\')}',
+' };',
+' if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true});else run();',
+'})();',
+'</script>'
+].join("\n");
+html=html.replace("</body>",hook+"\n</body>");
+fs.writeFileSync(index,html);
+const redirect='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Story | Carnival Careers</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://carnival-careers-live-current.vercel.app/the-story.html"><meta http-equiv="refresh" content="0;url=/the-story.html"></head><body><p>Continue to <a href="/the-story.html">Story</a>.</p></body></html>';
+fs.writeFileSync(path.join(dist,"production-universe.html"),redirect);
+console.log("CC_ONE_STORY_READY",fs.statSync(path.join(dist,"the-story.html")).size);
