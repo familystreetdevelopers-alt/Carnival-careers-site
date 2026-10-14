@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100c13">
+<meta name="description" content="Carnival Careers — one woman's story opens a city, while real estate, work, food, vendors, television, Caribbean performance and cruises power a connected economic engine.">
+<link rel="canonical" href="https://carnival-careers-live-current.vercel.app/the-story.html">
+<title>The Story | Carnival Careers</title>
+<style>
+:root{--bg:#0b0a0e;--ink:#fff8ef;--panel:#21171f;--panel2:#2a1b26;--edge:rgba(255,227,199,.18);--gold:#ffd18f;--red:#e83f51;--muted:#d5c5cb;--ui:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;color:var(--ink);background:var(--bg);font:16px/1.65 var(--ui)}
+body:after{position:fixed;inset:0;z-index:20;pointer-events:none;content:"";opacity:.22;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.025) 3px)}
+a{color:inherit}
+.wrapper{width:min(1200px,calc(100% - 40px));margin:auto}
+header{background:#100c12ed;border-bottom:1px solid #5a3946;position:sticky;top:0;z-index:25;backdrop-filter:blur(12px)}
+header .wrapper{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:70px}
+.brand{font-weight:950;text-decoration:none;font-size:19px;letter-spacing:-.06em}
+.brand span{color:var(--red)}
+.headerlinks{display:flex;gap:24px;font-size:12px;font-weight:800}
+.headerlinks a{text-decoration:none}
+.headerlinks a:hover{color:var(--gold)}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:
+radial-gradient(ellipse 60% 95% at 95% 25%,rgba(197,37,70,.38),transparent 78%),
+radial-gradient(ellipse 80% 90% at 8% 90%,rgba(139,68,27,.29),transparent 79%),
+linear-gradient(120deg,#0b0a0e,#21131a);padding:100px 0 76px}
+.hero:before{content:"CC";position:absolute;right:-45px;top:100px;font-size:clamp(160px,40vw,520px);line-height:1;font-weight:950;letter-spacing:-.11em;color:rgba(255,255,255,.022);z-index:-1}
+.eyebrow{font-size:11px;color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.15em}
+.hero h1{font-size:clamp(58px,11vw,144px);line-height:.85;letter-spacing:-.09em;text-transform:uppercase;margin:23px 0 34px;max-width:940px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.lead{font-size:clamp(17px,2vw,23px);max-width:800px;color:#eadde4;line-height:1.6}
+.heroactions{display:flex;gap:12px;flex-wrap:wrap;margin:31px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:7px;font-weight:850;font-size:13px;letter-spacing:.01em;padding:13px 18px;text-decoration:none;border:1px solid var(--red);background:var(--red);color:white}
+.btn:hover{filter:brightness(1.12)}
+.btn.secondary{background:transparent;border-color:#9d6467}
+.logline{margin-top:66px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.logline span{display:block;border-top:1px solid #a74c59;padding-top:13px;font-size:11px;font-weight:900;letter-spacing:.085em;text-transform:uppercase;color:#ead5d8}
+.story{position:relative;padding:95px 0;border-bottom:1px solid #41303b}
+.story.dark{background:#120f16}
+.story.alt{background:#1c1119}
+.story .wrapper{position:relative}
+.sectionhead{max-width:880px;margin-bottom:38px}
+.stepnumber{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+h2{font-size:clamp(38px,6.5vw,78px);line-height:1.02;letter-spacing:-.068em;margin:0 0 22px}
+h2 em{font-style:normal;color:var(--gold)}
+.story p{color:var(--muted);font-size:clamp(15px,1.35vw,18px);max-width:890px}
+.spotlight{display:grid;grid-template-columns:1fr .9fr;gap:42px;align-items:start}
+.pull{font-size:clamp(24px,3.2vw,43px);line-height:1.19;letter-spacing:-.042em;font-weight:760;padding:27px 0 28px;border-top:3px solid var(--red);border-bottom:1px solid #65505b;color:#fff5f1}
+.pull strong{color:var(--gold)}
+.lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:30px 0 0}
+.lane{border:1px solid var(--edge);border-top:3px solid var(--red);border-radius:11px;padding:25px;background:linear-gradient(135deg,#291b25,#16121b);min-height:188px}
+.lane .n{color:var(--gold);font-weight:900;letter-spacing:.08em;font-size:11px}
+.lane h3{font-size:23px;letter-spacing:-.04em;line-height:1.19;margin:12px 0 9px}
+.lane p{margin:0;font-size:13px;line-height:1.58}
+.track{border-left:2px solid #9d404f;margin:24px 0 0;padding-left:0}
+.track article{position:relative;margin:0 0 0 20px;padding:0 0 29px}
+.track article:before{content:"";position:absolute;background:var(--red);height:10px;width:10px;border-radius:50%;left:-26px;top:8px}
+.track h3{font-size:19px;letter-spacing:-.03em;margin:0 0 3px}
+.track p{margin:0;font-size:14px}
+.ribbon{padding:29px 32px;margin:33px 0;background:linear-gradient(105deg,#522032,#2e1b27);border-left:4px solid var(--gold);border-radius:8px;font-size:20px;font-weight:600;letter-spacing:-.026em;line-height:1.4}
+.ribbon em{color:var(--gold);font-style:normal}
+.clocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:25px 0}
+.clock{background:#211922;border:1px solid var(--edge);border-radius:11px;padding:26px}
+.clock b{font-size:12px;letter-spacing:.09em;color:var(--gold)}
+.clock h3{font-size:23px;letter-spacing:-.035em;line-height:1.12;margin:12px 0}
+.clock p{font-size:13px;margin:0}
+.cash{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:30px 0;gap:9px}
+.cash span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:94px;padding:15px 10px;border:1px solid #6a4554;background:linear-gradient(160deg,#351b2a,#1b141f);border-radius:9px;font-size:12px;font-weight:800}
+.disclaimer{font-size:12px!important;color:#baadb6!important;margin-top:20px}
+.partnergrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:25px}
+.partner{display:flex;gap:19px;background:#271923;border:1px solid var(--edge);border-radius:10px;padding:23px}
+.partner .tag{font-weight:900;font-size:11px;color:var(--gold);letter-spacing:.13em;padding-top:5px}
+.partner h3{font-size:20px;margin:0 0 7px;letter-spacing:-.025em}
+.partner p{font-size:13px;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin:35px 0 0}
+.outro{text-align:center;padding:100px 0 110px;background:radial-gradient(ellipse at 50% 50%,#5e203d,#120d13 69%)}
+.outro h2{max-width:1000px;margin:0 auto 23px}
+.outro p{max-width:740px;margin:0 auto 26px;color:#ead7dd}
+.outro .links{justify-content:center}
+footer{border-top:1px solid #573647;background:#100d13;padding:31px 0;color:#bdaab6;font-size:12px}
+footer .wrapper{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.spotlight{grid-template-columns:1fr;gap:22px}.lanes{grid-template-columns:repeat(2,minmax(0,1fr))}.cash{grid-template-columns:repeat(3,minmax(0,1fr))}.logline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.hero{padding:70px 0 52px}.story{padding:65px 0}.lanes,.clocks,.partnergrid{grid-template-columns:1fr}.cash{grid-template-columns:repeat(2,minmax(0,1fr))}.headerlinks{gap:12px;font-size:11px}.hero h1{font-size:clamp(49px,15vw,79px)}.spotlight{gap:18px}.pull{font-size:27px}.ribbon{font-size:17px}.partner{padding:17px}.clock{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<header><div class="wrapper"><a class="brand" href="/">CARNIVAL <span>CAREERS</span></a><nav class="headerlinks" aria-label="Page links"><a href="/#project">Project</a><a href="#partners">Partners</a><a href="/team-desk.html">Team Desk</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrapper">
+<div class="eyebrow">One human story · one connected commercial universe · Toronto first</div>
+<h1>One story.<br><em>Everything moves.</em></h1>
+<p class="lead">It starts with a woman who deserves recognition and a family whose next chapter matters. A dinner becomes a home. A home brings jobs, businesses, builders and investors into the picture. The city joins in. The story turns into television, Caribbean music, a live celebration—and a community that can travel together.</p>
+<p class="lead">That's Carnival Careers: the <strong>story, economic engine, partnerships and production</strong> are not separate projects. They are different departments of one repeatable city experience.</p>
+<div class="heroactions"><a class="btn" href="#beginning">Follow the story ↓</a><a class="btn secondary" href="#partners">Work with us ↗</a></div>
+<div class="logline"><span>One featured woman</span><span>One family journey</span><span>Connected industries</span><span>65-city long-term vision</span></div>
+</div></section>
+<section class="story dark" id="beginning"><div class="wrapper">
+<div class="stepnumber">Act 01 / The human beginning</div><div class="spotlight">
+<div><h2>First the woman.<br><em>Then the family.</em></h2><p>A woman whose contribution to her city deserves fuller recognition becomes the opening voice. She introduces a Carnival-culture family. We meet them around a restaurant table—not in a boardroom—and hear what work, housing, belonging and opportunity really mean to them.</p><p>The family is not a prop for a concert. Their experiences establish what the companies and professionals will actually need to accomplish.</p></div>
+<div class="pull">A meal opens the door. <strong>Real people give every business decision a reason to exist.</strong></div></div>
+<div class="ribbon">Dinner leads naturally to food reviews, local restaurants, grocery relationships, community businesses and the city itself—not an unrelated advertising break.</div>
+</div></section>
+<section class="story alt" id="assets"><div class="wrapper">
+<div class="sectionhead"><div class="stepnumber">Act 02 / The physical transformation</div><h2>The story <em>gets an address.</em></h2><p>Once the household's needs are understood, the property and development teams have an actual assignment. Every purchase or build must stand up to title, zoning, lenders, engineering, construction costs, occupancy requirements and a credible exit.</p></div>
+<div class="lanes">
+<article class="lane"><span class="n">BUILD 01</span><h3>35 Tournament Drive</h3><p>The proposed conversion/build pathway: survey, architecture, structural and MEP floor plans, Ontario code review, permit, construction and the home reveal. Seller and authority approvals remain prerequisites.</p></article>
+<article class="lane"><span class="n">BUILD 02</span><h3>CaveMansion / 98 Euclid</h3><p>A separate ambitious build concept. Its Scarborough site cannot move past the TRCA floodplain, City planning and geotechnical stop/go gates without actual evidence.</p></article>
+<article class="lane"><span class="n">ACQUISITION</span><h3>Queen Street East</h3><p>The 24-home operating building is the proposed early rental-income anchor, subject to signed acquisition terms and verified rent roll, expenses and financing.</p></article>
+<article class="lane"><span class="n">ACQUISITION</span><h3>Victoria Park / Vic Towns</h3><p>Individual townhouse opportunities to support household ownership pathways. Each title, seller contract and tenant-owner mortgage is independently underwritten.</p></article>
+<article class="lane"><span class="n">ACQUISITION</span><h3>PATH + East Bayfront</h3><p>Two proposed condominium holdings, evaluated for price, title, occupancy, debt service, equity and the right purchase moment.</p></article>
+<article class="lane"><span class="n">OPERATIONS</span><h3>One development team</h3><p>Architects, engineers, project managers, lenders, counsel and builders share the same dependency calendar. Each sees when they're needed, what they produce and what it unlocks.</p></article>
+</div>
+<p class="disclaimer">Properties named here are prospective transaction lanes unless separately verified as acquired. Neither an advertised zoning category nor concept drawings establish permission to build.</p>
+</div></section>
+<section class="story dark" id="work"><div class="wrapper"><div class="spotlight">
+<div><div class="stepnumber">Act 03 / The long-term change</div><h2>A house is not the finish.<br><em>Ownership is a pathway.</em></h2><p>Employment, training, household logistics and rent-to-own arrangements are coordinated with the actual financing. Real pay records, qualifications, leases, approvals and conveyances—not projected future salaries—decide what can close.</p><p>The family connects to work opportunities, childcare support, local services and an owner-operator system designed to continue after the camera leaves.</p></div>
+<div><div class="pull">A beautiful reveal creates a television moment. <strong>Workable monthly economics create a lasting home.</strong></div><a class="btn secondary" href="/my-cc-life.html">Explore My CC Life ↗</a></div>
+</div></div></section>
+<section class="story alt" id="marketplace"><div class="wrapper">
+<div class="sectionhead"><div class="stepnumber">Act 04 / The city joins the economics</div><h2>The culture brings the crowd.<br><em>The marketplace supports the work.</em></h2><p>Carnival Careers is a vendor marketplace overlaid with Caribbean music and culture. Brands, merchants and service companies can have meaningful roles across an episode, family experience, city activation and festival—when those rights and deliverables are actually agreed.</p></div>
+<div class="lanes">
+<article class="lane"><span class="n">01 / LOCAL COMMERCE</span><h3>Vendors + food</h3><p>Merchant activation, hospitality, authentic restaurant coverage, food and grocery benefits and community sales—each with a real operator and disclosed terms.</p></article>
+<article class="lane"><span class="n">02 / BRANDS</span><h3>Sponsorship</h3><p>Defined campaign rights, legitimate audience integrations, production placements and visible commercial deliverables. No unapproved stage, artist or venue rights.</p></article>
+<article class="lane"><span class="n">03 / HOUSEHOLD INFRASTRUCTURE</span><h3>Family services</h3><p>Training, child care, mobility, ecommerce and support services turn the event audience into real ongoing household value.</p></article>
+</div></div></section>
+<section class="story dark" id="production"><div class="wrapper">
+<div class="stepnumber">Act 05 / The production universe</div><div class="spotlight"><div><h2>The operations happen.<br><em>The cameras make them unforgettable.</em></h2><p>The showrunner connects the dinner, acquisition, plans, builders, home reveal, food reviews, music, festival and travel into one coherent screen story. We plan the entrances, dialogue beats, lighting, permits, crew positions, music clearances, camera angles, disclosures and contingency scenes with the precision of a live production.</p><p>We can choreograph the storytelling. We cannot choreograph independent seller signatures, a lender's approval, an engineer's stamp, a customer's authentic review or a bank transfer. That difference protects both the audience and the investor.</p></div>
+<div class="pull">The magic is in <strong>the production.</strong> The trust is in <strong>what really happened.</strong></div></div>
+<div class="clocks">
+<article class="clock"><b>01 / SHOW CLOCK</b><h3>Every scene is planned</h3><p>Producer, camera, locations, artists, editing and performance cues. Creative timing can change without rewriting reality.</p></article>
+<article class="clock"><b>02 / DEVELOPMENT CLOCK</b><h3>Every approval is earned</h3><p>Offer, survey, OBC drawings, engineering, permits, completed work and household rights are evidenced and gated.</p></article>
+<article class="clock"><b>03 / CASH CLOCK</b><h3>Every dollar is reconciled</h3><p>Contracts, invoices, deposits, closing proceeds, debt repayment and settled cash retain different statuses.</p></article>
+</div></div></section>
+<section class="story alt" id="finale"><div class="wrapper"><div class="spotlight">
+<div><div class="stepnumber">Act 06 / The performance and the voyage</div><h2>The city celebrates.<br><em>Then the story travels.</em></h2><p>The arena performance becomes the public payoff for what the audience has followed. A November 5 third-party arena opening opportunity is being pursued, with stage, filming and commercial rights dependent on written authorization. The broader Carnival Careers festival and vendor marketplace remain their own separately contracted event opportunities.</p><p>Travel then extends the story beyond Toronto: group cruises, food, live Caribbean music and an older-audience community experience, arranged through authorized booking and vessel operators. Cruise inventory, onboard performance rights and itinerary only become bookable after actual contracts.</p></div>
+<div><div class="track"><article><h3>Backstage and onstage</h3><p>Production cues, approved music rights, real performers and genuine audience reaction.</p></article><article><h3>TV and digital IP</h3><p>The city journey is filmed, edited, cleared and packaged for distribution, extending its usefulness past one night.</p></article><article><h3>Boat cruise and next city</h3><p>Travel, dining and music continue the relationship into the next destination and ultimately the next episode.</p></article></div></div>
+</div></div></section>
+<section class="story dark" id="economic-engine"><div class="wrapper">
+<div class="stepnumber">Act 07 / How the economic engine really works</div><h2>A powerful story.<br><em>Many ways to create value.</em></h2>
+<p>Different businesses contribute different things. Income properties may provide rent and, when justified, refinance or sale proceeds. Professional development can create improved assets. The marketplace can generate contracted vendor and sponsorship receipts. Ticketing and filmed media can create separate commercial income where the necessary rights exist. Licensed travel operators can produce agreed service or referral earnings. IP can continue generating opportunity between cities.</p>
+<div class="cash"><span>CONTROL THE RIGHT ASSETS + RIGHTS</span><span>PRICE THE WORK + CAPITAL</span><span>SIGN EXECUTABLE PAPER</span><span>PERFORM + COLLECT CASH</span><span>PAY OBLIGATIONS + REINVEST</span></div>
+<div class="ribbon"><em>Replacing early capital is a financing objective, not a scene.</em> Mickey's retainer/deposit requirement, creditor priority, lender covenants, contract transfer rights and legal repayment waterfall must be written, priced and supported by cleared funds. A listing, investor meeting or optimistic resale model is not yet cash.</div>
+<p>The Toronto property stack is evaluated asset by asset, with professional underwriting, lender criteria, real deposits, closing statements, carrying costs and independent values. The investor's opportunity is the documented result of those contracts—not a promise that every proposed acquisition, show or cruise is already generating revenue.</p>
+</div></section>
+<section class="story alt" id="partners"><div class="wrapper">
+<div class="sectionhead"><div class="stepnumber">Act 08 / Where you enter</div><h2>Different partners.<br><em>One coordinated assignment.</em></h2><p>The partnership structure follows the story rather than interrupting it. Every lane has a defined deliverable, a point on the shared project calendar, an agreement to negotiate and a clear distinction between prospective and committed money.</p></div>
+<div class="partnergrid">
+<article class="partner"><span class="tag">01</span><div><h3>Investors + capital partners</h3><p>Evaluate a specific asset or project, capital use, risk, required return, security, approvals and independently supported exit.</p></div></article>
+<article class="partner"><span class="tag">02</span><div><h3>Property lenders + brokers</h3><p>Provide underwriting, loan terms, valuations, DSCR/LTV criteria, documentation checklists, funded closings and takeout conditions.</p></div></article>
+<article class="partner"><span class="tag">03</span><div><h3>Architects, engineers + builders</h3><p>Produce measured plans, coordinated Ontario Building Code MEPFS/structural scopes, permit work, schedules, pricing and deliverable-based construction management.</p></div></article>
+<article class="partner"><span class="tag">04</span><div><h3>Lawyers, accountants + project management</h3><p>Secure legitimate transaction rights, conditional APSs, compliance, reporting, trust flows, milestone coordination and proof-backed settlements.</p></div></article>
+<article class="partner"><span class="tag">05</span><div><h3>Vendors + sponsors</h3><p>Buy defined commercial inventory, provide products or services and receive real creative activation and reporting under signed terms.</p></div></article>
+<article class="partner"><span class="tag">06</span><div><h3>Artists, media, food + travel operators</h3><p>Coordinate licensed music, film, restaurants, arena permissions, travel bookings, passenger safety and distribution deliverables.</p></div></article>
+</div>
+<div class="links"><a class="btn" href="https://carnival-careers-os.floot.app/coordination">Professional master calendar ↗</a><a class="btn secondary" href="/team-desk.html">Private team access ↗</a><a class="btn secondary" href="/#capital">Capital + detailed financial pathways ↗</a></div>
+</div></section>
+<section class="outro"><div class="wrapper">
+<div class="eyebrow">Toronto is the flagship. The format is designed to travel.</div>
+<h2>One family at the centre.<br><em>A whole city around them.</em></h2>
+<p>The opening scene is recognition. The middle is useful work, real property and connected commerce. The celebration is Caribbean culture onstage. The business continues after the credits—and can begin again in the next city.</p>
+<div class="links"><a class="btn" href="/#project">Explore the project ↗</a><a class="btn secondary" href="https://carnival-careers-os.floot.app/coordination">Join the delivery team ↗</a></div></div></section>
+</main><footer><div class="wrapper"><span>Carnival Careers · One connected production and economic platform</span><span>All acquisitions, permissions, partnerships and revenues are subject to actual execution and verification.</span></div></footer>
+</body></html>
