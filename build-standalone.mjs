@@ -3072,6 +3072,17 @@ if (!siriusxmMergeFragment.includes('id="cc-siriusxm-merged"') ||
 if (!renderedHtml.includes("</body>")) throw new Error("Missing closing body for SiriusXM Project merge");
 renderedHtml = renderedHtml.replace("</body>", siriusxmMergeFragment + "\n</body>");
 
+// 15 OCT 2026: final current-control overlay. Preserve canonical Home wording;
+// replace only superseded property identifiers and legacy acquisition-dollar aggregates.
+// The C$860K delta is mechanical, NOT a verified NOI or lender-approved saving.
+renderedHtml = renderedHtml
+ .replaceAll("2422 Queen","109 Pembroke")
+ .replaceAll("C$22,467,050","C$21,607,050")
+ .replaceAll("C$26,781,320","C$25,921,320")
+ .replaceAll("C$24,805,551","C$23,945,551")
+ .replaceAll("For Queen to cover the entire Tournament subsidy independently, its annual debt payments and additional reserves would need to fit within the remaining C$67,849. Otherwise the PATH, East Bayfront or other verified portfolio income must supply the difference.","Pembroke has no verified NOI or independently documented Tournament subsidy capacity. Require current rent roll, T12, lender-approved DSCR and mortgage terms before promising property surplus.")
+ .replace("current working control. Current named components include 109 Pembroke","illustrative price-only carryover pending income and financing diligence. Current named components include 109 Pembroke");
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
