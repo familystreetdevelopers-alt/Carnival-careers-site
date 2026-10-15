@@ -43,7 +43,7 @@ const hook=[
 '</script>'
 ].join("\n");
 html=html.replace("</body>",hook+"\n</body>");
-fs.writeFileSync(index,html);
+// Final public financial-packet reconciliation for the Pembroke swap.\n// A C$860K acquisition-price difference does not prove any NOI or refinancing increase.\nhtml=html.replaceAll("2422 Queen","109 Pembroke");\nhtml=html.replaceAll("C$22,467,050","C$21,607,050");\nhtml=html.replaceAll("C$26,781,320","C$25,921,320");\nhtml=html.replaceAll("C$24,805,551","C$23,945,551");\nhtml=html.replace("current working control. Current named components include 109 Pembroke","illustrative carryover after a C$860,000 purchase-price reduction, pending re-underwriting. Current named components include 109 Pembroke");\nhtml=html.replace("For Queen to cover the entire Tournament subsidy independently, its annual debt payments and additional reserves would need to fit within the remaining C$67,849. Otherwise the PATH, East Bayfront or other verified portfolio income must supply the difference.","Pembroke has no verified NOI or independent Tournament subsidy capacity. Require rent roll, T12, DSCR and approved financing before allocating any operating surplus.");\nfs.writeFileSync(index,html);
 const redirect='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Story | Carnival Careers</title><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://carnival-careers-live-current.vercel.app/the-story.html"><meta http-equiv="refresh" content="0;url=/the-story.html"></head><body><p>Continue to <a href="/the-story.html">Story</a>.</p></body></html>';
 fs.writeFileSync(path.join(dist,"production-universe.html"),redirect);
 console.log("CC_ONE_STORY_READY",fs.statSync(path.join(dist,"the-story.html")).size);
