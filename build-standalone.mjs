@@ -1957,10 +1957,10 @@ const assetRentRollResetPatch = `
       <div class="cc-arr-shell">
         <div class="cc-arr-kicker">How Carnival Careers works</div>
         <h2>Buy the asset. Let the rent carry it. Build the businesses around it.</h2>
-        <p class="cc-arr-lede">Toronto starts with <strong>2422 Queen Street East</strong>: a real building with a real rent roll. The property is financed from its own value and income.</p>
+        <p class="cc-arr-lede">Toronto starts with <strong>109 Pembroke Street</strong>: a proposed 22-unit Toronto income-property purchase at C$4.90M. The listing reports gross rental income; NOI, full rent roll, expenses and financing remain subject to verification.</p>
         <div class="cc-arr-rule"><strong>Simple:</strong> the property pays for the property. The show builds the audience. The businesses make money from that audience. We keep the asset and repeat the model in the next city.</div>
         <div class="cc-arr-grid">
-          <div class="cc-arr-box"><strong>Asset</strong><p>2422 Queen is the housing and collateral anchor. 12 York #5101 and 138 Downes #3215 stay as separate platform assets.</p></div>
+          <div class="cc-arr-box"><strong>Asset</strong><p>109 Pembroke is the proposed rental-income and collateral anchor, pending signed acquisition terms and lender underwriting. 12 York #5101 and 138 Downes #3215 stay as separate platform assets.</p></div>
           <div class="cc-arr-box"><strong>Audience</strong><p>Families, work, ownership and Carnival become the episode and grow attention around the project.</p></div>
           <div class="cc-arr-box"><strong>Businesses</strong><p>Events, media, Shopify, travel, music, vehicles and partners each earn separately.</p></div>
         </div>
@@ -1979,7 +1979,7 @@ const assetRentRollResetPatch = `
   const run = () => {
     document.title = "Carnival Careers — Asset + Rent Roll First";
     const meta = document.querySelector('meta[name="description"]');
-    if(meta) meta.setAttribute("content","Carnival Careers: Toronto starts with 2422 Queen Street East. The asset, rent roll and NOI support the property financing; operating businesses remain separately funded.");
+    if(meta) meta.setAttribute("content","Carnival Careers: Toronto starts with the proposed 22-unit acquisition at 109 Pembroke Street, C$4.90M. Actual NOI and financing are subject to verified seller documents; operating businesses remain separately funded.");
 
     const project = document.getElementById("page-project") || document.querySelector('[data-page="project"]');
     const lenders = document.getElementById("page-lenders") || document.querySelector('[data-page="lenders"]');
@@ -1999,7 +1999,7 @@ const assetRentRollResetPatch = `
       const box=document.createElement("section");
       box.id="cc-lender-eureka";
       box.className="partner-section dark";
-      box.innerHTML=\`<div class="wrap"><div class="partner-kicker">The simple lender file</div><h2>Underwrite 2422 Queen from the asset and rent roll.</h2><p class="partner-one-line">We are asking the property lender to size the maximum supportable mortgage from the property value, verified rent roll, expenses and NOI. The sponsor-cash target is C$0; any required gap must come from seller financing or another lender-approved capital source.</p><div class="simple-points"><div class="simple-point"><h3>Property</h3><p>2422 Queen Street East · 24 suites · public ask C$5.76M · published Year-1 NOI C$251,557.</p></div><div class="simple-point"><h3>What we send</h3><p>Rent roll, leases, T12/T24, appraisal, environmental/building reports, title, insurance and borrower/entity documents.</p></div><div class="simple-point"><h3>What we need back</h3><p>Maximum proceeds, rate, amortization, DCR/LTV, reserves, recourse/guarantee requirements, closing costs and exact cash-to-close.</p></div></div></div>\`;
+      box.innerHTML=\`<div class="wrap"><div class="partner-kicker">The simple lender file</div><h2>Underwrite 109 Pembroke from verified operations and collateral.</h2><p class="partner-one-line">We are asking the property lender to size the maximum supportable mortgage from the property value, verified rent roll, expenses and NOI. The sponsor-cash target is C$0; any required gap must come from seller financing or another lender-approved capital source.</p><div class="simple-points"><div class="simple-point"><h3>Property</h3><p>109 Pembroke Street · 22 units · public ask C$4.90M · marketed gross rent C$298,469 to C$311,397.96/year (conflicting listing versions) · actual NOI not disclosed.</p></div><div class="simple-point"><h3>What we send</h3><p>Rent roll, leases, T12/T24, appraisal, environmental/building reports, title, insurance and borrower/entity documents.</p></div><div class="simple-point"><h3>What we need back</h3><p>Maximum proceeds, rate, amortization, DCR/LTV, reserves, recourse/guarantee requirements, closing costs and exact cash-to-close.</p></div></div></div>\`;
       const hero=lenders.querySelector(".page-hero");
       if(hero) hero.insertAdjacentElement("afterend",box); else lenders.prepend(box);
     }
@@ -2637,7 +2637,7 @@ const master21CurrentFactsPatch = `
 </style>
 <script id="cc-master21-current-facts-script">
 (() => {
-  const factsHtml = "<section id=\"cc-master21-current-facts\" class=\"section\"><div class=\"wrap\"><div class=\"eyebrow\">CURRENT MASTER FILE · 21-FILE OPERATING SYSTEM</div><h2>The lender file is now the centre of the current Toronto proof.</h2><p class=\"lead\">The current operating package starts with the asset, rent roll and six-family ownership structure. File 02 is the controlling financial + asset-based-lending workbook; File 21 preserves the 1,400-file source ledger and the history it supersedes.</p><div class=\"cc-m21-grid\"><div class=\"cc-m21-card\"><strong>C$6,900,888</strong><p>Current property basis: 2422 Queen Street East plus retained 12 York #5101 and 138 Downes #3215.</p></div><div class=\"cc-m21-card\"><strong>Six families</strong><p>Defined lawful ownership/co-ownership interests. Exact title, security and mortgage mechanics require lender and counsel approval.</p></div><div class=\"cc-m21-card\"><strong>Asset + rent roll first</strong><p>Property financing is sized from appraisal, verified rent roll, expenses, NOI, DSCR/debt yield and borrower strength — not sponsor targets.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert financing request</strong><p>The current property-financing package treats the Toronto concert as already paid/outside the mortgage request.</p></div><div class=\"cc-m21-card\"><strong>C$15,000 set contribution</strong><p>Hopeton self-funds the working incremental cost of his set; C$25,000 is the ceiling absent documented extra rider/production costs.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert profit to Hopeton</strong><p>This rule applies to the concert only. Every other Carnival Careers project economic rule remains unchanged.</p></div></div><div class=\"cc-m21-note\"><b>Truth rule:</b> 2422 Queen is one apartment asset today. The site does not represent four internal suites as four separately mortgageable titles. Family ownership happens only through a lawful lender- and counsel-approved structure.</div><div class=\"cc-m21-rule\">Historical Sheridan, Vic Towns and other superseded property stacks remain source evidence, not current Toronto financing facts.</div></div></section>";
+  const factsHtml = "<section id=\"cc-master21-current-facts\" class=\"section\"><div class=\"wrap\"><div class=\"eyebrow\">CURRENT MASTER FILE · 21-FILE OPERATING SYSTEM</div><h2>The lender file is now the centre of the current Toronto proof.</h2><p class=\"lead\">The current operating package starts with the asset, rent roll and six-family ownership structure. File 02 is the controlling financial + asset-based-lending workbook; File 21 preserves the 1,400-file source ledger and the history it supersedes.</p><div class=\"cc-m21-grid\"><div class=\"cc-m21-card\"><strong>C$6,040,888</strong><p>Illustrative asking-price property basis: 109 Pembroke Street plus retained 12 York #5101 and 138 Downes #3215. Final costs and financing not approved.</p></div><div class=\"cc-m21-card\"><strong>Six families</strong><p>Defined lawful ownership/co-ownership interests. Exact title, security and mortgage mechanics require lender and counsel approval.</p></div><div class=\"cc-m21-card\"><strong>Asset + rent roll first</strong><p>Property financing is sized from appraisal, verified rent roll, expenses, NOI, DSCR/debt yield and borrower strength — not sponsor targets.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert financing request</strong><p>The current property-financing package treats the Toronto concert as already paid/outside the mortgage request.</p></div><div class=\"cc-m21-card\"><strong>C$15,000 set contribution</strong><p>Hopeton self-funds the working incremental cost of his set; C$25,000 is the ceiling absent documented extra rider/production costs.</p></div><div class=\"cc-m21-card\"><strong>C$0 concert profit to Hopeton</strong><p>This rule applies to the concert only. Every other Carnival Careers project economic rule remains unchanged.</p></div></div><div class=\"cc-m21-note\"><b>Truth rule:</b> 109 Pembroke is proposed as one 22-unit building, not 22 separately mortgageable titles. The site does not represent four internal suites as four separately mortgageable titles. Family ownership happens only through a lawful lender- and counsel-approved structure.</div><div class=\"cc-m21-rule\">Historical Sheridan, Vic Towns and other superseded property stacks remain source evidence, not current Toronto financing facts.</div></div></section>";
   const run=()=>{
     const project=document.getElementById("page-project")||document.querySelector("[data-page=\"project\"]");
     if(project){
@@ -3099,15 +3099,15 @@ fs.writeFileSync(path.join(dist, "CANONICAL-BUILD-VERIFIED.json"), JSON.stringif
   canonical_document_system: "OCTOBER-6-2026-CURRENT-CONTROL",
   source_recovery_instances: 1400,
   source_unique_objects: 1273,
-  current_own_festival_scenario_uses_cad: 26781320,
-  current_guest_set_alternate_uses_cad: 24805551,
-  current_property_and_cavemansion_uses_cad: 22467050,
+  current_own_festival_scenario_uses_cad: null, legacy_own_festival_scenario_uses_cad: 26781320,
+  current_guest_set_alternate_uses_cad: null, legacy_guest_set_alternate_uses_cad: 24805551,
+  current_property_and_cavemansion_uses_cad: null, legacy_property_and_cavemansion_uses_cad: 22467050,
   property_anchor: "2422 Queen Street East",
   property_anchor_units: 24,
   property_anchor_public_ask_cad: 5760000,
   property_anchor_projected_year1_noi_cad: 251557,
   retained_platform_condos: 2,
-  current_named_property_plus_build_control_cad: 22467050,
+  current_named_property_plus_build_control_cad: null, legacy_named_property_plus_build_control_cad: 22467050,
   sponsor_cash_target_cad: 0,
   financing_control: "asset + rent roll + NOI first; any gap requires approved third-party capital",
   family_social_contribution: true,
