@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 const dist = path.resolve("dist");
 const index = path.join(dist,"index.html");
-for (const p of ["the-story.html","team-desk.html"]) {
+for (const p of ["the-story.html","team-desk.html","pembroke-acquisition.html"]) {
  const from=path.resolve(p);
  if(!fs.existsSync(from))throw new Error("Required unified Story source missing: "+p);
  fs.copyFileSync(from,path.join(dist,p));
