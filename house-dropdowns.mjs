@@ -80,16 +80,19 @@ if (!fs.existsSync(capitalSource)) throw new Error("Capital page missing; refusi
 if (!originalHomepage.includes("</head>") || !originalHomepage.includes("</body>")) {
   throw new Error("Home page document changed; refusing unsafe modification.");
 }
-// Build Capital directly into the desktop Project dropdown. Do not rely on JavaScript to create the link.
-const projectMenuPattern = /(<div class="nav-item">\\s*<a class="nav-link" href="#project">Project<\\/a>\\s*<div class="drop">)([\\s\\S]*?)(<\\/div>)/;
-const projectMenuMatch = originalHomepage.match(projectMenuPattern);
-if (!projectMenuMatch || !projectMenuMatch[2].includes('href="#project-partners"')) {
-  throw new Error("Project dropdown markup changed; Capital link not inserted.");
+// Put Capital in the HTML of the existing Project dropdown so it works even without page scripts.
+const projectNavAnchor = '<a class="nav-link" href="#project">Project</a>';
+const projectNavAt = originalHomepage.indexOf(projectNavAnchor);
+const projectDropAt = originalHomepage.indexOf('<div class="drop">', projectNavAt + projectNavAnchor.length);
+const projectDropEnd = originalHomepage.indexOf('</div>', projectDropAt + 1);
+if (projectNavAt < 0 || projectDropAt < projectNavAt || projectDropAt - projectNavAt > 300 ||
+    projectDropEnd < 0 || !originalHomepage.slice(projectDropAt, projectDropEnd).includes('href="#project-partners"')) {
+  throw new Error("Project dropdown markup changed; refusing incomplete Capital menu.");
 }
 const staticCapitalLink = '<a href="/capital-execution.html" data-cc-project-capital-link>Capital</a>';
-const homeWithCapital = originalHomepage.replace(projectMenuPattern, (_full, opening, links, closing) =>
-  opening + links + (links.includes('href="/capital-execution.html"') ? "" : staticCapitalLink) + closing
-);
+const homeWithCapital = originalHomepage.slice(0, projectDropEnd) +
+  (originalHomepage.slice(projectDropAt, projectDropEnd).includes('href="/capital-execution.html"') ? "" : staticCapitalLink) +
+  originalHomepage.slice(projectDropEnd);
 const updatedHome = homeWithCapital
   .replace("</head>", homeStyle + "\\n</head>")
   .replace("</body>", homeScript + "\\n" + projectCapitalNavPatch + "\\n</body>");
