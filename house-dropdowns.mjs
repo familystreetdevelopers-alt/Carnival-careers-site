@@ -89,4 +89,10 @@ if (validation.some(v => !v)) throw new Error("Houses dropdown verification fail
 fs.writeFileSync(houses, updatedHouses, "utf8");
 fs.writeFileSync(homepage, updatedHome, "utf8");
 fs.writeFileSync(ironmanDist, originalIronMan, "utf8");
+const ironmanAssetSource = path.resolve("ironman-images");
+const ironmanAssetTarget = path.join(dist, "ironman-images");
+if (!fs.existsSync(ironmanAssetSource)) throw new Error("Iron Man source images missing; refusing incomplete build");
+const ironmanAssetNames = fs.readdirSync(ironmanAssetSource).filter(n => n.endsWith(".jpg"));
+if (ironmanAssetNames.length !== 18) throw new Error("Expected 18 Iron Man source images, got " + ironmanAssetNames.length);
+fs.cpSync(ironmanAssetSource, ironmanAssetTarget, { recursive: true });
 console.log("HOUSES_TWO_DROPDOWNS_VERIFIED; CaveMansion preserved; Iron Man House copied.");
