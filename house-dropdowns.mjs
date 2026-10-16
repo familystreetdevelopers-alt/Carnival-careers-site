@@ -71,24 +71,33 @@ const homeScript = '<script id="cc-houses-two-dropdown-navigation">(() => {' +
   '});' +
   '};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",install,{once:true});else install();' +
   '})();</script>';
+// Navigation update: Capital lives inside the Project dropdown; dead Employer / Funder control is removed.
+const projectCapitalNavPatch = "<style id=\"cc-project-capital-nav-style\">\n.cc-project-mobile-dropdown{background:rgba(255,255,255,.08);border-radius:12px;padding:0;color:#e8eef7;font-weight:700;font-size:13px}\n.cc-project-mobile-dropdown summary{cursor:pointer;padding:12px}\n.cc-project-mobile-dropdown a{display:block;background:transparent!important;padding:10px 18px!important}\n</style>\n<script id=\"cc-project-capital-nav-update\">\n(() => {\n  const normal = s => String(s || \"\").trim().replace(/\\s+/g, \" \").toLowerCase();\n  const capitalUrl = \"/capital-execution.html\";\n  const makeLink = () => {\n    const a = document.createElement(\"a\");\n    a.href = capitalUrl;\n    a.textContent = \"Capital\";\n    a.setAttribute(\"data-cc-project-capital-link\", \"\");\n    return a;\n  };\n  const addTo = container => {\n    if (container && !container.querySelector('a[href=\"' + capitalUrl + '\"]')) container.appendChild(makeLink());\n  };\n  const install = () => {\n    // Remove only the dead Employer / Funder navigation control.\n    document.querySelectorAll(\"nav a, nav button, header a, header button\").forEach(el => {\n      const label = normal(el.textContent);\n      if (!/^employer\\s*(?:\\/|&|-|–)\\s*funders?$/.test(label)) return;\n      const item = el.closest(\".nav-item,li\");\n      if (item && item.querySelectorAll(\"a,button\").length === 1) item.remove();\n      else el.remove();\n    });\n    const primary = document.querySelector('nav[aria-label=\"Primary\"]');\n    if (primary) {\n      const project = [...primary.querySelectorAll('a[href=\"#project\"],a[href=\"/#project\"]')]\n        .find(a => normal(a.textContent).includes(\"project\"));\n      const item = project?.closest(\".nav-item\");\n      if (item) {\n        let menu = item.querySelector(\".drop\");\n        if (!menu) {\n          menu = document.createElement(\"div\");\n          menu.className = \"drop\";\n          item.appendChild(menu);\n        }\n        addTo(menu);\n      }\n    }\n    // Keep Capital inside Project on narrow-screen menus too.\n    document.querySelectorAll(\"nav\").forEach(nav => {\n      if (nav === primary) return;\n      const project = [...nav.querySelectorAll('a[href=\"#project\"],a[href=\"/#project\"]')]\n        .find(a => normal(a.textContent).includes(\"project\"));\n      if (!project || project.closest(\".cc-project-mobile-dropdown\")) return;\n      const container = project.closest(\".nav-item\");\n      const existingDrop = container?.querySelector(\".drop\");\n      if (existingDrop) {\n        addTo(existingDrop);\n        return;\n      }\n      const details = document.createElement(\"details\");\n      details.className = \"cc-project-mobile-dropdown\";\n      const summary = document.createElement(\"summary\");\n      summary.textContent = \"Project ▾\";\n      const overview = project.cloneNode(true);\n      overview.textContent = \"Project overview\";\n      details.append(summary, overview, makeLink());\n      project.replaceWith(details);\n    });\n  };\n  if (document.readyState === \"loading\") document.addEventListener(\"DOMContentLoaded\", install, {once:true});\n  else install();\n})();\n</script>";
+const capitalSource = path.resolve("capital-execution.html");
+const capitalDist = path.join(dist, "capital-execution.html");
+if (!fs.existsSync(capitalSource)) throw new Error("Capital page missing; refusing to ship a dead Project menu link.");
+
 if (!originalHomepage.includes("</head>") || !originalHomepage.includes("</body>")) {
   throw new Error("Home page document changed; refusing unsafe modification.");
 }
 const updatedHome = originalHomepage
   .replace("</head>", homeStyle + "\n</head>")
-  .replace("</body>", homeScript + "\n</body>");
+  .replace("</body>", homeScript + "\n" + projectCapitalNavPatch + "\n</body>");
 
 const validation = [
   updatedHouses.includes('id="autoTour"'),
   updatedHouses.includes('class="cc-houses-parent"'),
   updatedHouses.includes('>CaveMansion</a><a href="/iron-man-house.html">Iron Man House'),
   updatedHome.includes('cc-houses-two-dropdown-navigation'),
+  updatedHome.includes("cc-project-capital-nav-update"),
+  updatedHome.includes("/capital-execution.html"),
   originalIronMan.includes('35 Tournament Drive'),
 ];
 if (validation.some(v => !v)) throw new Error("Houses dropdown verification failed.");
 fs.writeFileSync(houses, updatedHouses, "utf8");
 fs.writeFileSync(homepage, updatedHome, "utf8");
 fs.writeFileSync(ironmanDist, originalIronMan, "utf8");
+fs.copyFileSync(capitalSource, capitalDist);
 const ironmanAssetSource = path.resolve("ironman-images");
 const ironmanAssetTarget = path.join(dist, "ironman-images");
 if (!fs.existsSync(ironmanAssetSource)) throw new Error("Iron Man source images missing; refusing incomplete build");
