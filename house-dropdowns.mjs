@@ -80,9 +80,19 @@ if (!fs.existsSync(capitalSource)) throw new Error("Capital page missing; refusi
 if (!originalHomepage.includes("</head>") || !originalHomepage.includes("</body>")) {
   throw new Error("Home page document changed; refusing unsafe modification.");
 }
-const updatedHome = originalHomepage
-  .replace("</head>", homeStyle + "\n</head>")
-  .replace("</body>", homeScript + "\n" + projectCapitalNavPatch + "\n</body>");
+// Build Capital directly into the desktop Project dropdown. Do not rely on JavaScript to create the link.
+const projectMenuPattern = /(<div class="nav-item">\\s*<a class="nav-link" href="#project">Project<\\/a>\\s*<div class="drop">)([\\s\\S]*?)(<\\/div>)/;
+const projectMenuMatch = originalHomepage.match(projectMenuPattern);
+if (!projectMenuMatch || !projectMenuMatch[2].includes('href="#project-partners"')) {
+  throw new Error("Project dropdown markup changed; Capital link not inserted.");
+}
+const staticCapitalLink = '<a href="/capital-execution.html" data-cc-project-capital-link>Capital</a>';
+const homeWithCapital = originalHomepage.replace(projectMenuPattern, (_full, opening, links, closing) =>
+  opening + links + (links.includes('href="/capital-execution.html"') ? "" : staticCapitalLink) + closing
+);
+const updatedHome = homeWithCapital
+  .replace("</head>", homeStyle + "\\n</head>")
+  .replace("</body>", homeScript + "\\n" + projectCapitalNavPatch + "\\n</body>");
 
 const validation = [
   updatedHouses.includes('id="autoTour"'),
@@ -90,6 +100,7 @@ const validation = [
   updatedHouses.includes('>CaveMansion</a><a href="/iron-man-house.html">Iron Man House'),
   updatedHome.includes('cc-houses-two-dropdown-navigation'),
   updatedHome.includes("cc-project-capital-nav-update"),
+  updatedHome.includes('href="/capital-execution.html" data-cc-project-capital-link>Capital</a>'),
   updatedHome.includes("/capital-execution.html"),
   originalIronMan.includes('35 Tournament Drive'),
 ];
