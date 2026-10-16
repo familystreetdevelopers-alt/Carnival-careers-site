@@ -2667,7 +2667,7 @@ const master21CurrentFactsPatch = `
 // Static cruise-page rewrite: keep the raw production HTML aligned with the current moving-revenue model.
 renderedHtml = renderedHtml.replace(
   /(<section class="page cruise-efficient-v50" data-page="boat" id="page-boat">\s*)<div class="page-hero bg-travel">[\s\S]*?<\/div><\/div>/,
-  '$1<div class="page-hero bg-travel"><div class="wrap"><span class="eyebrow">TRAVEL / THE MOVING VENUE</span><h1>Make money on the way to the next city.</h1><p>Most tours spend money just to move. Carnival Careers is building the opposite: use the cruise as transportation, hotel, venue, content set and marketplace while we travel toward the next Carnival destination.</p><div class="status-line"><span class="status-pill">May 2027 target</span><span class="status-pill">Route in development</span><span class="status-pill">Cruise tickets not yet on sale</span></div></div></div>'
+  '$1<div class="page-hero bg-travel"><div class="wrap"><span class="eyebrow">TRAVEL / THE MOVING VENUE</span><h1>Make money on the way to the next city.</h1><p>Most tours spend money just to move. Carnival Careers is building the opposite: use the cruise as transportation, hotel, venue, content set and marketplace while we travel toward the next Carnival destination.</p><div class="status-line"><span class="status-pill">2027 group dates pending</span><span class="status-pill">Route in development</span><span class="status-pill">Cruise tickets not yet on sale</span></div></div></div>'
 );
 renderedHtml = renderedHtml.replace(
   /<section class="section light cruise-live-now">[\s\S]*?(?=<section class="section cruise-build">)/,
@@ -2715,7 +2715,7 @@ const cruiseMoneyEnginePatch = `
       if(eyebrow) eyebrow.textContent="TRAVEL / THE MOVING VENUE";
       if(h1) h1.textContent="Make money on the way to the next city.";
       if(p) p.textContent="Most tours spend money just to move. Carnival Careers is building the opposite: use the cruise as transportation, hotel, venue, content set and marketplace while we travel toward the next Carnival destination.";
-      if(status) status.innerHTML='<span class="status-pill">May 2027 target</span><span class="status-pill">Route in development</span><span class="status-pill">Cruise tickets not yet on sale</span>';
+      if(status) status.innerHTML='<span class="status-pill">2027 group dates pending</span><span class="status-pill">Route in development</span><span class="status-pill">Cruise tickets not yet on sale</span>';
     }
 
     page.querySelector(".cruise-live-now")?.remove();
