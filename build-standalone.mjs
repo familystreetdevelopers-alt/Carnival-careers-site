@@ -1317,7 +1317,6 @@ const sidelineSittersUnifiedPatch = `
           '<p>Tell us where the parent needs to be and when. We turn the schedule into a provider-ready request, route it to the right kind of childcare partner, keep the family updated and keep looking when the first option cannot take it. The childcare provider makes the final booking.</p>'+
           '<div class="cc-ss-actions">'+
             '<a href="#childcare-request">Request care</a>'+
-            '<a href="#childcare-partners">Become a provider partner</a>'+
           '</div>'+
         '</div>'+
       '</section>'+
@@ -1372,43 +1371,6 @@ const sidelineSittersUnifiedPatch = `
             '</aside>'+
           '</div>'+
         '</div>'+
-      '</section>'+
-
-      '<section class="cc-ss-section" id="childcare-partners">'+
-        '<div class="cc-ss-wrap">'+
-          '<h2>Provider partners: tell us what you can actually accept.</h2>'+
-          '<p class="cc-ss-lead">This form is separate because it does a different job. It turns your service area, age bands, hours, care settings, rates and live capacity into a routing profile so families arrive with usable information instead of vague referrals.</p>'+
-          '<div class="cc-ss-three">'+
-            '<div class="cc-ss-mini"><b>Your rules stay yours</b>Licensing, screening, enrolment, caregiver assignment, rates, minimums, cancellation and payment remain with you.</div>'+
-            '<div class="cc-ss-mini"><b>Track the referral</b>Use a referral link, code, source field, portal, API or email handoff to identify Sideline Sitters demand.</div>'+
-            '<div class="cc-ss-mini"><b>Overflow can come back</b>If you cannot place a family, send the request back and we can look for another suitable provider.</div>'+
-          '</div>'+
-          '<div class="cc-ss-card">'+
-            '<form id="ccSidelineProviderForm" class="cc-ss-form">'+
-              '<div class="cc-ss-field"><label>Provider / agency name</label><input name="provider" required></div>'+
-              '<div class="cc-ss-field"><label>Primary contact</label><input name="contact" required></div>'+
-              '<div class="cc-ss-field"><label>Email</label><input type="email" name="email" required></div>'+
-              '<div class="cc-ss-field"><label>Phone</label><input name="phone"></div>'+
-              '<div class="cc-ss-field"><label>Provider type</label><select name="providerType"><option>Licensed childcare centre / agency</option><option>Licensed home-childcare agency</option><option>In-home / in-hotel childcare agency</option><option>Babysitting / sitter agency</option><option>Independent qualified caregiver</option><option>Corporate backup-care provider</option><option>Other</option></select></div>'+
-              '<div class="cc-ss-field"><label>Service area</label><input name="serviceArea" required></div>'+
-              '<div class="cc-ss-field"><label>Ages served</label><input name="ages"></div>'+
-              '<div class="cc-ss-field"><label>Hours / days</label><input name="hours"></div>'+
-              '<div class="cc-ss-field"><label>Care settings</label><input name="settings" placeholder="Centre, home, hotel, in-home..."></div>'+
-              '<div class="cc-ss-field"><label>Short-notice capacity</label><select name="shortNotice"><option>Yes — subject to availability</option><option>Sometimes</option><option>No</option></select></div>'+
-              '<div class="cc-ss-field cc-full"><label>Current capacity / openings</label><textarea name="capacity"></textarea></div>'+
-              '<div class="cc-ss-field"><label>Rates / pricing model</label><input name="rates"></div>'+
-              '<div class="cc-ss-field"><label>Minimum booking / cancellation rule</label><input name="minimums"></div>'+
-              '<div class="cc-ss-field"><label>Billing supported</label><select name="billing"><option>Family pays provider directly</option><option>Employer / sponsor billing supported</option><option>Both</option><option>Other</option></select></div>'+
-              '<div class="cc-ss-field"><label>Tracked intake option</label><select name="tracking"><option>Dedicated referral link</option><option>Referral code</option><option>Partner form / source field</option><option>Portal</option><option>API / data handoff</option><option>Email handoff</option><option>Other</option></select></div>'+
-              '<div class="cc-ss-field cc-full"><label>Licensing / screening / insurance / compliance</label><textarea name="compliance"></textarea></div>'+
-              '<div class="cc-ss-field"><label>Accept overflow referrals?</label><select name="acceptOverflow"><option>Yes</option><option>Capacity-dependent</option><option>No</option></select></div>'+
-              '<div class="cc-ss-field"><label>Send overflow back to Sideline Sitters?</label><select name="sendOverflow"><option>Yes</option><option>Maybe</option><option>No</option></select></div>'+
-              '<div class="cc-ss-field cc-full"><label>Agreement / onboarding / next step</label><textarea name="nextStep"></textarea></div>'+
-              '<div class="cc-ss-submit"><button class="cc-ss-btn" type="submit">Submit provider capacity</button></div>'+
-            '</form>'+
-            '<div id="ccSidelineProviderResult" class="cc-ss-result" aria-live="polite">Your provider profile will be saved with a reference number.</div>'+
-          '</div>'+
-        '</div>'+
       '</section>';
 
 
@@ -1441,20 +1403,6 @@ const sidelineSittersUnifiedPatch = `
       out.innerHTML = "<strong>"+esc(hit.id)+"</strong><br>"+esc(hit.status || "Received")+"<br><span class=\\"cc-ss-note\\">Submitted "+esc(hit.createdAt ? new Date(hit.createdAt).toLocaleString() : "")+"</span>";
     });
 
-    const savePartner = (formId, resultId, kind, prefix, storageKey) => {
-      const form = document.getElementById(formId);
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        if(!form.reportValidity()) return;
-        const data = Object.fromEntries(new FormData(form).entries());
-        const id = ref(prefix);
-        const record = {id, kind, status:"Submitted for review", createdAt:new Date().toISOString(), ...data};
-        const rows = read("cc_submissions_v3"); rows.unshift(record); write("cc_submissions_v3", rows);
-        const lane = read(storageKey); lane.unshift(record); write(storageKey, lane);
-        document.getElementById(resultId).innerHTML = "<strong>Submitted: "+esc(id)+"</strong><br>Saved to the Carnival Careers intake in this browser.";
-      });
-    };
-    savePartner("ccSidelineProviderForm","ccSidelineProviderResult","childcare-provider-capacity","SSP","cc_sideline_providers_v2");
   };
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", run, {once:true}); else run();
 })();
@@ -2818,7 +2766,6 @@ const truthfulIntakePatch = `
     ccCultureForm:"event-culture",
     ccCityInviteForm:"city-partner-invite",
     ccSidelineFamilyForm:"sideline-family",
-    ccSidelineProviderForm:"sideline-provider",
     ccLiveChatForm:"live-chat",
     ccHandleForm:"social-handle",
     ccPartyForm:"party-interest",
@@ -2869,8 +2816,7 @@ const truthfulIntakePatch = `
     const known={
       arenaArtistForm:"arenaArtistResult",
       cultureMediaForm:"cultureMediaResult",
-      ccSidelineFamilyForm:"ccSidelineFamilyResult",
-      ccSidelineProviderForm:"ccSidelineProviderResult"
+      ccSidelineFamilyForm:"ccSidelineFamilyResult"
     }[form.id];
     return (known&&document.getElementById(known)) ||
       form.querySelector(".cc-intake-result,.result,[aria-live='polite']") ||
