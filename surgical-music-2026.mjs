@@ -57,7 +57,7 @@ const labels=tracks.slice(0,5).map((t,i)=>{
     '</g>';
 }).join("");
 const svg='<svg id="cc-2026-song-labels" aria-hidden="true" viewBox="0 0 1402 1122" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">'+labels+'</svg>';
-const imgRe=/(<img alt="Carnival Careers Music Dashboard artwork" class="music-art" src="data:image\/png;base64,[A-Za-z0-9+/=]+">)/;
+const imgRe=/(<img alt="Carnival Careers Music Dashboard artwork" class="music-art" src="data:image\/png;base64,[A-Za-z0-9+/=]+"\s*\/?>)/;
 const imgMatch=changed.match(imgRe);
 if(!imgMatch) throw new Error("Original artwork marker changed; refusing edit.");
 const artBefore=imgMatch[1];
