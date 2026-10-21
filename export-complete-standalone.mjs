@@ -79,8 +79,10 @@ class Handler(SimpleHTTPRequestHandler):
   if p not in ('','/') and '.' not in Path(p).name and not (BASE/p.lstrip('/')).is_file() and not (BASE/p.lstrip('/')).is_dir():
    self.path='/index.html'
   super().do_GET()
- print #placeholder
-`.replace(' print #placeholder\n',''));
+if __name__=='__main__':
+ print('Serving Carnival Careers at http://127.0.0.1:8765/', flush=True)
+ ThreadingHTTPServer(('127.0.0.1',8765),Handler).serve_forever()
+`);
 addText('START_WEBSITE_WINDOWS.bat',`@echo off
 cd /d "%~dp0"
 where py >nul 2>nul
