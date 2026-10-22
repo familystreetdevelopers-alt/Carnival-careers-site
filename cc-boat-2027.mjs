@@ -36,9 +36,9 @@ const hook=`
     (page.querySelector(".page-inner,.wrap,.container,.section-inner")||page).insertAdjacentElement("afterbegin",box);
    }
   }
-  // Replace boat-only premature booking CTAs with the compliant interest route.
-  if(boat){
-   boat.querySelectorAll("a,button").forEach(el=>{
+  // Replace unconfirmed Boat/Travel cruise ticket CTAs with the compliant interest route.
+  for(const scope of [boat,travel].filter(Boolean)){
+   scope.querySelectorAll("a,button").forEach(el=>{
     if(!/boat tickets now|book (?:a )?boat|book cruise|buy cruise|reserve (?:cabin|your cabin)|cruise tickets now/i.test((el.textContent||"").trim()))return;
     if(el.tagName==="A"){el.href=target;el.textContent="Boat priority list · no payment";}
     else{const a=document.createElement("a");a.href=target;a.textContent="Boat priority list · no payment";a.className=el.className;el.replaceWith(a);}
