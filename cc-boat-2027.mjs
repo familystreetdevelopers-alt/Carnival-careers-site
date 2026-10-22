@@ -9,7 +9,7 @@ const dest=path.join(dist,"boat-2027.html");
 const index=path.join(dist,"index.html");
 if(!fs.existsSync(src)||!fs.existsSync(index))throw Error("Boat page or site build missing");
 const boat=fs.readFileSync(src,"utf8");
-if(!boat.includes("THE <em>CARIBBEAN</em> CORRIDOR")||!boat.includes("No vessel, departure"))throw Error("Boat 2027 content not verified");
+if(!boat.includes("FANTASEA <em>FEBRUARY 2027.</em>")||!boat.includes("February 13–19, 2027")||boat.includes("May 2027"))throw Error("February 2027 FantaSea dates and CC disclaimers not verified");
 let html=fs.readFileSync(index,"utf8");
 if(!html.includes("The mas brings us together.")||!html.includes('id="page-music"'))throw Error("Canonical Home/Music marker missing");
 fs.copyFileSync(src,dest);
@@ -25,14 +25,14 @@ const hook=`
 <script id="cc-boat-corridor-script">
 (()=>{
  const target="/boat-2027.html";
- const add=(root,sel)=>{if(!root||root.querySelector('a[href="'+target+'"]'))return;const a=document.createElement("a");a.href=target;a.textContent="Boat · Lifestyle Cruises 21+";a.className="cc-boat-corridor-nav";root.appendChild(a)};
+ const add=(root,sel)=>{if(!root||root.querySelector('a[href="'+target+'"]'))return;const a=document.createElement("a");a.href=target;a.textContent="Boat · February 2027 FantaSea";a.className="cc-boat-corridor-nav";root.appendChild(a)};
  const install=()=>{
   const boat=document.getElementById("page-boat")||document.querySelector('[data-page="boat"]');
   const travel=document.getElementById("page-travel")||document.querySelector('[data-page="travel"]');
   for(const page of [boat,travel].filter(Boolean)){
    if(!page.querySelector(".cc-boat-corridor-entry")){
     const box=document.createElement("section");box.className="cc-boat-corridor-entry";
-    box.innerHTML='<small>BOAT / CC LIFESTYLE CRUISES / 21+</small><h3>Caribbean Lifestyle Cruises</h3><p>CC is building a 170-adult, Caribbean culture and lifestyle group experience around proven agency-managed cruise bookings, with Right Connections Travel / FantaSea as an uncontracted operating reference. A May 2027 Toronto → Montréal → Miami → Caribbean → Toronto water-only round-trip remains a separate ship procurement target. No CC bookings or onboard/vendor rights are confirmed.</p><a href="/boat-2027.html">See real cruise reference &amp; CC boat plan →</a>';
+    box.innerHTML='<small>BOAT / FEBRUARY 13–19, 2027 / 21+</small><h3>FantaSea Caribbean Lifestyle Cruise</h3><p>CC is organizing interest for the published Right Connections / FantaSea Miami → Belize → Roatán → Miami cruise, February 13–19, 2027, with an optional February 12 pre-cruise hotel. Our 170-adult guest group, cultural programming and any marketplace rights are proposed only and not yet contracted. No CC cabins are reserved.</p><a href="/boat-2027.html">See February sailing and CC interest form →</a>';
     (page.querySelector(".page-inner,.wrap,.container,.section-inner")||page).insertAdjacentElement("afterbegin",box);
    }
   }
@@ -41,7 +41,7 @@ const hook=`
    scope.querySelectorAll("a,button").forEach(el=>{
     if(!/boat tickets now|book (?:a )?boat|book cruise|buy cruise|reserve (?:cabin|your cabin)|cruise tickets now/i.test((el.textContent||"").trim()))return;
     if(el.tagName==="A"){el.href=target;el.textContent="Boat priority list · no payment";}
-    else{const a=document.createElement("a");a.href=target;a.textContent="Boat priority list · no payment";a.className=el.className;el.replaceWith(a);}
+    else{const a=document.createElement("a");a.href=target;a.textContent="Feb 2027 cruise interest · no payment";a.className=el.className;el.replaceWith(a);}
    });
   }
   const nav=document.querySelector('nav[aria-label="Primary"]');
@@ -55,7 +55,7 @@ const hook=`
   }
   const mobile=document.getElementById("mobilePanel");
   if(mobile&&!mobile.querySelector('a[href="'+target+'"]')){
-   const a=document.createElement("a");a.href=target;a.textContent="Boat · Lifestyle Cruises 21+";a.style.cssText="display:block;padding:12px 18px;color:#e3b876;font-size:13px;font-weight:900;text-decoration:none";
+   const a=document.createElement("a");a.href=target;a.textContent="Boat · February 2027 FantaSea";a.style.cssText="display:block;padding:12px 18px;color:#e3b876;font-size:13px;font-weight:900;text-decoration:none";
    const anchor=[...mobile.querySelectorAll("a,summary")].find(el=>/boat|travel|plane/i.test(el.textContent||""));
    const container=anchor?.closest("details")||anchor?.parentElement;
    if(container?.insertAdjacentElement)container.insertAdjacentElement("afterend",a);else mobile.appendChild(a);
@@ -68,4 +68,4 @@ const hook=`
 if(!html.includes('id="cc-boat-corridor-script"'))html=html.replace("</body>",hook+"\n</body>");
 if(!html.includes("The mas brings us together.")||!html.includes('id="page-music"'))throw Error("Boat build modified canonical Home or music unexpectedly");
 fs.writeFileSync(index,html,"utf8");
-console.log("CC_LIFESTYLE_CRUISES_2027_RCT_REFERENCE_AND_CC_FLAGSHIP_READY; no public sale");
+console.log("CC_FANTASEA_FEBRUARY_2027_DATES_PUBLISHED; CC participation pending");
