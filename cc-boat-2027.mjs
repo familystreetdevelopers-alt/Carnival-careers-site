@@ -25,14 +25,14 @@ const hook=`
 <script id="cc-boat-corridor-script">
 (()=>{
  const target="/boat-2027.html";
- const add=(root,sel)=>{if(!root||root.querySelector('a[href="'+target+'"]'))return;const a=document.createElement("a");a.href=target;a.textContent="Boat · 2027 Caribbean Corridor";a.className="cc-boat-corridor-nav";root.appendChild(a)};
+ const add=(root,sel)=>{if(!root||root.querySelector('a[href="'+target+'"]'))return;const a=document.createElement("a");a.href=target;a.textContent="Boat · Lifestyle Cruises 21+";a.className="cc-boat-corridor-nav";root.appendChild(a)};
  const install=()=>{
   const boat=document.getElementById("page-boat")||document.querySelector('[data-page="boat"]');
   const travel=document.getElementById("page-travel")||document.querySelector('[data-page="travel"]');
   for(const page of [boat,travel].filter(Boolean)){
    if(!page.querySelector(".cc-boat-corridor-entry")){
     const box=document.createElement("section");box.className="cc-boat-corridor-entry";
-    box.innerHTML='<small>BOAT / CORRECTED MAY 2027 CONTROL</small><h3>The Caribbean Corridor</h3><p>Toronto → Montréal → Miami → Caribbean islands → return Toronto is the operator procurement brief, not a confirmed vessel itinerary. The 170-guest Rasta Fest cultural sailing targets May 2027. No cabins or vendor spaces can be sold until the vessel and licensed travel seller are contracted.</p><a href="/boat-2027.html">Explore the boat plan / join priority list →</a>';
+    box.innerHTML='<small>BOAT / CC LIFESTYLE CRUISES / 21+</small><h3>Caribbean Lifestyle Cruises</h3><p>CC is building a 170-adult, Caribbean culture and lifestyle group experience around proven agency-managed cruise bookings, with Right Connections Travel / FantaSea as an uncontracted operating reference. A May 2027 Toronto → Montréal → Miami → Caribbean → Toronto water-only round-trip remains a separate ship procurement target. No CC bookings or onboard/vendor rights are confirmed.</p><a href="/boat-2027.html">See real cruise reference &amp; CC boat plan →</a>';
     (page.querySelector(".page-inner,.wrap,.container,.section-inner")||page).insertAdjacentElement("afterbegin",box);
    }
   }
@@ -55,7 +55,7 @@ const hook=`
   }
   const mobile=document.getElementById("mobilePanel");
   if(mobile&&!mobile.querySelector('a[href="'+target+'"]')){
-   const a=document.createElement("a");a.href=target;a.textContent="Boat · 2027 Caribbean Corridor";a.style.cssText="display:block;padding:12px 18px;color:#e3b876;font-size:13px;font-weight:900;text-decoration:none";
+   const a=document.createElement("a");a.href=target;a.textContent="Boat · Lifestyle Cruises 21+";a.style.cssText="display:block;padding:12px 18px;color:#e3b876;font-size:13px;font-weight:900;text-decoration:none";
    const anchor=[...mobile.querySelectorAll("a,summary")].find(el=>/boat|travel|plane/i.test(el.textContent||""));
    const container=anchor?.closest("details")||anchor?.parentElement;
    if(container?.insertAdjacentElement)container.insertAdjacentElement("afterend",a);else mobile.appendChild(a);
@@ -68,4 +68,4 @@ const hook=`
 if(!html.includes('id="cc-boat-corridor-script"'))html=html.replace("</body>",hook+"\n</body>");
 if(!html.includes("The mas brings us together.")||!html.includes('id="page-music"'))throw Error("Boat build modified canonical Home or music unexpectedly");
 fs.writeFileSync(index,html,"utf8");
-console.log("CC_BOAT_2027_ROUTE_AND_FULFILLMENT_PAGE_READY; no public sale");
+console.log("CC_LIFESTYLE_CRUISES_2027_RCT_REFERENCE_AND_CC_FLAGSHIP_READY; no public sale");
