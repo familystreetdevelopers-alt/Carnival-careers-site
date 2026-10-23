@@ -33,24 +33,7 @@ const hook = `
    section.innerHTML='<div class="cc-stewardship-kicker">CC UNIVERSE / GOVERNING PRINCIPLE</div><h3>People are not collateral.</h3><p>Debt may finance a property. It does not define a person. Read how ownership, consent, stewardship and acquisition velocity govern CC Universe operations.</p><a href="/stewardship.html">Read the CC Universe principles →</a>';
    (page.querySelector(".page-inner,.container,.wrap,.section-inner")||page).appendChild(section);
   }
-  const primary=document.querySelector('nav[aria-label="Primary"]');
-  if(primary){
-   const project=[...primary.querySelectorAll('a[href="#project"],a[href="/#project"]')].find(a=>/project/i.test(a.textContent||""));
-   const item=project?.closest(".nav-item");
-   const drop=item?.querySelector(".drop");
-   if(drop&&!drop.querySelector('a[href="/stewardship.html"]')){
-    const link=document.createElement("a");link.href=target;link.textContent="Stewardship";link.className="cc-stewardship-nav-link";
-    drop.appendChild(link);
-   }
-  }
-  const mobile=document.getElementById("mobilePanel");
-  if(mobile&&!mobile.querySelector('a[href="/stewardship.html"]')){
-   const link=document.createElement("a");link.href=target;link.textContent="Stewardship & Self-Determination";
-   link.style.cssText="display:block;padding:12px 16px;color:#e9bd78;font-weight:800;text-decoration:none";
-   const pr=[...mobile.querySelectorAll("a,summary")].find(e=>/project/i.test(e.textContent||""));
-   if(pr){const parent=pr.closest("details")||pr.parentElement;parent?.insertAdjacentElement("afterend",link)}
-   else mobile.appendChild(link);
-  }
+  // Keep the stewardship destination in its project page; no global menu insertion.
  };
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",install,{once:true});else install();
  window.addEventListener("load",install,{once:true});
