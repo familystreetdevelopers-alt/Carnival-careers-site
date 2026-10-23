@@ -28,11 +28,11 @@ body>a[href*="boat-2027.html"],body>a[href*="stewardship.html"]{display:none!imp
    if(above||a.closest("header,.site-header,#mobilePanel,.topbar,.utility-bar"))a.remove();
   }
   for(const p of document.querySelectorAll("header span,header small,header p,header a,.site-header span,.site-header small")){
-   if(!p.children.length&&/^FOR CARNIVAL CAREER(?:S)?\b/i.test((p.textContent||"").trim()))p.remove();
+   if(!p.children.length&&/^FOR CARNIVAL CAREER(?:S)?\\b/i.test((p.textContent||"").trim()))p.remove();
   }
   for(const n of [...document.body.childNodes]){
    if(n===main)break;
-   if(n.nodeType===Node.TEXT_NODE&&/^\s*FOR CARNIVAL CAREER(?:S)?\b/i.test(n.textContent||""))n.remove();
+   if(n.nodeType===Node.TEXT_NODE&&/^\s*FOR CARNIVAL CAREER(?:S)?\\b/i.test(n.textContent||""))n.remove();
   }
  };
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",clean,{once:true});else clean();
