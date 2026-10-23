@@ -8,14 +8,7 @@
 <script id="cc-resident-gateway-script">
 (()=>{
 const activate=()=>{
-  const families=document.getElementById("page-childcare")||document.getElementById("page-families");
-  if(families&&!document.getElementById("cc-resident-access")){
-    const box=document.createElement("section");
-    box.id="cc-resident-access";box.className="cc-resident-access";
-    box.innerHTML='<small>FOR CARNIVAL CAREERS FAMILIES</small><h3>My CC Life</h3><p>Your home, your work, your family benefits and CC support in one secure household account. Consumer rights guidance is included.</p><a href="/my-cc-life.html">Open resident access →</a>';
-    const inner=families.querySelector(".wrap,.container,.page-inner,.section-inner")||families;
-    inner.insertAdjacentElement("afterbegin",box);
-  }
+  // Resident portal remains accessible without a stray banner at the top of pages.
   const primary=document.querySelector('nav[aria-label="Primary"]');
   if(primary&&!primary.querySelector('[data-cc-resident-nav]')){
     const position=primary.querySelector('a[href="#childcare"],a[href="#families"]')?.closest(".nav-item");
