@@ -44,22 +44,7 @@ const hook=`
     else{const a=document.createElement("a");a.href=target;a.textContent="Feb 2027 cruise interest · no payment";a.className=el.className;el.replaceWith(a);}
    });
   }
-  const nav=document.querySelector('nav[aria-label="Primary"]');
-  if(nav){
-   const nodes=[...nav.querySelectorAll(":scope > .nav-item")];
-   const tr=nodes.find(item=>/travel|plane|boat|cruise/i.test(item.querySelector(":scope > .nav-link")?.textContent||""));
-   if(tr) add(tr.querySelector(".drop")||tr,"Boat");
-   else if(!nav.querySelector('a[href="'+target+'"]')){
-    const box=document.createElement("div");box.className="nav-item";add(box,"Boat");nav.appendChild(box);
-   }
-  }
-  const mobile=document.getElementById("mobilePanel");
-  if(mobile&&!mobile.querySelector('a[href="'+target+'"]')){
-   const a=document.createElement("a");a.href=target;a.textContent="Boat · February 2027 FantaSea";a.style.cssText="display:block;padding:12px 18px;color:#e3b876;font-size:13px;font-weight:900;text-decoration:none";
-   const anchor=[...mobile.querySelectorAll("a,summary")].find(el=>/boat|travel|plane/i.test(el.textContent||""));
-   const container=anchor?.closest("details")||anchor?.parentElement;
-   if(container?.insertAdjacentElement)container.insertAdjacentElement("afterend",a);else mobile.appendChild(a);
-  }
+  // Page-only content: no duplicate global desktop/mobile navigation links.
  };
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",install,{once:true});else install();
  window.addEventListener("load",install,{once:true});
