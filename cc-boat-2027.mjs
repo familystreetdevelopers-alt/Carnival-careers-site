@@ -25,7 +25,7 @@ const hook=`
 <script id="cc-boat-corridor-script">
 (()=>{
  const target="/boat-2027.html";
- const add=(root,sel)=>{if(!root||root.querySelector('a[href="'+target+'"]'))return;const a=document.createElement("a");a.href=target;a.textContent="Boat · February 2027 FantaSea";a.className="cc-boat-corridor-nav";root.appendChild(a)};
+
  const install=()=>{
   const boat=document.getElementById("page-boat")||document.querySelector('[data-page="boat"]');
   const travel=document.getElementById("page-travel")||document.querySelector('[data-page="travel"]');
