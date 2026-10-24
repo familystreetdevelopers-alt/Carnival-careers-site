@@ -1,0 +1,27 @@
+name: Assemble Super Patch Sponsor PDF
+on:
+  push:
+    paths:
+      - 'docs/sponsorship/_upload_parts/**'
+      - '.github/workflows/assemble-superpatch-sponsor.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore exact original-layout sponsor PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat docs/sponsorship/_upload_parts/part_*.b64 | base64 --decode > docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf
+          echo "2b24cb50f3016e19bf878825701faa20c29f93af659818f4b556295d1e832378  docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf" | sha256sum -c -
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Add exact original-layout Super Patch sponsor PDF"
+            git push
+          fi
