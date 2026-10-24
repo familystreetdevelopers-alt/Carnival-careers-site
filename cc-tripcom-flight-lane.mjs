@@ -1,0 +1,18 @@
+import fs from "node:fs";
+import path from "node:path";
+// Trip.com flight booking bridge. Never synthesize affiliate parameters or imply untracked commissions.
+const file=path.resolve("dist/index.html");
+if(!fs.existsSync(file)) throw new Error("Canonical build missing");
+let html=fs.readFileSync(file,"utf8");
+for(const x of ["The mas brings us together.",'id="page-music"','id="page-plane"']) if(!html.includes(x)) throw new Error("Missing preserved site marker: "+x);
+const tracked=(process.env.CC_TRIPCOM_TRACKED_LINK||"").trim();
+if(tracked && (!/^https:\/\//i.test(tracked) || /[\s<>"\x27]/.test(tracked))) throw new Error("Expected an unmodified official HTTPS affiliate link");
+const url=tracked||"https://www.trip.com/flights/";
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const label=tracked?"Affiliate disclosure: Carnival Careers may earn commission on eligible completed bookings. Trip.com handles bookings and payment.":"Official Trip.com flight-search link. Affiliate tracking is not yet active for Carnival Careers; no commission is assumed."; 
+const panel='<section id="cc-trip-booking-panel" class="cc-trip-booking-panel" aria-label="Regular flight booking"><small class="cc-trip-label">CC TRAVEL / REGULAR FLIGHTS</small><h2>Regular flights, separate from Plane Pool.</h2><p>Book standard airline tickets directly through Trip.com. To explore potential charter demand, continue to the separate Plane Pool workspace below.</p><a class="cc-trip-link" target="_blank" href="'+esc(url)+'" rel="noopener noreferrer'+(tracked?" sponsored nofollow":"")+'">Search regular flights on Trip.com ↗</a><small class="cc-trip-disclosure">'+esc(label)+' Carnival Careers does not sell airline tickets or handle flight payments.</small></section>';
+const style='<style id="cc-trip-booking-style">#page-plane .cc-trip-booking-panel{box-sizing:border-box;width:min(1240px,calc(100% - 28px));margin:20px auto;padding:clamp(20px,3vw,32px);background:linear-gradient(112deg,#170c15,#371424 58%,#0b1c26);border:1px solid #b28861;border-radius:18px;color:#fff}#page-plane .cc-trip-booking-panel h2{color:#fff!important;font-size:clamp(1.5rem,3vw,2.4rem)!important;margin:12px 0}#page-plane .cc-trip-booking-panel p{color:#efe5da!important;max-width:860px;line-height:1.6}#page-plane .cc-trip-label{color:#e8bd7b;font-size:11px;letter-spacing:.14em;font-weight:900}#page-plane .cc-trip-link{display:inline-flex;align-items:center;min-height:48px;padding:0 17px;border-radius:8px;background:#e8bd7b;color:#21181b!important;text-decoration:none!important;font-weight:900;margin:14px 0}#page-plane .cc-trip-disclosure{display:block;font-size:.8rem;line-height:1.5;color:#dacdc3;max-width:880px}</style>';
+const js='<script id="cc-trip-booking-script">(()=>{const panel='+JSON.stringify(panel)+';const add=()=>{const page=document.getElementById("page-plane");if(!page||page.querySelector("#cc-trip-booking-panel"))return;const wrap=document.createElement("div");wrap.innerHTML=panel;page.insertBefore(wrap.firstElementChild,page.firstElementChild)};const start=()=>{add();const page=document.getElementById("page-plane");if(page&&window.MutationObserver)new MutationObserver(add).observe(page,{childList:true});window.addEventListener("hashchange",()=>setTimeout(add,0))};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start()})()</scr'+'ipt>';
+if(!html.includes('id="cc-trip-booking-script"')) html=html.replace("</body>",style+"\n"+js+"\n</body>");
+fs.writeFileSync(file,html,"utf8");
+console.log("CC Trip.com lane active; account-generated tracking="+Boolean(tracked));
