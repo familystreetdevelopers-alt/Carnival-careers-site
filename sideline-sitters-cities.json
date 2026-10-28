@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "last_reviewed": "2026-10-28",
+  "notice": "Only city-level service expansion statuses are public. Exact client or crew locations are never published.",
+  "cities": [
+    {
+      "city": "Toronto",
+      "region": "Ontario",
+      "country": "Canada",
+      "country_code": "CA",
+      "status": "caregiver_intake_open",
+      "service_live": false,
+      "partner_approved": false,
+      "display": "Recruiting caregivers · no bookings yet",
+      "updated_on": "2026-10-28"
+    }
+  ]
+}
