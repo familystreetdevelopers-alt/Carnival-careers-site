@@ -101,6 +101,13 @@
       "buyers": "specialist music financiers",
       "conditions": "subject to verified owned earnings",
       "status": "enquiries-welcome"
+    },
+    {
+      "id": "ai-data-licensing",
+      "offer": "non-exclusive paid AI training and media datasets using CC-owned original footage, project media and original recordings",
+      "buyers": "AI model developers, rights-based dataset licensees, music AI companies",
+      "conditions": "rights chain, performer releases, publishing/master clearances, privacy, license restrictions and negotiation required; no datasets provided without prior written consent",
+      "status": "enquiries-welcome"
     }
   ],
   "illustrative_forecasts": [
