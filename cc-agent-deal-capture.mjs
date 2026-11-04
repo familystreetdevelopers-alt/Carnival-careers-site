@@ -116,4 +116,29 @@ const robots=path.join(dist,"robots.txt");
 const existing=fs.existsSync(robots)?fs.readFileSync(robots,"utf8"):"User-agent: *\nAllow: /\n";
 if(!existing.includes("sitemap-ai.xml"))fs.writeFileSync(robots,existing.trimEnd()+"\nSitemap: "+root+"/sitemap-ai.xml\n","utf8");
 fs.writeFileSync(path.join(dist,"CC_AGENT_SUBMISSION.md"),info+"\n","utf8");
-console.log("SUCCESS: persistently captured commercial buyer requests, llms.txt, sitemap-ai.xml and agent submission guide built.");
+const songs=[
+["Who You Want It To Be","3:50","who-you-want-it-to-be.mp3"],
+["Cold Water","2:06","cold-water.mp3"],
+["The Bounce Gone","2:02","the-bounce-gone.mp3"],
+["John Wick","3:52","john-wick.mp3"],
+["Love Eternally","3:44","love-eternally.mp3"],
+["Pool Party 2","3:19","pool-party-2.mp3"],
+["Strength of We Bloodline","2:05","strength-of-we-bloodline.mp3"],
+["Stuck In The Middle","3:12","stuck-in-the-middle.mp3"]
+];
+for(const track of songs){if(!fs.existsSync(path.join(dist,"music-2026",track[2])))throw Error("Music preview master not in built site: "+track[2]);}
+const sync={
+catalogue:"Carnival Careers eight live streaming previews",
+updated:"2026-11-04",
+licensing_status:"Enquiries welcome. Rights and ownership for commercial licensing have NOT been independently verified. Streaming preview does NOT grant a licence.",
+issuer:"Carnival Careers",
+contact:"familystreetdevelopers@gmail.com",
+license_enquiry:"https://carnival-careers-live-current.vercel.app/ai-opportunities.html?lane=music#cc-deal-intake",
+tracks:songs.map((t,i)=>({position:i+1,title:t[0],duration:t[1],streaming_preview:root+"/music-2026/"+t[2],rights_clearance:"subject-to-review",commercial_use_allowed_without_license:false})),
+buyer_requests:["name","contact","proposed CAD licence budget","medium","territory","duration","versions or stems needed","deadline"],
+notes:"No exclusive rights granted; no claims of one-stop clearance; music supervisors must confirm both composition and master permissions."
+};
+fs.writeFileSync(path.join(dist,"cc-music-sync-catalog.json"),JSON.stringify(sync,null,2)+"\n");
+fs.appendFileSync(path.join(dist,"llms.txt"),"\n- [CC eight-track music supervisor preview catalogue]("+root+"/cc-music-sync-catalog.json)\n");
+console.log("SUCCESS: buyer requests flow to CC OS, eight real music previews are indexed for licensed music buyers, and agent discovery is live.");
+
