@@ -194,5 +194,11 @@
       "A unique reference number is issued after the database accepts a legitimate request."
     ],
     "security": "Never transmit bank credentials, private music stems or rights paperwork to this endpoint."
+  },
+  "concrete_music_previews": {
+    "live_track_count": 8,
+    "listen_and_evaluate": "https://carnival-careers-live-current.vercel.app/cc-music-sync-catalog.json",
+    "licensed_inquiry": "https://carnival-careers-live-current.vercel.app/ai-opportunities.html?lane=music#cc-deal-intake",
+    "note": "The eight tracks are existing live CC website previews. Commercial and AI training rights are subject to independent verification and signed agreement."
   }
 }
