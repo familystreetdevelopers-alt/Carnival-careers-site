@@ -34,7 +34,7 @@ responses:{
 },tags:["Buyer Mandates"],security:[]
 }},
 components:{schemas:{IntakeResponse:{type:"object",required:["reference","lookupToken","status","duplicate","createdAt"],properties:{reference:{type:"string"},lookupToken:{type:"string",description:"Private token; not for publishing"},status:{type:"string",example:"RECEIVED"},duplicate:{type:"boolean"},createdAt:{type:"string",format:"date-time"}}}}}
-};
+}};
 const p=path.join(dist,"cc-buyer-api-openapi.json");fs.writeFileSync(p,JSON.stringify(item,null,2)+"\n","utf8");
 const discovery={
 schema:"Carnival Careers public commercial discovery 2026-11-04",
