@@ -23,6 +23,8 @@ Match Carnival Careers with **real paying buyers, commercial sponsors, investors
 11. **Vendor, creator and city partnerships** — businesses with marketing budgets, licensing budgets, commissionable distribution routes, city activations, transport collaborations, restaurant/family storytelling and other B2B partner needs across the program format.
 12. **Rights and royalty finance** — qualified catalogue-based advances only where earnings/ownership verification and lender approval exist; not a committed credit facility.
 
+13. **AI dataset licensing of CC-owned original media** — seek qualified paid licences from AI developers for production footage, raw b-roll, editorial media, music stems and sound recordings where CC controls the necessary rights. No file transfer or opt-in without signed pricing, clear rights chain, privacy/performer releases, restrictions on derivative output, and explicit approval. Buyers may approach through the CC commercial desk. Third-party AI rights marketplaces exist, but none has committed to purchase CC content.
+
 ## Current illustrative cash projections — NOT earned revenue
 The November 2, 2026 internal model tests two **unbooked, independently promoted** Toronto arena-show concepts:
 - **Soca concept:** Machel Montano / Bunji Garlin / Patrice Roberts; illustrative ticket assumptions 14,500 tickets at CAD 155 average. Total projected gross revenue **CAD 2,567,500** including proposed sponsors/vendors/other revenues; projected costs **CAD 2,256,275**; modeled operating surplus **CAD 311,225** BEFORE investor distributions. Assumed bridge capital **CAD 1,000,000**; hypothetical 20% investor profit target **CAD 200,000**, not promised.
