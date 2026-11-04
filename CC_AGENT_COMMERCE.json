@@ -162,5 +162,37 @@
     "no promised returns or booked revenue",
     "no automatic referral commission"
   ],
-  "readme": "https://github.com/familystreetdevelopers-alt/Carnival-careers-site/blob/main/CC_AGENT_COMMERCE.md"
+  "readme": "https://github.com/familystreetdevelopers-alt/Carnival-careers-site/blob/main/CC_AGENT_COMMERCE.md",
+  "inbound_agent_submissions": {
+    "human_buyer_form": "https://carnival-careers-live-current.vercel.app/ai-opportunities.html#cc-deal-intake",
+    "method": "POST",
+    "endpoint": "https://carnival-careers-os.floot.app/_api/public/intake",
+    "content_type": "text/plain;charset=UTF-8",
+    "body_example": {
+      "kind": "agent-commerce",
+      "payload": {
+        "channel": "cc-agent-commerce",
+        "lane": "music",
+        "buyer_organization": "Example authorized buyer company",
+        "human_decision_maker": "Example buyer name and role",
+        "business_email": "buyer@example.com",
+        "phone": "",
+        "proposed_budget_cad": 30000,
+        "decision_deadline": "2026-12-01",
+        "requested_deliverables": "Example proposed licensed song use in a paid commercial campaign",
+        "mandate_evidence_url": "",
+        "consent": true,
+        "declared_authority": true,
+        "verified_by_cc": false
+      },
+      "sourceUrl": "https://carnival-careers-live-current.vercel.app/ai-opportunities.html"
+    },
+    "disclosures": [
+      "The above buyer is a fictional schema illustration; NOT a real lead.",
+      "Do not submit fabricated buyers or unconsented personal data.",
+      "Submitting creates an unverified owner-review record; no automatic quotes, invoices, transfers or payments.",
+      "A unique reference number is issued after the database accepts a legitimate request."
+    ],
+    "security": "Never transmit bank credentials, private music stems or rights paperwork to this endpoint."
+  }
 }
