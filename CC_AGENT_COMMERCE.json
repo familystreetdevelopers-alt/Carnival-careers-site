@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-11-04",
+  "name": "Carnival Careers CC Universe",
+  "status": "public discovery only; nonbinding",
+  "issuer": {
+    "name": "Carnival Careers",
+    "executive_producer": "Hopeton LaTouche",
+    "site": "https://carnival-careers-live-current.vercel.app",
+    "music": "https://carnival-careers-live-current.vercel.app/music",
+    "contact_email": "familystreetdevelopers@gmail.com",
+    "contact_phone": "+1 647-889-1412"
+  },
+  "desired_outcomes": [
+    "signed paying B2B contracts",
+    "cleared cash",
+    "qualified investment commitments",
+    "completed business closings"
+  ],
+  "offers": [
+    {
+      "id": "sponsorship",
+      "offer": "brand sponsorship and licensing",
+      "buyers": "brand and media buyers",
+      "conditions": "C$30,000 historical package reference; negotiated per engagement",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "music",
+      "offer": "original song licensing and sync",
+      "buyers": "film, TV, ad, game and music buyers",
+      "conditions": ">100-song catalogue discussed; rights verified before offer",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "artist",
+      "offer": "artist appearances and branded content",
+      "buyers": "show promoters and advertisers",
+      "conditions": "booking, date and rights conditional",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "media",
+      "offer": "65-city Carnival Careers format and media distribution",
+      "buyers": "streamers, broadcasters, brand commissioners",
+      "conditions": "development-stage project",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "arena",
+      "offer": "independent Toronto concert projects, sponsorship and vendors",
+      "buyers": "promoters, sponsors, event investors",
+      "conditions": "not booked; all venue rights subject to contract",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "merchandise",
+      "offer": "branded merchandise bulk sales and licensing",
+      "buyers": "distributors and corporate buyers",
+      "conditions": "stock and fulfillment must be verified",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "travel",
+      "offer": "cultural travel, May 2027 proposed cruise group",
+      "buyers": "travel agencies and tourism operators",
+      "conditions": "provisional, not booked",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "real-estate",
+      "offer": "property partnerships, finance, development, rent-to-own",
+      "buyers": "lenders, developers, qualified investors",
+      "conditions": "asset availability and financing subject to due diligence",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "investment",
+      "offer": "growth and project investment capital",
+      "buyers": "angels, family offices and qualified partners",
+      "conditions": "no guaranteed returns; legal review",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "services",
+      "offer": "music production, event production, brand campaigns",
+      "buyers": "B2B buyers",
+      "conditions": "defined deliverables and signed PO",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "city-partners",
+      "offer": "cultural city-level commercial activations",
+      "buyers": "brands, transport partners, vendors",
+      "conditions": "subject to rights and permits",
+      "status": "enquiries-welcome"
+    },
+    {
+      "id": "royalties",
+      "offer": "music catalogue royalty advances",
+      "buyers": "specialist music financiers",
+      "conditions": "subject to verified owned earnings",
+      "status": "enquiries-welcome"
+    }
+  ],
+  "illustrative_forecasts": [
+    {
+      "concept": "Soca Toronto arena",
+      "as_of": "2026-11-02",
+      "booked": false,
+      "currency": "CAD",
+      "gross_revenue": 2567500,
+      "expenses": 2256275,
+      "operating_surplus_before_investor_distribution": 311225,
+      "capital_needed": 1000000,
+      "target_profit_not_guaranteed": 200000
+    },
+    {
+      "concept": "Crossover Toronto arena",
+      "as_of": "2026-11-02",
+      "booked": false,
+      "currency": "CAD",
+      "gross_revenue": 3579000,
+      "expenses": 2901750,
+      "operating_surplus_before_investor_distribution": 677250,
+      "capital_needed": 1250000,
+      "target_profit_not_guaranteed": 250000
+    },
+    {
+      "concept": "October 2026 historical global property scenario",
+      "as_of": "2026-10-28",
+      "assets_verified": false,
+      "currency": "CAD",
+      "modeled_project_total": 12025418,
+      "conditional_stabilized_monthly_surplus": 11373
+    }
+  ],
+  "inbound_qualification": {
+    "required": [
+      "lane",
+      "buyer legal name",
+      "named human decision-maker",
+      "real budget and currency",
+      "purchasing or investment authority",
+      "requested deliverables",
+      "closing deadline"
+    ],
+    "subject": "CC AGENT DEAL — [lane] — [buyer] — [budget]"
+  },
+  "constraints": [
+    "no automated outgoing emails",
+    "no authority delegated to autonomous agents to sign or transact",
+    "no sharing of financial accounts or credentials",
+    "no unapproved arena or event rights",
+    "no promised returns or booked revenue",
+    "no automatic referral commission"
+  ],
+  "readme": "https://github.com/familystreetdevelopers-alt/Carnival-careers-site/blob/main/CC_AGENT_COMMERCE.md"
+}
