@@ -26,7 +26,7 @@ const { URL } = require('node:url');
    try { if(match.tag==='select') await el.selectOption({label:String(value)}); else await el.fill(String(value)); result.fields.push({key,status:'FILLED'}); }
    catch(e){result.fields.push({key,status:'FAILED',reason:String(e).slice(0,150)});}
   }
-  await page.screenshot({path:'application-output/review.png',fullPage:true});
+  // No screenshot: public-repository artifacts must not expose applicant information.
  }catch(e){result.warnings.push(String(e));}
  finally{
   // Never include submitted values in the public log or artifact.
