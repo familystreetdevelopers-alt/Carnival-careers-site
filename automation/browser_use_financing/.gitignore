@@ -1,0 +1,6 @@
+.env
+*.private.json
+runs/
+__pycache__/
+*.pdf
+*.xlsx
