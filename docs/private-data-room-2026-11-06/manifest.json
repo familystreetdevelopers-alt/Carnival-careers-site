@@ -1,0 +1,62 @@
+{
+  "format": "AES-256-GCM ciphertext split in order; final 16 bytes are authentication tag",
+  "date": "2026-11-06",
+  "archive": {
+    "file": "CC_Universe_Complete_Data_Room_2026-11-06.zip",
+    "bytes": 51484277,
+    "sha256": "685e5fa65167728c4f575fa532f0ff28ad123f37461c7f6d393319fcf1dad667"
+  },
+  "nonce_base64": "e1uqZUcP5fCVKmmk",
+  "aad_base64": "Q2Fybml2YWwgQ2FyZWVycyBkYXRhIHJvb20gMjAyNi0xMS0wNg==",
+  "parts": [
+    {
+      "file": "archive.part00",
+      "bytes": 6291456,
+      "sha256": "f12b7b17547c0b564f0fc062f55608384b0f6cc7e4ebaca4ca0a307e286f48f7"
+    },
+    {
+      "file": "archive.part01",
+      "bytes": 6291456,
+      "sha256": "c459dd60f64de396b68e03c63e558ae66642666ac088f408269fcaf35999da53"
+    },
+    {
+      "file": "archive.part02",
+      "bytes": 6291456,
+      "sha256": "5e0aae12bf9fc4528a68663384f5b6a34c99b709288fd036fd1efc989dfb09df"
+    },
+    {
+      "file": "archive.part03",
+      "bytes": 6291456,
+      "sha256": "958487940c78da604b6ad8eddb1e0f8a7d76d0db01b34ec2d9c6ca6c539726cd"
+    },
+    {
+      "file": "archive.part04",
+      "bytes": 6291456,
+      "sha256": "9cb8aa7ce6196472aea08a8647a779c950cc1a941eacad73ff69dbf4c9ac0673"
+    },
+    {
+      "file": "archive.part05",
+      "bytes": 6291456,
+      "sha256": "e31c9de4b03eca296fb448af2fa643c966cbb4bedb31085737076d832d93371e"
+    },
+    {
+      "file": "archive.part06",
+      "bytes": 6291456,
+      "sha256": "cd8cdb9630624f23eb7d0cdc3890b950edbf7a8cdf3878360021d8a032a4ae9c"
+    },
+    {
+      "file": "archive.part07",
+      "bytes": 6291456,
+      "sha256": "405b85efb516e2302a64be3a4b1597f739dda19afa534f6f3061ac5925c18451"
+    },
+    {
+      "file": "archive.part08",
+      "bytes": 1152645,
+      "sha256": "2efc910df30229f587e170a62cff9c01b95b9a1225fbced7f143ecda5c21e655"
+    }
+  ],
+  "ciphertext_sha256": "89e6fdbbe029c135aace1a83f528082a0cd0bf71b921a88cb13f60e7b00d0c73",
+  "recovery_key": "Kept separately by owner; never stored in this public repository",
+  "content_summary": "26 current chapters with full historical appendices, transfer templates, index, presentation, supplied arena workbook, recovered original data-room files and prior promoter drafts",
+  "sizzle_video": "Not completed; account access blocked"
+}
