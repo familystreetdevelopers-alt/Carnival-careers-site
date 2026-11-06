@@ -1,0 +1,15 @@
+{
+  "project_trade_name": "Carnival Careers",
+  "contact_name": null,
+  "contact_email": null,
+  "contact_phone": null,
+  "legal_borrower_name": null,
+  "legal_borrower_verified": false,
+  "authorized_signer_name": null,
+  "authorized_signer_verified": false,
+  "verified_unpaid_b2b_invoices": false,
+  "original_invoices_and_acceptance_docs": false,
+  "verified_buyer_purchase_order": false,
+  "approved_buyer_payables": false,
+  "verified_business_financials": false
+}
