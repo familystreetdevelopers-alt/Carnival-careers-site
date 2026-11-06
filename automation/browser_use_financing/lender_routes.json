@@ -1,0 +1,72 @@
+[
+  {
+    "provider": "FundThrough",
+    "category": "invoice_factoring",
+    "url": "https://www.fundthrough.com/accounts-receivable-financing"
+  },
+  {
+    "provider": "Liquid Capital Canada",
+    "category": "invoice_factoring",
+    "url": "https://liquidcapitalcorp.com/get-a-rate/"
+  },
+  {
+    "provider": "J D Factors Toronto",
+    "category": "invoice_factoring",
+    "url": "https://jdfactors.com/Locations.aspx"
+  },
+  {
+    "provider": "eCapital Canada",
+    "category": "invoice_factoring",
+    "url": "https://ecapital.com/en-ca/products/invoice-factoring/"
+  },
+  {
+    "provider": "Riviera Finance",
+    "category": "invoice_factoring",
+    "url": "https://secure.rivierafinance.com/OnlineApplication"
+  },
+  {
+    "provider": "AccordExpress",
+    "category": "invoice_factoring",
+    "url": "https://accordfinancial.com/services-accordexpress-factoring/"
+  },
+  {
+    "provider": "Accord Financial",
+    "category": "asset_based",
+    "url": "https://accordfinancial.com/"
+  },
+  {
+    "provider": "Payplant",
+    "category": "invoice_factoring",
+    "url": "https://www.payplant.com/"
+  },
+  {
+    "provider": "BDC Purchase Order",
+    "category": "purchase_order",
+    "url": "https://www.bdc.ca/en/financing/purchase-order-loan"
+  },
+  {
+    "provider": "BDC Working Capital",
+    "category": "working_capital",
+    "url": "https://www.bdc.ca/en/financing"
+  },
+  {
+    "provider": "C2FO",
+    "category": "reverse_factoring",
+    "url": "https://c2fo.com/faqs/"
+  },
+  {
+    "provider": "SAP Taulia",
+    "category": "reverse_factoring",
+    "url": "https://customersupport.taulia.com/pkb_b_what_is_taulia?b=&l=en_US"
+  },
+  {
+    "provider": "PrimeRevenue",
+    "category": "reverse_factoring",
+    "url": "https://primerevenue.com/partner-resource-center/"
+  },
+  {
+    "provider": "Scotiabank GTB",
+    "category": "reverse_factoring",
+    "url": "https://gtb.scotiabank.com/en/global-transaction-banking/services/global-trade-and-working-capital-solutions.html"
+  }
+]
