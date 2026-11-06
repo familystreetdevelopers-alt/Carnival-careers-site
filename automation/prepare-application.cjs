@@ -20,7 +20,7 @@ const { URL } = require('node:url');
   result.detected_fields=inputs;
   for(const [key,value] of Object.entries(fields)){
    if(typeof value!=='string' && typeof value!=='number'){result.warnings.push('Skipped non-scalar field '+key);continue;}
-   const matches=inputs.filter(x=>[x.name,x.id,x.label,x.placeholder].some(v=>v.toLowerCase()===key.toLowerCase()));
+   const matches=inputs.filter(x=>[x.name,x.id,x.label,x.placeholder].some(v=>String(v||'').toLowerCase()===key.toLowerCase()));
    if(matches.length!==1){result.fields.push({key,status:matches.length?'AMBIGUOUS':'NOT FOUND'});continue;}
    const match=matches[0], el=page.locator('input, textarea, select').nth(match.index);
    try { if(match.tag==='select') await el.selectOption({label:String(value)}); else await el.fill(String(value)); result.fields.push({key,status:'FILLED'}); }
