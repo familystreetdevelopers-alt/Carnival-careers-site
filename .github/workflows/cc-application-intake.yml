@@ -1,0 +1,54 @@
+name: CC Application Command Center
+on:
+  workflow_dispatch:
+    inputs:
+      program:
+        description: "Application program (e.g. SOCAN songwriter)"
+        required: true
+        type: string
+      application_url:
+        description: "Official application URL (https)"
+        required: true
+        type: string
+      action:
+        description: "Preparation only; never submit external applications from GitHub Actions"
+        required: true
+        type: choice
+        options:
+          - prepare
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - name: Validate and record application request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PROGRAM: ${{ inputs.program }}
+          TARGET_URL: ${{ inputs.application_url }}
+        shell: python
+        run: |
+          import os, re, subprocess
+          from urllib.parse import urlparse
+          program = os.environ['PROGRAM'].strip()
+          target = os.environ['TARGET_URL'].strip()
+          parsed = urlparse(target)
+          if not (1 <= len(program) <= 120 and parsed.scheme == 'https' and parsed.hostname and not parsed.username and not parsed.password):
+              raise SystemExit('Invalid program or URL. Must use official HTTPS URL.')
+          if any(ord(c) < 32 for c in program + target):
+              raise SystemExit('Control characters not allowed.')
+          title = 'APPLICATION INTAKE: ' + program
+          body = ('Program: ' + program + '\\nOfficial URL: ' + target +
+                  '\\nStatus: INTAKE — NOT SUBMITTED' +
+                  '\\nChecklist: [ ] verify eligibility [ ] collect required documents privately [ ] confirm ownership/rights [ ] authenticate [ ] review completed application [ ] obtain explicit submit approval [ ] record confirmation ID' +
+                  '\\nNo personal IDs, passwords, banking information, or unpublished music files belong in this public issue.')
+          existing = subprocess.run(['gh','issue','list','--repo',os.environ['REPO'],'--state','all','--search',title,'--json','title,number'],capture_output=True,text=True,check=True)
+          import json
+          matches = [i for i in json.loads(existing.stdout) if i['title'].casefold()==title.casefold()]
+          if matches:
+              print('Existing intake issue:', matches[0]['number'])
+          else:
+              subprocess.run(['gh','issue','create','--repo',os.environ['REPO'],'--title',title,'--body',body],check=True)

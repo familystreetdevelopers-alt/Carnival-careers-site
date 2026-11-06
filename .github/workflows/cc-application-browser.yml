@@ -1,0 +1,35 @@
+name: CC Application Browser Preparation
+on:
+  workflow_dispatch:
+    inputs:
+      application_url:
+        description: "Official HTTPS application URL"
+        required: true
+        type: string
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Prepare form without submitting
+        env:
+          APPLICATION_URL: ${{ inputs.application_url }}
+          CC_APPLICATION_FIELDS_JSON: ${{ secrets.CC_APPLICATION_FIELDS_JSON }}
+        run: node automation/prepare-application.cjs
+      - name: Save review results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-review
+          path: application-output/
+          retention-days: 3
