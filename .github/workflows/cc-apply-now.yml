@@ -1,0 +1,43 @@
+name: CC Apply Now
+on:
+  workflow_dispatch:
+    inputs:
+      application_url:
+        description: "Official HTTPS application URL"
+        required: true
+        type: string
+      submit_approved:
+        description: "I authorize submission to this exact website now"
+        required: true
+        type: boolean
+        default: false
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser
+        run: |
+          npm install --no-save playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Run on-demand application
+        env:
+          APPLICATION_URL: ${{ inputs.application_url }}
+          CC_SUBMIT_APPROVED: ${{ inputs.submit_approved }}
+          CC_APPROVED_DOMAIN: ${{ secrets.CC_APPROVED_DOMAIN }}
+          CC_APPLICATION_FIELDS_JSON: ${{ secrets.CC_APPLICATION_FIELDS_JSON }}
+          CC_APPLICATION_MAPPING_JSON: ${{ secrets.CC_APPLICATION_MAPPING_JSON }}
+        run: node automation/application-engine-v2.cjs
+      - name: Store status report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-status
+          path: application-output/status.json
+          retention-days: 3
