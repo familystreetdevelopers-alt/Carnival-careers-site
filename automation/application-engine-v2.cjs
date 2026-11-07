@@ -13,6 +13,7 @@ async function main() {
   const submit = process.env.CC_SUBMIT_APPROVED === 'true';
   const expectedDomain = process.env.CC_APPROVED_DOMAIN || '';
   if (submit && (!expectedDomain || expectedDomain !== url.hostname)) throw Error('Submission requires exact domain approval');
+  if (submit && Object.keys(fields).length === 0) throw Error('Applicant profile missing: submission blocked');
   fs.mkdirSync('application-output', { recursive:true });
   const result = { requested_url:target, status:'NOT SUBMITTED', filled:[], missing:[], needs_review:[], confirmation:null };
   const browser = await chromium.launch({headless:true});
@@ -46,7 +47,7 @@ async function main() {
     }));
     if(auth) result.needs_review.push('Login or human verification required');
     if(missingRequired.length) result.needs_review.push('Required fields remain unfilled');
-    if(submit && !auth && !missingRequired.length && !result.missing.length) {
+    if(submit && result.filled.length > 0 && !auth && !missingRequired.length && !result.missing.length) {
       // Do not click an ambiguous or payment-related button.
       const buttons=page.locator('button[type="submit"],input[type="submit"]');
       if(await buttons.count()!==1) result.needs_review.push('Submission control ambiguous');
@@ -65,6 +66,7 @@ async function main() {
       }
     }
     if(!submit) result.needs_review.push('Awaiting explicit submission approval');
+    if(submit && !result.filled.length) result.needs_review.push('No applicant details filled: submission blocked');
     result.final_url=page.url();
   } catch(e) {result.needs_review.push('Browser error: '+String(e.message).slice(0,160));}
   finally {
