@@ -59,7 +59,7 @@ async function main() {
           await page.waitForLoadState('domcontentloaded',{timeout:15000}).catch(()=>{});
           const body=(await page.locator('body').innerText()).slice(0,12000);
           const confirmation=body.match(/(?:confirmation|reference|application)\s*(?:number|id|#|code)\s*[:#]?\s*([A-Z0-9-]{5,40})/i);
-          if(confirmation) {result.status='SUBMITTED — CONFIRMATION DETECTED';result.confirmation=confirmation[1];}
+          if(confirmation) {result.status='SUBMITTED — CONFIRMATION DETECTED';result.confirmation='DETECTED — REDACTED';}
           else {result.status='SUBMISSION CLICKED — NOT VERIFIED';result.needs_review.push('No confirmation identifier detected');}
         }
       }
