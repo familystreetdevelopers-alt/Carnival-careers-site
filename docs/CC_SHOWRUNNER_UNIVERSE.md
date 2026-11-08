@@ -52,3 +52,19 @@ A beat can be `SCRIPTED` before anyone is hired. A filmed deliverable becomes `C
 - Internal agent instruction controls 3 parallel clocks and separately tracks actual transactions.
 - Public canonical site: `/production-universe.html` provides a truthful overview and a Project menu entry; Home copy is unchanged.
 - Old October 14 44-day spreadsheet/PDF, where they impose a 44-day program, are **SUPERSEDED FOR CREATIVE PRODUCTION**. Financial assumptions may be re-used only after individual verification, not as the production clock.
+
+## CC SPONSORSHIP HORIZONS — 8 NOVEMBER 2026 (CONTROLLING SUPERSESSION)
+
+**Different sponsorship targets are intentional, not conflicting:** A corporate sponsor can need roughly 3–5 months to approve meaningful cultural activation. A near-term concert may instead support a smaller fast-close ask. Apply the exact event-specific sponsor target and its rights schedule; do not apply historical Nov 5 amounts to future events as if already approved.
+
+| Lead time | Sponsor campaign cash target | Three proposed sponsor portions | Separately negotiated promoter performance milestones |
+|---|---:|---|---|
+| 0–30 days | C$10,000 | C$3,333.33 + C$3,333.33 + C$3,333.34 | At verified entry, confirmed audio-lineup/set access, and completed performance |
+| 31–89 days | C$30,000 | C$10,000 + C$10,000 + C$10,000 | Same three documentary milestones; actual performance fee separately agreed |
+| 90–150+ days | C$45,000 | C$15,000 + C$15,000 + C$15,000 | Same three documentary milestones; actual performance fee separately agreed |
+
+**Critical control:** Sponsor cash is NOT automatically the promoter fee. A sponsor's three payments are conditional on contracted creative scope or may be funded by three independent partners. A promoter's three payments are a separate show-specific proposed booking consideration and may be **less** than the sponsor raise; all fee amounts and release triggers need an authorized signed booking addendum and escrow/receipts if agreed. The C$9,000 / C$3k+3k+3k historical Nov 5 counterproposal was not accepted.
+
+No 2026 venue / sponsor / performance rights carry forward. Feb 12 2027 and other dates require signed booking and approval. Keep hospitality, regulated alcohol orders, six-car Rivian request, television, property lending and no-contact policy separate. No automatic outreach to anybody.
+
+Canonical authority: [CC sponsor horizon model](sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json) (for files inside docs/ use path relative to this file; root references `docs/sponsorship/...`). Site delivery is on `/sponsorship-horizons.html` after build.
