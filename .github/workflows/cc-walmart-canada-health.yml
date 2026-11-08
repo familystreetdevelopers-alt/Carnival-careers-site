@@ -1,0 +1,26 @@
+name: CC Walmart Canada — guarded health checks
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '13 12 * * *' # daily UTC; GitHub may delay schedules
+permissions:
+  contents: read
+concurrency:
+  group: cc-walmart-canada-health
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Unit economics gate
+        run: python3 operations/walmart-canada/profit_gate.py operations/walmart-canada/candidates.csv
+      - name: Canada Global API read-only checks
+        env:
+          WALMART_CLIENT_ID: ${{ secrets.CC_WALMART_CLIENT_ID }}
+          WALMART_CLIENT_SECRET: ${{ secrets.CC_WALMART_CLIENT_SECRET }}
+          WALMART_ENV: ${{ vars.CC_WALMART_ENV || 'sandbox' }}
+          WALMART_PRODUCTION_READY: ${{ vars.CC_WALMART_PRODUCTION_READY || 'false' }}
+        run: python3 operations/walmart-canada/walmart_readonly.py
