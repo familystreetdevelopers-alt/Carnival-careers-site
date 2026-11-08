@@ -1,5 +1,8 @@
 # Carnival Careers / CC Universe — Mavado & Friends C$30,000 sponsorship decks
 
+> **Historical show inventory / 8 Nov 2026 global-property note:** Any incidental C$12.025M property reference in later reuse must be replaced in new drafts with the [C$10.232M / 38-home working global property pilot](../../property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md); 135 Sammon’s C$9.023M / 40-home scenario is conditional and unverified. The November 5 music sponsor rights, venue approvals, payment and signed stage deal remain separate and unchanged. This dated historical evidence is preserved.
+
+
 **Version:** 2026-10-26  
 **Canonical storage:** [Google Drive — Carnival Careers / DATA ROOM / CONCERT / 2026-11-05_Mavado_30K_Decks](https://drive.google.com/drive/folders/1MbE0juS-suK4DsAVmlPbFS24OaiLYvBs)
 
