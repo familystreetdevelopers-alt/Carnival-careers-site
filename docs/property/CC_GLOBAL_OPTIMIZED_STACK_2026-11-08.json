@@ -1,0 +1,152 @@
+{
+  "version": "CC-GLOBAL-OPT-2026-11-08",
+  "currency": "CAD",
+  "status": "working-not-verified",
+  "source": "CC Universe Oct 26 2026 six-page global insert",
+  "original": {
+    "allIn": 12025418,
+    "units": 48,
+    "monthlySurplus": 11373
+  },
+  "deferrals": [
+    {
+      "asset": "Tokyo / Senju Sakuragi",
+      "units": 7,
+      "price": 1156518,
+      "monthlySurplus": 1004,
+      "alternative": "filming partnership"
+    },
+    {
+      "asset": "London / Paddington",
+      "units": 1,
+      "price": 562200,
+      "monthlySurplus": 462,
+      "alternative": "filming partnership"
+    },
+    {
+      "asset": "Ghana Old Ashongman two-unit build",
+      "units": 2,
+      "price": 74828,
+      "monthlySurplus": 240,
+      "alternative": "construction deferred"
+    }
+  ],
+  "working": {
+    "allIn": 10231872,
+    "units": 38,
+    "monthlySurplusHistoricSensitivity": 9667,
+    "notVerified": true
+  },
+  "sammonConditional": {
+    "replacementFor": "1311 Pape Avenue",
+    "proposed": "135 Sammon Avenue",
+    "proposedPrice": 2950000,
+    "sourcePrice": 4158888,
+    "indicativePurchaseSaving": 1208888,
+    "indicativeAllIn": 9022984,
+    "conditionalUnits": 40,
+    "cashFlow": "unknown",
+    "familyOccupancy": "not verified; fully tenanted",
+    "requires": [
+      "vacant possession",
+      "legal 4BR solution",
+      "6-family accommodation",
+      "11 units legalization",
+      "rent roll/T12",
+      "financing/DSCR",
+      "LTT/fees",
+      "tenancy law"
+    ]
+  },
+  "unitRules": {
+    "tenantOwnerHouseholds": 6,
+    "monthlyHousingPaymentTarget": 800,
+    "noDoubleCountNoi": true
+  },
+  "separateLanes": [
+    "109 Pembroke/Tournament/Euclid/VicTowns CC-CAPITAL65 Toronto",
+    "65-city enterprise concerts/media investment (legacy C$114,319,660)"
+  ],
+  "properties": [
+    {
+      "market": "Toronto",
+      "asset": "1311 Pape",
+      "modeledUnits": 9,
+      "sourcePriceCAD": 4158888,
+      "sourceNetPerMonthCAD": 2348,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "166 Caledonia",
+      "modeledUnits": 5,
+      "sourcePriceCAD": 1088888,
+      "sourceNetPerMonthCAD": 2428,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "12 York PATH",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 592900,
+      "sourceNetPerMonthCAD": 371,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "138 Downes",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 548000,
+      "sourceNetPerMonthCAD": 456,
+      "verification": "pending"
+    },
+    {
+      "market": "Miami",
+      "asset": "2775 NW 57th",
+      "modeledUnits": 4,
+      "sourcePriceCAD": 1050835,
+      "sourceNetPerMonthCAD": 1219,
+      "verification": "pending"
+    },
+    {
+      "market": "Lucea",
+      "asset": "122 Haughton Court",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 159372,
+      "sourceNetPerMonthCAD": 266,
+      "verification": "pending"
+    },
+    {
+      "market": "Trinidad",
+      "asset": "Barataria",
+      "modeledUnits": 3,
+      "sourcePriceCAD": 518500,
+      "sourceNetPerMonthCAD": 554,
+      "verification": "pending"
+    },
+    {
+      "market": "Barbados",
+      "asset": "Ashton Hall",
+      "modeledUnits": 4,
+      "sourcePriceCAD": 441410,
+      "sourceNetPerMonthCAD": 1378,
+      "verification": "pending"
+    },
+    {
+      "market": "Accra",
+      "asset": "Old Ashongman",
+      "modeledUnits": 9,
+      "sourcePriceCAD": 362700,
+      "sourceNetPerMonthCAD": 373,
+      "verification": "pending"
+    },
+    {
+      "market": "Barcelona",
+      "asset": "Calle de Briquets",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 186753,
+      "sourceNetPerMonthCAD": 275,
+      "verification": "pending"
+    }
+  ]
+}
