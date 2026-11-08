@@ -7,7 +7,7 @@
 - `familystreetdevelopers-alt/Carnival-careers-site` is **PUBLIC**. It is the canonical website and non-confidential business-project source repo.
 - Do not put household data, KYC, mortgage applications, financing records, private emails, unpublished contracts, signed deal copies, private contact lists, bank data or confidential investor documents in this public repo.
 - Use an access-controlled **private GitHub repo** for nonpublic financial and legal masters, original source documents and large archival packages, with minimum-access permissions. A Git branch on the public repo is not private storage.
-- Until a private GitHub repo is connected, keep confidential revised files in a downloadable staged package. Do not claim those files have been stored in GitHub and do not silently publish them.
+- Until a private GitHub repo is connected, confidential revised files may be stored in **authenticated encryption only** in this public repo. The eight-master AES-256-GCM archive is [committed and verified](../../vault/encrypted/README.md). Never publish the decryption key or unencrypted documents.
 
 ## Master rules
 1. Recover source in the repo before creating a replacement. Update the same canonical path where possible.
