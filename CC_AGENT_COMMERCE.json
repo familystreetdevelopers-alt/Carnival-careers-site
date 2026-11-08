@@ -22,7 +22,7 @@
       "id": "sponsorship",
       "offer": "brand sponsorship and licensing",
       "buyers": "brand and media buyers",
-      "conditions": "C$10k fast close (0-30d); C$30k intermediate (31-89d); C$45k 3-5 month long lead; separate three-way sponsor installments vs negotiated three-stage promoter fee; all subject to contract",
+      "conditions": "Six nonbinding proposal tiers: C$10k fast, C$30k intermediate, C$45k long-lead, C$250k circuit, C$1m global, and C$3m aggregate cohort. No actual venue/promoter rights without new contracts.",
       "status": "enquiries-welcome"
     },
     {
@@ -216,5 +216,32 @@
     ],
     "no_automated_outreach": true,
     "promoter_fee_not_sponsor_receipts": true
+  },
+  "version": "2026-11-08-canonical-master",
+  "canonical_original_pdfs": {
+    "governing_manifest": "docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json",
+    "storage": "Adobe CC canonical assets verified; GitHub has identifiers/hashes only",
+    "never_redesign": true
+  },
+  "sponsor_campaign_18month": {
+    "from": "2026-11-08",
+    "through": "2028-05-08",
+    "tier_targets_cad": [
+      10000,
+      30000,
+      45000,
+      250000,
+      1000000
+    ],
+    "aggregate_target_cad": 3000000,
+    "aggregate_mix": "1x1M +4x250k +10x100k (proposed, uncollected)",
+    "property_closing_reserve_sensitivity_10pc": 1023187,
+    "global_property_model_cad": 10231872,
+    "properties_modeled": 38,
+    "households": 6,
+    "vehicle_request": "6 Rivian R1S (or approved alternatives) subject to agreements",
+    "HGTV": "pitch not commissioned",
+    "stage_rights": "no future events booked",
+    "auto_contact": false
   }
 }
