@@ -1,0 +1,400 @@
+{
+  "version": "CC-UNIVERSE-ASSET-2026-11-08",
+  "effective_date": "2026-11-08",
+  "global_property_source": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json",
+  "global_property_working": {
+    "cad": 10231872,
+    "modeled_units": 38
+  },
+  "sammon_alternative": {
+    "cad": 9022984,
+    "modeled_units": 40,
+    "conditional": true,
+    "noi": "unknown"
+  },
+  "property_context": "London and Tokyo are filmed via negotiated partners, not current acquisitions; Ghana two-unit build deferred; six tenant-owner households retained",
+  "separate_budgets": [
+    "CC-CAPITAL65 109 Pembroke/Tournament/Euclid/VicTowns Toronto development lane",
+    "65-city entertainment/concert/media program"
+  ],
+  "rights_control": "Original underlying CC IP is not transferred with an asset package without an express signed owner-approved contract.",
+  "asset_packages": [
+    {
+      "id": 1,
+      "name": "Production services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 2,
+      "name": "Executive-producer services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 3,
+      "name": "Creative-producer services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 4,
+      "name": "Format consulting",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 5,
+      "name": "City-production package",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 6,
+      "name": "Episode package",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 7,
+      "name": "Monthly production management",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 8,
+      "name": "Corporate sponsorship program",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 9,
+      "name": "C$110K VIP Lounge partnership",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 10,
+      "name": "C$45K Corporate Anchor",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 11,
+      "name": "Multi-city sponsorship",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 12,
+      "name": "Vendor marketplace membership",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 13,
+      "name": "Vendor activation services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 14,
+      "name": "Enterprise vendor program",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 15,
+      "name": "Branded-content production",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 16,
+      "name": "Monthly digital-content package",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 17,
+      "name": "Media/content supply",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 18,
+      "name": "Advertising packages",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 19,
+      "name": "Marketplace advertising",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 20,
+      "name": "Women's-sports activation",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 21,
+      "name": "Cruise marketing services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 22,
+      "name": "Cruise entertainment programming",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 23,
+      "name": "Travel-content production",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 24,
+      "name": "Audience-acquisition services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 25,
+      "name": "City-activation services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 26,
+      "name": "Festival-management services",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 27,
+      "name": "Caribbean cultural programming",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 28,
+      "name": "Artist programming",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 29,
+      "name": "Talent sourcing",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 30,
+      "name": "Community engagement",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 31,
+      "name": "Casting/community-participant sourcing",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 32,
+      "name": "Story development",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 33,
+      "name": "Workforce recruitment",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 34,
+      "name": "Workforce-program management",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 35,
+      "name": "Training programs",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 36,
+      "name": "Property management",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 37,
+      "name": "Tenant placement",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 38,
+      "name": "Property operations",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 39,
+      "name": "Development management",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 40,
+      "name": "Construction management",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "Re-underwrite actual housing economics, title, buildability, six-family rights, property management and lenders before value/price claims",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 41,
+      "name": "Wholesale merchandise",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 42,
+      "name": "Wholesale products/groceries",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 43,
+      "name": "Corporate merchandise",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 44,
+      "name": "Corporate cultural events",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 45,
+      "name": "School/institution programming",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": false,
+      "update_rule": "No change to the commercial asset's own price or contract solely from the property pilot update; property references must point to the current pilot and remain qualified",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    },
+    {
+      "id": 46,
+      "name": "65-city Carnival Careers operating package",
+      "global_property_revision": "CC-GLOBAL-OPT-2026-11-08",
+      "property_dependent": true,
+      "update_rule": "City operating licence continues; future real estate purchases are contingent, not 65 immediate purchases",
+      "status": "VERSION_LINKED_NOT_EVIDENCE_OF_EXECUTED_CONTRACT"
+    }
+  ],
+  "program_invariants": {
+    "long_term_city_count": 65,
+    "tenant_owner_households_toronto": 6,
+    "tenant_ownership_monthly_payment_cad_target": 800,
+    "owner_occupied_market_noi": false,
+    "global_pilot_not_full_platform_capital": true,
+    "one_media_episode_per_city_subject_to_rights": true,
+    "no_automatic_external_contact": true
+  }
+}
