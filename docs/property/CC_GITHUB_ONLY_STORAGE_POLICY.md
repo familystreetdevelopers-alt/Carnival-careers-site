@@ -19,5 +19,5 @@
 
 ## Current asset status
 - Global-property Markdown/JSON and safe investor context: persisted in public GitHub.
-- Existing canonical 8-file revisions: verified locally but **not yet in GitHub**; see `CC_EIGHT_CANONICAL_MASTER_GITHUB_UPLOAD_REGISTER.md`. Private destination required.
+- Eight original-derived master revisions: **PERSISTED in GitHub as one AES-256-GCM encrypted ZIP** at [vault/encrypted](../../vault/encrypted/README.md), Git blob `ebe372f293accc2118d04844d267ac576bd22cee`. Only plaintext individual files require a private repository.
 - Website: GitHub controls production source; OS uses native Floot build, synchronized by versioned public model controls.
