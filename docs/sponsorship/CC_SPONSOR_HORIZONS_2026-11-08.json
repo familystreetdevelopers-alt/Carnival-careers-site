@@ -70,5 +70,38 @@
     "February 12, 2027 is an unconfirmed future performance window"
   ],
   "status": "proposed-not-approved",
-  "property_model_reference": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json"
+  "property_model_reference": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json",
+  "announced_master_asset_rule": "docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json",
+  "world_tour_18month_program": {
+    "start": "2026-11-08",
+    "end": "2028-05-08",
+    "opening_act_slots_goal": 18,
+    "stage_bookings_confirmed": 0,
+    "major_sponsor_lead_time_months": "3-5",
+    "multi_city_tiers": [
+      {
+        "target_cad": 250000,
+        "scope": "circuit partner",
+        "lead": "3-6 months"
+      },
+      {
+        "target_cad": 1000000,
+        "scope": "global title sponsor",
+        "lead": "4-9 months"
+      },
+      {
+        "target_cad": 3000000,
+        "scope": "aggregate multi-brand sponsorship target",
+        "lead": "4-18 months"
+      }
+    ],
+    "mix": "1 x C$1M + 4 x C$250K + 10 x C$100K = C$3M (all proposed)",
+    "global_property_model_all_in_cad": 10231872,
+    "model_homes": 38,
+    "illustrative_10percent_equity_cad": 1023187,
+    "six_family_vehicles": "6 Rivian R1S requested, no agreement",
+    "HGTV": "not commissioned",
+    "gin": "Hedonya via licensed importer/distributor and paid orders only",
+    "no_auto_contact": true
+  }
 }
