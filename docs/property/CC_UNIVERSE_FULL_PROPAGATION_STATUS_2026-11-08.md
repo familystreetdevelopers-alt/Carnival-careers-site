@@ -1,7 +1,7 @@
 # CC Universe — Full Property Update Propagation Status
 **Audit and implementation:** 2026-11-08
 **Governing model:** CC-GLOBAL-OPT-2026-11-08
-**This is a proof-of-work/status ledger, NOT a blanket claim that all assets were overwritten.**\n\n**GITHUB-ONLY STORAGE OVERRIDE — 8 November 2026:** All canonical storage destinations are GitHub repositories. ChatGPT Library and Google Drive are NOT required destinations or completion gates. The existing connected GitHub repo is PUBLIC; confidential master files are staged and must NOT be published there. See [GitHub-only policy](./CC_GITHUB_ONLY_STORAGE_POLICY.md) and [eight-file private GitHub upload register](./CC_EIGHT_CANONICAL_MASTER_GITHUB_UPLOAD_REGISTER.md).
+**This is a proof-of-work/status ledger, NOT a blanket claim that all assets were overwritten.**\n\n**GITHUB-ONLY STORAGE OVERRIDE — 8 November 2026:** All canonical storage destinations are GitHub repositories. ChatGPT Library and Google Drive are NOT required destinations or completion gates. The existing GitHub repo is PUBLIC; confidential source masters are committed only as authenticated AES-256-GCM ciphertext, never as plaintext. See [GitHub-only policy](./CC_GITHUB_ONLY_STORAGE_POLICY.md) and [eight-file private GitHub upload register](./CC_EIGHT_CANONICAL_MASTER_GITHUB_UPLOAD_REGISTER.md).
 
 ## Financial control, verified condition
 - Working global property pilot: CAD **10,231,872**, **38 modeled homes**, not signed/funded.
