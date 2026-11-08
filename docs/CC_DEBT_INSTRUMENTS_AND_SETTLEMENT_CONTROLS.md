@@ -1,4 +1,7 @@
 # Carnival Careers — Debt Instruments, Promissory Notes & Settlement Control
+
+> **Global property stack reconciliation, Nov 8 2026:** No property debt, private note, investor guarantee or collateral may be represented as secured against the proposed global portfolio until ownership/control is evidenced. The C$10.232M / 38-home working pilot (or conditional C$9.023M / 40-home Sammon model) is distinct from the Toronto CC-CAPITAL65 financing lane. Tokyo/London are filming partners without acquired collateral. Ghana proposed construction is on hold. Verify unit-by-unit title, income, borrower and DSCR; do not count owner-occupied family homes as rental NOI or count York/Downes twice. [Current control](property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md).
+
 **Effective operating policy | October 11, 2026 | Toronto-first | applies to all city SPVs**
 
 ## Purpose and scope
