@@ -1,4 +1,7 @@
 # CARNIVAL CAREERS — SHOWRUNNER / WHOLE UNIVERSE PRODUCTION CONTRACT
+
+> **November 8, 2026 global-property production supersession (CC-GLOBAL-OPT-2026-11-08):** The 65-city Carnival Careers episodic show and six-family Toronto housing commitments continue. The new **working global acquisition pilot** is C$10,231,872 / 38 modeled homes; conditional 135 Sammon replacement yields a C$9,022,984 price-only scenario / 40 modeled homes, subject to legal 4-bedroom family housing and actual NOI/financing verification. **London and Tokyo episodes proceed using negotiated local filming/property access rather than budgeted purchases**, and two proposed Accra units are paused. Do not narrate any property as purchased or a rental surplus as cleared cash. This global pilot is **not** the separate Toronto 109 Pembroke/Tournament/Euclid/VicTowns construction lane, and PATH/Downes must not be counted twice. [Full property authority](property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md).
+
 **Controlling creative specification · October 14, 2026 · replaces the mistaken “44-day” interpretation**
 
 ## ONE UNIVERSE: PRODUCED ENTERTAINMENT + REAL BUSINESS
