@@ -97,6 +97,84 @@
     "generated_zip_bytes_in_chat": true,
     "chatgpt_library_upload": "quota exceeded",
     "google_drive_upload": "403 forbidden",
-    "never_claim_success_where_not_verified": true
+    "never_claim_success_where_not_verified": true,
+    "generated_zip_bytes_in_adobe": true,
+    "all_twelve_edition_pdf_bytes_stored_in_adobe": true
+  },
+  "editions_stored_in_adobe": {
+    "count": 12,
+    "folder": "CarnivalCareers/CampaignEditions/2026-11-08",
+    "items": [
+      {
+        "name": "CC_FAST_10K_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:c0b3776b-97dd-40ca-911a-18d0ac13eb92"
+      },
+      {
+        "name": "CC_FAST_10K_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:49b60cd2-59bf-4b45-bbd0-8a35d6899fc9"
+      },
+      {
+        "name": "CC_MID_30K_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:99fed1e7-6921-4deb-8f9c-dd6a76119c97"
+      },
+      {
+        "name": "CC_MID_30K_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:bea399ee-f6dc-4a24-a793-be373d9e3fea"
+      },
+      {
+        "name": "CC_LEAD_45K_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:4c26d32b-2344-4c9a-93d0-a501b2098834"
+      },
+      {
+        "name": "CC_LEAD_45K_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:2521e0c3-aefc-4de1-b607-055fcacf3a19"
+      },
+      {
+        "name": "CC_CIRCUIT_250K_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:c2781acd-2154-46bc-9186-cf2a1a99e366"
+      },
+      {
+        "name": "CC_CIRCUIT_250K_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:9ca3edc8-6197-4d70-bd41-6e595fd3198d"
+      },
+      {
+        "name": "CC_GLOBAL_1M_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:a04d79f0-ef4a-4c6f-a324-968271deb282"
+      },
+      {
+        "name": "CC_GLOBAL_1M_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:79789fc5-a5a9-4d67-8c9b-00a33e443f36"
+      },
+      {
+        "name": "CC_COHORT_3M_WITH_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:96de0785-bf6c-4f6b-8d3e-b5b6620f6486"
+      },
+      {
+        "name": "CC_COHORT_3M_WITHOUT_REALESTATE_FROM_ORIGINAL_MASTER.pdf",
+        "adobe_asset_id": "urn:aaid:sc:VA6C2:ab5e442e-841f-4285-b522-cd7bd6197363"
+      }
+    ],
+    "uploaded_and_verified_on": "2026-11-08"
+  },
+  "recovery_assets": {
+    "complete_archive": {
+      "filename": "CC_CANONICAL_18_MONTH_FINAL.zip",
+      "asset_id": "urn:aaid:sc:VA6C2:65fa7694-d82a-4b20-afa9-8bbbc5a4889c",
+      "stored": "Adobe Creative Cloud",
+      "note": "First fully functional ZIP; subsequent verified local ZIP also has extended storage audit"
+    },
+    "regeneration_script": {
+      "filename": "build_exact_master_editions.py",
+      "asset_id": "urn:aaid:sc:VA6C2:322678ad-297c-48d2-8c51-9e12e0f938a2"
+    },
+    "source_hash_manifest": {
+      "filename": "SOURCE_LOCK_AND_EDITIONS.json",
+      "asset_id": "urn:aaid:sc:VA6C2:8d7bbeb1-d580-49d0-bde5-e13af331636a"
+    },
+    "archive_local_version": {
+      "filename": "CC_CANONICAL_18_MONTH_FINAL_VERIFIED.zip",
+      "sha256": "4e710890b191cf6f3cebb2a3cfb9804134cc8e97ba478a38d6b64311d7e9cfb1",
+      "bytes_not_in_git": true
+    }
   }
 }
