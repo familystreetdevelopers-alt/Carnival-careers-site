@@ -1,4 +1,7 @@
 # CARNIVAL CAREERS — DEBT, NOTES, BONDS & CAPITAL EXECUTION PACKAGE
+
+> **CC global property funding control · 8 Nov 2026:** Forward-facing **global acquisition pilot** applications use the revised **C$10,231,872 / 38 modeled-unit working roll-forward**, not the retired C$12,025,418 / 48-home model. The **C$9,022,984 / 40-unit Sammon case is conditional** and cannot be submitted as an actual financing ask without tenant, 4-bedroom lawful possession, rent roll, appraisal, DSCR and sources/uses verification; Sammon NOI is unknown. London/Tokyo acquisitions are deferred; Ghana two-unit build paused. This property pilot is **not** the Toronto CC-CAPITAL65 109 Pembroke/Tournament/Euclid/VicTowns plan or the **C$114,319,660 65-city full event/media enterprise MOU**. Separate interest, lender fees, holdbacks, family payment subsidy and asset-level closing cash. The six-family monthly C$800 target is unapproved; no automatic external contact. [Current global acquisition authority](property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md).
+
 **Toronto-first | 2026-10-12 | canonical internal financing routing master; no investment offer or binding terms**
 
 ## EXECUTIVE OPERATING RULE
