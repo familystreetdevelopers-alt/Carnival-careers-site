@@ -1,0 +1,966 @@
+{
+  "version": "CC-UNIVERSE-GITHUB-CATALOG-2026-11-08",
+  "snapshot_commit_sha": "7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a",
+  "generated_date": "2026-11-08",
+  "repository": "familystreetdevelopers-alt/Carnival-careers-site",
+  "repository_is_public": true,
+  "source_file_count": 120,
+  "department_count": 16,
+  "generated_catalog_files_excluded": true,
+  "departments": [
+    {
+      "id": "00",
+      "name": "Executive Control & Master Records",
+      "path": "CC_UNIVERSE/00-GOVERNANCE-CONTROL/README.md",
+      "count": 3,
+      "description": "Master source-control, original-provenance policies and executive indexes"
+    },
+    {
+      "id": "01",
+      "name": "TV Series, Film & 65-City Format",
+      "path": "CC_UNIVERSE/01-TV-FILM-PRODUCTION/README.md",
+      "count": 4,
+      "description": "The television format, episode production and showrunner source material"
+    },
+    {
+      "id": "02",
+      "name": "Concerts, Arenas & Live Events",
+      "path": "CC_UNIVERSE/02-CONCERTS-ARENAS-TOURS/README.md",
+      "count": 1,
+      "description": "Concert-specific event source ledgers and dated performance records"
+    },
+    {
+      "id": "03",
+      "name": "Music, Songs & Audio Production",
+      "path": "CC_UNIVERSE/03-MUSIC-AUDIO-MASTERS/README.md",
+      "count": 12,
+      "description": "Actual music-master files and editing/build scripts"
+    },
+    {
+      "id": "04",
+      "name": "Sponsors & Brand Partnerships",
+      "path": "CC_UNIVERSE/04-SPONSORSHIPS-PARTNERS/README.md",
+      "count": 6,
+      "description": "Campaign editions, sponsor packages and original PDF custody"
+    },
+    {
+      "id": "05",
+      "name": "Real Estate, Development & Housing Assets",
+      "path": "CC_UNIVERSE/05-REAL-ESTATE-PROPERTY/README.md",
+      "count": 32,
+      "description": "Global pilot, separate Toronto development, site drawings, housing property pages"
+    },
+    {
+      "id": "06",
+      "name": "Capital, Lenders & Investor Finance",
+      "path": "CC_UNIVERSE/06-CAPITAL-FINANCE/README.md",
+      "count": 5,
+      "description": "Lenders, finance instruments, investor and settlement control"
+    },
+    {
+      "id": "07",
+      "name": "Tenant-Owners, Families & Workforce",
+      "path": "CC_UNIVERSE/07-FAMILIES-WORKFORCE/README.md",
+      "count": 4,
+      "description": "Resident operations, workforce, tenant interface and benefits"
+    },
+    {
+      "id": "08",
+      "name": "Commerce, Vendors & Food Businesses",
+      "path": "CC_UNIVERSE/08-COMMERCE-VENDORS-FOOD/README.md",
+      "count": 16,
+      "description": "Marketplace, vendors, product testing, e-commerce and wholesale"
+    },
+    {
+      "id": "09",
+      "name": "Travel, Cruises & Transportation",
+      "path": "CC_UNIVERSE/09-TRAVEL-CRUISE-MOBILITY/README.md",
+      "count": 7,
+      "description": "Travel, cruise, fares, transport and mobility projects"
+    },
+    {
+      "id": "10",
+      "name": "Website, Digital Media & Deployment",
+      "path": "CC_UNIVERSE/10-WEBSITE-DIGITAL-SOURCE/README.md",
+      "count": 8,
+      "description": "Live-build HTML, scripts and deployment configuration"
+    },
+    {
+      "id": "11",
+      "name": "Legal, Rights & Compliance",
+      "path": "CC_UNIVERSE/11-LEGAL-RIGHTS-COMPLIANCE/README.md",
+      "count": 4,
+      "description": "Consumer rights, contract governance and stewardship"
+    },
+    {
+      "id": "12",
+      "name": "Operating Systems & Automations",
+      "path": "CC_UNIVERSE/12-OPERATIONS-AUTOMATION/README.md",
+      "count": 7,
+      "description": "Business workflows, intake agents and automated processes"
+    },
+    {
+      "id": "13",
+      "name": "Encrypted Masters & Data Room",
+      "path": "CC_UNIVERSE/13-ENCRYPTED-DATA-ROOM/README.md",
+      "count": 4,
+      "description": "Source encryption, historical master documents and secure custody"
+    },
+    {
+      "id": "14",
+      "name": "Press, Publicity & Visual Creative",
+      "path": "CC_UNIVERSE/14-PUBLICITY-PHOTOS-PRESS/README.md",
+      "count": 2,
+      "description": "Publicity assets and promotional creative"
+    },
+    {
+      "id": "15",
+      "name": "Adjacent & Spin-Off Media Programs",
+      "path": "CC_UNIVERSE/15-ADJACENT-MEDIA-PROJECTS/README.md",
+      "count": 5,
+      "description": "Independent media programs, especially Sideline Sitters"
+    }
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/build-verify.yml",
+      "bytes": 500,
+      "git_blob_sha": "4964c753849ea8970956b972a50221cd09791f3a",
+      "department": "10",
+      "type": "yml"
+    },
+    {
+      "path": ".github/workflows/cc-application-browser.yml",
+      "bytes": 1036,
+      "git_blob_sha": "a58410c1fdec3ff68af0ed6d360ed237d29321f5",
+      "department": "12",
+      "type": "yml"
+    },
+    {
+      "path": ".github/workflows/cc-application-intake.yml",
+      "bytes": 2566,
+      "git_blob_sha": "836152d54aa2a2bac7a3791385f14d575e0f5925",
+      "department": "12",
+      "type": "yml"
+    },
+    {
+      "path": ".github/workflows/cc-apply-now.yml",
+      "bytes": 1388,
+      "git_blob_sha": "bf906637df976a09d886c88804e7de046c8db648",
+      "department": "12",
+      "type": "yml"
+    },
+    {
+      "path": ".github/workflows/cc-walmart-canada-health.yml",
+      "bytes": 946,
+      "git_blob_sha": "830ab8bf4910b471982d3da9409561568013bf56",
+      "department": "08",
+      "type": "yml"
+    },
+    {
+      "path": "append-loud-n-intro.mjs",
+      "bytes": 3361,
+      "git_blob_sha": "1d511b62608fa20b07ee0708a0ea8c7b0d41f8bf",
+      "department": "03",
+      "type": "mjs"
+    },
+    {
+      "path": "assets/press/hopeton-nov5-2026/README.md",
+      "bytes": 1196,
+      "git_blob_sha": "0824368825c494653b5f9805cbe582ff8deb9b96",
+      "department": "14",
+      "type": "md"
+    },
+    {
+      "path": "automation/application-engine-v2.cjs",
+      "bytes": 5228,
+      "git_blob_sha": "4fb0134c4225d49537d9b031dd3f0e390c2b1749",
+      "department": "12",
+      "type": "cjs"
+    },
+    {
+      "path": "automation/prepare-application.cjs",
+      "bytes": 2677,
+      "git_blob_sha": "2d74894e088aa3ad41d705ec9c07ee2b447e490d",
+      "department": "12",
+      "type": "cjs"
+    },
+    {
+      "path": "boat-2027.html",
+      "bytes": 16616,
+      "git_blob_sha": "84559a51b11e3ad9e926300a29aa57f35449b321",
+      "department": "09",
+      "type": "html"
+    },
+    {
+      "path": "build-standalone.mjs",
+      "bytes": 280030,
+      "git_blob_sha": "0170a26fc5311830a554cfff974f520a25d3a371",
+      "department": "10",
+      "type": "mjs"
+    },
+    {
+      "path": "business-solution.mjs",
+      "bytes": 31891,
+      "git_blob_sha": "5ab0496a05578b45faaef90e7163b6628dd49c95",
+      "department": "08",
+      "type": "mjs"
+    },
+    {
+      "path": "capital-execution.html",
+      "bytes": 18379,
+      "git_blob_sha": "b6467b06b1c10f370e1a24c23dc74c862e8cce6c",
+      "department": "06",
+      "type": "html"
+    },
+    {
+      "path": "CC_AGENT_COMMERCE.json",
+      "bytes": 9367,
+      "git_blob_sha": "f929972540c4ddbe33d00780c9af617825189604",
+      "department": "08",
+      "type": "json"
+    },
+    {
+      "path": "CC_AGENT_COMMERCE.md",
+      "bytes": 12248,
+      "git_blob_sha": "621bd6d20e1a6d8c72176d109edb342011190c11",
+      "department": "08",
+      "type": "md"
+    },
+    {
+      "path": "CC_UNIVERSE_MASTER_INDEX.md",
+      "bytes": 5405,
+      "git_blob_sha": "7624fb23f687fd4ccd0ee9b61d5a37a427265600",
+      "department": "00",
+      "type": "md"
+    },
+    {
+      "path": "cc-agent-commerce-publish.mjs",
+      "bytes": 5133,
+      "git_blob_sha": "151dcada8a1ff4baed4efc9c20aebeebbd897d68",
+      "department": "08",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-agent-deal-capture.mjs",
+      "bytes": 12255,
+      "git_blob_sha": "6f3d10c50b1ec07f9a59770bb9ea3eba342ecd80",
+      "department": "06",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-boat-2027.mjs",
+      "bytes": 4223,
+      "git_blob_sha": "031748cef772b39a5c177de2380c7335517d15f2",
+      "department": "09",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-buyer-openapi-publish.mjs",
+      "bytes": 5882,
+      "git_blob_sha": "81bcf12e411b3b53a80ef109a8bc532d21129659",
+      "department": "08",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-capital65-current-project.mjs",
+      "bytes": 4202,
+      "git_blob_sha": "29ac6b3fb58fa66cfa4560977d3f6cc01552e377",
+      "department": "05",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-clean-global-top-links.mjs",
+      "bytes": 2368,
+      "git_blob_sha": "ad4c28d7c45d55a1699355935565849d99c68595",
+      "department": "10",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-global-property-propagate.mjs",
+      "bytes": 6059,
+      "git_blob_sha": "08cfce78be2befa0afb72543c95e6f1fbf0b456e",
+      "department": "05",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-global-revision-audit.mjs",
+      "bytes": 2083,
+      "git_blob_sha": "a99aa0f6980c71892d78672cfa3e6b7778557e2b",
+      "department": "05",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-network-connect.mjs",
+      "bytes": 23127,
+      "git_blob_sha": "bfbb88bc2933dda1b9fdda7f1f2ab40ab4fff393",
+      "department": "12",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-resident-access-hook.html",
+      "bytes": 1555,
+      "git_blob_sha": "2c34771687b18ed587205bcdbb051afa363d718f",
+      "department": "07",
+      "type": "html"
+    },
+    {
+      "path": "cc-resident-access.mjs",
+      "bytes": 13732,
+      "git_blob_sha": "61cdb31ae54d68e48c185e2869e49dfe0c69ebf9",
+      "department": "07",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-siriusxm-merge-fragment.html",
+      "bytes": 47236,
+      "git_blob_sha": "33c958351687dde2823eb2fb3fc050bc8238b4f9",
+      "department": "03",
+      "type": "html"
+    },
+    {
+      "path": "cc-sponsorship-horizons.mjs",
+      "bytes": 4764,
+      "git_blob_sha": "fd4909cbb947b4c99e26e769db296a8b28282c65",
+      "department": "04",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-stewardship.mjs",
+      "bytes": 3332,
+      "git_blob_sha": "5378b58d87d929be4beb47fc656b6629fba15ca8",
+      "department": "11",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-store-conversion-2026.mjs",
+      "bytes": 5574,
+      "git_blob_sha": "1b99b30ee17cce87e1befb7170b4f60bec9e2237",
+      "department": "08",
+      "type": "mjs"
+    },
+    {
+      "path": "cc-tripcom-flight-lane.mjs",
+      "bytes": 3691,
+      "git_blob_sha": "582accd22c2a3564ee6140b08a5454c33fc512f5",
+      "department": "09",
+      "type": "mjs"
+    },
+    {
+      "path": "distribution-pages.mjs",
+      "bytes": 17001,
+      "git_blob_sha": "ab4f2423f5f41e7b42dcaac1f717f9e8b87b73c1",
+      "department": "10",
+      "type": "mjs"
+    },
+    {
+      "path": "docs/asset-index/2026-11-05-mavado-30k/README.md",
+      "bytes": 1999,
+      "git_blob_sha": "392942c6fbbcdd274e976e3e69d238e48e1bf1ef",
+      "department": "02",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_CONSUMER_RIGHTS_RECOVERY.md",
+      "bytes": 5645,
+      "git_blob_sha": "ad6364395533bce2440717cdd3a32a5cbe40f011",
+      "department": "11",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_DEBT_INSTRUMENTS_AND_SETTLEMENT_CONTROLS.md",
+      "bytes": 13221,
+      "git_blob_sha": "bcc58b8ac1006ad4fb76744a437a6ace9d015231",
+      "department": "06",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_DRIVER_DATA_MOBILITY_2026.md",
+      "bytes": 4053,
+      "git_blob_sha": "cb081a463fdc3261493b6a20d192fdb79a42c54c",
+      "department": "09",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_FARE_SAVINGS_TRAVEL_WORKFLOW.md",
+      "bytes": 7717,
+      "git_blob_sha": "6de58508127c85f6e6fa694a8ef833892d4d9c18",
+      "department": "09",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md",
+      "bytes": 20430,
+      "git_blob_sha": "ff61b5393c6ae4134d69c3b7e5db485b339aaa90",
+      "department": "06",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_PRODUCT_TESTING_OPERATIONS.md",
+      "bytes": 8849,
+      "git_blob_sha": "e98bdfa503a4e396ac021eaface3c1446deaf8d4",
+      "department": "08",
+      "type": "md"
+    },
+    {
+      "path": "docs/CC_SHOWRUNNER_UNIVERSE.md",
+      "bytes": 12082,
+      "git_blob_sha": "d0d91b2372b252a34c8e779f44ad530ff3033497",
+      "department": "01",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_EIGHT_CANONICAL_MASTER_GITHUB_UPLOAD_REGISTER.md",
+      "bytes": 3510,
+      "git_blob_sha": "1838ce5f29aa3cf05d84748487bac8b533fa1098",
+      "department": "13",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md",
+      "bytes": 2899,
+      "git_blob_sha": "2e2d3c1ed0a65c206134c0ad049c40f0cbcdcffc",
+      "department": "00",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-08.md",
+      "bytes": 3421,
+      "git_blob_sha": "92b1cb28b4f4710549781ffde302e3a890b954dd",
+      "department": "05",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json",
+      "bytes": 3765,
+      "git_blob_sha": "1ea9757f55888013ea7a2e59fde7623a66d27d2d",
+      "department": "05",
+      "type": "json"
+    },
+    {
+      "path": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md",
+      "bytes": 9151,
+      "git_blob_sha": "661a21892aba3db0d1e6474562a8bca11e937301",
+      "department": "05",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_UNIVERSE_46_ASSETS_GLOBAL_PROPERTY_CONTROL_2026-11-08.json",
+      "bytes": 20636,
+      "git_blob_sha": "a988e85703c3a8f6360566ac2b00ab0ce6bb1360",
+      "department": "05",
+      "type": "json"
+    },
+    {
+      "path": "docs/property/CC_UNIVERSE_FULL_PROPAGATION_STATUS_2026-11-08.md",
+      "bytes": 8887,
+      "git_blob_sha": "7d09c89f78df3498d8eaa035a5ed2f8344786636",
+      "department": "05",
+      "type": "md"
+    },
+    {
+      "path": "docs/property/CC_UNIVERSE_REPOSITORY_ASSET_AUDIT_2026-11-08.csv",
+      "bytes": 16658,
+      "git_blob_sha": "d7e506911d5733973d28b3fd466b209b78e2d71d",
+      "department": "05",
+      "type": "csv"
+    },
+    {
+      "path": "docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf",
+      "bytes": 7913658,
+      "git_blob_sha": "8aba59541417c5cfda26c5d350a4706921903b47",
+      "department": "04",
+      "type": "pdf"
+    },
+    {
+      "path": "docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json",
+      "bytes": 6936,
+      "git_blob_sha": "b3c1d0621ce52d2f69416adcd7103fa7ab8dbba8",
+      "department": "04",
+      "type": "json"
+    },
+    {
+      "path": "docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md",
+      "bytes": 3569,
+      "git_blob_sha": "ae820d465f8052c51504a6afca7cb2cf29d30a93",
+      "department": "04",
+      "type": "md"
+    },
+    {
+      "path": "docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json",
+      "bytes": 3472,
+      "git_blob_sha": "13a83c83491ee115e51fb3f8b856002a35fded28",
+      "department": "04",
+      "type": "json"
+    },
+    {
+      "path": "docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md",
+      "bytes": 3184,
+      "git_blob_sha": "d4bdbe370b213879fb452b7e0993b15072e4f084",
+      "department": "04",
+      "type": "md"
+    },
+    {
+      "path": "driver-data-income.html",
+      "bytes": 13011,
+      "git_blob_sha": "5b72dc46d0ce07c5bc2c466a1460d0e421c8bcdd",
+      "department": "09",
+      "type": "html"
+    },
+    {
+      "path": "export-complete-standalone.mjs",
+      "bytes": 7983,
+      "git_blob_sha": "f1fa9d32452d50c59208e19ddd2142665a987693",
+      "department": "10",
+      "type": "mjs"
+    },
+    {
+      "path": "fare-savings.html",
+      "bytes": 13489,
+      "git_blob_sha": "8c55a15e5260b245b6eec8c3ca08bfc8f709b112",
+      "department": "09",
+      "type": "html"
+    },
+    {
+      "path": "finance-instruments.html",
+      "bytes": 10761,
+      "git_blob_sha": "0cbbbe0738e30986ff4ee4b13a3beb937c4023d7",
+      "department": "06",
+      "type": "html"
+    },
+    {
+      "path": "global-property-stack.html",
+      "bytes": 11618,
+      "git_blob_sha": "fbb93430cf7d248d20e960815c6ac6426fc7be5e",
+      "department": "05",
+      "type": "html"
+    },
+    {
+      "path": "house-dropdowns.mjs",
+      "bytes": 11353,
+      "git_blob_sha": "ed4e456d7da9fd0e71c50525c88a86f3e8a8d07f",
+      "department": "05",
+      "type": "mjs"
+    },
+    {
+      "path": "houses.html",
+      "bytes": 22587,
+      "git_blob_sha": "a22e98d9fb7c8f85d8085cb7867ed70571697f69",
+      "department": "05",
+      "type": "html"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3412168,
+      "git_blob_sha": "3a2d631737c28bf9b9e9d6538b1a0b7d5cf5fa12",
+      "department": "10",
+      "type": "html"
+    },
+    {
+      "path": "intake-dedupe.mjs",
+      "bytes": 1594,
+      "git_blob_sha": "4ea29d9348236103f5b34c450c790cc211d782c1",
+      "department": "12",
+      "type": "mjs"
+    },
+    {
+      "path": "iron-man-house.html",
+      "bytes": 25441,
+      "git_blob_sha": "77126f341fea204f1d033b88aee38d964946fc84",
+      "department": "05",
+      "type": "html"
+    },
+    {
+      "path": "ironman-images/01-ironman-front-elevation.jpg",
+      "bytes": 83130,
+      "git_blob_sha": "5c936a67d3fa3321825d8d79fc747d2340e64ac0",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/02-main-floor-plan.jpg",
+      "bytes": 90618,
+      "git_blob_sha": "bc81813d4e804f8c7645a0677345ab716b94597f",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/03-upper-floor-plan.jpg",
+      "bytes": 90638,
+      "git_blob_sha": "04f41e61b30b9834e34f2db92ddbd64f4f87713b",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/04-garden-suite-two-storeys.jpg",
+      "bytes": 71961,
+      "git_blob_sha": "a91538675d3afd0ceb2d78b143e1493474c99657",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/05-site-and-access.jpg",
+      "bytes": 91588,
+      "git_blob_sha": "6d81371cdd0c6e96fc9703639544a27639fe0a2e",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/06-basement-retained-service.jpg",
+      "bytes": 85481,
+      "git_blob_sha": "5b6e73b4635e8448ce996fae9fd4e12c74a57be0",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/07-roof-and-services.jpg",
+      "bytes": 73037,
+      "git_blob_sha": "4cc6aa7a099c2bb9d1e9331303f999dcf5250f13",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/08-structural-section.jpg",
+      "bytes": 69421,
+      "git_blob_sha": "c77f23879bbed72c7c582672890a9205d7853d76",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/09-concept-origin-plan-annex.jpg",
+      "bytes": 84480,
+      "git_blob_sha": "c3a1f5324446a01dac53f70dde49ea698013d86d",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/10-concept-upgrade-annex.jpg",
+      "bytes": 102676,
+      "git_blob_sha": "2794aec3d8bd88dda658a5ee6956d02b46737810",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/11-original-site-survey.jpg",
+      "bytes": 43444,
+      "git_blob_sha": "479e94a22c1d21f95fbf51e002822fb3c51f66b0",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/12-original-main-plan.jpg",
+      "bytes": 27825,
+      "git_blob_sha": "d48938258d06c12a90dddfcfdd67d311ae336869",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/13-original-upper-plan.jpg",
+      "bytes": 37285,
+      "git_blob_sha": "f97851dada1056d6ad87c44e85c39a97209dea0a",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/14-original-basement-plan.jpg",
+      "bytes": 28988,
+      "git_blob_sha": "642ca683f8032862283c326bd6f6fce2e7d600ae",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/15-original-conversion-plan.jpg",
+      "bytes": 46078,
+      "git_blob_sha": "dd102d9f647dbecc42da948f9513b4a3e165f9ca",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/16-original-proposed-plan.jpg",
+      "bytes": 37995,
+      "git_blob_sha": "6f4382e7bdcc0e5cbe7f068a9d620560f02f6e5c",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/17-original-elevation.jpg",
+      "bytes": 37935,
+      "git_blob_sha": "ff954e97b287fef56b25a39e21cd334e77b5a0c5",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "ironman-images/18-original-basement-reference.jpg",
+      "bytes": 24276,
+      "git_blob_sha": "0b1518a7e18f7f2909476387914dfb62a118c691",
+      "department": "05",
+      "type": "jpg"
+    },
+    {
+      "path": "music-2026/cold-water.mp3",
+      "bytes": 5044811,
+      "git_blob_sha": "e1d66e28e498e17816f7a1cfcd632ec17b741352",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/john-wick.mp3",
+      "bytes": 9266924,
+      "git_blob_sha": "4d3aaf5062b1763c546eb6810fa9d7e60da9ac15",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/love-eternally.mp3",
+      "bytes": 8979884,
+      "git_blob_sha": "6ef65869666a301f5c3b0ff1c84d2db3ef8bf50d",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/pool-party-2.mp3",
+      "bytes": 7963252,
+      "git_blob_sha": "ff90bccbaa20dfbf49424baf2233893655f097d0",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/strength-of-we-bloodline.mp3",
+      "bytes": 4988386,
+      "git_blob_sha": "eb8418b136ec69f5ea49e6a3ee947304e39666f4",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/stuck-in-the-middle.mp3",
+      "bytes": 7665414,
+      "git_blob_sha": "92986cb36eb1515eb8e2a1113c82475d72773bde",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/the-bounce-gone.mp3",
+      "bytes": 4865324,
+      "git_blob_sha": "9dc5d2f862fe54971b6897c841d249498ab0d35d",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-2026/who-you-want-it-to-be.mp3",
+      "bytes": 9187830,
+      "git_blob_sha": "14130a4cf05d3f10dc8237bd1705355fb848eb6f",
+      "department": "03",
+      "type": "mp3"
+    },
+    {
+      "path": "music-mobile-responsive.mjs",
+      "bytes": 16827,
+      "git_blob_sha": "849283311befd0d3864224ddbab34c44b0a4bb3f",
+      "department": "03",
+      "type": "mjs"
+    },
+    {
+      "path": "my-cc-life.html",
+      "bytes": 5973,
+      "git_blob_sha": "3561998539ba9f71943917fb769dd989817e827b",
+      "department": "07",
+      "type": "html"
+    },
+    {
+      "path": "operations/walmart-canada/candidates.csv",
+      "bytes": 336,
+      "git_blob_sha": "182356f913178d49d4bb63b227283a314534cfdc",
+      "department": "08",
+      "type": "csv"
+    },
+    {
+      "path": "operations/walmart-canada/profit_gate.py",
+      "bytes": 3633,
+      "git_blob_sha": "92e49b638f323a3914349b5b2218ca583d71d5b9",
+      "department": "08",
+      "type": "py"
+    },
+    {
+      "path": "operations/walmart-canada/README.md",
+      "bytes": 3582,
+      "git_blob_sha": "80dc3b3ac791d6e7b3951b30296ccc92121548d4",
+      "department": "08",
+      "type": "md"
+    },
+    {
+      "path": "operations/walmart-canada/RUNBOOK.md",
+      "bytes": 5266,
+      "git_blob_sha": "238a0faa207135f9a174119fac6e6927687ce833",
+      "department": "08",
+      "type": "md"
+    },
+    {
+      "path": "operations/walmart-canada/supplier_queue.csv",
+      "bytes": 612,
+      "git_blob_sha": "40f2965fb8c4a362b32a939435f56dec11f323b7",
+      "department": "08",
+      "type": "csv"
+    },
+    {
+      "path": "operations/walmart-canada/walmart_readonly.py",
+      "bytes": 3917,
+      "git_blob_sha": "ea70bf9ed137fe1d59191d0c2b925e488d22d927",
+      "department": "08",
+      "type": "py"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2141,
+      "git_blob_sha": "1939af7dac5e345e2c5b98ab696334a113282136",
+      "department": "10",
+      "type": "json"
+    },
+    {
+      "path": "pembroke-acquisition.html",
+      "bytes": 4508,
+      "git_blob_sha": "9ebf2f2b3537e7b5ace4f0474e342d6438f4a899",
+      "department": "05",
+      "type": "html"
+    },
+    {
+      "path": "pet-picks-press.html",
+      "bytes": 5066,
+      "git_blob_sha": "39201dbfe6a614da753c4b12b24d92dfaa6473d7",
+      "department": "14",
+      "type": "html"
+    },
+    {
+      "path": "product-testing.html",
+      "bytes": 15325,
+      "git_blob_sha": "f1710340cdcd8a10c097ec9365facca57d17046c",
+      "department": "08",
+      "type": "html"
+    },
+    {
+      "path": "production-universe.html",
+      "bytes": 8221,
+      "git_blob_sha": "82d362d0acc9a2e5b27e5b8787bc8589e8a33f5a",
+      "department": "01",
+      "type": "html"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3775,
+      "git_blob_sha": "583792d832a41e74e6ce007a1d6d022b2c3fc717",
+      "department": "00",
+      "type": "md"
+    },
+    {
+      "path": "rights-recovery.html",
+      "bytes": 27143,
+      "git_blob_sha": "f9ed56a1c1199c19d5eb2ca155b4bce89f287ccb",
+      "department": "11",
+      "type": "html"
+    },
+    {
+      "path": "showrunner-universe.mjs",
+      "bytes": 5862,
+      "git_blob_sha": "eab434616d08c79b3da779ae9d558d556dc41b5e",
+      "department": "01",
+      "type": "mjs"
+    },
+    {
+      "path": "sideline-sitters-build.mjs",
+      "bytes": 771,
+      "git_blob_sha": "f64a9be041ff88d7b14591221b8513a95e38640c",
+      "department": "15",
+      "type": "mjs"
+    },
+    {
+      "path": "sideline-sitters-cities.json",
+      "bytes": 509,
+      "git_blob_sha": "9e5198c1183b337ec034b8313082ef1daaad3832",
+      "department": "15",
+      "type": "json"
+    },
+    {
+      "path": "sideline-sitters-global.html",
+      "bytes": 17400,
+      "git_blob_sha": "b01f8542ebfae708e201b3b9874f674f55d7c587",
+      "department": "15",
+      "type": "html"
+    },
+    {
+      "path": "sideline-sitters-portal.html",
+      "bytes": 15841,
+      "git_blob_sha": "97b7d93da203ad04b670b25a6e4e76ee775fcaa8",
+      "department": "15",
+      "type": "html"
+    },
+    {
+      "path": "sideline-sitters.html",
+      "bytes": 10333,
+      "git_blob_sha": "47f1c279c115623a11dd0854d7bf9c8b2d9f3d75",
+      "department": "15",
+      "type": "html"
+    },
+    {
+      "path": "stewardship.html",
+      "bytes": 10003,
+      "git_blob_sha": "32ee8e3461917573cc665b5afbb8cbd41ccafba8",
+      "department": "11",
+      "type": "html"
+    },
+    {
+      "path": "surgical-music-2026.mjs",
+      "bytes": 7464,
+      "git_blob_sha": "3238d799d0af7ca25927ef04b8d74f9c2fa1ae5c",
+      "department": "03",
+      "type": "mjs"
+    },
+    {
+      "path": "systeme-affiliate-funnel.mjs",
+      "bytes": 24936,
+      "git_blob_sha": "5b52ec1e92dbd6a262e281cad359ef136b5c7057",
+      "department": "08",
+      "type": "mjs"
+    },
+    {
+      "path": "team-desk.html",
+      "bytes": 5341,
+      "git_blob_sha": "6a84b987991c018f5b4e8bfa3b6d941ab427b113",
+      "department": "07",
+      "type": "html"
+    },
+    {
+      "path": "the-story.html",
+      "bytes": 22902,
+      "git_blob_sha": "691c8ddbbb8adf457ae12dc1a1756788925a3e62",
+      "department": "01",
+      "type": "html"
+    },
+    {
+      "path": "tools/decrypt_cc_masters.py",
+      "bytes": 2711,
+      "git_blob_sha": "7526bd1950678c64649fdf65dd54955834a5e4c3",
+      "department": "13",
+      "type": "py"
+    },
+    {
+      "path": "vault/encrypted/CC_UNIVERSE_EIGHT_MASTERS_2026-11-08.zip.aesgcm",
+      "bytes": 606662,
+      "git_blob_sha": "ebe372f293accc2118d04844d267ac576bd22cee",
+      "department": "13",
+      "type": "encrypted ZIP"
+    },
+    {
+      "path": "vault/encrypted/README.md",
+      "bytes": 3268,
+      "git_blob_sha": "3389dc6818237351f68496e76bc784281625fd94",
+      "department": "13",
+      "type": "md"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 230,
+      "git_blob_sha": "45fca3604d0dfb14cf75bd37a3103474bf118946",
+      "department": "10",
+      "type": "json"
+    }
+  ]
+}
