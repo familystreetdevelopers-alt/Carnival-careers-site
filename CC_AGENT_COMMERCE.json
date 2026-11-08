@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-11-04",
+  "updated": "2026-11-08",
   "name": "Carnival Careers CC Universe",
   "status": "public discovery only; nonbinding",
   "issuer": {
@@ -22,7 +22,7 @@
       "id": "sponsorship",
       "offer": "brand sponsorship and licensing",
       "buyers": "brand and media buyers",
-      "conditions": "C$30,000 historical package reference; negotiated per engagement",
+      "conditions": "C$10k fast close (0-30d); C$30k intermediate (31-89d); C$45k 3-5 month long lead; separate three-way sponsor installments vs negotiated three-stage promoter fee; all subject to contract",
       "status": "enquiries-welcome"
     },
     {
@@ -200,5 +200,21 @@
     "listen_and_evaluate": "https://carnival-careers-live-current.vercel.app/cc-music-sync-catalog.json",
     "licensed_inquiry": "https://carnival-careers-live-current.vercel.app/ai-opportunities.html?lane=music#cc-deal-intake",
     "note": "The eight tracks are existing live CC website previews. Commercial and AI training rights are subject to independent verification and signed agreement."
+  },
+  "sponsorship_horizons": {
+    "version": "CC-SPONSOR-HORIZONS-2026-11-08",
+    "authority": "docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json",
+    "targets_cad": [
+      10000,
+      30000,
+      45000
+    ],
+    "lead_days": [
+      "0-30",
+      "31-89",
+      "90-150+"
+    ],
+    "no_automated_outreach": true,
+    "promoter_fee_not_sponsor_receipts": true
   }
 }
