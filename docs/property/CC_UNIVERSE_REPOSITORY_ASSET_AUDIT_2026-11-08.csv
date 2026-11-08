@@ -41,6 +41,8 @@ path,asset_type,current_action,reason_or_state
 "docs/property/CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-08.md","md","MASTER_CURRENT","Direct source of truth / enforcement build"
 "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json","json","MASTER_CURRENT","Direct source of truth / enforcement build"
 "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md","md","MASTER_CURRENT","Direct source of truth / enforcement build"
+"docs/property/CC_UNIVERSE_46_ASSETS_GLOBAL_PROPERTY_CONTROL_2026-11-08.json","json","MASTER_CURRENT","All 46 commercial asset class references bound to global property model"
+"docs/property/CC_UNIVERSE_REPOSITORY_ASSET_AUDIT_2026-11-08.csv","csv","MASTER_CURRENT","Repository-wide asset provenance register"
 "docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf","pdf","MEDIA_OR_HISTORICAL_PRESERVED","Media/archival original preserved; model governed by separate current master"
 "driver-data-income.html","html","SOURCE_UPDATED","Stamped current model and/or linked dedicated global property page; built pages guaranteed current by build audit"
 "export-complete-standalone.mjs","mjs","RUNTIME_UNCHANGED","No directly affected property assumption; site build propagation inserts current scenario"
