@@ -126,3 +126,12 @@ Never label contacted firms "lenders committed" or a financing offer a binding a
 No 2026 venue / sponsor / performance rights carry forward. Feb 12 2027 and other dates require signed booking and approval. Keep hospitality, regulated alcohol orders, six-car Rivian request, television, property lending and no-contact policy separate. No automatic outreach to anybody.
 
 Canonical authority: [CC sponsor horizon model](sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json) (for files inside docs/ use path relative to this file; root references `docs/sponsorship/...`). Site delivery is on `/sponsorship-horizons.html` after build.
+
+
+## CANONICAL ORIGINAL PDF MASTERS + 18-MONTH PLAN — NOVEMBER 8, 2026
+
+**DO NOT REBUILD OR REPLACE THE ORIGINAL PDF DESIGNS.** Canonical source file bytes are stored in Adobe Creative Cloud and verified by SHA-256; authoritative identifiers are in [docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json](docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json) (this link is relative to repository root). All proposal edits must reuse the two actual uploaded with/without-real-estate PDFs and preserve every original page unchanged, with date-stamped new pages for material updates. If originals cannot be retrieved, do not invent generic replacement.
+
+**Nov 2026–May 2028 campaign:** apply for arena stage slots throughout 18 months; seek C$10k / C$30k / C$45k near-term-to-long-lead campaign offers, C$250k circuit, C$1M global title, and C$3M multi-brand aggregate sponsor pipeline (1 x C$1M + 4 x C$250k + 10 x C$100k illustrative; no commitments). The global working property pilot is C$10,231,872 / 38 modeled units; a 10% illustrative down payment is C$1,023,187 excluding transfer/closing fees. Six Rivian vehicle sponsorships or approved equivalents and HGTV pitch are proposed, not contracted. Hedonya gin order proceeds count only from legally fulfilled orders. Different sponsor lead times mean short term smaller money and long term larger money, with venue rights, promoter fees and sponsor receipts separately contracted. Historic C$9k stage fallback has three proposed C$3k releases tied to authorized entry, stage/audio lineup, and completion if newly signed.
+
+**No automatic contact with any person. OneLive retract remains in force; historical Nov 5 agreements do not convey future rights.**
