@@ -27,7 +27,7 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 | Main website | Deployment reported READY by Vercel after GitHub update; source is canonical GitHub |
 | Carnival Careers Company OS (Floot) | Current global pilot and no-outbound controls **persisted and published** at https://carnival-careers-os.floot.app |
 | Three current CC scheduled automations | November 8 model and no-automatic-contact controls **verified by readback** |
-| Eight recovered canonical master documents | Revised and hashed; ZIP delivered in chat. **NOT committed to GitHub**, because the connected repository is public and documents may contain confidential source details. They must be placed into a private GitHub repository after one is connected. |
+| Eight recovered canonical master documents | **COMMITTED AND VERIFIED IN GITHUB AS ONE ENCRYPTED ZIP** at [vault/encrypted](vault/encrypted/README.md); eight actual source-derived files inside. Unencrypted copies are withheld from the public repository for confidentiality. An optional future private repo would permit individual unencrypted storage. |
 | Google Drive documents, historic PDFs, executed agreements | Historical source; no overwrite is represented as complete. GitHub takes precedence for future project control. |
 | Music, media, photographs | Preserve original bytes and rights. Property-model versioning does not alter songs or historical master recordings. |
 
@@ -40,4 +40,4 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 6. Do **not** automatically contact anyone through any channel; no external submissions or commitments without fresh, explicit authorization.
 
 ## Staged original-derived canonical files — awaiting private GitHub repository
-Eight revised master copies were generated from original source files (four Excel, two DOCX, two PDF); originals preserved and checksums recorded in the [private-master migration register](docs/property/CC_EIGHT_CANONICAL_MASTER_GITHUB_UPLOAD_REGISTER.md). They are not yet a GitHub-hosted archive. No Library action is needed or requested.
+Eight source-derived revised master copies (four Excel, two DOCX, two PDF) are now committed together as an **AES-256-GCM encrypted ZIP in GitHub**: [master archive](vault/encrypted/CC_UNIVERSE_EIGHT_MASTERS_2026-11-08.zip.aesgcm). Git blob and content verified. [How to decrypt / 8-file inventory](vault/encrypted/README.md); the owner holds the decryption key outside GitHub. Unencrypted individual files are deliberately not in the public repository. No Library action is necessary.
