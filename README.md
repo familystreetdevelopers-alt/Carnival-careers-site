@@ -1,4 +1,4 @@
-# Carnival Careers — canonical asset entrypoint
+> **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — canonical asset entrypoint
 
 **Always read this before creating or updating a sponsorship deck, concert opener, TV/HGTV brief, housing/vehicle proposal, or raising capital.**
 

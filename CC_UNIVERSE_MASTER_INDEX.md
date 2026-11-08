@@ -1,4 +1,4 @@
-# Carnival Careers — Canonical GitHub Master Index
+> **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — Canonical GitHub Master Index
 **Effective:** 8 November 2026  
 **Permanent storage decision:** **GitHub only.** ChatGPT Library is **NOT** a master, archive, output, sync destination, or project completion gate.  
 **Repository:** `familystreetdevelopers-alt/Carnival-careers-site` (`main`)  
