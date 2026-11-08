@@ -39,5 +39,5 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 5. Verify each changed path by rereading the actual GitHub blob and verifying a new commit; do not label local-only packages GitHub-persisted.
 6. Do **not** automatically contact anyone through any channel; no external submissions or commitments without fresh, explicit authorization.
 
-## Staged original-derived canonical files — awaiting private GitHub repository
+## Original-derived canonical files — eight stored encrypted in GitHub
 Eight source-derived revised master copies (four Excel, two DOCX, two PDF) are now committed together as an **AES-256-GCM encrypted ZIP in GitHub**: [master archive](vault/encrypted/CC_UNIVERSE_EIGHT_MASTERS_2026-11-08.zip.aesgcm). Git blob and content verified. [How to decrypt / 8-file inventory](vault/encrypted/README.md); the owner holds the decryption key outside GitHub. Unencrypted individual files are deliberately not in the public repository. No Library action is necessary.
