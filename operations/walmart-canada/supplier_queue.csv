@@ -1,0 +1,3 @@
+priority,supplier,location,website,contact,status,upc_verified,brand_resale_verified,marketplace_approved,wfs_approved,price_verified,direct_wfs_shipping_verified,notes
+1,Aurora Wholesale Inc.,"Vaughan, Ontario",https://aurorawholesaleinc.com,sam@aurorawholesaleinc.com,NOT_CONTACTED,no,no,no,no,no,no,"Canadian wholesale case packs; source claims not independently verified for any CC SKU"
+2,NexDeal,"Van Nuys, California",https://nexdeal.com/how-nexdeal-works/,info@nexdeal.com,NOT_CONTACTED,no,no,no,no,no,no,"Bulk only; no brand authorization letters; customs and freight at buyer expense; no cancellations"
