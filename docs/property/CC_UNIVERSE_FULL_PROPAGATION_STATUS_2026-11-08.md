@@ -28,7 +28,7 @@
 - `pages/tenant-owner.tsx` clarifies contingent ownership affordability, not a promised property.
 - `pages/coordination-admin.tsx` corrects outdated deposit lender wording.
 - `static/cc-global-property-current.json` exposes model/version data; code typechecks passed on modified TypeScript views.
-- Neither scheduled automation prompts nor every historic OS database row has been changed/verified. **No automatic outreach sent.**
+- Three currently known CC automations were read back and already reference this new model. Historical OS database rows and other provider-native application copies were not exhaustively rewritten/verified. **No automatic outreach sent.**
 
 ## Actual core canonical source documents recovered and revised locally
 These are **verified revised copies staged for canonical writeback**, not successful updates to their persistent Library originals. All original contents retained with a new current-property control sheet/cover:
@@ -47,7 +47,7 @@ Files are packaged for user download with original/revised SHA-256. The model is
 ## Actual blockers and what is still not updated
 - **Persistent ChatGPT Library:** `files__manage_library` archival uploads first returned `container_session_expired`; retry via exact file snapshots returned `library_storage_limit_exceeded`. No old Library master was overwritten and no existing files deleted. Current copies remain in deliverable ZIP until storage is freed or additional capacity is available.
 - **Connected native Google Drive docs and Sheets:** reads worked, **writes rejected HTTP 403 PERMISSION_DENIED**. Existing originals such as `master global investment`, `Everything Real Estate + Reality Show Data Room`, and `Carnival Careers — Social + US Property Money Engine` have **not** been modified. Also no confirmed write to other Drive native files, Office files, Sheets, Google Slides, ZIPs or historical PDFs.
-- **Automations:** saved prompts and schedules are not verified updated; existing no-contact controls remain mandatory.
+- **Automations (verified in current saved prompts):** three enabled CC tasks — `CC Loans — Approval & Funding`, `CC Sponsor Closings — Active`, `CC Property + 75-to-Cash` — all reference the November 8 global pilot, preserve the Nov 4 absolute no-automatic-contact policy, and keep the Sammon scenario conditional. Verified by private task readback 2026-11-08; no schedule was changed, and no task was run.
 - **External/third-party asset copies:** previously emailed/shared lender applications, promoter documents, executed contracts, music files, historic PDF snapshots, photographs, production rights, and personal application forms remain unchanged and should not be destructively rewritten.
 - **Floot apps other than the Company OS:** Plane Pool, Shopify tracker and SweetEV have not been individually rewritten; their unrelated primary operating functions should not be replaced by property-finance assumptions. Current cross-universe reference is through the central control/Company OS.
 - **No evidence** of a booked production partnership, approved Sammon deal, any bank lending approval, signed family homeowner mortgage, or actual investor cash.
