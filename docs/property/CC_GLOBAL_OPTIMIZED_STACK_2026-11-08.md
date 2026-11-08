@@ -12,7 +12,7 @@ This is the **current optimized global-property acquisition model** derived from
 - **Defer** London / Paddington studio (1 apartment; previous purchase C$562,200; prior modeled net C$462/month). Retain London as a **filming / production partner city**, with no current property acquisition and no assumed housing asset.
 - **Pause** two proposed Accra construction units (C$74,828 provisional build estimate; prior modeled incremental NOI C$240/month) until buildable land, permit, costs and actual leasing are confirmed. Retain nine existing *modeled* Ghana units.
 - **Planning gross acquisition/construction deferral:** C$1,793,546.
-- **Working global all-in roll-forward:** **C$10,231,872** (= C$12,025,418 - C$1,793,546). **38 modeled retained units** (= 48 - 7 - 1 - 2). **C$9,667/mo indicative historic-model surplus** (= C$11,373 - C$1,004 - C$462 - C$240). These are mathematical sensitivities, not a freshly verified rent roll, cash-to-close, profit forecast or partner-filming cost budget.
+- **Working global all-in roll-forward:** **C$10,231,872** (= C$12,025,418 - C$1,793,546). **38 modeled retained units** (= 48 - 7 - 1 - 2). **C$9,667/mo indicative historic-model surplus** (= C$11,373 - C$1,004 - C$462 - C$240). These are mathematical sensitivities, not a freshly verified rent roll, cash-to-close, profit forecast or partner-filming cost budget. **C$1 rounding difference:** source property-level historic monthly figures sum to C$9,668, while the top-line 11,373 minus removed 1,706 rolls to C$9,667. Treat both as unverified and reconcile to actual property NOI before circulation.
 
 ### Properties carried in working model
 | City | Asset | Units | Oct 2026 source modeled purchase (CAD) | Historic modeled surplus / month | Status |
