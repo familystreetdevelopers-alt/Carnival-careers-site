@@ -1,0 +1,74 @@
+{
+  "version": "CC-SPONSOR-HORIZONS-2026-11-08",
+  "effective_date": "2026-11-08",
+  "currency": "CAD",
+  "premise": "Corporate sponsors need about 3–5 months to approve large activations. Near-term events use smaller faster asks; longer lead times support larger campaigns. No date, booking, money or rights are guaranteed.",
+  "tiers": [
+    {
+      "key": "fast",
+      "lead_days": "0-30",
+      "target_cad": 10000,
+      "sponsor_three_way_cad": [
+        3333.33,
+        3333.33,
+        3333.34
+      ],
+      "promoter_three_stage_ceiling_cad": [
+        3333.33,
+        3333.33,
+        3333.34
+      ]
+    },
+    {
+      "key": "medium",
+      "lead_days": "31-89",
+      "target_cad": 30000,
+      "sponsor_three_way_cad": [
+        10000,
+        10000,
+        10000
+      ],
+      "promoter_three_stage_ceiling_cad": [
+        10000,
+        10000,
+        10000
+      ]
+    },
+    {
+      "key": "long",
+      "lead_days": "90-150+",
+      "target_cad": 45000,
+      "sponsor_three_way_cad": [
+        15000,
+        15000,
+        15000
+      ],
+      "promoter_three_stage_ceiling_cad": [
+        15000,
+        15000,
+        15000
+      ]
+    }
+  ],
+  "promoter_milestones": [
+    "verified authorized admission + credentials",
+    "stage manager authorizes audio lineup / actual set access",
+    "performance completed; last lyric + microphone handback documented"
+  ],
+  "historical_9000_counteroffer_cad": [
+    3000,
+    3000,
+    3000
+  ],
+  "sponsor_terms": "Sponsor installments or three company commitments are alternative structures requiring signed sponsorship scopes. Promoter payments are separate negotiated consideration and should cost less than funds raised wherever possible. No automatic full-spend transfer.",
+  "contractual_safeguards": [
+    "No venue/artist/stage/TV/vehicle/food/alcohol rights are conveyed by prior memos",
+    "No past 2026 promoter signatures authorize future shows",
+    "No cash counted until cleared and unrestricted",
+    "Separate escrows, invoices, authorized payees, receipts, cancellation/refund rights and stage manager attestations if signed",
+    "No automated contact, no mass emailing",
+    "February 12, 2027 is an unconfirmed future performance window"
+  ],
+  "status": "proposed-not-approved",
+  "property_model_reference": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json"
+}
