@@ -31,7 +31,7 @@
 - Three currently known CC automations were read back and already reference this new model. Historical OS database rows and other provider-native application copies were not exhaustively rewritten/verified. **No automatic outreach sent.**
 
 ## Actual core canonical source documents recovered and revised locally
-These are **verified revised copies staged for safe private-GitHub upload**, not successful commits of the revised binary assets. No Library write is needed. All original contents retained with a new current-property control sheet/cover:
+These are **verified revised copies successfully committed to public GitHub in an encrypted ZIP archive** (see [vault inventory](../../vault/encrypted/README.md)), without exposing confidential source bytes. No Library write is needed. All original contents retained with a new current-property control sheet/cover:
 
 1. `Carnival_Careers_ENTERPRISE_CONTROL_v5_DIRECTOR_X_JANET_RASTAFEST_2026-09-16.xlsx`: formula-driven update tab, all previous workbook tabs retained.
 2. `Carnival_Careers_Expandable_Sourced_Financial_Control_2026-09-16.xlsx`: formula-driven update tab, previous tabs retained.
@@ -45,7 +45,7 @@ These are **verified revised copies staged for safe private-GitHub upload**, not
 Files are packaged for user download with original/revised SHA-256. The model is not assumed to be reconciled with older city-specific financial projections just because a current tab is present.
 
 ## Actual blockers and what is still not updated
-- **Eight confidential revised binary master assets:** local copies and checksums exist, but **no private GitHub repository is connected**; public GitHub is not an appropriate repository for the raw confidential sources. Files are staged in the downloadable ZIP, not GitHub committed. Do not use ChatGPT Library for this task.
+- **Eight confidential revised binary master assets:** persisted in public GitHub as a single strongly encrypted, authenticated ZIP, [verified Git blob](../../vault/encrypted/README.md), with the owner-held key outside the repository. They are **not** committed individually unencrypted. Future per-file editable confidential copies would require a private repo.
 - **Connected native Google Drive docs and Sheets:** reads worked, **writes rejected HTTP 403 PERMISSION_DENIED**. Existing originals such as `master global investment`, `Everything Real Estate + Reality Show Data Room`, and `Carnival Careers — Social + US Property Money Engine` have **not** been modified. Also no confirmed write to other Drive native files, Office files, Sheets, Google Slides, ZIPs or historical PDFs.
 - **Automations (verified in current saved prompts):** three enabled CC tasks — `CC Loans — Approval & Funding`, `CC Sponsor Closings — Active`, `CC Property + 75-to-Cash` — all reference the November 8 global pilot, preserve the Nov 4 absolute no-automatic-contact policy, and keep the Sammon scenario conditional. Verified by private task readback 2026-11-08; no schedule was changed, and no task was run.
 - **External/third-party asset copies:** previously emailed/shared lender applications, promoter documents, executed contracts, music files, historic PDF snapshots, photographs, production rights, and personal application forms remain unchanged and should not be destructively rewritten.
@@ -53,7 +53,7 @@ Files are packaged for user download with original/revised SHA-256. The model is
 - **No evidence** of a booked production partnership, approved Sammon deal, any bank lending approval, signed family homeowner mortgage, or actual investor cash.
 
 ## Completion gates before a truthful ALL-assets claim
-1. Connect or create a writable **private GitHub repository** for confidential legal, tenant-owner, financial, mortgage and investor sources; upload eight staged original-derived master revisions and verify GitHub checksums and commits.
+1. **Encrypted GitHub custody now complete for eight canonical revisions.** A future private repo is required only for individual unencrypted confidential master files or private collaborative editing.
 2. Import only the required current source facts from Google Drive into safely permissioned **GitHub** working records. Google Drive is not a canonical output destination; preserve third-party originals as evidence.
 3. Reconcile per-asset financial projections, lender-ready capital requests and all external sent versions after source evidence confirmed.
 4. Review recurring automations/OS database current-fact rows, and inspect any other native production platform currently controlling a property-dependent fact.
