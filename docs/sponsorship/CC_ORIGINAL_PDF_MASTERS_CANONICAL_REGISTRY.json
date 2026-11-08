@@ -1,0 +1,102 @@
+{
+  "version": "CC-ORIGINAL-MASTERS-2026-11-08",
+  "rule": "Never recreate PDFs. Retrieve exact Adobe Creative Cloud originals, verify SHA-256, retain each source page unchanged, append or prepend dated revision pages. Changes must be incremental and independently auditable.",
+  "assets": [
+    {
+      "variant": "WITH_REAL_ESTATE",
+      "filename": "Carnival_Careers_FROM_ORIGINAL_WITH_REAL_ESTATE.pdf",
+      "original_pages": 18,
+      "size_bytes": 8320951,
+      "sha256": "877be8c0273de367e53fc95ebac66f03a82fde2b8ab1edd9a8c10a192302c817",
+      "adobe_asset_id": "urn:aaid:sc:VA6C2:d80791d0-e179-4cef-b844-1ce4a8eaf120",
+      "storage": "Adobe Creative Cloud/CarnivalCareers/CanonicalMasters",
+      "uploaded_and_verified": "2026-11-08"
+    },
+    {
+      "variant": "WITHOUT_REAL_ESTATE",
+      "filename": "Carnival_Careers_FROM_ORIGINAL_WITHOUT_REAL_ESTATE.pdf",
+      "original_pages": 16,
+      "size_bytes": 8316871,
+      "sha256": "35c2177b43898cc6f4727cbd3e1b41b9af9b306ad3abf5df90831b89fa1edf5e",
+      "adobe_asset_id": "urn:aaid:sc:VA6C2:74a6d4c3-876f-4c2c-84ac-5f18d75d2b72",
+      "storage": "Adobe Creative Cloud/CarnivalCareers/CanonicalMasters",
+      "uploaded_and_verified": "2026-11-08"
+    }
+  ],
+  "campaign": {
+    "start": "2026-11-08",
+    "end": "2028-05-08",
+    "goals": [
+      "18 month arena-opening blitz - target 18 opportunities; no guaranteed dates",
+      "Downpayment for current 38-model-home C$10,231,872 global property model, financing unapproved",
+      "Six sponsor-provided Rivian R1S or equivalent vehicles for six tenant-owner households subject to insurance, licensing and legal agreements",
+      "HGTV-ready show pitch, no buyer order yet",
+      "C$3 million multi-brand sponsorship goal, not money received",
+      "Licensed Hedonya gin wholesale orders through authorized importers/distributors"
+    ],
+    "current_sponsorship_tiers": [
+      10000,
+      30000,
+      45000,
+      250000,
+      1000000,
+      3000000
+    ],
+    "lead_time": "3-5 months for major corporate sponsors; smaller near-term event offers",
+    "sponsor_cohort_example": "1 x 1m + 4 x 250k + 10 x 100k = 3m",
+    "historical_stage_fee_fallback": [
+      3000,
+      3000,
+      3000
+    ],
+    "stage_milestones": [
+      "verified authorized gate entry",
+      "verified stage-manager audio lineup/set access",
+      "performance completed/final microphone handback"
+    ],
+    "no_contact": "No automatic outreach",
+    "exclusion": "OneLive outreach was expressly retracted. No contact. Historic 2026 documents grant no future show rights."
+  },
+  "editions": {
+    "total": 12,
+    "bases": 2,
+    "financial_variants": [
+      {
+        "name": "FAST_10K",
+        "cad": 10000
+      },
+      {
+        "name": "MID_30K",
+        "cad": 30000
+      },
+      {
+        "name": "LEAD_45K",
+        "cad": 45000
+      },
+      {
+        "name": "CIRCUIT_250K",
+        "cad": 250000
+      },
+      {
+        "name": "GLOBAL_1M",
+        "cad": 1000000
+      },
+      {
+        "name": "COHORT_3M",
+        "cad": 3000000
+      }
+    ],
+    "each_pdf": "7 dated current pages + 1 original source divider + all original pages unchanged",
+    "verified": "dimensions, text and order of every original page checked after merge",
+    "canonical_zip": "CC_CANONICAL_18_MONTH_FINAL.zip"
+  },
+  "storage_truth": {
+    "actual_original_pdf_bytes_in_github": false,
+    "canonical_pointers_stored_in_github": true,
+    "original_pdf_bytes_stored_in_adobe": true,
+    "generated_zip_bytes_in_chat": true,
+    "chatgpt_library_upload": "quota exceeded",
+    "google_drive_upload": "403 forbidden",
+    "never_claim_success_where_not_verified": true
+  }
+}
