@@ -1,3 +1,5 @@
+> **LATEST NOVEMBER 9 OWNER AUTHORITY:** NOVEMBER 9, 2026 CONTROLLING CONTACT AUTHORIZATION: The owner has expressly authorized targeted external outreach and lawful application submissions for Carnival Careers. This supersedes the prior blanket no-contact restriction. Check recipients and sent history first; avoid duplicate messages; continue exclusions of OneLive and Phoenix Voyages. Do not sign third-party contracts, spend funds, incur debt, share restricted files, claim approvals, or bind charities/lenders/promoters without their written authorization.
+
 > **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — canonical asset entrypoint
 
 ## Two recipient-specific CC arena deal rooms — November 9, 2026
@@ -6,7 +8,7 @@
 - [Own future CC arena show: production / co-promoter partnership](docs/deal-room/02_FUTURE_CC_ARENA_PRODUCTION_PARTNER_PACK_2026-11-09.md). Separate costs, tickets, vendor rights, operating obligations and actual contract evidence.
 - [Controlling who-gets-what document release matrix](docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md).
 - [Historical signed vs conditional vs unverified invoice evidence register](docs/deal-room/CC_EXISTING_EVIDENCE_VERIFICATION_REGISTER_2026-11-09.md). Previous source/signature records do not convey rights to a new arena event.
-- [Deal-room navigation and security gates](docs/deal-room/README.md). Confidential documents are never filed as plaintext in the public website repository. **No automatic external contact.**
+- [Deal-room navigation and security gates](docs/deal-room/README.md). Confidential documents are never filed as plaintext in the public website repository. **Targeted external contacts authorized Nov 9; no binding actions, fabricated proof or duplicate solicitation.**
 
 
 **Always read this before creating or updating a sponsorship deck, concert opener, TV/HGTV brief, housing/vehicle proposal, or raising capital.**
@@ -43,7 +45,7 @@ Recover files from Adobe using exact filenames/URNs; verify checksums before upd
 - Closing capital for modeled C$10,231,872 / 38-home global property stack; six tenant-owner households; six requested Rivian R1S / sponsor vehicles; prospective HGTV commission (not yet ordered).
 - Hedonya gin wholesale orders only through lawful licensed routes; verify actual paid orders.
 - **CURRENT EVENT-PARTNER DEAL PROPOSAL:** three actual releases (1) at the venue door once Hopeton has authorized entry, (2) when CC original music is in the confirmed show audio lineup, (3) when Hopeton sings and finishes his final song. The three amounts and total fee require a new show-specific signed deal; this is NOT a retired payment plan. Sponsor billing is separate.
-- **No automated communications; OneLive outreach retracted and excluded.**
+- **Targeted outreach is authorized as of Nov 9, 2026; OneLive outreach remains retracted/excluded and Phoenix Voyages remains stopped. No payments, signatures or commitments without approval.**
 - Do not mix property equity, entertainment sponsorship, secured notes, gin import purchase orders, vehicle loan/in-kind support or HGTV licensing as interchangeable cash.
 
 ## Important storage disclosure
