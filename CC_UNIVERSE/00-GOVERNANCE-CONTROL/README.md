@@ -1,13 +1,11 @@
 # Executive Control & Master Records
 
-**3 tracked GitHub files** · Master source-control, original-provenance policies and executive indexes
+**3 source files**. Current source-control and canonical governance indexes; no original root path was moved.
 
-Every link below opens the actual existing GitHub file. The web/app source remains in its live file path to prevent broken builds.
-
-| Existing canonical source file | Type | Git blob fingerprint |
+| Actual tracked GitHub file | Type | Git SHA (short) |
 |---|---|---|
-| [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) | md | `7624fb23f687` |
+| [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) | md | `c912ef5e0379` |
 | [`docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md`](../../docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md) | md | `2e2d3c1ed0a6` |
-| [`README.md`](../../README.md) | md | `583792d832a4` |
+| [`README.md`](../../README.md) | md | `477ad7ad4028` |
 
-[Back to CC file room](../README.md)
+[Return to CC file room](../README.md)

@@ -1,12 +1,12 @@
 # All 124 Verified CC GitHub Source Files
 
-Snapshot commit `72bc7a00ed7bced6267fe8adaf94fdf75491f0b9`; each name links to the real file. The navigation/control files in CC_UNIVERSE/ are excluded from source snapshot.
+Snapshot commit `26cae38b35f8da6bc5cbafafd8454be7e3d2ff85`. Each link is an actual GitHub file; the index and other catalog control files are not counted as source documents.
 
 ## Executive Control & Master Records (3)
 
-- [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) · 5,405 bytes · git `7624fb23f687`
+- [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) · 5,784 bytes · git `c912ef5e0379`
 - [`docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md`](../../docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md) · 2,899 bytes · git `2e2d3c1ed0a6`
-- [`README.md`](../../README.md) · 3,775 bytes · git `583792d832a4`
+- [`README.md`](../../README.md) · 4,350 bytes · git `477ad7ad4028`
 
 ## TV Series, Film & 65-City Format (4)
 
@@ -37,7 +37,7 @@ Snapshot commit `72bc7a00ed7bced6267fe8adaf94fdf75491f0b9`; each name links to t
 ## Sponsors & Brand Partnerships (9)
 
 - [`cc-sponsorship-horizons.mjs`](../../cc-sponsorship-horizons.mjs) · 4,764 bytes · git `fd4909cbb947`
-- [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) · 33,240 bytes · git `97c517cc1c01`
+- [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) · 33,652 bytes · git `dd9afb6d7d29`
 - [`docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf`](../../docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf) · 7,913,658 bytes · git `8aba59541417`
 - [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json) · 6,936 bytes · git `b3c1d0621ce5`
 - [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md) · 3,569 bytes · git `ae820d465f80`

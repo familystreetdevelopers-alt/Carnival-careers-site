@@ -1,6 +1,6 @@
 {
   "version": "CC-UNIVERSE-GITHUB-CATALOG-2026-11-08",
-  "snapshot_commit_sha": "72bc7a00ed7bced6267fe8adaf94fdf75491f0b9",
+  "snapshot_commit_sha": "26cae38b35f8da6bc5cbafafd8454be7e3d2ff85",
   "generated_date": "2026-11-08",
   "repository": "familystreetdevelopers-alt/Carnival-careers-site",
   "repository_is_public": true,
@@ -236,8 +236,8 @@
     },
     {
       "path": "CC_UNIVERSE_MASTER_INDEX.md",
-      "bytes": 5405,
-      "git_blob_sha": "7624fb23f687fd4ccd0ee9b61d5a37a427265600",
+      "bytes": 5784,
+      "git_blob_sha": "c912ef5e0379b0ada18bd43c6a30215940690cc4",
       "department": "00",
       "type": "md"
     },
@@ -474,8 +474,8 @@
     },
     {
       "path": "docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md",
-      "bytes": 33240,
-      "git_blob_sha": "97c517cc1c0141a9f933b74f22538db7c2d6acda",
+      "bytes": 33652,
+      "git_blob_sha": "dd9afb6d7d297a87726417dd3efe08a5080f99c9",
       "department": "04",
       "type": "md"
     },
@@ -873,8 +873,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3775,
-      "git_blob_sha": "583792d832a41e74e6ce007a1d6d022b2c3fc717",
+      "bytes": 4350,
+      "git_blob_sha": "477ad7ad40289f7294e35b5e7f504c3e61d90f44",
       "department": "00",
       "type": "md"
     },
@@ -991,5 +991,5 @@
       "type": "json"
     }
   ],
-  "source_snapshot_commit_sha": "72bc7a00ed7bced6267fe8adaf94fdf75491f0b9"
+  "source_snapshot_commit_sha": "26cae38b35f8da6bc5cbafafd8454be7e3d2ff85"
 }
