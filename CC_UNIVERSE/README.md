@@ -1,3 +1,5 @@
+> **LATEST NOVEMBER 9 OWNER AUTHORITY:** NOVEMBER 9, 2026 CONTROLLING CONTACT AUTHORIZATION: The owner has expressly authorized targeted external outreach and lawful application submissions for Carnival Careers. This supersedes the prior blanket no-contact restriction. Check recipients and sent history first; avoid duplicate messages; continue exclusions of OneLive and Phoenix Voyages. Do not sign third-party contracts, spend funds, incur debt, share restricted files, claim approvals, or bind charities/lenders/promoters without their written authorization.
+
 # CC Universe — Complete GitHub File Room
 
 **139 of 139 tracked CC Universe source files organized in 16 departments.** Audited at GitHub source commit `18e572a3be4851bfdef462f3adaa16a0d3b6e77d`, 9 November 2026. File paths remain unchanged for the live site. New source and raw ZIP/PDF bytes are committed in GitHub, with an exact SHA and source type.
@@ -42,4 +44,4 @@
 - [Source masters still outside GitHub](inventory/EXTERNAL_MASTERS_NOT_IN_GITHUB.md) · [filing/version rules](inventory/FILING_AND_VERSION_RULES.md) · [cross-universe map](inventory/CROSS_UNIVERSE_MAP.md)
 - [CC Universe executive master](../CC_UNIVERSE_MASTER_INDEX.md) · [current global property pilot](../docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md)
 
-**Critical distinction:** The 12 new sponsor companion editions do not overwrite/embed the two original historical Adobe masters. The prior 14-page sponsor draft is superseded. Event rights and partner payment amounts are not approved until a new signed deal. The GitHub repo is public; never publish confidential household/capital documents in plaintext. No automatic external contact or submissions.
+**Critical distinction:** The 12 new sponsor companion editions do not overwrite/embed the two original historical Adobe masters. The prior 14-page sponsor draft is superseded. Event rights and partner payment amounts are not approved until a new signed deal. The GitHub repo is public; never publish confidential household/capital documents in plaintext. Targeted factual contact and truthful applications were authorized by the owner November 9, 2026; no duplicated outreach, excluded counterparties, unsupported approvals or binding commitments.
