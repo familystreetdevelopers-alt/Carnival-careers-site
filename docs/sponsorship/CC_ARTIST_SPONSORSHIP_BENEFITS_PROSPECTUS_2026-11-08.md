@@ -2,7 +2,7 @@
 
 **PDF edition:** `Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf` · 14 pages · 8 November 2026.  
 **Status:** Dated artist-sponsorship supplement; proposed marketing terms only. This document is the **PDF's text transcription** persisted in GitHub, **not** its binary PDF file or an original sponsor master.  
-**PDF SHA-256 from verified locally authored edition:** `7117110b19979928a2098a54f5ee1836c3d5e049b876aafe90e8534ebea6e0d0` (112,925 bytes).  
+**PDF SHA-256 from verified locally authored edition:** `fe0737157cc3a2bcdff95dfada2a6fc1050610bc59030e39cdded9859491de09` (137,898 bytes).  
 **Canonical original with/without-real-estate PDF masters:** [source registry](CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json); originals preserved in Adobe, not altered.  
 **Pricing authority:** [Nov 8 sponsorship horizon](CC_SPONSOR_HORIZONS_2026-11-08.json).  
 **Privacy:** Marketing-only. Public GitHub is not for private sponsor contact details or signed agreements.
