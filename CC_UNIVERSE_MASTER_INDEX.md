@@ -1,3 +1,5 @@
+> **LATEST NOVEMBER 9 OWNER AUTHORITY:** NOVEMBER 9, 2026 CONTROLLING CONTACT AUTHORIZATION: The owner has expressly authorized targeted external outreach and lawful application submissions for Carnival Careers. This supersedes the prior blanket no-contact restriction. Check recipients and sent history first; avoid duplicate messages; continue exclusions of OneLive and Phoenix Voyages. Do not sign third-party contracts, spend funds, incur debt, share restricted files, claim approvals, or bind charities/lenders/promoters without their written authorization.
+
 > **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — Canonical GitHub Master Index
 
 ## Two recipient-specific CC arena deal rooms — November 9, 2026
@@ -6,7 +8,7 @@
 - [Own future CC arena show: production / co-promoter partnership](docs/deal-room/02_FUTURE_CC_ARENA_PRODUCTION_PARTNER_PACK_2026-11-09.md). Separate costs, tickets, vendor rights, operating obligations and actual contract evidence.
 - [Controlling who-gets-what document release matrix](docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md).
 - [Historical signed vs conditional vs unverified invoice evidence register](docs/deal-room/CC_EXISTING_EVIDENCE_VERIFICATION_REGISTER_2026-11-09.md). Previous source/signature records do not convey rights to a new arena event.
-- [Deal-room navigation and security gates](docs/deal-room/README.md). Confidential documents are never filed as plaintext in the public website repository. **No automatic external contact.**
+- [Deal-room navigation and security gates](docs/deal-room/README.md). Confidential documents are never filed as plaintext in the public website repository. **Nov 9 targeted external contact authorization; no duplicate solicitation or binding financial commitments.**
 
 **Effective:** 8 November 2026  
 **Permanent storage decision:** **GitHub only.** ChatGPT Library is **NOT** a master, archive, output, sync destination, or project completion gate.  
@@ -39,8 +41,8 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 |---|---|
 | GitHub master Markdown/JSON, website source and build guard | **Persisted on main** |
 | Main website | Deployment reported READY by Vercel after GitHub update; source is canonical GitHub |
-| Carnival Careers Company OS (Floot) | Current global pilot and no-outbound controls **persisted and published** at https://carnival-careers-os.floot.app |
-| Three current CC scheduled automations | November 8 model and no-automatic-contact controls **verified by readback** |
+| Carnival Careers Company OS (Floot) | Current global pilot and historical Nov 8 restrictions **previously published** at https://carnival-careers-os.floot.app |
+| Three current CC scheduled automations | November 8 model, superseded on contact authority by the owner on November 9 |
 | Eight recovered canonical master documents | **COMMITTED AND VERIFIED IN GITHUB AS ONE ENCRYPTED ZIP** at [vault/encrypted](vault/encrypted/README.md); eight actual source-derived files inside. Unencrypted copies are withheld from the public repository for confidentiality. An optional future private repo would permit individual unencrypted storage. |
 | Google Drive documents, historic PDFs, executed agreements | Historical source; no overwrite is represented as complete. GitHub takes precedence for future project control. |
 | Music, media, photographs | Preserve original bytes and rights. Property-model versioning does not alter songs or historical master recordings. |
@@ -51,7 +53,7 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 3. Externally distributed signed, lodged or dated originals are immutable evidence; add new superseding versions; never alter signatures, provenance or old sent documents.
 4. All confidential documents belong in a restricted **private GitHub** repo. Public repo stores only a non-sensitive file index, checksum, version and cross-reference. A repository branch is NOT private.
 5. Verify each changed path by rereading the actual GitHub blob and verifying a new commit; do not label local-only packages GitHub-persisted.
-6. Do **not** automatically contact anyone through any channel; no external submissions or commitments without fresh, explicit authorization.
+6. The owner provided **fresh explicit authorization on November 9, 2026** for factual targeted contact and eligible application submissions. Check history and recipient exclusions, including OneLive and Phoenix Voyages. Do not bind counterparties, sign agreements, move funds, or assert approvals without actual authority and evidence.
 
 ## Original-derived canonical files — eight stored encrypted in GitHub
 Eight source-derived revised master copies (four Excel, two DOCX, two PDF) are now committed together as an **AES-256-GCM encrypted ZIP in GitHub**: [master archive](vault/encrypted/CC_UNIVERSE_EIGHT_MASTERS_2026-11-08.zip.aesgcm). Git blob and content verified. [How to decrypt / 8-file inventory](vault/encrypted/README.md); the owner holds the decryption key outside GitHub. Unencrypted individual files are deliberately not in the public repository. No Library action is necessary.
