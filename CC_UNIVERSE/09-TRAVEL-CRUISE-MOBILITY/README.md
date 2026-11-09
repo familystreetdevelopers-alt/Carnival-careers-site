@@ -1,10 +1,10 @@
 # Travel, Cruises & Transportation
 
-**7 current GitHub sources** · Travel, cruise, fares, transport and mobility projects
+**7 files** · Travel, cruise, fares, transport and mobility projects
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`boat-2027.html`](../../boat-2027.html) | html | `84559a51b11e` |
 | [`cc-boat-2027.mjs`](../../cc-boat-2027.mjs) | mjs | `031748cef772` |
@@ -14,4 +14,4 @@ All links point to the original file path in the repo; original source bytes sta
 | [`driver-data-income.html`](../../driver-data-income.html) | html | `5b72dc46d0ce` |
 | [`fare-savings.html`](../../fare-savings.html) | html | `8c55a15e5260` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

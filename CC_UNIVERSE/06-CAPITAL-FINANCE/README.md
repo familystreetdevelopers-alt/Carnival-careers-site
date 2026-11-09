@@ -1,10 +1,10 @@
 # Capital, Lenders & Investor Finance
 
-**5 current GitHub sources** · Lenders, finance instruments, investor and settlement control
+**5 files** · Lenders, finance instruments, investor and settlement control
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`capital-execution.html`](../../capital-execution.html) | html | `b6467b06b1c1` |
 | [`cc-agent-deal-capture.mjs`](../../cc-agent-deal-capture.mjs) | mjs | `6f3d10c50b1e` |
@@ -12,4 +12,4 @@ All links point to the original file path in the repo; original source bytes sta
 | [`docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md`](../../docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md) | md | `5f7871557df3` |
 | [`finance-instruments.html`](../../finance-instruments.html) | html | `0cbbbe0738e3` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

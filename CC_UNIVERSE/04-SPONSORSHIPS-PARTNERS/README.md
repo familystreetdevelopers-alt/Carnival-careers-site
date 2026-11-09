@@ -1,13 +1,13 @@
 # Sponsors & Brand Partnerships
 
-**15 current GitHub sources** · Campaign editions, sponsor packages and original PDF custody
+**16 files** · Campaign editions, sponsor packages and original PDF custody
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+**CURRENT sponsor edition:** [12 corrected editions ZIP](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip) · [corrected 15-page prospectus](../../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf) · [three-event payment policy](../../docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md). Old 14-page prospectus is SUPERSEDED.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`cc-sponsorship-horizons.mjs`](../../cc-sponsorship-horizons.mjs) | mjs | `847c683c8cb3` |
-| [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) | md | `dd9afb6d7d29` |
+| [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) | md | `de8010ad10fa` |
 | [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md) | md | `28d12ffe6165` |
 | [`docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md`](../../docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md) | md | `ecd22d7bf504` |
 | [`docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf`](../../docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf) | pdf | `8aba59541417` |
@@ -21,5 +21,6 @@ All links point to the original file path in the repo; original source bytes sta
 | [`docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip`](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip) | zip | `27d8f0a20c73` |
 | [`docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt`](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt) | txt | `0cde49132748` |
 | [`docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt`](../../docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt) | txt | `66b63ae513e0` |
+| [`docs/sponsorship/editions/README.md`](../../docs/sponsorship/editions/README.md) | md | `792a4f02ff4a` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

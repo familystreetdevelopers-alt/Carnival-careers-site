@@ -1,10 +1,10 @@
 # Operating Systems & Automations
 
-**11 current GitHub sources** · Business workflows, intake agents and automated processes
+**11 files** · Business workflows, intake agents and automated processes
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`.github/workflows/cc-application-browser.yml`](../../.github/workflows/cc-application-browser.yml) | yml | `a58410c1fdec` |
 | [`.github/workflows/cc-application-intake.yml`](../../.github/workflows/cc-application-intake.yml) | yml | `836152d54aa2` |
@@ -16,6 +16,6 @@ All links point to the original file path in the repo; original source bytes sta
 | [`automation/prepare-application.cjs`](../../automation/prepare-application.cjs) | cjs | `2d74894e088a` |
 | [`cc-network-connect.mjs`](../../cc-network-connect.mjs) | mjs | `bfbb88bc2933` |
 | [`intake-dedupe.mjs`](../../intake-dedupe.mjs) | mjs | `4ea29d934823` |
-| [`tools/check-cc-current-event-partner-three-payments.mjs`](../../tools/check-cc-current-event-partner-three-payments.mjs) | mjs | `new source` |
+| [`tools/check-cc-current-event-partner-three-payments.mjs`](../../tools/check-cc-current-event-partner-three-payments.mjs) | mjs | `809ffa6e4a89` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

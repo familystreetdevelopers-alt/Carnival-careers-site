@@ -1,10 +1,10 @@
 # Real Estate, Development & Housing Assets
 
-**32 current GitHub sources** · Global pilot, separate Toronto development, site drawings, housing property pages
+**32 files** · Global pilot, separate Toronto development, site drawings, housing property pages
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`cc-capital65-current-project.mjs`](../../cc-capital65-current-project.mjs) | mjs | `29ac6b3fb58f` |
 | [`cc-global-property-propagate.mjs`](../../cc-global-property-propagate.mjs) | mjs | `08cfce78be2b` |
@@ -39,4 +39,4 @@ All links point to the original file path in the repo; original source bytes sta
 | [`ironman-images/18-original-basement-reference.jpg`](../../ironman-images/18-original-basement-reference.jpg) | jpg | `0b1518a7e18f` |
 | [`pembroke-acquisition.html`](../../pembroke-acquisition.html) | html | `9ebf2f2b3537` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

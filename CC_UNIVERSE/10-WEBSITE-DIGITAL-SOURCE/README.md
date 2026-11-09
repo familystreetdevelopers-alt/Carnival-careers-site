@@ -1,10 +1,10 @@
 # Website, Digital Media & Deployment
 
-**8 current GitHub sources** · Live-build HTML, scripts and deployment configuration
+**8 files** · Live-build HTML, scripts and deployment configuration
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`.github/workflows/build-verify.yml`](../../.github/workflows/build-verify.yml) | yml | `4964c753849e` |
 | [`build-standalone.mjs`](../../build-standalone.mjs) | mjs | `0170a26fc531` |
@@ -12,7 +12,7 @@ All links point to the original file path in the repo; original source bytes sta
 | [`distribution-pages.mjs`](../../distribution-pages.mjs) | mjs | `ab4f2423f5f4` |
 | [`export-complete-standalone.mjs`](../../export-complete-standalone.mjs) | mjs | `f1fa9d32452d` |
 | [`index.html`](../../index.html) | html | `3a2d631737c2` |
-| [`package.json`](../../package.json) | json | `1939af7dac5e` |
+| [`package.json`](../../package.json) | json | `e6770a743559` |
 | [`vercel.json`](../../vercel.json) | json | `45fca3604d0d` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)

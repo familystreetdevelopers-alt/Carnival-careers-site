@@ -1,10 +1,10 @@
 # Commerce, Vendors & Food Businesses
 
-**16 current GitHub sources** · Marketplace, vendors, product testing, e-commerce and wholesale
+**16 files** · Marketplace, vendors, product testing, e-commerce and wholesale
 
-All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+Existing files remain in their canonical runtime paths; these are accurate one-click original links.
 
-| Actual GitHub source | Type | Version SHA |
+| Actual canonical source | Type | Git SHA (12) |
 |---|---|---|
 | [`.github/workflows/cc-walmart-canada-health.yml`](../../.github/workflows/cc-walmart-canada-health.yml) | yml | `830ab8bf4910` |
 | [`business-solution.mjs`](../../business-solution.mjs) | mjs | `5ab0496a0557` |
@@ -23,4 +23,4 @@ All links point to the original file path in the repo; original source bytes sta
 | [`product-testing.html`](../../product-testing.html) | html | `f1710340cdcd` |
 | [`systeme-affiliate-funnel.mjs`](../../systeme-affiliate-funnel.mjs) | mjs | `5b52ec1e92db` |
 
-[Return to CC file room](../README.md)
+[Return to file room](../README.md)
