@@ -1,0 +1,66 @@
+name: CC Artist Sponsorship — Twelve Corrected Editions
+on:
+  push:
+    paths:
+      - .github/workflows/cc-sponsor-corrected-12-editions.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and independently verify all corrected editions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/sponsorship/editions
+          curl --retry 3 --retry-all-errors --fail --location --max-time 90 \
+            --output 'docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip' \
+            'https://carnival-careers-os.floot.app/_cdn/static/584a5ed5-ae50-4bb2-a15f-df89944c574c-CC_12_ARTIST_SPONSOR_CORRECTED_EDITIONS_2026-11-08.zip'
+          test "$(wc -c < 'docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip')" -eq 1449499
+          python3 -m pip -q install pypdf
+          python3 - <<'PY'
+          from pypdf import PdfReader
+          from io import BytesIO
+          from zipfile import ZipFile
+          from pathlib import Path
+          import json, hashlib
+          p=Path('docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip')
+          with ZipFile(p) as z:
+              assert z.testzip() is None
+              names=z.namelist()
+              editions=[x for x in names if x.startswith('CC_') and 'CORRECTED_PARTNER_3_PAYMENTS.pdf' in x]
+              assert len(editions)==12, editions
+              for name in editions:
+                  data=z.read(name)
+                  pdf=PdfReader(BytesIO(data))
+                  assert len(pdf.pages)==16, (name,len(pdf.pages))
+                  text=' '.join(x.extract_text() or '' for x in pdf.pages).lower()
+                  for word in ('at the door','original cc music','hopeton','last song','three increments'):
+                      assert word in text, (name,word)
+              master=[x for x in names if 'Full_Prospectus_CORRECTED_3_Milestones' in x]
+              assert len(master)==1
+              assert len(PdfReader(BytesIO(z.read(master[0]))).pages)==15
+              assert 'MANIFEST.json' in names and 'READ_ME_FIRST.txt' in names
+              assert len(names)==16, names
+              mf=json.loads(z.read('MANIFEST.json'))
+              assert len(mf['files'])==12
+              for x in mf['files']:
+                  assert hashlib.sha256(z.read(x['filename'])).hexdigest()==x['sha256']
+              sha=hashlib.sha256(p.read_bytes()).hexdigest()
+              Path('docs/sponsorship/editions/CC_12_CORRECTED_EDITIONS_SHA256.txt').write_text(sha+'  '+p.name+'\n')
+              print('OK verified 12 PDFs x16 pages, plus corrected master x15 pages, term sheet, manifest. SHA256',sha)
+          PY
+      - name: Archive verified ZIP to GitHub
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip' docs/sponsorship/editions/CC_12_CORRECTED_EDITIONS_SHA256.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'CC: preserve 12 corrected artist sponsor editions and current three-stage partner deal in verified ZIP'
+            git push origin HEAD:main
+          fi
