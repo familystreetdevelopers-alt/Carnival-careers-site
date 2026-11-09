@@ -1,5 +1,5 @@
 {
-  "version": "CC-SPONSOR-HORIZONS-2026-11-08",
+  "version": "CC-SPONSOR-HORIZONS-2026-11-08-CORRECTED-PARTNER3",
   "effective_date": "2026-11-08",
   "currency": "CAD",
   "premise": "Corporate sponsors need about 3–5 months to approve large activations. Near-term events use smaller faster asks; longer lead times support larger campaigns. No date, booking, money or rights are guaranteed.",
@@ -8,59 +8,25 @@
       "key": "fast",
       "lead_days": "0-30",
       "target_cad": 10000,
-      "sponsor_three_way_cad": [
-        3333.33,
-        3333.33,
-        3333.34
-      ],
-      "promoter_three_stage_ceiling_cad": [
-        3333.33,
-        3333.33,
-        3333.34
-      ]
+      "sponsor_billing": "Negotiated in the brand sponsorship order; distinct from event-partner releases.",
+      "event_partner_payment_rule": "Three separate increments at the door, CC original music in confirmed show audio lineup, and Hopeton finishing his last song. Actual fee and 3 amounts per newly signed event-specific deal."
     },
     {
       "key": "medium",
       "lead_days": "31-89",
       "target_cad": 30000,
-      "sponsor_three_way_cad": [
-        10000,
-        10000,
-        10000
-      ],
-      "promoter_three_stage_ceiling_cad": [
-        10000,
-        10000,
-        10000
-      ]
+      "sponsor_billing": "Negotiated in the brand sponsorship order; distinct from event-partner releases.",
+      "event_partner_payment_rule": "Three separate increments at the door, CC original music in confirmed show audio lineup, and Hopeton finishing his last song. Actual fee and 3 amounts per newly signed event-specific deal."
     },
     {
       "key": "long",
       "lead_days": "90-150+",
       "target_cad": 45000,
-      "sponsor_three_way_cad": [
-        15000,
-        15000,
-        15000
-      ],
-      "promoter_three_stage_ceiling_cad": [
-        15000,
-        15000,
-        15000
-      ]
+      "sponsor_billing": "Negotiated in the brand sponsorship order; distinct from event-partner releases.",
+      "event_partner_payment_rule": "Three separate increments at the door, CC original music in confirmed show audio lineup, and Hopeton finishing his last song. Actual fee and 3 amounts per newly signed event-specific deal."
     }
   ],
-  "promoter_milestones": [
-    "verified authorized admission + credentials",
-    "stage manager authorizes audio lineup / actual set access",
-    "performance completed; last lyric + microphone handback documented"
-  ],
-  "historical_9000_counteroffer_cad": [
-    3000,
-    3000,
-    3000
-  ],
-  "sponsor_terms": "Sponsor installments or three company commitments are alternative structures requiring signed sponsorship scopes. Promoter payments are separate negotiated consideration and should cost less than funds raised wherever possible. No automatic full-spend transfer.",
+  "sponsor_terms": "Sponsor-purchased campaign deliverables and billing are independently signed. Event-partner consideration uses three current milestone releases (at door; original CC music confirmed in lineup; Hopeton last song completed) with fee and amounts separately negotiated. No event rights or full-spend transfer presumed.",
   "contractual_safeguards": [
     "No venue/artist/stage/TV/vehicle/food/alcohol rights are conveyed by prior memos",
     "No past 2026 promoter signatures authorize future shows",
@@ -103,5 +69,34 @@
     "HGTV": "not commissioned",
     "gin": "Hedonya via licensed importer/distributor and paid orders only",
     "no_auto_contact": true
-  }
+  },
+  "current_event_partner_policy": {
+    "status": "CURRENT CC PROPOSED COMMERCIAL RULE — no partner acceptance or show booking assumed",
+    "recipient": "authorized contracted event partner",
+    "releases": [
+      {
+        "sequence": 1,
+        "trigger": "Hopeton gains authorized entry at the event venue door",
+        "proof": "authorized venue access/credential confirmation",
+        "amount_cad": null
+      },
+      {
+        "sequence": 2,
+        "trigger": "Carnival Careers original music (named tracks) confirmed in the event's actual audio/set lineup",
+        "proof": "show caller or stage manager identified-track lineup confirmation",
+        "amount_cad": null
+      },
+      {
+        "sequence": 3,
+        "trigger": "Hopeton sings and completes his last song on stage",
+        "proof": "stage manager / show caller completion record",
+        "amount_cad": null
+      }
+    ],
+    "total_fee_cad": null,
+    "amounts": "To be set by signed event-partner agreement; do NOT equate with sponsor tier or historical C$9000 figures",
+    "sponsor_value": "Event partner does not receive entire fee in advance; releases follow observable event milestones, with proof and unearned funds treated as agreed.",
+    "source": "docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md"
+  },
+  "source_correction": "2026-11-08 current deal trigger structure restored; historical fee illustrations no longer determine payment schedule."
 }

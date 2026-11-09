@@ -44,18 +44,14 @@
     ],
     "lead_time": "3-5 months for major corporate sponsors; smaller near-term event offers",
     "sponsor_cohort_example": "1 x 1m + 4 x 250k + 10 x 100k = 3m",
-    "historical_stage_fee_fallback": [
-      3000,
-      3000,
-      3000
-    ],
     "stage_milestones": [
-      "verified authorized gate entry",
-      "verified stage-manager audio lineup/set access",
-      "performance completed/final microphone handback"
+      "authorized entry at actual venue door",
+      "confirmed original CC tracks placed in event audio lineup",
+      "Hopeton finishes his last song on stage"
     ],
     "no_contact": "No automatic outreach",
-    "exclusion": "OneLive outreach was expressly retracted. No contact. Historic 2026 documents grant no future show rights."
+    "exclusion": "OneLive outreach was expressly retracted. No contact. Historic 2026 documents grant no future show rights.",
+    "historical_stage_fee_fallback_context": "Any old 3 x C$3K figures are dated historical amounts ONLY; the three-trigger event-partner deal remains CURRENT, amounts for future event TBD by signed contract."
   },
   "editions": {
     "total": 12,
@@ -176,5 +172,16 @@
       "sha256": "4e710890b191cf6f3cebb2a3cfb9804134cc8e97ba478a38d6b64311d7e9cfb1",
       "bytes_not_in_git": true
     }
+  },
+  "current_event_partner_payment_policy": {
+    "status": "current CC three-increment proposal",
+    "policy_path": "docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md",
+    "milestones": [
+      "Hopeton authorized entry at venue door",
+      "Original Carnival Careers named tracks included in actual audio lineup",
+      "Hopeton sings and completes last song"
+    ],
+    "amounts": "not defined until a new event-partner agreement is executed",
+    "historical_amounts": "archive-only economics not controlling current three-trigger rule"
   }
 }

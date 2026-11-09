@@ -1,3 +1,5 @@
+
+> **CONTROLLING 8 NOVEMBER CORRECTION:** The current three-increment event-partner release structure is ACTIVE AS A PROPOSAL: authorized door; original CC music in audio lineup; Hopeton finishes last song. Do not dismiss the live schedule as historical. See [event-partner source](CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md).
 # CARNIVAL CAREERS — NEVER REBUILD THESE ORIGINAL PDF MASTERS
 
 **Source-of-truth registry:** [CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json](CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json)
@@ -24,7 +26,7 @@
 - **Mobility:** proposal for six sponsored Rivian R1S / equivalent family vehicles; none delivered or approved.
 - **Broadcast:** HGTV-ready show materials, not a production order.
 - **Hedonya:** any independent cash from gin orders only with licensed import, distribution and purchase order.
-- **Promoter:** historic C$9k / 3 x C$3k fall-back subject to newly signed three-stage access/audio/performance milestones. Do not treat sponsor targets as promoter fees.
+- **CURRENT EVENT PARTNER:** the fee is released in three increments: (1) Hopeton enters the authorized venue door; (2) CC original songs are placed on the event's actual audio lineup; (3) Hopeton finishes his last song. Amounts per release are separately negotiated in the new signed event agreement; historical C$9K is not the current schedule's price.
 - **Absolutely no automatic email/DM/calls. Do not contact OneLive.** 506-private-contact register never enters public GitHub.
 
 ### Approved variant plan

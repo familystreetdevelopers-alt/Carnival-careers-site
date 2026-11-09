@@ -1,28 +1,30 @@
-# CC UNIVERSE — SPONSORSHIP HORIZON & THREE-RELEASE OPENING POLICY
+# CARNIVAL CAREERS — SPONSORSHIP HORIZONS & CURRENT THREE-INCREMENT EVENT-PARTNER RULE
+**Controlling revision — 8 November 2026.** This document supersedes the incorrect claim that CC's event-partner three-payment schedule is historical or abandoned. The exact live trigger rule remains **current** and central to the sponsorship proposition.
 
-> Authoritative superseding commercial strategy effective November 8, 2026. Preserves all original materials, Home wording, property stack and signed agreements.
-
-## Why the asks differ
-A major corporate sponsor often needs **3–5 months** for procurement, brand review and legal approval. A nearer arena date should invite a smaller, achievable sponsorship decision; future dates with longer lead times can support C$30,000 and C$45,000 campaigns. **Do not overwrite historical asks**: versions represent different event horizons, not inconsistent facts.
-
-| Sponsor horizon | Cash sponsorship goal | Three-way sponsor breakdown | Proposed promoter release ceilings ONLY IF separately signed |
+## Current sponsorship prices and rights
+| Sponsor opportunity | Proposed sponsorship fee | Sponsor receives | Event partner payments |
 |---|---:|---|---|
-| 0–30 days / fast close | **C$10,000** | C$3,333.33 + C$3,333.33 + C$3,333.34 | Same thirds, negotiated opening-act fee may be lower |
-| 31–89 days / intermediate | **C$30,000** | C$10,000 + C$10,000 + C$10,000 | Same thirds, negotiated opening-act fee may be lower |
-| 90–150+ days / long lead | **C$45,000** | C$15,000 + C$15,000 + C$15,000 | Same thirds, negotiated opening-act fee may be lower |
+| Fast-close CC artist support / ~0-30 days | C$10,000 | 30-day CC-owned digital campaign, 2 organic feed posts, 4 story frames, 1 short video edit, named page tile, 1 final report | **3 current milestone releases** at door / named original music in lineup / Hopeton final song |
+| Principal artist campaign / ~31-89 days | C$30,000 | 60-day campaign, 4 posts, 8 story frames, 2 short videos, spotlight, interim + final reports | **same three triggers**, amounts negotiated separately |
+| Presenting CC artist campaign / ~90-150+ days | C$45,000 | 90-day campaign, 6 posts, 12 story frames, 3 short videos, CC campaign hero placement, reporting | **same three triggers**, amounts negotiated separately |
 
-Three sponsor portions may be funded by three separately contracted sponsors or by phased instalments for one sponsor. Sponsor instalments should follow signed deliverables, approved inventory and evidence of performance. They are not the same contract or necessarily the same payments as promoter fees.
+C$250,000 circuit, C$1M global platform, and C$3M illustrative cohort targets remain **proposals**, with negotiated deliverables and separately licensed artist/event rights. Actual dates and sponsor commitments not verified.
 
-## Promoter fee: three documentable stage milestones
-1. **At the door:** only upon verification of authorized entry/credentials and the named show-specific booker; no payment for mere arrival outside venue.
-2. **Audio lineup:** only after authorized stage-manager confirms the artist is in the actual lineup, with set access and production clearances.
-3. **After final lyric:** following approved performance and microphone hand-back, recorded by production.
+## EVENT PARTNER: THREE CURRENT CONTRACTUAL RELEASE TRIGGERS
+1. **At the door.** Release one increment when Hopeton is **admitted through the venue's authorized door** with credentials and approved stage access.
+2. **Original Carnival Careers music in lineup.** Release second increment when the **named CC ORIGINAL TRACKS** are confirmed as part of the show audio/set lineup by an authorized stage manager / show caller. Mere artist listing is **not** sufficient.
+3. **Hopeton last song.** Release final increment **after Hopeton sings and finishes his last song onstage**, with show-caller or production confirmation.
 
-Before any release: a **new signed** promoter/artist addendum specifies date, venue, songs, slot, payee, fee, rights, cancellation and refunds, venue exclusivities and escrow agent (if any). No promoter is presumed to accept any amount or milestones. **C$9,000 / C$3,000 each** was an historical unaccepted 2026 fallback, not a current booked right.
+**This is the CURRENT proposed CC event-partner payment arrangement** and a centerpiece of the sponsor pitch. Sponsor cash targets and sponsor billing installments are **not** the event-partner fee. The total partner consideration, each of the three amounts, actual venue/date, named songs, rights, payee, escrow terms and cancellation remedies must be specified in a new signed agreement.
 
-## Rights and sources
-Only Carnival Careers-owned/cleared music, original media and deliverables can be pitched immediately. Stage and arena activation need new written rights; The Real Jerk 300 VIP and CJ's Punch proposed C$2,000 require independently renewed supply agreements and venue clearance. Six Rivian R1S and HGTV are proposals, Hedonya gin wholesale requires lawful buyers/importers, and property finance is a separate capital lane. No cash, multi-city dates or media commissions are considered secured.
+## Sponsor appeal
+A brand can see why funds do not all leave at once: the partner is paid on authorized venue entry, confirmed inclusion of CC-owned original music, and completion of Hopeton's final song. Sponsors receive the defined marketing benefits and, where lawfully shareable, a release/evidence ledger. **This reduces certain performance-delivery risks; it does not guarantee a show or remove cancellation, credit, talent or venue risk.**
 
-2026 November 5 is past; February 12, 2027 is not confirmed as booked in this update. Do not automatically contact sponsors or promoters. Keep the 506-contact register in a **private Gmail draft**, never in a public GitHub repository.
+## Independent contracting / prior rights
+- No old Nov 2026 promoter agreement secures future stage slots. No artist endorsement, venue branding, VIP access, license, tour date or network broadcast is included without approvals.
+- Sponsor billing schedule is independently agreed, not required to be 3 instalments or 3 sponsors. Event partner pays in precisely the 3 current milestones **if a new event-specific deal is executed**.
+- A lawyer trust or escrow holder exists only if engaged under signed instructions, with verified payee, actual cleared funds, proof and dispute/rescission terms.
+- Separate corporate sponsorship from artist talent fees, property investment, six vehicles, Hedonya/gin import orders and TV production commissions.
+- No automatic emailing, contacting, applications, deposits or signatures.
 
-Source of truth: `docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json`; published site view: `/sponsorship-horizons.html`.
+**Governing document:** [current partner three-increment policy](CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md). **PDF prospectus:** see [the corrected sponsor edition](editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf) after its checksum-verified GitHub archive.

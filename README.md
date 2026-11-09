@@ -4,10 +4,10 @@
 
 > **Do not invent a generic replacement.** The two definitive original Carnival Careers PDF masters are stored as actual bytes in the connected Adobe Creative Cloud (`CarnivalCareers/CanonicalMasters`), and their SHA-256 hashes, asset IDs and recovery instructions are permanently registered in GitHub.
 
-## Current sponsor benefits - complete PDF (14 pages)
+## Artist sponsor benefits and live event partner — current three-increment terms
 
-- [Artist Sponsorship Benefits: Full Prospectus (actual PDF in GitHub)](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) - proposed C$10K/C$30K/C$45K, strategic multi-city offers, exact digital deliverables, rights approval, milestone payments, reports, sponsor order schedule.
-- [Full text source](docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) - editable/readable transcript; archived PDF separately validated by 14-page content check.
+- [**Corrected 15-page artist sponsorship prospectus — CURRENT three-increment partner schedule**](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf). Supersedes the previous 14-page draft. Proposed C$10K/C$30K/C$45K, strategic multi-city offers, exact digital deliverables, rights approval, milestone payments, reports, sponsor order schedule.
+- [**Controlling current three-increment payment rule**](docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md). The 14-page earlier draft is SUPERSEDED (retained as history), not current sponsor material.
 
 ## Canonical document authority
 
@@ -32,7 +32,7 @@ Recover files from Adobe using exact filenames/URNs; verify checksums before upd
 - Sponsor asks by lead time: C$10k, C$30k, C$45k; longer-term circuit C$250k, global title C$1M, aggregate cohort C$3M (illustrative, no commitments).
 - Closing capital for modeled C$10,231,872 / 38-home global property stack; six tenant-owner households; six requested Rivian R1S / sponsor vehicles; prospective HGTV commission (not yet ordered).
 - Hedonya gin wholesale orders only through lawful licensed routes; verify actual paid orders.
-- Historic stage fee fallback proposal: C$9k in three C$3k conditional installments upon authorized venue entry, confirmed set audio lineup, final performed lyric. Promoter must sign new terms; sponsor receipts and promoter fees are distinct.
+- **CURRENT EVENT-PARTNER DEAL PROPOSAL:** three actual releases (1) at the venue door once Hopeton has authorized entry, (2) when CC original music is in the confirmed show audio lineup, (3) when Hopeton sings and finishes his final song. The three amounts and total fee require a new show-specific signed deal; this is NOT a retired payment plan. Sponsor billing is separate.
 - **No automated communications; OneLive outreach retracted and excluded.**
 - Do not mix property equity, entertainment sponsorship, secured notes, gin import purchase orders, vehicle loan/in-kind support or HGTV licensing as interchangeable cash.
 

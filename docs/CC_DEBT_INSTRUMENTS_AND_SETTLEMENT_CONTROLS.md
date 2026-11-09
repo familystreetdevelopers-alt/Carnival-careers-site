@@ -1,3 +1,6 @@
+
+> **CURRENT CC EVENT-PARTNER PAYMENT OVERRIDE — 8 NOV 2026:** Three increments: at the authorized venue door; when named CC ORIGINAL MUSIC is included in the show's actual audio lineup; once Hopeton finishes singing his last song. This current rule supersedes any contrary characterization of the THREE-TRIGGER SCHEDULE as historic. Exact dollar amounts need a new signed event-specific agreement. [Governing source](sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md).
+
 # Carnival Careers — Debt Instruments, Promissory Notes & Settlement Control
 
 > **Global property stack reconciliation, Nov 8 2026:** No property debt, private note, investor guarantee or collateral may be represented as secured against the proposed global portfolio until ownership/control is evidenced. The C$10.232M / 38-home working pilot (or conditional C$9.023M / 40-home Sammon model) is distinct from the Toronto CC-CAPITAL65 financing lane. Tokyo/London are filming partners without acquired collateral. Ghana proposed construction is on hold. Verify unit-by-unit title, income, borrower and DSCR; do not count owner-occupied family homes as rental NOI or count York/Downes twice. [Current control](property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md).
@@ -67,11 +70,11 @@ Signing/issuing or endorsing an instrument, purchase/funding, granting security,
 
 | Lead time | Sponsor campaign cash target | Three proposed sponsor portions | Separately negotiated promoter performance milestones |
 |---|---:|---|---|
-| 0–30 days | C$10,000 | C$3,333.33 + C$3,333.33 + C$3,333.34 | At verified entry, confirmed audio-lineup/set access, and completed performance |
-| 31–89 days | C$30,000 | C$10,000 + C$10,000 + C$10,000 | Same three documentary milestones; actual performance fee separately agreed |
-| 90–150+ days | C$45,000 | C$15,000 + C$15,000 + C$15,000 | Same three documentary milestones; actual performance fee separately agreed |
+| 0–30 days | C$10,000 | C$3,333.33 + C$3,333.33 + C$3,333.34 | At the authorized venue door; confirmed original CC MUSIC in audio lineup; Hopeton's last song finished |
+| 31–89 days | C$30,000 | C$10,000 + C$10,000 + C$10,000 | Same three CURRENT CC event-partner triggers; fee separately agreed |
+| 90–150+ days | C$45,000 | C$15,000 + C$15,000 + C$15,000 | Same three CURRENT CC event-partner triggers; fee separately agreed |
 
-**Critical control:** Sponsor cash is NOT automatically the promoter fee. A sponsor's three payments are conditional on contracted creative scope or may be funded by three independent partners. A promoter's three payments are a separate show-specific proposed booking consideration and may be **less** than the sponsor raise; all fee amounts and release triggers need an authorized signed booking addendum and escrow/receipts if agreed. The C$9,000 / C$3k+3k+3k historical Nov 5 counterproposal was not accepted.
+**Critical control:** Sponsor cash is NOT automatically the promoter fee. Sponsor billing is separately contracted and is NOT automatically split into three instalments; **the event partner's agreed fee** is divided into three milestone releases. **CC's CURRENT event-partner three-increment proposal**: first release once Hopeton is admitted at the authorized venue door; second once named Carnival Careers ORIGINAL MUSIC is in the event audio lineup (not merely the artist lineup); final release ONLY after Hopeton sings his last song. Signed event terms set actual partner fee, each amount and proof; older amount illustrations do not supersede this CURRENT schedule. Sponsor billing is independent. See `docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md`.
 
 No 2026 venue / sponsor / performance rights carry forward. Feb 12 2027 and other dates require signed booking and approval. Keep hospitality, regulated alcohol orders, six-car Rivian request, television, property lending and no-contact policy separate. No automatic outreach to anybody.
 
