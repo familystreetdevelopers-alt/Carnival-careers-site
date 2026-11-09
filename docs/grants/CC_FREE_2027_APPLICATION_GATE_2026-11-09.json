@@ -1,0 +1,78 @@
+{
+  "version": "2026-11-09T14:31:00-05:00",
+  "project": "Carnival Careers free public 2027 Toronto concert",
+  "scope": "Noncommercial free public live music only; excludes arena, ticketing, filming, vendor marketplace and real estate",
+  "legal_entity_status": "Carnival Careers not verified as registered nonprofit; no substitute credentials allowed",
+  "outreach_policy": "NO CONTACT without new user approval of exact named recipient and message; Jonathan Lin permanently excluded absent named reversal",
+  "nathan_phillips_square": {
+    "deadline_local": "2026-11-10T16:00:00-05:00",
+    "applicant": "Registered nonprofit/charity applicant required per current correspondence",
+    "status": "NOT SUBMITTED",
+    "gate": "Eligible nonprofit written consent, legal applicant identity, own authorized officer, accurate event date/footprint, genuine approved budget and City submission confirmation",
+    "next_step": "If gate cannot be met by deadline, do not submit in CC name; pursue subsequent eligible venue/civic rounds with legitimate applicant"
+  },
+  "city_music_funding": {
+    "deadline_local": "2026-11-15",
+    "status": "NOT SUBMITTED",
+    "eligibility": "Potential for-profit/grassroots eligibility; exact applicant rules and permitted expenses must be verified in official form",
+    "gate": "Verify applicant eligibility, exact program, current call and required evidence before submitting; never invent business registration, attendance or expenditure",
+    "future_rounds": [
+      "2027-02-01",
+      "2027-05-01",
+      "2027-08-01"
+    ],
+    "future_rounds_note": "Previously identified as relevant; confirm actual official deadlines and eligibility before relying"
+  },
+  "ocaf": {
+    "meeting_local": "2026-11-18T11:30:00-05:00",
+    "confirmed_rule": "Thomas Vaughan Nov 9: only registered nonprofit corporations and municipalities eligible",
+    "status": "No applicant accepted, no grant approved",
+    "gate": "Independent qualified cultural nonprofit controls real program, budget and submission; no pass-through trustee fiction",
+    "next_rounds_to_verify": [
+      "2027-01-08",
+      "2027-02-19"
+    ]
+  },
+  "mptf": {
+    "applicant": "AFM Local 149, not Carnival Careers",
+    "eligible_scope": "Qualifying professional musician fees for genuinely free public concert only",
+    "status": "No Local 149 filing or award verified",
+    "contact_history": "Nov 9 enquiries to AFM; info@tma149.ca bounced, separate dusty@tma149.ca already approached",
+    "gate": "AFM Local 149 accepts real project and submits qualifying application; no event rights assumed"
+  },
+  "partner_state": {
+    "accepted_nonprofit": null,
+    "explicit_signed_acceptance": false,
+    "contacts_already_approached": [
+      "Small World Music",
+      "CaribbeanTales",
+      "HSDC",
+      "JerkFest/CPAC",
+      "OneSoca",
+      "Music Africa",
+      "Xenia Concerts",
+      "Caribbean Scholars Foundation",
+      "Rastafest",
+      "Toronto Caribbean Carnival/Festival Management Committee"
+    ],
+    "xenia": "Nov 9 response: cannot decide by imminent deadline; not accepted; possible future discussion",
+    "last_checked": "2026-11-09T14:31:00-05:00",
+    "new_inbox_result": "No new acceptance or concrete request detected in Carnival Careers Gmail inbox since prior scan"
+  },
+  "required_evidence": [
+    "nonprofit legal name and registration",
+    "board/authorized officer approval",
+    "written lead presenter acceptance",
+    "venue date and permit approval",
+    "ring-fenced free event budget with documented quotes",
+    "artist/AFM compensation agreement",
+    "confirmed sources and match",
+    "application submission receipt"
+  ],
+  "verified_outcomes": {
+    "signed_partner": false,
+    "city_application_accepted": false,
+    "mptf_approved": false,
+    "ocaf_approved": false
+  }
+}
