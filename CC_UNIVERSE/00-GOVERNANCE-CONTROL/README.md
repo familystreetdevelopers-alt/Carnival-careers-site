@@ -1,13 +1,12 @@
 # Executive Control & Master Records
 
-**3 files** · Master source-control, original-provenance policies and executive indexes
+**4 source files.** Canonical source paths are retained intact for working software and evidence integrity.
 
-Existing files remain in their canonical runtime paths; these are accurate one-click original links.
-
-| Actual canonical source | Type | Git SHA (12) |
+| GitHub source | Type | SHA-1 short |
 |---|---|---|
-| [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) | md | `45a652d9ff72` |
+| [`CC_UNIVERSE_MASTER_INDEX.md`](../../CC_UNIVERSE_MASTER_INDEX.md) | md | `c9cdcc7e8ac7` |
+| [`docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md`](../../docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md) | md | `f72143028e83` |
 | [`docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md`](../../docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md) | md | `2e2d3c1ed0a6` |
-| [`README.md`](../../README.md) | md | `8743bfe0c2b3` |
+| [`README.md`](../../README.md) | md | `8ad8fed1d1c4` |
 
-[Return to file room](../README.md)
+[Back to CC Universe](../README.md)

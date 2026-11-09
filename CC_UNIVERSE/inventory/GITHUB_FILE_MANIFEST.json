@@ -1,10 +1,10 @@
 {
   "version": "CC-UNIVERSE-GITHUB-CATALOG-2026-11-08",
-  "snapshot_commit_sha": "19a9f4e32ae3a6a7a68f896d72c6b34c9ae4ff0d",
-  "generated_date": "2026-11-08",
+  "snapshot_commit_sha": "18e572a3be4851bfdef462f3adaa16a0d3b6e77d",
+  "generated_date": "2026-11-09",
   "repository": "familystreetdevelopers-alt/Carnival-careers-site",
   "repository_is_public": true,
-  "source_file_count": 134,
+  "source_file_count": 139,
   "department_count": 16,
   "generated_catalog_files_excluded": true,
   "departments": [
@@ -12,7 +12,7 @@
       "id": "00",
       "name": "Executive Control & Master Records",
       "path": "CC_UNIVERSE/00-GOVERNANCE-CONTROL/README.md",
-      "count": 3,
+      "count": 4,
       "description": "Master source-control, original-provenance policies and executive indexes"
     },
     {
@@ -26,7 +26,7 @@
       "id": "02",
       "name": "Concerts, Arenas & Live Events",
       "path": "CC_UNIVERSE/02-CONCERTS-ARENAS-TOURS/README.md",
-      "count": 1,
+      "count": 4,
       "description": "Concert-specific event source ledgers and dated performance records"
     },
     {
@@ -89,7 +89,7 @@
       "id": "11",
       "name": "Legal, Rights & Compliance",
       "path": "CC_UNIVERSE/11-LEGAL-RIGHTS-COMPLIANCE/README.md",
-      "count": 4,
+      "count": 5,
       "description": "Consumer rights, contract governance and stewardship"
     },
     {
@@ -250,8 +250,8 @@
     },
     {
       "path": "CC_UNIVERSE_MASTER_INDEX.md",
-      "bytes": 6305,
-      "git_blob_sha": "45a652d9ff72ac12de6c8a8dcf2fac1ee5c2d4c8",
+      "bytes": 7543,
+      "git_blob_sha": "c9cdcc7e8ac74f8a1ad6c8e48e65bb9a71dc5c89",
       "department": "00",
       "type": "md"
     },
@@ -428,6 +428,41 @@
       "bytes": 12980,
       "git_blob_sha": "b3ffb520fca5e65ac4b806549468ff819c166cbe",
       "department": "01",
+      "type": "md"
+    },
+    {
+      "path": "docs/deal-room/01_EXISTING_ARENA_PROMOTER_OPENING_SLOT_PACK_2026-11-09.md",
+      "bytes": 4278,
+      "git_blob_sha": "4633e4be01b34cb97f1b64dac5223bfd6535838c",
+      "department": "02",
+      "type": "md"
+    },
+    {
+      "path": "docs/deal-room/02_FUTURE_CC_ARENA_PRODUCTION_PARTNER_PACK_2026-11-09.md",
+      "bytes": 4907,
+      "git_blob_sha": "bdfb37c70ab7c8e2149ad8bc0976d1b5874a2214",
+      "department": "02",
+      "type": "md"
+    },
+    {
+      "path": "docs/deal-room/CC_EXISTING_EVIDENCE_VERIFICATION_REGISTER_2026-11-09.md",
+      "bytes": 5589,
+      "git_blob_sha": "6fa78ab720b0bdaad9a97d7d69b0a66e770c71a0",
+      "department": "11",
+      "type": "md"
+    },
+    {
+      "path": "docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md",
+      "bytes": 7626,
+      "git_blob_sha": "f72143028e838508c7dfb35f19e039e6a7a2f117",
+      "department": "00",
+      "type": "md"
+    },
+    {
+      "path": "docs/deal-room/README.md",
+      "bytes": 4214,
+      "git_blob_sha": "dd277650eaad627c87f3667b3b8cbbfa93108591",
+      "department": "02",
       "type": "md"
     },
     {
@@ -936,8 +971,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4887,
-      "git_blob_sha": "8743bfe0c2b31964a572b77a11ebe115da92904b",
+      "bytes": 6125,
+      "git_blob_sha": "8ad8fed1d1c40bad934b97d9d0c1f60f44126348",
       "department": "00",
       "type": "md"
     },

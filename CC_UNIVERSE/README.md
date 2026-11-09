@@ -1,6 +1,6 @@
 # CC Universe — Complete GitHub File Room
 
-**134 of 134 tracked CC Universe source files organized in 16 departments.** Audited at GitHub commit `19a9f4e32ae3a6a7a68f896d72c6b34c9ae4ff0d`, 8 November 2026. File paths remain unchanged for the live site. New source and raw ZIP/PDF bytes are committed in GitHub, with an exact SHA and source type.
+**139 of 139 tracked CC Universe source files organized in 16 departments.** Audited at GitHub source commit `18e572a3be4851bfdef462f3adaa16a0d3b6e77d`, 9 November 2026. File paths remain unchanged for the live site. New source and raw ZIP/PDF bytes are committed in GitHub, with an exact SHA and source type.
 
 ## CORRECTED ARTIST-SPONSOR MATERIALS — CURRENT
 
@@ -9,13 +9,19 @@
 - [**Exact three-payment event-partner policy**](../docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md) — authorized door → CC original music in audio lineup → Hopeton finishes last song.
 - [**Current/superseded edition register**](../docs/sponsorship/editions/README.md) · [editable text source](../docs/sponsorship/CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md).
 
+## DEAL ROOMS — WHO GETS WHICH PROOF
+
+- [**Two audience-specific deal rooms**](../docs/deal-room/README.md): already-booked arena opening slots **versus** CC-owned future arena production.
+- [**Recipient-by-recipient document disclosure matrix**](../docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md) — staged L0/L1/L2, release permissions, signed vs unsigned evidence.
+- [**Evidence verification register**](../docs/deal-room/CC_EXISTING_EVIDENCE_VERIFICATION_REGISTER_2026-11-09.md): historical signed memo, agent revisions, publishing rights, supplier letters, unverified invoices.
+
 ## Browse by department
 
 | Department | Actual source files | Scope |
 |---|---:|---|
-| [Executive Control & Master Records](00-GOVERNANCE-CONTROL/README.md) | 3 | Master source-control, original-provenance policies and executive indexes |
+| [Executive Control & Master Records](00-GOVERNANCE-CONTROL/README.md) | 4 | Master source-control, original-provenance policies and executive indexes |
 | [TV Series, Film & 65-City Format](01-TV-FILM-PRODUCTION/README.md) | 4 | The television format, episode production and showrunner source material |
-| [Concerts, Arenas & Live Events](02-CONCERTS-ARENAS-TOURS/README.md) | 1 | Concert-specific event source ledgers and dated performance records |
+| [Concerts, Arenas & Live Events](02-CONCERTS-ARENAS-TOURS/README.md) | 4 | Concert-specific event source ledgers and dated performance records |
 | [Music, Songs & Audio Production](03-MUSIC-AUDIO-MASTERS/README.md) | 12 | Actual music-master files and editing/build scripts |
 | [Sponsors & Brand Partnerships](04-SPONSORSHIPS-PARTNERS/README.md) | 16 | Campaign editions, sponsor packages and original PDF custody |
 | [Real Estate, Development & Housing Assets](05-REAL-ESTATE-PROPERTY/README.md) | 32 | Global pilot, separate Toronto development, site drawings, housing property pages |
@@ -24,7 +30,7 @@
 | [Commerce, Vendors & Food Businesses](08-COMMERCE-VENDORS-FOOD/README.md) | 16 | Marketplace, vendors, product testing, e-commerce and wholesale |
 | [Travel, Cruises & Transportation](09-TRAVEL-CRUISE-MOBILITY/README.md) | 7 | Travel, cruise, fares, transport and mobility projects |
 | [Website, Digital Media & Deployment](10-WEBSITE-DIGITAL-SOURCE/README.md) | 8 | Live-build HTML, scripts and deployment configuration |
-| [Legal, Rights & Compliance](11-LEGAL-RIGHTS-COMPLIANCE/README.md) | 4 | Consumer rights, contract governance and stewardship |
+| [Legal, Rights & Compliance](11-LEGAL-RIGHTS-COMPLIANCE/README.md) | 5 | Consumer rights, contract governance and stewardship |
 | [Operating Systems & Automations](12-OPERATIONS-AUTOMATION/README.md) | 11 | Business workflows, intake agents and automated processes |
 | [Encrypted Masters & Data Room](13-ENCRYPTED-DATA-ROOM/README.md) | 4 | Source encryption, historical master documents and secure custody |
 | [Press, Publicity & Visual Creative](14-PUBLICITY-PHOTOS-PRESS/README.md) | 2 | Publicity assets and promotional creative |
