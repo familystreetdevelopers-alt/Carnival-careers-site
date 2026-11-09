@@ -5,6 +5,7 @@
 > **Do not invent a generic replacement.** The two definitive original Carnival Careers PDF masters are stored as actual bytes in the connected Adobe Creative Cloud (`CarnivalCareers/CanonicalMasters`), and their SHA-256 hashes, asset IDs and recovery instructions are permanently registered in GitHub.
 
 ## Artist sponsor benefits and live event partner — current three-increment terms
+- [**ALL TWELVE CORRECTED SPONSOR EDITIONS (GitHub ZIP)**](docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip) - six tiers, with/without real estate, all using the CURRENT event-partner 3-release schedule.
 
 - [**Corrected 15-page artist sponsorship prospectus — CURRENT three-increment partner schedule**](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf). Supersedes the previous 14-page draft. Proposed C$10K/C$30K/C$45K, strategic multi-city offers, exact digital deliverables, rights approval, milestone payments, reports, sponsor order schedule.
 - [**Controlling current three-increment payment rule**](docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md). The 14-page earlier draft is SUPERSEDED (retained as history), not current sponsor material.

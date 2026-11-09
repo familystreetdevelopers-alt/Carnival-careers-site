@@ -1,15 +1,15 @@
 # Capital, Lenders & Investor Finance
 
-**5 tracked GitHub files** · Lenders, finance instruments, investor and settlement control
+**5 current GitHub sources** · Lenders, finance instruments, investor and settlement control
 
-Every link below opens the actual existing GitHub file. The web/app source remains in its live file path to prevent broken builds.
+All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
 
-| Existing canonical source file | Type | Git blob fingerprint |
+| Actual GitHub source | Type | Version SHA |
 |---|---|---|
 | [`capital-execution.html`](../../capital-execution.html) | html | `b6467b06b1c1` |
 | [`cc-agent-deal-capture.mjs`](../../cc-agent-deal-capture.mjs) | mjs | `6f3d10c50b1e` |
-| [`docs/CC_DEBT_INSTRUMENTS_AND_SETTLEMENT_CONTROLS.md`](../../docs/CC_DEBT_INSTRUMENTS_AND_SETTLEMENT_CONTROLS.md) | md | `bcc58b8ac100` |
-| [`docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md`](../../docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md) | md | `ff61b5393c6a` |
+| [`docs/CC_DEBT_INSTRUMENTS_AND_SETTLEMENT_CONTROLS.md`](../../docs/CC_DEBT_INSTRUMENTS_AND_SETTLEMENT_CONTROLS.md) | md | `c8dacace5213` |
+| [`docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md`](../../docs/CC_NOTES_BONDS_CAPITAL_EXECUTION_MASTER.md) | md | `5f7871557df3` |
 | [`finance-instruments.html`](../../finance-instruments.html) | html | `0cbbbe0738e3` |
 
-[Back to CC file room](../README.md)
+[Return to CC file room](../README.md)

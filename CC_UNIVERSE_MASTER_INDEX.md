@@ -5,6 +5,7 @@
 **Public repository:** yes — do **not** commit confidential financial, household, mortgage, ID, medical, signed-agreement, or private counterparty source documents here. Those require a separately access-controlled **private GitHub repository**. No private repository is currently connected.
 
 ## Current sponsor-facing PDF and event-partner deal terms
+- [**12 current corrected sponsor edition PDFs, GitHub ZIP**](docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip) · [current offer vs archived 14-page mistake](docs/sponsorship/editions/README.md).
 - [**CORRECTED 15-page Artist Sponsorship Full Prospectus**](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf) — current offer for C$10K/C$30K/C$45K and strategic sponsorship. Previous 14-page draft is superseded and retained for audit.
 - [**Governing current three-increment event-partner payment rule**](docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md) — (1) authorized venue door, (2) original CC music in show audio lineup, (3) Hopeton finishes last song. Terms/amounts require signed booking.
 

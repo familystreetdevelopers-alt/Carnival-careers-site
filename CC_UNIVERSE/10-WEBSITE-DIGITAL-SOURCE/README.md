@@ -1,10 +1,10 @@
 # Website, Digital Media & Deployment
 
-**8 tracked GitHub files** · Live-build HTML, scripts and deployment configuration
+**8 current GitHub sources** · Live-build HTML, scripts and deployment configuration
 
-Every link below opens the actual existing GitHub file. The web/app source remains in its live file path to prevent broken builds.
+All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
 
-| Existing canonical source file | Type | Git blob fingerprint |
+| Actual GitHub source | Type | Version SHA |
 |---|---|---|
 | [`.github/workflows/build-verify.yml`](../../.github/workflows/build-verify.yml) | yml | `4964c753849e` |
 | [`build-standalone.mjs`](../../build-standalone.mjs) | mjs | `0170a26fc531` |
@@ -15,4 +15,4 @@ Every link below opens the actual existing GitHub file. The web/app source remai
 | [`package.json`](../../package.json) | json | `1939af7dac5e` |
 | [`vercel.json`](../../vercel.json) | json | `45fca3604d0d` |
 
-[Back to CC file room](../README.md)
+[Return to CC file room](../README.md)

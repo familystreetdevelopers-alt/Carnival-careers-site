@@ -1,6 +1,13 @@
 # CC Universe — Complete GitHub File Room
 
-**124 of 124 tracked source files organized in 16 departments.** Audited against GitHub commit `7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a` on 8 November 2026. **All cataloged source links lead to real files**; nothing was moved or replaced by mockups. New index/control documents live in this directory and are excluded from the 124-source snapshot.
+**133 tracked source files assigned to 16 departments.** Audited against main commit `0a81d0b46664e9cb457d8ba0051230ae906df68e` on 8 Nov 2026. This master directory links to actual live GitHub sources; original files have not been moved from runtime paths. Catalog control documents are not counted as source.
+
+## CURRENT EVENT PARTNER DEAL — MANDATORY SPONSOR RULE
+**Three payments to the EVENT PARTNER:** (1) Hopeton at the authorized venue door; (2) confirmed CC original songs in the show's audio lineup; (3) Hopeton finishes his last song. Amounts require a signed show-specific agreement.
+- [**Download all TWELVE corrected sponsor editions as a GitHub ZIP**](../docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip)
+- [**Open corrected 15-page sponsor benefits PDF**](../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf)
+- [**Three-payment source policy**](../docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md)
+- [**See current vs superseded edition controls**](../docs/sponsorship/editions/README.md)
 
 ## Browse by department
 
@@ -10,7 +17,7 @@
 | [TV Series, Film & 65-City Format](01-TV-FILM-PRODUCTION/README.md) | 4 | The television format, episode production and showrunner source material |
 | [Concerts, Arenas & Live Events](02-CONCERTS-ARENAS-TOURS/README.md) | 1 | Concert-specific event source ledgers and dated performance records |
 | [Music, Songs & Audio Production](03-MUSIC-AUDIO-MASTERS/README.md) | 12 | Actual music-master files and editing/build scripts |
-| [Sponsors & Brand Partnerships](04-SPONSORSHIPS-PARTNERS/README.md) | 9 | Campaign editions, sponsor packages and original PDF custody |
+| [Sponsors & Brand Partnerships](04-SPONSORSHIPS-PARTNERS/README.md) | 15 | Campaign editions, sponsor packages and original PDF custody |
 | [Real Estate, Development & Housing Assets](05-REAL-ESTATE-PROPERTY/README.md) | 32 | Global pilot, separate Toronto development, site drawings, housing property pages |
 | [Capital, Lenders & Investor Finance](06-CAPITAL-FINANCE/README.md) | 5 | Lenders, finance instruments, investor and settlement control |
 | [Tenant-Owners, Families & Workforce](07-FAMILIES-WORKFORCE/README.md) | 4 | Resident operations, workforce, tenant interface and benefits |
@@ -18,19 +25,15 @@
 | [Travel, Cruises & Transportation](09-TRAVEL-CRUISE-MOBILITY/README.md) | 7 | Travel, cruise, fares, transport and mobility projects |
 | [Website, Digital Media & Deployment](10-WEBSITE-DIGITAL-SOURCE/README.md) | 8 | Live-build HTML, scripts and deployment configuration |
 | [Legal, Rights & Compliance](11-LEGAL-RIGHTS-COMPLIANCE/README.md) | 4 | Consumer rights, contract governance and stewardship |
-| [Operating Systems & Automations](12-OPERATIONS-AUTOMATION/README.md) | 8 | Business workflows, intake agents and automated processes |
+| [Operating Systems & Automations](12-OPERATIONS-AUTOMATION/README.md) | 11 | Business workflows, intake agents and automated processes |
 | [Encrypted Masters & Data Room](13-ENCRYPTED-DATA-ROOM/README.md) | 4 | Source encryption, historical master documents and secure custody |
 | [Press, Publicity & Visual Creative](14-PUBLICITY-PHOTOS-PRESS/README.md) | 2 | Publicity assets and promotional creative |
 | [Adjacent & Spin-Off Media Programs](15-ADJACENT-MEDIA-PROJECTS/README.md) | 5 | Independent media programs, especially Sideline Sitters |
 
-## New finished sponsor benefits PDF
-
-- [**Download / open the 14-page Artist Sponsorship Benefits PDF**](../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) — archived directly in GitHub, 137,898 bytes, verified 14 pages and actual PDF content.
-- [Full text / editable source record](../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) · [GitHub SHA-256 checksum](../docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt).
-
 ## Full inventories
 
-- [**All 124 exact file links**](inventory/ALL_GITHUB_FILES.md)
+
+- [**All 133 exact file links**](inventory/ALL_GITHUB_FILES.md)
 - [**Full JSON inventory (paths, sizes and Git blob hashes)**](inventory/GITHUB_FILE_MANIFEST.json)
 - [**CSV for spreadsheet imports**](inventory/GITHUB_FILE_MANIFEST.csv)
 - [**Source masters known to exist outside GitHub**](inventory/EXTERNAL_MASTERS_NOT_IN_GITHUB.md)

@@ -1,10 +1,10 @@
 # Music, Songs & Audio Production
 
-**12 tracked GitHub files** · Actual music-master files and editing/build scripts
+**12 current GitHub sources** · Actual music-master files and editing/build scripts
 
-Every link below opens the actual existing GitHub file. The web/app source remains in its live file path to prevent broken builds.
+All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
 
-| Existing canonical source file | Type | Git blob fingerprint |
+| Actual GitHub source | Type | Version SHA |
 |---|---|---|
 | [`append-loud-n-intro.mjs`](../../append-loud-n-intro.mjs) | mjs | `1d511b62608f` |
 | [`cc-siriusxm-merge-fragment.html`](../../cc-siriusxm-merge-fragment.html) | html | `33c958351687` |
@@ -19,4 +19,4 @@ Every link below opens the actual existing GitHub file. The web/app source remai
 | [`music-mobile-responsive.mjs`](../../music-mobile-responsive.mjs) | mjs | `849283311bef` |
 | [`surgical-music-2026.mjs`](../../surgical-music-2026.mjs) | mjs | `3238d799d0af` |
 
-[Back to CC file room](../README.md)
+[Return to CC file room](../README.md)

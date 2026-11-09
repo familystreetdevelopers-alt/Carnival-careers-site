@@ -1,3 +1,5 @@
+> **SUPERSEDED — DO NOT USE FOR NEW SPONSOR OFFERS.** This is the earlier 14-page PDF text and contains a mistaken description of the current three-increment event-partner schedule as "historical". The CURRENT prospectus is [the corrected 15-page PDF](editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf) and [its corrected full-text master](CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md). Current payments: (1) at authorized venue door; (2) named original CC music in the actual audio lineup; (3) Hopeton finishes singing his last song. Amounts by new signed deal. This archived older transcript is retained only for provenance, not commercial circulation.
+
 # Carnival Careers — Artist Sponsorship: Full Benefits Prospectus (PDF Text Master)
 
 **PDF edition:** `Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf` · 14 pages · 8 November 2026.  

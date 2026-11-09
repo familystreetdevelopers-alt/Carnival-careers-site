@@ -1,11 +1,11 @@
 # Concerts, Arenas & Live Events
 
-**1 tracked GitHub files** · Concert-specific event source ledgers and dated performance records
+**1 current GitHub sources** · Concert-specific event source ledgers and dated performance records
 
-Every link below opens the actual existing GitHub file. The web/app source remains in its live file path to prevent broken builds.
+All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
 
-| Existing canonical source file | Type | Git blob fingerprint |
+| Actual GitHub source | Type | Version SHA |
 |---|---|---|
 | [`docs/asset-index/2026-11-05-mavado-30k/README.md`](../../docs/asset-index/2026-11-05-mavado-30k/README.md) | md | `392942c6fbbc` |
 
-[Back to CC file room](../README.md)
+[Return to CC file room](../README.md)

@@ -1,17 +1,25 @@
 # Sponsors & Brand Partnerships
 
-**9 source files**. The 14-page Artist Sponsorship PDF is stored in GitHub with a verified 14-page content check. Historical original with/without real-estate sponsor masters remain in Adobe; do not substitute a rebuilt PDF.
+**15 current GitHub sources** · Campaign editions, sponsor packages and original PDF custody
 
-| Actual tracked GitHub file | Type | Git SHA (short) |
+All links point to the original file path in the repo; original source bytes stay intact. The current sponsor source-of-truth is the corrected 15-page PDF and the 12-edition ZIP, not the superseded 14-page draft.
+
+| Actual GitHub source | Type | Version SHA |
 |---|---|---|
-| [`cc-sponsorship-horizons.mjs`](../../cc-sponsorship-horizons.mjs) | mjs | `fd4909cbb947` |
+| [`cc-sponsorship-horizons.mjs`](../../cc-sponsorship-horizons.mjs) | mjs | `847c683c8cb3` |
 | [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) | md | `dd9afb6d7d29` |
+| [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_CORRECTED_FULL_15PAGE_TEXT_2026-11-08.md) | md | `28d12ffe6165` |
+| [`docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md`](../../docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md) | md | `ecd22d7bf504` |
 | [`docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf`](../../docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf) | pdf | `8aba59541417` |
-| [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json) | json | `b3c1d0621ce5` |
-| [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md) | md | `ae820d465f80` |
-| [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json) | json | `13a83c83491e` |
-| [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md) | md | `d4bdbe370b21` |
+| [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json) | json | `4cf1910cf7d3` |
+| [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md) | md | `b6a30bb41139` |
+| [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json) | json | `e9421d1fb484` |
+| [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md) | md | `2dd16d4c58eb` |
 | [`docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf`](../../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) | pdf | `e00cdb26d3da` |
+| [`docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf`](../../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf) | pdf | `0899ecec6c6a` |
+| [`docs/sponsorship/editions/CC_12_CORRECTED_EDITIONS_SHA256.txt`](../../docs/sponsorship/editions/CC_12_CORRECTED_EDITIONS_SHA256.txt) | txt | `b06fcfab5091` |
+| [`docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip`](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_12_CORRECTED_EDITIONS_AND_MASTER_2026-11-08.zip) | zip | `27d8f0a20c73` |
 | [`docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt`](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt) | txt | `0cde49132748` |
+| [`docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt`](../../docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt) | txt | `66b63ae513e0` |
 
 [Return to CC file room](../README.md)
