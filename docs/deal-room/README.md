@@ -26,6 +26,6 @@
 - CJ's Punch / The Real Jerk historical contributions have not been proven paid or renewed for a new event. A 300-VIP plan needs a new dated scope/quote and venue approval.
 - No relevant paid event invoices or new sponsor cash receipts were verified in the records sampled for this routing project. Do not invent them or describe historical budget estimates as invoices.
 - Prior OneLive outbound proposal was expressly retracted. **Do not re-send it**, publish its signatures or imply its rights transfer to a new promoter.
-- CC's **no-automatic-contact** rule remains absolute.
+- November 9 owner consent **supersedes the blanket no-contact rule only for evidence-checked, non-duplicative third-party outreach and lawful eligible applications**. OneLive remains retracted/excluded; Phoenix Voyages remains stopped. No auto signature, funds, confidential document release or commercial commitment.
 
 **No external invitations, offers, emails, applications or payments were sent while establishing these rooms.**
