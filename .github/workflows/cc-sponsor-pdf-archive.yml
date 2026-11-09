@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Retrieve exact verified sponsor PDF bytes
+      - name: Retrieve and validate sponsor prospectus PDF
         shell: bash
         run: |
           set -euo pipefail
@@ -23,17 +23,29 @@ jobs:
             --output 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' \
             'https://carnival-careers-os.floot.app/_cdn/static/8ccb205a-14c8-446d-bffb-18c28d341246-CC_Artist_Sponsor_Benefits_2026-11-08.pdf'
           test "$(wc -c < 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf')" -eq 137898
-          echo 'Retrieved hosted PDF checksum:'\n          sha256sum 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf'\n          test "$(pdfinfo 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' | awk '/^Pages:/ { print $2 }')" -eq 14\n          pdftotext 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' - | grep -qi 'ARTIST SUPPORT PARTNER'\n          sha256sum 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' > docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt
-          head -c 4 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' | grep -q '%PDF'
-      - name: Commit source PDF to GitHub
+          python3 -m pip -q install pypdf
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          from pypdf import PdfReader
+          source=Path("docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf")
+          assert source.read_bytes().startswith(b"%PDF")
+          pdf=PdfReader(str(source))
+          assert len(pdf.pages)==14, len(pdf.pages)
+          content=" ".join(p.extract_text() or "" for p in pdf.pages)
+          for text in ["CARNIVAL CAREERS", "ARTIST SUPPORT PARTNER", "C$10,000", "C$30,000", "C$45,000", "NO SURPRISES"]:
+              assert text.lower() in content.lower(), text
+          sha=hashlib.sha256(source.read_bytes()).hexdigest()
+          Path("docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt").write_text(sha+"  "+source.name+"\n")
+          print("Verified 14-page PDF, bytes=",source.stat().st_size,"SHA256=",sha)
+          PY
+      - name: Commit verified sponsor PDF to GitHub
         shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt
           if ! git diff --cached --quiet; then
-            git commit -m 'CC: archive exact 14-page artist sponsorship benefits PDF, SHA-256 verified'
+            git commit -m 'CC: preserve verified artist sponsor prospectus PDF (14 pages)'
             git push origin HEAD:main
-          else
-            echo 'PDF already exists with identical content'
           fi
