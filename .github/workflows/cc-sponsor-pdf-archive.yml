@@ -1,0 +1,39 @@
+name: CC Artist Sponsor PDF — GitHub custody
+on:
+  push:
+    paths:
+      - .github/workflows/cc-sponsor-pdf-archive.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive-pdf:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Retrieve exact verified sponsor PDF bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/sponsorship/editions
+          curl --retry 2 --retry-all-errors --fail --location --max-time 90 \
+            --output 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' \
+            'https://carnival-careers-os.floot.app/_cdn/static/8ccb205a-14c8-446d-bffb-18c28d341246-CC_Artist_Sponsor_Benefits_2026-11-08.pdf'
+          test "$(wc -c < 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf')" -eq 137898
+          echo 'fe0737157cc3a2bcdff95dfada2a6fc1050610bc59030e39cdded9859491de09  docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' | sha256sum -c -
+          head -c 4 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf' | grep -q '%PDF'
+      - name: Commit source PDF to GitHub
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf'
+          if ! git diff --cached --quiet; then
+            git commit -m 'CC: archive exact 14-page artist sponsorship benefits PDF, SHA-256 verified'
+            git push origin HEAD:main
+          else
+            echo 'PDF already exists with identical content'
+          fi
