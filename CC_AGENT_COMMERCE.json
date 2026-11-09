@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "name": "Carnival Careers CC Universe",
   "status": "public discovery only; nonbinding",
   "issuer": {
@@ -134,12 +134,16 @@
       "target_profit_not_guaranteed": 250000
     },
     {
-      "concept": "October 2026 historical global property scenario",
-      "as_of": "2026-10-28",
+      "concept": "Current global property working pilot — 38 modeled homes",
+      "as_of": "2026-11-08",
       "assets_verified": false,
       "currency": "CAD",
-      "modeled_project_total": 12025418,
-      "conditional_stabilized_monthly_surplus": 11373
+      "modeled_project_total": 10231872,
+      "modeled_units": 38,
+      "monthly_noi_verified": false,
+      "cash_flow_status": "NOT VERIFIED — lender underwriting, vacancy, lawful tenant-owner occupancy, financing, current rent rolls and NOI remain outstanding",
+      "model_source": "docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json",
+      "separate_from": "Toronto CC-CAPITAL65 (Pembroke/Tournament/Euclid/VicTowns)"
     }
   ],
   "inbound_qualification": {
@@ -217,7 +221,7 @@
     "no_automated_outreach": true,
     "promoter_fee_not_sponsor_receipts": true
   },
-  "version": "2026-11-08-canonical-master",
+  "version": "2026-11-09-property-reconciled",
   "canonical_original_pdfs": {
     "governing_manifest": "docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json",
     "storage": "Adobe CC canonical assets verified; GitHub has identifiers/hashes only",
@@ -243,5 +247,18 @@
     "HGTV": "pitch not commissioned",
     "stage_rights": "no future events booked",
     "auto_contact": false
+  },
+  "current_global_property": {
+    "version": "CC-GLOBAL-OPT-2026-11-08",
+    "status": "working-not-verified",
+    "working_all_in_cad": 10231872,
+    "modeled_units": 38,
+    "tenant_owner_households": 6,
+    "monthly_housing_payment_target_cad": 800,
+    "sammon_conditional_all_in_cad": 9022984,
+    "sammon_conditional_units": 40,
+    "sammon_cash_flow": "unknown",
+    "property_inventory_and_rent_rolls": "unverified",
+    "model_source": "/cc-global-property-current.json"
   }
 }
