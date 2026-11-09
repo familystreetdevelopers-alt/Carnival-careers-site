@@ -1,10 +1,10 @@
 {
   "version": "CC-UNIVERSE-GITHUB-CATALOG-2026-11-08",
-  "snapshot_commit_sha": "7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a",
+  "snapshot_commit_sha": "72bc7a00ed7bced6267fe8adaf94fdf75491f0b9",
   "generated_date": "2026-11-08",
   "repository": "familystreetdevelopers-alt/Carnival-careers-site",
   "repository_is_public": true,
-  "source_file_count": 120,
+  "source_file_count": 124,
   "department_count": 16,
   "generated_catalog_files_excluded": true,
   "departments": [
@@ -40,7 +40,7 @@
       "id": "04",
       "name": "Sponsors & Brand Partnerships",
       "path": "CC_UNIVERSE/04-SPONSORSHIPS-PARTNERS/README.md",
-      "count": 6,
+      "count": 9,
       "description": "Campaign editions, sponsor packages and original PDF custody"
     },
     {
@@ -96,7 +96,7 @@
       "id": "12",
       "name": "Operating Systems & Automations",
       "path": "CC_UNIVERSE/12-OPERATIONS-AUTOMATION/README.md",
-      "count": 7,
+      "count": 8,
       "description": "Business workflows, intake agents and automated processes"
     },
     {
@@ -147,6 +147,13 @@
       "path": ".github/workflows/cc-apply-now.yml",
       "bytes": 1388,
       "git_blob_sha": "bf906637df976a09d886c88804e7de046c8db648",
+      "department": "12",
+      "type": "yml"
+    },
+    {
+      "path": ".github/workflows/cc-sponsor-pdf-archive.yml",
+      "bytes": 2599,
+      "git_blob_sha": "a278e7514e129c1d1bfa0c8cacb373ebb8767bbc",
       "department": "12",
       "type": "yml"
     },
@@ -466,6 +473,13 @@
       "type": "csv"
     },
     {
+      "path": "docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md",
+      "bytes": 33240,
+      "git_blob_sha": "97c517cc1c0141a9f933b74f22538db7c2d6acda",
+      "department": "04",
+      "type": "md"
+    },
+    {
       "path": "docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf",
       "bytes": 7913658,
       "git_blob_sha": "8aba59541417c5cfda26c5d350a4706921903b47",
@@ -499,6 +513,20 @@
       "git_blob_sha": "d4bdbe370b213879fb452b7e0993b15072e4f084",
       "department": "04",
       "type": "md"
+    },
+    {
+      "path": "docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf",
+      "bytes": 137898,
+      "git_blob_sha": "e00cdb26d3da05daea3e297b5775ae30ac8a333d",
+      "department": "04",
+      "type": "pdf"
+    },
+    {
+      "path": "docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt",
+      "bytes": 142,
+      "git_blob_sha": "0cde491327481521eba01c36f813b33199f4dc58",
+      "department": "04",
+      "type": "txt"
     },
     {
       "path": "driver-data-income.html",
@@ -962,5 +990,6 @@
       "department": "10",
       "type": "json"
     }
-  ]
+  ],
+  "source_snapshot_commit_sha": "72bc7a00ed7bced6267fe8adaf94fdf75491f0b9"
 }

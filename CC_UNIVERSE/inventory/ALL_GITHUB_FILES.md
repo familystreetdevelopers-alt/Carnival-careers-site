@@ -1,6 +1,6 @@
-# All 120 Verified CC GitHub Source Files
+# All 124 Verified CC GitHub Source Files
 
-Snapshot commit `7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a`; each name below points to its actual tracked file. New department control files are in `CC_UNIVERSE/` and are not counted as original source assets.
+Snapshot commit `72bc7a00ed7bced6267fe8adaf94fdf75491f0b9`; each name links to the real file. The navigation/control files in CC_UNIVERSE/ are excluded from source snapshot.
 
 ## Executive Control & Master Records (3)
 
@@ -34,14 +34,17 @@ Snapshot commit `7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a`; each name below poin
 - [`music-mobile-responsive.mjs`](../../music-mobile-responsive.mjs) · 16,827 bytes · git `849283311bef`
 - [`surgical-music-2026.mjs`](../../surgical-music-2026.mjs) · 7,464 bytes · git `3238d799d0af`
 
-## Sponsors & Brand Partnerships (6)
+## Sponsors & Brand Partnerships (9)
 
 - [`cc-sponsorship-horizons.mjs`](../../cc-sponsorship-horizons.mjs) · 4,764 bytes · git `fd4909cbb947`
+- [`docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md`](../../docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) · 33,240 bytes · git `97c517cc1c01`
 - [`docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf`](../../docs/sponsorship/CC_Mavado_Friends_Super_Patch_Minimal_Original_Edit.pdf) · 7,913,658 bytes · git `8aba59541417`
 - [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json) · 6,936 bytes · git `b3c1d0621ce5`
 - [`docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md`](../../docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md) · 3,569 bytes · git `ae820d465f80`
 - [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json) · 3,472 bytes · git `13a83c83491e`
 - [`docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md`](../../docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.md) · 3,184 bytes · git `d4bdbe370b21`
+- [`docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf`](../../docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) · 137,898 bytes · git `e00cdb26d3da`
+- [`docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt`](../../docs/sponsorship/editions/CC_ARTIST_SPONSOR_PROSPECTUS_SHA256.txt) · 142 bytes · git `0cde49132748`
 
 ## Real Estate, Development & Housing Assets (32)
 
@@ -140,11 +143,12 @@ Snapshot commit `7f5fbebd6bdc13a648c5b0fe3cf6c255c042fd1a`; each name below poin
 - [`rights-recovery.html`](../../rights-recovery.html) · 27,143 bytes · git `f9ed56a1c119`
 - [`stewardship.html`](../../stewardship.html) · 10,003 bytes · git `32ee8e346191`
 
-## Operating Systems & Automations (7)
+## Operating Systems & Automations (8)
 
 - [`.github/workflows/cc-application-browser.yml`](../../.github/workflows/cc-application-browser.yml) · 1,036 bytes · git `a58410c1fdec`
 - [`.github/workflows/cc-application-intake.yml`](../../.github/workflows/cc-application-intake.yml) · 2,566 bytes · git `836152d54aa2`
 - [`.github/workflows/cc-apply-now.yml`](../../.github/workflows/cc-apply-now.yml) · 1,388 bytes · git `bf906637df97`
+- [`.github/workflows/cc-sponsor-pdf-archive.yml`](../../.github/workflows/cc-sponsor-pdf-archive.yml) · 2,599 bytes · git `a278e7514e12`
 - [`automation/application-engine-v2.cjs`](../../automation/application-engine-v2.cjs) · 5,228 bytes · git `4fb0134c4225`
 - [`automation/prepare-application.cjs`](../../automation/prepare-application.cjs) · 2,677 bytes · git `2d74894e088a`
 - [`cc-network-connect.mjs`](../../cc-network-connect.mjs) · 23,127 bytes · git `bfbb88bc2933`

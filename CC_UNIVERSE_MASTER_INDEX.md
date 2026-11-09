@@ -4,6 +4,9 @@
 **Repository:** `familystreetdevelopers-alt/Carnival-careers-site` (`main`)  
 **Public repository:** yes — do **not** commit confidential financial, household, mortgage, ID, medical, signed-agreement, or private counterparty source documents here. Those require a separately access-controlled **private GitHub repository**. No private repository is currently connected.
 
+## Current sponsor-facing PDF
+- [Artist Sponsorship Benefits - complete 14-page PDF](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) (proposed, itemized C$10K/C$30K/C$45K and larger programs; actual GitHub binary validated). [Editable text master](docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md).
+
 ## Current source of truth
 - [Current global-property control](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md)
 - [Machine-readable property model](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json)

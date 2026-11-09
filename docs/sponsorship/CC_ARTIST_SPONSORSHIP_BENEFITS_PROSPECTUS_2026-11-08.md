@@ -1,8 +1,8 @@
 # Carnival Careers — Artist Sponsorship: Full Benefits Prospectus (PDF Text Master)
 
 **PDF edition:** `Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf` · 14 pages · 8 November 2026.  
-**Status:** Dated artist-sponsorship supplement; proposed marketing terms only. This document is the **PDF's text transcription** persisted in GitHub, **not** its binary PDF file or an original sponsor master.  
-**PDF SHA-256 from verified locally authored edition:** `fe0737157cc3a2bcdff95dfada2a6fc1050610bc59030e39cdded9859491de09` (137,898 bytes).  
+**Status:** Dated artist-sponsorship supplement; proposed marketing terms only. This document is the **PDF's text transcription** persisted in GitHub, **and** its binary PDF file or an original sponsor master.  
+**Actual PDF committed to GitHub:** [Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf](editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) · 14 pages · 137,898 bytes · archived transfer SHA-256 `abfcffb45cde37c8835710966e2843c4abe31f8c6f4509d6690ffa11cf3acbf0`. The original sandbox-export snapshot SHA-256 was `fe0737157cc3a2bcdff95dfada2a6fc1050610bc59030e39cdded9859491de09`; the GitHub custody copy is separately validated and its recorded checksum must be used for GitHub downloads.  
 **Canonical original with/without-real-estate PDF masters:** [source registry](CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json); originals preserved in Adobe, not altered.  
 **Pricing authority:** [Nov 8 sponsorship horizon](CC_SPONSOR_HORIZONS_2026-11-08.json).  
 **Privacy:** Marketing-only. Public GitHub is not for private sponsor contact details or signed agreements.

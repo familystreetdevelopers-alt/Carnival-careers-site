@@ -4,6 +4,11 @@
 
 > **Do not invent a generic replacement.** The two definitive original Carnival Careers PDF masters are stored as actual bytes in the connected Adobe Creative Cloud (`CarnivalCareers/CanonicalMasters`), and their SHA-256 hashes, asset IDs and recovery instructions are permanently registered in GitHub.
 
+## Current sponsor benefits - complete PDF (14 pages)
+
+- [Artist Sponsorship Benefits: Full Prospectus (actual PDF in GitHub)](docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Benefits_Full_Prospectus_2026-11-08.pdf) - proposed C$10K/C$30K/C$45K, strategic multi-city offers, exact digital deliverables, rights approval, milestone payments, reports, sponsor order schedule.
+- [Full text source](docs/sponsorship/CC_ARTIST_SPONSORSHIP_BENEFITS_PROSPECTUS_2026-11-08.md) - editable/readable transcript; archived PDF separately validated by 14-page content check.
+
 ## Canonical document authority
 
 - **[Original PDF master registry — SOURCE OF TRUTH](docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json)**
