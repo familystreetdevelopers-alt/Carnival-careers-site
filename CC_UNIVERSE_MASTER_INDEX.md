@@ -1,4 +1,13 @@
 > **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — Canonical GitHub Master Index
+
+## Two recipient-specific CC arena deal rooms — November 9, 2026
+
+- [Existing booked-arena promoter: paid opening-slot proposal](docs/deal-room/01_EXISTING_ARENA_PROMOTER_OPENING_SLOT_PACK_2026-11-09.md). CC proposes to pay the authorized event partner in three earned increments: **at Hopeton's authorized door admission; when CC ORIGINAL MUSIC is on the actual show audio lineup; after Hopeton finishes his last song**. No transfer of historical rights.
+- [Own future CC arena show: production / co-promoter partnership](docs/deal-room/02_FUTURE_CC_ARENA_PRODUCTION_PARTNER_PACK_2026-11-09.md). Separate costs, tickets, vendor rights, operating obligations and actual contract evidence.
+- [Controlling who-gets-what document release matrix](docs/deal-room/CC_RECIPIENT_INFORMATION_RELEASE_MATRIX_2026-11-09.md).
+- [Historical signed vs conditional vs unverified invoice evidence register](docs/deal-room/CC_EXISTING_EVIDENCE_VERIFICATION_REGISTER_2026-11-09.md). Previous source/signature records do not convey rights to a new arena event.
+- [Deal-room navigation and security gates](docs/deal-room/README.md). Confidential documents are never filed as plaintext in the public website repository. **No automatic external contact.**
+
 **Effective:** 8 November 2026  
 **Permanent storage decision:** **GitHub only.** ChatGPT Library is **NOT** a master, archive, output, sync destination, or project completion gate.  
 **Repository:** `familystreetdevelopers-alt/Carnival-careers-site` (`main`)  
