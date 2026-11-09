@@ -1,0 +1,52 @@
+name: CC Artist Sponsor — Corrected 3-Milestone PDF Custody
+on:
+  push:
+    paths:
+      - .github/workflows/cc-sponsor-corrected-pdf-archive.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  archive-corrected:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Retrieve and verify corrected prospectus
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p docs/sponsorship/editions
+          curl --retry 3 --retry-all-errors --fail --location --max-time 90 --output 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf' \
+            'https://carnival-careers-os.floot.app/_cdn/static/3b31f17a-311e-4973-bd8d-770e46f63e75-CC_Artist_Sponsor_3_Milestones_CORRECTED_2026-11-08.pdf'
+          test "$(wc -c < 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf')" -eq 136811
+          python3 -m pip -q install pypdf
+          python3 - <<'PY'
+          from pypdf import PdfReader
+          from pathlib import Path
+          import hashlib
+          p=Path('docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf')
+          assert p.read_bytes().startswith(b'%PDF')
+          pdf=PdfReader(str(p))
+          assert len(pdf.pages)==15
+          t=' '.join(x.extract_text() or '' for x in pdf.pages).lower()
+          for kw in ['at the door','original cc music','hopeton','last song','three increments']:
+              assert kw in t, kw
+          assert 'the historic three x c$3,000 c$9,000 promoter counteroffer' not in t
+          h=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path('docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt').write_text(h+'  '+p.name+'\n')
+          print('Verified corrected PDF:',len(pdf.pages),'pages;',p.stat().st_size,'bytes; sha256',h)
+          PY
+      - name: Commit signed-off source edition (not a signed contract)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add 'docs/sponsorship/editions/Carnival_Careers_Artist_Sponsorship_Full_Prospectus_CORRECTED_3_Milestones_2026-11-08.pdf' docs/sponsorship/editions/CC_CORRECTED_EVENT_PARTNER_THREE_MILESTONE_PROSPECTUS_SHA256.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'CC: archive corrected 15-page artist sponsor PDF with exact event-partner 3 payment gates'
+            git push origin HEAD:main
+          fi
