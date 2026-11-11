@@ -1,9 +1,13 @@
-# CC Supply — Product listings
-Three prepared designs are available as 8.5×11-inch sheets with **20 circles/sheet**, 6×4-inch sheets with 6 circles/sheet, and individual 2×2 circular print PNG.
-- **Sealed With Care | Delivery Packaging Seals**. 'SEALED WITH CARE — READY FOR DELIVERY'. Deep teal + mint. For the *outside* of takeaway bags and boxes. Suggested: 10 sheets USD 64.95; 5 sheets USD 39.95, subject to live base costs and shipping.
-- **Thank You for Ordering | Local Business Seals**. 'THANK YOU FOR ORDERING — SUPPORT LOCAL'. Gold + coral. For external customer-order packaging. Same test price.
-- **Freshly Packed | Order Packaging Seals**. 'FRESHLY PACKED — MADE WITH CARE'. Coral + cream. For external takeaway packaging. Same test price.
+# CC Supply — Adjustable Expiry / Best-Before Date Stamp Gun
+**Status: product listing COPY ONLY, not yet live**
 
-Suggested keywords: restaurant packaging; delivery stickers; takeaway seals; café supply; food delivery; local business; packaging labels.
-No stated claim of security-grade tamper evidence or suitability for direct food contact. Supplier cut lines and final costs need preview confirmation.
-Price must exceed current provider charges, shipping responsibility, taxes and any processing fees. No customer orders or earnings have occurred.
+**Name:** Adjustable Handheld Packaging Date Stamp — Set the Date, Press to Print
+**Category:** Food packaging supplies / handheld date coding / retail date stamp.
+**Description:** Save repetitive writing when marking packaged goods. Set the date on a handheld ink stamp and press onto a compatible outer packaging surface. Suitable for small-batch packaging operations where the date is determined independently by the business. Check ink adhesion/legibility for each surface and comply with applicable labeling and food-safety rules. Different models have different adjustable date ranges, character heights, formats and ink compatibility; verify SKU before advertising a specific feature.
+**Primary customers:** bakeries, caterers, local food producers, packaging departments, independent retailers.
+**Supplies for later repeat orders:** replacement ink pads, ink and optionally date labels on a separate compatible label-gun SKU.
+**Price:** No fictional retail price. Quote = approved wholesale product landed cost + shipping/fees + margin. Observed marketplace retail benchmarks range around C$22-C$63 for cheap manual stamps; this is NOT supplier cost.
+**Fulfillment:** Only after an actual dropship provider agreement and approved checkout.
+**Safety:** An arbitrary date is not proof of shelf life, and no business may relabel food misleadingly.
+
+**Suggested 3-step operator path:** authorize no-fee customer checkout, approve qualified dropship supplier, publish test listing. No custom stickers/artwork required.
