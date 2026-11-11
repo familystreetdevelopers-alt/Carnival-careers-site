@@ -1,0 +1,14 @@
+import fs from "node:fs";
+import path from "node:path";
+const root=process.cwd();
+const src=path.join(root,"cc-date-stamp.html");
+const dist=path.join(root,"dist");
+const main=path.join(dist,"index.html");
+if(!fs.existsSync(main))throw new Error("CC site must build first");
+const site=fs.readFileSync(main,"utf8");
+for(const marker of ['id="page-music"',"The mas brings us together."])if(!site.includes(marker))throw new Error("Canonical CC home page verification failed");
+const page=fs.readFileSync(src,"utf8");
+for(const marker of ["Set the date.","Walmart Canada","Retailer links are currently ordinary shopping links"])if(!page.includes(marker))throw new Error("Date coder product page missing "+marker);
+fs.writeFileSync(path.join(dist,"cc-date-stamp.html"),page);
+if(fs.readFileSync(main,"utf8")!==site)throw new Error("Home page copy changed");
+console.log("CC_DATE_STAMP_PAGE_BUILT_NO_HOME_CHANGES");
