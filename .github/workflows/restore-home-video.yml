@@ -1,0 +1,46 @@
+name: Restore Carnival Careers homepage video
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/restore-home-video.yml'
+permissions:
+  contents: write
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download original Adobe Creative Cloud video
+        run: |
+          set -euo pipefail
+          mkdir -p assets/video
+          curl --fail --location --retry 4 --retry-all-errors --max-time 300 \
+            'https://at.adobe.com/XdmZIJV6Rec3IRdB' -o /tmp/carnival-careers-original.mp4
+          test "$(stat -c %s /tmp/carnival-careers-original.mp4)" -gt 100000000
+          echo "Original size: $(stat -c %s /tmp/carnival-careers-original.mp4)"
+      - name: Keep original picture, optimize audio and MP4 container for GitHub
+        run: |
+          set -euo pipefail
+          ffmpeg -hide_banner -loglevel error -y -i /tmp/carnival-careers-original.mp4 \
+            -map 0:v:0 -map 0:a? -c:v copy -c:a aac -b:a 96k \
+            -movflags +faststart assets/video/carnival-careers.mp4
+          if [ "$(stat -c %s assets/video/carnival-careers.mp4)" -ge 99000000 ]; then
+            ffmpeg -hide_banner -loglevel error -y -i /tmp/carnival-careers-original.mp4 \
+              -map 0:v:0 -map 0:a? -c:v libx264 -preset fast -crf 25 \
+              -c:a aac -b:a 128k -movflags +faststart \
+              assets/video/carnival-careers-smaller.mp4
+            mv assets/video/carnival-careers-smaller.mp4 assets/video/carnival-careers.mp4
+          fi
+          test "$(stat -c %s assets/video/carnival-careers.mp4)" -lt 99000000
+          ffprobe -v error -show_entries format=duration -of default=nw=1 assets/video/carnival-careers.mp4
+      - name: Commit exact existing homepage video path
+        run: |
+          set -euo pipefail
+          git config user.name 'Carnival Careers media restore'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f assets/video/carnival-careers.mp4
+          git commit -m 'Restore original Carnival Careers homepage video'
+          git push
