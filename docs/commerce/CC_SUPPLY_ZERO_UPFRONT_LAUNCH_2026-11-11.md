@@ -1,24 +1,26 @@
-# CC Supply — Handheld Adjustable Date-Stamp Gun
-**Product selection: adjustable handheld date-coding stamp gun.**
-**Status: product researched, sales channel not connected, no stock ordered, not published or selling.**
-**This replaces the custom packaging sticker idea.**
+# CC Supply — $0 Upfront Date-Stamp Gun Affiliate Sales
 
-## Core product
-A portable date-coding stamp for outside of suitable packaging. The user sets the required date and presses the stamp. A hand labeler that prints a date onto an adhesive label is a distinct optional variant. Most inexpensive products require **manual adjustment of date**; they do **not** change the expiry date automatically.
-Target buyers: independent bakeries, food producers, commercial kitchens, caterers and packaging sellers.
-Accessories: replacement ink pads; optional compliant labels for labeler variant.
+**Status:** The date-stamp product page is built and preview-deployed at /cc-date-stamp.html; retailer checkout link is working at source but **CC earns no commission until its tracked affiliate link is installed**.
+**Chosen business model:** Walmart Canada affiliate via Rakuten Advertising. Supplier/retailer handles consumer checkout, inventory, payment, shipping and returns; CC earns a commission on approved referred orders. There is no inventory financing, supplier invoice or order-routing software to operate.
+**Important:** This is affiliate referral revenue, not a seller-controlled $20 retail markup or a stocked dropshipping operation.
+**Product retail link:** https://www.walmart.ca/en/ip/Portable-Handheld-Coding-Machine-Manual-Date-Stamp-Printer-Ink-Printing-Food-Plastic-Bag-Bottle-Metal-Cans-Paper-Production-Expiry-Print/0Y14MH4IEI6W
+**Product information:** Flyflise manual handheld coder, 2.5 mm and 4 mm variants, Walmart Canada listings; stock and price change.
 
-## Supplier / market references — retail benchmarks, NOT approved wholesale dropship suppliers
-- https://www.walmart.ca/en/ip/Portable-Handheld-Coding-Machine-Manual-Date-Stamp-Printer-Ink-Printing-Food-Plastic-Bag-Bottle-Metal-Cans-Paper-Production-Expiry-Print/0Y14MH4IEI6W — example adjustable handheld coder CAD 31.01 advertised. No supplier relationship or fulfillment agreement.
-- https://www.walmart.ca/en/ip/Handheld-Portable-Date-Stamp-Printer-Quick-Drying-Ink-Date-Printing-Coding-Machine-for-Food-Plastic-Bag-Bottle-Metal-Cans-Paper/7A07JIEO2BNL — CAD 22.00 example. Retail-only evidence.
-- https://bosspackaging.com/product-category/packaging/labels-tags/pricing-date-coders-and-labels/ — date-labelers and replacement supplies.
-- https://www.staples.ca/products/2448171-en-motex-6600lace-labeling-gun-double-line-2-letter-month-date-bilingual-10-x-5-x-1 — C$179.99 bilingual hand labeler, separate category.
-- Canadian food date-marking standards: https://inspection.canada.ca/en/food-labels/labelling/industry/date-markings-and-storage-instructions
+## Affiliate onboarding
+Walmart Canada officially directs prospective affiliates to Rakuten: https://www.walmart.ca/en/cp/affiliate-program/6000208941216
+Existing CC Gmail contains Sept 2026 Rakuten Publisher Support case #407188 and a login-activation message sent Sept 2, 2026; this is evidence of initiating onboarding, **not proof of active publisher approval or accepted Walmart advertiser application**. Never reuse an expired activation URL.
+Rakuten publisher application: https://publisher.rakutenadvertising.com/register
 
-## Zero-upfront path / remaining external steps
-1. Obtain an approved supplier who supports pay-after-customer-order dropship shipping, returns, stock status and order/tracking API. Retailer checkout listings alone are not an automated wholesaler agreement. No supplier has yet been contracted.
-2. Authorize a checkout that can collect a sale without an upfront subscription, then link to supplier fulfillments; make no cost/brand/source claims absent verified invoice. The connected Shopify account previously declined permission.
-3. Publish the one product after live cost, seller authorization, and dispatch workflow are tested. Pricing must exceed supplier cost + freight + merchant fees + taxes + returns allowance.
+## Exactly three human authorization steps
+1. Complete or resume Rakuten publisher registration with your own login, verified payout and tax details. 
+2. Apply to Walmart Canada advertiser inside Rakuten; obtain its approved specific product tracking/deep link.
+3. Send the exact tracked purchase URL in chat. The prepared /cc-date-stamp.html page already uses the ordinary retailer link; replace it with the verified affiliate deep link, keeping all other site content unchanged.
 
-Avoid claims that printing a new date extends a food's shelf life. The date must be accurate and compliant for its actual purpose. In Canada, 'best before' and 'expiration date' are legally distinct terms; changing dates misleadingly is prohibited. Do not advertise "fully automatic expiry date changes" for a manually adjusted gun.
-No payments accepted, site modifications, outbound emails or purchases initiated.
+## Deployment and safety
+Standalone source: cc-date-stamp.html
+Build publishing step: cc-date-stamp-publish.mjs, invoked from package.json.
+Do not modify Home. Verify build retains canonical markers and the page is included in dist.
+The page currently identifies its retailer links as **non-affiliate**. After active tracking install, update the footnote to a truthful affiliate disclosure.
+All dates must be truthful. No relabeling of expired food. Official CFIA: https://inspection.canada.ca/en/food-labels/labelling/industry/date-markings-and-storage-instructions
+
+No claims of purchase, commission, supplier relationship or earned revenue until reports confirm a qualifying completed sale.
