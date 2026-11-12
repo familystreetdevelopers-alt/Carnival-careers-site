@@ -25,6 +25,14 @@ jobs:
             'https://at.adobe.com/rvX7lLjkKyeBdDvI' -o /tmp/carnival-careers-original.mp4
           test "$(stat -c %s /tmp/carnival-careers-original.mp4)" -gt 100000000
           echo "Original size: $(stat -c %s /tmp/carnival-careers-original.mp4)"
+      - name: Restore original film poster for Home header fallback
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          curl --fail --location --retry 3 --max-time 120 \
+            'https://at.adobe.com/eTxuRNPBy1hYXiG9' -o assets/images/home-poster.jpg
+          test "$(stat -c %s assets/images/home-poster.jpg)" -gt 10000
+          file assets/images/home-poster.jpg | grep -q 'JPEG image data'
       - name: Keep original picture, optimize audio and MP4 container for GitHub
         run: |
           set -euo pipefail
@@ -45,6 +53,6 @@ jobs:
           set -euo pipefail
           git config user.name 'Carnival Careers media restore'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -f assets/video/carnival-careers.mp4
+          git add -f assets/video/carnival-careers.mp4 assets/images/home-poster.jpg
           git commit -m 'Restore original Carnival Careers homepage video'
           git push
