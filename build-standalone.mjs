@@ -3036,12 +3036,24 @@ if (!fs.existsSync(homeVideoSource)) throw new Error("Original Home video missin
 fs.mkdirSync(path.dirname(homeVideoDest), { recursive: true });
 fs.copyFileSync(homeVideoSource, homeVideoDest);
 console.log("CC_HOME_VIDEO_COPIED", fs.statSync(homeVideoDest).size);
+// The original film poster is also part of the Home header, so browsers that
+// block autoplay never show a blank hero while video waits for a user gesture.
+const homePosterSource = path.resolve("assets/images/home-poster.jpg");
+const homePosterDest = path.join(dist, "assets/images/home-poster.jpg");
+if (!fs.existsSync(homePosterSource)) throw new Error("Home hero poster missing from source");
+fs.mkdirSync(path.dirname(homePosterDest), { recursive: true });
+fs.copyFileSync(homePosterSource, homePosterDest);
+console.log("CC_HOME_VIDEO_POSTER_COPIED", fs.statSync(homePosterDest).size);
 
 // Restore the original film as the Home hero background, using a fresh URL
 // so browsers that cached the previously missing file do not keep the 404.
 renderedHtml = renderedHtml.replaceAll(
   "assets/video/carnival-careers.mp4",
   "assets/video/carnival-careers.mp4?home-hero=restored-20261111"
+);
+renderedHtml = renderedHtml.replaceAll(
+  "assets/images/home-poster.jpg",
+  "assets/images/home-poster.jpg?home-hero=restored-20261111"
 );
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
