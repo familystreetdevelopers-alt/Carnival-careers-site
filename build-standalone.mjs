@@ -3037,6 +3037,12 @@ fs.mkdirSync(path.dirname(homeVideoDest), { recursive: true });
 fs.copyFileSync(homeVideoSource, homeVideoDest);
 console.log("CC_HOME_VIDEO_COPIED", fs.statSync(homeVideoDest).size);
 
+// Restore the original film as the Home hero background, using a fresh URL
+// so browsers that cached the previously missing file do not keep the 404.
+renderedHtml = renderedHtml.replaceAll(
+  "assets/video/carnival-careers.mp4",
+  "assets/video/carnival-careers.mp4?home-hero=restored-20261111"
+);
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
