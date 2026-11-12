@@ -1,0 +1,47 @@
+name: Recover original embedded Home header loop
+on:
+  push:
+    paths:
+      - '.github/workflows/recover-original-home-hero.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Recover exact 2026 original header clip and poster
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64,hashlib,pathlib,re,urllib.request
+          url="https://raw.githubusercontent.com/familystreetdevelopers-alt/Carnival-careers-site/4372be5ff3/index.html"
+          with urllib.request.urlopen(url,timeout=60) as resp:
+              html=resp.read().decode("utf-8")
+          home=html[html.index('id="page-home"'):]
+          video=re.search(r'<video\b[^>]*\bid="homeVideo"[^>]*>\s*<source\s+src="(data:video/mp4;base64,[^"]+)"',home)
+          poster=re.search(r'<video\b[^>]*\bid="homeVideo"[^>]*\bposter="(data:image/webp;base64,[^"]+)"',home)
+          assert video is not None and poster is not None, "Original inline header media not found"
+          assets=[
+            ("assets/video/carnival-careers-home-original.mp4",video.group(1),1411485,"f44878ec1a691f514a3d4f26dd273cd931b63a309dc309b613f1873f651b3036"),
+            ("assets/images/carnival-careers-home-original.webp",poster.group(1),14448,"39ea3482193b286a333d887d9b99e83be8be8b9c94ed020b0dc602e58526a279"),
+          ]
+          for name,uri,length,sha in assets:
+              data=base64.b64decode(uri.split(",",1)[1],validate=True)
+              assert len(data)==length and hashlib.sha256(data).hexdigest()==sha, name+" mismatch"
+              path=pathlib.Path(name);path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+              print("RECOVERED",name,len(data))
+          PY
+      - name: Commit exact original Home header media
+        run: |
+          set -euo pipefail
+          git config user.name "Carnival Careers Website Restore"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f assets/video/carnival-careers-home-original.mp4 assets/images/carnival-careers-home-original.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore original inline Home hero loop and poster from 2026 archived site"
+            git push origin HEAD:main
+          fi
