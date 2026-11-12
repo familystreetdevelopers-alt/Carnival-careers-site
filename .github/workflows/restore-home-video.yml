@@ -13,7 +13,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Install video processing dependency\n        run: |\n          sudo apt-get update -qq\n          sudo apt-get install -y -qq ffmpeg\n      - name: Download original Adobe Creative Cloud video
+      - name: Install video processing dependency
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Download original Adobe Creative Cloud video
         run: |
           set -euo pipefail
           mkdir -p assets/video
