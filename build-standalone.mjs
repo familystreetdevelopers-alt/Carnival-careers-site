@@ -668,7 +668,7 @@ const trailerExperience = `
     }
     const player=modal.querySelector("#cc-trailer-video");
     const closeBtn=modal.querySelector("#cc-trailer-close");
-    const source=hero.querySelector("source")?.getAttribute("src")||hero.getAttribute("src")||hero.currentSrc;
+    const source="assets/video/carnival-careers.mp4"; // full film stays separate from original inline Home header loop
     let heroWasPlaying=false;
     const close=()=>{
       player.pause();
@@ -3055,6 +3055,27 @@ renderedHtml = renderedHtml.replaceAll(
   "assets/images/home-poster.jpg",
   "assets/images/home-poster.jpg?home-hero=restored-20261111"
 );
+// Restore the EXACT original September 2026 Home header media rather than
+// substituting the separate full-length Carnival Careers film. Both the short
+// MP4 loop and its matching WebP poster were recovered by SHA-256 from the
+// historical canonical Home markup.
+const originalHeaderLoopPath = path.resolve("assets/video/carnival-careers-home-original.mp4");
+const originalHeaderPosterPath = path.resolve("assets/images/carnival-careers-home-original.webp");
+if (!fs.existsSync(originalHeaderLoopPath) || !fs.existsSync(originalHeaderPosterPath))
+  throw new Error("Original embedded Home header media is missing");
+const originalHeaderLoop = "data:video/mp4;base64," + fs.readFileSync(originalHeaderLoopPath).toString("base64");
+const originalHeaderPoster = "data:image/webp;base64," + fs.readFileSync(originalHeaderPosterPath).toString("base64");
+const homeVideoHtmlPattern = /<video\\b[^>]*\\bid="homeVideo"[^>]*>[\\s\\S]*?<\\/video>/i;
+if (!homeVideoHtmlPattern.test(renderedHtml))
+  throw new Error("Expected original Home header video slot missing");
+renderedHtml = renderedHtml.replace(homeVideoHtmlPattern, tag =>
+  tag.replace(/\\s+src="[^"]*"/i, "")
+     .replace(/\\s+poster="[^"]*"/i, ` poster="${originalHeaderPoster}"`)
+     .replace(/<source\\b[^>]*\\/?>/i, `<source src="${originalHeaderLoop}" type="video/mp4"/>`)
+);
+console.log("CC_ORIGINAL_HEADER_VIDEO_REEMBEDDED", fs.statSync(originalHeaderLoopPath).size,
+  "poster", fs.statSync(originalHeaderPosterPath).size);
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
