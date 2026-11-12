@@ -3049,32 +3049,18 @@ console.log("CC_HOME_VIDEO_POSTER_COPIED", fs.statSync(homePosterDest).size);
 // so browsers that cached the previously missing file do not keep the 404.
 renderedHtml = renderedHtml.replaceAll(
   "assets/video/carnival-careers.mp4",
-  "assets/video/carnival-careers.mp4?home-hero=restored-20261111"
+  "assets/video/carnival-careers.mp4?home-hero=full-1280x720-20261112"
 );
 renderedHtml = renderedHtml.replaceAll(
   "assets/images/home-poster.jpg",
-  "assets/images/home-poster.jpg?home-hero=restored-20261111"
+  "assets/images/home-poster.jpg?home-hero=full-1280x720-20261112"
 );
-// Restore the EXACT original September 2026 Home header media rather than
-// substituting the separate full-length Carnival Careers film. Both the short
-// MP4 loop and its matching WebP poster were recovered by SHA-256 from the
-// historical canonical Home markup.
-const originalHeaderLoopPath = path.resolve("assets/video/carnival-careers-home-original.mp4");
-const originalHeaderPosterPath = path.resolve("assets/images/carnival-careers-home-original.webp");
-if (!fs.existsSync(originalHeaderLoopPath) || !fs.existsSync(originalHeaderPosterPath))
-  throw new Error("Original embedded Home header media is missing");
-const originalHeaderLoop = "data:video/mp4;base64," + fs.readFileSync(originalHeaderLoopPath).toString("base64");
-const originalHeaderPoster = "data:image/webp;base64," + fs.readFileSync(originalHeaderPosterPath).toString("base64");
-const homeVideoHtmlPattern = /<video\b[^>]*\bid="homeVideo"[^>]*>[\s\S]*?<\/video>/i;
-if (!homeVideoHtmlPattern.test(renderedHtml))
-  throw new Error("Expected original Home header video slot missing");
-renderedHtml = renderedHtml.replace(homeVideoHtmlPattern, tag =>
-  tag.replace(/\s+src="[^"]*"/i, "")
-     .replace(/\s+poster="[^"]*"/i, ` poster="${originalHeaderPoster}"`)
-     .replace(/<source\b[^>]*\/?>/i, `<source src="${originalHeaderLoop}" type="video/mp4"/>`)
-);
-console.log("CC_ORIGINAL_HEADER_VIDEO_REEMBEDDED", fs.statSync(originalHeaderLoopPath).size,
-  "poster", fs.statSync(originalHeaderPosterPath).size);
+// Home hero uses the full-resolution film, never the legacy 320x180 inline preview.
+// The live hero keeps its existing layout, headline, overlay and poster.
+const hdHeroTag = renderedHtml.match(/<video\b[^>]*\bid="homeVideo"[^>]*>[\s\S]*?<\/video>/i)?.[0];
+if (!hdHeroTag || !hdHeroTag.includes('assets/video/carnival-careers.mp4'))
+  throw new Error("Full-resolution Home hero video source is missing");
+console.log("CC_HOME_HEADER_FULL_1280X720_SOURCE", fs.statSync(homeVideoDest).size);
 
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
