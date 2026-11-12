@@ -3065,13 +3065,13 @@ if (!fs.existsSync(originalHeaderLoopPath) || !fs.existsSync(originalHeaderPoste
   throw new Error("Original embedded Home header media is missing");
 const originalHeaderLoop = "data:video/mp4;base64," + fs.readFileSync(originalHeaderLoopPath).toString("base64");
 const originalHeaderPoster = "data:image/webp;base64," + fs.readFileSync(originalHeaderPosterPath).toString("base64");
-const homeVideoHtmlPattern = /<video\\b[^>]*\\bid="homeVideo"[^>]*>[\\s\\S]*?<\\/video>/i;
+const homeVideoHtmlPattern = /<video\b[^>]*\bid="homeVideo"[^>]*>[\s\S]*?<\/video>/i;
 if (!homeVideoHtmlPattern.test(renderedHtml))
   throw new Error("Expected original Home header video slot missing");
 renderedHtml = renderedHtml.replace(homeVideoHtmlPattern, tag =>
-  tag.replace(/\\s+src="[^"]*"/i, "")
-     .replace(/\\s+poster="[^"]*"/i, ` poster="${originalHeaderPoster}"`)
-     .replace(/<source\\b[^>]*\\/?>/i, `<source src="${originalHeaderLoop}" type="video/mp4"/>`)
+  tag.replace(/\s+src="[^"]*"/i, "")
+     .replace(/\s+poster="[^"]*"/i, ` poster="${originalHeaderPoster}"`)
+     .replace(/<source\b[^>]*\/?>/i, `<source src="${originalHeaderLoop}" type="video/mp4"/>`)
 );
 console.log("CC_ORIGINAL_HEADER_VIDEO_REEMBEDDED", fs.statSync(originalHeaderLoopPath).size,
   "poster", fs.statSync(originalHeaderPosterPath).size);
