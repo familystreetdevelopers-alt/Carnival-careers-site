@@ -3029,6 +3029,14 @@ renderedHtml = renderedHtml
  .replaceAll("For Queen to cover the entire Tournament subsidy independently, its annual debt payments and additional reserves would need to fit within the remaining C$67,849. Otherwise the PATH, East Bayfront or other verified portfolio income must supply the difference.","Pembroke has no verified NOI or independently documented Tournament subsidy capacity. Require current rent roll, T12, lender-approved DSCR and mortgage terms before promising property surplus.")
  .replace("current working control. Current named components include 109 Pembroke","illustrative price-only carryover pending income and financing diligence. Current named components include 109 Pembroke");
 
+// Keep the original Carnival Careers Home film alongside the existing video player.
+const homeVideoSource = path.resolve("assets/video/carnival-careers.mp4");
+const homeVideoDest = path.join(dist, "assets/video/carnival-careers.mp4");
+if (!fs.existsSync(homeVideoSource)) throw new Error("Original Home video missing from source");
+fs.mkdirSync(path.dirname(homeVideoDest), { recursive: true });
+fs.copyFileSync(homeVideoSource, homeVideoDest);
+console.log("CC_HOME_VIDEO_COPIED", fs.statSync(homeVideoDest).size);
+
 fs.writeFileSync(path.join(dist, "index.html"), renderedHtml);
 fs.copyFileSync(pressKitPath, path.join(dist, "pet-picks-press.html"));
 fs.copyFileSync(housesPath, path.join(dist, "houses.html"));
