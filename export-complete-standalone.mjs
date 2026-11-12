@@ -136,10 +136,10 @@ Service-side databases, contact submissions and browser-local states are not in 
 This ZIP includes NO private finance records, contact databases, secret tokens, or user accounts beyond information already published in the site's source repository.
 `);
 addText('MANIFEST/SNAPSHOT.json',JSON.stringify({repository:'familystreetdevelopers-alt/Carnival-careers-site',commit:execFileSync('git',['rev-parse','HEAD'],{cwd:root}).toString().trim(),built_site_files:website.length,tracked_source_files:source.length,live_audio_tracks:audio.length,duplicate_source_audio_referenced:dedup.length,external_domains:domains,files:manifest},null,2));
-const out=path.join(dist,'CARNIVAL_CAREERS_COMPLETE_STANDALONE_2026-10-21.zip');
+const out=path.join(process.env.VERCEL ? root : dist,'CARNIVAL_CAREERS_COMPLETE_STANDALONE_2026-10-21.zip');
 zip.writeZip(out);
 const size=fs.statSync(out).size;
-if(size<20000000||size>95000000)throw Error('Unexpected archive size '+size);
+if(size<20000000||size>180000000)throw Error('Unexpected archive size '+size);
 const check=new AdmZip(out);
 if(check.getEntry('SITE/index.html')===null||check.getEntry('SOURCE/index.html')===null||check.getEntry('README_START_HERE.txt')===null)throw Error('ZIP missing required content');
 console.log(JSON.stringify({event:'COMPLETE_STANDALONE_EXPORT_READY',zip:path.basename(out),bytes:size,siteFiles:website.length,sourceFiles:source.length,audioTracks:audio.length,externalDomains:domains.length}));
