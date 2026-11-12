@@ -18,7 +18,7 @@ jobs:
           set -euo pipefail
           mkdir -p assets/video
           curl --fail --location --retry 4 --retry-all-errors --max-time 300 \
-            'https://at.adobe.com/XdmZIJV6Rec3IRdB' -o /tmp/carnival-careers-original.mp4
+            'https://at.adobe.com/rvX7lLjkKyeBdDvI' -o /tmp/carnival-careers-original.mp4
           test "$(stat -c %s /tmp/carnival-careers-original.mp4)" -gt 100000000
           echo "Original size: $(stat -c %s /tmp/carnival-careers-original.mp4)"
       - name: Keep original picture, optimize audio and MP4 container for GitHub
