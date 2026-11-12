@@ -24,6 +24,12 @@ const source=execFileSync('git',['ls-files','-z'],{cwd:root}).toString().split('
 if(source.length<60)throw Error('Source checkout incomplete: '+source.length+' files');
 const dedup=[];
 for(const name of source){
+ if(name==='assets/video/carnival-careers.mp4'){
+  const input=fs.readFileSync(path.join(root,name)),built=fs.readFileSync(path.join(dist,name));
+  if(sha(input)!==sha(built))throw Error('Original homepage video mismatch');
+  dedup.push({source:'SOURCE/'+name,identical_copy:'SITE/'+name,sha256:sha(input)});
+  continue;
+ }
  if(name.startsWith('music-2026/')&&name.endsWith('.mp3')){
   const input=fs.readFileSync(path.join(root,name)),built=fs.readFileSync(path.join(dist,name));
   if(sha(input)!==sha(built))throw Error('Source audio does not match site audio '+name);
@@ -45,12 +51,12 @@ Generated: ${new Date().toISOString()}
 
 CONTENTS
 SITE/       Built website: ALL ${website.length} public files as deployed by current GitHub build.
-SOURCE/     ALL ${source.length} Git tracked original source files, with eight duplicate MP3s stored only once under SITE/music-2026. 
+SOURCE/     ALL ${source.length} Git tracked original source files, with eight duplicate MP3s and the homepage video stored only once under SITE. 
 MANIFEST/   Checksum inventory, page inventory, media map and external-service record.
 START_WEBSITE_WINDOWS.bat   Starts a local webserver on Windows using Python.
 START_WEBSITE_MAC_LINUX.sh Starts a local webserver on Mac/Linux with Python.
 LOCAL_WEBSITE_SERVER.py     Standalone static server, no npm or external network needed for local viewing.
-REBUILD_SOURCE_WINDOWS.bat  Restores the 8 source MP3s from the standalone site and builds from original source.
+REBUILD_SOURCE_WINDOWS.bat  Restores the 8 source MP3s and homepage video from the standalone site and builds from original source.
 REBUILD_SOURCE_MAC_LINUX.sh Same for Mac/Linux.
 
 RUN ON WINDOWS
@@ -100,6 +106,8 @@ python3 LOCAL_WEBSITE_SERVER.py
 addText('REBUILD_SOURCE_WINDOWS.bat',`@echo off
 cd /d "%~dp0"
 xcopy /Y /Q "SITE\\music-2026\\*.mp3" "SOURCE\\music-2026\\" >nul
+if not exist "SOURCE\assets\video" mkdir "SOURCE\assets\video"
+copy /Y "SITE\assets\video\carnival-careers.mp4" "SOURCE\assets\video\carnival-careers.mp4" >nul
 cd SOURCE
 call npm install
 call npm run build
@@ -110,6 +118,8 @@ addText('REBUILD_SOURCE_MAC_LINUX.sh',`#!/usr/bin/env sh
 set -e
 cd "$(dirname "$0")"
 cp SITE/music-2026/*.mp3 SOURCE/music-2026/
+mkdir -p SOURCE/assets/video
+cp SITE/assets/video/carnival-careers.mp4 SOURCE/assets/video/carnival-careers.mp4
 cd SOURCE
 npm install
 npm run build
