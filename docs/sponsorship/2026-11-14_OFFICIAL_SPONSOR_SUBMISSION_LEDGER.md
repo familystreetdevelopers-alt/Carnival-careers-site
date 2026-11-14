@@ -27,3 +27,20 @@ The following are **sent by Gmail to official sponsorship/application email chan
 Do not transform drafted forms, clicks, submitted website URLs, or sponsor requests into claimed cash. Avoid duplicate TELUS application. Carnival Careers CC LIVE is an unregistered planned pilot. No confirmed media reach, signed sponsor, performer participation, venue rights or funded event budget is represented. Owner's 2026-11-14 live instruction explicitly authorizes individual official application submissions to Nikon, RBC, National Bank and BDC only; it does not authorize unrelated outreach or binding external contracts.
 
 Evidence: official TELUS portal displayed `Thank you for applying for a TELUS sponsorship` and supplied a reference (not reproduced publicly). The other four have no verified submission confirmation.
+
+## November 14 — official portal receipts (current controlling status)
+
+**Six distinct corporate sponsorship / support portals produced visible success acknowledgements. The earlier row describing Nikon as NOT SUBMITTED is superseded by this section.** These are requests/acknowledgments, NOT approval or money received. Do not resubmit them.
+
+| Sponsor | Ask | Verified official portal result | Official link |
+|---|---:|---|---|
+| TELUS | C$15,000 proposed cash | **SUBMITTED**. Site displayed successful receipt and issued a tracking number (not published here) | https://sponsorships.telus.com/ |
+| Nikon Canada | C$7,500 proposed cash or camera equipment | **SUBMITTED**. Site displayed “We have received your submission”; acknowledgement email also received | https://nikon.tfaforms.net/355 |
+| Ford of Canada | C$15,000 proposed cash | **SUBMITTED**. Official Ford page displayed “Thank You” with explicit proposal review commitment | https://www.ford.ca/sponsorship/applynow/ |
+| RLB LLP | C$5,000 proposed cash or accounting services | **SUBMITTED**. Official sponsorship form displayed “Your sponsorship request has been submitted!” | https://www.rlb.ca/contact/sponsorship-request/ |
+| White House Custom Colour | In-kind photographic workshop prints/samples | **SUBMITTED**. Official Wufoo form displayed “Thanks for your submission” | https://whcc.wufoo.com/forms/event-sponsorship-request/ |
+| The Globe and Mail / Globe Media | In-kind advertising/marketing services | **SUBMITTED**. Official Wufoo form displayed “We've received your request. Responses can be expected in 2–4 weeks.” | https://globemedia.wufoo.com/forms/mk536480dsilyj |
+
+**Other open applications / restrictions:** RBC: official application reached general-considerations page, requires legally verified controversy/court-history answers, **not submitted**. National Bank: applicant account created and mail activation occurred, but multi-page submission never received a final acknowledgement, **not submitted**. BDC 2026 sponsor intake is officially closed; check for 2027 in December. Additional candidate forms Rubies Inc., AXEMAN, Amerispa, Red Hill Toyota and ITHQ were not confirmed submitted due to CAPTCHA or browser/protocol restrictions; do not count. Any emailed submissions in the previous ledger section are **separate, not part of the six verified portal receipts**, and must never be duplicated.
+
+**Credit-control outcome:** Latest checked Firecrawl balance 112/1,000 for billing cycle ending 2026-12-13. Retain credits for a portal that is open, genuinely fits an unregistered for-profit CC project and can return a real acknowledgment. Do not spend remaining credits repeatedly on blocked human verification, closed intakes, pages that exclude for-profit applicants, or contacts already solicited. Dates and target reach in proposals are planning assumptions, not venue bookings or measured audiences. No signed sponsors or payments were established by these form submissions.
