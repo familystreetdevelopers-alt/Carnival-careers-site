@@ -1,0 +1,91 @@
+{
+  "version": "2026-11-14",
+  "description": "Carnival Careers PDF pitch library",
+  "files": [
+    {
+      "name": "CC_Investor_Canada_With_Real_Estate.pdf",
+      "git_blob_sha1": "ca260ca912eac4db3768f30f7cecc7c7d66bb94c",
+      "sha256": "c55e1a81adb2e50d22288601143d89c552e2b7b6717947f81eb973a430b59ada"
+    },
+    {
+      "name": "CC_Investor_Canada_Without_Real_Estate.pdf",
+      "git_blob_sha1": "b0508c272248f8d9af25fa54e69d5aac4e7ab157",
+      "sha256": "301c7c6ac18180dce5b03988ddbf990383c6c3b5bb84378828e2a0a1f17c4167"
+    },
+    {
+      "name": "CC_Investor_Global_With_Real_Estate.pdf",
+      "git_blob_sha1": "96d035e232541052d484ef2c78b660bbbe1f7ff6",
+      "sha256": "2a3d6df44ae0fd8646c637988d79fae253b40dabc51fe7d9539b7feb78484029"
+    },
+    {
+      "name": "CC_Investor_Global_Without_Real_Estate.pdf",
+      "git_blob_sha1": "f8acb90ae4bd167c71d39d06efbcad42206d7bd3",
+      "sha256": "bdcd3a38f14b784bacf4b424eddcb03241efc85a9924845cd8a6fb49d3ee2d24"
+    },
+    {
+      "name": "CC_Investor_Real_Estate_Only.pdf",
+      "git_blob_sha1": "f47bb2a665de79c7ef7bb91db52ed51c04e241d8",
+      "sha256": "bb5bd17b962b9e0a3b484d9636bcefef76d2d6e45c65767f8fc697e5d2101dd8"
+    },
+    {
+      "name": "CC_Pitch_Library_Index.pdf",
+      "git_blob_sha1": "3c9468610f39e45c818c17c8a43e6a00c89a3872",
+      "sha256": "63375bb47784f893e68034331ec1f29e6ec6e14cda11c0b2bc7fe8a8f9fb238b"
+    },
+    {
+      "name": "CC_Sponsorship_Canada_With_Real_Estate.pdf",
+      "git_blob_sha1": "3582555e361269f0df8263f036e6836c40513f29",
+      "sha256": "dbc911fe4a13f8273011642d88f6abbc52aa8ca53ec83d8d29f3ecff051c2f06"
+    },
+    {
+      "name": "CC_Sponsorship_Canada_Without_Real_Estate.pdf",
+      "git_blob_sha1": "d17f8dac0099ebcf6b0076ea465f7a44f48ac226",
+      "sha256": "7f9eae3cd93e611262bb469066729b48cfb39e8b5eb107a580f93fd82f23478b"
+    },
+    {
+      "name": "CC_Sponsorship_Global_With_Real_Estate.pdf",
+      "git_blob_sha1": "f1d3b835fd2e5d4608a1c96208815fdeff9228c3",
+      "sha256": "b0ca5c0b261a6f48d7c6563c709ef4172f2c8955f03b145432c45ec48c39a58d"
+    },
+    {
+      "name": "CC_Sponsorship_Global_Without_Real_Estate.pdf",
+      "git_blob_sha1": "1273838c86248686c6cc5c162bee7503127d277a",
+      "sha256": "dc99cecd72b5ab71f48c16e71e170b9f2ce4a04c6eddba68a2b3b5f4bfa0a6c1"
+    },
+    {
+      "name": "CC_Sponsorship_Real_Estate_Only.pdf",
+      "git_blob_sha1": "dcebb741c2537428a09ccbafa85d6b299a112d84",
+      "sha256": "d4241d280c64e59100740b8a9a43ed3d373d01bc26a595406f0805280a3ba418"
+    },
+    {
+      "name": "CC_Startup_Loan_Canada_With_Real_Estate.pdf",
+      "git_blob_sha1": "bae5089ef2d9f6dae7c1185836463b5ab136650d",
+      "sha256": "f6056e6d73f34e54cfe0dfaffec66fac4d7fdd39264636d5b72a414f775c22ee"
+    },
+    {
+      "name": "CC_Startup_Loan_Canada_Without_Real_Estate.pdf",
+      "git_blob_sha1": "aa6def31a0a6dce4674a8440222d68c3a37616df",
+      "sha256": "488d970115a0d4645a7964bfee9df173c0561f8557684a8fea40a80e6782f4ef"
+    },
+    {
+      "name": "CC_Startup_Loan_Global_With_Real_Estate.pdf",
+      "git_blob_sha1": "041b8c48f9f54ac6116f95ba7e8cfd917d386a0b",
+      "sha256": "943a36c6558d4a912b6de745ab3718170132fa816b6abaea0e533aa880e380a4"
+    },
+    {
+      "name": "CC_Startup_Loan_Global_Without_Real_Estate.pdf",
+      "git_blob_sha1": "ee65fd19c868d9428c4c39ed9c8e8da673e87c4a",
+      "sha256": "d1475f0142a1f24166133bb1b051439ea6f6ac79d2d1022fecd7b3b5560f30a6"
+    },
+    {
+      "name": "CC_Startup_Loan_Real_Estate_Only.pdf",
+      "git_blob_sha1": "24557d565131b974d0235ac9153ab5ec44cb4043",
+      "sha256": "7df8dd19cb19931c5fe9718c59fbf1643333c3b1bc47355150551b4db8579215"
+    }
+  ],
+  "archive": {
+    "name": "Carnival_Careers_15_Pitch_PDFs.zip",
+    "sha256": "6b19eca8afc5d1b2350944e3418765b8ccbdd6cd1f790d9093c7497f26b907b9",
+    "status": "not yet committed as standalone zip; individual PDFs are committed"
+  }
+}
