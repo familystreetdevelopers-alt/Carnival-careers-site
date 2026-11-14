@@ -12,4 +12,4 @@ The individual PDFs are downloadable directly from this directory. `manifest.jso
 
 **Public repository disclosure:** These are working funding presentations. Stated financing, investor returns, acquisitions, sponsorship placements and other projections are proposals, not guaranteed or approved commitments.
 
-Archive ZIP is distributed separately from the individual files and is not included as a standalone GitHub ZIP file here.
+The complete ZIP is stored here in eight exact binary parts. See [ARCHIVE_REASSEMBLY.md](ARCHIVE_REASSEMBLY.md) or run [reassemble-archive.ps1](reassemble-archive.ps1) to reconstruct and verify it.

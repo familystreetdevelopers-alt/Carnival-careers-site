@@ -85,7 +85,50 @@
   ],
   "archive": {
     "name": "Carnival_Careers_15_Pitch_PDFs.zip",
+    "size_bytes": 7904446,
     "sha256": "6b19eca8afc5d1b2350944e3418765b8ccbdd6cd1f790d9093c7497f26b907b9",
-    "status": "not yet committed as standalone zip; individual PDFs are committed"
+    "storage": "Eight exact byte-for-byte binary parts in this directory",
+    "parts": [
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part01",
+        "git_blob_sha1": "a4eac869c8fcf1fa625399d2e993fe5e1453184d",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part02",
+        "git_blob_sha1": "68832af217dfed1abf50e6083d49de6e193959c7",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part03",
+        "git_blob_sha1": "c089bfa3d7982f9395b1fad2ecb8b06392f8a67e",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part04",
+        "git_blob_sha1": "24a14da64c96a8a29e019ea3987cbda294da7a90",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part05",
+        "git_blob_sha1": "a8d154857df53fd3c20da427d2ad6844fd47507d",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part06",
+        "git_blob_sha1": "fa541e315888e3402c1e5eefd4546788ecc1ee57",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part07",
+        "git_blob_sha1": "99f688a561c2b3e3974c0452c9888ff19c2c4f15",
+        "size_bytes": 1048576
+      },
+      {
+        "name": "Carnival_Careers_15_Pitch_PDFs.zip.part08",
+        "git_blob_sha1": "c518c9b8585c1723c201b41e955de4cf712b6eb5",
+        "size_bytes": 564414
+      }
+    ]
   }
 }
