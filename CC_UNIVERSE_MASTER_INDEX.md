@@ -6,6 +6,11 @@
 
 > **Browse the complete CC Universe file room:** [CC_UNIVERSE/README.md](CC_UNIVERSE/README.md) — department folders, one-click original file links, full GitHub inventory, encrypted masters, cross-system references and missing-source register. GitHub is the permanent project master.\n\n# Carnival Careers — Canonical GitHub Master Index
 
+## CaveMan Studios — worldwide music rights control (2026-11-14)
+- [**Public music registration-control / evidence status**](docs/music/CC_WORLDWIDE_RIGHTS_REGISTRATION_CONTROL_2026-11-14.md) — existing site audio source and rights-routing discipline; no fabricated registrations. This is the safe public index only.
+- Working full-catalog spreadsheets, old audio attachments, split claims, songwriter numbers and signed agreements **are private** and are not included in this public repository. A private repo/secure source is needed for full source-level filing evidence.
+- Composition registration precedes final mastering when authentic rights metadata is available; final sound recording/ISRC is tracked separately.
+
 ## Two recipient-specific CC arena deal rooms — November 9, 2026
 
 - [Existing booked-arena promoter: paid opening-slot proposal](docs/deal-room/01_EXISTING_ARENA_PROMOTER_OPENING_SLOT_PACK_2026-11-09.md). CC proposes to pay the authorized event partner in three earned increments: **at Hopeton's authorized door admission; when CC ORIGINAL MUSIC is on the actual show audio lineup; after Hopeton finishes his last song**. No transfer of historical rights.
