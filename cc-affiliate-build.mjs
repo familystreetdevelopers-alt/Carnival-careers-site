@@ -23,6 +23,7 @@ const status={
     {provider:'Travelpayouts',status:'account activation and project-connected emails found; project tools and tracking not yet verified'},
     {provider:'Trip.com',status:'no activated account under either requested email; no official tracked link'},
     {provider:'FareHarbor',status:'invited to apply; approval not verified'},
+    {provider:'Zoho',status:'affiliate training and partner follow-up received; official tracking link not verified'},
     {provider:'Oceanic Entertainment',status:'past 2026 event links expired; new event-specific links required'}
   ],
   patron_rule:'No automatic sub-affiliate commissions or patron payouts without provider permission, issued identity, written agreement and verified commission.',
