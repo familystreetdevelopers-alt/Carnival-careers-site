@@ -32,6 +32,6 @@ for(const entry of fs.readdirSync(dist,{withFileTypes:true})){
  marked++;
 }
 fs.mkdirSync(path.join(dist,"docs","property"),{recursive:true});
-for(const name of ["CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.json","CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.md","CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-08.md"])fs.copyFileSync(path.join(root,"docs","property",name),path.join(dist,"docs","property",name));
+for(const name of ["CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.json","CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.md","CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-17.md"])fs.copyFileSync(path.join(root,"docs","property",name),path.join(dist,"docs","property",name));
 fs.writeFileSync(path.join(dist,"cc-global-property-current.json"),JSON.stringify(model,null,2));
 console.log(JSON.stringify({event:"CC_GLOBAL_OPTIMIZED_PROPAGATED",version:model.version,sidePagesPatched:patched,allInCAD:model.working.allIn,conditionalSammonCAD:model.sammonConditional.indicativeAllIn}));
