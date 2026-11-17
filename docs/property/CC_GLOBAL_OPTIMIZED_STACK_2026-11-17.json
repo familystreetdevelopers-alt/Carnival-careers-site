@@ -42,7 +42,9 @@
     "totalRealNetPerMonthCAD": null,
     "legacyRetainedPropertiesHistoricSurplusMonthlyCAD": 9667,
     "wellandNetAfterDebtPendingDiligence": true,
-    "notVerified": true
+    "notVerified": true,
+    "units": 42,
+    "residentialUnits": 42
   },
   "sammonConditional": {
     "replacementFor": "1311 Pape Avenue",
@@ -51,7 +53,7 @@
     "sourcePrice": 4158888,
     "indicativePurchaseSaving": 1208888,
     "indicativeAllIn": 10121984,
-    "conditionalUnits": 40,
+    "conditionalUnits": 44,
     "cashFlow": "unknown; including Welland unverified",
     "familyOccupancy": "not verified; fully tenanted",
     "requires": [
