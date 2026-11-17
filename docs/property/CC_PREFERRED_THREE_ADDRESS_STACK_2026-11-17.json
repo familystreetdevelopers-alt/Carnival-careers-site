@@ -1,0 +1,88 @@
+{
+  "version": "CC-PREFERRED-3-CANADA-2026-11-17",
+  "status": "preferred 3-address working model, not funded or contracted",
+  "addresses": [
+    {
+      "address": "59 Alicewood Court, Toronto, Ontario, Canada",
+      "priceCAD": 1349000,
+      "familyHomes": 3,
+      "bedrooms": [
+        4,
+        3,
+        2
+      ],
+      "source": "https://www.realtor.ca/real-estate/30485790/59-alicewood-court-toronto-west-humber-clairville"
+    },
+    {
+      "address": "10 Fairleigh Avenue North, Hamilton, Ontario, Canada",
+      "priceCAD": 559000,
+      "familyHomes": 3,
+      "bedrooms": [
+        3,
+        1,
+        1
+      ],
+      "source": "https://www.realtor.ca/real-estate/30225743/10-fairleigh-avenue-n-hamilton-gibson"
+    },
+    {
+      "address": "35 Ontario Road, Welland, Ontario, Canada",
+      "priceCAD": 1099000,
+      "rentalUnits": 4,
+      "commercialSpaces": 3,
+      "sellerCurrentNOI": 103350,
+      "source": "https://a1-ws-realtor-pr.realtor.ca/real-estate/30378434/35-ontario-road-welland-lincolncrowland-773-lincolncrowland"
+    }
+  ],
+  "budgetCAD": {
+    "propertyAcquisition": 3007000,
+    "productionWorkingCapital": 2815000,
+    "propertyClosingAndCarry": 250000,
+    "totalUses": 6072000
+  },
+  "sourceTargetsCAD": {
+    "oneYearCommercialInvestor": 2815000,
+    "permanentSixFamilyHousingEquity": 1908000,
+    "wellandSeniorLoanAt65pct": 714350,
+    "wellandLongTermEquity": 384650,
+    "propertyClosingCapital": 250000,
+    "totalSources": 6072000
+  },
+  "operationsCAD": {
+    "commercialRevenue": 4615000,
+    "commercialExpenses": 2815000,
+    "sixGrossAnnualSalariesIncluded": 630000,
+    "investorPrincipalReturn": 2815000,
+    "investorPreferredProfit": 1200000,
+    "taxAndContingencyReserve": 500000,
+    "familySupportReserve": 100000,
+    "balance": 0,
+    "investorProfitPct": 42.63
+  },
+  "propertyYearOneCAD": {
+    "wellandSellerNOI": 103350,
+    "addedManagementAndCapex": 16244,
+    "welland10pctSeniorInterest": 71435,
+    "wellandAfterDebt": 15671,
+    "sixHome800PerMonthPaymentsAnnual": 57600,
+    "familyHomeOperatingCosts": 70000,
+    "combinedPropertyCashSurplus": 3271
+  },
+  "loanAlternativeCAD": {
+    "loanRequest": 350000,
+    "reducedCommercialInvestor": 2465000,
+    "annualSimpleInterestAssumedPct": 12,
+    "totalDebtRepayment": 392000,
+    "additionalContractedReceiptsOrVerifiedSavingsNeeded": 42000
+  },
+  "flags": [
+    "No funded investor or permanent housing equity currently proved",
+    "Property prices are asks; vacant possession including Fairleigh requires written confirmation",
+    "C$800 payment target and ownership/title rights need legal design",
+    "Property cash-flow margin exceptionally thin and unverified",
+    "Commercial contracts, costs and cash settlements unverified",
+    "International investments remain separate options; this model funds only Canadian properties"
+  ],
+  "excludedAddresses": [
+    "70 Temperance"
+  ]
+}
