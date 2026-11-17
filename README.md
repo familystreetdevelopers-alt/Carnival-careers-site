@@ -30,7 +30,7 @@
 - **[Original PDF master registry — SOURCE OF TRUTH](docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_CANONICAL_REGISTRY.json)**
 - **[Never recreate originals: preservation and recovery instructions](docs/sponsorship/CC_ORIGINAL_PDF_MASTERS_DO_NOT_RECREATE.md)**
 - [18-month / sponsorship-tier policy](docs/sponsorship/CC_SPONSOR_HORIZONS_2026-11-08.json)
-- [Global property model 2026-11-08](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json)
+- [Current global property model — 17 Nov, adds 35 Ontario Road Welland](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.json) · [underwriting and sourcing](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.md)
 - [Showrunner universe](docs/CC_SHOWRUNNER_UNIVERSE.md)
 
 ## Original master PDF files (stored, not recreated)
@@ -46,7 +46,7 @@ Recover files from Adobe using exact filenames/URNs; verify checksums before upd
 
 - Pursue 18+ candidate arena-stage opportunities over 18 months, with actual bookings only by signed agreement.
 - Sponsor asks by lead time: C$10k, C$30k, C$45k; longer-term circuit C$250k, global title C$1M, aggregate cohort C$3M (illustrative, no commitments).
-- Closing capital for modeled C$10,231,872 / 38-home global property stack; six tenant-owner households; six requested Rivian R1S / sponsor vehicles; prospective HGTV commission (not yet ordered).
+- Closing capital for modeled C$11,330,872 / 42-residential-home + 3-commercial-unit global property model (11 locations, Welland added; costs/NOI not fully underwritten); six tenant-owner households; six requested Rivian R1S / sponsor vehicles; prospective HGTV commission (not yet ordered).
 - Hedonya gin wholesale orders only through lawful licensed routes; verify actual paid orders.
 - **CURRENT EVENT-PARTNER DEAL PROPOSAL:** three actual releases (1) at the venue door once Hopeton has authorized entry, (2) when CC original music is in the confirmed show audio lineup, (3) when Hopeton sings and finishes his final song. The three amounts and total fee require a new show-specific signed deal; this is NOT a retired payment plan. Sponsor billing is separate.
 - **Targeted outreach is authorized as of Nov 9, 2026; OneLive outreach remains retracted/excluded and Phoenix Voyages remains stopped. No payments, signatures or commitments without approval.**
