@@ -1,0 +1,234 @@
+{
+  "version": "CC-GLOBAL-OPT-2026-11-17",
+  "currency": "CAD",
+  "status": "working-not-verified; Welland addition is uncommitted candidate",
+  "source": "CC Universe 2026-11-08 controlling global stack plus 2026-11-17 broker PDF for 35 Ontario Rd, Welland and 2026-11 public MLS",
+  "original": {
+    "allIn": 12025418,
+    "units": 48,
+    "monthlySurplus": 11373
+  },
+  "deferrals": [
+    {
+      "asset": "Tokyo / Senju Sakuragi",
+      "units": 7,
+      "price": 1156518,
+      "monthlySurplus": 1004,
+      "alternative": "filming partnership"
+    },
+    {
+      "asset": "London / Paddington",
+      "units": 1,
+      "price": 562200,
+      "monthlySurplus": 462,
+      "alternative": "filming partnership"
+    },
+    {
+      "asset": "Ghana Old Ashongman two-unit build",
+      "units": 2,
+      "price": 74828,
+      "monthlySurplus": 240,
+      "alternative": "construction deferred"
+    }
+  ],
+  "working": {
+    "allIn": 11330872,
+    "countAddressesLocations": 11,
+    "residentialHomes": 42,
+    "commercialUnits": 3,
+    "totalRentableSpaces": 45,
+    "acquisitionSubTotalCAD": 10207246,
+    "allInCalculation": "2026-11-08 working all-in roll-forward $10,231,872 plus 35 Ontario Road public asking price $1,099,000. Excludes new property's transfer taxes, lender fees, repairs and other closing charges.",
+    "totalRealNetPerMonthCAD": null,
+    "legacyRetainedPropertiesHistoricSurplusMonthlyCAD": 9667,
+    "wellandNetAfterDebtPendingDiligence": true,
+    "notVerified": true
+  },
+  "sammonConditional": {
+    "replacementFor": "1311 Pape Avenue",
+    "proposed": "135 Sammon Avenue",
+    "proposedPrice": 2950000,
+    "sourcePrice": 4158888,
+    "indicativePurchaseSaving": 1208888,
+    "indicativeAllIn": 10121984,
+    "conditionalUnits": 40,
+    "cashFlow": "unknown; including Welland unverified",
+    "familyOccupancy": "not verified; fully tenanted",
+    "requires": [
+      "vacant possession",
+      "legal 4BR solution",
+      "6-family accommodation",
+      "11 units legalization",
+      "rent roll/T12",
+      "financing/DSCR",
+      "LTT/fees",
+      "tenancy law"
+    ],
+    "conditionalResidentialHomes": 44,
+    "conditionalCommercialUnits": 3,
+    "conditionalTotalRentableSpaces": 47,
+    "conditionalLocations": 11
+  },
+  "unitRules": {
+    "tenantOwnerHouseholds": 6,
+    "monthlyHousingPaymentTarget": 800,
+    "noDoubleCountNoi": true
+  },
+  "separateLanes": [
+    "109 Pembroke/Tournament/Euclid/VicTowns CC-CAPITAL65 Toronto",
+    "65-city enterprise concerts/media investment (legacy C$114,319,660)"
+  ],
+  "properties": [
+    {
+      "market": "Toronto",
+      "asset": "1311 Pape",
+      "modeledUnits": 9,
+      "sourcePriceCAD": 4158888,
+      "sourceNetPerMonthCAD": 2348,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "166 Caledonia",
+      "modeledUnits": 5,
+      "sourcePriceCAD": 1088888,
+      "sourceNetPerMonthCAD": 2428,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "12 York PATH",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 592900,
+      "sourceNetPerMonthCAD": 371,
+      "verification": "pending"
+    },
+    {
+      "market": "Toronto",
+      "asset": "138 Downes",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 548000,
+      "sourceNetPerMonthCAD": 456,
+      "verification": "pending"
+    },
+    {
+      "market": "Miami",
+      "asset": "2775 NW 57th",
+      "modeledUnits": 4,
+      "sourcePriceCAD": 1050835,
+      "sourceNetPerMonthCAD": 1219,
+      "verification": "pending"
+    },
+    {
+      "market": "Lucea",
+      "asset": "122 Haughton Court",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 159372,
+      "sourceNetPerMonthCAD": 266,
+      "verification": "pending"
+    },
+    {
+      "market": "Trinidad",
+      "asset": "Barataria",
+      "modeledUnits": 3,
+      "sourcePriceCAD": 518500,
+      "sourceNetPerMonthCAD": 554,
+      "verification": "pending"
+    },
+    {
+      "market": "Barbados",
+      "asset": "Ashton Hall",
+      "modeledUnits": 4,
+      "sourcePriceCAD": 441410,
+      "sourceNetPerMonthCAD": 1378,
+      "verification": "pending"
+    },
+    {
+      "market": "Accra",
+      "asset": "Old Ashongman",
+      "modeledUnits": 9,
+      "sourcePriceCAD": 362700,
+      "sourceNetPerMonthCAD": 373,
+      "verification": "pending"
+    },
+    {
+      "market": "Barcelona",
+      "asset": "Calle de Briquets",
+      "modeledUnits": 1,
+      "sourcePriceCAD": 186753,
+      "sourceNetPerMonthCAD": 275,
+      "verification": "pending"
+    },
+    {
+      "market": "Welland, Ontario, Canada",
+      "asset": "35 Ontario Road",
+      "assetType": "Mixed-use: four residential apartments and three commercial tenancies including garage",
+      "modeledUnits": 7,
+      "residentialUnits": 4,
+      "commercialUnits": 3,
+      "bedroomMix": {
+        "3-bedroom": 2,
+        "2-bedroom": 2
+      },
+      "sourcePriceCAD": 1099000,
+      "sourceNetPerMonthCAD": null,
+      "verification": "For-sale broker marketing figures only; independently verified NOI and cash flow unavailable. Conflicting marketing listing reports approx $80k NOI.",
+      "listingId": "X13874368",
+      "listingURL": "https://www.realtor.ca/real-estate/30378434/35-ontario-road-welland-lincolncrowland-773-lincolncrowland",
+      "sourceBrokerPackageFilename": "PKG C 35 Ontario  2026_.pdf",
+      "sourceBrokerPackageSha256": "eca19f716ad5be9cb55ef0780debfb5b64b908efd903b624ee1017279927b7fd",
+      "sourceType": "seller marketing package, not T12 or certified rent roll",
+      "sellerAnnualGrossScheduledCAD": 128052,
+      "sellerMonthlyGrossScheduledCAD": 10671,
+      "sellerAnnualExpensesCAD": 24702.35,
+      "sellerNoiCurrentCAD": 103349.65,
+      "sellerNoiPotentialCAD": 123869.65,
+      "sellerAnnualPotentialGrossScheduledCAD": 148572,
+      "correctedPotentialExpensesAtThreePctVacancyCAD": 25317.95,
+      "correctedPotentialNoiCAD": 123254.05,
+      "listedPotentialCapPercent": 11.27,
+      "correctedPotentialCapPercent": 11.21510919,
+      "sourceCurrentCapPercent": 9.4,
+      "financingSensitivity": {
+        "leverageAssumption": 0.65,
+        "seniorLoanIllustrativeCAD": 714350,
+        "purchaseEquityIllustrativeCAD": 384650,
+        "interestRateIllustrative": 0.1,
+        "debtServiceInterestOnlyIllustrativeCAD": 71435,
+        "managementAssumptionPctEffectiveGross": 0.08,
+        "annualReserveAssumptionCAD": 6000,
+        "adjustedNoiIllustrativeCAD": 87412.81,
+        "residualAnnualAfterInterestIllustrativeCAD": 15977.81,
+        "residualMonthlyAfterInterestIllustrativeCAD": 1331.48,
+        "noClosingCostsOrDeferredMaintenanceIncluded": true,
+        "noLoanApproval": true
+      },
+      "familyEligibility": "Do not allocate to six Toronto tenant-owner households: Welland is not Toronto, no four-bedroom apartment, tenancy/vacant possession unverified.",
+      "fireDueDiligence": "Municipal record of 2019 inspections and 2021 fire-code conviction; verify current compliance and clearance. Historical case is not evidence of current noncompliance.",
+      "municipalSource": "https://www.welland.ca/Media/MR/2021/FIRESuccessfulProsecutionOntarioRd.pdf",
+      "otherListingConflict": "A separate MLS listing X13662934 referenced approx $80k NOI and 7.2% cap; seller package says $103,349.65 and 9.40%; reconcile actual bank deposits, leases and current T12.",
+      "expansionStatus": "Ideas only: main floor conversion, rear four-unit build, third floor; no permit, cost or incremental income assumed.",
+      "status": "ADDED AS UNCOMMITTED CANDIDATE for income-acquisition evaluation; no executed purchase or lender commitment"
+    }
+  ],
+  "previousModel": {
+    "version": "CC-GLOBAL-OPT-2026-11-08",
+    "allInCAD": 10231872,
+    "residentialHomes": 38,
+    "properties": 10,
+    "sourceModeledAcquisitionSubtotalCAD": 9108246,
+    "historicModeledSurplusPerMonthCAD": 9667
+  },
+  "lastUpdated": "2026-11-17",
+  "criticalQualifiers": [
+    "Existing 38 modeled residential units and historical post-financing $9,667 monthly surplus are NOT a new underwritten cash flow rollforward.",
+    "35 Ontario Road has 4 residential homes and 3 commercial rentable spaces, not 7 homes.",
+    "Seller-projected NOI is before financing and does not include property management or replacement reserves.",
+    "Seller future NOI is overstated $615.60 when 3% vacancy is kept static; corrected $123,254.05 potential NOI.",
+    "Prior MLS edition cites about $80,000 NOI, conflicting with seller brochure: confirm actual leases/T12 and bank statements.",
+    "Six Toronto tenant-owner household obligation is unchanged; Welland is not a Toronto family accommodation substitute.",
+    "All 35 Ontario rear/main-floor/third-floor unit additions are concepts requiring permits and funding and are not included.",
+    "Portfolio costs and modeled unit counts do not indicate acquired assets or approved financing.",
+    "Retain separate CC-CAPITAL65 Toronto development and 65-city event/media budgets to avoid double-counting."
+  ]
+}
