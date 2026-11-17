@@ -30,17 +30,17 @@
 - [**Governing current three-increment event-partner payment rule**](docs/sponsorship/CC_CURRENT_EVENT_PARTNER_THREE_INCREMENT_POLICY_2026-11-08.md) — (1) authorized venue door, (2) original CC music in show audio lineup, (3) Hopeton finishes last song. Terms/amounts require signed booking.
 
 ## Current source of truth
-- [Current global-property control](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.md)
-- [Machine-readable property model](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-08.json)
-- [Conditional Sammon and prior-stack supersession register](docs/property/CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-08.md)
-- [46 CC commercial asset classes and update controls](docs/property/CC_UNIVERSE_46_ASSETS_GLOBAL_PROPERTY_CONTROL_2026-11-08.json)
+- [Current global-property control — 17 Nov, Welland included](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.md)
+- [Machine-readable property model](docs/property/CC_GLOBAL_OPTIMIZED_STACK_2026-11-17.json)
+- [Updated Welland/Sammon supersession and math corrections](docs/property/CC_GLOBAL_ASSET_SUPERSESSION_REGISTER_2026-11-17.md)
+- [46 CC commercial asset classes and 17 Nov version links](docs/property/CC_UNIVERSE_46_ASSETS_GLOBAL_PROPERTY_CONTROL_2026-11-17.json)
 - [Repo-wide source audit](docs/property/CC_UNIVERSE_REPOSITORY_ASSET_AUDIT_2026-11-08.csv)
 - [Cross-surface propagation truth register](docs/property/CC_UNIVERSE_FULL_PROPAGATION_STATUS_2026-11-08.md)
 - [Storage and privacy rules](docs/property/CC_GITHUB_ONLY_STORAGE_POLICY.md)
 
 ## Financial distinction — never collapse lanes
-**Global property pilot** (modeled, not closed): **C$10,231,872 / 38 homes**; international Tokyo and London acquisitions deferred for partner-led filming, Ghana two-unit construction paused.  
-**Sammon option** (conditional, tenanted, unknown NOI): **C$9,022,984 / 40 homes**, only with lawful family occupancy, verified four-bedroom accommodation, mortgage financing and actual NOI.  
+**Global property pilot** (modeled, not closed): **C$11,330,872 / 42 residential homes + 3 commercial spaces across 11 locations** (includes C$1,099,000 asking for 35 Ontario Rd, Welland, with unverified actual NOI and additional closing costs excluded); international Tokyo/London acquisitions deferred, Ghana two-unit construction paused.  
+**Sammon option** (conditional, tenanted, unknown NOI): **C$10,121,984 / 44 residential homes + 3 commercial spaces**, only with lawful family occupancy, verified four-bedroom accommodation, mortgage financing and actual NOI.  
 **Toronto development / CC-CAPITAL65** (separate): 109 Pembroke / 35 Tournament / 98 Euclid / 6 VicTowns, overlapping 12 York and 138 Downes condo assets. Do not add to the global property pilot.  
 **65-city concerts/media**: separate full enterprise concept and budget; do not state this is funded via the global property pilot.  
 Six Toronto family households remain with contingent C$800 monthly affordability objectives, including a genuine legal four-bedroom solution; owner-occupied units never contribute rental NOI.
@@ -58,7 +58,7 @@ Six Toronto family households remain with contingent C$800 monthly affordability
 
 ## Rules of execution
 1. Update the exact canonical source in its GitHub repository with Git commits, not a detached ChatGPT Library file.
-2. Every investor-facing current-state artifact that references the global property stack must derive its numbers from the GitHub model, show conditional versus base status, and avoid stale C$12.025M / 48 claims.
+2. Every investor-facing current-state artifact that references the global property stack must derive its numbers from the GitHub model, show conditional versus base status, and avoid stale pre-Welland C$10.232M / 38 or C$12.025M / 48 claims.
 3. Externally distributed signed, lodged or dated originals are immutable evidence; add new superseding versions; never alter signatures, provenance or old sent documents.
 4. All confidential documents belong in a restricted **private GitHub** repo. Public repo stores only a non-sensitive file index, checksum, version and cross-reference. A repository branch is NOT private.
 5. Verify each changed path by rereading the actual GitHub blob and verifying a new commit; do not label local-only packages GitHub-persisted.
