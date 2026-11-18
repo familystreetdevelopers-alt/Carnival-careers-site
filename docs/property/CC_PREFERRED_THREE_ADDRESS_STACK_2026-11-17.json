@@ -1,6 +1,6 @@
 {
   "version": "CC-PREFERRED-3-CANADA-2026-11-17",
-  "status": "preferred 3-address working model, not funded or contracted",
+  "status": "preserved three-address cost-minimization alternative; superseded by five-address proposal with 12 York and 138 Downes restored",
   "addresses": [
     {
       "address": "59 Alicewood Court, Toronto, Ontario, Canada",
@@ -114,5 +114,6 @@
       "Verify new-house purchase and disposal HST and business income taxes",
       "Obtain separate senior and temporary equity capital; release all security on sale"
     ]
-  }
+  },
+  "supersededBy": "docs/property/CC_PREFERRED_FIVE_ADDRESS_STACK_2026-11-17.json"
 }
