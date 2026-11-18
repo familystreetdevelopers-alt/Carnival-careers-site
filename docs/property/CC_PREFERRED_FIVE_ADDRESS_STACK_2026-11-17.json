@@ -1,6 +1,6 @@
 {
-  "version": "CC-FIVE-ADDRESS-RESTORED-2026-11-17",
-  "status": "preferred five-address working proposal; no signed financing, sale or possession evidenced",
+  "version": "CC-ONE-INTEGRATED-SIX-ACQUISITION-2026-11-17",
+  "status": "single preferred combined deal model; NOT APPROVED FOR INVESTOR CIRCULATION",
   "reason": "Restore 12 York and 138 Downes as retained market-tenanted income properties; preserve six-family homes at Alicewood and Fairleigh",
   "addresses": [
     {
@@ -44,23 +44,41 @@
       "purchaseCAD": 548000,
       "incomeUnits": 1,
       "tenancy": "reported market-tenanted; not family occupancy; verification needed"
+    },
+    {
+      "address": "The Vic Towns (specific unit to select), Toronto, Ontario, Canada",
+      "purchaseCAD": 630000,
+      "resaleTargetCAD": 799900,
+      "sizeSquareFeetAssumption": 1200,
+      "purchaseRateCADPerSquareFootAssumption": 525,
+      "disposition": "resold within Year 1; not retained; participates in the same integrated business and financing model",
+      "modeledNetProfitAfterTransactionCostsAndTaxCAD": 49494.55,
+      "acquisitionPriceApprovedBySeller": false,
+      "resalePriceSupportedByCompletedSale": false
     }
   ],
   "capitalBudgetCAD": {
-    "familyHousingPurchases": 1908000,
-    "wellandPurchase": 1099000,
-    "twoIncomeCondoPurchases": 1108000,
-    "fivePropertyPurchaseTotal": 4115000,
-    "fiveCommercialActivationsProductionBudget": 2815000,
-    "originalThreePropertyClosingCarryAllowance": 250000,
-    "minimumModeledTotalBeforeAddedCondoClosingAndCarry": 7180000,
-    "addedCondoClosingCostsAndCarrying": "not yet priced; no assertion of finalized total"
+    "fiveRetainedPropertyPurchasesCAD": 4115000,
+    "oneVicTownPurchaseForResaleCAD": 630000,
+    "sixAcquisitionPurchaseTotalCAD": 4745000,
+    "firstYearConcertTVFoodMasHiddenFigureCostsCAD": 2815000,
+    "previouslyModeledClosingAndCarryingReserveCAD": 250000,
+    "initialCombinedSourcesAndUsesBeforeCondoCloseAndVicTownSellingChargesCAD": 7810000,
+    "vicTownModeledFinancingSellingCarryingAndTransactionCostsOverHoldingPeriodCAD": 102560.48,
+    "vicTownModeledTaxOnSaleCAD": 17844.97,
+    "addedCondoClosingAndOngoingFinancingCostsCAD": "to be independently priced; not incorporated in C$7.810M figure",
+    "cashTimingNotes": "Vic Town sale and tax costs are incurred at different points; avoid treating the annual transaction profit as upfront funding"
   },
   "capitalSourcesCAD": {
-    "priorThreeAddressPlanTotal": 6072000,
-    "additionalCondoAcquisitionFinancingToStructure": 1108000,
-    "additionalCondoTransactionFees": "to price",
-    "noCondoLoanCommitment": true
+    "commercialInvestorWorkingCapitalProposedCAD": 2815000,
+    "patientSixFamilyHousingEquityProposedCAD": 1908000,
+    "wellandFirstMortgageIllustrative65pctCAD": 714350,
+    "wellandPermanentEquityProposedCAD": 384650,
+    "yorkAndDownesPurchaseFinancingToArrangeCAD": 1108000,
+    "oneVicTownPurchaseCapitalToArrangeCAD": 630000,
+    "originalClosingAndCarryCapitalToArrangeCAD": 250000,
+    "totalSourcesProposedBeforeAddedFeesCAD": 7810000,
+    "allSourcesAreConditional": true
   },
   "sixDivisions": {
     "realEstate": "six family homes and income assets; property NOI must include York and Downes after condo fees, taxes, debt service",
@@ -71,35 +89,61 @@
     "hiddenFigure": "modeled C$400K revenue, C$200K cost"
   },
   "proposedInvestorCAD": {
-    "oneYearCommercialWorkingCapital": 2815000,
-    "returnOriginalPrincipal": 2815000,
-    "preferredProfit": 1200000,
-    "plannedCommercialRevenue": 4615000,
-    "plannedCommercialExpenses": 2815000,
-    "taxContingencyAllocation": 500000,
-    "sixFamilyHousingSupportAllocation": 100000,
-    "caution": "Not independently verified, no available condo post-debt rent underwriting; investor exit remains forecast"
+    "yearOneCommercialInvestorOriginalCapitalCAD": 2815000,
+    "yearOneCommercialInvestorCapitalReturnedCAD": 2815000,
+    "investorYearOnePreferredProfitCAD": 1200000,
+    "totalTargetInvestorPayoutCAD": 4015000,
+    "plannedFiveCashRevenueActivitiesCAD": 4615000,
+    "plannedFiveCashActivityCostsCAD": 2815000,
+    "allSixFamilySalaryTargetsIncludedInOperatingCostsCAD": 630000,
+    "plannedTaxAndContingencyCAD": 500000,
+    "annualFamilyHousingSupportReserveCAD": 100000,
+    "profitFromOneVicTownSaleCAD": 49494.55,
+    "notDoubleCountedInCommercialSales": true,
+    "propertyNetCashAfterFinancing": "requires actual Welland/York/Downes leases, taxes, fees and loan pricing; previous 3-property estimate not valid for full holdings",
+    "investorCapitalRepaymentFromCollectedCommercialReceipts_NotFromFamilyHousingEquity": true,
+    "revenuePricingAndReceiptTimingUnconfirmed": true
   },
   "extraTrade": {
-    "asset": "The Vic Towns, Toronto",
-    "strategy": "Purchase and resell exactly one additional unit; no permanent sixth address",
-    "oneUnitBuyAssumption": 630000,
-    "oneUnitResaleAssumption": 799900,
-    "modeledAfterCostAndTaxProfit": 49494.55,
-    "conditional": "Neither price nor buyer/seller acceptance documented",
-    "distinctTemporaryFinancing": "requires separately funded acquisition, closing and carrying capital"
+    "withinSingleProject": true,
+    "activity": "buy and resell one extra Vic Town",
+    "buyCAD": 630000,
+    "sellTargetCAD": 799900,
+    "modeledNetProfitCAD": 49494.55,
+    "sameCapitalSourcesAndRepaymentLedgerAsProject": true,
+    "notAnotherPermanentAddress": true,
+    "noExternalOutreachUntilModelApproved": true,
+    "sellerAndBuyerPricesAndLoanTermsToConfirm": true
   },
   "international": {
     "financedInternationalRealEstateAcquisitions": 0,
     "approach": "international production, culture and filming partnerships; preserve previously considered international real-estate research without counting purchases here"
   },
   "conditions": [
-    "Six family unit occupancy, 4-bedroom need and C$800 monthly household payments must be verified in lawful title/occupancy structure",
-    "12 York and 138 Downes are market-tenanted income units, not immediate family homes",
-    "Obtain complete current condo rents, mortgages, fees, property taxes, leases, seller prices and transaction costs",
-    "Recalculate true five-property annual income, cash carrying and total capital sources, rather than reuse three-address surplus",
-    "Six-division revenues and C$1.2M preferred investor profit not contracted"
+    "Use ONE acquisition register for all six property purchases, including Vic Town; five held and one resold",
+    "Six family properties located at Alicewood and Fairleigh; document lawful unit availability and C$800 family payment/title structure",
+    "Welland and the two Toronto condos need signed rent rolls/leases, condo fees, property taxes and debt terms to underwrite combined post-debt cash",
+    "Single integrated sources/uses must include actual condo closing/holding costs and Vic Town seller/financier/exit terms",
+    "C$4.615M commercial revenue, C$2.815M production budget, C$1.2M investor profit remain proposed until contracts and settlement schedule proved",
+    "No investor outreach, emailed offering, or circulating the previous 16 PDFs without owner approval and a reviewed consolidated package"
   ],
   "alternateSource": "docs/property/CC_PREFERRED_THREE_ADDRESS_STACK_2026-11-17.json",
-  "prohibitedAddress": "70 Temperance"
+  "prohibitedAddress": "70 Temperance",
+  "headline": "ONE Carnival Careers project: acquire six properties/units, keep five, resell one Vic Town, deliver six family homes and six business activities, return commercial investor principal plus target C$1.2M profit",
+  "propertyProgram": {
+    "totalAcquisitions": 6,
+    "permanentHoldingsAfterVicTownSale": 5,
+    "permanentHoldingsPurchaseCostCAD": 4115000,
+    "vicTownOneUnitPurchaseTargetCAD": 630000,
+    "aggregateAcquisitionCostCAD": 4745000,
+    "coreSixFamilyHomes": 6,
+    "incomeAssets": [
+      "35 Ontario Road, Welland",
+      "12 York Street #5101, Toronto",
+      "138 Downes Street #3215, Toronto"
+    ],
+    "targetedDisposition": "The Vic Towns: buy ONE 1,200sf home at 525 CAD/sf and sell once at target 799900 CAD; one property sale inside the SAME project and waterfall, NOT a separately marketed transaction",
+    "unitAssignment": "Vic Town unit number and contract price subject to written seller confirmation"
+  },
+  "preservationNote": "Older 3-, 5- and 7-property papers kept for comparison only; this document is controlling for the current combined proposal. International property buys not included but international culture/media opportunities stay in CC Universe."
 }
