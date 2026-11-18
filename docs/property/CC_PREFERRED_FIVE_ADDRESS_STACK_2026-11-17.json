@@ -145,5 +145,55 @@
     "targetedDisposition": "The Vic Towns: buy ONE 1,200sf home at 525 CAD/sf and sell once at target 799900 CAD; one property sale inside the SAME project and waterfall, NOT a separately marketed transaction",
     "unitAssignment": "Vic Town unit number and contract price subject to written seller confirmation"
   },
-  "preservationNote": "Older 3-, 5- and 7-property papers kept for comparison only; this document is controlling for the current combined proposal. International property buys not included but international culture/media opportunities stay in CC Universe."
+  "preservationNote": "Older 3-, 5- and 7-property papers kept for comparison only; this document is controlling for the current combined proposal. International property buys not included but international culture/media opportunities stay in CC Universe.",
+  "modelPDFSet": {
+    "count": 16,
+    "scope": "15 audience/scope variants plus A/R advance and bridge-finance lender memorandum",
+    "dealDefinition": "Six purchases within one company: retain Alicewood, Fairleigh, Welland, 12 York, 138 Downes; sell one Vic Town home.",
+    "financingOptionCAD": {
+      "seniorWelland": 714350,
+      "permanentEquityFamily": 1908000,
+      "permanentEquityYorkDownes": 1108000,
+      "permanentEquityWelland": 384650,
+      "seniorVicTown": 409500,
+      "temporaryEquityVicTown": 220500,
+      "closingAndCarryingCapital": 250000,
+      "productionCommercialInvestorWith350kCredit": 2465000,
+      "proposed12MonthStartupCredit": 350000,
+      "total": 7810000
+    },
+    "yearOneForecastCAD": {
+      "commercialRevenueTarget": 4615000,
+      "commercialCostCeiling": 2815000,
+      "commercialInvestorPrincipalRepayment": 2465000,
+      "startupLoanRepaymentAtIllustrative12pct": 392000,
+      "investorPreferredProfit": 1200000,
+      "taxContingencyReserve": 500000,
+      "sixFamilySupportReserve": 100000,
+      "vicTownNetAfterCostAndTax": 49494.55,
+      "operatingCashRetainedFromCommercialAndVic": 7494.55,
+      "conditionalNetYearlyPropertyCashFromFiveRetainedHoldings": 32071,
+      "combinedAnnualYearOneRetainedBeforeHousingReserve": 39565.55
+    },
+    "alternativeWithoutStartupFacilityCAD": {
+      "commercialInvestorCapital": 2815000,
+      "commercialInvestorPrincipalRepayment": 2815000,
+      "investorProfit": 1200000,
+      "netVicTownSaleProfit": 49494.55,
+      "annualPropertyCashEstimate": 32071,
+      "combinedRetainedCashFromVicPlusProperties": 81565.55
+    },
+    "underwritingControls": [
+      "All figures illustrative, not promised, signed or financed",
+      "Six household wage targets of C$105,000 each included in annual commercial production expenses",
+      "C$800 monthly contribution target per household depends on lawful title, unit access and occupancy terms",
+      "York and Downes financing assumption uses long-term equity for preservation of modeled positive rental cash",
+      "York and Downes 2300 CAD monthly rents and 1100 CAD monthly expense allowances per condo require current verified rent, condominium fees, taxes and insurance",
+      "Property annual cash uses seller Welland NOI of 103350 less management/capex 16244 and illustrative 10pct annual debt interest 71435",
+      "Single Vic Town transaction requires approved unit, resale buyer and exact taxes and release terms",
+      "C$350K startup loan is not approved; current eligible factored receivables are C$0",
+      "Full source and use model excludes final verified transaction-specific tax/fee/permit and contractual cash timing",
+      "No unsolicited investor circulation from this model prior to owner-directed approval"
+    ]
+  }
 }
