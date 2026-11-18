@@ -1,0 +1,105 @@
+{
+  "version": "CC-FIVE-ADDRESS-RESTORED-2026-11-17",
+  "status": "preferred five-address working proposal; no signed financing, sale or possession evidenced",
+  "reason": "Restore 12 York and 138 Downes as retained market-tenanted income properties; preserve six-family homes at Alicewood and Fairleigh",
+  "addresses": [
+    {
+      "address": "59 Alicewood Court, Toronto, Ontario, Canada",
+      "priceCAD": 1349000,
+      "familyHomes": 3,
+      "bedrooms": [
+        4,
+        3,
+        2
+      ],
+      "source": "https://www.realtor.ca/real-estate/30485790/59-alicewood-court-toronto-west-humber-clairville"
+    },
+    {
+      "address": "10 Fairleigh Avenue North, Hamilton, Ontario, Canada",
+      "priceCAD": 559000,
+      "familyHomes": 3,
+      "bedrooms": [
+        3,
+        1,
+        1
+      ],
+      "source": "https://www.realtor.ca/real-estate/30225743/10-fairleigh-avenue-n-hamilton-gibson"
+    },
+    {
+      "address": "35 Ontario Road, Welland, Ontario, Canada",
+      "priceCAD": 1099000,
+      "rentalUnits": 4,
+      "commercialSpaces": 3,
+      "sellerCurrentNOI": 103350,
+      "source": "https://a1-ws-realtor-pr.realtor.ca/real-estate/30378434/35-ontario-road-welland-lincolncrowland-773-lincolncrowland"
+    },
+    {
+      "address": "5101-12 York Street, Toronto, Ontario, Canada",
+      "purchaseCAD": 560000,
+      "incomeUnits": 1,
+      "tenancy": "reported market-tenanted; not family occupancy; verification needed"
+    },
+    {
+      "address": "3215-138 Downes Street, Toronto, Ontario, Canada",
+      "purchaseCAD": 548000,
+      "incomeUnits": 1,
+      "tenancy": "reported market-tenanted; not family occupancy; verification needed"
+    }
+  ],
+  "capitalBudgetCAD": {
+    "familyHousingPurchases": 1908000,
+    "wellandPurchase": 1099000,
+    "twoIncomeCondoPurchases": 1108000,
+    "fivePropertyPurchaseTotal": 4115000,
+    "fiveCommercialActivationsProductionBudget": 2815000,
+    "originalThreePropertyClosingCarryAllowance": 250000,
+    "minimumModeledTotalBeforeAddedCondoClosingAndCarry": 7180000,
+    "addedCondoClosingCostsAndCarrying": "not yet priced; no assertion of finalized total"
+  },
+  "capitalSourcesCAD": {
+    "priorThreeAddressPlanTotal": 6072000,
+    "additionalCondoAcquisitionFinancingToStructure": 1108000,
+    "additionalCondoTransactionFees": "to price",
+    "noCondoLoanCommitment": true
+  },
+  "sixDivisions": {
+    "realEstate": "six family homes and income assets; property NOI must include York and Downes after condo fees, taxes, debt service",
+    "concert": "modeled C$2.465M revenue, C$1.615M cost",
+    "tvProduction": "modeled C$1.0M revenue, C$600K cost",
+    "foodReviews": "modeled C$250K revenue, C$100K cost",
+    "masParade": "modeled C$500K revenue, C$300K cost",
+    "hiddenFigure": "modeled C$400K revenue, C$200K cost"
+  },
+  "proposedInvestorCAD": {
+    "oneYearCommercialWorkingCapital": 2815000,
+    "returnOriginalPrincipal": 2815000,
+    "preferredProfit": 1200000,
+    "plannedCommercialRevenue": 4615000,
+    "plannedCommercialExpenses": 2815000,
+    "taxContingencyAllocation": 500000,
+    "sixFamilyHousingSupportAllocation": 100000,
+    "caution": "Not independently verified, no available condo post-debt rent underwriting; investor exit remains forecast"
+  },
+  "extraTrade": {
+    "asset": "The Vic Towns, Toronto",
+    "strategy": "Purchase and resell exactly one additional unit; no permanent sixth address",
+    "oneUnitBuyAssumption": 630000,
+    "oneUnitResaleAssumption": 799900,
+    "modeledAfterCostAndTaxProfit": 49494.55,
+    "conditional": "Neither price nor buyer/seller acceptance documented",
+    "distinctTemporaryFinancing": "requires separately funded acquisition, closing and carrying capital"
+  },
+  "international": {
+    "financedInternationalRealEstateAcquisitions": 0,
+    "approach": "international production, culture and filming partnerships; preserve previously considered international real-estate research without counting purchases here"
+  },
+  "conditions": [
+    "Six family unit occupancy, 4-bedroom need and C$800 monthly household payments must be verified in lawful title/occupancy structure",
+    "12 York and 138 Downes are market-tenanted income units, not immediate family homes",
+    "Obtain complete current condo rents, mortgages, fees, property taxes, leases, seller prices and transaction costs",
+    "Recalculate true five-property annual income, cash carrying and total capital sources, rather than reuse three-address surplus",
+    "Six-division revenues and C$1.2M preferred investor profit not contracted"
+  ],
+  "alternateSource": "docs/property/CC_PREFERRED_THREE_ADDRESS_STACK_2026-11-17.json",
+  "prohibitedAddress": "70 Temperance"
+}
