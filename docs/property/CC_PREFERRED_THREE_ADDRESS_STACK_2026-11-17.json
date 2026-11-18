@@ -56,7 +56,11 @@
     "taxAndContingencyReserve": 500000,
     "familySupportReserve": 100000,
     "balance": 0,
-    "investorProfitPct": 42.63
+    "investorProfitPct": 42.63,
+    "yearOneIncrementalVicTownProfit": 49494.55,
+    "previouslyModeledExtraAnnualSponsor": 0,
+    "yearOneRetainedCashAfterInvestorPrincipalProfitAndReserves": 49494.55,
+    "yearTwoProjectCashWithoutRepeatingVicTownSale": 862200
   },
   "propertyYearOneCAD": {
     "wellandSellerNOI": 103350,
@@ -80,9 +84,35 @@
     "C$800 payment target and ownership/title rights need legal design",
     "Property cash-flow margin exceptionally thin and unverified",
     "Commercial contracts, costs and cash settlements unverified",
-    "International investments remain separate options; this model funds only Canadian properties"
+    "International investments remain separate options; this model funds only Canadian properties",
+    "Vic Town resale is conditional transaction, not permanent fourth Canadian property",
+    "Earlier proposed C$400K recurring sponsor replaced by a conditional single resale yielding modeled C$49,495 after tax; this separately uses C$286,905 temporary acquisition equity/carry capital"
   ],
   "excludedAddresses": [
     "70 Temperance"
-  ]
+  ],
+  "incrementalVicTownSaleScenarioCAD": {
+    "permanentPropertyCountAfterExit": 3,
+    "acquisitionAndSaleOfOneExtraUnit": true,
+    "selectedUnitSquareFeetAssumed": 1200,
+    "priorSellerBlockRatePerSqFt": 525,
+    "singleUnitRateUnapproved": true,
+    "purchasePrice": 630000,
+    "targetResaleAskingPrice": 799900,
+    "salePriceNotContracted": true,
+    "firstMortgageAt65Pct": 409500,
+    "purchaseEquity": 220500,
+    "modeledClosingFinanceSaleAndCarryingCosts": 102560.48,
+    "incomeTaxProvision": 17844.97,
+    "retainedProfitFromSale": 49494.55,
+    "separateRevolvingTransactionCashBeforeSale": 286905,
+    "initialThreePropertyStackUnchanged": true,
+    "noNewAnnual400KPresentingSponsor": true,
+    "conditions": [
+      "Receiver must approve the 1200sf unit and C$525/sf pricing individually",
+      "Exit at public list price is an illustrative target, not an executed buyer agreement",
+      "Verify new-house purchase and disposal HST and business income taxes",
+      "Obtain separate senior and temporary equity capital; release all security on sale"
+    ]
+  }
 }
