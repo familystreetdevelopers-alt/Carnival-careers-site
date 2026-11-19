@@ -14,7 +14,7 @@ if (!/<head\b[^>]*>/i.test(html) || !/<\/head>/i.test(html)) {
 
 // One and only one canonical homepage. Leave all visible content, JS and CSS unchanged.
 html = html.replace(/<link\b(?=[^>]*\brel\s*=\s*["']canonical["'])[^>]*>/gi, '');
-html = html.replace(/<\/head>/i, '  <link rel="canonical" href="' + site + '/">\n</head>');
+html = html.replace(/<head\\b[^>]*>/i, match => match + '\\n  <link rel="canonical" href="' + site + '/">');
 fs.writeFileSync(homepage, html, 'utf8');
 
 fs.writeFileSync(path.join(dist, 'robots.txt'),
