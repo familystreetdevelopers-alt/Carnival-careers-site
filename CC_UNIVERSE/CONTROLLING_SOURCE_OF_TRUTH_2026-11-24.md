@@ -1,4 +1,58 @@
-> **CURRENT CONTROLLING WORKING CONTEXT — APPROVED NOVEMBER 24, 2026.**
+# CC UNIVERSE — MASTER CONTROLLING SOURCE OF TRUTH
+**Owner-approved November 27, 2026. Effective immediately.** This update supersedes conflicting November 24–26 material and older memory, models, drafts and decks. The two November 27 sent financing emails establish the documentary baseline, subject to the latest explicit owner corrections below. Sent proposals are not funding approvals. This is the canonical GitHub working reference, not a guarantee of ChatGPT Memory synchronization.
+
+**Mandatory first-reference check:** Before any CC Universe calculation, application, proposal, email, agreement, automation or external communication, retrieve this file and apply the latest explicit owner instructions. Preserve all unaffected prior operating rules, including the original 30 rules. Never merge mutually exclusive scenarios, silently change unrelated numbers or revive excluded revenue. Public repository: do not publish private email originals, contact details, signed originals, confidential underwriting records or undisclosed counterparty contract terms. Internal modeled allocations below are planning figures, not binding terms.
+
+## 1. Objectives
+For-profit, Toronto-led 65-city integrated entertainment, television, employment and real-estate ownership enterprise; founder/executive producer Hopeton LaTouche; retain format/IP. Six tenant-owner families; C$800/month mortgage target subject to qualification. Investor profit target C$1.2m within 12 months; reported Post Oak minimum return 24%; maximum targeted exit 18 months. Minimize first money; protect contracts, insurance, security and repayment. No guaranteed returns.
+
+## 2. Active acquisition stack (CAD)
+| Asset | Purpose | Purchase |
+|---|---|---:|
+| 59 Alicewood Court | Six-family development | 1,349,000 |
+| 12 York | Tenanted income condo | 560,000 |
+| 138 Downes | Tenanted income condo | 548,000 |
+| One VicTown | Resale | 630,000 |
+| Canadian subtotal | | 3,087,000 |
+| Jamaica | International acquisition | 159,372 |
+| Trinidad | International acquisition | 518,500 |
+| Ghana | International acquisition | 362,700 |
+| International subtotal | | 1,040,572 |
+| Global acquisitions | | 4,127,572 |
+
+Alicewood proposed three existing broker-described apartments, garage conversion and two garden dwellings subject to legal/municipal feasibility; six family homes not yet approved. Both condos are tenanted and not immediate family occupancy; modeled gross rent C$2,300/month each, not net cash. 109 Pembroke is a mutually exclusive alternative, not additional. Do not revive old portfolio or six-VicTown scenarios. 70 Temperance excluded.
+
+## 3. Financing roles and mandatory sequence
+- DUCA: credit, income and property qualification; current target C$831,000 (modeled 75% of 12 York C$420,000 and 138 Downes C$411,000). Not approved. The C$436,882 modeled individual tenant-owner mortgage figure in sent joint email is distinct, not additive, and cannot replace the new target. Establish timing, borrower, security, eligible properties and actual amount.
+- Tandem: concurrently with DUCA, established service businesses apply for financing against genuine invoices owed by CC Universe. Supplier is applicant; CC Universe is debtor. Tandem assesses supplier and debtor eligibility, advances directly to eligible suppliers, and receives settlement from CC Universe. Do not redirect this operating model toward hypothetical customers owing CC Universe. DUCA confirmation supports overall presentation but does not itself fund commercial repayment.
+- Post Oak: arrange first-money investor capital based on transaction viability and repayment evidence, not assume approved funding. Obtain signed terms, capital provider, release milestones and security.
+- Mickey: proposed deposit loan, upfront interest and agreed repayment; Qoq Atta Ochere proposed interest-funding partner. Confirm lender acceptance and disclose borrowed equity.
+- Owemanco: owner reports evidence of 35% capital must be available FIRST, irrespective of source subject to actual lender acceptance. Do not assign Owemanco first-money responsibility. Latest owner-stated lending percentage 55%; prior sent models assume 65%. Written confirmation required; 35% + 55% leaves 10% of relevant acquisition price plus costs unfunded. Do not assume either percentage approved or double-pledge DUCA collateral.
+- Streetwise: mortgage structuring; Foundry: construction financing; First National + CMHC coordinated insured financing where eligible; triplex and MLI Select (>=5 eligible units) distinct; local international lenders separately qualify.
+- Start DUCA and Tandem underwriting concurrently; obtain Owemanco conditional terms concurrently without expecting cash first; Post Oak/acceptable equity and any deposit bridge establish required capital; closing solicitor verifies equity then approved mortgage draws fund eligible purchases. Commercial service financing progresses independently when approved and repayment funded. Refinance/sell only when eligible; settle debts, investor principal and realized profit before expansion.
+
+## 4. Tandem operating cycle
+Baseline from November 27 sent Post Oak proposal: six established supplier development lanes (OneLive Events, Habitat28, Nine6teen Entertainment, STATURE, Black Business Live TV, Toronto Caribbean Carnival). Aggregate proposed service invoices C$115,000; proposed sponsor inventory C$500,000. Private individual commercial terms stay in restricted source documents. These are proposed budgets, not evidence of completed work.
+Day 1 actual contracted work delivered; day 2 CC verifies and accepts invoices; day 3 eligible suppliers submit/assign and Tandem advances modeled 80%, C$92,000, if approved; days 4–29 CC collects contracted payments; day 30 modeled total settlement C$116,840 including remaining supplier balances and C$1,840 fee; day 31 repeat only with fresh eligibility and repayment coverage. Proposed C$125,000 founding sponsor installment covers first modeled settlement with C$8,160 remaining before other obligations; not secured. Twelve modeled fees total C$22,080. Do not use later C$220,000 example as controlling base.
+Apply to promoters/performance placement, architecture, engineering, development administration, media and other eligible professional services. Actual pre-delivery work or deposits require separately approved financing; no fabricated invoices, circular funding or double financing. Investor-funded costs cannot also be advanced without explicit approved replacement/reimbursement.
+
+## 5. Activation and capital reconciliation
+Arena 19,800 target, 250-vendor marketplace. Proposed activation total C$477,000 across arena/artist deposits, promoter development and TV development. Exact private counterparty terms remain in restricted sent records. All bookings, insurance and agreements must be verified. Remaining modeled venue/artist balances C$465,000 before other production costs.
+Sent models: C$849,150 opening tranche; C$1,839,735 coordinated activation equity; C$5,186,022 broader capital requirement under older assumptions. These are alternatives/stages, not cumulative or approved; reconcile to current DUCA and Owemanco terms before seeking capital. Prior coordinated model C$4,604,572 total uses includes C$4,127,572 acquisitions + C$477,000 activation. Prior modeled allocations (historical only): Owemanco 1,651,583; DUCA 436,882; international lenders 676,372; Post Oak 1,839,735. Broader uses C$7,192,572 = acquisitions 4,127,572 + commercial operations 2,815,000 + provisional closing/carry reserves 250,000; construction and other verified costs additional. Do not treat mortgage principal as business revenue. Older 20% terms do not satisfy reported 24% minimum; reconcile before commitment.
+
+## 6. Where the money comes from
+Sent commercial baseline, pending line-by-line verification and exclusion reconciliation: projected receipts C$4,615,000; operating expenses C$2,815,000; modeled annual Tandem fees C$22,080; contribution C$1,777,920; target investor profit C$1,200,000; residual C$577,920 before further costs/taxes. Not verified cash or a guarantee. Do not assert this forecast excludes removed categories without checking its source breakdown. Founding sponsorship is included, not incremental.
+Controlling investor profit allocation: real estate C$200,000; arena concerts C$200,000; TV production C$200,000; remaining C$600,000 requires verified additional net commercial earnings, not invented categories.
+**EXCLUDE restaurant/food features (C$200,000), Carnival Mas participation (C$200,000), Hidden Figures (C$200,000) from financing revenue projections. G-COdE is entirely separate from Post Oak; no G-COdE reference or receipts in Post Oak proposals.** Broader cultural activities may remain in program scope, not automatically in financing forecasts.
+For every obligation document payer, signed contract, amount, collection date, restrictions, expense, maturity and committed reserve; actual cash from contracted sponsorship, ticket settlements, television/production agreements and approved other earnings. Net unrestricted rental cash only after operating costs, debt service and reserves. Investor principal recovered separately through net sales, approved refinance or available working capital; no double counting or assumed unrestricted advance ticket funds. If revenue is not contracted or reserve not available, flag it and do not commit unfunded obligations.
+
+## 7. Execution governance
+The two sent November 27 emails are private documentary evidence; the joint DUCA/Post Oak/Owemanco email and Post Oak Next Steps email were sent, not approvals. Comprehensive all-party email including Tandem was prepared but not verified sent. Maintain private originals and attachment evidence. Coordinate shared discussion without exposing confidential individual underwriting. Track access/interest/draft/sent/agreed/signed/approved/invoiced/received/cleared/settled separately. Report actual cash, signed commitments, remaining capital, blockers, owner and next action. Preserve historical contracts and no-contact exclusions. No site changes or automation changes are implied by this document update.
+
+## 8. Historical continuity
+The material below is retained for unaffected operations and historical evidence only. Where it conflicts with sections 1–7 or later explicit owner instructions, it is superseded. In particular older financing percentages, return targets, six-sector revenue allocation and any combined G-COdE/Post Oak sponsor treatment are not controlling.
+
+> **HISTORICAL WORKING CONTEXT — NOVEMBER 24, 2026; SUBJECT TO NOVEMBER 27 OVERRIDE ABOVE.**
 > The newest expressly approved user decisions and independently verified agreements control over older README entries, historical plans, archives, and prior generated decks. This file is a GitHub working reference for project agents, **not ChatGPT account Memory synchronization**. It records selected plans and some historical facts, not blanket proof that forecasts, proposed bookings, sponsor rights or future distribution agreements are signed.
 >
 > **PUBLIC REPOSITORY SAFETY:** This repository is public. Do not commit nonpublic signed source originals, personal contact lists, sensitive emails, credentials, confidential lender communications, private counterparties' documents, identity data or undisclosed pricing/contract terms. Private source agreements and exclusions stay in appropriately restricted records.
@@ -7,7 +61,7 @@
 
 # Carnival Careers / CC Universe — Controlling Facts
 
-**Authoritative working reference | November 24, 2026 | For corrections, corroborate against original source contracts and later explicitly approved decisions.**
+**Historical working reference | November 24, 2026 | For corrections, corroborate against original source contracts and later explicitly approved decisions.**
 
 **Priority order for future work:** (1) latest active multievent, sponsor, reality-TV, distribution and December 1 execution strategy; (2) original signed historical deal; (3) current cultural partners and their actual signed paperwork; (4) current seven-property portfolio and six-family housing; (5) 16 scenario proposals and financing; (6) web/music/automations. Do not present an old scenario as current just because an old file, email or memory contains it.
 
