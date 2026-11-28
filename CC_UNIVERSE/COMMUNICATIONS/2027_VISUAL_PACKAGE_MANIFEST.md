@@ -2,7 +2,7 @@
 
 Archive register, November 28, 2026.
 
-**Status:** Verified local archive; only this inventory is published in the public repository. The ZIP bytes and confidential exhibits have not been uploaded. Do not treat this manifest as a download location for the archive.
+**Status:** Public inventory only. Document 17 has a verified replacement PDF, identified below; the original 24-file ZIP has not been rebuilt or uploaded. The original archive metadata below describes the previous verified archive, not a new archive. Do not treat this manifest as a download location.
 
 - Archive: `CC_Universe_2027_Visual_Communications_Package.zip`
 - Files: 24 (18 separate proposal PDFs plus six supporting files)
@@ -12,7 +12,7 @@ Archive register, November 28, 2026.
 
 ## Controlling reference
 
-[Master controlling source of truth](../CONTROLLING_SOURCE_OF_TRUTH_2026-11-24.md). The visual package predates the November 28 formation; its financial content is not controlling. Reconcile audience-specific documents against the controlling formation before external use. Preserve both protected PDFs unmodified. Sponsorship funding is restricted to approved Toronto arena, television advertising and separately accounted G-COdE commercial deliverables, not real estate or investor repayment.
+[Master controlling source of truth](../CONTROLLING_SOURCE_OF_TRUTH_2026-11-24.md). The visual package predates the November 28 formation; its financial content is not controlling. Reconcile audience-specific documents against the controlling formation before external use. Preserve both protected historical evidence and integrated investment presentation PDFs unmodified. Document 17's proposed 2027 terms follow the current formation; its historical exhibit is retained. Sponsorship funding is restricted to approved Toronto arena, television advertising and separately accounted G-COdE commercial deliverables, not real estate or investor repayment.
 
 ## Archive inventory
 
@@ -33,13 +33,17 @@ Archive register, November 28, 2026.
 15. `01_Separate_Proposals/14_Startup_Lender_Canada_Without_Real_Estate.pdf`
 16. `01_Separate_Proposals/15_Startup_Lender_Real_Estate_Only.pdf`
 17. `01_Separate_Proposals/16_Accounts_Receivable_Tandem.pdf`
-18. `01_Separate_Proposals/17_Integrated_2027_Deal_Memo_Signatures_Redacted.pdf`
+18. `01_Separate_Proposals/17_Integrated_2027_Deal_Memo_Signatures_Redacted.pdf` — controlling replacement: 30 pages; 386,867 bytes; SHA-256 `5b77917859846eb594394406904a2ad3d9c38acbfd74155b8c9b01867690621d`. Same filename and inventory position; no additional document. Replacement PDF verified locally November 28, 2026; insertion into the original ZIP remains pending access to that archive.
 19. `02_Master_Prospectus/Master_Development_Prospectus.pdf`
 20. `03_Enterprise_Context/CC_Universe_Integrated_Investment_Presentation.pdf`
 21. `04_Agreements_and_Evidence/Carnival_Careers_FROM_ORIGINAL_WITHOUT_REAL_ESTATE.pdf`
 22. `04_Agreements_and_Evidence/Historical_Double_Signed_Memo_Signatures_Redacted.pdf`
 23. `05_Financial_Control/Capital_and_Receivables_Model.xlsx`
 24. `START_HERE.html`
+
+## Document 17 — controlling proposed 2027 scope
+
+Reggae North: reported award-presenting role and one-song performance, pending written organizer confirmation. Joint sponsorship fundraising for radio programming and recurring Toronto concert advertising, interviews, original music and ticket promotion; agreed fees/revenue sharing from collected proceeds. Curate GTA car-show organizers and automotive vendors for pre-concert promotional events and approved displays outside Scotiabank Arena and in designated parking areas before and during the concert. Broadcast/filming rights, parking and venue permissions, safety, insurance and signed sponsor terms are required. No booked rights or collected sponsorship is implied. Toronto and Montréal arena plans and six-family C$900/month target follow the November 28 controlling formation; no new revenue or expense is assumed in the aggregate model. Sponsor proceeds remain restricted and G-COdE separately accounted.
 
 ## Publication controls
 
