@@ -1,4 +1,31 @@
 # CC UNIVERSE — MASTER CONTROLLING SOURCE OF TRUTH
+**November 28, 2026 — controlling owner-directed formation. Effective immediately.**
+
+## 0. Mandatory controlling formation for every session, document and workflow
+Before any CC Universe calculation, application, proposal, email, agreement, automation or external communication, retrieve this file and apply the latest explicit owner instructions. This section supersedes ALL conflicting earlier portfolio, revenue, capital, obligation, event-count and repayment scenarios in this file, documents, presentations, memory and other sessions. Preserve unaffected governance, financing sequence, protections and all 30 operating rules. Never merge alternative formations.
+
+| Financial control (CAD) | Owner-directed target |
+|---|---:|
+| Capital | 4,240,945.00 |
+| Revenue target | 9,500,000.00 |
+| Total modeled sources | 13,740,945.00 |
+| Total obligations | 13,568,221.74 |
+| Remaining projected capital | 172,723.26 |
+
+- Montréal duplex purchase C$349,900 replaces VicTown; do not include VicTown in the active formation.
+- Six tenant-owner families; C$900/month mortgage target from the latest owner correction, subject to qualification and legal dwelling feasibility.
+- Toronto Scotiabank Arena and Montréal Bell Centre: both arena operations, corresponding episodes and Carnivals are in scope. Do not assume venue booking, signed rights or committed dates.
+- Investor profit target C$1,200,000 plus full principal repayment; retain 12-month profit and maximum 18-month exit targets and reported 24% minimum return unless explicitly changed by owner.
+- Sponsor funds restricted to approved Toronto arena, advertising (including television) and separately accounted G-COdE screen deliverables; C$0 for property acquisition, construction or investor repayment. G-COdE remains separate from Post Oak. No excluded revenue categories in financing projections.
+- The specified aggregate figures reconcile exactly. They are planning targets, not collected capital or verified contractual revenue. Itemized source/use schedules, complete active property list, eligible funding, repayment allocation, construction scope and event economics must be reconciled to this formation before representing feasibility. Do not import conflicting older numbers to fill missing detail. Do not alter the protected integrated investment presentation or historical signed/redacted deal memo.
+- Apply this formation to the “Find Housing Funding Alternatives” workflow and all CC Universe sessions on their next reference check. A GitHub update establishes a common reference; it does not prove that separate ChatGPT sessions or previously generated documents have refreshed.
+- Public repository: retain planning figures only; do not publish private email originals, confidential underwriting records, signatures or undisclosed counterparty terms.
+
+---
+
+## Historical November 27 and earlier reference — retained for continuity
+The text below is historical wherever it conflicts with section 0. Unaffected governance and operating instructions remain applicable.
+
 **Owner-approved November 27, 2026. Effective immediately.** This update supersedes conflicting November 24–26 material and older memory, models, drafts and decks. The two November 27 sent financing emails establish the documentary baseline, subject to the latest explicit owner corrections below. Sent proposals are not funding approvals. This is the canonical GitHub working reference, not a guarantee of ChatGPT Memory synchronization.
 
 **Mandatory first-reference check:** Before any CC Universe calculation, application, proposal, email, agreement, automation or external communication, retrieve this file and apply the latest explicit owner instructions. Preserve all unaffected prior operating rules, including the original 30 rules. Never merge mutually exclusive scenarios, silently change unrelated numbers or revive excluded revenue. Public repository: do not publish private email originals, contact details, signed originals, confidential underwriting records or undisclosed counterparty contract terms. Internal modeled allocations below are planning figures, not binding terms.
